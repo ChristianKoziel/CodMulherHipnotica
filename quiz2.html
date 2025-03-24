@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Idade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .quiz-container {
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-button {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-button:hover {
+            background-color: #f0f0f0;
+            border-color: #999;
+        }
+
+        .option-button:active {
+            background-color: #e0e0e0;
+            transform: scale(0.98);
+        }
+        
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question">Qual a sua <span class="red">idade?</span></div>
+        <div class="options">
+            <button class="option-button" onclick="redirectToQuiz()">18 a 24</button>
+            <button class="option-button" onclick="redirectToQuiz()">25 a 34</button>
+            <button class="option-button" onclick="redirectToQuiz()">35 a 44</button>
+            <button class="option-button" onclick="redirectToQuiz()">45+</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToQuiz() {
+            window.location.href = 'quiz3.html';
+        }
+    </script>
+</body>
+</html>

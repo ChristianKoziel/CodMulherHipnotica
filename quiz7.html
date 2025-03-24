@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Desafios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            text-align: left;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+        }
+
+        .question {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            text-align: center;
+            color: #333;
+        }
+
+        .vermelho {
+            color: red;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: #e6f0ff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .option-item:hover {
+            background-color: #cce0ff;
+        }
+
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #0066ff;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .checkbox.checked::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #0066ff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .option-text {
+            font-size: 16px;
+            text-align: right;
+            width: 100%;
+        }
+
+        .continue-button {
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            width: 100%;
+            max-width: 300px;
+            transition: background 0.3s;
+        }
+
+        .continue-button:hover {
+            background-color: #004ecb;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question">
+            Quais são os principais <span class="vermelho">desafios</span> em sua vida amorosa?
+        </div>
+        <div class="options">
+            <label class="option-item">
+                <span class="option-text">Ele me deixa confusa</span>
+                <span class="checkbox"></span>
+            </label>
+            <label class="option-item">
+                <span class="option-text">Me sinto rejeitada</span>
+                <span class="checkbox"></span>
+            </label>
+            <label class="option-item">
+                <span class="option-text">Fui trocada</span>
+                <span class="checkbox"></span>
+            </label>
+            <label class="option-item">
+                <span class="option-text">Não me sinto amada</span>
+                <span class="checkbox"></span>
+            </label>
+            <label class="option-item">
+                <span class="option-text">Não consigo atrair o homem certo</span>
+                <span class="checkbox"></span>
+            </label>
+            <label class="option-item">
+                <span class="option-text">Sinto que a paixão se foi</span>
+                <span class="checkbox"></span>
+            </label>
+        </div>
+        <button class="continue-button">Continuar</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const checkbox = item.querySelector('.checkbox');
+                checkbox.classList.toggle('checked');
+            });
+        });
+
+        document.querySelector('.continue-button').addEventListener('click', () => {
+            window.location.href = 'quiz8.html';
+        });
+    </script>
+</body>
+</html>
