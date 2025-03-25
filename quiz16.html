@@ -2,9 +2,15 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teste grátis</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,47 +20,72 @@
             align-items: center;
             min-height: 100vh;
             background-color: white;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
-            max-width: 600px;
-            width: 90%;
+            max-width: 100%;
+            width: 100%;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 20px;
+            padding: 0 15px;
         }
 
         .question {
-            font-size: 24px;
-            margin-bottom: 40px;
+            font-size: clamp(20px, 6vw, 28px);
+            margin-bottom: 30px;
             line-height: 1.4;
+            padding: 0 10px;
+            font-weight: bold;
         }
 
         .highlight {
             color: red;
             font-weight: bold;
+            display: inline-block;
+        }
+
+        .button-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .button {
             display: block;
             width: 100%;
-            padding: 20px;
-            margin: 15px 0;
+            padding: 18px;
+            margin: 12px 0;
             border: 2px solid #000;
-            border-radius: 10px;
+            border-radius: 12px;
             background-color: white;
             color: black;
-            font-size: 18px;
+            font-size: clamp(16px, 4.5vw, 18px);
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .button:hover {
+        .button:hover, .button:active {
             background-color: #000;
             color: white;
         }
+        
         .red {
             color: red;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 350px) {
+            .question {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            .button {
+                padding: 15px;
+                font-size: 15px;
+            }
         }
     </style>
 </head>
@@ -64,13 +95,15 @@
             O que você faria se existisse um <span class="red">método psicológico</span> comprovado para deixar ele completamente <span class="highlight">OBECEADO</span> em você?
         </div>
         
-        <a href="quiz17.html" class="button">
-            Eu usaria imediatamente
-        </a>
-        
-        <a href="quiz17.html" class="button">
-            Gostaria de entender como isso funciona antes
-        </a>
+        <div class="button-container">
+            <a href="quiz17.html" class="button">
+                Eu usaria imediatamente
+            </a>
+            
+            <a href="quiz17.html" class="button">
+                Gostaria de entender como isso funciona antes
+            </a>
+        </div>
     </div>
 </body>
 </html>

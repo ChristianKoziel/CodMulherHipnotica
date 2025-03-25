@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Desafios</title>
+    <title>Teste grátis</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,23 +42,23 @@
         }
         .option-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             cursor: pointer;
             background-color: #e6f0ff;
-            padding: 12px 15px;
+            padding: 16px 20px;
             border-radius: 8px;
             transition: background 0.3s;
+            gap: 15px;
         }
         .option-item:hover {
             background-color: #cce0ff;
         }
         .checkbox {
+            flex-shrink: 0;
             width: 22px;
             height: 22px;
             border: 2px solid #0066ff;
             border-radius: 50%;
-            display: inline-block;
             position: relative;
         }
         .checkbox.checked::after {
@@ -74,8 +74,8 @@
         }
         .option-text {
             font-size: 16px;
-            text-align: right;
-            width: 100%;
+            flex-grow: 1;
+            text-align: left;
         }
         .continue-button {
             background-color: #0066ff;
@@ -103,27 +103,27 @@
         </div>
         <div class="options">
             <label class="option-item">
-                <span class="option-text">Ele me deixa confusa  </span>
+                <span class="option-text">Ele me deixa confusa</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Me sinto rejeitada  </span>
+                <span class="option-text">Me sinto rejeitada</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Fui trocada  </span>
+                <span class="option-text">Fui trocada</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Não me sinto amada  </span>
+                <span class="option-text">Não me sinto amada</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Não consigo atrair o homem certo  </span>
+                <span class="option-text">Não consigo atrair o homem certo</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Sinto que a paixão se foi  </span>
+                <span class="option-text">Sinto que a paixão se foi</span>
                 <span class="checkbox"></span>
             </label>
         </div>
