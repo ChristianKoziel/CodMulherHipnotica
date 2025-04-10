@@ -41,7 +41,7 @@
             display: block;
         }
         .botao-acao {
-            background-color: #00a859;
+            background-color: #d40000;
             color: white;
             text-align: center;
             padding: 15px;
@@ -62,21 +62,29 @@
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.7);
+                box-shadow: 0 0 0 0 rgba(212, 0, 0, 0.7);
             }
             70% {
                 transform: scale(1.02);
-                box-shadow: 0 0 0 8px rgba(0, 168, 89, 0);
+                box-shadow: 0 0 0 8px rgba(212, 0, 0, 0);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 168, 89, 0);
+                box-shadow: 0 0 0 0 rgba(212, 0, 0, 0);
             }
         }
         
         .botao-acao:hover {
-            background-color: #008a4a;
+            background-color: #b30000;
             transform: translateY(-2px);
+        }
+
+        .botao-subtexto {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+            display: block;
+            font-style: italic;
         }
 
         p {
@@ -123,6 +131,55 @@
             50% { opacity: 0.7; }
             100% { opacity: 1; }
         }
+
+        /* Timer de escassez */
+        .timer-container {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse-timer 2s infinite;
+        }
+        
+        @keyframes pulse-timer {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        .timer-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .timer-digits {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .timer-unit {
+            background-color: #d40000;
+            padding: 10px;
+            border-radius: 5px;
+            width: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .timer-label {
+            font-size: 10px;
+            margin-top: 5px;
+        }
     </style>
     <!-- Código do Pixel do Facebook -->
     <script>
@@ -136,6 +193,31 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
         fbq('track', 'PageView'); // Rastreia visualizações de página
+
+        // Script para o timer regressivo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Define o timer para 30 minutos (em segundos)
+            let timeLeft = 30 * 60;
+            
+            function updateTimer() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('timer-minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('timer-seconds').innerText = seconds.toString().padStart(2, '0');
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(updateTimer, 1000);
+                } else {
+                    document.querySelectorAll('.timer-expired-text').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                }
+            }
+            
+            updateTimer();
+        });
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -145,6 +227,23 @@
 <body>
     <div class="quiz-container">
         <h3>Só hoje e nessa página você poderá ter acesso ao <span style="color: red;">Código da Mulher Hipnótica</span> + Bônus Extras com 80% de desconto!</h3>
+        
+        <!-- Timer de escassez adicionado aqui -->
+        <div class="timer-container">
+            <div class="timer-title">⏱️ ESTA OFERTA EXPIRA EM:</div>
+            <div class="timer-digits">
+                <div class="timer-unit">
+                    <span id="timer-minutes">30</span>
+                    <div class="timer-label">MIN</div>
+                </div>
+                <div style="font-size: 24px; align-self: center;">:</div>
+                <div class="timer-unit">
+                    <span id="timer-seconds">00</span>
+                    <div class="timer-label">SEG</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="imagens-container">
             <img src="src/img/cel.png" alt="Relato 1"/>
         </div>
@@ -188,7 +287,10 @@
         <p>Mas se você comprar <span style="font-weight: bold;">agora</span> você vai levar tudo isso que foi listado acima</p>
         <p style="font-weight: bold;">POR APENAS:</p>
         <p style="font-weight: bold; color: rgb(1, 255, 1);">R$37,00</p>
-        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">Quero o guia com todos os bônus!</a>
+        
+        <!-- Botão CTA atualizado -->
+        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">SIM, EU QUERO ELE VICIADO EM MIM!</a>
+        <span class="botao-subtexto">🕒 Oferta expira em poucas horas</span>
         
         <!-- Alerta novo adicionado aqui -->
         <div class="alerta-oferta">
@@ -213,7 +315,26 @@
         <p>De: <span style="color: red; text-decoration: line-through;">R$274,00</span></p>
         <p>POR APENAS:</p>
         <P style="font-weight: bold; color: rgb(1, 255, 1);">R$37,00</P>
-        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">Quero o guia com todos os bônus!</a>
+        
+        <!-- Segundo timer de escassez para reforçar a urgência -->
+        <div class="timer-container">
+            <div class="timer-title">⏱️ ESTA OFERTA EXPIRA EM:</div>
+            <div class="timer-digits">
+                <div class="timer-unit">
+                    <span id="timer-minutes-2">30</span>
+                    <div class="timer-label">MIN</div>
+                </div>
+                <div style="font-size: 24px; align-self: center;">:</div>
+                <div class="timer-unit">
+                    <span id="timer-seconds-2">00</span>
+                    <div class="timer-label">SEG</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botão CTA atualizado novamente -->
+        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">ATIVAR OS GATILHOS AGORA!</a>
+        <span class="botao-subtexto">🕒 Oferta expira em poucas horas</span>
         
         <!-- Alerta novo adicionado aqui -->
         <div class="alerta-oferta">
@@ -242,7 +363,11 @@
                 Mais de 97% das nossas clientes amam o produto e nunca pedem reembolso!
             </p>
         </div>
-        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">Quero o guia com todos os bônus!</a>
+        
+        <!-- Botão CTA atualizado -->
+        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">QUERO O CÓDIGO AGORA!</a>
+        <span class="botao-subtexto">🕒 Oferta expira em poucas horas</span>
+        
         <div style="margin: 30px 0; text-align: left;">
             <h3 style="color: #d40000; border-bottom: 2px solid #d40000; padding-bottom: 8px; display: inline-block;">Perguntas Frequentes</h3>
             
@@ -266,7 +391,28 @@
                 <p style="margin-left: 25px;">Não! O material foi desenvolvido para ser <span style="font-weight: bold;">prático e acessível</span>, com instruções passo-a-passo que qualquer mulher pode seguir. Você vai perceber os primeiros resultados <span style="font-weight: bold;">em menos de 7 dias</span>!</p>
             </div>
         </div>
-        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">Quero o guia com todos os bônus!</a>
+        
+        <!-- Botão CTA final atualizado -->
+        <a class="botao-acao" onclick="location.href='https://pay.cakto.com.br/38te9gr'">SIM, EU QUERO ELE VICIADO EM MIM!</a>
+        <span class="botao-subtexto">🕒 Oferta expira em poucas horas</span>
     </div>
+    
+    <!-- Script adicional para sincronizar os dois timers -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Esta função atualiza o segundo timer para mostrar os mesmos valores que o primeiro
+            function syncSecondTimer() {
+                const minutes = document.getElementById('timer-minutes').innerText;
+                const seconds = document.getElementById('timer-seconds').innerText;
+                
+                document.getElementById('timer-minutes-2').innerText = minutes;
+                document.getElementById('timer-seconds-2').innerText = seconds;
+                
+                setTimeout(syncSecondTimer, 1000);
+            }
+            
+            syncSecondTimer();
+        });
+    </script>
 </body>
 </html>
