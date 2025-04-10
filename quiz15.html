@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste grátis</title>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
+    </script>
     <style>
         * {
             margin: 0;
@@ -32,12 +44,12 @@
             color: #333;
             text-align: left;
         }
-        .radio-group {
+        .checkbox-group {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-        .radio-option {
+        .checkbox-option {
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -45,20 +57,20 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-        .radio-option:hover {
+        .checkbox-option:hover {
             background-color: #f5f5f5;
         }
-        .radio-option input[type="radio"] {
+        .checkbox-option input[type="checkbox"] {
             display: none;
         }
-        .radio-option label {
+        .checkbox-option label {
             font-size: 16px;
             color: #444;
             cursor: pointer;
             padding-right: 35px;
             position: relative;
         }
-        .radio-option label::after {
+        .checkbox-option label::after {
             content: '';
             position: absolute;
             right: 0;
@@ -67,10 +79,10 @@
             width: 20px;
             height: 20px;
             border: 2px solid #007bff;
-            border-radius: 50%;
+            border-radius: 4px;
             transition: all 0.3s;
         }
-        .radio-option input[type="radio"]:checked + label::after {
+        .checkbox-option input[type="checkbox"]:checked + label::after {
             background-color: #007bff;
             border: 2px solid #007bff;
             box-shadow: inset 0 0 0 4px #fff;
@@ -95,51 +107,34 @@
             font-weight: bold;
         }
     </style>
-    <!-- Código do Pixel do Facebook -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" 
-        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
-    </noscript>
 </head>
 <body>
     <div class="container">
         <h1>Quais <span class="red">estratégias</span> você mais <span class="red">gostaria</span> de dominar?</h1>
         <form id="strategyForm" action="quiz16.html" method="get">
-            <div class="radio-group">
-                <div class="radio-option">
-                    <input type="radio" id="option1" name="strategy" value="apegar">
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option1" name="strategy" value="apegar">
                     <label for="option1">Como fazer ele se apegar a mim</label>
                 </div>
-                <div class="radio-option">
-                    <input type="radio" id="option2" name="strategy" value="falta">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option2" name="strategy" value="falta">
                     <label for="option2">Como fazer ele sentir minha falta</label>
                 </div>
-                <div class="radio-option">
-                    <input type="radio" id="option3" name="strategy" value="mente">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option3" name="strategy" value="mente">
                     <label for="option3">Como ler a mente dele para controlar ele</label>
                 </div>
-                <div class="radio-option">
-                    <input type="radio" id="option4" name="strategy" value="apaixonar">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option4" name="strategy" value="apaixonar">
                     <label for="option4">Como fazer ele se apaixonar profundamente por mim</label>
                 </div>
-                <div class="radio-option">
-                    <input type="radio" id="option5" name="strategy" value="proativo">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option5" name="strategy" value="proativo">
                     <label for="option5">Como fazer ele ser mais proativo</label>
                 </div>
-                <div class="radio-option">
-                    <input type="radio" id="option6" name="strategy" value="nenhuma">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="option6" name="strategy" value="nenhuma">
                     <label for="option6">Nenhuma das opções acima</label>
                 </div>
             </div>
@@ -148,13 +143,12 @@
     </div>
 
     <script>
-        document.querySelectorAll('.radio-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const radio = this.querySelector('input[type="radio"]');
-                radio.checked = true;
-                setTimeout(() => {
-                    window.location.href = 'quiz16.html';
-                }, 300);
+        // Marcar/desmarcar ao clicar na div
+        document.querySelectorAll('.checkbox-option').forEach(option => {
+            option.addEventListener('click', function (e) {
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                e.preventDefault(); // evita duplo clique em label
             });
         });
     </script>
