@@ -1,105 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste grátis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: white;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Obsessão</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #8b0000 100%);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
 
-        .quiz-container {
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-        }
+    .quiz-container {
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: rgba(0,0,0,0.7);
+      border: 2px solid #ff1493;
+      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+    }
 
-        .question {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            line-height: 1.3;
-        }
+    .question {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+      line-height: 1.4;
+    }
 
-        .question span {
-            color: #ff0000;
-        }
+    .teaser {
+      font-size: 1rem;
+      color: #ffcc00;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      font-style: italic;
+    }
 
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
 
-        .option-button {
-            background-color: white;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            padding: 15px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .option-button {
+      background: rgba(255,20,147,0.1);
+      color: #ffffff;
+      border: 2px solid #ff1493;
+      border-radius: 50px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
 
-        .option-button:hover {
-            background-color: #f0f0f0;
-            border-color: #999;
-        }
+    .option-button:hover {
+      background: rgba(255,20,147,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+    }
 
-        .option-button:active {
-            background-color: #e0e0e0;
-            transform: scale(0.98);
-        }
+    .option-button:active {
+      transform: scale(0.98);
+    }
 
-        /* Fazendo toda a área clicável */
-        .clickable-area {
-            cursor: pointer;
-        }
-    </style>
-    <!-- Código do Pixel do Facebook -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" 
-        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
-    </noscript>
+    .emoji {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #ffcc00;
+    }
+
+    .progress {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+  </style>
+  <!-- Código do Pixel do Facebook -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '838634731699598');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" 
+    src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 <body>
-    <div class="quiz-container clickable-area" onclick="window.location.href='quiz7.html'">
-        <div class="question">
-            Com que frequência você sente que dá mais do que <span>recebe</span>?
-        </div>
-        <div class="options">
-            <button class="option-button">Sempre</button>
-            <button class="option-button">Às vezes</button>
-            <button class="option-button">Quase nunca</button>
-        </div>
+  <div class="quiz-container">
+    <div class="progress">⚡ Última etapa — Preparando seu diagnóstico completo</div>
+    
+    <div class="question">Por que você sempre entrega tudo… <br>e recebe o mínimo?</div>
+    
+    <div class="teaser">A verdade é que ele nunca quis te amar... <br>só te ter. A última pergunta vai esfregar isso na sua cara.</div>
+    
+    <div class="options">
+      <button class="option-button" onclick="goToNext()">
+        <span class="emoji">😩</span> Sempre. Dou tudo e recebo silêncio.
+      </button>
+      <button class="option-button" onclick="goToNext()">
+        <span class="emoji">😬</span> Às vezes. Mas faço cara de "tô de boa".
+      </button>
+      <button class="option-button" onclick="goToNext()">
+        <span class="emoji">🧘‍♀️</span> Quase nunca. Já me fechei pra não doer mais.
+      </button>
     </div>
 
-    <script>
-        // Garantindo que qualquer clique na página redirecione
-        document.addEventListener('click', function() {
-            window.location.href = 'quiz7.html';
-        });
-    </script>
+    <div class="footer">Faltam só 4 perguntas... e você vai descobrir o que NENHUMA amiga tem coragem de te dizer.</div>
+  </div>
+
+  <script>
+    function goToNext() {
+      window.location.href = 'quiz7.html';
+    }
+  </script>
 </body>
 </html>
-

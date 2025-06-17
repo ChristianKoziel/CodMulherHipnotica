@@ -13,12 +13,13 @@
         }
         
         body {
-            background-color: #ffffff;
-            color: #333;
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            color: #fff;
             line-height: 1.6;
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
+            min-height: 100vh;
         }
         
         .alerta-container {
@@ -39,6 +40,13 @@
             background-color: #ff3b30;
             border-radius: 50%;
             margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .alerta-titulo .texto {
@@ -52,6 +60,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
+            color: #fff;
         }
         
         .lista-consequencias {
@@ -72,14 +81,15 @@
         }
         
         .explicacao {
-            background-color: #f8f9fa;
+            background-color: rgba(0,0,0,0.3);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
+            border-left: 4px solid #ff3b30;
         }
         
         .explicacao-titulo {
-            color: #666;
+            color: #ccc;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 15px;
@@ -88,7 +98,7 @@
         }
         
         .balao-fala {
-            color: #ccc;
+            color: #ff3b30;
             font-size: 24px;
             margin-right: 10px;
         }
@@ -152,7 +162,9 @@
         .ou {
             margin-left: 32px;
             margin-bottom: 15px;
-            color: #666;
+            color: #ccc;
+            text-align: center;
+            font-weight: bold;
         }
         
         .aviso-final {
@@ -162,14 +174,24 @@
             margin-bottom: 30px;
             display: flex;
             align-items: flex-start;
+            text-align: center;
+            background-color: rgba(255,59,48,0.1);
+            padding: 15px;
+            border-radius: 8px;
         }
         
         .alarme {
             margin-right: 10px;
+            animation: shake 0.5s infinite alternate;
+        }
+        
+        @keyframes shake {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
         }
         
         .botao-acao {
-            background-color: #0074cc;
+            background: linear-gradient(45deg, #ff3b30 0%, #ff1a1a 100%);
             color: white;
             text-align: center;
             padding: 20px;
@@ -179,9 +201,21 @@
             cursor: pointer;
             width: 100%;
             border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
             text-decoration: none;
             display: block;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            max-width: calc(100% - 40px);
+        }
+        
+        .botao-acao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 59, 48, 0.6);
+        }
+        
+        .botao-acao:active {
+            transform: translateY(1px);
         }
         
         .texto-verde {
@@ -291,7 +325,7 @@
         <div class="escolhas-container">
             <div class="escolhas-titulo">
                 <span class="diamante">📌</span>
-                <span class="texto-verde">VOCÊ TEM APENAS DUAS ESCOLHAS HOJE:</span>
+                <span class="texto-verde">AGORA É O MOMENTO. VOCÊ VAI AGIR OU CONTINUAR SENDO ESQUECIDA?</span>
             </div>
             
             <div class="opcao">
