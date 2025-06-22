@@ -3,81 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste grátis</title>
+    <title>⚠️ +1407 Mulheres Dominaram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
             justify-content: center;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
             padding: 20px 0;
             min-height: 100vh;
         }
-        .quiz-container {
-            background-color: #ffffff;
-            padding: 1.5rem;
+        .ritual-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
             text-align: center;
-            max-width: 400px;
-            width: 90%; /* Alterado para porcentagem */
+            max-width: 450px;
+            width: 90%;
             margin: 20px 0;
+            border: 1px solid #ff00ff;
+            position: relative;
+            overflow: hidden;
+        }
+        .ritual-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            animation: borderPulse 4s infinite;
+            pointer-events: none;
+        }
+        @keyframes borderPulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.3; }
         }
         h1 {
             margin-top: 0;
+            color: #fff;
+            font-size: 24px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
         .imagens-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            margin: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #ff00ff #000;
+        }
+        .imagens-container::-webkit-scrollbar {
+            width: 5px;
+        }
+        .imagens-container::-webkit-scrollbar-track {
+            background: #000;
+        }
+        .imagens-container::-webkit-scrollbar-thumb {
+            background-color: #ff00ff;
+            border-radius: 10px;
         }
         .imagens-container img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            border: 1px solid #555;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .imagens-container img:hover {
+            transform: scale(1.02);
         }
         .botao-acao {
-            background-color: #0074cc;
-            color: white;
+            background: linear-gradient(45deg, #ff00ff 0%, #00ffff 100%);
+            color: #000;
             text-align: center;
-            padding: 18px 10px; /* Reduzi o padding vertical e ajustei o horizontal */
+            padding: 20px;
             border-radius: 8px;
-            font-size: 18px; /* Tamanho de fonte um pouco menor */
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
             text-decoration: none;
             display: block;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease; /* Adicionei transição suave */
-            -webkit-tap-highlight-color: transparent; /* Remove o highlight ao tocar no iOS */
+            margin: 25px auto 10px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        .botao-acao:hover, .botao-acao:active {
-            background-color: #005fa3; /* Cor mais escura no hover/active */
-            transform: translateY(-2px); /* Efeito de levantar */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        span {
-            color: red;
+        .botao-acao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 0, 255, 0.6);
         }
         p {
-            color: #000000;
+            color: #fff;
             font-weight: bold;
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+        .warning {
+            font-size: 12px;
+            color: #ff0000;
+            margin-top: 15px;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        .highlight {
+            color: #00ffff;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
         }
         
-        /* Media queries para ajustes específicos em telas pequenas */
         @media (max-width: 480px) {
-            .botao-acao {
-                padding: 16px 8px;
-                font-size: 16px;
-            }
-            .quiz-container {
-                padding: 1rem;
+            .ritual-container {
+                padding: 1.2rem;
                 width: 95%;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .botao-acao {
+                padding: 16px;
+                font-size: 18px;
             }
         }
     </style>
@@ -91,8 +153,8 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -100,19 +162,25 @@
     </noscript>
 </head>
 <body>
-    <div class="quiz-container">
-        <h3><span style="color: rgb(3, 255, 3);">+ de 1407 vidas transformadas</span></h3>
-        <p style="font-weight: bold; text-decoration: underline;">Relatos reais de quem já testou:</p>
+    <div class="ritual-container">
+        <h1><span style="color:rgb(3, 255, 3);">⚠️ +1407 Mulheres já tomaram o controle da mente masculina</span></h1>
+        
+        <p style="font-weight: bold; text-decoration: underline; text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);">Esses são prints REAIS de alunas que estão fazendo homem correr atrás sem entender por quê:</p>
+        
         <div class="imagens-container">
-            <img src="src/img/ps1.png" alt="Relato 1"/>
-            <img src="src/img/ps2.png" alt="Relato 2"/>
-            <img src="src/img/ps3.png" alt="Relato 3"/>
-            <img src="src/img/ps4.png" alt="Relato 4"/>
-            <img src="src/img/ps5.png" alt="Relato 5"/>
-            <img src="src/img/ps6.png" alt="Relato 6"/>
+            <img src="src/img/ps1.png" alt="Vítima 1 - Homem implorando por atenção"/>
+            <img src="src/img/ps2.png" alt="Vítima 2 - Homem obcecado após método"/>
+            <img src="src/img/ps3.png" alt="Vítima 3 - Relação completamente invertida"/>
+            <img src="src/img/ps4.png" alt="Vítima 4 - Controle emocional total"/>
+            <img src="src/img/ps5.png" alt="Vítima 5 - Transformação em 3 semanas"/>
+            <img src="src/img/ps6.png" alt="Vítima 6 - Relato de dominação mental"/>
         </div>
-        <p>Você também <span>deseja</span> viver isso?</p>
-        <a class="botao-acao" onclick="location.href='quiz21.html'">Sim, eu quero muito!</a>
+        
+        <p><strong class="highlight">E você?</strong> Vai continuar assistindo outras viverem o que era pra ser seu?</p>
+        
+        <a class="botao-acao" onclick="location.href='quiz21.html'">QUERO SER A PRÓXIMA A MANIPULAR ELE 🧠🔥</a>
+        
+        <p class="warning">⚠️ Aviso: Vagas pro teste gratuito são limitadas e encerram em breve.</p>
     </div>
 </body>
 </html>

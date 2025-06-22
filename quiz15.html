@@ -24,7 +24,7 @@
             font-family: Arial, sans-serif;
         }
         body {
-            background-color: #ffffff;
+            background-color: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,40 +35,47 @@
             max-width: 600px;
             width: 100%;
             padding: 30px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
             border-radius: 10px;
+            background-color: #2d2d2d;
+            border: 1px solid #ff0066;
         }
         h1 {
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 30px;
-            color: #333;
-            text-align: left;
+            color: #fff;
+            text-align: center;
+            line-height: 1.4;
         }
         .checkbox-group {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
         .checkbox-option {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            padding: 14px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            background-color: #3d3d3d;
+            border: 1px solid #333;
         }
         .checkbox-option:hover {
-            background-color: #f5f5f5;
+            background-color: #4d4d4d;
+            border-color: #ff0066;
         }
         .checkbox-option input[type="checkbox"] {
             display: none;
         }
         .checkbox-option label {
             font-size: 16px;
-            color: #444;
+            color: #fff;
             cursor: pointer;
             padding-right: 35px;
             position: relative;
+            line-height: 1.4;
         }
         .checkbox-option label::after {
             content: '';
@@ -78,67 +85,74 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            border: 2px solid #007bff;
+            border: 2px solid #ff0066;
             border-radius: 4px;
             transition: all 0.3s;
         }
         .checkbox-option input[type="checkbox"]:checked + label::after {
-            background-color: #007bff;
-            border: 2px solid #007bff;
-            box-shadow: inset 0 0 0 4px #fff;
+            background-color: #ff0066;
+            border: 2px solid #ff0066;
+            box-shadow: inset 0 0 0 3px #2d2d2d;
         }
         .continue-btn {
             margin-top: 30px;
-            background-color: #007bff;
+            background-color: #ff0066;
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 16px 30px;
+            border-radius: 30px;
+            font-size: 18px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 0, 102, 0.3);
         }
         .continue-btn:hover {
-            background-color: #0056b3;
+            background-color: #cc0052;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 102, 0.4);
         }
         .red {
-            color: #ff4444;
+            color: #ff0066;
             font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 0, 102, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Quais <span class="red">estratégias</span> você mais <span class="red">gostaria</span> de dominar?</h1>
+        <h1>Qual desses <span class="red">poderes emocionais</span> você mais deseja dominar?</h1>
         <form id="strategyForm" action="quiz16.html" method="get">
             <div class="checkbox-group">
                 <div class="checkbox-option">
-                    <input type="checkbox" id="option1" name="strategy" value="apegar">
-                    <label for="option1">Como fazer ele se apegar a mim</label>
+                    <input type="checkbox" id="option1" name="strategy" value="obsessao">
+                    <label for="option1">Fazer ele pensar em mim até dormindo com outra</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="option2" name="strategy" value="falta">
-                    <label for="option2">Como fazer ele sentir minha falta</label>
+                    <input type="checkbox" id="option2" name="strategy" value="vicio">
+                    <label for="option2">Transformar meu toque no novo vício dele</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="option3" name="strategy" value="mente">
-                    <label for="option3">Como ler a mente dele para controlar ele</label>
+                    <input type="checkbox" id="option3" name="strategy" value="controle">
+                    <label for="option3">Controlar o emocional dele sem ele perceber</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="option4" name="strategy" value="apaixonar">
-                    <label for="option4">Como fazer ele se apaixonar profundamente por mim</label>
+                    <input type="checkbox" id="option4" name="strategy" value="culpa">
+                    <label for="option4">Fazer ele sentir culpa por me perder... e implorar</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="option5" name="strategy" value="proativo">
-                    <label for="option5">Como fazer ele ser mais proativo</label>
+                    <input type="checkbox" id="option5" name="strategy" value="manipula">
+                    <label for="option5">Conseguir o que quero mesmo quando ele diz não</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option6" name="strategy" value="nenhuma">
-                    <label for="option6">Nenhuma das opções acima</label>
+                    <label for="option6">Prefiro continuar sendo ignorada 🙂</label>
                 </div>
             </div>
-            <button type="submit" class="continue-btn">Continuar</button>
+            <button type="submit" class="continue-btn">Liberar as estratégias agora</button>
         </form>
     </div>
 
@@ -148,7 +162,7 @@
             option.addEventListener('click', function (e) {
                 const checkbox = this.querySelector('input[type="checkbox"]');
                 checkbox.checked = !checkbox.checked;
-                e.preventDefault(); // evita duplo clique em label
+                e.preventDefault();
             });
         });
     </script>

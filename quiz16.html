@@ -19,8 +19,9 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            background-color: white;
+            background-color: #1a1a1a;
             -webkit-text-size-adjust: 100%;
+            color: white;
         }
 
         .container {
@@ -40,9 +41,10 @@
         }
 
         .highlight {
-            color: red;
+            color: #ff0066;
             font-weight: bold;
             display: inline-block;
+            text-shadow: 0 0 5px rgba(255, 0, 102, 0.5);
         }
 
         .button-container {
@@ -55,26 +57,33 @@
             display: block;
             width: 100%;
             padding: 18px;
-            margin: 12px 0;
-            border: 2px solid #000;
+            margin: 15px 0;
+            border: 2px solid #ff0066;
             border-radius: 12px;
-            background-color: white;
-            color: black;
+            background-color: transparent;
+            color: white;
             font-size: clamp(16px, 4.5vw, 18px);
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
         }
 
         .button:hover, .button:active {
-            background-color: #000;
-            color: white;
+            background-color: #ff0066;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
         }
         
-        .red {
-            color: red;
-            font-weight: bold;
+        .teaser {
+            text-align: center;
+            margin-top: 25px;
+            font-style: italic;
+            color: #ff0066;
+            font-size: 16px;
+            text-shadow: 0 0 3px rgba(255, 0, 102, 0.3);
         }
         
         @media (max-width: 350px) {
@@ -98,8 +107,8 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -109,17 +118,21 @@
 <body>
     <div class="container">
         <div class="question">
-            O que você faria se existisse um <span class="red">método psicológico</span> comprovado para deixar ele completamente <span class="highlight">OBECEADO</span> em você?
+            E se existisse um código secreto que faz um homem sentir <span class="highlight">saudade, desejo e culpa por você...</span> <span class="highlight">ao mesmo tempo</span>?
         </div>
         
         <div class="button-container">
             <a href="quiz17.html" class="button">
-                Eu usaria imediatamente
+                Me dá agora. Nem quero saber como funciona.
             </a>
             
             <a href="quiz17.html" class="button">
-                Gostaria de entender como isso funciona antes
+                Eu preciso entender como isso funciona. Agora.
             </a>
+        </div>
+
+        <div class="teaser">
+            Cuidado... depois de aprender isso, nenhum homem vai mais te esquecer.
         </div>
     </div>
 </body>

@@ -12,59 +12,63 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            background-color: #1a1a1a;
         }
         .quiz-container {
-            background-color: #fff;
+            background-color: #2d2d2d;
             border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             text-align: left;
             width: 100%;
             max-width: 420px;
             padding: 30px;
+            border: 1px solid #ff0066;
         }
         .question {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.4;
             text-align: center;
-            color: #333;
+            color: #fff;
         }
         .options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 25px;
         }
         .option-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            background-color: #e6f0ff;
-            padding: 12px 15px;
+            background-color: #3d3d3d;
+            padding: 14px 18px;
             border-radius: 8px;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            border: 1px solid #333;
         }
         .option-item:hover {
-            background-color: #cce0ff;
+            background-color: #4d4d4d;
+            border-color: #ff0066;
         }
         .checkbox {
             width: 22px;
             height: 22px;
-            border: 2px solid #0066ff;
+            border: 2px solid #ff0066;
             border-radius: 4px;
             display: inline-block;
             position: relative;
             margin-left: 15px;
+            flex-shrink: 0;
         }
         .checkbox.checked::after {
             content: '';
             position: absolute;
             width: 12px;
             height: 12px;
-            background-color: #0066ff;
+            background-color: #ff0066;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -72,13 +76,14 @@
         }
         .option-text {
             font-size: 16px;
+            color: #fff;
         }
         .continue-button {
-            background-color: #0066ff;
+            background-color: #ff0066;
             color: white;
             border: none;
             border-radius: 30px;
-            padding: 15px 40px;
+            padding: 16px 40px;
             font-size: 20px;
             cursor: pointer;
             display: block;
@@ -86,22 +91,30 @@
             width: 100%;
             max-width: 300px;
             animation: pulse 1.5s infinite;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .red {
-            color: red;
+        .teaser {
+            text-align: center;
+            color: #ff0066;
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 16px;
+            text-shadow: 0 0 3px rgba(255, 0, 102, 0.3);
         }
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7);
+                box-shadow: 0 0 0 0 rgba(255, 0, 102, 0.7);
             }
             70% {
                 transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(0, 102, 255, 0);
+                box-shadow: 0 0 0 10px rgba(255, 0, 102, 0);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 102, 255, 0);
+                box-shadow: 0 0 0 0 rgba(255, 0, 102, 0);
             }
         }
     </style>
@@ -115,8 +128,8 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -126,35 +139,42 @@
 <body>
     <div class="quiz-container">
         <div class="question">
-            Quais dessas técnicas você <span class="red">já ouviu falar?</span>
+            Quais dessas <span style="color:#ff0066">armas psicológicas</span> você teria coragem de usar pra virar o jogo?
         </div>
         <div class="options">
             <label class="option-item">
-                <span class="option-text">Contato zero</span>
+                <span class="option-text">Implantar ciúmes sutis com outro homem</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Mantendo o mistério</span>
+                <span class="option-text">Sumir por 3 dias no auge do carinho</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Efeito nostalgia</span>
+                <span class="option-text">Criar uma versão misteriosa de si mesma</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Puxa e solta</span>
+                <span class="option-text">Fingir estar feliz com outro só pra ver a reação dele</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Ciúme extremo</span>
+                <span class="option-text">Usar elogios invertidos pra mexer com o ego dele</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Nenhuma das opções acima</span>
+                <span class="option-text">Todas. Eu quero ele implorando.</span>
                 <span class="checkbox"></span>
             </label>
         </div>
-        <button class="continue-button" onclick="window.location.href='quiz15.html'">Continuar</button>
+        
+        <div class="teaser">
+            Amor não prende homem. Trauma emocional, sim.
+        </div>
+        
+        <button class="continue-button" onclick="window.location.href='quiz15.html'">
+            Ver até onde isso pode ir...
+        </button>
     </div>
     <script>
         // Funcionalidade dos checkboxes

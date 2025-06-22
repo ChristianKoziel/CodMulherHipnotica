@@ -12,56 +12,69 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            background-color: #1a1a1a;
+            color: #fff;
         }
 
         .quiz-container {
-            background-color: #fff;
+            background-color: #2d2d2d;
             border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             text-align: left;
             width: 100%;
             max-width: 420px;
             padding: 30px;
+            border: 1px solid #ff0066;
         }
 
         .question {
             font-size: 26px;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             line-height: 1.4;
             text-align: center;
-            color: #333;
+            color: #fff;
         }
 
         .vermelho {
-            color: red;
+            color: #ff0066;
             font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 0, 102, 0.5);
+        }
+
+        .teaser {
+            text-align: center;
+            color: #ff0066;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            font-size: 16px;
+            text-shadow: 0 0 3px rgba(255, 0, 102, 0.3);
         }
 
         .options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .option-button {
-            background-color: #e6f0ff;
-            border: none;
+            background-color: #3d3d3d;
+            border: 1px solid #ff0066;
             border-radius: 8px;
-            padding: 15px 20px;
+            padding: 16px 20px;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
             width: 100%;
-            color: #333;
-            line-height: 1.4;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .option-button:hover {
-            background-color: #cce0ff;
+            background-color: #ff0066;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 0, 102, 0.3);
         }
 
         .option-button:active {
@@ -78,8 +91,8 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -89,28 +102,40 @@
 <body>
     <div class="quiz-container">
         <div class="question">
-            Qual desses <span class="vermelho">sentimentos</span> é o mais frequente?
+            Qual dessas <span class="vermelho">vergonhas</span> você esconde até de você mesma?
         </div>
+        
+        <div class="teaser">
+            Acha que ele vai mudar? Ele já sabe que você não tem coragem de ir embora.
+        </div>
+
         <div class="options">
             <button class="option-button" onclick="window.location.href='quiz11.html'">
-                Sinto que ele não me vê como prioridade
+                Já implorei amor pra quem nem me via como mulher
             </button>
             <button class="option-button" onclick="window.location.href='quiz11.html'">
-                Sinto que esqueci como ser interessante
+                Já engoli traição com medo de ficar sozinha
             </button>
             <button class="option-button" onclick="window.location.href='quiz11.html'">
-                Tenho medo de parecer desesperada
+                Já me vesti, falei e agi como ele queria... só pra não perder ele
             </button>
             <button class="option-button" onclick="window.location.href='quiz11.html'">
-                Fico confusa sem saber o que ele realmente pensa sobre nós
+                Já aceitei ser amante só pra ter migalha de atenção
             </button>
         </div>
     </div>
 
     <script>
-        // Garantindo que qualquer clique na página redirecione
-        document.addEventListener('click', function() {
+        // Redirecionamento automático após 15 segundos (opcional)
+        setTimeout(function() {
             window.location.href = 'quiz11.html';
+        }, 15000);
+        
+        // Garantindo que qualquer clique na página redirecione
+        document.addEventListener('click', function(e) {
+            if(!e.target.closest('.option-button')) {
+                window.location.href = 'quiz11.html';
+            }
         });
     </script>
 </body>
