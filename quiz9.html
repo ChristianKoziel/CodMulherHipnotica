@@ -128,13 +128,6 @@
         .option-button:hover::before {
             left: 100%;
         }
-
-        .timer {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: var(--champagne);
-            font-style: italic;
-        }
     </style>
     <!-- Código do Pixel do Facebook -->
     <script>
@@ -178,24 +171,6 @@
                 QUANDO ELE ME FAZ SENTIR QUE TÔ EXAGERANDO... MESMO QUANDO TÔ CERTA
             </button>
         </div>
-
-        <div class="timer">SEU DIAGNÓSTICO COMPLETO SERÁ REVELADO EM <span id="countdown">15</span> SEGUNDOS...</div>
     </div>
-
-    <script>
-        // Contador regressivo
-        let timeLeft = 15;
-        const countdownElement = document.getElementById('countdown');
-        
-        const timer = setInterval(() => {
-            timeLeft--;
-            countdownElement.textContent = timeLeft;
-            
-            if(timeLeft <= 0) {
-                clearInterval(timer);
-                window.location.href = 'quiz10.html';
-            }
-        }, 1000);
-    </script>
 </body>
 </html>

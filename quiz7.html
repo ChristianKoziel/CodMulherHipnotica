@@ -16,7 +16,7 @@
       --champagne: #D8B9C3;
       --ouro-maldito: #FFD700;
     }
-    
+
     body {
       margin: 0;
       padding: 0;
@@ -200,80 +200,38 @@
       border-left: 3px solid var(--rosa-trauma);
     }
 
-    /* Efeito de seleção */
     .option-button.selected {
       background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
       border-color: var(--ouro-maldito);
       box-shadow: 0 0 15px var(--rosa-trauma);
     }
   </style>
-  <!-- Código do Pixel do Facebook -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '838634731699598');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" 
-    src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
-  </noscript>
 </head>
 <body>
   <div class="quiz-container">
     <div class="progress">🔮 DESBLOQUEANDO SEU PERFIL EMOCIONAL COMPLETO</div>
-    
     <div class="question">QUAL DESSAS <span>FERIDAS</span> AINDA TE MACHUCA QUANDO DEITA A CABEÇA NO TRAVESSEIRO?</div>
-    
     <div class="teaser">ELE SABE EXATAMENTE ONDE TE MACHUCAR... <br>E VOCÊ CONTINUA DEIXANDO.</div>
-    
     <div class="options">
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">😤</span> ELE SOME E VOLTA QUANDO QUER, E EU AINDA ACEITO
-      </button>
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">😭</span> JÁ ME TROCOU POR OUTRA E DIZ QUE FOI 'SEM QUERER'
-      </button>
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">👻</span> ME SINTO INVISÍVEL ATÉ QUANDO TÔ DO LADO DELE
-      </button>
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">🤥</span> ME IGNORA, MAS JURA QUE ME AMA
-      </button>
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">🔥</span> SÓ ME PROCURA QUANDO TÁ CARENTE OU COM TESÃO
-      </button>
-      <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">💔</span> FAZ EU ME SENTIR CULPADA ATÉ PELAS MERDAS QUE ELE FAZ
-      </button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">😤</span> ELE SOME E VOLTA QUANDO QUER, E EU AINDA ACEITO</button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">😭</span> JÁ ME TROCOU POR OUTRA E DIZ QUE FOI 'SEM QUERER'</button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">👻</span> ME SINTO INVISÍVEL ATÉ QUANDO TÔ DO LADO DELE</button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">🤥</span> ME IGNORA, MAS JURA QUE ME AMA</button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">🔥</span> SÓ ME PROCURA QUANDO TÁ CARENTE OU COM TESÃO</button>
+      <button class="option-button" onclick="selectOption(this)"><span class="emoji">💔</span> FAZ EU ME SENTIR CULPADA ATÉ PELAS MERDAS QUE ELE FAZ</button>
     </div>
-
-    <button class="continue-button" onclick="goToNext()">REVELAR MEU DIAGNÓSTICO</button>
-
+    <button class="continue-button" onclick="goToNext()">CONTINUAR DESBLOQUEIO</button>
     <div class="footer">SEU MAPA EMOCIONAL ESTÁ 92% COMPLETO... O RESTO VOCÊ NÃO ESTÁ PREPARADA PARA VER.</div>
   </div>
-
   <script>
     function selectOption(button) {
-      // Remove a seleção de todos os botões
-      document.querySelectorAll('.option-button').forEach(btn => {
-        btn.classList.remove('selected');
-      });
-      
-      // Destaca o botão selecionado
-      button.classList.add('selected');
+      button.classList.toggle('selected');
     }
 
     function goToNext() {
-      const selected = document.querySelector('.option-button.selected');
-      if (!selected) {
-        alert('Por favor, selecione uma opção antes de continuar');
+      const selected = document.querySelectorAll('.option-button.selected');
+      if (selected.length === 0) {
+        alert('Por favor, selecione pelo menos uma opção antes de continuar');
         return;
       }
       window.location.href = 'quiz8.html';

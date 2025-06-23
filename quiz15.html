@@ -3,7 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste grátis</title>
+    <title>MÉTODO OBSESSÃO - TESTE GRÁTIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* === PADRÃO BRUXARIA VISUAL === */
+        :root {
+            --roxo-venenoso: #1E0B26;
+            --preto-macabro: #0C0C0C;
+            --rosa-trauma: #FF3F81;
+            --vermelho-obsessivo: #E5003C;
+            --branco-sujo: #FAF1F4;
+            --champagne: #D8B9C3;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
+            background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
+            color: var(--branco-sujo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            border: 1px solid var(--rosa-trauma);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--rosa-trauma);
+            text-align: center;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: var(--vermelho-obsessivo);
+            text-decoration: underline;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 16px 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            background: rgba(30, 11, 38, 0.8);
+            border: 2px solid var(--rosa-trauma);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .checkbox-option:hover {
+            background: rgba(255, 63, 129, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(229, 0, 60, 0.3);
+            border-color: var(--vermelho-obsessivo);
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-option label {
+            font-size: 1rem;
+            color: var(--branco-sujo);
+            cursor: pointer;
+            padding-right: 35px;
+            position: relative;
+            line-height: 1.4;
+            text-transform: uppercase;
+            flex-grow: 1;
+        }
+
+        .checkbox-option label::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--rosa-trauma);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .checkbox-option input[type="checkbox"]:checked + label::after {
+            background-color: var(--vermelho-obsessivo);
+            border-color: var(--vermelho-obsessivo);
+        }
+
+        .checkbox-option input[type="checkbox"]:checked + label::before {
+            content: '✓';
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--branco-sujo);
+            z-index: 1;
+            font-size: 14px;
+        }
+
+        .continue-btn {
+            margin-top: 30px;
+            background: linear-gradient(to right, var(--rosa-trauma), var(--vermelho-obsessivo));
+            color: var(--branco-sujo);
+            border: none;
+            padding: 18px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(229, 0, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.6);
+        }
+
+        .continue-btn:active {
+            transform: translateY(0);
+        }
+
+        .continue-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .continue-btn:hover::before {
+            left: 100%;
+        }
+    </style>
+    <!-- Código do Pixel do Facebook -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,143 +196,42 @@
         fbq('init', '838634731699598');
         fbq('track', 'PageView');
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            width: 100%;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            background-color: #2d2d2d;
-            border: 1px solid #ff0066;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #fff;
-            text-align: center;
-            line-height: 1.4;
-        }
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .checkbox-option {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 14px;
-            border-radius: 8px;
-            transition: all 0.3s;
-            background-color: #3d3d3d;
-            border: 1px solid #333;
-        }
-        .checkbox-option:hover {
-            background-color: #4d4d4d;
-            border-color: #ff0066;
-        }
-        .checkbox-option input[type="checkbox"] {
-            display: none;
-        }
-        .checkbox-option label {
-            font-size: 16px;
-            color: #fff;
-            cursor: pointer;
-            padding-right: 35px;
-            position: relative;
-            line-height: 1.4;
-        }
-        .checkbox-option label::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ff0066;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        .checkbox-option input[type="checkbox"]:checked + label::after {
-            background-color: #ff0066;
-            border: 2px solid #ff0066;
-            box-shadow: inset 0 0 0 3px #2d2d2d;
-        }
-        .continue-btn {
-            margin-top: 30px;
-            background-color: #ff0066;
-            color: white;
-            border: none;
-            padding: 16px 30px;
-            border-radius: 30px;
-            font-size: 18px;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 0, 102, 0.3);
-        }
-        .continue-btn:hover {
-            background-color: #cc0052;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 0, 102, 0.4);
-        }
-        .red {
-            color: #ff0066;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(255, 0, 102, 0.5);
-        }
-    </style>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
+    </noscript>
 </head>
 <body>
     <div class="container">
-        <h1>Qual desses <span class="red">poderes emocionais</span> você mais deseja dominar?</h1>
+        <h1>QUAL DESSES <span>PODERES EMOCIONAIS</span> VOCÊ MAIS DESEJA DOMINAR?</h1>
         <form id="strategyForm" action="quiz16.html" method="get">
             <div class="checkbox-group">
                 <div class="checkbox-option">
                     <input type="checkbox" id="option1" name="strategy" value="obsessao">
-                    <label for="option1">Fazer ele pensar em mim até dormindo com outra</label>
+                    <label for="option1">FAZER ELE PENSAR EM MIM ATÉ DORMINDO COM OUTRA</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option2" name="strategy" value="vicio">
-                    <label for="option2">Transformar meu toque no novo vício dele</label>
+                    <label for="option2">TRANSFORMAR MEU TOQUE NO NOVO VÍCIO DELE</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option3" name="strategy" value="controle">
-                    <label for="option3">Controlar o emocional dele sem ele perceber</label>
+                    <label for="option3">CONTROLAR O EMOCIONAL DELE SEM ELE PERCEBER</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option4" name="strategy" value="culpa">
-                    <label for="option4">Fazer ele sentir culpa por me perder... e implorar</label>
+                    <label for="option4">FAZER ELE SENTIR CULPA POR ME PERDER... E IMPLORAR</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option5" name="strategy" value="manipula">
-                    <label for="option5">Conseguir o que quero mesmo quando ele diz não</label>
+                    <label for="option5">CONSEGUIR O QUE QUERO MESMO QUANDO ELE DIZ NÃO</label>
                 </div>
                 <div class="checkbox-option">
                     <input type="checkbox" id="option6" name="strategy" value="nenhuma">
-                    <label for="option6">Prefiro continuar sendo ignorada 🙂</label>
+                    <label for="option6">PREFIRO CONTINUAR SENDO IGNORADA 🙂</label>
                 </div>
             </div>
-            <button type="submit" class="continue-btn">Liberar as estratégias agora</button>
+            <button type="submit" class="continue-btn">LIBERAR AS ESTRATÉGIAS AGORA</button>
         </form>
     </div>
 

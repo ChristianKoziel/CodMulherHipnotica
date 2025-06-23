@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Teste grátis</title>
+    <title>MÉTODO OBSESSÃO - TESTE GRÁTIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* === PADRÃO BRUXARIA VISUAL === */
+        :root {
+            --roxo-venenoso: #1E0B26;
+            --preto-macabro: #0C0C0C;
+            --rosa-trauma: #FF3F81;
+            --vermelho-obsessivo: #E5003C;
+            --branco-sujo: #FAF1F4;
+            --champagne: #D8B9C3;
+        }
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,16 +23,17 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            background-color: #1a1a1a;
+            background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
             -webkit-text-size-adjust: 100%;
-            color: white;
+            color: var(--branco-sujo);
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
         }
 
         .container {
@@ -29,7 +41,27 @@
             width: 100%;
             text-align: center;
             margin-top: 20px;
-            padding: 0 15px;
+            padding: 20px;
+            background-color: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            border: 1px solid var(--rosa-trauma);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0.5;
         }
 
         .question {
@@ -38,13 +70,15 @@
             line-height: 1.4;
             padding: 0 10px;
             font-weight: bold;
+            color: var(--rosa-trauma);
+            text-transform: uppercase;
         }
 
         .highlight {
-            color: #ff0066;
+            color: var(--vermelho-obsessivo);
             font-weight: bold;
             display: inline-block;
-            text-shadow: 0 0 5px rgba(255, 0, 102, 0.5);
+            text-decoration: underline;
         }
 
         .button-container {
@@ -58,10 +92,10 @@
             width: 100%;
             padding: 18px;
             margin: 15px 0;
-            border: 2px solid #ff0066;
+            border: 2px solid var(--rosa-trauma);
             border-radius: 12px;
-            background-color: transparent;
-            color: white;
+            background-color: rgba(30, 11, 38, 0.8);
+            color: var(--branco-sujo);
             font-size: clamp(16px, 4.5vw, 18px);
             text-decoration: none;
             cursor: pointer;
@@ -69,21 +103,39 @@
             font-weight: bold;
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
         }
 
         .button:hover, .button:active {
-            background-color: #ff0066;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
+            background: rgba(255, 63, 129, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
+            border-color: var(--vermelho-obsessivo);
+        }
+        
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.5s;
+        }
+        
+        .button:hover::before {
+            left: 100%;
         }
         
         .teaser {
             text-align: center;
             margin-top: 25px;
             font-style: italic;
-            color: #ff0066;
+            color: var(--champagne);
             font-size: 16px;
-            text-shadow: 0 0 3px rgba(255, 0, 102, 0.3);
+            line-height: 1.5;
         }
         
         @media (max-width: 350px) {
@@ -118,21 +170,21 @@
 <body>
     <div class="container">
         <div class="question">
-            E se existisse um código secreto que faz um homem sentir <span class="highlight">saudade, desejo e culpa por você...</span> <span class="highlight">ao mesmo tempo</span>?
+            E SE EXISTISSE UM CÓDIGO SECRETO QUE FAZ UM HOMEM SENTIR <span class="highlight">SAUDADE, DESEJO E CULPA POR VOCÊ...</span> <span class="highlight">AO MESMO TEMPO</span>?
         </div>
         
         <div class="button-container">
             <a href="quiz17.html" class="button">
-                Me dá agora. Nem quero saber como funciona.
+                ME DÁ AGORA. NEM QUERO SABER COMO FUNCIONA.
             </a>
             
             <a href="quiz17.html" class="button">
-                Eu preciso entender como isso funciona. Agora.
+                EU PRECISO ENTENDER COMO ISSO FUNCIONA. AGORA.
             </a>
         </div>
 
         <div class="teaser">
-            Cuidado... depois de aprender isso, nenhum homem vai mais te esquecer.
+            CUIDADO... DEPOIS DE APRENDER ISSO, NENHUM HOMEM VAI MAIS TE ESQUECER.
         </div>
     </div>
 </body>
