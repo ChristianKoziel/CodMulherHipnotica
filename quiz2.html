@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Obsessão</title>
+    <title>MÉTODO OBSESSÃO - QUIZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial Black', Gadget, sans-serif;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ff1493 0%, #8b0000 100%);
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+            color: #FAF1F4;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
         }
 
         .quiz-container {
             text-align: center;
             width: 90%;
             max-width: 500px;
-            padding: 25px;
-            background-color: rgba(0,0,0,0.7);
-            border-radius: 15px;
-            border: 2px solid #ff1493;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            padding: 30px;
+            background-color: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            border: 1px solid rgba(255, 63, 129, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-container::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #1E0B26);
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0.5;
         }
 
         .question {
             font-weight: bold;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.7rem;
+            margin-bottom: 35px;
             line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF3F81;
         }
 
         .options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .option-button {
-            background: rgba(255,255,255,0.1);
-            border: 2px solid #ff1493;
+            background: rgba(30, 11, 38, 0.8);
+            border: 2px solid #FF3F81;
             border-radius: 50px;
-            padding: 15px 20px;
-            font-size: 1rem;
+            padding: 18px 25px;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            color: white;
+            color: #FAF1F4;
             text-align: left;
             position: relative;
             overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
         }
 
         .option-button:hover {
-            background: rgba(255,20,147,0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+            background: linear-gradient(to right, rgba(229, 0, 60, 0.5), rgba(255, 63, 129, 0.5));
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
+            border-color: #E5003C;
         }
 
         .option-button:active {
@@ -72,8 +95,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.6s;
         }
 
         .option-button:hover::before {
@@ -81,27 +104,45 @@
         }
 
         .red {
-            color: #ff1493;
+            color: #E5003C;
             text-decoration: underline;
+            font-weight: bold;
         }
 
         .progress {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            color: #ffcc00;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            color: #D8B9C3;
+            position: relative;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .progress::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF3F81, transparent);
         }
 
         .emoji {
-            font-size: 1.2rem;
-            margin-right: 8px;
+            font-size: 1.4rem;
+            margin-right: 12px;
             vertical-align: middle;
         }
 
         .subtext {
-            font-size: 0.9rem;
-            margin-top: 25px;
+            font-size: 0.95rem;
+            margin-top: 30px;
             font-style: italic;
-            color: #ffcc00;
+            color: #D8B9C3;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(216, 185, 195, 0.1);
+            border-left: 3px solid #FF3F81;
         }
     </style>
     <!-- Código do Pixel do Facebook -->
@@ -124,21 +165,21 @@
 </head>
 <body>
     <div class="quiz-container">
-        <div class="progress">⚡ Etapa 1/5 — Você tá a 4 cliques de virar esse jogo</div>
+        <div class="progress">⚡ VOCÊ TÁ A ALGUNS CLIQUES DE VIRAR ESSE JOGO</div>
         
         <div class="question">
-            Antes de começar… me diz uma coisa: <br><span class="red">Quantos anos de ilusão já rolaram?</span>
+            ANTES DE COMEÇAR… ME DIZ UMA COISA: <br><span class="red">QUANTOS ANOS DE ILUSÃO JÁ ROLARAM?</span>
         </div>
         
         <div class="options">
             <button class="option-button" onclick="redirectToQuiz()">
-                <span class="emoji">💔</span> 18 a 24
+                <span class="emoji">💔</span> 18 A 24
             </button>
             <button class="option-button" onclick="redirectToQuiz()">
-                <span class="emoji">🥲</span> 25 a 34
+                <span class="emoji">🥲</span> 25 A 34
             </button>
             <button class="option-button" onclick="redirectToQuiz()">
-                <span class="emoji">🧠</span> 35 a 44
+                <span class="emoji">🧠</span> 35 A 44
             </button>
             <button class="option-button" onclick="redirectToQuiz()">
                 <span class="emoji">💅</span> 45+
@@ -146,7 +187,7 @@
         </div>
 
         <div class="subtext">
-            Se até agora deu errado... esse quiz vai virar o jogo.
+            SE ATÉ AGORA DEU ERRADO... ESSE QUIZ VAI VIRAR O JOGO.
         </div>
     </div>
 

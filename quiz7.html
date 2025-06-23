@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Método Obsessão</title>
+  <title>MÉTODO OBSESSÃO - DIAGNÓSTICO FINAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
+    /* === PADRÃO BRUXARIA VISUAL === */
+    :root {
+      --roxo-venenoso: #1E0B26;
+      --preto-macabro: #0C0C0C;
+      --rosa-trauma: #FF3F81;
+      --vermelho-obsessivo: #E5003C;
+      --branco-sujo: #FAF1F4;
+      --champagne: #D8B9C3;
+      --ouro-maldito: #FFD700;
+    }
+    
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial Black', Gadget, sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #8b0000 100%);
-      color: #ffffff;
+      font-family: 'Poppins', 'Bebas Neue', sans-serif;
+      background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
+      color: var(--branco-sujo);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
     }
 
     .quiz-container {
@@ -23,25 +35,71 @@
       width: 90%;
       max-width: 500px;
       padding: 30px;
-      border-radius: 15px;
-      background-color: rgba(0,0,0,0.7);
-      border: 2px solid #ff1493;
-      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+      background-color: rgba(12, 12, 12, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                  0 0 0 1px rgba(255, 63, 129, 0.3);
+      border: 1px solid var(--rosa-trauma);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-container::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+      z-index: -1;
+      filter: blur(5px);
+      opacity: 0.5;
+    }
+
+    .progress {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: var(--ouro-maldito);
+      position: relative;
+      padding-bottom: 15px;
+      line-height: 1.5;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .progress::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--ouro-maldito), transparent);
     }
 
     .question {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: bold;
       margin-bottom: 25px;
       line-height: 1.4;
+      color: var(--rosa-trauma);
+      text-transform: uppercase;
+    }
+
+    .question span {
+      color: var(--vermelho-obsessivo);
+      text-decoration: underline;
+      display: inline;
     }
 
     .teaser {
-      font-size: 1rem;
-      color: #ffcc00;
+      font-size: 1.1rem;
+      color: var(--champagne);
       margin-bottom: 30px;
       line-height: 1.5;
       font-style: italic;
+      padding: 0 10px;
     }
 
     .options {
@@ -52,12 +110,12 @@
     }
 
     .option-button {
-      background: rgba(255,20,147,0.1);
-      color: #ffffff;
-      border: 2px solid #ff1493;
+      background: rgba(30, 11, 38, 0.8);
+      color: var(--branco-sujo);
+      border: 2px solid var(--rosa-trauma);
       border-radius: 50px;
-      padding: 15px 25px;
-      font-size: 1rem;
+      padding: 18px 25px;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: left;
@@ -65,12 +123,13 @@
       overflow: hidden;
       display: flex;
       align-items: center;
+      box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
     }
 
     .option-button:hover {
-      background: rgba(255,20,147,0.3);
+      background: linear-gradient(to right, rgba(229, 0, 60, 0.3), rgba(255, 63, 129, 0.3));
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+      box-shadow: 0 8px 15px rgba(229, 0, 60, 0.3);
     }
 
     .option-button:active {
@@ -78,60 +137,74 @@
     }
 
     .emoji {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-right: 15px;
-      min-width: 30px;
+      min-width: 40px;
       text-align: center;
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 0.9rem;
-      color: #ffcc00;
-    }
-
-    .progress {
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      color: #ffcc00;
+      filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
     }
 
     .continue-button {
-      background: linear-gradient(to right, #ff1493, #ff4500);
-      color: white;
+      background: linear-gradient(to right, var(--rosa-trauma), var(--vermelho-obsessivo));
+      color: var(--branco-sujo);
       border: none;
       border-radius: 50px;
-      padding: 15px 25px;
-      font-size: 1.2rem;
+      padding: 18px 25px;
+      font-size: 1.3rem;
       cursor: pointer;
       transition: all 0.3s ease;
       width: 100%;
       margin-top: 20px;
       font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-      box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 20px rgba(229, 0, 60, 0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
     .continue-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255,20,147,0.6);
-      background: linear-gradient(to right, #ff4500, #ff1493);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(229, 0, 60, 0.6);
+      background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
     }
 
     .continue-button:active {
       transform: scale(0.98);
     }
 
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-2px); }
-      50% { transform: translateX(2px); }
-      75% { transform: translateX(-2px); }
-      100% { transform: translateX(0); }
+    .continue-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+      z-index: -1;
     }
 
-    .continue-button:hover {
-      animation: shake 0.3s ease-in-out infinite;
+    .continue-button:hover::before {
+      left: 100%;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: var(--champagne);
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(216, 185, 195, 0.1);
+      border-left: 3px solid var(--rosa-trauma);
+    }
+
+    /* Efeito de seleção */
+    .option-button.selected {
+      background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
+      border-color: var(--ouro-maldito);
+      box-shadow: 0 0 15px var(--rosa-trauma);
     }
   </style>
   <!-- Código do Pixel do Facebook -->
@@ -154,52 +227,55 @@
 </head>
 <body>
   <div class="quiz-container">
-    <div class="progress">⚡ Última etapa — Preparando seu diagnóstico completo</div>
+    <div class="progress">🔮 DESBLOQUEANDO SEU PERFIL EMOCIONAL COMPLETO</div>
     
-    <div class="question">Qual dessas <span style="color:#ff1493">feridas</span> ainda te machuca quando deita a cabeça no travesseiro?</div>
+    <div class="question">QUAL DESSAS <span>FERIDAS</span> AINDA TE MACHUCA QUANDO DEITA A CABEÇA NO TRAVESSEIRO?</div>
     
-    <div class="teaser">A verdade é que ele sabe exatamente onde te machucar... <br>e você continua deixando.</div>
+    <div class="teaser">ELE SABE EXATAMENTE ONDE TE MACHUCAR... <br>E VOCÊ CONTINUA DEIXANDO.</div>
     
     <div class="options">
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">😤</span> Ele some e volta quando quer, e eu ainda aceito
+        <span class="emoji">😤</span> ELE SOME E VOLTA QUANDO QUER, E EU AINDA ACEITO
       </button>
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">😭</span> Já me trocou por outra e diz que foi 'sem querer'
+        <span class="emoji">😭</span> JÁ ME TROCOU POR OUTRA E DIZ QUE FOI 'SEM QUERER'
       </button>
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">👻</span> Me sinto invisível até quando tô do lado dele
+        <span class="emoji">👻</span> ME SINTO INVISÍVEL ATÉ QUANDO TÔ DO LADO DELE
       </button>
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">🤥</span> Me ignora, mas jura que me ama
+        <span class="emoji">🤥</span> ME IGNORA, MAS JURA QUE ME AMA
       </button>
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">🔥</span> Só me procura quando tá carente ou com tesão
+        <span class="emoji">🔥</span> SÓ ME PROCURA QUANDO TÁ CARENTE OU COM TESÃO
       </button>
       <button class="option-button" onclick="selectOption(this)">
-        <span class="emoji">💔</span> Faz eu me sentir culpada até pelas merdas que ele faz
+        <span class="emoji">💔</span> FAZ EU ME SENTIR CULPADA ATÉ PELAS MERDAS QUE ELE FAZ
       </button>
     </div>
 
-    <button class="continue-button" onclick="goToNext()">Ver se tem solução pra isso...</button>
+    <button class="continue-button" onclick="goToNext()">REVELAR MEU DIAGNÓSTICO</button>
 
-    <div class="footer">Faltam só 3 perguntas... e você vai descobrir o que NENHUMA amiga tem coragem de te dizer.</div>
+    <div class="footer">SEU MAPA EMOCIONAL ESTÁ 92% COMPLETO... O RESTO VOCÊ NÃO ESTÁ PREPARADA PARA VER.</div>
   </div>
 
   <script>
     function selectOption(button) {
       // Remove a seleção de todos os botões
       document.querySelectorAll('.option-button').forEach(btn => {
-        btn.style.background = 'rgba(255,20,147,0.1)';
-        btn.style.border = '2px solid #ff1493';
+        btn.classList.remove('selected');
       });
       
       // Destaca o botão selecionado
-      button.style.background = 'rgba(255,20,147,0.5)';
-      button.style.border = '2px solid #ffcc00';
+      button.classList.add('selected');
     }
 
     function goToNext() {
+      const selected = document.querySelector('.option-button.selected');
+      if (!selected) {
+        alert('Por favor, selecione uma opção antes de continuar');
+        return;
+      }
       window.location.href = 'quiz8.html';
     }
   </script>

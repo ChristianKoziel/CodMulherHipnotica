@@ -3,96 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste grátis</title>
+    <title>MÉTODO OBSESSÃO - TESTE GRÁTIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* === PADRÃO BRUXARIA VISUAL === */
+        :root {
+            --roxo-venenoso: #1E0B26;
+            --preto-macabro: #0C0C0C;
+            --rosa-trauma: #FF3F81;
+            --vermelho-obsessivo: #E5003C;
+            --branco-sujo: #FAF1F4;
+            --champagne: #D8B9C3;
+            --ouro-maldito: #FFD700;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
+            background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
+            color: var(--branco-sujo);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
         }
+
         .quiz-container {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            text-align: left;
-            width: 100%;
-            max-width: 420px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
             padding: 30px;
+            background-color: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            border: 1px solid var(--rosa-trauma);
+            position: relative;
+            overflow: hidden;
         }
+
+        .quiz-container::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0.5;
+        }
+
         .question {
-            font-size: 26px;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 30px;
             line-height: 1.4;
-            text-align: center;
-            color: #333;
+            color: var(--rosa-trauma);
+            text-transform: uppercase;
         }
-        .vermelho {
-            color: red;
+
+        .question span {
+            color: var(--vermelho-obsessivo);
+            text-decoration: underline;
         }
+
         .options {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-bottom: 30px;
         }
+
         .option-item {
             display: flex;
             align-items: center;
             cursor: pointer;
-            background-color: #e6f0ff;
-            padding: 16px 20px;
-            border-radius: 8px;
-            transition: background 0.3s;
+            background: rgba(30, 11, 38, 0.8);
+            padding: 18px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             gap: 15px;
+            border: 1px solid var(--rosa-trauma);
+            position: relative;
+            overflow: hidden;
         }
+
         .option-item:hover {
-            background-color: #cce0ff;
+            background: rgba(255, 63, 129, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(229, 0, 60, 0.3);
         }
+
         .checkbox {
             flex-shrink: 0;
             width: 22px;
             height: 22px;
-            border: 2px solid #0066ff;
+            border: 2px solid var(--rosa-trauma);
             border-radius: 50%;
             position: relative;
+            transition: all 0.3s ease;
         }
+
+        .checkbox.checked {
+            background: var(--rosa-trauma);
+            box-shadow: 0 0 10px var(--rosa-trauma);
+        }
+
         .checkbox.checked::after {
             content: '';
             position: absolute;
             width: 12px;
             height: 12px;
-            background-color: #0066ff;
+            background-color: var(--branco-sujo);
             border-radius: 50%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
         .option-text {
-            font-size: 16px;
+            font-size: 1.1rem;
             flex-grow: 1;
             text-align: left;
+            color: var(--champagne);
         }
+
         .continue-button {
-            background-color: #0066ff;
-            color: white;
+            background: linear-gradient(to right, var(--rosa-trauma), var(--vermelho-obsessivo));
+            color: var(--branco-sujo);
             border: none;
-            border-radius: 30px;
-            padding: 15px 40px;
-            font-size: 20px;
+            border-radius: 50px;
+            padding: 18px;
+            font-size: 1.3rem;
             cursor: pointer;
-            display: block;
-            margin: 20px auto 0;
+            transition: all 0.3s ease;
             width: 100%;
-            max-width: 300px;
-            transition: background 0.3s;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(229, 0, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
+
         .continue-button:hover {
-            background-color: #004ecb;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(229, 0, 60, 0.6);
+            background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
+        }
+
+        .continue-button:active {
+            transform: scale(0.98);
+        }
+
+        .continue-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .continue-button:hover::before {
+            left: 100%;
         }
     </style>
     <!-- Código do Pixel do Facebook -->
@@ -105,8 +188,8 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598'); // Substitua pelo seu ID do Pixel
-        fbq('track', 'PageView'); // Rastreia visualizações de página
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
@@ -116,35 +199,35 @@
 <body>
     <div class="quiz-container">
         <div class="question">
-            O que mais te faz sentir <span class="vermelho">FRACA</span> perto dele?
+            O QUE MAIS TE FAZ SENTIR <span>FRACA</span> PERTO DELE?
         </div>
         <div class="options">
             <label class="option-item">
-                <span class="option-text">Quando ele me ignora por dias e depois manda um "oi sumida"</span>
+                <span class="option-text">QUANDO ELE ME IGNORA POR DIAS E DEPOIS MANDA UM "OI SUMIDA"</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Quando ele finge que sente minha falta, só pra me comer</span>
+                <span class="option-text">QUANDO ELE FINGE QUE SENTE MINHA FALTA, SÓ PRA ME COMER</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Quando ele posta stories com outra e eu ainda respondo os dele</span>
+                <span class="option-text">QUANDO ELE POSTA STORIES COM OUTRA E EU AINDA RESPONDO OS DELE</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Quando ele diz que me ama, mas nunca prova</span>
+                <span class="option-text">QUANDO ELE DIZ QUE ME AMA, MAS NUNCA PROVA</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Quando eu prometo esquecer ele... e volto a correr atrás</span>
+                <span class="option-text">QUANDO EU PROMETO ESQUECER ELE... E VOLTO A CORRER ATRÁS</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
-                <span class="option-text">Quando ele diz "você é diferente", mas age igual com todas</span>
+                <span class="option-text">QUANDO ELE DIZ "VOCÊ É DIFERENTE", MAS AGE IGUAL COM TODAS</span>
                 <span class="checkbox"></span>
             </label>
         </div>
-        <button class="continue-button">Descobrir o que fazer com isso...</button>
+        <button class="continue-button">DESCOBRIR O QUE FAZER COM ISSO...</button>
     </div>
     <script>
         document.querySelectorAll('.option-item').forEach(item => {
@@ -153,7 +236,13 @@
                 checkbox.classList.toggle('checked');
             });
         });
+        
         document.querySelector('.continue-button').addEventListener('click', () => {
+            const selected = document.querySelector('.checkbox.checked');
+            if (!selected) {
+                alert('POR FAVOR, SELECIONE UMA OPÇÃO ANTES DE CONTINUAR');
+                return;
+            }
             window.location.href = 'quiz9.html';
         });
     </script>

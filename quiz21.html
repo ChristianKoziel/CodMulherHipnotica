@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÚLTIMO AVISO: Controle Total</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <title>ÚLTIMO AVISO: CONTROLE TOTAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
         body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a0a3a 100%);
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+            color: #FAF1F4;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            letter-spacing: 0.5px;
         }
-
         .container {
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(12, 12, 12, 0.85);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
-            max-width: 600px;
+            box-shadow: 0 0 30px rgba(255, 63, 129, 0.5);
+            max-width: 650px;
             width: 100%;
-            border: 1px solid #ff00ff;
+            border: 1px solid #FF3F81;
             position: relative;
             overflow: hidden;
         }
-
         .container::before {
             content: "";
             position: absolute;
@@ -37,104 +42,157 @@
             left: -10px;
             right: -10px;
             bottom: -10px;
-            border: 2px solid #00ffff;
-            border-radius: 15px;
-            animation: borderPulse 4s infinite;
-            pointer-events: none;
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700, #FF3F81);
+            background-size: 400% 400%;
             z-index: -1;
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: gradientGlow 8s ease infinite;
         }
-
-        @keyframes borderPulse {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-            100% { opacity: 0.3; }
+        @keyframes gradientGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
         h1 {
-            font-size: 28px;
-            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: #FFD700;
             text-align: center;
             margin-top: 0;
             margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            text-shadow: 0 0 10px rgba(229, 0, 60, 0.7);
+            line-height: 1.3;
+            letter-spacing: 1.5px;
         }
-
+        h1 span {
+            color: #FF3F81;
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.7);
+        }
         ul {
             list-style-type: none;
             padding: 0;
-            margin: 25px 0;
+            margin: 30px 0;
         }
-
         ul li {
-            background-color: rgba(255, 0, 255, 0.1);
-            margin: 12px 0;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #00ffff;
+            background: rgba(30, 11, 38, 0.7);
+            margin: 15px 0;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 4px solid #FF3F81;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-
+        ul li::before {
+            content: "✓";
+            color: #FFD700;
+            font-weight: bold;
+            margin-right: 10px;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
         ul li:hover {
-            background-color: rgba(255, 0, 255, 0.2);
-            transform: translateX(5px);
+            background: rgba(255, 63, 129, 0.15);
+            transform: translateX(8px);
+            box-shadow: 0 6px 15px rgba(255, 63, 129, 0.4);
         }
-
         .button {
             display: block;
             width: 100%;
-            padding: 20px;
-            background: linear-gradient(45deg, #ff00ff 0%, #00ffff 100%);
-            color: #000;
+            padding: 22px;
+            background: linear-gradient(45deg, #FF3F81 0%, #E5003C 100%);
+            color: #FAF1F4;
             text-align: center;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+            margin-top: 35px;
+            box-shadow: 0 4px 20px rgba(255, 63, 129, 0.6);
             transition: all 0.3s ease;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-
+        .button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
         .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(255, 0, 255, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 7px 25px rgba(229, 0, 60, 0.8);
         }
-
+        .button:hover::before {
+            left: 100%;
+        }
         .warning {
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
-            margin-top: 15px;
-            color: #ff0000;
-            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+            margin-top: 20px;
+            color: #E5003C;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
             animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
-        .highlight {
-            color: #00ffff;
             font-weight: bold;
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
         }
-
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+        }
+        .underline {
+            text-decoration: underline;
+            text-shadow: 0 0 8px rgba(255, 63, 129, 0.5);
+            color: #FF3F81;
+            display: inline-block;
+            margin: 15px 0;
+        }
+        p {
+            color: #D8B9C3;
+            text-align: center;
+            margin: 15px 0;
+            text-transform: none;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
         @media (max-width: 480px) {
             .container {
-                padding: 20px;
+                padding: 20px 15px;
             }
             
             h1 {
-                font-size: 22px;
+                font-size: 24px;
             }
             
             .button {
-                padding: 16px;
+                padding: 18px;
                 font-size: 18px;
+            }
+            
+            ul li {
+                padding: 15px;
+                font-size: 15px;
             }
         }
     </style>
@@ -158,32 +216,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>O <span style="color: #ff00ff;">PRÓXIMO PASSO</span> É SÓ PRA QUEM QUER O CONTROLE DA PORRA TODA:</h1>
+        <h1>O <span>PRÓXIMO PASSO</span> É SÓ PRA QUEM QUER O CONTROLE DA PORRA TODA:</h1>
         
-        <p style="font-weight: bold; text-align: center; text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);">
-            Essa é a última escolha antes de continuar sendo ignorada por homem que nem te ama...
-        </p>
+        <p class="underline">ESSA É A ÚLTIMA ESCOLHA ANTES DE CONTINUAR SENDO IGNORADA POR HOMEM QUE NEM TE AMA...</p>
         
         <ul>
-            <li>✅ Fazer ele pensar em você até enquanto transa com outra</li>
-            <li>✅ Virar a mulher que ele corre atrás sem entender o porquê</li>
-            <li>✅ Fazer ele sentir sua falta até no silêncio</li>
-            <li>✅ Controlar a mente dele como um fantoche emocional</li>
-            <li>✅ Parar de ser "opção" e virar a obsessão</li>
-            <li>✅ Acabar com a ansiedade de "ser esquecida"</li>
-            <li>✅ Saber exatamente como fazer ele investir em você sem pedir</li>
-            <li>✅ Ter ele no seu pé, te provando amor todo dia</li>
-            <li>✅ Ler o comportamento dele como se fosse legenda de filme</li>
-            <li>✅ Ativar os gatilhos de vício emocional e fazer ele implorar</li>
+            <li>Fazer ele pensar em você até enquanto transa com outra</li>
+            <li>Virar a mulher que ele corre atrás sem entender o porquê</li>
+            <li>Fazer ele sentir sua falta até no silêncio</li>
+            <li>Controlar a mente dele como um fantoche emocional</li>
+            <li>Parar de ser "opção" e virar a obsessão</li>
+            <li>Acabar com a ansiedade de "ser esquecida"</li>
+            <li>Saber exatamente como fazer ele investir em você sem pedir</li>
+            <li>Ter ele no seu pé, te provando amor todo dia</li>
+            <li>Ler o comportamento dele como se fosse legenda de filme</li>
+            <li>Ativar os gatilhos de vício emocional e fazer ele implorar</li>
         </ul>
         
-        <p style="color: #ff00ff; text-decoration: underline; font-weight: bold; text-align: center; text-shadow: 0 0 5px rgba(255, 0, 255, 0.3);">
-            Você tá pronta pra virar o jogo, ou vai continuar esperando mensagem que não chega?
-        </p>
+        <p class="underline">VOCÊ TÁ PRONTA PRA VIRAR O JOGO, OU VAI CONTINUAR ESPERANDO MENSAGEM QUE NÃO CHEGA?</p>
         
-        <button class="button" onclick="location.href='mulherhipnotica.html'">SIM, EU QUERO ENTRAR NA MENTE DELE</button>
+        <button class="button" onclick="window.location.href='mulherhipnotica.html'">SIM, EU QUERO ENTRAR NA MENTE DELE 👁️🔥</button>
         
-        <p class="warning">⚠️ Esse é o último passo antes do acesso. Fechou aqui, perdeu.</p>
+        <p class="warning">⚠️ ESSE É O ÚLTIMO PASSO ANTES DO ACESSO. FECHOU AQUI, PERDEU.</p>
     </div>
 </body>
 </html>

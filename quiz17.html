@@ -7,22 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', Arial, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
+        
         body {
-            background: linear-gradient(135deg, #f0f4f8 0%, #e8f2ff 100%);
+            background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%);
             padding: 0;
-            color: #333;
+            color: #FAF1F4;
             line-height: 1.6;
             -webkit-text-size-adjust: 100%;
             overflow-x: hidden;
+            font-family: 'Poppins', Arial, sans-serif;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 63, 129, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(229, 0, 60, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
         
         /* Tela de Loading */
@@ -32,46 +48,55 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
+        
         .loading-text {
-            font-size: clamp(18px, 5vw, 24px);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-size: clamp(20px, 5vw, 28px);
             margin-bottom: 25px;
-            color: white;
-            font-weight: 700;
+            color: #FAF1F4;
+            font-weight: 400;
             text-align: center;
             padding: 0 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
+            letter-spacing: 2px;
+            animation: glitchText 2s infinite;
         }
+        
         .progress-container {
             position: relative;
             width: 85%;
             max-width: 350px;
             margin-bottom: 8px;
         }
+        
         .progress-bar {
             width: 100%;
-            height: 14px;
-            background-color: rgba(255,255,255,0.2);
+            height: 16px;
+            background: rgba(12, 12, 12, 0.8);
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 63, 129, 0.3);
+            border: 1px solid rgba(255, 63, 129, 0.2);
         }
+        
         .progress {
             width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f);
+            background: linear-gradient(90deg, #FF3F81, #E5003C, #FFD700);
             background-size: 200% 100%;
             animation: progress 3s ease-out forwards, rainbow 2s infinite;
             position: relative;
             border-radius: 25px;
+            box-shadow: 0 0 15px rgba(255, 63, 129, 0.8);
         }
+        
         .progress::after {
             content: "";
             position: absolute;
@@ -79,34 +104,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.6) 50%,
-                transparent 100%
-            );
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
             transform: translateX(-100%);
             animation: shimmer 1.5s infinite;
         }
+        
         .progress-percentage {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
+            color: #FAF1F4;
+            font-weight: 900;
             font-size: 12px;
             z-index: 5;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
         }
+        
         .analyzing-text {
             margin-top: 15px;
-            color: #ffd93d;
+            color: #FFD700;
             font-size: clamp(14px, 4vw, 17px);
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
             animation: pulse 1.5s infinite alternate;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            letter-spacing: 1px;
         }
         
         /* Conteúdo Principal */
@@ -114,17 +137,20 @@
             width: 100%;
             max-width: 680px;
             margin: 15px auto;
-            background: white;
+            background: linear-gradient(135deg, rgba(30, 11, 38, 0.95) 0%, rgba(12, 12, 12, 0.9) 100%);
             padding: 25px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 0 30px rgba(255, 63, 129, 0.2), 
+                        inset 0 1px 0 rgba(255, 63, 129, 0.1);
             opacity: 0;
             transform: translateY(30px);
             animation: fadeIn 1s ease forwards;
             animation-delay: 3s;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 63, 129, 0.1);
         }
+        
         .container::before {
             content: '';
             position: absolute;
@@ -132,34 +158,41 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1);
+            background: linear-gradient(90deg, #FF3F81, #E5003C, #FFD700);
             background-size: 200% 100%;
             animation: rainbow 3s infinite;
+            box-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
         }
         
         .title {
             text-align: center;
             margin-bottom: 30px;
-            color: #1a365d;
-            font-size: clamp(20px, 6vw, 26px);
-            font-weight: 700;
-            line-height: 1.3;
+            color: #FAF1F4;
+            font-size: clamp(22px, 6vw, 30px);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.2;
             padding: 0 10px;
             position: relative;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.3);
         }
         
         /* Teaser aprimorado */
         .teaser-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF3F81 0%, #E5003C 100%);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px 20px;
             margin: 30px 0;
             text-align: center;
-            color: white;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            color: #FAF1F4;
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         .teaser-box::before {
             content: '';
             position: absolute;
@@ -170,41 +203,49 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: float 6s ease-in-out infinite;
         }
+        
         .teaser-text {
-            font-size: clamp(15px, 4.5vw, 18px);
-            font-weight: 600;
+            font-size: clamp(16px, 4.5vw, 19px);
+            font-weight: 700;
             line-height: 1.4;
             position: relative;
             z-index: 2;
-        }
-        .teaser-subtext {
-            font-size: clamp(13px, 4vw, 15px);
-            margin-top: 8px;
-            opacity: 0.9;
-            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        /* Container azul para o slider */
-        .blue-box {
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
+        .teaser-subtext {
+            font-size: clamp(14px, 4vw, 16px);
+            margin-top: 12px;
+            opacity: 0.95;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Container azul modificado para o tema */
+        .dark-box {
+            background: linear-gradient(135deg, rgba(255, 63, 129, 0.15) 0%, rgba(229, 0, 60, 0.1) 100%);
             border-radius: 15px;
             padding: 25px 20px;
             margin: 30px 0;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.2),
+                        inset 0 1px 0 rgba(255, 63, 129, 0.1);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 63, 129, 0.2);
         }
-        .blue-box::before {
+        
+        .dark-box::before {
             content: '';
             position: absolute;
             top: -2px;
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1);
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700);
             border-radius: 17px;
             z-index: -1;
             animation: rainbow 4s infinite;
+            opacity: 0.3;
         }
         
         .slider-container {
@@ -212,19 +253,23 @@
             position: relative;
             padding-bottom: 60px;
         }
+        
         .slider-label {
-            font-weight: bold;
+            font-weight: 800;
             margin-bottom: 20px;
             display: block;
-            font-size: clamp(15px, 4vw, 17px);
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: clamp(16px, 4vw, 18px);
+            color: #FAF1F4;
+            text-shadow: 0 0 8px rgba(255, 63, 129, 0.5);
             text-align: center;
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
+        
         .slider {
             width: 100%;
             height: 40px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(12, 12, 12, 0.6);
             border-radius: 20px;
             position: relative;
             display: flex;
@@ -234,8 +279,10 @@
             margin-bottom: 35px;
             overflow: visible;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 63, 129, 0.3);
+            box-shadow: 0 0 15px rgba(255, 63, 129, 0.2);
         }
+        
         .slider::after {
             content: '';
             position: absolute;
@@ -244,119 +291,142 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to right, 
-                rgba(255,255,255,0.1) 0%, 
-                rgba(255,255,255,0.05) 100%);
+                rgba(255, 63, 129, 0.1) 0%, 
+                rgba(229, 0, 60, 0.05) 100%);
             border-radius: 20px;
         }
+        
         .slider-position {
             position: relative;
             display: flex;
             width: 100%;
             justify-content: space-between;
         }
+        
         .slider-text {
-            color: white;
-            font-weight: 600;
+            color: #D8B9C3;
+            font-weight: 700;
             font-size: clamp(12px, 3.5vw, 14px);
             z-index: 2;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
             position: relative;
             text-align: center;
             flex: 1;
         }
+        
         .objetivo-label {
             position: absolute;
             top: -25px;
             right: 0;
-            color: #93c5fd;
-            font-weight: 600;
+            color: #FFD700;
+            font-weight: 700;
             font-size: clamp(11px, 3vw, 13px);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
             white-space: nowrap;
         }
+        
         .slider-marker {
             position: absolute;
             left: 28%;
             top: 55px;
-            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
-            padding: 10px 18px;
+            background: linear-gradient(135deg, #FF3F81, #E5003C);
+            padding: 12px 20px;
             border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 0 20px rgba(255, 63, 129, 0.5);
             font-size: clamp(12px, 3.5vw, 14px);
-            font-weight: 700;
+            font-weight: 800;
             transform: translateX(-50%);
             z-index: 5;
-            color: white;
+            color: #FAF1F4;
             animation: markerMove 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
             animation-delay: 3.5s;
             white-space: nowrap;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .section {
             margin: 30px 0;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 63, 129, 0.1);
             position: relative;
         }
+        
         .section-title {
-            color: #1a365d;
+            color: #FAF1F4;
             margin-bottom: 18px;
-            font-size: clamp(17px, 4.5vw, 20px);
-            font-weight: 700;
+            font-size: clamp(18px, 4.5vw, 22px);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-weight: 400;
             display: flex;
             align-items: center;
             line-height: 1.3;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(255, 63, 129, 0.3);
         }
+        
         .section-title i, .section-title span {
             margin-right: 12px;
-            color: #ef4444;
+            color: #FF3F81;
             font-size: clamp(20px, 5vw, 24px);
+            filter: drop-shadow(0 0 5px rgba(255, 63, 129, 0.5));
         }
+        
         .section p {
             margin-bottom: 15px;
             font-size: clamp(15px, 4vw, 17px);
             line-height: 1.6;
+            color: #D8B9C3;
+            font-weight: 500;
         }
+        
         .implication-list {
             list-style-type: none;
             margin: 20px 0;
-            background: linear-gradient(135deg, #fff5f5, #fef2f2);
-            padding: 20px;
+            background: linear-gradient(135deg, rgba(229, 0, 60, 0.1), rgba(255, 63, 129, 0.05));
+            padding: 25px 20px;
             border-radius: 12px;
-            border-left: 4px solid #ef4444;
+            border-left: 4px solid #E5003C;
+            box-shadow: 0 0 15px rgba(229, 0, 60, 0.2);
         }
+        
         .implication-list li {
             margin-bottom: 15px;
             position: relative;
             padding-left: 35px;
             font-size: clamp(14px, 4vw, 16px);
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 600;
+            color: #D8B9C3;
         }
+        
         .implication-list li:before {
-            content: "❌";
+            content: "💔";
             position: absolute;
             left: 0;
-            color: #ef4444;
             font-size: 18px;
             animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
         }
         
         .warning {
-            background: linear-gradient(135deg, #fff3cd, #ffe69c);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 63, 129, 0.1));
             padding: 25px 20px;
             border-radius: 15px;
             margin: 30px 0;
             text-align: center;
-            font-weight: 700;
-            color: #856404;
+            font-weight: 800;
+            color: #FFD700;
             font-size: clamp(16px, 4.5vw, 19px);
-            box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);
-            border: 2px solid #ffc107;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.5);
             position: relative;
             overflow: hidden;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
+        
         .warning::before {
             content: '';
             position: absolute;
@@ -364,52 +434,58 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             animation: warningShine 3s infinite;
         }
         
         /* Microcopy */
         .microcopy {
             text-align: center;
-            margin: 20px 0;
-            font-size: clamp(13px, 3.5vw, 15px);
-            color: #666;
-            font-weight: 500;
+            margin: 25px 0;
+            font-size: clamp(14px, 3.5vw, 16px);
+            color: #D8B9C3;
+            font-weight: 600;
             font-style: italic;
             animation: fadeInUp 1s ease forwards;
             animation-delay: 4s;
             opacity: 0;
+            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
         }
         
         .cta-button {
             display: block;
             width: 100%;
-            max-width: 320px;
-            margin: 30px auto 15px;
-            padding: 18px 25px;
-            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
-            color: white;
+            max-width: 350px;
+            margin: 35px auto 15px;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #FF3F81, #E5003C);
+            color: #FAF1F4;
             border: none;
             border-radius: 30px;
-            font-size: clamp(16px, 4.5vw, 19px);
-            font-weight: 700;
+            font-size: clamp(17px, 4.5vw, 20px);
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.5);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             animation: buttonPulse 2s infinite;
+            font-family: 'Poppins', Arial, sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
         .cta-button:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.5);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 35px rgba(255, 63, 129, 0.7);
         }
+        
         .cta-button:active {
-            transform: translateY(-2px) scale(0.98);
+            transform: translateY(-3px) scale(0.98);
         }
+        
         .cta-button::before {
             content: "";
             position: absolute;
@@ -417,9 +493,10 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.5s;
         }
+        
         .cta-button:hover::before {
             left: 100%;
         }
@@ -428,29 +505,36 @@
         .social-proof {
             text-align: center;
             margin: 25px 0 15px;
-            padding: 15px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 10px;
-            border-left: 3px solid #28a745;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 63, 129, 0.05));
+            border-radius: 12px;
+            border-left: 3px solid #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
         }
+        
         .social-proof p {
-            font-size: clamp(12px, 3.5vw, 14px);
-            color: #666;
+            font-size: clamp(13px, 3.5vw, 15px);
+            color: #D8B9C3;
             margin: 0;
-            font-weight: 500;
+            font-weight: 600;
         }
+        
         .social-proof .number {
-            color: #28a745;
-            font-weight: 700;
+            color: #FFD700;
+            font-weight: 800;
             animation: countUp 2s ease-out;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
         }
         
         .red {
-            color: #ef4444;
-            font-weight: 700;
+            color: #E5003C;
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.5);
         }
+        
         .fontnegrito {
-            font-weight: 600;
+            font-weight: 700;
+            color: #FAF1F4;
         }
         
         /* Container para flex no mobile */
@@ -467,26 +551,31 @@
             80% { width: 90%; }
             100% { width: 100%; }
         }
+        
         @keyframes rainbow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        
         @keyframes shimmer {
             100% { transform: translateX(100%); }
         }
+        
         @keyframes fadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+        
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+        
         @keyframes markerMove {
             0% { 
                 top: 85px;
@@ -499,26 +588,59 @@
                 transform: translateX(-50%) scale(1);
             }
         }
+        
         @keyframes pulse {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+            0%, 100% { 
+                opacity: 0.8; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.1);
+            }
         }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(180deg); }
         }
+        
         @keyframes warningShine {
             0% { left: -100%; }
             50% { left: 100%; }
             100% { left: 100%; }
         }
+        
         @keyframes buttonPulse {
-            0%, 100% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); }
-            50% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6), 0 0 0 4px rgba(255, 107, 107, 0.1); }
+            0%, 100% { 
+                box-shadow: 0 0 25px rgba(255, 63, 129, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255, 63, 129, 0.8), 
+                           0 0 0 6px rgba(255, 63, 129, 0.1);
+            }
         }
+        
         @keyframes countUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes glitchText {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
+            }
+            25% { 
+                text-shadow: 2px 0 0 rgba(255, 63, 129, 0.8), 
+                            -2px 0 0 rgba(229, 0, 60, 0.8);
+            }
+            50% { 
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            }
+            75% { 
+                text-shadow: -1px 0 0 rgba(255, 63, 129, 0.6), 
+                            1px 0 0 rgba(229, 0, 60, 0.6);
+            }
         }
         
         /* Responsividade aprimorada */
@@ -531,13 +653,13 @@
                 border-radius: 15px;
                 margin: 10px auto;
             }
-            .blue-box {
+            .dark-box {
                 padding: 20px 15px;
                 margin: 25px 0;
                 border-radius: 12px;
             }
             .teaser-box {
-                padding: 18px 15px;
+                padding: 20px 15px;
                 margin: 25px 0;
             }
             .slider {
@@ -546,7 +668,7 @@
                 border-radius: 18px;
             }
             .slider-marker {
-                padding: 8px 15px;
+                padding: 10px 16px;
                 font-size: 12px;
                 top: 50px;
             }
@@ -563,17 +685,17 @@
                 font-size: 15px;
             }
             .cta-button {
-                padding: 16px 20px;
+                padding: 18px 22px;
                 font-size: 16px;
-                max-width: 280px;
+                max-width: 300px;
                 margin: 25px auto 12px;
             }
             .implication-list {
-                padding: 15px;
+                padding: 18px 15px;
             }
             .social-proof {
                 margin: 20px 0 12px;
-                padding: 12px;
+                padding: 15px;
             }
         }
         
@@ -583,27 +705,27 @@
                 margin: 8px;
             }
             .cta-button {
-                padding: 15px 18px;
+                padding: 16px 20px;
                 font-size: 15px;
-                max-width: 260px;
+                max-width: 280px;
             }
-            .blue-box {
+            .dark-box {
                 padding: 18px 12px;
             }
             .teaser-box {
-                padding: 15px 12px;
+                padding: 18px 12px;
             }
         }
         
         @media (min-width: 768px) {
             .container {
+                padding: 40px 35px;
+            }
+            .dark-box {
                 padding: 35px 30px;
             }
-            .blue-box {
-                padding: 30px 25px;
-            }
             .teaser-box {
-                padding: 25px;
+                padding: 30px 25px;
             }
         }
     </style>
@@ -627,68 +749,69 @@
 </head>
 <body>
     <div class="page-container">
-        <!-- Tela de Loading -->
+        <!-- ... (loading screen anterior permanece o mesmo) ... -->
+         <!-- Tela de Loading -->
         <div id="loading-screen">
-            <div class="loading-text">🧠 Decodificando sua mente feminina...</div>
+            <div class="loading-text">🧠 DECODIFICANDO SUA MENTE FEMININA...</div>
             <div class="progress-container">
                 <div class="progress-bar">
                     <div class="progress"></div>
                 </div>
                 <div id="progress-percentage" class="progress-percentage">0%</div>
             </div>
-            <div class="analyzing-text">Detectando padrões de comportamento...</div>
+            <div class="analyzing-text">DETECTANDO PADRÕES DE COMPORTAMENTO...</div>
         </div>
         
         <!-- Conteúdo Principal -->
         <div class="container">
-            <h1 class="title">Aqui está uma <span class="red">análise inicial</span> das suas respostas</h1>
+            <h1 class="title">AQUI ESTÁ UMA <span class="red">ANÁLISE INICIAL</span> DAS SUAS RESPOSTAS</h1>
             
             <!-- Teaser Aprimorado -->
             <div class="teaser-box">
                 <div class="teaser-text">
-                    Algumas mulheres relatam que os resultados desse método são viciantes. Outras… simplesmente não conseguem mais viver sem aplicar.
+                    ALGUMAS MULHERES RELATAM QUE OS RESULTADOS DESSE MÉTODO SÃO VICIANTES. OUTRAS... SIMPLESMENTE NÃO CONSEGUEM MAIS VIVER SEM APLICAR.
                 </div>
                 <div class="teaser-subtext">
-                    O que você descobrirá pode mudar sua vida amorosa para sempre.
+                    O QUE VOCÊ DESCOBRIRÁ PODE MUDAR SUA VIDA AMOROSA PARA SEMPRE.
                 </div>
             </div>
             
-            <!-- Container Azul com Slider -->
-            <div class="blue-box">
+            <!-- Container com Slider -->
+            <div class="dark-box">
                 <div class="slider-container">
-                    <label class="slider-label">💫 Nível de Domínio da Psicologia Masculina</label>
+                    <label class="slider-label">💫 NÍVEL DE DOMÍNIO DA PSICOLOGIA MASCULINA</label>
                     <div class="slider">
                         <div class="slider-position">
-                            <span class="slider-text">Baixo</span>
-                            <span class="slider-text">Médio</span>
+                            <span class="slider-text">BAIXO</span>
+                            <span class="slider-text">MÉDIO</span>
                             <span class="slider-text">
-                                <span class="objetivo-label">🎯 Objetivo</span>
-                                Alto
+                                <span class="objetivo-label">🎯 OBJETIVO</span>
+                                ALTO
                             </span>
                         </div>
                     </div>
-                    <div class="slider-marker">✨ Você está aqui</div>
+                    <div class="slider-marker">✨ VOCÊ ESTÁ AQUI</div>
                 </div>
             </div>
             
             <div class="section">
-                <h2 class="section-title"><i class="fas fa-search"></i> Análise Descritiva</h2>
-                <p><span style="color: #ef4444;">💔</span>
-                    <span class="fontnegrito">Você é exatamente o tipo de mulher que os homens desperdiçam...</span> não por falta de valor, mas porque <span class="fontnegrito">sua mente ainda não desbloqueou os códigos secretos</span> de <span class="red">manipulação</span> que fazem ele te ver como uma mulher inesquecível e que faça ele ficar completamente obcecado por você.</p>
+                <h2 class="section-title"><i class="fas fa-search"></i> ANÁLISE DESCRITIVA</h2>
+                <p><span style="color: #E5003C;">💔</span>
+                    <span class="fontnegrito">VOCÊ É EXATAMENTE O TIPO DE MULHER QUE OS HOMENS DESPERDIÇAM...</span> NÃO POR FALTA DE VALOR, MAS PORQUE <span class="fontnegrito">SUA MENTE AINDA NÃO DESBLOQUEOU OS CÓDIGOS SECRETOS</span> DE <span class="red">MANIPULAÇÃO</span> QUE FAZEM ELE TE VER COMO UMA MULHER INESQUECÍVEL E QUE FAÇA ELE FICAR COMPLETAMENTE OBSECADO POR VOCÊ.</p>
             </div>
             
             <div class="section">
-                <h2 class="section-title"><span style="font-size: 24px; color: #4CAF50;">🔍</span>
-                    Padrão Detectado:</h2>
-                <p>Existem alguns padrões que provam que você está sendo <span class="fontnegrito">sabotada por armadilhas invisíveis...</span> padrões que indicam que você está sendo sabotada por "armadilhas invisíveis" que você não percebe...</p>
-                <span class="fontnegrito"><p>⚠️ O que isso significa para você?</p></span>
+                <h2 class="section-title"><span style="font-size: 24px; color: #FFD700;">🔍</span>
+                    PADRÃO DETECTADO:</h2>
+                <p>EXISTEM ALGUNS PADRÕES QUE PROVAM QUE VOCÊ ESTÁ SENDO <span class="fontnegrito">SABOTADA POR ARMADILHAS INVISÍVEIS...</span> PADRÕES QUE INDICAM QUE VOCÊ ESTÁ SENDO SABOTADA POR "ARMADILHAS INVISÍVEIS" QUE VOCÊ NÃO PERCEBE...</p>
+                <span class="fontnegrito"><p>⚠️ O QUE ISSO SIGNIFICA PARA VOCÊ?</p></span>
             </div>
             
             <div class="section">
                 <ul class="implication-list">
-                    <li>Você está fazendo exatamente o que faz um homem perder o interesse</li>
-                    <li>O homem já percebeu que pode ir embora, ainda que fique por perto</li>
-                    <li>Se você continuar assim, esse ciclo vai se repetir e você ficará no mesmo lugar</li>
+                    <li>VOCÊ ESTÁ FAZENDO EXATAMENTE O QUE FAZ UM HOMEM PERDER O INTERESSE</li>
+                    <li>O HOMEM JÁ PERCEBEU QUE PODE IR EMBORA, AINDA QUE FIQUE POR PERTO</li>
+                    <li>SE VOCÊ CONTINUAR ASSIM, ESSE CICLO VAI SE REPETIR E VOCÊ FICARÁ NO MESMO LUGAR</li>
                 </ul>
             </div>
             
@@ -698,16 +821,16 @@
             
             <!-- Microcopy -->
             <div class="microcopy">
-                👇 A escolha certa agora pode mudar tudo
+                👇 A ESCOLHA CERTA AGORA PODE MUDAR TUDO
             </div>
             
             <button class="cta-button" onclick="window.location.href='quiz18.html'">
-                🔥 Quero mudar isso hoje!
+                🔥 QUERO MUDAR ISSO HOJE!
             </button>
             
             <!-- Social Proof -->
             <div class="social-proof">
-                <p>✨ Mais de <span class="number">42.000</span> mulheres já começaram por aqui.</p>
+                <p>✨ MAIS DE <span class="number">42.000</span> MULHERES JÁ COMEÇARAM POR AQUI.</p>
             </div>
         </div>
     </div>
@@ -744,7 +867,7 @@
 
         // Efeito de hover melhorado
         ctaButton.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.transform = 'translateY(-8px) scale(1.03)';
         });
         
         ctaButton.addEventListener('mouseleave', function() {

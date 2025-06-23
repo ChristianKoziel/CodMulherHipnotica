@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Método Obsessão</title>
+  <title>MÉTODO OBSESSÃO - QUIZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
+    /* === PADRÃO BRUXARIA VISUAL === */
+    :root {
+      --roxo-venenoso: #1E0B26;
+      --preto-macabro: #0C0C0C;
+      --rosa-trauma: #FF3F81;
+      --vermelho-obsessivo: #E5003C;
+      --branco-sujo: #FAF1F4;
+      --champagne: #D8B9C3;
+    }
+    
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial Black', Gadget, sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #8b0000 100%);
-      color: #ffffff;
+      font-family: 'Poppins', 'Bebas Neue', sans-serif;
+      background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
+      color: var(--branco-sujo);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
     }
 
     .quiz-container {
@@ -23,41 +34,97 @@
       width: 90%;
       max-width: 500px;
       padding: 30px;
-      border-radius: 15px;
-      background-color: rgba(0,0,0,0.7);
-      border: 2px solid #ff1493;
-      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+      background-color: rgba(12, 12, 12, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                  0 0 0 1px rgba(255, 63, 129, 0.3);
+      border: 1px solid var(--rosa-trauma);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-container::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+      z-index: -1;
+      filter: blur(5px);
+      opacity: 0.5;
+    }
+
+    .progress {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: var(--rosa-trauma);
+      position: relative;
+      padding-bottom: 15px;
+      line-height: 1.5;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .progress span {
+      font-size: 0.9rem;
+      color: var(--champagne);
+      font-style: italic;
+      display: block;
+      margin-top: 8px;
+      text-transform: none;
+    }
+
+    .progress::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--rosa-trauma), transparent);
     }
 
     .question {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: bold;
       margin-bottom: 25px;
       line-height: 1.4;
+      color: var(--rosa-trauma);
+      text-transform: uppercase;
+    }
+
+    .question span {
+      color: var(--vermelho-obsessivo);
+      text-decoration: underline;
+      display: block;
+      margin-top: 10px;
     }
 
     .teaser {
       font-size: 1rem;
-      color: #ffcc00;
+      color: var(--champagne);
       margin-bottom: 30px;
       line-height: 1.5;
       font-style: italic;
+      padding: 0 10px;
     }
 
     .options {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
       margin-bottom: 25px;
     }
 
     .option-button {
-      background: rgba(255,20,147,0.1);
-      color: #ffffff;
-      border: 2px solid #ff1493;
+      background: rgba(30, 11, 38, 0.8);
+      color: var(--branco-sujo);
+      border: 2px solid var(--rosa-trauma);
       border-radius: 50px;
-      padding: 15px 25px;
-      font-size: 1rem;
+      padding: 18px 25px;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: left;
@@ -65,12 +132,14 @@
       overflow: hidden;
       display: flex;
       align-items: center;
+      box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
     }
 
     .option-button:hover {
-      background: rgba(255,20,147,0.3);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+      background: linear-gradient(to right, rgba(229, 0, 60, 0.5), rgba(255, 63, 129, 0.5));
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
+      border-color: var(--vermelho-obsessivo);
     }
 
     .option-button:active {
@@ -78,22 +147,21 @@
     }
 
     .emoji {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-right: 15px;
-      min-width: 30px;
+      min-width: 40px;
       text-align: center;
+      filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
     }
 
     .footer {
-      margin-top: 25px;
-      font-size: 0.9rem;
-      color: #ffcc00;
-    }
-
-    .progress {
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      color: #ffcc00;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: var(--champagne);
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(216, 185, 195, 0.1);
+      border-left: 3px solid var(--rosa-trauma);
     }
   </style>
   <!-- Código do Pixel do Facebook -->
@@ -116,25 +184,30 @@
 </head>
 <body>
   <div class="quiz-container">
-    <div class="progress">⚡ Última etapa — Preparando seu diagnóstico completo</div>
+    <div class="progress">
+      💔 ESSA PERGUNTA VAI DOER… MAS VAI DESTRAVAR A CHAVE QUE FAZ ELE SUMIR DEPOIS QUE TE USA.
+      <span>(NÃO É A ÚLTIMA ETAPA — MAS É UMA DAS QUE MAIS MACHUCA.)</span>
+    </div>
+
+    <div class="question">
+      POR QUE VOCÊ SEMPRE ENTREGA TUDO… <br><span>E RECEBE O MÍNIMO?</span>
+    </div>
     
-    <div class="question">Por que você sempre entrega tudo… <br>e recebe o mínimo?</div>
-    
-    <div class="teaser">A verdade é que ele nunca quis te amar... <br>só te ter. A última pergunta vai esfregar isso na sua cara.</div>
+    <div class="teaser">A VERDADE É QUE ELE NUNCA QUIS TE AMAR... <br>SÓ TE TER. A ÚLTIMA PERGUNTA VAI ESFREGAR ISSO NA SUA CARA.</div>
     
     <div class="options">
       <button class="option-button" onclick="goToNext()">
-        <span class="emoji">😩</span> Sempre. Dou tudo e recebo silêncio.
+        <span class="emoji">😩</span> SEMPRE. DOU TUDO E RECEBO SILÊNCIO.
       </button>
       <button class="option-button" onclick="goToNext()">
-        <span class="emoji">😬</span> Às vezes. Mas faço cara de "tô de boa".
+        <span class="emoji">😬</span> ÀS VEZES. MAS FAÇO CARA DE "TÔ DE BOA".
       </button>
       <button class="option-button" onclick="goToNext()">
-        <span class="emoji">🧘‍♀️</span> Quase nunca. Já me fechei pra não doer mais.
+        <span class="emoji">🧘‍♀️</span> QUASE NUNCA. JÁ ME FECHEI PRA NÃO DOER MAIS.
       </button>
     </div>
 
-    <div class="footer">Faltam só 4 perguntas... e você vai descobrir o que NENHUMA amiga tem coragem de te dizer.</div>
+    <div class="footer">VOCÊ VAI DESCOBRIR O QUE NENHUMA AMIGA TEM CORAGEM DE TE DIZER.</div>
   </div>
 
   <script>
