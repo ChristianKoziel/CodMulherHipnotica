@@ -145,6 +145,7 @@
             align-items: center;
             gap: 20px;
             margin: 30px 0;
+            flex-wrap: wrap;
         }
         .old-price {
             text-decoration: line-through;
@@ -156,6 +157,14 @@
             font-size: 36px;
             font-weight: bold;
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .price-justification {
+            background: rgba(229, 0, 60, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #E5003C;
+            text-align: center;
         }
         .testimonial {
             background: rgba(255, 63, 129, 0.1);
@@ -423,6 +432,8 @@
                 
                 document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
+                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
                 
                 if (timeLeft > 0) {
                     timeLeft--;
@@ -497,6 +508,12 @@
         
         <p>VOCÊ VAI APRENDER <span class="highlight">COMO CONTROLAR O INCONSCIENTE DELE</span> E SE TORNAR O <span class="blood-text">DESEJO PERMANENTE</span> QUE EXPLODE A ATENÇÃO E DOMINA COMPLETAMENTE SEUS PENSAMENTOS.</p>
         
+        <div class="price-justification">
+            <p><strong>VOCÊ NÃO TÁ PAGANDO POR UM CURSO...</strong></p>
+            <p><span class="highlight">TÁ PAGANDO PRA NUNCA MAIS SER FEITA DE TROUXA.</span></p>
+            <p class="blood-text">JÁ FOI HUMILHADA DE GRAÇA. PELO MENOS QUE PAGUEM POR ESSE FINAL.</p>
+        </div>
+        
         <h2>O QUE VOCÊ VAI RECEBER HOJE:</h2>
         
         <div class="bonus-container">
@@ -542,9 +559,11 @@
         </div>
         
         <div class="price-comparison">
-            <div class="old-price">O MÉTODO QUE MULHERES PAGAM R$497,00 EM CONSULTÓRIOS</div>
-            <div class="new-price">HOJE: R$27,90</div>
+            <div class="old-price">DE R$497,00</div>
+            <div class="new-price">POR APENAS R$47,90</div>
         </div>
+        
+        <p style="text-align: center; font-weight: bold; color: #FFD700;">MENOS DE R$0,50 POR DIA PELO PODER DE DECIDIR QUANDO ELE VAI TE PROCURAR</p>
         
         <!-- Prova Social -->
         <div class="testimonial">
@@ -610,27 +629,5 @@
         <!-- Frase de fechamento -->
         <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ ESTA PÁGINA FOI FEITA PARA DESAPARECER... SE VOCÊ SAIR AGORA, O MÉTODO SE AUTO-DESTRÓI. <br> SE CONTINUAR... VOCÊ VAI TER UM HOMEM IMPLORANDO POR SUA ATENÇÃO ANTES DO MÊS ACABAR.</p>
     </div>
-
-    <script>
-        // Atualiza o timer estático (para mobile)
-        document.addEventListener('DOMContentLoaded', function() {
-            let timeLeftStatic = 12 * 60;
-            
-            function updateStaticTimer() {
-                const minutes = Math.floor(timeLeftStatic / 60);
-                const seconds = timeLeftStatic % 60;
-                
-                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
-                
-                if (timeLeftStatic > 0) {
-                    timeLeftStatic--;
-                    setTimeout(updateStaticTimer, 1000);
-                }
-            }
-            
-            updateStaticTimer();
-        });
-    </script>
 </body>
 </html>
