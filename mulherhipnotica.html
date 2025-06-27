@@ -4,412 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÚLTIMA CHANCE: CÓDIGO DA MULHER HIPNÓTICA</title>
+    <link rel="stylesheet" href="src/style/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            text-transform: uppercase;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-            color: #FAF1F4;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            letter-spacing: 0.5px;
-        }
-        .ritual-container {
-            background: rgba(12, 12, 12, 0.85);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255, 63, 129, 0.5);
-            max-width: 650px;
-            width: 100%;
-            margin: 0 auto;
-            border: 1px solid #FF3F81;
-            position: relative;
-            overflow: hidden;
-        }
-        .ritual-container::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700, #FF3F81);
-            background-size: 400% 400%;
-            z-index: -1;
-            filter: blur(20px);
-            opacity: 0.3;
-            animation: gradientGlow 8s ease infinite;
-        }
-        @keyframes gradientGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        h1, h2, h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            text-shadow: 0 0 10px rgba(229, 0, 60, 0.7);
-            line-height: 1.3;
-            letter-spacing: 1.5px;
-        }
-        h1 {
-            font-size: 32px;
-            color: #FFD700;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        h1 span {
-            color: #FF3F81;
-            text-shadow: 0 0 10px rgba(255, 63, 129, 0.7);
-        }
-        h2 {
-            font-size: 28px;
-            color: #FF3F81;
-            margin: 25px 0 15px;
-        }
-        h3 {
-            font-size: 24px;
-            color: #FFD700;
-            margin: 20px 0 15px;
-        }
-        p {
-            margin-bottom: 15px;
-            text-transform: none;
-            color: #D8B9C3;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .highlight {
-            color: #FFD700;
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
-        }
-        .blood-text {
-            color: #E5003C;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.5);
-        }
-        .product-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #FF3F81;
-            box-shadow: 0 0 20px rgba(255, 63, 129, 0.5);
-            margin: 25px auto;
-            transition: transform 0.3s ease;
-        }
-        .product-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(255, 63, 129, 0.8);
-        }
-        .bonus-container {
-            text-align: left;
-            margin: 30px 0;
-        }
-        .bonus-item {
-            background: rgba(30, 11, 38, 0.7);
-            border-left: 4px solid #FF3F81;
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 0 8px 8px 0;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .bonus-item:hover {
-            background: rgba(255, 63, 129, 0.15);
-            transform: translateX(8px);
-            box-shadow: 0 6px 15px rgba(255, 63, 129, 0.4);
-        }
-        .bonus-title {
-            font-weight: bold;
-            color: #FFD700;
-            display: block;
-            margin-bottom: 8px;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-        }
-        .bonus-desc {
-            font-size: 15px;
-            color: #D8B9C3;
-            text-transform: none;
-        }
-        .price-comparison {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: #D8B9C3;
-            font-size: 20px;
-        }
-        .new-price {
-            color: #FFD700;
-            font-size: 36px;
-            font-weight: bold;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-        }
-        .price-justification {
-            background: rgba(229, 0, 60, 0.2);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #E5003C;
-            text-align: center;
-        }
-        .testimonial {
-            background: rgba(255, 63, 129, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-            border: 1px solid #FF3F81;
-            text-align: left;
-            box-shadow: 0 0 15px rgba(255, 63, 129, 0.3);
-        }
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 10px;
-            text-transform: none;
-        }
-        .testimonial-author {
-            font-weight: bold;
-            color: #FF3F81;
-            text-align: right;
-            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
-        }
-        .guarantee {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-            border: 1px solid #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-        .guarantee-seal {
-            max-width: 150px;
-            margin: 15px auto;
-        }
-        .faq-item {
-            text-align: left;
-            margin-bottom: 20px;
-            background: rgba(30, 11, 38, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #E5003C;
-        }
-        .faq-question {
-            color: #FF3F81;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .payment-badges {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 25px 0;
-        }
-        .payment-badge {
-            max-width: 80px;
-            height: auto;
-            filter: drop-shadow(0 0 5px rgba(255, 63, 129, 0.5));
-        }
-        /* Botão principal */
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 22px;
-            background: linear-gradient(45deg, #FF3F81 0%, #E5003C 100%);
-            color: #FAF1F4;
-            text-align: center;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 22px;
-            font-weight: bold;
-            margin: 30px auto 15px;
-            box-shadow: 0 4px 20px rgba(255, 63, 129, 0.6);
-            transition: all 0.3s ease;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255, 255, 0) 60%
-            );
-            transform: rotate(30deg);
-            z-index: -1;
-            transition: all 0.5s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 25px rgba(229, 0, 60, 0.8);
-        }
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        .button-subtext {
-            font-size: 14px;
-            color: #E5003C;
-            margin-top: 10px;
-            display: block;
-            font-weight: bold;
-            animation: pulse 1.5s infinite;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-        }
-        @keyframes pulse {
-            0% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.02); }
-            100% { opacity: 0.6; transform: scale(1); }
-        }
-        /* Timer de escassez */
-        .scarcity-timer {
-            background-color: #1E0B26;
-            color: #FF3F81;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 25px 0;
-            box-shadow: 0 0 20px rgba(255, 63, 129, 0.5);
-            border: 1px solid #E5003C;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            transform: translateY(-200px);
-            transition: transform 0.5s ease;
-            width: 180px;
-        }
-        .scarcity-timer.visible {
-            transform: translateY(0);
-        }
-        .timer-title {
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: #FFD700;
-            text-align: center;
-        }
-        .timer-digits {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        .timer-unit {
-            background-color: #E5003C;
-            padding: 8px;
-            border-radius: 5px;
-            min-width: 40px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #FAF1F4;
-            box-shadow: 0 0 10px rgba(229, 0, 60, 0.5);
-        }
-        .timer-label {
-            font-size: 10px;
-            margin-top: 3px;
-            color: #D8B9C3;
-        }
-        .last-warning {
-            color: #E5003C;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 25px 0;
-            text-shadow: 0 0 8px rgba(229, 0, 60, 0.3);
-            animation: pulse 1.5s infinite;
-        }
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .scarcity-timer {
-                width: 150px;
-                right: 10px;
-                top: 10px;
-                padding: 10px;
-            }
-            .timer-title {
-                font-size: 14px;
-                margin-bottom: 10px;
-            }
-            .timer-unit {
-                min-width: 30px;
-                font-size: 16px;
-                padding: 6px;
-            }
-            .timer-label {
-                font-size: 8px;
-            }
-        }
-        @media (max-width: 480px) {
-            .ritual-container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 22px;
-                line-height: 1.2;
-            }
-            h2 {
-                font-size: 20px;
-            }
-            h3 {
-                font-size: 18px;
-            }
-            p {
-                font-size: 14px;
-            }
-            .cta-button {
-                padding: 18px;
-                font-size: 18px;
-            }
-            .timer-unit {
-                min-width: 50px;
-                font-size: 20px;
-                padding: 10px;
-            }
-            .new-price {
-                font-size: 28px;
-            }
-            .old-price {
-                font-size: 16px;
-            }
-            .bonus-item {
-                padding: 15px;
-            }
-            .bonus-title {
-                font-size: 15px;
-            }
-            .bonus-desc {
-                font-size: 13px;
-            }
-            .last-warning {
-                font-size: 16px;
-            }
-            .scarcity-timer {
-                width: 130px;
-            }
-        }
-    </style>
-    <!-- Código do Pixel do Facebook -->
+
+    <!-- Código do Pixel do Facebook Otimizado -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -419,8 +17,37 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '838634731699598');
+        
+        // Inicializa o Pixel com seu ID
+        fbq('init', '1208952827491954');
+        
+        // Rastreia visualização de página
         fbq('track', 'PageView');
+        
+        // Rastreia visualização de conteúdo (para remarketing)
+        fbq('track', 'ViewContent', {
+            content_name: 'Código da Mulher Hipnótica',
+            content_category: 'Relacionamentos',
+            content_ids: ['produto_hipnotico'],
+            content_type: 'product',
+            value: 27.90,
+            currency: 'BRL'
+        });
+
+        // Função para rastrear clique no botão de compra
+        function trackPurchaseEvent() {
+            fbq('track', 'InitiateCheckout', {
+                content_name: 'Código da Mulher Hipnótica',
+                content_category: 'Relacionamentos',
+                content_ids: ['produto_hipnotico'],
+                content_type: 'product',
+                value: 27.90,
+                currency: 'BRL'
+            });
+            
+            // Redireciona para a página de pagamento
+            window.location.href = 'https://pay.cakto.com.br/n3zk9ef_389077';
+        }
 
         // Timer regressivo
         document.addEventListener('DOMContentLoaded', function() {
@@ -458,11 +85,17 @@
                     timerVisible = false;
                 }
             });
+            
+            // Adiciona eventos de clique aos botões CTA
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', trackPurchaseEvent);
+            });
         });
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" 
-        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
+        src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"/>
     </noscript>
 </head>
 <body>
@@ -483,7 +116,11 @@
     </div>
 
     <div class="ritual-container">
-        <h1>⚠️ <span>HOJE SOMENTE</span> — ÚLTIMA CHANCE DE ENTRAR NO CÓDIGO DA MULHER HIPNÓTICA + BÔNUS COM <span class="highlight">DESCONTO ABSURDO DE 80%!</span></h1>
+        <p style="font-weight:bold; font-size:18px; color:#FF3F81;">
+          📌 Você acabou de passar pelo Ritual da Verdade... Agora é a sua vez de controlar a história.
+        </p>
+        
+        <h1>⚠️ ÚLTIMA ETAPA: DOMINAR O INCONSCIENTE MASCULINO — HOJE APENAS COM 80% OFF</h1>
         
         <p style="font-weight: bold; font-size: 18px;">NUNCA FOI TÃO FÁCIL DOMINAR O INCONSCIENTE DELE — DECIDA AGORA.</p>
         
@@ -558,18 +195,21 @@
             </div>
         </div>
         
-        <div class="price-comparison">
-            <div class="old-price">DE R$497,00</div>
-            <div class="new-price">POR APENAS R$47,90</div>
-        </div>
+        <p style="font-style: italic; font-size: 17px; margin-top: 20px;">
+          Tu já implorou amor, já chorou por 'oi sumida'... Agora decide: <strong>vai ser feita de otária de novo ou vai controlar a mente dele?</strong>
+        </p>
         
-        <p style="text-align: center; font-weight: bold; color: #FFD700;">MENOS DE R$0,50 POR DIA PELO PODER DE DECIDIR QUANDO ELE VAI TE PROCURAR</p>
+        <div class="price-comparison">
+          <div class="old-price">DE R$497,00</div>
+          <div class="new-price">HOJE: <strong>R$27,90</strong></div>
+          <div class="price-subtext">Isso dá menos de R$0,30 por dia... pra fazer ele <strong>sentir saudade mesmo dormindo com outra</strong>.</div>
+        </div>
         
         <!-- Prova Social -->
-        <div class="testimonial">
-            <p class="testimonial-text">"Depois de 5 dias aplicando, ele me ligou chorando... achei que era tarde, mas foi meu maior triunfo. Agora sou eu quem decide quando e como vamos nos ver."</p>
-            <p class="testimonial-author">— LUÍZA, 28 ANOS (1 DAS +42.000 ALUNAS)</p>
-        </div>
+        <blockquote>
+            <p>"2 anos correndo atrás... Apliquei o método. 5 dias depois, ele chorou me pedindo outra chance. Hoje quem some sou eu."</p>
+            <footer>— <strong>LUÍZA, 28 ANOS</strong> — aluna do CÓDIGO HIPNÓTICO</footer>
+        </blockquote>
         
         <img src="src/img/luizadp1.png" alt="DEPOIMENTO REAL" class="product-image">
         
@@ -587,8 +227,13 @@
         <!-- Ameaça emocional -->
         <p class="last-warning">⚠️ SE VOCÊ FECHAR ESSA PÁGINA... ELE VAI CONTINUAR TE USANDO, TE IGNORANDO, E TRANSANDO COM OUTRA ENQUANTO VOCÊ REZA POR UM 'OI SUMIDA'.</p>
         
+        <p class="cta-warning">
+          ⚠️ Fechar essa página é aceitar continuar sendo esquecida.<br>
+          R$27,90 pra ele implorar, ou R$0 pra você chorar mais um mês. A escolha é tua.
+        </p>
+        
         <!-- Botão CTA Principal -->
-        <button class="cta-button" onclick="window.location.href='https://pay.cakto.com.br/n3zk9ef_389077'">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
+        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
         <span class="button-subtext">OFERTA TERMINA QUANDO O TIMER ZERAR — SEM ENROLAR.</span>
         
         <!-- Métodos de Pagamento -->
@@ -623,7 +268,7 @@
         </div>
         
         <!-- Último CTA -->
-        <button class="cta-button" onclick="window.location.href='https://pay.cakto.com.br/n3zk9ef_389077'">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
+        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
         <span class="button-subtext">⚠️ O BOTÃO PODE SUMIR A QUALQUER MOMENTO</span>
         
         <!-- Frase de fechamento -->
