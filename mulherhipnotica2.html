@@ -4,20 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÚLTIMA CHANCE: CÓDIGO DA MULHER HIPNÓTICA</title>
+    <link rel="stylesheet" href="src/style/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/style/styletelafabio.css" />
-    <!-- Código do Pixel do Facebook -->
+
+    <!-- Código do Pixel do Facebook Otimizado -->
     <script>
-        // !function(f,b,e,v,n,t,s)
-        // {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        // n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        // if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        // n.queue=[];t=b.createElement(e);t.async=!0;
-        // t.src=v;s=b.getElementsByTagName(e)[0];
-        // s.parentNode.insertBefore(t,s)}(window, document,'script',
-        // 'https://connect.facebook.net/en_US/fbevents.js');
-        // fbq('init', '1208952827491954');
-        // fbq('track', 'PageView');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // Inicializa o Pixel com seu ID
+        fbq('init', '1208952827491954');
+        
+        // Rastreia visualização de página
+        fbq('track', 'PageView');
+        
+        // Rastreia visualização de conteúdo (para remarketing)
+        fbq('track', 'ViewContent', {
+            content_name: 'Código da Mulher Hipnótica',
+            content_category: 'Relacionamentos',
+            content_ids: ['produto_hipnotico'],
+            content_type: 'product',
+            value: 27.90,
+            currency: 'BRL'
+        });
+
+        // Função para rastrear clique no botão de compra
+        function trackPurchaseEvent() {
+            fbq('track', 'InitiateCheckout', {
+                content_name: 'Código da Mulher Hipnótica',
+                content_category: 'Relacionamentos',
+                content_ids: ['produto_hipnotico'],
+                content_type: 'product',
+                value: 27.90,
+                currency: 'BRL'
+            });
+            
+            // Redireciona para a página de pagamento
+            window.location.href = 'https://pay.cakto.com.br/n3zk9ef_389077';
+        }
 
         // Timer regressivo
         document.addEventListener('DOMContentLoaded', function() {
@@ -29,6 +59,8 @@
                 
                 document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
+                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
                 
                 if (timeLeft > 0) {
                     timeLeft--;
@@ -53,12 +85,18 @@
                     timerVisible = false;
                 }
             });
+            
+            // Adiciona eventos de clique aos botões CTA
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', trackPurchaseEvent);
+            });
         });
     </script>
-    <!-- <noscript>
+    <noscript>
         <img height="1" width="1" style="display:none" 
         src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"/>
-    </noscript> -->
+    </noscript>
 </head>
 <body>
     <!-- Timer flutuante -->
@@ -78,7 +116,11 @@
     </div>
 
     <div class="ritual-container">
-        <h1>⚠️ <span>HOJE SOMENTE</span> — ÚLTIMA CHANCE DE ENTRAR NO CÓDIGO DA MULHER HIPNÓTICA + BÔNUS COM <span class="highlight">DESCONTO ABSURDO DE 80%!</span></h1>
+        <p style="font-weight:bold; font-size:18px; color:#FF3F81;">
+          📌 Você acabou de passar pelo Ritual da Verdade... Agora é a sua vez de controlar a história.
+        </p>
+        
+        <h1>⚠️ ÚLTIMA ETAPA: DOMINAR O INCONSCIENTE MASCULINO — HOJE APENAS COM 80% OFF</h1>
         
         <p style="font-weight: bold; font-size: 18px;">NUNCA FOI TÃO FÁCIL DOMINAR O INCONSCIENTE DELE — DECIDA AGORA.</p>
         
@@ -102,6 +144,12 @@
         <img src="src/img/cel.png" alt="CÓDIGO DA MULHER HIPNÓTICA" class="product-image">
         
         <p>VOCÊ VAI APRENDER <span class="highlight">COMO CONTROLAR O INCONSCIENTE DELE</span> E SE TORNAR O <span class="blood-text">DESEJO PERMANENTE</span> QUE EXPLODE A ATENÇÃO E DOMINA COMPLETAMENTE SEUS PENSAMENTOS.</p>
+        
+        <div class="price-justification">
+            <p><strong>VOCÊ NÃO TÁ PAGANDO POR UM CURSO...</strong></p>
+            <p><span class="highlight">TÁ PAGANDO PRA NUNCA MAIS SER FEITA DE TROUXA.</span></p>
+            <p class="blood-text">JÁ FOI HUMILHADA DE GRAÇA. PELO MENOS QUE PAGUEM POR ESSE FINAL.</p>
+        </div>
         
         <h2>O QUE VOCÊ VAI RECEBER HOJE:</h2>
         
@@ -147,16 +195,21 @@
             </div>
         </div>
         
+        <p style="font-style: italic; font-size: 17px; margin-top: 20px;">
+          Tu já implorou amor, já chorou por 'oi sumida'... Agora decide: <strong>vai ser feita de otária de novo ou vai controlar a mente dele?</strong>
+        </p>
+        
         <div class="price-comparison">
-            <div class="old-price">O MÉTODO QUE MULHERES PAGAM R$497,00 EM CONSULTÓRIOS</div>
-            <div class="new-price">HOJE: R$27,90</div>
+          <div class="old-price">DE R$497,00</div>
+          <div class="new-price">HOJE: <strong>R$27,90</strong></div>
+          <div class="price-subtext">Isso dá menos de R$0,30 por dia... pra fazer ele <strong>sentir saudade mesmo dormindo com outra</strong>.</div>
         </div>
         
         <!-- Prova Social -->
-        <div class="testimonial">
-            <p class="testimonial-text">"Depois de 5 dias aplicando, ele me ligou chorando... achei que era tarde, mas foi meu maior triunfo. Agora sou eu quem decide quando e como vamos nos ver."</p>
-            <p class="testimonial-author">— LUÍZA, 28 ANOS (1 DAS +42.000 ALUNAS)</p>
-        </div>
+        <blockquote>
+            <p>"2 anos correndo atrás... Apliquei o método. 5 dias depois, ele chorou me pedindo outra chance. Hoje quem some sou eu."</p>
+            <footer>— <strong>LUÍZA, 28 ANOS</strong> — aluna do CÓDIGO HIPNÓTICO</footer>
+        </blockquote>
         
         <img src="src/img/luizadp1.png" alt="DEPOIMENTO REAL" class="product-image">
         
@@ -174,8 +227,13 @@
         <!-- Ameaça emocional -->
         <p class="last-warning">⚠️ SE VOCÊ FECHAR ESSA PÁGINA... ELE VAI CONTINUAR TE USANDO, TE IGNORANDO, E TRANSANDO COM OUTRA ENQUANTO VOCÊ REZA POR UM 'OI SUMIDA'.</p>
         
+        <p class="cta-warning">
+          ⚠️ Fechar essa página é aceitar continuar sendo esquecida.<br>
+          R$27,90 pra ele implorar, ou R$0 pra você chorar mais um mês. A escolha é tua.
+        </p>
+        
         <!-- Botão CTA Principal -->
-        <button class="cta-button" onclick="window.location.href='https://pay.cakto.com.br/n3zk9ef_389077'">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
+        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
         <span class="button-subtext">OFERTA TERMINA QUANDO O TIMER ZERAR — SEM ENROLAR.</span>
         
         <!-- Métodos de Pagamento -->
@@ -210,33 +268,11 @@
         </div>
         
         <!-- Último CTA -->
-        <button class="cta-button" onclick="window.location.href='https://pay.cakto.com.br/n3zk9ef_389077'">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
+        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
         <span class="button-subtext">⚠️ O BOTÃO PODE SUMIR A QUALQUER MOMENTO</span>
         
         <!-- Frase de fechamento -->
         <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ ESTA PÁGINA FOI FEITA PARA DESAPARECER... SE VOCÊ SAIR AGORA, O MÉTODO SE AUTO-DESTRÓI. <br> SE CONTINUAR... VOCÊ VAI TER UM HOMEM IMPLORANDO POR SUA ATENÇÃO ANTES DO MÊS ACABAR.</p>
     </div>
-
-    <script>
-        // Atualiza o timer estático (para mobile)
-        document.addEventListener('DOMContentLoaded', function() {
-            let timeLeftStatic = 12 * 60;
-            
-            function updateStaticTimer() {
-                const minutes = Math.floor(timeLeftStatic / 60);
-                const seconds = timeLeftStatic % 60;
-                
-                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
-                
-                if (timeLeftStatic > 0) {
-                    timeLeftStatic--;
-                    setTimeout(updateStaticTimer, 1000);
-                }
-            }
-            
-            updateStaticTimer();
-        });
-    </script>
 </body>
 </html>
