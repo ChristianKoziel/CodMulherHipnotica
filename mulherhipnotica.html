@@ -21,7 +21,7 @@
 
         // Timer regressivo
         document.addEventListener('DOMContentLoaded', function() {
-            let timeLeft = 12 * 60; // 12 minutos em segundos
+            let timeLeft = 8 * 60; // 12 minutos em segundos
             
             function updateTimer() {
                 const minutes = Math.floor(timeLeft / 60);
@@ -66,7 +66,7 @@
         <div class="timer-title">⏱️ OFERTA EXPIRA EM:</div>
         <div class="timer-digits">
             <div class="timer-unit">
-                <span id="timer-minutes">12</span>
+                <span id="timer-minutes">08</span>
                 <div class="timer-label">MIN</div>
             </div>
             <div style="font-size: 20px; align-self: center; color: #FF3F81;">:</div>
@@ -76,6 +76,11 @@
             </div>
         </div>
     </div>
+
+    <div class="stock-counter" style="text-align: center; font-weight: bold; font-size: 18px; margin-top: 10px; color: red;">
+    🩸 ÚLTIMAS <span id="qtd-restante">08</span> UNIDADES — DEPOIS DISSO A PÁGINA SAI DO AR
+    </div>
+
 
     <div class="ritual-container">
         <h1>⚠️ <span>HOJE SOMENTE</span> — ÚLTIMA CHANCE DE ENTRAR NO CÓDIGO DA MULHER HIPNÓTICA + BÔNUS COM <span class="highlight">DESCONTO ABSURDO DE 80%!</span></h1>
@@ -220,7 +225,7 @@
     <script>
         // Atualiza o timer estático (para mobile)
         document.addEventListener('DOMContentLoaded', function() {
-            let timeLeftStatic = 12 * 60;
+            let timeLeftStatic = 8 * 60;
             
             function updateStaticTimer() {
                 const minutes = Math.floor(timeLeftStatic / 60);
@@ -238,5 +243,74 @@
             updateStaticTimer();
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let estoque = sessionStorage.getItem('estoque') ? parseInt(sessionStorage.getItem('estoque')) : 12;
+        sessionStorage.setItem('estoque', estoque);
+
+
+        const nomes = ["Larissa", "Bianca", "Camila", "Jéssica", "Thais", "Renata", "Luana", "Tatiane", "Aline", "Patrícia"];
+        const cidades = ["SP", "RJ", "BH", "Curitiba", "Salvador", "Porto Alegre", "Fortaleza", "Recife", "Manaus", "Brasília"];
+        const estoqueSpan = document.getElementById('qtd-restante');
+
+        function simulaVenda() {
+            if (estoque > 1) {
+                estoque--;
+                estoqueSpan.textContent = estoque;
+
+                const nome = nomes[Math.floor(Math.random() * nomes.length)];
+                const cidade = cidades[Math.floor(Math.random() * cidades.length)];
+
+                const noti = document.createElement('div');
+                noti.className = "fake-sale-noti";
+                noti.innerHTML = `✅ ${nome} de ${cidade} acabou de comprar`;
+
+                document.body.appendChild(noti);
+                setTimeout(() => noti.remove(), 5000);
+            } else if (estoque === 1) {
+                estoque--;
+                estoqueSpan.textContent = "0";
+                document.querySelector('.cta-button').style.display = "none";
+                document.querySelector('.button-subtext').textContent = "⚠️ OFERTA ENCERRADA!";
+            }
+        }
+
+        function ativaNotificacoes() {
+            simulaVenda();
+            const intervalo = Math.floor(Math.random() * 10) + 35; // entre 35s e 45s
+            setTimeout(ativaNotificacoes, intervalo * 1000);
+        }
+
+        ativaNotificacoes();
+    });
+    </script>
+    <style>
+.fake-sale-noti {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #d4fbe0;
+    color: #1e6641;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-left: 5px solid #20c261;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    z-index: 9999;
+    animation: fadeInOut 5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+</style>
+
+
+
 </body>
 </html>
