@@ -6,19 +6,7 @@
     <title>ÚLTIMA CHANCE: CÓDIGO DA MULHER HIPNÓTICA</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style/styletelafabio.css" />
-    <!-- Código do Pixel do Facebook -->
     <script>
-        // !function(f,b,e,v,n,t,s)
-        // {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        // n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        // if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        // n.queue=[];t=b.createElement(e);t.async=!0;
-        // t.src=v;s=b.getElementsByTagName(e)[0];
-        // s.parentNode.insertBefore(t,s)}(window, document,'script',
-        // 'https://connect.facebook.net/en_US/fbevents.js');
-        // fbq('init', '1208952827491954');
-        // fbq('track', 'PageView');
-
         // Timer regressivo
         document.addEventListener('DOMContentLoaded', function() {
             let timeLeft = 8 * 60; // 12 minutos em segundos
@@ -55,10 +43,6 @@
             });
         });
     </script>
-    <!-- <noscript>
-        <img height="1" width="1" style="display:none" 
-        src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"/>
-    </noscript> -->
 </head>
 <body>
     <!-- Timer flutuante -->
@@ -78,7 +62,7 @@
     </div>
 
     <div class="stock-counter" style="text-align: center; font-weight: bold; font-size: 18px; margin-top: 10px; color: red;">
-    🩸 ÚLTIMAS <span id="qtd-restante">08</span> UNIDADES — DEPOIS DISSO A PÁGINA SAI DO AR
+    🩸 ÚLTIMAS <span id="qtd-restante">12</span> UNIDADES — DEPOIS DISSO A PÁGINA SAI DO AR
     </div>
 
 
@@ -245,13 +229,12 @@
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        let estoque = sessionStorage.getItem('estoque') ? parseInt(sessionStorage.getItem('estoque')) : 12;
-        sessionStorage.setItem('estoque', estoque);
-
+        // Define estoque inicial como 12
+        let estoque = 12;
+        const estoqueSpan = document.getElementById('qtd-restante');
 
         const nomes = ["Larissa", "Bianca", "Camila", "Jéssica", "Thais", "Renata", "Luana", "Tatiane", "Aline", "Patrícia"];
         const cidades = ["SP", "RJ", "BH", "Curitiba", "Salvador", "Porto Alegre", "Fortaleza", "Recife", "Manaus", "Brasília"];
-        const estoqueSpan = document.getElementById('qtd-restante');
 
         function simulaVenda() {
             if (estoque > 1) {
@@ -281,7 +264,8 @@
             setTimeout(ativaNotificacoes, intervalo * 1000);
         }
 
-        ativaNotificacoes();
+        // Primeira notificação só após 30 segundos
+        setTimeout(ativaNotificacoes, 30000);
     });
     </script>
     <style>
@@ -307,10 +291,6 @@
     90% { opacity: 1; }
     100% { opacity: 0; transform: translateY(20px); }
 }
-
 </style>
-
-
-
 </body>
 </html>
