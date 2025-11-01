@@ -131,87 +131,70 @@
       background: rgba(216, 185, 195, 0.1);
       border-left: 3px solid #FF3F81;
     }
+
     .progress {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  color: #D8B9C3;
-  position: relative;
-  padding-bottom: 15px;
-  letter-spacing: 1px;
-  text-align: center;
-}
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #D8B9C3;
+      position: relative;
+      padding-bottom: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
 
-.progress-title {
-  font-size: 1.1rem;
-  color: #FF3F81;
-  margin-bottom: 8px;
-  text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
-  font-weight: bold;
-}
+    .progress-title {
+      font-size: 1.1rem;
+      color: #FF3F81;
+      margin-bottom: 8px;
+      text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
+      font-weight: bold;
+    }
 
-.progress-subtext {
-  font-size: 0.85rem;
-  font-style: italic;
-  opacity: 0.9;
-}
+    .progress-subtext {
+      font-size: 0.85rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
 
-.progress::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  right: 25%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #FF3F81, transparent);
-}
+    .progress::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #FF3F81, transparent);
+    }
   </style>
-
-  <!-- Código do Pixel do Facebook
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '838634731699598');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" 
-         src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
-  </noscript> -->
 </head>
 <body>
   <div class="quiz-container">
     <div class="progress">
-  <div class="progress-title">🔮 YOUR SECRET WISH IS ABOUT TO BE REVEALED… AND TURNED INTO YOUR WEAPON.</div>
-  <div class="progress-subtext">(ANSWER HONESTLY — THIS WILL LATER BECOME YOUR EMOTIONAL AMMO.)</div>
-</div>
+      <div class="progress-title">🔮 SEU DESEJO MAIS SECRETO ESTÁ PRESTES A SER REVELADO… E VIRAR SUA ARMA.</div>
+      <div class="progress-subtext">(RESPONDA COM SINCERIDADE — ISSO VAI VIRAR SUA MUNIÇÃO EMOCIONAL MAIS FORTE.)</div>
+    </div>
     
     <div class="question">
-      IF YOU COULD MAKE ONE WISH ABOUT HIM RIGHT NOW…<br><span>WHAT WOULD IT BE?</span>
+      SE VOCÊ PUDESSE FAZER UM PEDIDO SOBRE ELE AGORA…<br><span>QUAL SERIA?</span>
     </div>
     
     <div class="options">
       <button class="option-button" onclick="redirectToQuiz()">
-        <span class="emoji">😈</span> MAKE HIM CHASE YOU LIKE A DOG WITHOUT A LEASH
+        <span class="emoji">😈</span> FAZER ELE CORRER ATRÁS DE VOCÊ COMO UM CACHORRO SEM COLEIRA
       </button>
       <button class="option-button" onclick="redirectToQuiz()">
-        <span class="emoji">🧠</span> FIGURE OUT WHY HE SWITCHES UP AND DISAPPEARS
+        <span class="emoji">🧠</span> ENTENDER POR QUE ELE SOME DO NADA E MUDA DE HUMOR
       </button>
       <button class="option-button" onclick="redirectToQuiz()">
-        <span class="emoji">💌</span> GET A TEXT FROM HIM, BEGGING FOR ATTENTION, FULL OF REMORSE
+        <span class="emoji">💌</span> RECEBER UMA MENSAGEM DELE, CHEIA DE SAUDADE E ARREPENDIMENTO
       </button>
       <button class="option-button" onclick="redirectToQuiz()">
-        <span class="emoji">💍</span> MAKE HIM COMMIT FAST AND STOP PRETENDING
+        <span class="emoji">💍</span> FAZER ELE SE ENTREGAR DE VEZ E PARAR DE FINGIR
       </button>
     </div>
 
     <div class="subtext">
-      (DON’T WORRY — YOUR SECRET WISH IS MORE COMMON THAN YOU THINK)
+      (RELAXA — SEU DESEJO É MAIS COMUM DO QUE VOCÊ PENSA 😉)
     </div>
   </div>
 
