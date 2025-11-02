@@ -9,7 +9,7 @@
     <script>
         // Timer regressivo
         document.addEventListener('DOMContentLoaded', function() {
-            let timeLeft = 8 * 60; // 12 minutos em segundos
+            let timeLeft = 8 * 60; // 8 minutos em segundos
             
             function updateTimer() {
                 const minutes = Math.floor(timeLeft / 60);
@@ -22,7 +22,7 @@
                     timeLeft--;
                     setTimeout(updateTimer, 1000);
                 } else {
-                    document.querySelector('.button-subtext').textContent = '⚠️ OFFER EXPIRED!';
+                    document.querySelector('.button-subtext').textContent = '⚠️ OFERTA ENCERRADA!';
                 }
             }
             
@@ -47,7 +47,7 @@
 <body>
     <!-- Timer flutuante -->
     <div class="scarcity-timer">
-        <div class="timer-title">⏱️ OFFER EXPIRES IN:</div>
+        <div class="timer-title">⏱️ OFERTA EXPIRA EM:</div>
         <div class="timer-digits">
             <div class="timer-unit">
                 <span id="timer-minutes">08</span>
@@ -56,138 +56,137 @@
             <div style="font-size: 20px; align-self: center; color: #FF3F81;">:</div>
             <div class="timer-unit">
                 <span id="timer-seconds">00</span>
-                <div class="timer-label">SEC</div>
+                <div class="timer-label">SEG</div>
             </div>
         </div>
     </div>
 
     <div class="stock-counter" style="text-align: center; font-weight: bold; font-size: 18px; margin-top: 10px; color: red;">
-    🩸 LAST <span id="qtd-restante">12</span> UNITS — AFTER THAT THE PAGE GOES DOWN
+    🩸 ÚLTIMAS <span id="qtd-restante">12</span> UNIDADES — DEPOIS DISSO A PÁGINA CAI
     </div>
 
-
     <div class="ritual-container">
-        <h1>⚠️ <span>TODAY ONLY</span> — LAST CHANCE TO JOIN THE HYPNOTIC WOMAN CODE + <span class="highlight">INSANE 80% BONUS DISCOUNT!</span></h1>
+        <h1>⚠️ <span>SOMENTE HOJE</span> — ÚLTIMA CHANCE DE ENTRAR NO CÓDIGO DA MULHER HIPNÓTICA + <span class="highlight">DESCONTO INSANO DE 80%!</span></h1>
         
-        <p style="font-weight: bold; font-size: 18px;">NEVER HAS IT BEEN THIS EASY TO MASTER HIS SUBCONSCIOUS — DECIDE NOW.</p>
+        <p style="font-weight: bold; font-size: 18px;">NUNCA FOI TÃO FÁCIL DOMINAR O SUBCONSCIENTE DELE — DECIDA AGORA.</p>
         
         <!-- Timer de escassez (versão estática para mobile) -->
         <div class="scarcity-timer" style="position: relative; transform: none; width: 100%; margin: 20px auto;">
-            <div class="timer-title">⏱️ THIS OFFER EXPIRES IN:</div>
+            <div class="timer-title">⏱️ ESTA OFERTA EXPIRA EM:</div>
             <div class="timer-digits">
                 <div class="timer-unit">
-                    <span id="timer-minutes-static">12</span>
+                    <span id="timer-minutes-static">08</span>
                     <div class="timer-label">MIN</div>
                 </div>
                 <div style="font-size: 24px; align-self: center; color: #FF3F81;">:</div>
                 <div class="timer-unit">
                     <span id="timer-seconds-static">00</span>
-                    <div class="timer-label">SEC</div>
+                    <div class="timer-label">SEG</div>
                 </div>
             </div>
         </div>
         
         <!-- Imagem do produto -->
-        <img src="src/img/curso.png" alt="HYPNOTIC WOMAN CODE" class="product-image">
+        <img src="src/img/curso.png" alt="CÓDIGO DA MULHER HIPNÓTICA" class="product-image">
         
-        <p>YOU’LL LEARN <span class="highlight">HOW TO CONTROL HIS SUBCONSCIOUS </span> AND BECOME THE <span class="blood-text">PERMANENT DESIRE</span> THAT COMMANDS HIS ATTENTION AND DOMINATES HIS THOUGHTS.</p>
+        <p>VOCÊ VAI APRENDER <span class="highlight">COMO CONTROLAR O SUBCONSCIENTE DELE</span> E SE TORNAR O <span class="blood-text">DESEJO PERMANENTE</span> QUE COMANDA SUA ATENÇÃO E DOMINA SEUS PENSAMENTOS.</p>
         
-        <h2>WHAT YOU’LL GET TODAY:</h2>
+        <h2>O QUE VOCÊ RECEBERÁ HOJE:</h2>
         
         <div class="bonus-container">
             <div class="bonus-item">
-                <span class="bonus-title">🔐HYPNOTIC WOMAN CODE</span>
-                <span class="bonus-desc">The complete manual to reprogram his mind and turn yourself into an obsession</span>
+                <span class="bonus-title">🔐 CÓDIGO DA MULHER HIPNÓTICA</span>
+                <span class="bonus-desc">Manual completo para reprogramar a mente dele e transformar-se em uma obsessão</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">🧠 BONUS: READING A MAN GUIDE</span>
-                <span class="bonus-desc">Understand the mental cues he doesn’t even know he’s sending</span>
+                <span class="bonus-title">🧠 BÔNUS: GUIA PARA LER UM HOMEM</span>
+                <span class="bonus-desc">Entenda os sinais mentais que ele nem percebe que envia</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">💔 BONUS: MAKE HIM MISS YOU</span>
-                <span class="bonus-desc">Use longing as a powerful psychological weapon</span>
+                <span class="bonus-title">💔 BÔNUS: FAÇA-O SENTIR SUA FALTA</span>
+                <span class="bonus-desc">Use a saudade como uma poderosa arma psicológica</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">🔥 BONUS: 18 SEDUCTION TRIGGERS IN PRACTICE</span>
-                <span class="bonus-desc">Techniques that create emotional need</span>
+                <span class="bonus-title">🔥 BÔNUS: 18 GATILHOS DE SEDUÇÃO NA PRÁTICA</span>
+                <span class="bonus-desc">Técnicas que criam necessidade emocional</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">💍 BONUS: GUIDE TO LASTING LOVE</span>
-                <span class="bonus-desc">How to make him want a serious commitment</span>
+                <span class="bonus-title">💍 BÔNUS: GUIA DO AMOR DURADOURO</span>
+                <span class="bonus-desc">Como fazer com que ele queira um compromisso sério</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">⚠️ BONUS: THE 17 FATAL MISTAKES GUIDE</span>
-                <span class="bonus-desc">What never to do if you want to keep control</span>
+                <span class="bonus-title">⚠️ BÔNUS: GUIA DOS 17 ERROS FATAIS</span>
+                <span class="bonus-desc">O que nunca fazer se quiser manter o controle</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">🚫 BONUS: THE FORBIDDEN MANUSCRIPT</span>
-                <span class="bonus-desc">Advanced emotional manipulation techniques</span>
+                <span class="bonus-title">🚫 BÔNUS: O MANUSCRITO PROIBIDO</span>
+                <span class="bonus-desc">Técnicas avançadas de manipulação emocional</span>
             </div>
             
             <div class="bonus-item">
-                <span class="bonus-title">🔞 HIDDEN BONUS: FORBIDDEN VIDEO OF THE BRAND’S SEXUAL SPELL</span>
-                <span class="bonus-desc">A secret technique that makes him associate intense pleasure with your image</span>
+                <span class="bonus-title">🔞 BÔNUS OCULTO: VÍDEO PROIBIDO DO FEITIÇO SEXUAL DA MARCA</span>
+                <span class="bonus-desc">Uma técnica secreta que faz ele associar prazer intenso à sua imagem</span>
             </div>
         </div>
         
         <div class="price-comparison">
-            <div class="old-price">THE METHOD WOMEN PAY $297 FOR IN CONSULTATIONS</div>
-            <div class="new-price">TODAY: $29.90</div>
+            <div class="old-price">O MÉTODO PELO QUAL MULHERES PAGAM $297 EM CONSULTORIAS</div>
+            <div class="new-price">HOJE: $29,90</div>
         </div>
         
         <!-- Prova Social -->
         <div class="testimonial">
-            <p class="testimonial-text">"After 5 days applying it, he called me crying... I thought it was too late, but it was my biggest triumph. Now I decide when and how we’ll see each other.”</p>
-            <p class="testimonial-author">— ANNA, 28 (ONE OF 42,000+ STUDENTS)</p>
+            <p class="testimonial-text">"Após 5 dias aplicando, ele me ligou chorando... pensei que era tarde demais, mas foi meu maior triunfo. Agora decido quando e como nos veremos.”</p>
+            <p class="testimonial-author">— ANNA, 28 (UMA DE 42.000+ ALUNAS)</p>
         </div>
         
-        <img src="src/img/luizadp1.png" alt="REAL TESTIMONIAL" class="product-image">
+        <img src="src/img/luizadp1.png" alt="DEPOIMENTO REAL" class="product-image">
         
-        <h3>YOU DESERVE THE POWER HE DENIES YOU</h3>
-        <img src="src/img/curso.png" alt="ALL THE MATERIAL" class="product-image">
+        <h3>VOCÊ MERECE O PODER QUE ELE TE NEGA</h3>
+        <img src="src/img/curso.png" alt="TODO O MATERIAL" class="product-image">
         
         <!-- Garantia -->
         <div class="guarantee">
-            <h3>✅ 30-DAY NO-QUESTIONS-ASKED GUARANTEE</h3>
-            <p>IF BY THE END OF THE MONTH THE JERK ISN’T GLUED TO YOU, SCREAM AND GET YOUR MONEY BACK. <span class="blood-text">NO BS.</span></p>
-            <img src="src/img/30dayGarantic.jpg" alt="30-DAY GUARANTEE" class="guarantee-seal">
-            <p>+97% OF WOMEN BECAME FANS WITHOUT ASKING FOR A REFUND.</p>
+            <h3>✅ GARANTIA DE 30 DIAS, SEM PERGUNTAS</h3>
+            <p>SE AO FINAL DO MÊS ELE NÃO ESTIVER COLADO EM VOCÊ, GRITE E PEÇA SEU DINHEIRO DE VOLTA. <span class="blood-text">SEM ENROLAÇÃO.</span></p>
+            <img src="src/img/30dayGarantic.jpg" alt="GARANTIA DE 30 DIAS" class="guarantee-seal">
+            <p>+97% DAS MULHERES SE TORNARAM FÃS SEM PEDIR REEMBOLSO.</p>
         </div>
         
         <!-- Ameaça emocional -->
-        <p class="last-warning">⚠️ IF YOU CLOSE THIS PAGE... HE WILL KEEP USING YOU, IGNORING YOU, AND SLEEPING WITH SOMEONE ELSE WHILE YOU PRAY FOR A “HEY STRANGER.”</p>
+        <p class="last-warning">⚠️ SE VOCÊ FECHAR ESTA PÁGINA... ELE VAI CONTINUAR TE USANDO, TE IGNORANDO, E DORMINDO COM OUTRA ENQUANTO VOCÊ ORA POR UM “OI, ESTRANHO.”</p>
         
         <!-- Botão CTA Principal -->
-        <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/J102282162G?fbclid=PAVERFWANT2FdleHRuA2FlbQIxMAABp6hjGyrupFNCLvMRmrk43GuFa93F_mHJm7uhsvJrJKV1mrerE2Z_sArzITLF_aem_em4M3gX289iCM8UyRyw51Q'">I CAN’T BE THE FOOL ANYMORE — I WANT CONTROL 🩸</button>
-        <span class="button-subtext">OFFER ENDS WHEN THE TIMER HITS ZERO — NO FUSS.</span>
+        <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/J102282162G?fbclid=PAVERFWANT2FdleHRuA2FlbQIxMAABp6hjGyrupFNCLvMRmrk43GuFa93F_mHJm7uhsvJrJKV1mrerE2Z_sArzITLF_aem_em4M3gX289iCM8UyRyw51Q'">NÃO POSSO MAIS SER TOLA — QUERO CONTROLE 🩸</button>
+        <span class="button-subtext">A OFERTA ACABA QUANDO O TIMER CHEGAR A ZERO — SEM ENROLAÇÃO.</span>
         
         <!-- Métodos de Pagamento -->
-        <img src="src/img/ct.jpg" alt="PAYMENT METHODS" class="product-image">
-        <p><small>THIS IS A ONE-TIME CHARGE; YOU WON’T BE BILLED AGAIN.</small></p>
+        <img src="src/img/ct.jpg" alt="MÉTODOS DE PAGAMENTO" class="product-image">
+        <p><small>COBRANÇA ÚNICA; NÃO HÁ FATURAMENTO RECORRENTE.</small></p>
         
         <!-- FAQ -->
         <div style="margin-top: 30px;">
-            <h3>FREQUENTLY ASKED QUESTIONS</h3>
+            <h3>PERGUNTAS FREQUENTES</h3>
             
             <div class="faq-item">
-                <div class="faq-question">➡️ HOW DO I RECEIVE THE MATERIAL?</div>
-                <p>Immediate access after payment confirmation. You’ll receive everything by email within 5 minutes.</p>
+                <div class="faq-question">➡️ COMO RECEBO O MATERIAL?</div>
+                <p>Acesso imediato após a confirmação do pagamento. Você receberá tudo por email em até 5 minutos.</p>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">➡️ DOES IT WORK FOR ANY STAGE OF A RELATIONSHIP?</div>
-                <p>Yes! Single, casually seeing someone, or in a relationship — the techniques adapt to any situation.</p>
+                <div class="faq-question">➡️ FUNCIONA EM QUALQUER FASE DO RELACIONAMENTO?</div>
+                <p>Sim! Solteira, saindo casualmente ou em um relacionamento — as técnicas se adaptam a qualquer situação.</p>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">➡️ IS IT SAFE TO BUY?</div>
-                <p>100% secure. Payment processed by a professional platform with bank-grade encryption.</p>
+                <div class="faq-question">➡️ É SEGURO COMPRAR?</div>
+                <p>100% seguro. Pagamento processado por uma plataforma profissional com criptografia bancária.</p>
             </div>
         </div>
         
@@ -199,11 +198,11 @@
         </div>
         
         <!-- Último CTA -->
-        <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/J102282162G?fbclid=PAVERFWANT2FdleHRuA2FlbQIxMAABp6hjGyrupFNCLvMRmrk43GuFa93F_mHJm7uhsvJrJKV1mrerE2Z_sArzITLF_aem_em4M3gX289iCM8UyRyw51Q'">I CAN’T BE THE FOOL ANYMORE — I WANT CONTROL 🩸</button>
-        <span class="button-subtext">⚠️ THE BUTTON CAN DISAPPEAR AT ANY MOMENT</span>
+        <button class="cta-button" onclick="window.location.href='https://pay.hotmart.com/J102282162G?fbclid=PAVERFWANT2FdleHRuA2FlbQIxMAABp6hjGyrupFNCLvMRmrk43GuFa93F_mHJm7uhsvJrJKV1mrerE2Z_sArzITLF_aem_em4M3gX289iCM8UyRyw51Q'">NÃO POSSO MAIS SER TOLA — QUERO CONTROLE 🩸</button>
+        <span class="button-subtext">⚠️ O BOTÃO PODE DESAPARECER A QUALQUER MOMENTO</span>
         
         <!-- Frase de fechamento -->
-        <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ THIS PAGE IS DESIGNED TO VANISH... IF YOU LEAVE NOW, THE METHOD SELF-DESTRUCTS. <br> IF YOU CONTINUE... YOU’LL HAVE A MAN BEGGING FOR YOUR ATTENTION BEFORE THE MONTH ENDS.</p>
+        <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ ESTA PÁGINA FOI FEITA PARA DESAPARECER... SE VOCÊ SAIR AGORA, O MÉTODO SE AUTODESTRÓI. <br> SE CONTINUAR... TERÁ UM HOMEM IMPLORANDO PELA SUA ATENÇÃO ANTES DO FINAL DO MÊS.</p>
     </div>
 
     <script>
@@ -229,12 +228,11 @@
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Define estoque inicial como 12
         let estoque = 12;
         const estoqueSpan = document.getElementById('qtd-restante');
 
-        const nomes = ["Olivia", "Emma", "Sophie", "Amelia", "Isabella", "Mia", "Grace", "Lily", "Daisy", "Rose"];
-        const cidades = ["California", "Boston", "Ohio", "New York", "Dallas", "Forth Worth", "Chicago", "Miami", "Oklahoma City", "Seattle"];
+        const nomes = ["Olivia", "Ana", "Sofia", "Luiza", "Isabela", "Gabrielly", "Geovana", "Emily", "Luana", "Emanuele"];
+        const cidades = ["Fortaleza", "Balneário Camboriú", "Guaratuba", "Gramado", "Minas Gerais", "Uberlândia", "Curitiba", "Florianópolis", "São Paulo", "Rio de Janeiro"];
 
         function simulaVenda() {
             if (estoque > 1) {
@@ -246,7 +244,7 @@
 
                 const noti = document.createElement('div');
                 noti.className = "fake-sale-noti";
-                noti.innerHTML = `✅ ${nome} from ${cidade} just bought`;
+                noti.innerHTML = `✅ ${nome} de ${cidade} acabou de comprar`;
 
                 document.body.appendChild(noti);
                 setTimeout(() => noti.remove(), 5000);
@@ -260,11 +258,10 @@
 
         function ativaNotificacoes() {
             simulaVenda();
-            const intervalo = Math.floor(Math.random() * 10) + 35; // entre 35s e 45s
+            const intervalo = Math.floor(Math.random() * 10) + 35;
             setTimeout(ativaNotificacoes, intervalo * 1000);
         }
 
-        // Primeira notificação só após 30 segundos
         setTimeout(ativaNotificacoes, 30000);
     });
     </script>
