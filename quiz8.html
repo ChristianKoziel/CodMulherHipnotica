@@ -12,10 +12,10 @@
             --rosa-trauma: #FF3F81;
             --vermelho-obsessivo: #E5003C;
             --branco-sujo: #FAF1F4;
-            --champagne: #D8B9C3;
+            --champagne: #FAF1F4; /* ajustado para branco */
             --ouro-maldito: #FFD700;
         }
-        
+
         body {
             margin: 0;
             padding: 0;
@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
 
         .quiz-container {
@@ -36,9 +36,9 @@
             padding: 30px;
             background-color: rgba(12, 12, 12, 0.85);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                        0 0 0 1px rgba(255, 63, 129, 0.3);
-            border: 1px solid var(--rosa-trauma);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2),
+                        0 0 0 1px rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--branco-sujo);
             position: relative;
             overflow: hidden;
         }
@@ -50,7 +50,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
+            background: linear-gradient(45deg, var(--branco-sujo), var(--branco-sujo), var(--roxo-venenoso));
             z-index: -1;
             filter: blur(5px);
             opacity: 0.5;
@@ -61,12 +61,12 @@
             font-weight: bold;
             margin-bottom: 30px;
             line-height: 1.4;
-            color: var(--rosa-trauma);
+            color: var(--branco-sujo); /* texto branco */
             text-transform: uppercase;
         }
 
         .question span {
-            color: var(--vermelho-obsessivo);
+            color: var(--branco-sujo); /* span também branco */
             text-decoration: underline;
         }
 
@@ -86,30 +86,30 @@
             border-radius: 10px;
             transition: all 0.3s ease;
             gap: 15px;
-            border: 1px solid var(--rosa-trauma);
+            border: 1px solid var(--branco-sujo);
             position: relative;
             overflow: hidden;
         }
 
         .option-item:hover {
-            background: rgba(255, 63, 129, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(229, 0, 60, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
         }
 
         .checkbox {
             flex-shrink: 0;
             width: 22px;
             height: 22px;
-            border: 2px solid var(--rosa-trauma);
+            border: 2px solid var(--branco-sujo);
             border-radius: 50%;
             position: relative;
             transition: all 0.3s ease;
         }
 
         .checkbox.checked {
-            background: var(--rosa-trauma);
-            box-shadow: 0 0 10px var(--rosa-trauma);
+            background: var(--branco-sujo);
+            box-shadow: 0 0 10px var(--branco-sujo);
         }
 
         .checkbox.checked::after {
@@ -117,7 +117,7 @@
             position: absolute;
             width: 12px;
             height: 12px;
-            background-color: var(--branco-sujo);
+            background-color: var(--preto-macabro); /* contraste */
             border-radius: 50%;
             top: 50%;
             left: 50%;
@@ -128,12 +128,12 @@
             font-size: 1.1rem;
             flex-grow: 1;
             text-align: left;
-            color: var(--champagne);
+            color: var(--branco-sujo); /* texto branco */
         }
 
         .continue-button {
-            background: linear-gradient(to right, var(--rosa-trauma), var(--vermelho-obsessivo));
-            color: var(--branco-sujo);
+            background: linear-gradient(to right, var(--branco-sujo), var(--branco-sujo));
+            color: var(--preto-macabro);
             border: none;
             border-radius: 50px;
             padding: 18px;
@@ -145,7 +145,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 5px 20px rgba(229, 0, 60, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -153,8 +153,7 @@
 
         .continue-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(229, 0, 60, 0.6);
-            background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.6);
         }
 
         .continue-button:active {
@@ -181,11 +180,11 @@
 <body>
     <div class="quiz-container">
         <div class="question">
-            O QUE TE FAZ SENTIR MAIS <span>FRACA</span PERTO DELE?
+            O QUE TE FAZ SENTIR MAIS <span>FRACA</span> PERTO DELE?
         </div>
         <div class="options">
             <label class="option-item">
-                <span class="option-text">QUANDO ELE ME IGNORA POR DIAS E DEPOIS DIZ “OI, ESTRANHA”</span>
+                <span class="option-text">QUANDO ELE ME IGNORA POR DIAS E DEPOIS DIZ “OI, SUMIDA”</span>
                 <span class="checkbox"></span>
             </label>
             <label class="option-item">
@@ -211,6 +210,7 @@
         </div>
         <button class="continue-button">DESCUBRA O QUE FAZER SOBRE ISSO...</button>
     </div>
+
     <script>
         document.querySelectorAll('.option-item').forEach(item => {
             item.addEventListener('click', () => {
@@ -218,7 +218,7 @@
                 checkbox.classList.toggle('checked');
             });
         });
-        
+
         document.querySelector('.continue-button').addEventListener('click', () => {
             const selected = document.querySelector('.checkbox.checked');
             if (!selected) {
