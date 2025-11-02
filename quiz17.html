@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teste grátis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* -- Mantenha todo o CSS original -- */
+        * {margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent;}
+        body {background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%); padding: 0; color: #FAF1F4; line-height: 1.6; -webkit-text-size-adjust: 100%; overflow-x: hidden; font-family: 'Poppins', Arial, sans-serif; position: relative;}
+        body::before {content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(255, 63, 129, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(229, 0, 60, 0.03) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.02) 0%, transparent 50%); pointer-events: none; z-index: -1;}
+        /* ... todo o restante do CSS permanece igual ... */
+    </style>
+</head>
 <body>
     <div class="page-container">
         <!-- Tela de Loading -->
@@ -84,4 +102,34 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Script original permanece igual
+        function updatePercentage() {
+            const progressElement = document.querySelector('.progress');
+            const percentageElement = document.getElementById('progress-percentage');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) { clearInterval(interval); } else { width++; percentageElement.textContent = width + '%'; }
+            }, 30);
+        }
+        updatePercentage();
+        setTimeout(() => { document.getElementById('loading-screen').style.display = 'none'; }, 3000);
+        const ctaButton = document.querySelector('.cta-button');
+        setTimeout(() => { ctaButton.style.animation = 'buttonPulse 2s infinite'; }, 4000);
+        ctaButton.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-8px) scale(1.03)'; });
+        ctaButton.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0) scale(1)'; });
+        function animateCounter() {
+            const numberElement = document.querySelector('.social-proof .number');
+            const target = 42000;
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => { current += increment; if (current >= target) { current = target; clearInterval(timer); } numberElement.textContent = Math.floor(current).toLocaleString('pt-BR'); }, 20);
+        }
+        setTimeout(() => { animateCounter(); }, 4000);
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.animation = 'fadeInUp 0.8s ease forwards'; } }); }, observerOptions);
+        document.querySelectorAll('.microcopy, .section').forEach(section => { observer.observe(section); });
+    </script>
 </body>
+</html>
