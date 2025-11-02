@@ -1,77 +1,919 @@
-<div id="loading-screen">
-    <div class="loading-text">🧠 DECODIFICANDO SUA MENTE FEMININA...</div>
-    <div class="progress-container">
-        <div class="progress-bar">
-            <div class="progress"></div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teste grátis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%);
+            padding: 0;
+            color: #FAF1F4;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            overflow-x: hidden;
+            font-family: 'Poppins', Arial, sans-serif;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 63, 129, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(229, 0, 60, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Tela de Loading */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .loading-text {
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-size: clamp(20px, 5vw, 28px);
+            margin-bottom: 25px;
+            color: #FAF1F4;
+            font-weight: 400;
+            text-align: center;
+            padding: 0 20px;
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
+            letter-spacing: 2px;
+            animation: glitchText 2s infinite;
+        }
+        
+        .progress-container {
+            position: relative;
+            width: 85%;
+            max-width: 350px;
+            margin-bottom: 8px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 16px;
+            background: rgba(12, 12, 12, 0.8);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 63, 129, 0.3);
+            border: 1px solid rgba(255, 63, 129, 0.2);
+        }
+        
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #FF3F81, #E5003C, #FFD700);
+            background-size: 200% 100%;
+            animation: progress 3s ease-out forwards, rainbow 2s infinite;
+            position: relative;
+            border-radius: 25px;
+            box-shadow: 0 0 15px rgba(255, 63, 129, 0.8);
+        }
+        
+        .progress::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+            transform: translateX(-100%);
+            animation: shimmer 1.5s infinite;
+        }
+        
+        .progress-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FAF1F4;
+            font-weight: 900;
+            font-size: 12px;
+            z-index: 5;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        .analyzing-text {
+            margin-top: 15px;
+            color: #FFD700;
+            font-size: clamp(14px, 4vw, 17px);
+            font-weight: 700;
+            text-align: center;
+            animation: pulse 1.5s infinite alternate;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        /* Conteúdo Principal */
+        .container {
+            width: 100%;
+            max-width: 680px;
+            margin: 15px auto;
+            background: linear-gradient(135deg, rgba(30, 11, 38, 0.95) 0%, rgba(12, 12, 12, 0.9) 100%);
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 63, 129, 0.2), 
+                        inset 0 1px 0 rgba(255, 63, 129, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 63, 129, 0.1);
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF3F81, #E5003C, #FFD700);
+            background-size: 200% 100%;
+            animation: rainbow 3s infinite;
+            box-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FAF1F4;
+            font-size: clamp(22px, 6vw, 30px);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.2;
+            padding: 0 10px;
+            position: relative;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.3);
+        }
+        
+        /* Teaser aprimorado */
+        .teaser-box {
+            background: linear-gradient(135deg, #FF3F81 0%, #E5003C 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin: 30px 0;
+            text-align: center;
+            color: #FAF1F4;
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .teaser-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .teaser-text {
+            font-size: clamp(16px, 4.5vw, 19px);
+            font-weight: 700;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .teaser-subtext {
+            font-size: clamp(14px, 4vw, 16px);
+            margin-top: 12px;
+            opacity: 0.95;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Container azul modificado para o tema */
+        .dark-box {
+            background: linear-gradient(135deg, rgba(255, 63, 129, 0.15) 0%, rgba(229, 0, 60, 0.1) 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin: 30px 0;
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.2),
+                        inset 0 1px 0 rgba(255, 63, 129, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 63, 129, 0.2);
+        }
+        
+        .dark-box::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700);
+            border-radius: 17px;
+            z-index: -1;
+            animation: rainbow 4s infinite;
+            opacity: 0.3;
+        }
+        
+        .slider-container {
+            margin: 0;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        
+        .slider-label {
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: block;
+            font-size: clamp(16px, 4vw, 18px);
+            color: #FAF1F4;
+            text-shadow: 0 0 8px rgba(255, 63, 129, 0.5);
+            text-align: center;
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 40px;
+            background: rgba(12, 12, 12, 0.6);
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            align-items: center;
+            margin-bottom: 35px;
+            overflow: visible;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 63, 129, 0.3);
+            box-shadow: 0 0 15px rgba(255, 63, 129, 0.2);
+        }
+        
+        .slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, 
+                rgba(255, 63, 129, 0.1) 0%, 
+                rgba(229, 0, 60, 0.05) 100%);
+            border-radius: 20px;
+        }
+        
+        .slider-position {
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .slider-text {
+            color: #D8B9C3;
+            font-weight: 700;
+            font-size: clamp(12px, 3.5vw, 14px);
+            z-index: 2;
+            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
+            position: relative;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .objetivo-label {
+            position: absolute;
+            top: -25px;
+            right: 0;
+            color: #FFD700;
+            font-weight: 700;
+            font-size: clamp(11px, 3vw, 13px);
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            white-space: nowrap;
+        }
+        
+        .slider-marker {
+            position: absolute;
+            left: 28%;
+            top: 55px;
+            background: linear-gradient(135deg, #FF3F81, #E5003C);
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 0 20px rgba(255, 63, 129, 0.5);
+            font-size: clamp(12px, 3.5vw, 14px);
+            font-weight: 800;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: #FAF1F4;
+            animation: markerMove 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+            animation-delay: 3.5s;
+            white-space: nowrap;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 63, 129, 0.1);
+            position: relative;
+        }
+        
+        .section-title {
+            color: #FAF1F4;
+            margin-bottom: 18px;
+            font-size: clamp(18px, 4.5vw, 22px);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(255, 63, 129, 0.3);
+        }
+        
+        .section-title i, .section-title span {
+            margin-right: 12px;
+            color: #FF3F81;
+            font-size: clamp(20px, 5vw, 24px);
+            filter: drop-shadow(0 0 5px rgba(255, 63, 129, 0.5));
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            font-size: clamp(15px, 4vw, 17px);
+            line-height: 1.6;
+            color: #D8B9C3;
+            font-weight: 500;
+        }
+        
+        .implication-list {
+            list-style-type: none;
+            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(229, 0, 60, 0.1), rgba(255, 63, 129, 0.05));
+            padding: 25px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #E5003C;
+            box-shadow: 0 0 15px rgba(229, 0, 60, 0.2);
+        }
+        
+        .implication-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+            font-size: clamp(14px, 4vw, 16px);
+            line-height: 1.6;
+            font-weight: 600;
+            color: #D8B9C3;
+        }
+        
+        .implication-list li:before {
+            content: "💔";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
+        }
+        
+        .warning {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 63, 129, 0.1));
+            padding: 25px 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: 800;
+            color: #FFD700;
+            font-size: clamp(16px, 4.5vw, 19px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .warning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: warningShine 3s infinite;
+        }
+        
+        /* Microcopy */
+        .microcopy {
+            text-align: center;
+            margin: 25px 0;
+            font-size: clamp(14px, 3.5vw, 16px);
+            color: #D8B9C3;
+            font-weight: 600;
+            font-style: italic;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 4s;
+            opacity: 0;
+            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            margin: 35px auto 15px;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #FF3F81, #E5003C);
+            color: #FAF1F4;
+            border: none;
+            border-radius: 30px;
+            font-size: clamp(17px, 4.5vw, 20px);
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: buttonPulse 2s infinite;
+            font-family: 'Poppins', Arial, sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 35px rgba(255, 63, 129, 0.7);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-3px) scale(0.98);
+        }
+        
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            text-align: center;
+            margin: 25px 0 15px;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 63, 129, 0.05));
+            border-radius: 12px;
+            border-left: 3px solid #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .social-proof p {
+            font-size: clamp(13px, 3.5vw, 15px);
+            color: #D8B9C3;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .social-proof .number {
+            color: #FFD700;
+            font-weight: 800;
+            animation: countUp 2s ease-out;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+        }
+        
+        .red {
+            color: #E5003C;
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.5);
+        }
+        
+        .fontnegrito {
+            font-weight: 700;
+            color: #FAF1F4;
+        }
+        
+        /* Container para flex no mobile */
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        /* Animações */
+        @keyframes progress {
+            0% { width: 0%; }
+            80% { width: 90%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes markerMove {
+            0% { 
+                top: 85px;
+                opacity: 0;
+                transform: translateX(-50%) scale(0.8);
+            }
+            100% { 
+                top: 55px;
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 0.8; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+        
+        @keyframes warningShine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% { 
+                box-shadow: 0 0 25px rgba(255, 63, 129, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255, 63, 129, 0.8), 
+                           0 0 0 6px rgba(255, 63, 129, 0.1);
+            }
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes glitchText {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(255, 63, 129, 0.5);
+            }
+            25% { 
+                text-shadow: 2px 0 0 rgba(255, 63, 129, 0.8), 
+                            -2px 0 0 rgba(229, 0, 60, 0.8);
+            }
+            50% { 
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            }
+            75% { 
+                text-shadow: -1px 0 0 rgba(255, 63, 129, 0.6), 
+                            1px 0 0 rgba(229, 0, 60, 0.6);
+            }
+        }
+        
+        /* Responsividade aprimorada */
+        @media (max-width: 480px) {
+            .page-container {
+                padding: 8px;
+            }
+            .container {
+                padding: 20px 15px;
+                border-radius: 15px;
+                margin: 10px auto;
+            }
+            .dark-box {
+                padding: 20px 15px;
+                margin: 25px 0;
+                border-radius: 12px;
+            }
+            .teaser-box {
+                padding: 20px 15px;
+                margin: 25px 0;
+            }
+            .slider {
+                height: 35px;
+                padding: 0 15px;
+                border-radius: 18px;
+            }
+            .slider-marker {
+                padding: 10px 16px;
+                font-size: 12px;
+                top: 50px;
+            }
+            .objetivo-label {
+                top: -22px;
+                font-size: 10px;
+            }
+            .section {
+                margin: 25px 0;
+                padding-bottom: 18px;
+            }
+            .warning {
+                padding: 20px 15px;
+                font-size: 15px;
+            }
+            .cta-button {
+                padding: 18px 22px;
+                font-size: 16px;
+                max-width: 300px;
+                margin: 25px auto 12px;
+            }
+            .implication-list {
+                padding: 18px 15px;
+            }
+            .social-proof {
+                margin: 20px 0 12px;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 350px) {
+            .container {
+                padding: 18px 12px;
+                margin: 8px;
+            }
+            .cta-button {
+                padding: 16px 20px;
+                font-size: 15px;
+                max-width: 280px;
+            }
+            .dark-box {
+                padding: 18px 12px;
+            }
+            .teaser-box {
+                padding: 18px 12px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px 35px;
+            }
+            .dark-box {
+                padding: 35px 30px;
+            }
+            .teaser-box {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+    <!-- Código do Pixel do Facebook -->
+    <!-- <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
+    </noscript> -->
+</head>
+<body>
+    <div class="page-container">
+        <!-- ... (loading screen anterior permanece o mesmo) ... -->
+         <!-- Tela de Loading -->
+        <div id="loading-screen">
+            <div class="loading-text">🧠 DECODING YOUR FEMALE MIND...</div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div id="progress-percentage" class="progress-percentage">0%</div>
+            </div>
+            <div class="analyzing-text">DETECTING BEHAVIOR PATTERNS...</div>
         </div>
-        <div id="progress-percentage" class="progress-percentage">0%</div>
-    </div>
-    <div class="analyzing-text">DETECTANDO PADRÕES COMPORTAMENTAIS...</div>
-</div>
-
-<div class="container">
-    <h1 class="title">AQUI ESTÁ UMA <span class="red">ANÁLISE INICIAL</span> DAS SUAS RESPOSTAS</h1>
-
-    <div class="teaser-box">
-        <div class="teaser-text">
-            ALGUMAS MULHERES DIZEM QUE OS RESULTADOS DESSE MÉTODO SÃO VICIANTES. OUTRAS… NÃO CONSEGUEM VIVER SEM APLICÁ-LO.
-        </div>
-        <div class="teaser-subtext">
-            O QUE VOCÊ VAI DESCOBRIR PODE MUDAR SUA VIDA AMOROSA PARA SEMPRE.
-        </div>
-    </div>
-
-    <div class="dark-box">
-        <div class="slider-container">
-            <label class="slider-label">💫 NÍVEL DE DOMÍNIO DA PSICOLOGIA MASCULINA</label>
-            <div class="slider">
-                <div class="slider-position">
-                    <span class="slider-text">BAIXO</span>
-                    <span class="slider-text">MÉDIO</span>
-                    <span class="slider-text">
-                        <span class="objetivo-label">🎯 META</span>
-                        ALTO
-                    </span>
+        
+        <!-- Conteúdo Principal -->
+        <div class="container">
+            <h1 class="title">HERE’S AN <span class="red">INITIAL ANALYSIS</span>  OF YOUR RESPONSES</h1>
+            
+            <!-- Teaser Aprimorado -->
+            <div class="teaser-box">
+                <div class="teaser-text">
+                    SOME WOMEN SAY THE RESULTS FROM THIS METHOD ARE ADDICTIVE. OTHERS… CAN’T LIVE WITHOUT APPLYING IT.
+                </div>
+                <div class="teaser-subtext">
+                    WHAT YOU’LL DISCOVER COULD CHANGE YOUR LOVE LIFE FOREVER.
                 </div>
             </div>
-            <div class="slider-marker">✨ VOCÊ ESTÁ AQUI</div>
+            
+            <!-- Container com Slider -->
+            <div class="dark-box">
+                <div class="slider-container">
+                    <label class="slider-label">💫 LEVEL OF MASTERING MALE PSYCHOLOGY</label>
+                    <div class="slider">
+                        <div class="slider-position">
+                            <span class="slider-text">LOW</span>
+                            <span class="slider-text">MEDIUM</span>
+                            <span class="slider-text">
+                                <span class="objetivo-label">🎯 TARGET</span>
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slider-marker">✨ YOU ARE HERE</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-search"></i> DESCRIPTIVE ANALYSIS</h2>
+                <p><span style="color: #E5003C;">💔</span>
+                    <span class="fontnegrito">YOU’RE EXACTLY THE TYPE OF WOMAN MEN WASTE…</span> NOT FOR LACK OF VALUE, BUT BECAUSE <span class="fontnegrito">YOUR MIND HASN’T UNLOCKED</span> THE <span class="red">SECRET MANIPULATION CODES</span> THAT MAKE HIM SEE YOU AS UNFORGETTABLE AND TURN HIM INTO A COMPLETE OBSESSION.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><span style="font-size: 24px; color: #FFD700;">🔍</span>
+                   PATTERN DETECTED:</h2>
+                <p>THERE ARE PATTERNS PROVING YOU’RE BEING <span class="fontnegrito">SABOTAGED BY INVISIBLE TRAPS…</span> PATTERNS YOU DON’T NOTICE...</p>
+                <span class="fontnegrito"><p>⚠️ WHAT DOES THIS MEAN FOR YOU?</p></span>
+            </div>
+            
+            <div class="section">
+                <ul class="implication-list">
+                    <li>YOU’RE DOING EXACTLY WHAT MAKES A MAN LOSE INTEREST</li>
+                    <li>HE ALREADY KNOWS HE CAN WALK AWAY, YET STAY AROUND</li>
+                    <li>IF YOU KEEP DOING THIS, THE CYCLE WILL REPEAT AND YOU’LL STAY STUCK</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <span class="red">🚨 THIS PATTERN IS SABOTAGING YOUR LOVE LIFE AND YOU WERE NEVER WARNED!</span>
+            </div>
+            
+            <!-- Microcopy -->
+            <div class="microcopy">
+                👇 THE RIGHT CHOICE NOW CAN CHANGE EVERYTHING
+            </div>
+            
+            <button class="cta-button" onclick="window.location.href='quiz18.html'">
+                🔥 I WANT TO CHANGE THIS TODAY!
+            </button>
+            
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <p>✨ OVER <span class="number">42.000</span> WOMEN ALREADY STARTED HERE.</p>
+            </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title"><i class="fas fa-search"></i> ANÁLISE DESCRITIVA</h2>
-        <p><span style="color: #E5003C;">💔</span>
-            <span class="fontnegrito">VOCÊ É EXATAMENTE O TIPO DE MULHER QUE OS HOMENS DESPERDIÇAM...</span> NÃO POR FALTA DE VALOR, MAS PORQUE <span class="fontnegrito">SUA MENTE AINDA NÃO DESBLOQUEOU</span> OS <span class="red">CÓDIGOS SECRETOS DE MANIPULAÇÃO</span> QUE O FAZEM TE VER COMO INESQUECÍVEL E O TRANSFORMAM EM UMA OBSESSÃO COMPLETA.</p>
-    </div>
+    <script>
+        // Script para atualizar a porcentagem durante o carregamento
+        function updatePercentage() {
+            const progressElement = document.querySelector('.progress');
+            const percentageElement = document.getElementById('progress-percentage');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    percentageElement.textContent = width + '%';
+                }
+            }, 30);
+        }
 
-    <div class="section">
-        <h2 class="section-title"><span style="font-size: 24px; color: #FFD700;">🔍</span>
-            PADRÃO DETECTADO:</h2>
-        <p>EXISTEM PADRÕES QUE PROVAM QUE VOCÊ ESTÁ SENDO <span class="fontnegrito">SABOTADA POR ARMADILHAS INVISÍVEIS...</span> PADRÕES QUE VOCÊ NÃO PERCEBE...</p>
-        <span class="fontnegrito"><p>⚠️ O QUE ISSO SIGNIFICA PARA VOCÊ?</p></span>
-    </div>
+        // Iniciar a animação de porcentagem
+        updatePercentage();
 
-    <div class="section">
-        <ul class="implication-list">
-            <li>VOCÊ ESTÁ FAZENDO EXATAMENTE O QUE FAZ UM HOMEM PERDER INTERESSE</li>
-            <li>ELE JÁ SABE QUE PODE IR EMBORA, MAS AINDA PERMANECE POR PERTO</li>
-            <li>SE VOCÊ CONTINUAR FAZENDO ISSO, O CICLO SE REPETIRÁ E VOCÊ FICARÁ PRESA</li>
-        </ul>
-    </div>
+        // Remover a tela de loading após 3 segundos
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 3000);
 
-    <div class="warning">
-        <span class="red">🚨 ESSE PADRÃO ESTÁ SABOTANDO SUA VIDA AMOROSA E NINGUÉM TE AVISOU!</span>
-    </div>
+        // Adicionar efeito de pulse ao botão CTA
+        const ctaButton = document.querySelector('.cta-button');
+        setTimeout(() => {
+            ctaButton.style.animation = 'buttonPulse 2s infinite';
+        }, 4000);
 
-    <div class="microcopy">
-        👇 A ESCOLHA CERTA AGORA PODE MUDAR TUDO
-    </div>
+        // Efeito de hover melhorado
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.03)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
 
-    <button class="cta-button" onclick="window.location.href='quiz18.html'">
-        🔥 EU QUERO MUDAR ISSO HOJE!
-    </button>
+        // Animação de contagem para social proof
+        function animateCounter() {
+            const numberElement = document.querySelector('.social-proof .number');
+            const target = 42000;
+            let current = 0;
+            const increment = target / 100;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                numberElement.textContent = Math.floor(current).toLocaleString('pt-BR');
+            }, 20);
+        }
 
-    <div class="social-proof">
-        <p>✨ MAIS DE <span class="number">42.000</span> MULHERES JÁ COMEÇARAM AQUI.</p>
-    </div>
-</div>
+        // Iniciar animação de contagem após o loading
+        setTimeout(() => {
+            animateCounter();
+        }, 4000);
+
+        // Intersection Observer para animações
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos que devem ser animados
+        document.querySelectorAll('.microcopy, .section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

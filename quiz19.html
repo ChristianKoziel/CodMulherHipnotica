@@ -1,57 +1,338 @@
-<h1>⚠️ ALERTA: VOCÊ ESTÁ A UM PASSO DE HIPNOTIZAR QUALQUER HOMEM EM ATÉ <span>30 DIAS</span></h1>
-
-<div class="progress-container">
-    <div class="progress-bar-wrapper">
-        <div class="label-top">HOJE</div>
-        <div class="progress-bar">
-            <div class="marks">
-                <div class="mark mark-25"></div>
-                <div class="mark mark-50"></div>
-                <div class="mark mark-75"></div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALERTA: CONTROLE HIPNÓTICO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+            color: #FAF1F4;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            background: rgba(12, 12, 12, 0.8);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(255, 63, 129, 0.4);
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid #FF3F81;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700, #FF3F81);
+            background-size: 400% 400%;
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0.3;
+            animation: gradientGlow 8s ease infinite;
+        }
+        @keyframes gradientGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: #FFD700;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(229, 0, 60, 0.7);
+            line-height: 1.3;
+            letter-spacing: 1.5px;
+        }
+        h1 span {
+            color: #FF3F81;
+            text-shadow: 0 0 10px rgba(255, 63, 129, 0.7);
+        }
+        .progress-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 15px;
+        }
+        .progress-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90px;
+        }
+        .progress-bar {
+            width: 45px;
+            height: 200px;
+            background-color: #1E0B26;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #FF3F81;
+            margin: 10px 0;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .progress-bar .fill {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, #E5003C 0%, #FF3F81 100%);
+            transition: height 0.5s ease;
+            box-shadow: 0 0 15px rgba(255, 63, 129, 0.7);
+        }
+        .progress-bar .marks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .progress-bar .mark {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255, 215, 0, 0.3);
+        }
+        .progress-bar .mark.mark-25 { bottom: 25%; }
+        .progress-bar .mark.mark-50 { bottom: 50%; }
+        .progress-bar .mark.mark-75 { bottom: 75%; }
+        .label-top {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #FFD700;
+            text-align: center;
+            height: 20px;
+            font-size: 14px;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        .percentage {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #FF3F81;
+            text-align: center;
+            height: 20px;
+            font-size: 18px;
+            text-shadow: 0 0 5px rgba(255, 63, 129, 0.3);
+        }
+        .label-bottom {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #D8B9C3;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            text-transform: none;
+        }
+        .content {
+            text-align: center;
+            width: 100%;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #FAF1F4;
+            text-transform: none;
+        }
+        .content p strong {
+            color: #FFD700;
+            text-transform: uppercase;
+        }
+        .botao-acao {
+            background: linear-gradient(45deg, #FF3F81 0%, #E5003C 100%);
+            color: #FAF1F4;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            box-shadow: 0 4px 20px rgba(255, 63, 129, 0.6);
+            text-decoration: none;
+            display: block;
+            margin: 40px auto 15px;
+            max-width: 100%;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .botao-acao::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+        .botao-acao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 25px rgba(229, 0, 60, 0.8);
+        }
+        .botao-acao:hover::before {
+            left: 100%;
+        }
+        .warning {
+            font-size: 14px; 
+            color: #E5003C; 
+            text-align: center; 
+            margin-top: 25px;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
+            animation: pulse 2s infinite;
+            font-weight: bold;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+        .progress-bar-wrapper:nth-child(3) .fill {
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 15px rgba(255, 63, 129, 0.7); }
+            to { box-shadow: 0 0 25px rgba(255, 63, 129, 0.9), 0 0 35px rgba(255, 63, 129, 0.5); }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .progress-bar-wrapper {
+                width: 75px;
+            }
+            
+            .progress-bar {
+                width: 40px;
+                height: 160px;
+            }
+            
+            .label-bottom {
+                font-size: 11px;
+                height: 70px;
+            }
+            
+            .botao-acao {
+                padding: 18px;
+                font-size: 18px;
+            }
+            
+            .content p {
+                font-size: 15px;
+            }
+        }
+    </style>
+    <!-- Código do Pixel do Facebook -->
+    <!-- <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '838634731699598');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=838634731699598&ev=PageView&noscript=1"/>
+    </noscript> -->
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ WARNING: YOU’RE ONE STEP AWAY FROM HYPNOTIZING ANY MAN IN UP TO <span>30 DAYS</span></h1>
+        
+        <div class="progress-container">
+            <div class="progress-bar-wrapper">
+                <div class="label-top">TODAY</div>
+                <div class="progress-bar">
+                    <div class="marks">
+                        <div class="mark mark-25"></div>
+                        <div class="mark mark-50"></div>
+                        <div class="mark mark-75"></div>
+                    </div>
+                    <div class="fill" style="height: 24%;"></div>
+                </div>
+                <div class="percentage">24%</div>
+                <div class="label-bottom">Learn the method and start your new journey</div>
             </div>
-            <div class="fill" style="height: 24%;"></div>
-        </div>
-        <div class="percentage">24%</div>
-        <div class="label-bottom">Aprenda o método e comece sua nova jornada</div>
-    </div>
-    <div class="progress-bar-wrapper">
-        <div class="label-top">15 DIAS</div>
-        <div class="progress-bar">
-            <div class="marks">
-                <div class="mark mark-25"></div>
-                <div class="mark mark-50"></div>
-                <div class="mark mark-75"></div>
+            <div class="progress-bar-wrapper">
+                <div class="label-top">15 DAYS</div>
+                <div class="progress-bar">
+                    <div class="marks">
+                        <div class="mark mark-25"></div>
+                        <div class="mark mark-50"></div>
+                        <div class="mark mark-75"></div>
+                    </div>
+                    <div class="fill" style="height: 51%;"></div>
+                </div>
+                <div class="percentage">51%</div>
+                <div class="label-bottom">Learned everything and starting to apply it</div>
             </div>
-            <div class="fill" style="height: 51%;"></div>
-        </div>
-        <div class="percentage">51%</div>
-        <div class="label-bottom">Aprendeu tudo e começou a aplicar</div>
-    </div>
-    <div class="progress-bar-wrapper">
-        <div class="label-top">30 DIAS</div>
-        <div class="progress-bar">
-            <div class="marks">
-                <div class="mark mark-25"></div>
-                <div class="mark mark-50"></div>
-                <div class="mark mark-75"></div>
+            <div class="progress-bar-wrapper">
+                <div class="label-top">30 DAYS</div>
+                <div class="progress-bar">
+                    <div class="marks">
+                        <div class="mark mark-25"></div>
+                        <div class="mark mark-50"></div>
+                        <div class="mark mark-75"></div>
+                    </div>
+                    <div class="fill" style="height: 98%;"></div>
+                </div>
+                <div class="percentage">98%</div>
+                <div class="label-bottom">You’re a magnetic woman</div>
             </div>
-            <div class="fill" style="height: 98%;"></div>
         </div>
-        <div class="percentage">98%</div>
-        <div class="label-bottom">Você se tornou uma mulher magnética</div>
+        
+        <div class="content">
+            <p>You were trained to accept crumbs — here begins your quiet revenge.</p>
+            <p>Ready to make him think about you every hour, get jealous for no reason, and chase you without understanding why?</p>
+            <p>This method isn’t for those who want affection…</p>
+            <p>It’s for those who want power. 🧠🔥</p>
+            <p>You’ll gain emotional control, magnetic presence, and the ability to play with the <strong>male subconscious</strong> like a toy.</p>
+            <p>Get ready to watch him beg for attention, send desperate messages, and dream about you without knowing why.</p>
+            <p>If you want that... keep going. But if you want to keep being used and forgotten… close this damn page now.</p>
+            
+            <a class="botao-acao" href="quiz20.html">I WANT TO MASTER HIS MIND 🔥</a>
+            
+            <p class="warning">⚠️ THIS OPPORTUNITY IS UNIQUE. CLOSE THIS PAGE, AND THE METHOD DISAPPEARS.</p>
+        </div>
     </div>
-</div>
-
-<div class="content">
-    <p>Você foi treinada para aceitar migalhas — aqui começa sua vingança silenciosa.</p>
-    <p>Pronta para fazê-lo pensar em você a cada hora, sentir ciúmes sem motivo e correr atrás de você sem entender por quê?</p>
-    <p>Este método não é para quem busca carinho…</p>
-    <p>É para quem quer poder. 🧠🔥</p>
-    <p>Você ganhará controle emocional, presença magnética e a habilidade de brincar com o <strong>subconsciente masculino</strong> como se fosse um brinquedo.</p>
-    <p>Prepare-se para vê-lo implorar por atenção, enviar mensagens desesperadas e sonhar com você sem saber por quê.</p>
-    <p>Se você quer isso... continue. Mas se quer continuar sendo usada e esquecida… feche esta página agora mesmo.</p>
-    
-    <a class="botao-acao" href="quiz20.html">EU QUERO DOMINAR A MENTE DELE 🔥</a>
-    
-    <p class="warning">⚠️ ESTA OPORTUNIDADE É ÚNICA. FECHAR ESTA PÁGINA FAZ O MÉTODO DESAPARECER.</p>
-</div>
+</body>
+</html>
