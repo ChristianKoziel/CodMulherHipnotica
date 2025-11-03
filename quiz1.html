@@ -2,19 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>MÉTODO OBSESSÃO</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      width: 100%;           /* garante que não ultrapasse a tela */
+      overflow-x: hidden;    /* bloqueia scroll horizontal */
+      overflow-y: auto;      /* scroll vertical liberado */
       font-family: 'Poppins', 'Bebas Neue', sans-serif;
       background: radial-gradient(circle at center, #000000 0%, #050505 60%, #0b0005 100%);
-      min-height: 100vh;
       color: #fefefe;
-      overflow-y: auto; /* Permite scroll vertical */
       position: relative;
+      min-height: 100vh;
     }
 
     /* Fundo animado */
@@ -41,15 +43,15 @@
       background: rgba(0, 0, 0, 0.88);
       border-radius: 18px;
       padding: 35px 25px;
-      max-width: 90%;
-      width: 400px;
+      max-width: 400px;
+      width: 90%;
       text-align: center;
       position: relative;
       z-index: 1;
       box-shadow: 0 0 25px rgba(255, 0, 85, 0.25), inset 0 0 20px rgba(255, 0, 85, 0.1);
       border: 1px solid rgba(255, 0, 85, 0.35);
       overflow: hidden;
-      margin: 50px auto; /* centraliza horizontalmente e dá margem superior */
+      margin: 50px auto; /* centraliza e dá margem superior */
       animation: appear 1.2s ease;
     }
 
@@ -133,6 +135,7 @@
       margin: 5px 0;
       max-width: 80%;
       font-size: 0.9rem;
+      word-wrap: break-word; /* impede overflow horizontal */
     }
 
     .msg-them {
