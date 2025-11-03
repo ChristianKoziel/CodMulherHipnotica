@@ -12,15 +12,12 @@
       font-family: 'Poppins', 'Bebas Neue', sans-serif;
       background: radial-gradient(circle at center, #000000 0%, #050505 60%, #0b0005 100%);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: #fefefe;
-      overflow: hidden;
+      overflow-y: auto; /* Permite scroll vertical */
       position: relative;
     }
 
-    /* fundo animado */
+    /* Fundo animado */
     body::before {
       content: "";
       position: absolute;
@@ -52,6 +49,7 @@
       box-shadow: 0 0 25px rgba(255, 0, 85, 0.25), inset 0 0 20px rgba(255, 0, 85, 0.1);
       border: 1px solid rgba(255, 0, 85, 0.35);
       overflow: hidden;
+      margin: 50px auto; /* centraliza horizontalmente e dá margem superior */
       animation: appear 1.2s ease;
     }
 
