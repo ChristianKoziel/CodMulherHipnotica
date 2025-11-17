@@ -9,30 +9,7 @@
 
     <!-- Código do Pixel do Facebook Otimizado -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        
-        // Inicializa o Pixel com seu ID
-        fbq('init', '1208952827491954');
-        
-        // Rastreia visualização de página
-        fbq('track', 'PageView');
-        
-        // Rastreia visualização de conteúdo (para remarketing)
-        fbq('track', 'ViewContent', {
-            content_name: 'Código da Mulher Hipnótica',
-            content_category: 'Relacionamentos',
-            content_ids: ['produto_hipnotico'],
-            content_type: 'product',
-            value: 27.90,
-            currency: 'BRL'
-        });
+    
 
         // Função para rastrear clique no botão de compra
         function trackPurchaseEvent() {
