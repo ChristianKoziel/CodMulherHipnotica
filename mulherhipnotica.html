@@ -10,19 +10,18 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-    background:#0b0b0b;
-    color:#fff;
     font-family:'Poppins',sans-serif;
+    background:#0b0b0b;
+    color:#ffffff;
     line-height:1.6;
 }
-img{max-width:100%;display:block;margin:25px auto}
+img{max-width:100%;display:block;margin:20px auto}
 h1,h2,h3{
     font-family:'Bebas Neue',cursive;
     letter-spacing:1px;
     text-align:center;
 }
 .highlight{color:#ff3f81}
-.blood-text{color:#ff2e63;font-weight:bold}
 .container{
     max-width:900px;
     margin:auto;
@@ -41,8 +40,15 @@ h1,h2,h3{
     text-align:center;
     z-index:999;
 }
-.timer-title{font-size:14px;color:#ff3f81}
-.timer-digits{font-size:28px;font-weight:bold}
+.timer-title{
+    font-size:14px;
+    color:#ff3f81;
+    margin-bottom:4px;
+}
+.timer-digits{
+    font-size:26px;
+    font-weight:bold;
+}
 
 /* STOCK */
 .stock-counter{
@@ -52,30 +58,23 @@ h1,h2,h3{
     color:#ff4d4d;
 }
 
-/* HEADLINE */
-h1{
-    font-size:36px;
-    margin:25px 0 15px;
-}
+/* TEXTS */
 .subheadline{
     text-align:center;
     font-size:18px;
-    margin-bottom:30px;
-    color:#ddd;
+    margin:15px 0 25px;
 }
-
-/* TEXT */
-p{margin:15px 0;text-align:center}
+p{text-align:center;margin:15px 0}
 
 /* BONUS */
 .bonus-container{
     display:grid;
     grid-template-columns:1fr;
-    gap:15px;
+    gap:14px;
     margin:30px 0;
 }
 .bonus-item{
-    background:#151515;
+    background:#141414;
     padding:16px;
     border-left:4px solid #ff3f81;
     border-radius:6px;
@@ -93,12 +92,11 @@ p{margin:15px 0;text-align:center}
 .old-price{
     text-decoration:line-through;
     color:#aaa;
-    font-size:16px;
 }
 .new-price{
-    font-size:32px;
-    font-weight:bold;
+    font-size:30px;
     color:#00ff99;
+    font-weight:bold;
 }
 
 /* TESTIMONIAL */
@@ -106,7 +104,7 @@ p{margin:15px 0;text-align:center}
     background:#141414;
     padding:22px;
     border-radius:8px;
-    margin:35px 0;
+    margin:30px 0;
     font-style:italic;
 }
 
@@ -122,48 +120,48 @@ p{margin:15px 0;text-align:center}
 /* CTA */
 .cta-button{
     width:100%;
-    padding:20px;
+    padding:18px;
     background:linear-gradient(90deg,#ff3f81,#ff0055);
-    border:none;
     color:#fff;
+    border:none;
     font-size:20px;
     font-weight:bold;
     border-radius:8px;
     cursor:pointer;
     margin-top:20px;
 }
-.cta-button:hover{opacity:.9}
+.cta-button:hover{opacity:.95}
 .button-subtext{
     display:block;
     text-align:center;
+    margin-top:10px;
     font-size:13px;
     color:#ccc;
-    margin-top:10px;
 }
 
 /* WARNING */
 .last-warning{
     color:#ffd700;
     font-weight:bold;
-    margin:35px 0;
+    margin:30px 0;
 }
 
 /* RESPONSIVE */
 @media(max-width:600px){
-    h1{font-size:30px}
+    h1{font-size:28px}
     .new-price{font-size:26px}
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-    let timeLeft=8*60;
+    let timeLeft = 8 * 60;
     function updateTimer(){
-        const m=Math.floor(timeLeft/60);
-        const s=timeLeft%60;
-        document.getElementById('timer').innerText=
-            String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-        if(timeLeft>0){
+        let m = Math.floor(timeLeft/60);
+        let s = timeLeft % 60;
+        document.getElementById('timer').innerText =
+            String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
+        if(timeLeft > 0){
             timeLeft--;
             setTimeout(updateTimer,1000);
         }
@@ -183,37 +181,36 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="container">
 
 <div class="stock-counter">
-🩸 Restam apenas <strong>12 acessos</strong> disponíveis hoje
+⚠️ Restam apenas <strong>12 acessos</strong> disponíveis hoje
 </div>
 
 <h1>
 FAÇA ELE <span class="highlight">PENSAR EM VOCÊ</span><br>
-E TE QUERER DE VERDADE —<br>
-<span class="highlight">SEM SE HUMILHAR</span>
+E QUERER ESTAR AO SEU LADO —<br>
+<span class="highlight">SEM CORRER ATRÁS</span>
 </h1>
 
 <p class="subheadline">
-Você não precisa implorar por atenção.<br>
-Precisa ativar os gatilhos certos.
+Não é sobre manipular.<br>
+É sobre ativar o interesse certo no momento certo.
 </p>
 
 <img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
 
 <p>
-Você vai aprender como se tornar o
-<span class="blood-text">desejo constante</span>
-que ele respeita, valoriza e sente falta —
-mesmo quando tenta disfarçar.
+Você vai aprender como se tornar a mulher que ele
+<strong>respeita, valoriza e sente falta</strong>,
+sem implorar ou se anular.
 </p>
 
 <h2>O QUE VOCÊ RECEBE HOJE</h2>
 
 <div class="bonus-container">
-<div class="bonus-item"><strong>🔐 Código da Mulher Hipnótica</strong>O método central de atração emocional</div>
-<div class="bonus-item"><strong>🧠 Leitura da Mente Masculina</strong>Entenda sinais que ele nem percebe</div>
-<div class="bonus-item"><strong>💔 Ausência Estratégica</strong>Faça ele sentir sua falta sem sumir</div>
-<div class="bonus-item"><strong>🔥 18 Gatilhos Psicológicos</strong>Aplique no dia a dia</div>
-<div class="bonus-item"><strong>💍 Do Caos ao Compromisso</strong>Saia do vai-e-volta emocional</div>
+<div class="bonus-item"><strong>🔐 Código da Mulher Hipnótica</strong>Método principal de atração emocional</div>
+<div class="bonus-item"><strong>🧠 Mente Masculina</strong>Entenda os sinais invisíveis</div>
+<div class="bonus-item"><strong>💔 Ausência Inteligente</strong>Gere saudade sem jogos</div>
+<div class="bonus-item"><strong>🔥 18 Gatilhos de Atração</strong>Aplique no dia a dia</div>
+<div class="bonus-item"><strong>💍 Relacionamento Estável</strong>Saia do vai-e-volta</div>
 </div>
 
 <div class="price-comparison">
@@ -222,23 +219,24 @@ mesmo quando tenta disfarçar.
 </div>
 
 <div class="testimonial">
-“Eu sempre era a opção.  
-Depois do método, virei prioridade.”
+“Eu sempre era a que corria atrás.  
+Depois do método, tudo mudou.  
+Hoje sou prioridade.”
 <br><strong>— Luiza, 29 anos</strong>
 </div>
 
 <div class="guarantee">
 <h3>✅ GARANTIA DE 30 DIAS</h3>
-Se você não sentir mais controle emocional,
+Se você não sentir mais segurança emocional,
 devolvemos 100% do valor.
 </div>
 
 <p class="last-warning">
-⚠️ Fechar esta página é escolher continuar do mesmo jeito.
+⚠️ Se você sair agora, tudo continua igual.
 </p>
 
 <button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-NÃO QUERO MAIS SER IGNORADA — QUERO O CONTROLE 🩸
+QUERO VIRAR O JOGO AGORA
 </button>
 
 <span class="button-subtext">
