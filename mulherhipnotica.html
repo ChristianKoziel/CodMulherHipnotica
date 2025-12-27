@@ -11,30 +11,30 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#14071A,#0B0B0B);
+    background:linear-gradient(180deg,#120617,#0A0A0A);
     color:#FAF1F4;
     min-height:100vh;
     padding:20px;
 }
 .container{
-    max-width:720px;
+    max-width:740px;
     margin:0 auto;
-    background:rgba(10,10,10,.95);
-    border-radius:14px;
-    padding:35px 28px;
+    background:rgba(8,8,8,.96);
+    border-radius:16px;
+    padding:36px 26px;
     border:1px solid rgba(255,63,129,.6);
-    box-shadow:0 0 60px rgba(255,63,129,.35);
+    box-shadow:0 0 70px rgba(255,63,129,.35);
     position:relative;
     overflow:hidden;
 }
 .container::before{
     content:"";
     position:absolute;
-    inset:-20px;
+    inset:-25px;
     background:linear-gradient(45deg,#FF3F81,#E5003C,#FFD700,#FF3F81);
     background-size:400% 400%;
-    filter:blur(30px);
-    opacity:.18;
+    filter:blur(35px);
+    opacity:.16;
     z-index:-1;
     animation:glow 10s infinite;
 }
@@ -46,7 +46,7 @@ body{
 
 h1{
     font-family:'Bebas Neue',sans-serif;
-    font-size:38px;
+    font-size:40px;
     text-align:center;
     color:#FFD700;
     letter-spacing:1px;
@@ -58,14 +58,14 @@ h1 span{color:#FF3F81}
     text-align:center;
     font-size:15px;
     color:#E8C9D4;
-    margin-top:10px;
+    margin-top:8px;
 }
 
 .timer-box{
-    margin:28px 0;
+    margin:26px 0;
     padding:18px;
     border:2px dashed #FF3F81;
-    border-radius:10px;
+    border-radius:12px;
     text-align:center;
 }
 .timer-label{
@@ -74,7 +74,7 @@ h1 span{color:#FF3F81}
     margin-bottom:6px;
 }
 .timer{
-    font-size:34px;
+    font-size:36px;
     font-weight:700;
     color:#FF3F81;
     letter-spacing:3px;
@@ -84,21 +84,19 @@ p{
     margin:18px 0;
     text-align:center;
     font-size:15px;
-    line-height:1.6;
+    line-height:1.7;
     color:#D9B6C2;
 }
 
-.choices{
-    margin:30px 0;
-}
+.choices{margin:30px 0}
 .choice{
     background:rgba(30,11,38,.85);
     border-left:4px solid #FF3F81;
     padding:18px;
     margin:14px 0;
-    border-radius:8px;
+    border-radius:10px;
     font-size:14px;
-    box-shadow:0 4px 14px rgba(0,0,0,.45);
+    box-shadow:0 4px 16px rgba(0,0,0,.45);
 }
 .choice::before{
     content:"→ ";
@@ -109,16 +107,16 @@ p{
 .section-title{
     font-family:'Bebas Neue',sans-serif;
     text-align:center;
-    font-size:28px;
+    font-size:30px;
     color:#FFD700;
-    margin:40px 0 20px;
+    margin:42px 0 22px;
 }
 
 ul{list-style:none}
 ul li{
     margin:12px 0;
     padding:16px;
-    border-radius:8px;
+    border-radius:10px;
     background:rgba(255,63,129,.08);
     border-left:4px solid #FFD700;
     font-size:14px;
@@ -129,18 +127,11 @@ ul li::before{
     font-weight:bold;
 }
 
-.badge{
-    text-align:center;
-    margin:25px 0;
-    font-size:13px;
-    color:#BFA3AD;
-}
-
 .price-box{
-    margin:35px 0;
-    padding:22px;
+    margin:38px 0 26px;
+    padding:26px;
     background:rgba(0,0,0,.65);
-    border-radius:12px;
+    border-radius:14px;
     border:1px solid #FF3F81;
     text-align:center;
 }
@@ -150,7 +141,7 @@ ul li::before{
     text-decoration:line-through;
 }
 .new{
-    font-size:42px;
+    font-size:44px;
     font-weight:700;
     color:#FFD700;
     margin:10px 0;
@@ -162,20 +153,20 @@ ul li::before{
 
 .button{
     width:100%;
-    padding:22px;
+    padding:24px;
     font-size:22px;
     font-weight:700;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     background:linear-gradient(45deg,#FF3F81,#E5003C);
     color:#FFF;
     cursor:pointer;
-    box-shadow:0 8px 35px rgba(255,63,129,.8);
+    box-shadow:0 10px 40px rgba(255,63,129,.85);
     transition:.3s;
 }
 .button:hover{
     transform:translateY(-3px);
-    box-shadow:0 12px 45px rgba(229,0,60,.9);
+    box-shadow:0 14px 50px rgba(229,0,60,.95);
 }
 
 .micro{
@@ -185,19 +176,31 @@ ul li::before{
     color:#C9AAB5;
 }
 
+/* GARANTIA 30 DIAS */
 .garantia{
-    margin-top:30px;
-    padding:16px;
-    border-radius:10px;
-    background:rgba(255,215,0,.08);
-    border:1px solid rgba(255,215,0,.4);
-    font-size:13px;
-    color:#EED7A4;
+    margin-top:34px;
+    padding:20px;
+    border-radius:12px;
+    background:rgba(255,215,0,.09);
+    border:1px solid rgba(255,215,0,.5);
+    font-size:14px;
+    color:#F2DFA8;
     text-align:center;
+}
+.garantia strong{
+    color:#FFD700;
+}
+
+/* SEGURANÇA */
+.security{
+    margin-top:14px;
+    text-align:center;
+    font-size:12px;
+    color:#BFA3AD;
 }
 
 .warning{
-    margin-top:25px;
+    margin-top:28px;
     text-align:center;
     font-size:13px;
     color:#E5003C;
@@ -210,8 +213,8 @@ ul li::before{
 }
 
 @media(max-width:480px){
-    h1{font-size:30px}
-    .new{font-size:34px}
+    h1{font-size:32px}
+    .new{font-size:36px}
     .button{font-size:18px}
 }
 </style>
@@ -222,7 +225,7 @@ ul li::before{
 <div class="container">
 
 <h1>ÚLTIMA CHANCE<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
-<div class="sub">O acesso que muda completamente como eles reagem a você</div>
+<div class="sub">O método que muda como eles reagem a você — sem cobrança, sem esforço</div>
 
 <div class="timer-box">
     <div class="timer-label">ESTE ACESSO EXPIRA EM:</div>
@@ -230,8 +233,8 @@ ul li::before{
 </div>
 
 <p>
-Você não chegou até aqui por curiosidade.  
-Chegou porque **cansou de sentir que entrega demais e recebe de menos**.
+Você não chegou aqui por acaso.  
+Chegou porque **cansou de ser a mulher que se esforça demais e recebe de menos**.
 </p>
 
 <div class="choices">
@@ -240,39 +243,45 @@ Chegou porque **cansou de sentir que entrega demais e recebe de menos**.
     <div class="choice">Ou assumir o controle da dinâmica emocional</div>
 </div>
 
-<div class="section-title">VOCÊ VAI ACESSAR AGORA</div>
+<div class="section-title">VOCÊ ACESSA AGORA</div>
 
 <ul>
 <li>Código completo da Mulher Hipnótica</li>
 <li>Protocolos emocionais de ativação imediata</li>
 <li>Leitura psicológica do comportamento masculino</li>
 <li>Posicionamento feminino de alto valor</li>
-<li>Bloqueio de padrões que te colocam como opção</li>
-<li>Manutenção do interesse sem cobrança</li>
-<li>Acesso vitalício + atualizações</li>
+<li>Bloqueio definitivo de padrões que te colocam como opção</li>
+<li>Manutenção do interesse sem cobrança ou ansiedade</li>
+<li>Acesso vitalício + atualizações inclusas</li>
 </ul>
 
-<div class="badge">🔥 Mais de milhares de acessos liberados</div>
-
 <div class="price-box">
-    <div class="old">De R$397,00</div>
-    <div class="new">POR APENAS R$27,90</div>
-    <div class="discount">Desconto exclusivo liberado agora</div>
+    <div class="old">De R$197,00</div>
+    <div class="new">R$39,70</div>
+    <div class="discount">Desconto liberado apenas nesta página</div>
 </div>
 
-<button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, EU QUERO ESSE CONTROLE 🔥
+<button class="button" onclick="window.location.href='https://SEU-CHECKOUT-AQUI.com'">
+SIM, EU QUERO ESSE CONTROLE AGORA 🔥
 </button>
 
-<div class="micro">Compra 100% segura • Acesso imediato</div>
+<div class="micro">Acesso imediato • Compra segura • Total discrição</div>
 
 <div class="garantia">
+<strong>GARANTIA INCONDICIONAL DE 30 DIAS</strong><br><br>
+Use o Código da Mulher Hipnótica por 30 dias.  
 Se você não sentir mudança real na forma como eles te tratam,  
-seu risco é ZERO.
+<strong>basta pedir o reembolso.</strong><br><br>
+Sem perguntas. Sem justificativas.  
+O risco é totalmente nosso.
+</div>
+
+<div class="security">
+Pagamento protegido • Dados criptografados • Acesso privado
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, o acesso promocional é encerrado.
+⚠️ Ao sair desta página, o desconto e o acesso promocional são encerrados.
 </div>
 
 </div>
@@ -285,7 +294,7 @@ setInterval(()=>{
     if(totalSeconds <= 0) return;
     totalSeconds--;
     let m = Math.floor(totalSeconds/60);
-    let s = totalSeconds%60;
+    let s = totalSeconds % 60;
     timerEl.textContent =
         String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
 },1000);
