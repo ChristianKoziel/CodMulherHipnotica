@@ -1,293 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÚLTIMA CHANCE: CÓDIGO DA MULHER HIPNÓTICA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/style/styletelafabio.css" />
-    <script>
-        // Timer regressivo
-        document.addEventListener('DOMContentLoaded', function() {
-            let timeLeft = 8 * 60; // 8 minutos em segundos
-            
-            function updateTimer() {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                
-                document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
-                
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    setTimeout(updateTimer, 1000);
-                } else {
-                    document.querySelector('.button-subtext').textContent = '⚠️ OFERTA ENCERRADA!';
-                }
-            }
-            
-            updateTimer();
-            
-            // Timer flutuante
-            const timer = document.querySelector('.scarcity-timer');
-            let timerVisible = false;
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300 && !timerVisible) {
-                    timer.classList.add('visible');
-                    timerVisible = true;
-                } else if (window.scrollY <= 300 && timerVisible) {
-                    timer.classList.remove('visible');
-                    timerVisible = false;
-                }
-            });
-        });
-    </script>
-</head>
-<body>
-    <!-- Timer flutuante -->
-    <div class="scarcity-timer">
-        <div class="timer-title">⏱️ OFERTA EXPIRA EM:</div>
-        <div class="timer-digits">
-            <div class="timer-unit">
-                <span id="timer-minutes">08</span>
-                <div class="timer-label">MIN</div>
-            </div>
-            <div style="font-size: 20px; align-self: center; color: #FF3F81;">:</div>
-            <div class="timer-unit">
-                <span id="timer-seconds">00</span>
-                <div class="timer-label">SEG</div>
-            </div>
-        </div>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÚLTIMA CHANCE — Código da Mulher Hipnótica</title>
 
-    <div class="stock-counter" style="text-align: center; font-weight: bold; font-size: 18px; margin-top: 10px; color: red;">
-    🩸 ÚLTIMAS <span id="qtd-restante">12</span> UNIDADES — DEPOIS DISSO A PÁGINA CAI
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <div class="ritual-container">
-        <h1>⚠️ <span>SOMENTE HOJE</span> — ÚLTIMA CHANCE DE ENTRAR NO CÓDIGO DA MULHER HIPNÓTICA + <span class="highlight">DESCONTO INSANO DE 80%!</span></h1>
-        
-        <p style="font-weight: bold; font-size: 18px;">NUNCA FOI TÃO FÁCIL DOMINAR O SUBCONSCIENTE DELE — DECIDA AGORA.</p>
-        
-        <!-- Timer de escassez (versão estática para mobile) -->
-        <div class="scarcity-timer" style="position: relative; transform: none; width: 100%; margin: 20px auto;">
-            <div class="timer-title">⏱️ ESTA OFERTA EXPIRA EM:</div>
-            <div class="timer-digits">
-                <div class="timer-unit">
-                    <span id="timer-minutes-static">08</span>
-                    <div class="timer-label">MIN</div>
-                </div>
-                <div style="font-size: 24px; align-self: center; color: #FF3F81;">:</div>
-                <div class="timer-unit">
-                    <span id="timer-seconds-static">00</span>
-                    <div class="timer-label">SEG</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Imagem do produto -->
-        <img src="src/img/meterial.png" alt="CÓDIGO DA MULHER HIPNÓTICA" class="product-image">
-        
-        <p>VOCÊ VAI APRENDER <span class="highlight">COMO CONTROLAR O SUBCONSCIENTE DELE</span> E SE TORNAR O <span class="blood-text">DESEJO PERMANENTE</span> QUE COMANDA SUA ATENÇÃO E DOMINA SEUS PENSAMENTOS.</p>
-        
-        <h2>O QUE VOCÊ RECEBERÁ HOJE:</h2>
-        
-        <div class="bonus-container">
-            <div class="bonus-item">
-                <span class="bonus-title">🔐 CÓDIGO DA MULHER HIPNÓTICA</span>
-                <span class="bonus-desc">Manual completo para reprogramar a mente dele e transformar-se em uma obsessão</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🧠 BÔNUS: GUIA PARA LER UM HOMEM</span>
-                <span class="bonus-desc">Entenda os sinais mentais que ele nem percebe que envia</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">💔 BÔNUS: FAÇA-O SENTIR SUA FALTA</span>
-                <span class="bonus-desc">Use a saudade como uma poderosa arma psicológica</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🔥 BÔNUS: 18 GATILHOS DE SEDUÇÃO NA PRÁTICA</span>
-                <span class="bonus-desc">Técnicas que criam necessidade emocional</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">💍 BÔNUS: GUIA DO AMOR DURADOURO</span>
-                <span class="bonus-desc">Como fazer com que ele queira um compromisso sério</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">⚠️ BÔNUS: GUIA DOS 17 ERROS FATAIS</span>
-                <span class="bonus-desc">O que nunca fazer se quiser manter o controle</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🚫 BÔNUS: O MANUSCRITO PROIBIDO</span>
-                <span class="bonus-desc">Técnicas avançadas de manipulação emocional</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🔞 BÔNUS OCULTO: VÍDEO PROIBIDO DO FEITIÇO SEXUAL DA MARCA</span>
-                <span class="bonus-desc">Uma técnica secreta que faz ele associar prazer intenso à sua imagem</span>
-            </div>
-        </div>
-        
-        <div class="price-comparison">
-            <div class="old-price">O MÉTODO PELO QUAL MULHERES PAGAM R$397,00 EM CONSULTORIAS</div>
-            <div class="new-price">HOJE: R$27,90</div>
-        </div>
-        
-        <!-- Prova Social -->
-        <div class="testimonial">
-            <p class="testimonial-text">"Após 5 dias aplicando, ele me ligou chorando... pensei que era tarde demais, mas foi meu maior triunfo. Agora decido quando e como nos veremos.”</p>
-            <p class="testimonial-author">— ANA, 28 (UMA DE 42.000+ ALUNAS)</p>
-        </div>
-        
-        <img src="src/img/luizadp1.png" alt="DEPOIMENTO REAL" class="product-image">
-        
-        <h3>VOCÊ MERECE O PODER QUE ELE TE NEGA</h3>
-        <img src="src/img/meterial.png" alt="TODO O MATERIAL" class="product-image">
-        
-        <!-- Garantia -->
-        <div class="guarantee">
-            <h3>✅ GARANTIA DE 30 DIAS, SEM PERGUNTAS</h3>
-            <p>SE AO FINAL DO MÊS ELE NÃO ESTIVER COLADO EM VOCÊ, GRITE E PEÇA SEU DINHEIRO DE VOLTA. <span class="blood-text">SEM ENROLAÇÃO.</span></p>
-            <img src="src/img/30-DIAS-FINAL-1.svg" alt="GARANTIA DE 30 DIAS" class="guarantee-seal">
-            <p>+97% DAS MULHERES SE TORNARAM FÃS SEM PEDIR REEMBOLSO.</p>
-        </div>
-        
-        <!-- Ameaça emocional -->
-        <p class="last-warning">⚠️ SE VOCÊ FECHAR ESTA PÁGINA... ELE VAI CONTINUAR TE USANDO, TE IGNORANDO, E DORMINDO COM OUTRA ENQUANTO VOCÊ ORA POR UM “OI, SUMIDA.”</p>
-        
-        <!-- Botão CTA Principal -->
-        <button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">NÃO QUERO MAIS SER USADA — QUERO CONTROLE 🩸</button>
-        <span class="button-subtext">A OFERTA ACABA QUANDO O TIMER CHEGAR A ZERO.</span>
-        
-        <!-- Métodos de Pagamento -->
-        <img src="src/img/formasdepagamentocartoes.webp" alt="MÉTODOS DE PAGAMENTO" class="product-image">
-        <p><small>COBRANÇA ÚNICA; NÃO HÁ FATURAMENTO RECORRENTE.</small></p>
-        
-        <!-- FAQ -->
-        <div style="margin-top: 30px;">
-            <h3>PERGUNTAS FREQUENTES</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ COMO RECEBO O MATERIAL?</div>
-                <p>Acesso imediato após a confirmação do pagamento. Você receberá tudo por email em até 5 minutos.</p>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ FUNCIONA EM QUALQUER FASE DO RELACIONAMENTO?</div>
-                <p>Sim! Solteira, saindo casualmente ou em um relacionamento — as técnicas se adaptam a qualquer situação.</p>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ É SEGURO COMPRAR?</div>
-                <p>100% seguro. Pagamento processado por uma plataforma profissional com criptografia bancária.</p>
-            </div>
-        </div>
-        
-        <!-- Selos de Segurança -->
-        <div class="payment-badges">
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="COMPRA SEGURA" class="payment-badge">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WHATSAPP VIP" class="payment-badge">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="GARANTIA" class="payment-badge">
-        </div>
-        
-        <!-- Último CTA -->
-        <button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">QUERO VIRAR VÍCIO NA MENTE DELE! 🩸</button>
-        <span class="button-subtext">⚠️ O BOTÃO PODE DESAPARECER A QUALQUER MOMENTO</span>
-        
-        <!-- Frase de fechamento -->
-        <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ ESTA PÁGINA FOI FEITA PARA DESAPARECER... SE VOCÊ SAIR AGORA, O MÉTODO SE AUTODESTRÓI. <br> SE CONTINUAR... TERÁ UM HOMEM IMPLORANDO PELA SUA ATENÇÃO ANTES DO FINAL DO MÊS.</p>
-    </div>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0c0c0c;
+    color:#fff;
+    line-height:1.6;
+}
+img{max-width:100%;display:block;margin:20px auto}
+h1,h2,h3{font-family:'Bebas Neue',cursive;letter-spacing:1px;text-align:center}
+.highlight{color:#ff3f81}
+.container{max-width:900px;margin:auto;padding:20px}
 
-    <script>
-        // Atualiza o timer estático (para mobile)
-        document.addEventListener('DOMContentLoaded', function() {
-            let timeLeftStatic = 8 * 60;
-            
-            function updateStaticTimer() {
-                const minutes = Math.floor(timeLeftStatic / 60);
-                const seconds = timeLeftStatic % 60;
-                
-                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
-                
-                if (timeLeftStatic > 0) {
-                    timeLeftStatic--;
-                    setTimeout(updateStaticTimer, 1000);
-                }
-            }
-            
-            updateStaticTimer();
-        });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let estoque = 12;
-        const estoqueSpan = document.getElementById('qtd-restante');
+/* TIMER */
+.scarcity-timer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#111;
+    border-bottom:2px solid #ff3f81;
+    padding:10px;
+    text-align:center;
+    z-index:999;
+}
+.timer-title{font-size:14px;color:#ff3f81}
+.timer-digits{font-size:26px;font-weight:bold}
 
-        const nomes = ["Olivia", "Ana", "Sofia", "Luiza", "Isabela", "Gabrielly", "Geovana", "Emily", "Luana", "Emanuele"];
-        const cidades = ["Fortaleza", "Balneário Camboriú", "Guaratuba", "Gramado", "Minas Gerais", "Uberlândia", "Curitiba", "Florianópolis", "São Paulo", "Rio de Janeiro"];
-
-        function simulaVenda() {
-            if (estoque > 1) {
-                estoque--;
-                estoqueSpan.textContent = estoque;
-
-                const nome = nomes[Math.floor(Math.random() * nomes.length)];
-                const cidade = cidades[Math.floor(Math.random() * cidades.length)];
-
-                const noti = document.createElement('div');
-                noti.className = "fake-sale-noti";
-                noti.innerHTML = `✅ ${nome} de ${cidade} acabou de comprar`;
-
-                document.body.appendChild(noti);
-                setTimeout(() => noti.remove(), 5000);
-            } else if (estoque === 1) {
-                estoque--;
-                estoqueSpan.textContent = "0";
-                document.querySelector('.cta-button').style.display = "none";
-                document.querySelector('.button-subtext').textContent = "⚠️ OFERTA ENCERRADA!";
-            }
-        }
-
-        function ativaNotificacoes() {
-            simulaVenda();
-            const intervalo = Math.floor(Math.random() * 10) + 35;
-            setTimeout(ativaNotificacoes, intervalo * 1000);
-        }
-
-        setTimeout(ativaNotificacoes, 30000);
-    });
-    </script>
-    <style>
-.fake-sale-noti {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background-color: #d4fbe0;
-    color: #1e6641;
-    padding: 12px 18px;
-    font-size: 14px;
-    border-left: 5px solid #20c261;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    font-family: 'Poppins', sans-serif;
-    z-index: 9999;
-    animation: fadeInOut 5s ease-in-out;
+/* STOCK */
+.stock-counter{
+    margin-top:90px;
+    text-align:center;
+    color:#ff4d4d;
+    font-weight:bold;
 }
 
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(20px); }
-    10% { opacity: 1; transform: translateY(0); }
-    90% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(20px); }
+/* HEADLINE */
+h1{font-size:34px;margin:20px 0}
+.subheadline{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+/* BONUS */
+.bonus-container{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+    margin:30px 0;
+}
+.bonus-item{
+    background:#151515;
+    padding:15px;
+    border-left:4px solid #ff3f81;
+    border-radius:6px;
+}
+.bonus-item strong{display:block;margin-bottom:5px}
+
+/* PRICE */
+.price-comparison{
+    text-align:center;
+    margin:30px 0;
+}
+.old-price{text-decoration:line-through;color:#aaa}
+.new-price{font-size:30px;color:#00ff99;font-weight:bold}
+
+/* TESTIMONIAL */
+.testimonial{
+    background:#141414;
+    padding:20px;
+    border-radius:8px;
+    margin:30px 0;
+    font-style:italic;
+    text-align:center;
+}
+
+/* GUARANTEE */
+.guarantee{
+    border:2px dashed #00ff99;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+    margin:30px 0;
+}
+
+/* CTA */
+.cta-button{
+    width:100%;
+    padding:18px;
+    background:linear-gradient(90deg,#ff3f81,#ff0055);
+    color:#fff;
+    border:none;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:20px;
+}
+.cta-button:hover{opacity:.9}
+.button-subtext{
+    display:block;
+    text-align:center;
+    margin-top:10px;
+    font-size:13px;
+    color:#ccc;
+}
+
+/* WARNING */
+.last-warning{
+    color:#ffd700;
+    font-weight:bold;
+    text-align:center;
+    margin:30px 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    h1{font-size:28px}
+    .new-price{font-size:26px}
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    let timeLeft=8*60;
+    function updateTimer(){
+        let m=Math.floor(timeLeft/60);
+        let s=timeLeft%60;
+        document.getElementById('timer').innerText=
+            String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+        if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
+    }
+    updateTimer();
+});
+</script>
+</head>
+
+<body>
+
+<div class="scarcity-timer">
+    <div class="timer-title">⏱️ ESTA CONDIÇÃO ESPECIAL EXPIRA EM</div>
+    <div class="timer-digits" id="timer">08:00</div>
+</div>
+
+<div class="container">
+
+<div class="stock-counter">
+⚠️ Restam apenas <strong>12 acessos</strong> disponíveis hoje
+</div>
+
+<h1>
+FAÇA ELE <span class="highlight">PENSAR EM VOCÊ</span><br>
+E QUERER ESTAR AO SEU LADO<br>
+<span class="highlight">SEM CORRER ATRÁS</span>
+</h1>
+
+<p class="subheadline">
+Não é sobre manipular.<br>
+É sobre ativar o interesse certo no momento certo.
+</p>
+
+<img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
+
+<p style="text-align:center">
+Você vai aprender como se tornar a mulher que ele
+<strong>respeita, valoriza e sente falta</strong>,
+sem implorar ou se anular.
+</p>
+
+<h2>O QUE VOCÊ RECEBE HOJE</h2>
+
+<div class="bonus-container">
+<div class="bonus-item"><strong>🔐 Código da Mulher Hipnótica</strong>Método principal de atração emocional</div>
+<div class="bonus-item"><strong>🧠 Mente Masculina</strong>Entenda os sinais invisíveis</div>
+<div class="bonus-item"><strong>💔 Ausência Inteligente</strong>Como gerar saudade sem sumir</div>
+<div class="bonus-item"><strong>🔥 18 Gatilhos de Atração</strong>Aplique no dia a dia</div>
+<div class="bonus-item"><strong>💍 Relacionamento Estável</strong>Saia do vai-e-volta</div>
+</div>
+
+<div class="price-comparison">
+<div class="old-price">De R$397,00</div>
+<div class="new-price">Hoje por apenas R$27,90</div>
+</div>
+
+<div class="testimonial">
+“Eu sempre era a que corria atrás.  
+Hoje sou tratada como prioridade.”
+<br><strong>— Luiza, 29 anos</strong>
+</div>
+
+<div class="guarantee">
+<h3>✅ GARANTIA DE 30 DIAS</h3>
+Se não sentir segurança emocional,
+devolvemos 100% do valor.
+</div>
+
+<p class="last-warning">
+⚠️ Se você sair agora, tudo continua igual.
+</p>
+
+<button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
+QUERO VIRAR O JOGO AGORA
+</button>
+
+<span class="button-subtext">
+Acesso imediato • Pagamento único • Oferta limitada
+</span>
+
+<img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
+
+</div>
+
 </body>
 </html>
