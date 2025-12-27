@@ -6,181 +6,23 @@
 <title>ÚLTIMA CHANCE — Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0f0f0f;
-    color:#ffffff;
-    line-height:1.7;
-}
-img{max-width:100%;display:block;margin:25px auto}
-h1,h2,h3{
-    font-family:'Bebas Neue',cursive;
-    letter-spacing:1px;
-    text-align:center;
-}
-.highlight{color:#ff3f81}
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-
-/* TIMER */
-.scarcity-timer{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#111;
-    border-bottom:2px solid #ff3f81;
-    padding:10px;
-    text-align:center;
-    z-index:999;
-}
-.timer-title{
-    font-size:13px;
-    color:#ff3f81;
-}
-.timer-digits{
-    font-size:26px;
-    font-weight:bold;
-}
-
-/* STOCK */
-.stock-counter{
-    margin-top:90px;
-    text-align:center;
-    font-weight:bold;
-    color:#ff6b6b;
-    font-size:16px;
-}
-
-/* HEADLINE */
-h1{
-    font-size:38px;
-    margin:25px 0;
-}
-.subheadline{
-    text-align:center;
-    font-size:18px;
-    opacity:.9;
-    margin-bottom:30px;
-}
-
-/* SECTIONS */
-section{
-    margin:45px 0;
-}
-
-/* BONUS */
-.bonus-container{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:15px;
-}
-.bonus-item{
-    background:#161616;
-    padding:18px;
-    border-left:4px solid #ff3f81;
-    border-radius:8px;
-}
-.bonus-item strong{
-    display:block;
-    margin-bottom:6px;
-    font-size:16px;
-}
-
-/* PRICE */
-.price-comparison{
-    text-align:center;
-    margin:40px 0;
-}
-.old-price{
-    text-decoration:line-through;
-    color:#aaa;
-    font-size:16px;
-}
-.new-price{
-    font-size:34px;
-    font-weight:bold;
-    color:#2bffb1;
-}
-
-/* TESTIMONIAL */
-.testimonial{
-    background:#141414;
-    padding:25px;
-    border-radius:10px;
-    text-align:center;
-    font-style:italic;
-}
-
-/* GUARANTEE */
-.guarantee{
-    border:2px dashed #2bffb1;
-    padding:25px;
-    border-radius:10px;
-    text-align:center;
-}
-
-/* CTA */
-.cta-button{
-    width:100%;
-    padding:20px;
-    background:linear-gradient(90deg,#ff3f81,#ff0055);
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:25px;
-}
-.cta-button:hover{opacity:.9}
-.button-subtext{
-    display:block;
-    text-align:center;
-    font-size:13px;
-    margin-top:10px;
-    color:#ccc;
-}
-
-/* WARNING */
-.last-warning{
-    text-align:center;
-    color:#ffd700;
-    font-weight:bold;
-    margin:35px 0;
-}
-
-/* FAQ */
-.faq-item{
-    background:#151515;
-    padding:15px;
-    border-radius:8px;
-    margin-bottom:12px;
-}
-.faq-item strong{display:block;margin-bottom:5px}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-    h1{font-size:30px}
-    .new-price{font-size:28px}
-}
-</style>
+<link rel="stylesheet" href="src/style/styletelafabio.css" />
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-    let timeLeft=8*60;
-    function updateTimer(){
-        let m=Math.floor(timeLeft/60);
-        let s=timeLeft%60;
-        document.getElementById('timer').innerText=
-            String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-        if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
+document.addEventListener('DOMContentLoaded', function() {
+    let timeLeft = 8 * 60;
+
+    function updateTimer() {
+        const m = Math.floor(timeLeft / 60);
+        const s = timeLeft % 60;
+
+        document.getElementById('timer-minutes').textContent = String(m).padStart(2,'0');
+        document.getElementById('timer-seconds').textContent = String(s).padStart(2,'0');
+
+        if (timeLeft > 0) {
+            timeLeft--;
+            setTimeout(updateTimer, 1000);
+        }
     }
     updateTimer();
 });
@@ -189,107 +31,188 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <body>
 
+<!-- TIMER FIXO -->
 <div class="scarcity-timer">
-    <div class="timer-title">⏱️ ESTA CONDIÇÃO ESPECIAL EXPIRA EM</div>
-    <div class="timer-digits" id="timer">08:00</div>
+    <div class="timer-title">⏱️ ESTA CONDIÇÃO ESPECIAL EXPIRA EM:</div>
+    <div class="timer-digits">
+        <span id="timer-minutes">08</span>:<span id="timer-seconds">00</span>
+    </div>
 </div>
 
-<div class="container">
-
+<!-- CONTADOR DE ACESSOS -->
 <div class="stock-counter">
 ⚠️ Restam apenas <strong>12 acessos</strong> disponíveis hoje
 </div>
 
+<div class="ritual-container">
+
+<!-- HERO -->
 <h1>
 FAÇA ELE <span class="highlight">PENSAR EM VOCÊ</span><br>
-E QUERER ESTAR AO SEU LADO<br>
+SENTIR SUA FALTA E<br>
+QUERER ESTAR AO SEU LADO<br>
 <span class="highlight">SEM CORRER ATRÁS</span>
 </h1>
 
 <p class="subheadline">
-Não é sobre mudar quem você é.<br>
-É sobre parar de agir de um jeito que te faz perder valor.
+Não é sobre joguinhos.<br>
+É sobre entender como o interesse masculino funciona<br>
+e agir com inteligência emocional.
 </p>
 
-<img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
+<img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
 
-<section>
-<p style="text-align:center">
-Você não precisa implorar atenção, competir com outras mulheres
-ou aceitar migalhas emocionais.<br><br>
-Existe uma forma simples de despertar <strong>respeito, interesse e saudade</strong>
-— mesmo em homens frios, confusos ou emocionalmente distantes.
+<p>
+Se você já sentiu que:
 </p>
-</section>
 
-<section>
-<h2>O QUE VOCÊ VAI APRENDER</h2>
+<ul style="margin:20px 0 20px 20px; line-height:1.8;">
+<li>sempre gosta mais do que ele</li>
+<li>é incrível no começo, mas depois ele esfria</li>
+<li>acaba se explicando demais</li>
+<li>se sente esquecida com facilidade</li>
+</ul>
+
+<p>
+então isso não é falta de valor.<br>
+É falta de <strong>estratégia emocional</strong>.
+</p>
+
+<p>
+O <strong>Código da Mulher Hipnótica</strong> existe para te ensinar
+como se posicionar de forma natural, feminina e respeitada,
+sem precisar implorar atenção.
+</p>
+
+<!-- BLOCO DE TRANSIÇÃO -->
+<h2>O QUE MUDA QUANDO VOCÊ ENTENDE O JOGO</h2>
+
+<p>
+Você para de:
+</p>
+
+<ul style="margin-left:20px;">
+<li>mandar mensagem sem resposta</li>
+<li>ficar ansiosa esperando atitude</li>
+<li>se sentir em segundo plano</li>
+</ul>
+
+<p>
+E começa a:
+</p>
+
+<ul style="margin-left:20px;">
+<li>ser lembrada espontaneamente</li>
+<li>sentir segurança emocional</li>
+<li>receber mais iniciativa</li>
+</ul>
+
+<!-- ENTREGA -->
+<h2>O QUE VOCÊ RECEBE HOJE</h2>
 
 <div class="bonus-container">
-<div class="bonus-item"><strong>🔐 Código da Mulher Hipnótica</strong>Como ativar interesse emocional sem esforço</div>
-<div class="bonus-item"><strong>🧠 Psicologia Masculina</strong>O que realmente prende a atenção de um homem</div>
-<div class="bonus-item"><strong>💔 Ausência Inteligente</strong>Como gerar saudade sem parecer joguinho</div>
-<div class="bonus-item"><strong>🔥 18 Gatilhos de Atração</strong>Comportamentos que aumentam seu valor</div>
-<div class="bonus-item"><strong>💍 Caminho para Compromisso</strong>Saia do “fica nisso” para algo estável</div>
-</div>
-</section>
 
-<section class="price-comparison">
-<div class="old-price">De R$397,00</div>
-<div class="new-price">Hoje por apenas R$27,90</div>
-<p style="margin-top:10px;font-size:14px;opacity:.8">
-Menos que um lanche — e pode mudar completamente sua vida emocional.
+<div class="bonus-item">
+<strong>🔐 Código da Mulher Hipnótica</strong>
+<p>
+O método central que ensina como criar conexão,
+respeito e presença emocional de forma natural.
 </p>
-</section>
+</div>
 
-<section class="testimonial">
-“Eu achava que o problema era comigo.  
-Depois que entendi como agir, tudo mudou.  
-Hoje ele me respeita e faz questão de estar comigo.”
-<br><br>
+<div class="bonus-item">
+<strong>🧠 Como a Mente Masculina Funciona</strong>
+<p>
+Você aprende o que realmente faz um homem se aproximar
+— e o que faz ele se afastar.
+</p>
+</div>
+
+<div class="bonus-item">
+<strong>💔 O Poder da Ausência Inteligente</strong>
+<p>
+Como se afastar sem perder valor e sem desaparecer.
+</p>
+</div>
+
+<div class="bonus-item">
+<strong>🔥 18 Gatilhos de Atração Prática</strong>
+<p>
+Aplicações simples para o dia a dia, sem teatro.
+</p>
+</div>
+
+<div class="bonus-item">
+<strong>💍 Caminho para um Relacionamento Estável</strong>
+<p>
+Como sair do ciclo de incerteza emocional.
+</p>
+</div>
+
+</div>
+
+<!-- PREÇO -->
+<div class="price-comparison">
+<div class="old-price">De R$397,00</div>
+<div class="new-price">Hoje por apenas <strong>R$27,90</strong></div>
+</div>
+
+<p style="text-align:center;">
+Menos que uma pizza.<br>
+E pode mudar completamente como você é tratada.
+</p>
+
+<!-- PROVA SOCIAL -->
+<div class="testimonial">
+<p>
+“Eu sempre sentia que precisava fazer mais.
+Depois que entendi como me posicionar,
+as coisas começaram a fluir naturalmente.”
+</p>
 <strong>— Luiza, 29 anos</strong>
-</section>
+</div>
 
-<section class="guarantee">
+<div class="testimonial">
+<p>
+“Não é mágica. É clareza.
+Hoje eu sei quando agir e quando não.”
+</p>
+<strong>— Camila, 33 anos</strong>
+</div>
+
+<!-- GARANTIA -->
+<div class="guarantee">
 <h3>✅ GARANTIA DE 30 DIAS</h3>
 <p>
-Leia, aplique e sinta a diferença.<br>
-Se não fizer sentido pra você, devolvemos 100% do valor.
+Se você não sentir mais segurança emocional,
+pode pedir 100% do seu dinheiro de volta.
+Sem perguntas.
 </p>
-</section>
-
-<section>
-<h2>PERGUNTAS FREQUENTES</h2>
-
-<div class="faq-item">
-<strong>Funciona mesmo?</strong>
-Funciona porque não tenta mudar o homem — muda sua postura emocional.
 </div>
 
-<div class="faq-item">
-<strong>É manipulação?</strong>
-Não. É inteligência emocional aplicada.
-</div>
-
-<div class="faq-item">
-<strong>Como recebo?</strong>
-Acesso imediato após o pagamento.
-</div>
-</section>
-
+<!-- ANCORAGEM EMOCIONAL -->
 <p class="last-warning">
-⚠️ Se você fechar essa página, tudo continua exatamente igual.
+⚠️ Se você sair agora, tudo continua igual.<br>
+O mesmo padrão. As mesmas dúvidas.<br>
+A decisão é sua.
 </p>
 
+<!-- CTA -->
 <button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
 QUERO VIRAR O JOGO AGORA
 </button>
 
 <span class="button-subtext">
-Acesso imediato • Pagamento único • Oferta limitada
+Acesso imediato • Pagamento único • Oferta por tempo limitado
 </span>
 
-<img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
+<img src="src/img/formasdepagamentocartoes.webp" class="product-image" alt="Formas de pagamento">
+
+<!-- FECHAMENTO -->
+<p style="text-align:center; margin-top:30px; font-size:15px; opacity:.8;">
+Esse conteúdo é para mulheres que querem mais clareza emocional,
+não dependência.
+</p>
 
 </div>
 
