@@ -11,22 +11,14 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
-    background:#0b0b0b;
-    color:#ffffff;
+    background:#0c0c0c;
+    color:#fff;
     line-height:1.6;
 }
 img{max-width:100%;display:block;margin:20px auto}
-h1,h2,h3{
-    font-family:'Bebas Neue',cursive;
-    letter-spacing:1px;
-    text-align:center;
-}
+h1,h2,h3{font-family:'Bebas Neue',cursive;letter-spacing:1px;text-align:center}
 .highlight{color:#ff3f81}
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
+.container{max-width:900px;margin:auto;padding:20px}
 
 /* TIMER */
 .scarcity-timer{
@@ -40,72 +32,56 @@ h1,h2,h3{
     text-align:center;
     z-index:999;
 }
-.timer-title{
-    font-size:14px;
-    color:#ff3f81;
-    margin-bottom:4px;
-}
-.timer-digits{
-    font-size:26px;
-    font-weight:bold;
-}
+.timer-title{font-size:14px;color:#ff3f81}
+.timer-digits{font-size:26px;font-weight:bold}
 
 /* STOCK */
 .stock-counter{
     margin-top:90px;
     text-align:center;
-    font-weight:bold;
     color:#ff4d4d;
+    font-weight:bold;
 }
 
-/* TEXTS */
+/* HEADLINE */
+h1{font-size:34px;margin:20px 0}
 .subheadline{
     text-align:center;
     font-size:18px;
-    margin:15px 0 25px;
+    margin-bottom:25px;
 }
-p{text-align:center;margin:15px 0}
 
 /* BONUS */
 .bonus-container{
     display:grid;
     grid-template-columns:1fr;
-    gap:14px;
+    gap:15px;
     margin:30px 0;
 }
 .bonus-item{
-    background:#141414;
-    padding:16px;
+    background:#151515;
+    padding:15px;
     border-left:4px solid #ff3f81;
     border-radius:6px;
 }
-.bonus-item strong{
-    display:block;
-    margin-bottom:6px;
-}
+.bonus-item strong{display:block;margin-bottom:5px}
 
 /* PRICE */
 .price-comparison{
     text-align:center;
     margin:30px 0;
 }
-.old-price{
-    text-decoration:line-through;
-    color:#aaa;
-}
-.new-price{
-    font-size:30px;
-    color:#00ff99;
-    font-weight:bold;
-}
+.old-price{text-decoration:line-through;color:#aaa}
+.new-price{font-size:30px;color:#00ff99;font-weight:bold}
 
 /* TESTIMONIAL */
 .testimonial{
     background:#141414;
-    padding:22px;
+    padding:20px;
     border-radius:8px;
     margin:30px 0;
     font-style:italic;
+    text-align:center;
 }
 
 /* GUARANTEE */
@@ -130,7 +106,7 @@ p{text-align:center;margin:15px 0}
     cursor:pointer;
     margin-top:20px;
 }
-.cta-button:hover{opacity:.95}
+.cta-button:hover{opacity:.9}
 .button-subtext{
     display:block;
     text-align:center;
@@ -143,6 +119,7 @@ p{text-align:center;margin:15px 0}
 .last-warning{
     color:#ffd700;
     font-weight:bold;
+    text-align:center;
     margin:30px 0;
 }
 
@@ -155,16 +132,13 @@ p{text-align:center;margin:15px 0}
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-    let timeLeft = 8 * 60;
+    let timeLeft=8*60;
     function updateTimer(){
-        let m = Math.floor(timeLeft/60);
-        let s = timeLeft % 60;
-        document.getElementById('timer').innerText =
-            String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
-        if(timeLeft > 0){
-            timeLeft--;
-            setTimeout(updateTimer,1000);
-        }
+        let m=Math.floor(timeLeft/60);
+        let s=timeLeft%60;
+        document.getElementById('timer').innerText=
+            String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+        if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
     }
     updateTimer();
 });
@@ -186,7 +160,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <h1>
 FAÇA ELE <span class="highlight">PENSAR EM VOCÊ</span><br>
-E QUERER ESTAR AO SEU LADO —<br>
+E QUERER ESTAR AO SEU LADO<br>
 <span class="highlight">SEM CORRER ATRÁS</span>
 </h1>
 
@@ -197,7 +171,7 @@ Não é sobre manipular.<br>
 
 <img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
 
-<p>
+<p style="text-align:center">
 Você vai aprender como se tornar a mulher que ele
 <strong>respeita, valoriza e sente falta</strong>,
 sem implorar ou se anular.
@@ -208,7 +182,7 @@ sem implorar ou se anular.
 <div class="bonus-container">
 <div class="bonus-item"><strong>🔐 Código da Mulher Hipnótica</strong>Método principal de atração emocional</div>
 <div class="bonus-item"><strong>🧠 Mente Masculina</strong>Entenda os sinais invisíveis</div>
-<div class="bonus-item"><strong>💔 Ausência Inteligente</strong>Gere saudade sem jogos</div>
+<div class="bonus-item"><strong>💔 Ausência Inteligente</strong>Como gerar saudade sem sumir</div>
 <div class="bonus-item"><strong>🔥 18 Gatilhos de Atração</strong>Aplique no dia a dia</div>
 <div class="bonus-item"><strong>💍 Relacionamento Estável</strong>Saia do vai-e-volta</div>
 </div>
@@ -220,14 +194,13 @@ sem implorar ou se anular.
 
 <div class="testimonial">
 “Eu sempre era a que corria atrás.  
-Depois do método, tudo mudou.  
-Hoje sou prioridade.”
+Hoje sou tratada como prioridade.”
 <br><strong>— Luiza, 29 anos</strong>
 </div>
 
 <div class="guarantee">
 <h3>✅ GARANTIA DE 30 DIAS</h3>
-Se você não sentir mais segurança emocional,
+Se não sentir segurança emocional,
 devolvemos 100% do valor.
 </div>
 
