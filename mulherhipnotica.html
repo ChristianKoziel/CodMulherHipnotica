@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÚLTIMA CHANCE — CÓDIGO DA MULHER HIPNÓTICA</title>
+<title>ÚLTIMA CHANCE — Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -13,7 +13,6 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(180deg,#120617,#0A0A0A);
     color:#FAF1F4;
-    min-height:100vh;
     padding:20px;
 }
 .container{
@@ -34,7 +33,7 @@ body{
     background:linear-gradient(45deg,#FF3F81,#E5003C,#FFD700,#FF3F81);
     background-size:400% 400%;
     filter:blur(35px);
-    opacity:.16;
+    opacity:.15;
     z-index:-1;
     animation:glow 10s infinite;
 }
@@ -49,7 +48,6 @@ h1{
     font-size:40px;
     text-align:center;
     color:#FFD700;
-    letter-spacing:1px;
     text-shadow:0 0 18px rgba(229,0,60,.7);
 }
 h1 span{color:#FF3F81}
@@ -71,7 +69,6 @@ h1 span{color:#FF3F81}
 .timer-label{
     font-size:13px;
     color:#FFD700;
-    margin-bottom:6px;
 }
 .timer{
     font-size:36px;
@@ -96,7 +93,6 @@ p{
     margin:14px 0;
     border-radius:10px;
     font-size:14px;
-    box-shadow:0 4px 16px rgba(0,0,0,.45);
 }
 .choice::before{
     content:"→ ";
@@ -144,11 +140,17 @@ ul li::before{
     font-size:44px;
     font-weight:700;
     color:#FFD700;
-    margin:10px 0;
 }
 .discount{
     color:#FF3F81;
-    font-size:16px;
+    font-size:15px;
+    margin-top:6px;
+}
+
+.compare{
+    margin-top:12px;
+    font-size:13px;
+    color:#E8C9D4;
 }
 
 .button{
@@ -166,7 +168,31 @@ ul li::before{
 }
 .button:hover{
     transform:translateY(-3px);
-    box-shadow:0 14px 50px rgba(229,0,60,.95);
+}
+
+.spots{
+    margin-top:14px;
+    text-align:center;
+    font-size:13px;
+    color:#FFD700;
+    background:rgba(255,63,129,.12);
+    padding:10px;
+    border-radius:8px;
+    border:1px solid rgba(255,63,129,.4);
+    animation:blink 1.8s infinite;
+}
+@keyframes blink{
+    0%{opacity:.6}
+    50%{opacity:1}
+    100%{opacity:.6}
+}
+
+.decision{
+    margin-top:22px;
+    text-align:center;
+    font-size:14px;
+    color:#F2DFA8;
+    font-style:italic;
 }
 
 .micro{
@@ -188,15 +214,8 @@ ul li::before{
 }
 .garantia strong{color:#FFD700}
 
-.security{
-    margin-top:14px;
-    text-align:center;
-    font-size:12px;
-    color:#BFA3AD;
-}
-
 .warning{
-    margin-top:28px;
+    margin-top:26px;
     text-align:center;
     font-size:13px;
     color:#E5003C;
@@ -221,63 +240,67 @@ ul li::before{
 <div class="container">
 
 <h1>ÚLTIMA CHANCE<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
-<div class="sub">O método que muda como eles reagem a você — sem cobrança, sem esforço</div>
+<div class="sub">O método que muda como eles reagem a você — sem esforço, sem cobrança</div>
 
 <div class="timer-box">
-    <div class="timer-label">ESTE ACESSO EXPIRA EM:</div>
+    <div class="timer-label">ESTA CONDIÇÃO EXPIRA EM:</div>
     <div class="timer" id="timer">07:41</div>
 </div>
 
 <p>
-Você não chegou aqui por acaso.  
-Chegou porque <strong>cansou de ser a mulher que se esforça demais e recebe de menos</strong>.
+Você não está aqui por curiosidade.  
+Está aqui porque <strong>cansou de se doar demais e receber de menos</strong>.
 </p>
 
 <div class="choices">
-    <div class="choice">Fechar essa página e continuar sendo ignorada</div>
+    <div class="choice">Continuar tentando entender ele</div>
     <div class="choice">Aceitar migalhas emocionais</div>
     <div class="choice">Ou assumir o controle da dinâmica emocional</div>
 </div>
 
-<div class="section-title">VOCÊ ACESSA AGORA</div>
+<div class="section-title">VOCÊ RECEBE AGORA</div>
 
 <ul>
 <li>Código completo da Mulher Hipnótica</li>
 <li>Protocolos emocionais de ativação imediata</li>
 <li>Leitura psicológica do comportamento masculino</li>
 <li>Posicionamento feminino de alto valor</li>
-<li>Bloqueio definitivo de padrões que te colocam como opção</li>
-<li>Manutenção do interesse sem cobrança ou ansiedade</li>
-<li>Acesso vitalício + atualizações inclusas</li>
+<li>Bloqueio definitivo de padrões de rejeição</li>
+<li>Manutenção do interesse sem cobrança</li>
+<li>Acesso vitalício + atualizações</li>
 </ul>
 
 <div class="price-box">
     <div class="old">De R$197,00</div>
     <div class="new">R$27,90</div>
-    <div class="discount">Oferta liberada apenas nesta página</div>
+    <div class="discount">Menos que uma pizza — pode mudar sua vida emocional</div>
+    <div class="compare">Menos de R$1 por dia para parar de sofrer</div>
 </div>
 
 <button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, EU QUERO ESSE CONTROLE AGORA 🔥
+SIM, QUERO VIRAR O JOGO AGORA 🔥
 </button>
+
+<div class="spots">
+⚠️ Restam apenas <strong>12 vagas</strong> com este valor promocional
+</div>
+
+<div class="decision">
+Se você está em dúvida, é exatamente por isso que esse método funciona.
+</div>
 
 <div class="micro">Acesso imediato • Compra segura • Total discrição</div>
 
 <div class="garantia">
 <strong>GARANTIA INCONDICIONAL DE 30 DIAS</strong><br><br>
-Use o Código da Mulher Hipnótica por 30 dias.  
-Se você não sentir mudança real na forma como eles te tratam,  
+Use o método por 30 dias.  
+Se não sentir mudança real na forma como eles te tratam,  
 <strong>basta pedir o reembolso.</strong><br><br>
-Sem perguntas. Sem justificativas.  
-O risco é totalmente nosso.
-</div>
-
-<div class="security">
-Pagamento protegido • Dados criptografados • Acesso privado
+Sem perguntas. O risco é nosso.
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, o desconto e o acesso promocional são encerrados.
+⚠️ Ao sair desta página, o desconto é encerrado automaticamente.
 </div>
 
 </div>
@@ -285,14 +308,12 @@ Pagamento protegido • Dados criptografados • Acesso privado
 <script>
 let totalSeconds = 7*60 + 41;
 const timerEl = document.getElementById("timer");
-
 setInterval(()=>{
-    if(totalSeconds <= 0) return;
+    if(totalSeconds<=0) return;
     totalSeconds--;
-    let m = Math.floor(totalSeconds/60);
-    let s = totalSeconds % 60;
-    timerEl.textContent =
-        String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
+    let m=Math.floor(totalSeconds/60);
+    let s=totalSeconds%60;
+    timerEl.textContent=String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 },1000);
 </script>
 
