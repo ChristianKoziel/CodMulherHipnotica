@@ -3,303 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código da Mulher Hipnótica</title>
+<title>ÚLTIMA CHANCE — CÓDIGO DA MULHER HIPNÓTICA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;text-transform:uppercase}
 body{
-    margin:0;
     font-family:'Poppins',sans-serif;
-    background:radial-gradient(circle at top,#1b0f17 0%,#0c0a0d 65%);
-    color:#f2e9ef;
+    background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
+    color:#FAF1F4;
+    padding:20px;
+    min-height:100vh;
+}
+.container{
+    max-width:680px;
+    margin:0 auto;
+    background:rgba(12,12,12,.9);
+    border:1px solid #FF3F81;
+    border-radius:10px;
+    padding:30px;
+    box-shadow:0 0 40px rgba(255,63,129,.6);
+    position:relative;
+    overflow:hidden;
+}
+.container::before{
+    content:"";
+    position:absolute;
+    inset:-10px;
+    background:linear-gradient(45deg,#FF3F81,#E5003C,#FFD700,#FF3F81);
+    background-size:400% 400%;
+    filter:blur(22px);
+    opacity:.25;
+    z-index:-1;
+    animation:glow 8s ease infinite;
+}
+@keyframes glow{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
-/* TIMER */
-.scarcity-timer{
-    position:fixed;
-    top:0;left:0;width:100%;
-    background:linear-gradient(135deg,#2a1421,#140c13);
-    border-bottom:1px solid rgba(230,184,199,.3);
-    z-index:9999;
-    padding:10px;
-    text-align:center;
-}
-.timer-title{font-size:12px;opacity:.85}
-.timer-digits{
-    font-family:'Bebas Neue',sans-serif;
-    font-size:28px;
-    color:#f4c6d6;
-}
-
-/* CONTAINER */
-.ritual-container{
-    max-width:860px;
-    margin:auto;
-    padding:130px 20px 90px;
-}
-
-.highlight{color:#e6b8c7}
-
-/* HEADLINES */
 h1{
     font-family:'Bebas Neue',sans-serif;
-    font-size:48px;
-    text-align:center;
-    letter-spacing:1px;
-    margin-bottom:20px;
-}
-h2{
-    font-family:'Bebas Neue',sans-serif;
     font-size:34px;
     text-align:center;
-    margin:70px 0 25px;
-    color:#e6b8c7;
+    color:#FFD700;
+    text-shadow:0 0 12px rgba(229,0,60,.8);
 }
-h3{
+h1 span{color:#FF3F81}
+
+.timer-box{
+    margin:25px 0;
+    padding:15px;
+    border:2px dashed #FF3F81;
+    text-align:center;
+}
+.timer-label{
+    font-size:14px;
+    color:#FFD700;
+    margin-bottom:8px;
+}
+.timer{
+    font-size:32px;
+    letter-spacing:2px;
+    color:#FF3F81;
+}
+
+p{
+    text-transform:none;
+    text-align:center;
+    font-weight:bold;
+    color:#D8B9C3;
+    margin:15px 0;
+}
+
+.choices{
+    margin:30px 0;
+}
+.choice{
+    background:rgba(30,11,38,.8);
+    border-left:4px solid #FF3F81;
+    padding:18px;
+    margin:15px 0;
+    border-radius:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,.4);
+    text-transform:none;
+}
+.choice::before{
+    content:"→ ";
+    color:#FFD700;
+}
+
+.section-title{
     font-family:'Bebas Neue',sans-serif;
+    color:#FFD700;
     font-size:26px;
     text-align:center;
-    margin:50px 0 15px;
+    margin:35px 0 20px;
 }
 
-/* TEXT */
-p{
-    font-size:16px;
-    line-height:1.8;
-    opacity:.95;
+ul{
+    list-style:none;
 }
-.subheadline{
+ul li{
+    margin:12px 0;
+    background:rgba(255,63,129,.1);
+    padding:15px;
+    border-radius:6px;
+    border-left:4px solid #FFD700;
+    text-transform:none;
+}
+ul li::before{
+    content:"✓ ";
+    color:#FFD700;
+}
+
+.price-box{
+    margin:35px 0;
+    padding:20px;
+    background:rgba(0,0,0,.6);
+    border:1px solid #FF3F81;
+    border-radius:8px;
     text-align:center;
-    font-size:18px;
-    opacity:.85;
-    margin-bottom:45px;
 }
-
-/* IMAGE */
-.product-image{
-    display:block;
-    max-width:340px;
-    margin:50px auto;
-}
-
-/* BOX */
-.box{
-    background:linear-gradient(135deg,#24121d,#140d13);
-    border:1px solid rgba(230,184,199,.25);
-    border-radius:20px;
-    padding:30px;
-    margin:40px 0;
-}
-.box strong{color:#f4c6d6}
-
-/* LIST */
-ul{padding-left:22px}
-li{margin-bottom:12px}
-
-/* PRICE */
-.price-comparison{
-    background:linear-gradient(135deg,#2a1421,#170f15);
-    border-radius:26px;
-    padding:38px;
-    text-align:center;
-    margin:70px 0 30px;
-    border:1px solid rgba(230,184,199,.3);
-}
-.old-price{
+.old{
     text-decoration:line-through;
-    opacity:.55;
+    color:#999;
+    font-size:16px;
 }
-.new-price{
-    font-size:34px;
-    margin-top:12px;
-    color:#f7d1df;
+.new{
+    font-size:36px;
+    color:#FFD700;
+    margin:10px 0;
+}
+.discount{
+    color:#FF3F81;
+    font-size:18px;
 }
 
-/* CTA */
-.cta-button{
+.button{
     display:block;
     width:100%;
-    max-width:480px;
-    margin:55px auto 14px;
     padding:22px;
-    font-size:20px;
-    font-weight:700;
-    border-radius:70px;
+    margin-top:25px;
+    font-size:22px;
+    font-weight:bold;
     border:none;
+    border-radius:8px;
     cursor:pointer;
-    color:#2b0f1b;
-    background:linear-gradient(135deg,#f4c6d6,#e6b8c7);
-    box-shadow:0 20px 50px rgba(230,184,199,.25);
+    background:linear-gradient(45deg,#FF3F81,#E5003C);
+    color:#FAF1F4;
+    box-shadow:0 6px 30px rgba(255,63,129,.8);
+    transition:.3s;
 }
-.button-subtext{
-    display:block;
+.button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 35px rgba(229,0,60,.9);
+}
+
+.garantia{
+    margin-top:25px;
+    padding:15px;
+    border:1px solid rgba(255,215,0,.4);
+    border-radius:6px;
+    background:rgba(255,215,0,.08);
+    font-size:14px;
+    text-transform:none;
+}
+
+.warning{
+    margin-top:20px;
+    font-size:14px;
+    color:#E5003C;
     text-align:center;
-    font-size:13px;
-    opacity:.75;
+    animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+    0%{opacity:.6}
+    50%{opacity:1}
+    100%{opacity:.6}
 }
 
-/* FAQ */
-.faq-item{
-    background:rgba(255,255,255,.04);
-    border-radius:16px;
-    padding:22px;
-    margin-bottom:18px;
-}
-.faq-item strong{color:#f4c6d6}
-
-/* GUARANTEE */
-.guarantee{
-    background:linear-gradient(135deg,#1f1220,#120c14);
-    border:1px solid rgba(230,184,199,.3);
-    border-radius:24px;
-    padding:34px;
-    margin-top:70px;
-    text-align:center;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-    h1{font-size:40px}
-    h2{font-size:30px}
+@media(max-width:480px){
+    h1{font-size:26px}
+    .new{font-size:30px}
+    .button{font-size:18px;padding:18px}
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-    let timeLeft=8*60;
-    function updateTimer(){
-        const m=Math.floor(timeLeft/60);
-        const s=timeLeft%60;
-        document.getElementById('timer').textContent=
-            String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-        if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
-    }
-    updateTimer();
-});
-</script>
 </head>
 
 <body>
 
-<div class="scarcity-timer">
-    <div class="timer-title">Essa condição especial encerra em</div>
-    <div class="timer-digits" id="timer">08:00</div>
+<div class="container">
+
+<h1>⚠️ ÚLTIMA CHANCE<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
+
+<div class="timer-box">
+    <div class="timer-label">ESTE ACESSO EXPIRA EM:</div>
+    <div class="timer" id="timer">07:41</div>
 </div>
 
-<div class="ritual-container">
-
-<h1>
-VOCÊ NÃO ESTÁ CONFUSA.<br>
-VOCÊ SÓ ESTÁ <span class="highlight">DESALINHADA</span>.
-</h1>
-
-<p class="subheadline">
-Quando a forma de se posicionar muda,<br>
-a resposta dele muda junto.
-</p>
-
-<img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
-
-<div class="box">
 <p>
-<strong>Isso não é sobre fazer joguinhos.</strong><br><br>
-É sobre parar de entregar tudo antes de existir compromisso.<br>
-É sobre parar de aceitar migalhas emocionais.
+VOCÊ CHEGOU ATÉ AQUI PORQUE SE RECUSA A CONTINUAR SENDO IGNORADA,
+SUBESTIMADA OU TRATADA COMO OPÇÃO.
 </p>
+
+<div class="choices">
+    <div class="choice">FECHAR ESTA PÁGINA E CONTINUAR ESPERANDO MENSAGENS</div>
+    <div class="choice">CONTINUAR SENDO A BOA DEMAIS QUE NINGUÉM VALORIZA</div>
+    <div class="choice">OU ASSUMIR CONTROLE TOTAL DA DINÂMICA EMOCIONAL</div>
 </div>
 
-<h2>O PROBLEMA NÃO É VOCÊ</h2>
-
-<p>
-Você foi ensinada a ser compreensiva demais, disponível demais,
-paciente demais.
-</p>
-
-<p>
-Homens não se conectam com excesso.<br>
-Eles se conectam com <strong>presença + limite</strong>.
-</p>
-
-<div class="box">
-<p>
-Quando você muda o comportamento,
-<strong>o jogo inteiro muda sem discussão</strong>.
-</p>
-</div>
-
-<h2>O QUE ESSE MÉTODO FAZ</h2>
+<div class="section-title">O QUE VOCÊ ACESSA AGORA</div>
 
 <ul>
-<li>Organiza sua postura emocional</li>
-<li>Ensina quando avançar e quando parar</li>
-<li>Remove comportamentos que diminuem seu valor</li>
-<li>Cria constância sem cobrança</li>
+<li>ACESSO VITALÍCIO AO CÓDIGO DA MULHER HIPNÓTICA</li>
+<li>PROTOCOLOS DE ATIVAÇÃO EMOCIONAL IMEDIATA (BÔNUS)</li>
+<li>LEITURA PSICOLÓGICA DO COMPORTAMENTO MASCULINO (BÔNUS)</li>
+<li>POSICIONAMENTO FEMININO DE ALTO VALOR (BÔNUS)</li>
+<li>DESATIVAÇÃO DE PADRÕES QUE TE COLOCAM COMO OPÇÃO (BÔNUS)</li>
+<li>MANUTENÇÃO DA CONEXÃO SEM COBRANÇA OU ANSIEDADE (BÔNUS)</li>
+<li>ATUALIZAÇÕES FUTURAS INCLUSAS</li>
 </ul>
 
-<h2>O QUE VOCÊ RECEBE</h2>
-
-<div class="box">
-<p><strong>🔐 Código da Mulher Hipnótica</strong><br>
-Estrutura prática para gerar interesse real e respeito.</p>
+<div class="price-box">
+    <div class="old">DE R$197,00</div>
+    <div class="new">R$27,90</div>
+    <div class="discount">+80% DE DESCONTO — APENAS AGORA</div>
 </div>
 
-<div class="box">
-<p><strong>🧠 Leitura Emocional Masculina</strong><br>
-Você entende sinais antes de se frustrar.</p>
-</div>
-
-<div class="box">
-<p><strong>🌙 Presença e Espaço Estratégico</strong><br>
-Sem sumir. Sem se humilhar.</p>
-</div>
-
-<div class="price-comparison">
-<div class="old-price">Valor normal: R$397,00</div>
-<div class="new-price">Hoje: R$27,90</div>
-</div>
-
-<p style="text-align:center">
-Não é caro.<br>
-Caro é repetir o mesmo padrão por mais um ano.
-</p>
-
-<h2>DÚVIDAS REAIS</h2>
-
-<div class="faq-item">
-<strong>Isso funciona para qualquer idade?</strong>
-<p>Funciona para mulheres emocionalmente conscientes.</p>
-</div>
-
-<div class="faq-item">
-<strong>Vou parecer fria?</strong>
-<p>Não. Você vai parecer segura.</p>
-</div>
-
-<div class="faq-item">
-<strong>Ele vai perceber?</strong>
-<p>Ele só vai sentir que algo mudou.</p>
-</div>
-
-<div class="guarantee">
-<p><strong>✅ Garantia incondicional de 30 dias</strong></p>
-<p>
-Você testa sem risco.<br>
-Se não fizer sentido,<br>
-o dinheiro volta.
-</p>
-</div>
-
-<button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO MUDAR MINHA POSTURA
+<button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
+SIM. EU QUERO O CONTROLE AGORA 🔥
 </button>
 
-<span class="button-subtext">
-Compra segura • Acesso imediato • Privacidade total
-</span>
+<div class="garantia">
+    GARANTIA TOTAL. SE VOCÊ NÃO SENTIR DIFERENÇA REAL NA FORMA COMO ELES
+REAGEM A VOCÊ, SEU RISCO É ZERO.
+</div>
+
+<div class="warning">
+⚠️ AO FECHAR ESTA PÁGINA, ESTE DESCONTO É CANCELADO AUTOMATICAMENTE.
+</div>
 
 </div>
+
+<script>
+let totalSeconds = 7*60 + 41;
+const timerEl = document.getElementById("timer");
+
+const countdown = setInterval(()=>{
+    let min = Math.floor(totalSeconds/60);
+    let sec = totalSeconds%60;
+    timerEl.textContent =
+        String(min).padStart(2,'0') + ":" + String(sec).padStart(2,'0');
+    totalSeconds--;
+    if(totalSeconds < 0){
+        clearInterval(countdown);
+        timerEl.textContent = "00:00";
+    }
+},1000);
+</script>
 
 </body>
 </html>
