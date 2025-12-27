@@ -3,217 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resultado Final — Código da Mulher Hipnótica</title>
+<title>Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/style/styletelafabio.css" />
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #1b0f17 0%, #0c0a0d 60%);
-    color: #f2e9ef;
-}
-
-.highlight { color: #e6b8c7; }
-
-.ritual-container {
-    max-width: 820px;
-    margin: auto;
-    padding: 90px 20px 70px;
-}
-
-h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 46px;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
-}
-
-h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    text-align: center;
-    margin: 60px 0 20px;
-    color: #e6b8c7;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.75;
-    opacity: .95;
-}
-
-.subheadline {
-    text-align: center;
-    font-size: 17px;
-    opacity: .85;
-    margin-bottom: 45px;
-}
-
-.product-image {
-    display: block;
-    max-width: 320px;
-    margin: 45px auto;
-}
-
-ul { padding-left: 20px; }
-li { margin-bottom: 12px; }
-
-.logic-box {
-    background: linear-gradient(135deg, #24121d, #140d13);
-    border: 1px solid rgba(230,184,199,.18);
-    border-radius: 18px;
-    padding: 28px;
-    margin: 35px 0;
-}
-
-.logic-box strong { color: #f4c6d6; }
-
-.bonus-container { margin-top: 35px; }
-
-.bonus-item {
-    background: linear-gradient(135deg, #24121d, #140d13);
-    border: 1px solid rgba(230,184,199,.15);
-    border-radius: 16px;
-    padding: 22px;
-    margin-bottom: 16px;
-}
-
-.bonus-item strong { color: #f4c6d6; }
-
-.price-comparison {
-    background: linear-gradient(135deg, #2a1421, #170f15);
-    border-radius: 22px;
-    padding: 34px;
-    text-align: center;
-    margin: 65px 0 20px;
-    border: 1px solid rgba(230,184,199,.22);
-}
-
-.old-price {
-    text-decoration: line-through;
-    opacity: .55;
-}
-
-.new-price {
-    font-size: 28px;
-    margin-top: 12px;
-    color: #f7d1df;
-}
-
-.testimonial {
-    background: rgba(255,255,255,.035);
-    border-left: 4px solid #e6b8c7;
-    padding: 22px;
-    margin: 28px 0;
-    border-radius: 12px;
-    font-size: 15px;
-}
-
-.guarantee {
-    background: linear-gradient(135deg, #1f1220, #120c14);
-    border: 1px solid rgba(230,184,199,.22);
-    border-radius: 20px;
-    padding: 30px;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.cta-button {
-    display: block;
-    width: 100%;
-    max-width: 440px;
-    margin: 45px auto 12px;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 60px;
-    border: none;
-    cursor: pointer;
-    color: #2b0f1b;
-    background: linear-gradient(135deg, #f4c6d6, #e6b8c7);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(230,184,199,.28);
-}
-
-.button-subtext {
-    display: block;
-    text-align: center;
-    font-size: 13px;
-    opacity: .7;
-}
-
-.decision-text {
-    text-align: center;
-    margin-top: 45px;
-    font-size: 15px;
-    opacity: .85;
-}
-
-@media(max-width:600px){
-    h1 { font-size: 38px; }
-    h2 { font-size: 28px; }
-}
-</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let timeLeft = 8 * 60;
+    function updateTimer() {
+        const m = Math.floor(timeLeft / 60);
+        const s = timeLeft % 60;
+        document.getElementById('timer-minutes').textContent = String(m).padStart(2,'0');
+        document.getElementById('timer-seconds').textContent = String(s).padStart(2,'0');
+        if (timeLeft > 0) {
+            timeLeft--;
+            setTimeout(updateTimer, 1000);
+        }
+    }
+    updateTimer();
+});
+</script>
 </head>
 
 <body>
 
+<div class="scarcity-timer">
+    <div class="timer-title">⏱️ Condição especial disponível por:</div>
+    <div class="timer-digits">
+        <span id="timer-minutes">08</span>:<span id="timer-seconds">00</span>
+    </div>
+</div>
+
+<div class="stock-counter">
+Apenas <strong>12 acessos</strong> disponíveis hoje
+</div>
+
 <div class="ritual-container">
 
 <h1>
-SEU RESULTADO MOSTRA UMA COISA CLARA:<br>
-<span class="highlight">NÃO É FALTA DE INTERESSE</span>
+FAÇA ELE <span class="highlight">PENSAR EM VOCÊ</span><br>
+SENTIR SUA FALTA E<br>
+TE QUERER POR PERTO<br>
+<span class="highlight">SEM SE ANULAR</span>
 </h1>
 
 <p class="subheadline">
-É falta de alinhamento emocional na dinâmica.<br>
-E isso tem solução prática.
+Não é sobre joguinhos ou manipulação.<br>
+É sobre entender a dinâmica do interesse masculino<br>
+e se posicionar com inteligência emocional.
 </p>
 
 <img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
 
-<p>
-A maioria das mulheres tenta resolver relacionamento
-sendo mais disponível, mais paciente ou mais compreensiva.
-</p>
+<p>Se em algum momento você já sentiu que:</p>
 
-<p>
-O problema é que <strong>interesse não responde a esforço</strong>.<br>
-Ele responde a posicionamento.
-</p>
-
-<div class="logic-box">
-<p>
-<strong>O ponto-chave que quase ninguém explica:</strong><br><br>
-Homens se aproximam mais quando sentem
-<strong>conexão + espaço + valor percebido</strong>.
-</p>
-
-<p>
-Quando um desses elementos some,
-o interesse começa a oscilar.
-</p>
-</div>
-
-<h2>O QUE MUDA NA PRÁTICA</h2>
-
-<ul>
-<li>você sabe quando agir e quando observar</li>
-<li>para de reagir por ansiedade</li>
-<li>mantém presença sem se anular</li>
-<li>cria reciprocidade sem cobrança</li>
+<ul style="margin:20px 0 20px 20px; line-height:1.8;">
+<li>gosta mais do que gostaria</li>
+<li>tudo começa intenso, mas depois esfria</li>
+<li>acaba se explicando ou se justificando demais</li>
+<li>sente que poderia ser mais valorizada</li>
 </ul>
 
 <p>
-Isso não é sobre controle.
-É sobre <strong>consciência emocional aplicada</strong>.
+isso não significa falta de valor.<br>
+Na maioria das vezes, significa apenas
+<strong>falta de clareza sobre posicionamento emocional</strong>.
+</p>
+
+<p>
+O <strong>Código da Mulher Hipnótica</strong> foi criado
+para mulheres que querem viver relações
+com mais leveza, reciprocidade e segurança,
+sem precisar correr atrás de atenção.
+</p>
+
+<h2>O QUE MUDA QUANDO VOCÊ ENTENDE A DINÂMICA</h2>
+
+<p>Você naturalmente deixa de:</p>
+
+<ul style="margin-left:20px;">
+<li>mandar mensagens por ansiedade</li>
+<li>esperar atitudes sem saber o porquê</li>
+<li>se sentir em segundo plano</li>
+</ul>
+
+<p>E começa a:</p>
+
+<ul style="margin-left:20px;">
+<li>ser lembrada com mais frequência</li>
+<li>sentir mais tranquilidade emocional</li>
+<li>receber atitudes sem precisar pedir</li>
+</ul>
+
+<p>
+Não porque você mudou quem você é,
+mas porque passou a agir
+com mais consciência e segurança.
 </p>
 
 <h2>O QUE VOCÊ RECEBE AO ACESSAR</h2>
@@ -221,66 +107,101 @@ Isso não é sobre controle.
 <div class="bonus-container">
 
 <div class="bonus-item">
-<strong>🌿 Código da Mulher Hipnótica</strong>
+<strong>🔐 Código da Mulher Hipnótica</strong>
 <p>
-Estrutura clara de posicionamento emocional
-para criar conexão, respeito e constância.
+O método central de posicionamento emocional,
+conexão e respeito no dia a dia.
 </p>
 </div>
 
 <div class="bonus-item">
-<strong>🧠 Leitura do Interesse Masculino</strong>
+<strong>🧠 Entendendo o Interesse Masculino</strong>
 <p>
-Você aprende a identificar sinais reais,
-não suposições que geram ansiedade.
+Aprenda o que realmente aproxima,
+o que afasta e quando simplesmente observar.
 </p>
 </div>
 
 <div class="bonus-item">
-<strong>🌙 Presença & Ausência Estratégica</strong>
+<strong>💔 Presença & Ausência Inteligente</strong>
 <p>
-Quando se aproximar, quando pausar
-e quando simplesmente deixar acontecer.
+Como criar espaço sem perder valor
+e sem desaparecer.
+</p>
+</div>
+
+<div class="bonus-item">
+<strong>🔥 Gatilhos Sutis de Conexão</strong>
+<p>
+Atitudes simples, naturais e aplicáveis
+sem esforço excessivo.
+</p>
+</div>
+
+<div class="bonus-item">
+<strong>💍 Caminho para Relações Mais Estáveis</strong>
+<p>
+Para sair do ciclo de dúvida emocional
+e criar mais constância.
 </p>
 </div>
 
 </div>
 
 <div class="price-comparison">
-<div class="old-price">Valor regular: R$397,00</div>
-<div class="new-price">Acesso completo por R$27,90</div>
+<div class="old-price">Valor original: R$397,00</div>
+<div class="new-price">Acesso completo por <strong>R$27,90</strong></div>
 </div>
 
-<p style="text-align:center; font-size:14px; opacity:.85;">
-Conteúdo direto • Aplicável • Sem dependência emocional
+<p style="text-align:center;">
+Pagamento único.<br>
+Aplicável imediatamente.
 </p>
 
 <div class="testimonial">
-“Pela primeira vez eu entendi
-o que estava acontecendo — e parei de sofrer.”
-<br><strong>— Mariana, 34</strong>
+<p>
+“Eu achava que precisava me esforçar mais.
+Na verdade, eu só precisava me posicionar melhor.”
+</p>
+<strong>— Luiza, 29 anos</strong>
+</div>
+
+<div class="testimonial">
+<p>
+“Me trouxe clareza e tranquilidade.
+Hoje eu ajo com muito mais consciência.”
+</p>
+<strong>— Camila, 33 anos</strong>
 </div>
 
 <div class="guarantee">
-<strong>🤍 Garantia de 30 dias</strong>
+<h3>🤍 Garantia de 30 dias</h3>
 <p>
-Você acessa, aplica no seu tempo
-e decide com tranquilidade.
+Acesse com calma.
+Se não fizer sentido para você,
+é só pedir o reembolso.
 </p>
 </div>
 
-<p class="decision-text">
-Se esse próximo passo fizer sentido pra você agora,
-o acesso está disponível logo abaixo.
+<p class="last-warning">
+Se isso fez sentido pra você,<br>
+o próximo passo está logo abaixo.
 </p>
 
 <button class="cta-button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO ACESSAR O CONTEÚDO
+QUERO ACESSAR AGORA
 </button>
 
 <span class="button-subtext">
-Pagamento único • Acesso imediato • Garantia
+Acesso imediato • Conteúdo digital • Garantia
 </span>
+
+<img src="src/img/formasdepagamentocartoes.webp" class="product-image" alt="Formas de pagamento">
+
+<p style="text-align:center; margin-top:30px; font-size:14px; opacity:.8;">
+Conteúdo para mulheres que buscam clareza,
+não dependência emocional.
+</p>
 
 </div>
 
