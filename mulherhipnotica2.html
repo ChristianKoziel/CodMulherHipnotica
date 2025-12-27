@@ -1,252 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÚLTIMA CHANCE: CÓDIGO DA MULHER HIPNÓTICA</title>
-    <link rel="stylesheet" href="src/style/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÚLTIMA ETAPA — CÓDIGO DA MULHER HIPNÓTICA</title>
 
-    <!-- Código do Pixel do Facebook Otimizado -->
-    <script>
-    
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/style/style.css"/>
 
-        // Função para rastrear clique no botão de compra
-        function trackPurchaseEvent() {
-            fbq('track', 'InitiateCheckout', {
-                content_name: 'Código da Mulher Hipnótica',
-                content_category: 'Relacionamentos',
-                content_ids: ['produto_hipnotico'],
-                content_type: 'product',
-                value: 27.90,
-                currency: 'BRL'
-            });
-            
-            // Redireciona para a página de pagamento
-            window.location.href = 'https://pay.sunize.com.br/sNeLGlfr';
-        }
-
-        // Timer regressivo
-        document.addEventListener('DOMContentLoaded', function() {
-            let timeLeft = 12 * 60; // 12 minutos em segundos
-            
-            function updateTimer() {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                
-                document.getElementById('timer-minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds').textContent = seconds.toString().padStart(2, '0');
-                document.getElementById('timer-minutes-static').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('timer-seconds-static').textContent = seconds.toString().padStart(2, '0');
-                
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    setTimeout(updateTimer, 1000);
-                } else {
-                    document.querySelector('.button-subtext').textContent = '⚠️ OFERTA EXPIRADA!';
-                }
-            }
-            
-            updateTimer();
-            
-            // Timer flutuante
-            const timer = document.querySelector('.scarcity-timer');
-            let timerVisible = false;
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300 && !timerVisible) {
-                    timer.classList.add('visible');
-                    timerVisible = true;
-                } else if (window.scrollY <= 300 && timerVisible) {
-                    timer.classList.remove('visible');
-                    timerVisible = false;
-                }
-            });
-            
-            // Adiciona eventos de clique aos botões CTA
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', trackPurchaseEvent);
-            });
+<script>
+function trackPurchaseEvent() {
+    if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+            content_name: 'Código da Mulher Hipnótica',
+            content_category: 'Relacionamentos',
+            value: 27.90,
+            currency: 'BRL'
         });
-    </script>
+    }
+    window.location.href = 'https://pay.sunize.com.br/sNeLGlfr';
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+    let timeLeft = 12 * 60;
+
+    function updateTimer() {
+        const m = Math.floor(timeLeft / 60);
+        const s = timeLeft % 60;
+        document.querySelectorAll('.min').forEach(e => e.textContent = String(m).padStart(2, '0'));
+        document.querySelectorAll('.sec').forEach(e => e.textContent = String(s).padStart(2, '0'));
+
+        if (timeLeft > 0) {
+            timeLeft--;
+            setTimeout(updateTimer, 1000);
+        }
+    }
+    updateTimer();
+
+    document.querySelectorAll('.cta-button').forEach(btn => {
+        btn.addEventListener('click', trackPurchaseEvent);
+    });
+});
+</script>
 </head>
-<body>
-    <!-- Timer flutuante -->
-    <div class="scarcity-timer">
-        <div class="timer-title">⏱️ OFERTA EXPIRA EM:</div>
-        <div class="timer-digits">
-            <div class="timer-unit">
-                <span id="timer-minutes">12</span>
-                <div class="timer-label">MIN</div>
-            </div>
-            <div style="font-size: 20px; align-self: center; color: #FF3F81;">:</div>
-            <div class="timer-unit">
-                <span id="timer-seconds">00</span>
-                <div class="timer-label">SEG</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="ritual-container">
-        <p style="font-weight:bold; font-size:18px; color:#FF3F81;">
-          📌 Você acabou de passar pelo Ritual da Verdade... Agora é a sua vez de controlar a história.
-        </p>
-        
-        <h1>⚠️ ÚLTIMA ETAPA: DOMINAR O INCONSCIENTE MASCULINO — HOJE APENAS COM 80% OFF</h1>
-        
-        <p style="font-weight: bold; font-size: 18px;">NUNCA FOI TÃO FÁCIL DOMINAR O INCONSCIENTE DELE — DECIDA AGORA.</p>
-        
-        <!-- Timer de escassez (versão estática para mobile) -->
-        <div class="scarcity-timer" style="position: relative; transform: none; width: 100%; margin: 20px auto;">
-            <div class="timer-title">⏱️ ESTA OFERTA EXPIRA EM:</div>
-            <div class="timer-digits">
-                <div class="timer-unit">
-                    <span id="timer-minutes-static">12</span>
-                    <div class="timer-label">MIN</div>
-                </div>
-                <div style="font-size: 24px; align-self: center; color: #FF3F81;">:</div>
-                <div class="timer-unit">
-                    <span id="timer-seconds-static">00</span>
-                    <div class="timer-label">SEG</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Imagem do produto -->
-        <img src="src/img/cel.png" alt="CÓDIGO DA MULHER HIPNÓTICA" class="product-image">
-        
-        <p>VOCÊ VAI APRENDER <span class="highlight">COMO CONTROLAR O INCONSCIENTE DELE</span> E SE TORNAR O <span class="blood-text">DESEJO PERMANENTE</span> QUE EXPLODE A ATENÇÃO E DOMINA COMPLETAMENTE SEUS PENSAMENTOS.</p>
-        
-        <div class="price-justification">
-            <p><strong>VOCÊ NÃO TÁ PAGANDO POR UM CURSO...</strong></p>
-            <p><span class="highlight">TÁ PAGANDO PRA NUNCA MAIS SER FEITA DE TROUXA.</span></p>
-            <p class="blood-text">JÁ FOI HUMILHADA DE GRAÇA. PELO MENOS QUE PAGUEM POR ESSE FINAL.</p>
-        </div>
-        
-        <h2>O QUE VOCÊ VAI RECEBER HOJE:</h2>
-        
-        <div class="bonus-container">
-            <div class="bonus-item">
-                <span class="bonus-title">🔐 CÓDIGO DA MULHER HIPNÓTICA</span>
-                <span class="bonus-desc">O manual completo para reprogramar a mente dele e fazer você virar obsessão</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🧠 BÔNUS: GUIA LENDO UM HOMEM</span>
-                <span class="bonus-desc">Entenda os sinais mentais que ele nem sabe que envia</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">💔 BÔNUS: COMO FAZER ELE SENTIR SUA FALTA</span>
-                <span class="bonus-desc">Use a saudade como arma psicológica poderosa</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🔥 BÔNUS: 18 GATILHOS DA SEDUÇÃO NA PRÁTICA</span>
-                <span class="bonus-desc">Técnicas que implantam necessidade emocional</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">💍 BÔNUS: GUIA DO AMOR ETERNO</span>
-                <span class="bonus-desc">Como fazer ele querer um compromisso sério</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">⚠️ BÔNUS: GUIA DOS 17 ERROS MORTAIS</span>
-                <span class="bonus-desc">O que nunca fazer se quiser manter o controle</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🚫 BÔNUS: MANUSCRITO PROIBIDO</span>
-                <span class="bonus-desc">Técnicas avançadas de manipulação emocional</span>
-            </div>
-            
-            <div class="bonus-item">
-                <span class="bonus-title">🔞 BÔNUS OCULTO: VÍDEO PROIBIDO DO FEITIÇO SEXUAL DE MARCA</span>
-                <span class="bonus-desc">Técnica secreta que faz ele associar prazer intenso à sua imagem</span>
-            </div>
-        </div>
-        
-        <p style="font-style: italic; font-size: 17px; margin-top: 20px;">
-          Tu já implorou amor, já chorou por 'oi sumida'... Agora decide: <strong>vai ser feita de otária de novo ou vai controlar a mente dele?</strong>
-        </p>
-        
-        <div class="price-comparison">
-          <div class="old-price">DE R$497,00</div>
-          <div class="new-price">HOJE: <strong>R$27,90</strong></div>
-          <div class="price-subtext">Isso dá menos de R$0,30 por dia... pra fazer ele <strong>sentir saudade mesmo dormindo com outra</strong>.</div>
-        </div>
-        
-        <!-- Prova Social -->
-        <blockquote>
-            <p>"2 anos correndo atrás... Apliquei o método. 5 dias depois, ele chorou me pedindo outra chance. Hoje quem some sou eu."</p>
-            <footer>— <strong>LUÍZA, 28 ANOS</strong> — aluna do CÓDIGO HIPNÓTICO</footer>
-        </blockquote>
-        
-        <img src="src/img/luizadp1.png" alt="DEPOIMENTO REAL" class="product-image">
-        
-        <h3>VOCÊ MERECE O PODER QUE ELE TE NEGA</h3>
-        <img src="src/img/meterial.png" alt="TODO O MATERIAL" class="product-image">
-        
-        <!-- Garantia -->
-        <div class="guarantee">
-            <h3>✅ GARANTIA INCONDICIONAL DE 30 DIAS</h3>
-            <p>SE ATÉ O FIM DO MÊS O INFELIZ NÃO ESTIVER GRUDADO EM VOCÊ, VOCÊ GRITA E TEM SEU DINHEIRO DE VOLTA. <span class="blood-text">SEM MIMIMI.</span></p>
-            <img src="src/img/30-DIAS-FINAL-1.svg" alt="GARANTIA DE 30 DIAS" class="guarantee-seal">
-            <p>+97% DAS MULHERES VIRARAM FÃS SEM PEDIR DEVOLUÇÃO.</p>
-        </div>
-        
-        <!-- Ameaça emocional -->
-        <p class="last-warning">⚠️ SE VOCÊ FECHAR ESSA PÁGINA... ELE VAI CONTINUAR TE USANDO, TE IGNORANDO, E TRANSANDO COM OUTRA ENQUANTO VOCÊ REZA POR UM 'OI SUMIDA'.</p>
-        
-        <p class="cta-warning">
-          ⚠️ Fechar essa página é aceitar continuar sendo esquecida.<br>
-          R$27,90 pra ele implorar, ou R$0 pra você chorar mais um mês. A escolha é tua.
-        </p>
-        
-        <!-- Botão CTA Principal -->
-        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
-        <span class="button-subtext">OFERTA TERMINA QUANDO O TIMER ZERAR — SEM ENROLAR.</span>
-        
-        <!-- Métodos de Pagamento -->
-        <img src="src/img/formasdepagamentovolk.webp" alt="MÉTODOS DE PAGAMENTO" class="product-image">
-        <p><small>ESTÁ É UMA COBRANÇA ÚNICA, VOCÊ NÃO TERÁ NENHUM VALOR ADICIONAL DEBITADO EM SEU CARTÃO.</small></p>
-        
-        <!-- FAQ -->
-        <div style="margin-top: 30px;">
-            <h3>PERGUNTAS FREQUENTES</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ COMO VOU RECEBER O MATERIAL?</div>
-                <p>Acesso imediato após a confirmação do pagamento. Você recebe tudo por email em até 5 minutos.</p>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ FUNCIONA PRA QUALQUER FASE DO RELACIONAMENTO?</div>
-                <p>Sim! Seja solteira, ficando ou em relacionamento, as técnicas são adaptáveis a qualquer situação.</p>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">➡️ É SEGURO COMPRAR?</div>
-                <p>100% seguro. Pagamento processado por plataforma profissional com criptografia bancária.</p>
-            </div>
-        </div>
-        
-        <!-- Selos de Segurança -->
-        <div class="payment-badges">
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="COMPRA SEGURA" class="payment-badge">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WHATSAPP VIP" class="payment-badge">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="GARANTIA" class="payment-badge">
-        </div>
-        
-        <!-- Último CTA -->
-        <button class="cta-button">NÃO AGUENTO MAIS SER A OTÁRIA — QUERO O CONTROLE 🩸</button>
-        <span class="button-subtext">⚠️ O BOTÃO PODE SUMIR A QUALQUER MOMENTO</span>
-        
-        <!-- Frase de fechamento -->
-        <p style="color:#FFD700; text-align:center; font-weight:bold; margin-top:20px; font-size:18px;">⚠️ ESTA PÁGINA FOI FEITA PARA DESAPARECER... SE VOCÊ SAIR AGORA, O MÉTODO SE AUTO-DESTRÓI. <br> SE CONTINUAR... VOCÊ VAI TER UM HOMEM IMPLORANDO POR SUA ATENÇÃO ANTES DO MÊS ACABAR.</p>
-    </div>
+<body>
+
+<div class="scarcity-timer">
+    <div>⏱️ OFERTA DISPONÍVEL POR:</div>
+    <strong><span class="min">12</span>:<span class="sec">00</span></strong>
+</div>
+
+<div class="ritual-container">
+
+<p style="color:#FF3F81;font-weight:bold;">
+📌 Você completou o Ritual da Verdade. Agora vem a parte que muda o jogo.
+</p>
+
+<h1>ATIVE O INTERESSE DELE A SEU FAVOR<br>— HOJE COM 80% OFF</h1>
+
+<p style="font-size:18px;font-weight:bold;">
+Não é sobre correr atrás.<br>
+É sobre fazer ele pensar em você sem perceber.
+</p>
+
+<div class="scarcity-box">
+⏳ Esta condição especial expira em<br>
+<strong><span class="min">12</span>:<span class="sec">00</span></strong>
+</div>
+
+<img src="src/img/cel.png" class="product-image" alt="Código da Mulher Hipnótica">
+
+<p>
+Você vai aprender como <strong>ativar os gatilhos emocionais certos</strong> para se tornar
+<span class="highlight">a mulher que ele sente falta, procura e prioriza</span> —
+sem implorar, se humilhar ou competir com ninguém.
+</p>
+
+<div class="price-justification">
+<p><strong>Isso não é um curso genérico.</strong></p>
+<p>É um método direto para parar de ser opção<br>
+e voltar a ser prioridade.</p>
+</div>
+
+<h2>O QUE VOCÊ RECEBE HOJE:</h2>
+
+<div class="bonus-container">
+<div class="bonus-item">
+<strong>🔐 Código da Mulher Hipnótica</strong>
+<p>O método principal para ativar interesse, presença e conexão emocional</p>
+</div>
+
+<div class="bonus-item">
+<strong>🧠 Guia: Como a Mente Masculina Funciona</strong>
+<p>Entenda os sinais invisíveis que fazem ele se aproximar ou se afastar</p>
+</div>
+
+<div class="bonus-item">
+<strong>💔 Guia da Saudade Inteligente</strong>
+<p>Como se afastar do jeito certo para gerar lembrança e desejo</p>
+</div>
+
+<div class="bonus-item">
+<strong>🔥 18 Gatilhos de Atração Aplicáveis</strong>
+<p>Técnicas práticas que aumentam valor percebido</p>
+</div>
+
+<div class="bonus-item">
+<strong>💍 Caminho para um Relacionamento Estável</strong>
+<p>Como sair do “vai e volta” e criar segurança emocional</p>
+</div>
+</div>
+
+<div class="price-comparison">
+<div class="old-price">De R$497,00</div>
+<div class="new-price">Hoje: <strong>R$27,90</strong></div>
+<div class="price-subtext">
+Menos de R$1 por dia para parar de sofrer
+e assumir o controle emocional da situação
+</div>
+</div>
+
+<blockquote>
+<p>
+“Eu sempre corria atrás. Quando apliquei o método,
+ele mudou completamente a postura.
+Hoje sou eu quem escolhe.”
+</p>
+<footer>— Luíza, 28 anos</footer>
+</blockquote>
+
+<img src="src/img/luizadp1.png" class="product-image">
+
+<div class="guarantee">
+<h3>✅ GARANTIA DE 30 DIAS</h3>
+<p>
+Se você sentir que o método não valeu a pena,
+devolvemos 100% do seu dinheiro.
+Simples, sem perguntas.
+</p>
+<img src="src/img/30-DIAS-FINAL-1.svg" class="guarantee-seal">
+</div>
+
+<p class="last-warning">
+⚠️ Se você sair agora, nada muda.
+Ele continua distante e você continua esperando.
+</p>
+
+<button class="cta-button">
+SIM — QUERO VIRAR O JOGO AGORA
+</button>
+<span class="button-subtext">
+Acesso imediato • Oferta por tempo limitado
+</span>
+
+<img src="src/img/formasdepagamentovolk.webp" class="product-image">
+
+<p style="font-size:12px;">
+Pagamento único. Nenhuma cobrança recorrente.
+</p>
+
+<h3>PERGUNTAS FREQUENTES</h3>
+
+<p><strong>Como recebo o acesso?</strong><br>
+Imediatamente após o pagamento, por e-mail.</p>
+
+<p><strong>Funciona se ele estiver distante?</strong><br>
+Sim. O método foi feito exatamente para esse cenário.</p>
+
+<p><strong>É seguro comprar?</strong><br>
+Pagamento processado por plataforma criptografada.</p>
+
+<button class="cta-button">
+QUERO ACESSAR AGORA
+</button>
+
+<p style="color:#FFD700;font-weight:bold;text-align:center;">
+⚠️ Esta página pode sair do ar a qualquer momento.<br>
+A decisão é agora.
+</p>
+
+</div>
 </body>
 </html>
