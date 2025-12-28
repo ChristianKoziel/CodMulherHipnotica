@@ -1,188 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MÉTODO OBSESSÃO — QUIZ 4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÉTODO OBSESSÃO — QUIZ 4</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Poppins', 'Bebas Neue', sans-serif;
-      background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-      color: #FAF1F4;
-      text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-    }
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
+            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+            color: #FAF1F4;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
+        }
 
-    .quiz-container {
-      width: 90%;
-      max-width: 420px;
-      padding: 30px;
-      background: rgba(12, 12, 12, 0.85);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 63, 129, 0.5);
-      box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                  0 0 0 1px rgba(255, 63, 129, 0.3);
-      position: relative;
-      text-align: center;
-    }
+        .quiz-container {
+            width: 90%;
+            max-width: 420px;
+            padding: 30px;
+            background: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 63, 129, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            position: relative;
+        }
 
-    .progress {
-      margin-bottom: 22px;
-      padding-bottom: 14px;
-      position: relative;
-    }
+        .progress {
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            color: #D8B9C3;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 12px;
+        }
 
-    .progress-title {
-      font-size: 1rem;
-      color: #FF3F81;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
+        .progress::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF3F81, transparent);
+        }
 
-    .progress-sub {
-      font-size: 0.85rem;
-      font-style: italic;
-      color: #D8B9C3;
-    }
+        .question {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            color: #FF3F81;
+            text-transform: uppercase;
+        }
 
-    .progress::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 22%;
-      right: 22%;
-      height: 2px;
-      background: linear-gradient(to right, transparent, #FF3F81, transparent);
-    }
+        .question span {
+            color: #E5003C;
+            text-decoration: underline;
+        }
 
-    .question {
-      font-size: 1.55rem;
-      font-weight: bold;
-      line-height: 1.4;
-      margin-bottom: 30px;
-      color: #FF3F81;
-      text-transform: uppercase;
-    }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
 
-    .question span {
-      display: block;
-      margin-top: 10px;
-      color: #E5003C;
-      text-decoration: underline;
-      text-transform: none;
-    }
+        .option-button {
+            background: rgba(30, 11, 38, 0.85);
+            border: 2px solid #FF3F81;
+            border-radius: 50px;
+            padding: 18px 22px;
+            font-size: 1.05rem;
+            color: #FAF1F4;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
+            font-family: 'Poppins', sans-serif;
+            text-align: left;
+        }
 
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+        .option-button:hover {
+            background: linear-gradient(to right, rgba(229, 0, 60, 0.45), rgba(255, 63, 129, 0.45));
+            transform: translateY(-4px);
+            border-color: #E5003C;
+            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
+        }
 
-    .option-button {
-      background: rgba(30, 11, 38, 0.85);
-      border: 2px solid #FF3F81;
-      border-radius: 50px;
-      padding: 18px 22px;
-      font-size: 1rem;
-      color: #FAF1F4;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
-      font-family: 'Poppins', sans-serif;
-      text-align: left;
-    }
+        .option-button:active {
+            transform: scale(0.97);
+        }
 
-    .option-button:hover {
-      background: linear-gradient(to right, rgba(229, 0, 60, 0.45), rgba(255, 63, 129, 0.45));
-      transform: translateY(-4px);
-      border-color: #E5003C;
-      box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
-    }
+        .emoji {
+            font-size: 1.3rem;
+        }
 
-    .option-button:active {
-      transform: scale(0.97);
-    }
-
-    .emoji {
-      font-size: 1.6rem;
-      min-width: 36px;
-      text-align: center;
-      filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
-    }
-
-    .subtext {
-      margin-top: 26px;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #D8B9C3;
-      padding: 12px;
-      border-radius: 8px;
-      background: rgba(216, 185, 195, 0.1);
-      border-left: 3px solid #FF3F81;
-    }
-  </style>
+        .subtext {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #D8B9C3;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(216, 185, 195, 0.1);
+            border-left: 3px solid #FF3F81;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="quiz-container">
 
-  <div class="progress">
-    <div class="progress-title">
-      🔍 Vamos identificar seu padrão
+    <div class="progress">
+        ⚡ QUIZ 4 DE 5 — AÇÕES
     </div>
-    <div class="progress-sub">
-      (perceber isso já é metade da mudança)
+
+    <div class="question">
+        Quando ele te envia mensagem, você geralmente:<br>
+        <span>como reage imediatamente?</span>
     </div>
-  </div>
 
-  <div class="question">
-    Isso já aconteceu
-    <span>mais de uma vez com você?</span>
-  </div>
+    <div class="options">
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">📱</span>
+            Respondo na hora, mesmo que ocupada
+        </button>
 
-  <div class="options">
-    <button class="option-button" onclick="redirectToQuiz()">
-      <span class="emoji">💖</span>
-      Sim, quase sempre
-    </button>
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">⏳</span>
+            Espero algumas horas antes de responder
+        </button>
 
-    <button class="option-button" onclick="redirectToQuiz()">
-      <span class="emoji">✨</span>
-      Já aconteceu algumas vezes
-    </button>
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">❌</span>
+            Às vezes ignoro para ver a reação
+        </button>
 
-    <button class="option-button" onclick="redirectToQuiz()">
-      <span class="emoji">🧠</span>
-      Foi a primeira vez
-    </button>
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">💡</span>
+            Tento agir naturalmente, sem ansiedade
+        </button>
+    </div>
 
-    <button class="option-button" onclick="redirectToQuiz()">
-      <span class="emoji">🤔</span>
-      Nunca pensei nisso
-    </button>
-  </div>
-
-  <div class="subtext">
-    Reconhecer o padrão é o primeiro passo para quebrá-lo de vez.
-  </div>
+    <div class="subtext">
+        Entender sua reação ajuda a perceber padrões de comportamento que ele nota inconscientemente.
+    </div>
 
 </div>
 
 <script>
-  function redirectToQuiz() {
-    window.location.href = 'quiz11.html';
-  }
+    function redirectToQuiz() {
+        window.location.href = 'quiz5.html';
+    }
 </script>
 
 </body>

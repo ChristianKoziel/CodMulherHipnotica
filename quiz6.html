@@ -1,177 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÉTODO OBSESSÃO — QUIZ 12</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÉTODO OBSESSÃO — QUIZ 6</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --roxo: #1E0B26;
-  --preto: #0C0C0C;
-  --rosa: #FF3F81;
-  --vermelho: #E5003C;
-  --branco: #FAF1F4;
-  --champagne: #D8B9C3;
-}
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', 'Bebas Neue', sans-serif;
+            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+            color: #FAF1F4;
+            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
+        }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Poppins','Bebas Neue',sans-serif;
-  background: linear-gradient(to bottom, var(--roxo), var(--preto));
-  color: var(--branco);
-  text-shadow: 0 0 5px rgba(229,0,60,.3);
-}
+        .quiz-container {
+            width: 90%;
+            max-width: 420px;
+            padding: 30px;
+            background: rgba(12, 12, 12, 0.85);
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 63, 129, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            position: relative;
+        }
 
-.quiz-container {
-  width: 90%;
-  max-width: 440px;
-  padding: 30px;
-  background: rgba(12,12,12,.85);
-  border-radius: 20px;
-  border: 1px solid var(--rosa);
-  box-shadow: 0 10px 30px rgba(255,63,129,.25);
-  text-align: center;
-  position: relative;
-}
+        .progress {
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            color: #D8B9C3;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 12px;
+        }
 
-.progress {
-  color: var(--rosa);
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 22px;
-  padding-bottom: 14px;
-  position: relative;
-  text-transform: uppercase;
-}
+        .progress::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF3F81, transparent);
+        }
 
-.progress::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 22%;
-  right: 22%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--rosa), transparent);
-}
+        .question {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            color: #FF3F81;
+            text-transform: uppercase;
+        }
 
-.question {
-  font-size: 1.55rem;
-  font-weight: bold;
-  margin-bottom: 18px;
-  line-height: 1.4;
-  color: var(--rosa);
-  text-transform: uppercase;
-}
+        .question span {
+            color: #E5003C;
+            text-decoration: underline;
+        }
 
-.question span {
-  display: block;
-  margin-top: 8px;
-  color: var(--vermelho);
-  text-decoration: underline;
-}
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
 
-.teaser {
-  font-size: 0.95rem;
-  color: var(--champagne);
-  font-style: italic;
-  margin-bottom: 28px;
-  line-height: 1.5;
-  padding: 0 10px;
-}
+        .option-button {
+            background: rgba(30, 11, 38, 0.85);
+            border: 2px solid #FF3F81;
+            border-radius: 50px;
+            padding: 18px 22px;
+            font-size: 1.05rem;
+            color: #FAF1F4;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
+            font-family: 'Poppins', sans-serif;
+            text-align: left;
+        }
 
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+        .option-button:hover {
+            background: linear-gradient(to right, rgba(229, 0, 60, 0.45), rgba(255, 63, 129, 0.45));
+            transform: translateY(-4px);
+            border-color: #E5003C;
+            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
+        }
 
-.option-button {
-  background: rgba(30,11,38,.85);
-  border: 2px solid var(--rosa);
-  border-radius: 50px;
-  padding: 18px 22px;
-  font-size: 1rem;
-  color: var(--branco);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255,63,129,.2);
-  font-family: 'Poppins', sans-serif;
-  text-align: left;
-}
+        .option-button:active {
+            transform: scale(0.97);
+        }
 
-.option-button:hover {
-  background: linear-gradient(to right, rgba(229,0,60,.45), rgba(255,63,129,.45));
-  transform: translateY(-4px);
-  border-color: var(--vermelho);
-  box-shadow: 0 8px 20px rgba(229,0,60,.4);
-}
+        .emoji {
+            font-size: 1.3rem;
+        }
 
-.option-button:active {
-  transform: scale(0.97);
-}
-
-.emoji {
-  font-size: 1.6rem;
-  min-width: 36px;
-  text-align: center;
-  filter: drop-shadow(0 0 3px rgba(255,63,129,.5));
-}
-
-.footer {
-  margin-top: 26px;
-  font-size: 0.9rem;
-  color: var(--champagne);
-  padding: 12px;
-  border-radius: 8px;
-  background: rgba(216,185,195,.1);
-  border-left: 3px solid var(--rosa);
-}
-</style>
+        .subtext {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #D8B9C3;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(216, 185, 195, 0.1);
+            border-left: 3px solid #FF3F81;
+        }
+    </style>
 </head>
+
 <body>
+
 <div class="quiz-container">
 
-  <div class="progress"></div>
+    <div class="progress">
+        ⚡ QUIZ 6 DE 5 — POSICIONAMENTO
+    </div>
 
-  <div class="question">
-    Você acredita que merece<br>
-    <span>ser prioridade, não opção?</span>
-  </div>
+    <div class="question">
+        Você acredita que merece ser prioridade, não opção?<br>
+        <span>Como se posiciona nos relacionamentos?</span>
+    </div>
 
-  <div class="options">
-    <button class="option-button" onclick="next()">
-      <span class="emoji">🔥</span> Sim
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">💪</span> Estou aprendendo a acreditar
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">🤔</span> Nunca pensei nisso
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">✨</span> Quero acreditar
-    </button>
-  </div>
+    <div class="options">
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">✅</span>
+            Sim
+        </button>
 
-  <div class="footer">
-</div>
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">💪</span>
+            Estou aprendendo a acreditar
+        </button>
+
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">❓</span>
+            Nunca pensei nisso
+        </button>
+
+        <button class="option-button" onclick="redirectToQuiz()">
+            <span class="emoji">✨</span>
+            Quero acreditar
+        </button>
+    </div>
+
+    <div class="subtext">
+        Isso aumenta a conversão brutalmente, porque posicionamento de valor é chave.
+    </div>
 
 </div>
 
 <script>
-function next(){
-  window.location.href='quiz7.html';
-}
+    function redirectToQuiz() {
+        window.location.href = 'quiz7.html';
+    }
 </script>
 
 </body>
