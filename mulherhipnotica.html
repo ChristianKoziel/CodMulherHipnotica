@@ -60,35 +60,17 @@ color:#E8C9D4;
 margin-top:10px;
 }
 
-.timer-box{
-margin:30px 0;
-padding:18px;
-border:2px dashed #FF3F81;
-border-radius:14px;
-text-align:center;
-}
-.timer-label{
-font-size:13px;
-color:#FFD700;
-}
-.timer{
-font-size:38px;
-font-weight:700;
-color:#FF3F81;
-letter-spacing:3px;
-}
-
 p{
-margin:20px 0;
+margin:22px 0;
 text-align:center;
 font-size:15px;
-line-height:1.7;
+line-height:1.75;
 color:#D9B6C2;
 }
 
-.choices{margin:32px 0}
+.choices{margin:34px 0}
 .choice{
-background:rgba(30,11,38,.88);
+background:rgba(30,11,38,.9);
 border-left:4px solid #FF3F81;
 padding:18px;
 margin:14px 0;
@@ -125,10 +107,10 @@ font-weight:bold;
 }
 
 .price-box{
-margin:42px 0 28px;
-padding:28px;
-background:rgba(0,0,0,.7);
-border-radius:16px;
+margin:44px 0 30px;
+padding:30px;
+background:rgba(0,0,0,.75);
+border-radius:18px;
 border:1px solid #FF3F81;
 text-align:center;
 }
@@ -169,7 +151,7 @@ transition:.3s;
 .button:hover{transform:translateY(-3px)}
 
 .spots{
-margin-top:16px;
+margin-top:18px;
 text-align:center;
 font-size:13px;
 color:#FFD700;
@@ -186,7 +168,7 @@ animation:blink 1.8s infinite;
 }
 
 .decision{
-margin-top:24px;
+margin-top:26px;
 text-align:center;
 font-size:14px;
 color:#F2DFA8;
@@ -201,7 +183,7 @@ color:#C9AAB5;
 }
 
 .garantia{
-margin-top:36px;
+margin-top:38px;
 padding:22px;
 border-radius:14px;
 background:rgba(255,215,0,.1);
@@ -213,7 +195,7 @@ text-align:center;
 .garantia strong{color:#FFD700}
 
 .warning{
-margin-top:26px;
+margin-top:28px;
 text-align:center;
 font-size:13px;
 color:#E5003C;
@@ -237,34 +219,37 @@ h1{font-size:34px}
 
 <div class="container">
 
-<h1>ÚLTIMA ETAPA<br><span>ANTES DO ACESSO</span></h1>
-<div class="sub">Você chegou até aqui porque sabe que continuar do mesmo jeito não é opção</div>
-
-<div class="timer-box">
-<div class="timer-label">ESTA CONDIÇÃO ESPECIAL EXPIRA EM:</div>
-<div class="timer" id="timer">07:41</div>
+<h1>ÚLTIMO PASSO<br><span>ANTES DO ACESSO</span></h1>
+<div class="sub">
+Se você fechar agora, tudo continua exatamente como sempre foi
 </div>
 
 <p>
-Você não precisa mudar quem você é.  
-Precisa mudar <strong>a forma como eles reagem a você</strong>.
+Você já tentou ser compreensiva.  
+Já tentou esperar.  
+Já tentou não demonstrar demais.
+</p>
+
+<p>
+<strong>E mesmo assim…</strong><br>
+eles se afastam, esfriam ou te colocam em segundo plano.
 </p>
 
 <div class="choices">
-<div class="choice">Continuar tentando agradar e sendo ignorada</div>
+<div class="choice">Continuar tentando entender o comportamento dele</div>
 <div class="choice">Aceitar relações confusas e instáveis</div>
 <div class="choice"><strong>Ou assumir o controle emocional da dinâmica</strong></div>
 </div>
 
-<div class="section-title">VOCÊ RECEBE HOJE</div>
+<div class="section-title">O QUE MUDA A PARTIR DE AGORA</div>
 
 <ul>
 <li>Método Código da Mulher Hipnótica (acesso imediato)</li>
-<li>Protocolos emocionais práticos e silenciosos</li>
+<li>Protocolos emocionais silenciosos e aplicáveis</li>
 <li>Leitura clara do comportamento masculino</li>
 <li>Reposicionamento feminino de alto valor</li>
-<li>Bloqueio de padrões de rejeição e dependência</li>
-<li>Como manter interesse sem cobrança</li>
+<li>Quebra definitiva de padrões de rejeição</li>
+<li>Manutenção do interesse sem cobrança</li>
 <li>Acesso vitalício + atualizações futuras</li>
 </ul>
 
@@ -276,15 +261,15 @@ Precisa mudar <strong>a forma como eles reagem a você</strong>.
 </div>
 
 <button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO ACESSAR O MÉTODO AGORA 🔥
+SIM, QUERO ASSUMIR O CONTROLE 🔥
 </button>
 
 <div class="spots">
-⚠️ Restam apenas <strong>12 acessos</strong> com este valor promocional
+⚠️ Restam apenas <strong>12 acessos disponíveis</strong> neste valor
 </div>
 
 <div class="decision">
-Se você sentiu algo lendo isso, é porque já sabe a resposta.
+Se algo aí dentro apertou lendo isso, você já sabe o que fazer.
 </div>
 
 <div class="micro">
@@ -300,22 +285,10 @@ Sem perguntas. O risco é nosso.
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, esta condição especial é encerrada.
+⚠️ Ao sair desta página, você retorna ao mesmo ponto de antes.
 </div>
 
 </div>
-
-<script>
-let totalSeconds = 7*60 + 41;
-const timerEl = document.getElementById("timer");
-setInterval(()=>{
-if(totalSeconds<=0) return;
-totalSeconds--;
-let m=Math.floor(totalSeconds/60);
-let s=totalSeconds%60;
-timerEl.textContent=String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
-},1000);
-</script>
 
 </body>
 </html>
