@@ -3,67 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO OBSESSÃO — QUIZ 4</title>
+    <title>MÉTODO OBSESSÃO — QUIZ</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
             font-family: 'Poppins', 'Bebas Neue', sans-serif;
             background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
             color: #FAF1F4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
         }
 
         .quiz-container {
             width: 90%;
-            max-width: 420px;
+            max-width: 500px;
             padding: 30px;
             background: rgba(12, 12, 12, 0.85);
             border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(255, 63, 129, 0.5);
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.25),
                         0 0 0 1px rgba(255, 63, 129, 0.3);
+            border: 1px solid rgba(255, 63, 129, 0.5);
             position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-container::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #FF3F81, #E5003C, #1E0B26);
+            filter: blur(6px);
+            opacity: 0.5;
+            z-index: -1;
         }
 
         .progress {
             font-size: 0.95rem;
-            margin-bottom: 22px;
             color: #D8B9C3;
+            margin-bottom: 25px;
             letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .progress::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 20%;
-            right: 20%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #FF3F81, transparent);
         }
 
         .question {
-            font-size: 1.6rem;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #FF3F81;
+            margin-bottom: 18px;
+            line-height: 1.35;
             text-transform: uppercase;
         }
 
         .question span {
             color: #E5003C;
             text-decoration: underline;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .subtext {
+            font-size: 1rem;
+            color: #D8B9C3;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
         .options {
@@ -77,90 +87,89 @@
             border: 2px solid #FF3F81;
             border-radius: 50px;
             padding: 18px 22px;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #FAF1F4;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
-            font-family: 'Poppins', sans-serif;
             text-align: left;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(255, 63, 129, 0.25);
         }
 
         .option-button:hover {
-            background: linear-gradient(to right, rgba(229, 0, 60, 0.45), rgba(255, 63, 129, 0.45));
+            background: linear-gradient(to right, rgba(229, 0, 60, 0.5), rgba(255, 63, 129, 0.5));
             transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(229, 0, 60, 0.45);
             border-color: #E5003C;
-            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
         }
 
         .option-button:active {
-            transform: scale(0.97);
+            transform: scale(0.98);
+        }
+
+        .option-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: 0.6s;
+        }
+
+        .option-button:hover::before {
+            left: 100%;
         }
 
         .emoji {
-            font-size: 1.3rem;
-        }
-
-        .subtext {
-            margin-top: 28px;
-            font-size: 0.9rem;
-            font-style: italic;
-            color: #D8B9C3;
-            padding: 12px;
-            border-radius: 8px;
-            background: rgba(216, 185, 195, 0.1);
-            border-left: 3px solid #FF3F81;
+            font-size: 1.5rem;
+            margin-right: 12px;
         }
     </style>
 </head>
-
 <body>
 
 <div class="quiz-container">
 
     <div class="progress">
-        ⚡ QUIZ 4 DE 5 — AÇÕES
+        ⚡ PERGUNTA 3 DE 7 — SEJA HONESTA
     </div>
 
     <div class="question">
-        Quando ele te envia mensagem, você geralmente:<br>
-        <span>como reage imediatamente?</span>
-    </div>
-
-    <div class="options">
-        <button class="option-button" onclick="redirectToQuiz()">
-            <span class="emoji">📱</span>
-            Respondo na hora, mesmo que ocupada
-        </button>
-
-        <button class="option-button" onclick="redirectToQuiz()">
-            <span class="emoji">⏳</span>
-            Espero algumas horas antes de responder
-        </button>
-
-        <button class="option-button" onclick="redirectToQuiz()">
-            <span class="emoji">❌</span>
-            Às vezes ignoro para ver a reação
-        </button>
-
-        <button class="option-button" onclick="redirectToQuiz()">
-            <span class="emoji">💡</span>
-            Tento agir naturalmente, sem ansiedade
-        </button>
+        COMO ESTÁ SUA
+        <span>SITUAÇÃO COM ELE AGORA?</span>
     </div>
 
     <div class="subtext">
-        Entender sua reação ajuda a perceber padrões de comportamento que ele nota inconscientemente.
+        Não pense no que gostaria. Responda o que é real hoje.
+    </div>
+
+    <div class="options">
+        <button class="option-button" onclick="next()">
+            <span class="emoji">💬</span> A gente conversa, mas nunca avança de verdade
+        </button>
+
+        <button class="option-button" onclick="next()">
+            <span class="emoji">🕳️</span> Ele some, volta… e eu fico esperando
+        </button>
+
+        <button class="option-button" onclick="next()">
+            <span class="emoji">💔</span> Terminamos, mas ainda mexe muito comigo
+        </button>
+
+        <button class="option-button" onclick="next()">
+            <span class="emoji">🥀</span> Estou solteira, mas presa sempre ao mesmo tipo de homem
+        </button>
     </div>
 
 </div>
 
 <script>
-    function redirectToQuiz() {
-        window.location.href = 'quiz5.html';
+    function next() {
+        window.location.href = "quiz5.html";
     }
 </script>
 
