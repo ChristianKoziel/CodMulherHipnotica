@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MÉTODO OBSESSÃO</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -18,330 +19,180 @@
             color: #FAF1F4;
             text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
         }
-        
+
         .quiz-container {
-            background-color: rgba(12, 12, 12, 0.85);
+            background-color: rgba(12, 12, 12, 0.88);
             border-radius: 20px;
             padding: 30px;
             max-width: 90%;
             width: 380px;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                        0 0 0 1px rgba(255, 63, 129, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.25),
+                        0 0 0 1px rgba(255, 63, 129, 0.35);
             text-align: center;
-            border: 1px solid rgba(255, 63, 129, 0.5);
+            border: 1px solid rgba(255, 63, 129, 0.55);
             position: relative;
             overflow: hidden;
         }
-        
-        .quiz-container::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #FF3F81, #E5003C, #1E0B26);
-            z-index: -1;
-            filter: blur(5px);
-            opacity: 0.5;
-        }
-        
+
         h3 {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            line-height: 1.3;
+            font-size: 1.55rem;
+            margin-bottom: 20px;
+            line-height: 1.25;
             color: #FF3F81;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 700;
         }
-        
+
         .fake-chat {
             background: #0c1317;
-            border-radius: 10px;
-            padding: 15px 10px;
-            margin: 20px 0;
+            border-radius: 12px;
+            padding: 14px 10px;
+            margin: 18px 0;
             color: #e9edef;
             text-align: left;
-            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             text-shadow: none;
             border: 1px solid rgba(255,255,255,0.08);
-            position: relative;
-            overflow: hidden;
         }
-        
-        .fake-chat::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: #1f2c33;
-            z-index: 0;
-        }
-        
+
         .chat-header {
-            position: relative;
             display: flex;
             align-items: center;
-            padding: 10px 5px;
-            margin-bottom: 15px;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        
-        .chat-header::after {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: rgba(255,255,255,0.05);
-        }
-        
+
         .contact-avatar {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: #555;
-            margin-right: 10px;
+            margin-right: 8px;
         }
-        
+
         .contact-name {
             font-weight: 600;
-            font-size: 0.95rem;
-            color: #e9edef;
+            font-size: 0.9rem;
         }
-        
-        .chat-messages {
-            padding: 0 5px;
-            min-height: 120px;
-        }
-        
+
         .msg-them {
             background: #1f2c33;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 7.5px 7.5px 7.5px 0;
-            margin: 5px 0;
+            margin-bottom: 6px;
             display: inline-block;
-            max-width: 75%;
-            color: #e9edef;
-            font-size: 0.9rem;
-            position: relative;
+            max-width: 80%;
+            font-size: 0.85rem;
         }
-        
-        .msg-them:first-child {
-            margin-top: 0;
-        }
-        
+
         .msg-you {
             background: #005c4b;
-            color: #e9edef;
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 7.5px 7.5px 0 7.5px;
-            margin: 5px 0 5px auto;
+            margin-left: auto;
             display: inline-block;
-            max-width: 75%;
-            font-size: 0.9rem;
-            text-align: left;
+            max-width: 80%;
+            font-size: 0.85rem;
         }
-        
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            background: #1f2c33;
-            padding: 8px 12px;
-            border-radius: 7.5px 7.5px 7.5px 0;
-            width: fit-content;
-            margin-top: 5px;
-        }
-        
-        .typing-dots {
-            display: flex;
-            margin-right: 5px;
-        }
-        
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #8696a0;
-            border-radius: 50%;
-            margin: 0 2px;
-            animation: typingAnimation 1.4s infinite ease-in-out;
-        }
-        
-        .typing-dot:nth-child(1) {
-            animation-delay: 0s;
-        }
-        
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes typingAnimation {
-            0%, 60%, 100% {
-                transform: translateY(0);
-            }
-            30% {
-                transform: translateY(-3px);
-            }
-        }
-        
-        .typing-text {
+
+        .typing {
+            margin-top: 6px;
+            font-size: 0.75rem;
             color: #8696a0;
-            font-size: 0.8rem;
         }
-        
+
         p {
             font-size: 1.05rem;
-            margin: 25px 0;
-            line-height: 1.5;
-            color: #FAF1F4;
+            margin: 22px 0;
+            line-height: 1.45;
         }
-        
-        .warning {
+
+        .sublinhado {
             color: #FF3F81;
             font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .warning {
             font-size: 0.95rem;
-            margin: 20px 0;
+            margin: 18px 0;
             padding: 12px;
             border: 1px dashed #E5003C;
             border-radius: 8px;
             background: rgba(229, 0, 60, 0.1);
-            position: relative;
+            color: #FF3F81;
         }
-        
-        .warning::before {
-            content: "⚠️";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .warning-text {
-            margin-left: 25px;
-            display: block;
-        }
-        
+
         .botao-pulsante {
             background: linear-gradient(to right, #FF3F81, #E5003C);
             color: #FAF1F4;
             border: none;
             padding: 18px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             animation: pulse 2s infinite;
-            margin: 20px 0 15px;
+            margin-top: 10px;
             width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s;
             font-family: 'Bebas Neue', sans-serif;
-            box-shadow: 0 5px 15px rgba(255, 63, 129, 0.4);
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 2px;
         }
-        
-        .botao-pulsante:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(229, 0, 60, 0.5);
-            background: linear-gradient(to right, #E5003C, #FF3F81);
-        }
-        
-        .botao-pulsante::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(30deg);
-            transition: all 0.3s;
-        }
-        
-        .botao-pulsante:hover::after {
-            left: 100%;
-        }
-        
+
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 63, 129, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(255, 63, 129, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 63, 129, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(255, 63, 129, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 63, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 63, 129, 0); }
         }
-        
-        .sublinhado {
-            text-decoration: underline;
-            color: #FF3F81;
-            font-weight: bold;
-        }
-        
+
         .counter {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            margin-top: 14px;
             color: #D8B9C3;
-            margin-top: 15px;
-            position: relative;
-            padding-top: 15px;
-        }
-        
-        .counter::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 25%;
-            right: 25%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #FF3F81, transparent);
         }
     </style>
 </head>
+
 <body>
-    <div class="quiz-container">
-        <h3>VOCÊ FEZ DE TUDO. ELE SE AFASTOU. AGORA É SUA VEZ DE SER PRIORIDADE.</h3>
-        
-        <div class="fake-chat">
-            <div class="chat-header">
-                <div class="contact-avatar"></div>
-                <div class="contact-name">Ele</div>
-            </div>
-            <div class="chat-messages">
-                <div class="msg-them">Oi, sumida</div><br>
-                <div class="msg-you" style="margin-left: 50%;">Sumi não… eu só parei de correr atrás</div><br>
-                <div class="msg-them">Desculpa, estava ocupado</div>
-                <div class="typing-indicator">
-                    <div class="typing-dots">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    </div>
-                    <div class="typing-text">digitando...</div>
-                </div>
-            </div>
+
+<div class="quiz-container">
+
+    <h3>VOCÊ PAROU DE CORRER ATRÁS.  
+    MAS ELE AINDA NÃO TE ESCOLHEU.</h3>
+
+    <div class="fake-chat">
+        <div class="chat-header">
+            <div class="contact-avatar"></div>
+            <div class="contact-name">Ele</div>
         </div>
-        
-        <p>Em <span class="sublinhado">3 minutos</span>, descubra o ajuste psicológico que faz ele voltar a te procurar — sem você implorar, se explicar ou correr atrás.</p>
-        
-        <div class="warning">
-            <span class="warning-text">Mas antes de tudo, preciso <strong></strong> entender sua situação…</span>
-        </div>
-        
-        <button class="botao-pulsante" onclick="location.href='quiz2.html'">Continuar</button>
-        
-        <div class="counter">🔥 <strong>Mais de 120</strong> mulheres já começaram a retomar o controle</div>
+
+        <div class="msg-them">Oi… sumiu?</div><br>
+        <div class="msg-you">Eu só parei de insistir.</div><br>
+        <div class="msg-them">…</div>
+        <div class="typing">digitando…</div>
     </div>
+
+    <p>
+        Em <span class="sublinhado">menos de 3 minutos</span>, você vai entender
+        o <strong>erro invisível</strong> que faz ele se afastar —  
+        mesmo quando existe interesse.
+    </p>
+
+    <div class="warning">
+        Responda com sinceridade.  
+        Suas respostas mudam o que você vai descobrir.
+    </div>
+
+    <button class="botao-pulsante" onclick="location.href='quiz1.html'">
+        COMEÇAR AGORA
+    </button>
+
+    <div class="counter">
+        🔥 127 mulheres iniciaram esta análise hoje
+    </div>
+
+</div>
+
 </body>
 </html>
