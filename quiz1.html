@@ -21,36 +21,34 @@
         }
 
         .quiz-container {
-            background-color: rgba(12, 12, 12, 0.88);
+            background-color: rgba(12, 12, 12, 0.85);
             border-radius: 20px;
             padding: 30px;
-            max-width: 90%;
             width: 380px;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.25),
-                        0 0 0 1px rgba(255, 63, 129, 0.35);
+            max-width: 92%;
+            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
+                        0 0 0 1px rgba(255, 63, 129, 0.3);
             text-align: center;
-            border: 1px solid rgba(255, 63, 129, 0.55);
+            border: 1px solid rgba(255, 63, 129, 0.5);
             position: relative;
-            overflow: hidden;
         }
 
         h3 {
-            font-size: 1.55rem;
-            margin-bottom: 20px;
-            line-height: 1.25;
+            font-size: 1.6rem;
+            margin-bottom: 22px;
+            line-height: 1.3;
             color: #FF3F81;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        /* CHAT */
         .fake-chat {
             background: #0c1317;
-            border-radius: 12px;
-            padding: 14px 10px;
-            margin: 18px 0;
-            color: #e9edef;
-            text-align: left;
-            font-family: 'Segoe UI', sans-serif;
+            border-radius: 10px;
+            padding: 12px 10px;
+            margin: 20px 0;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
             text-shadow: none;
             border: 1px solid rgba(255,255,255,0.08);
         }
@@ -58,70 +56,101 @@
         .chat-header {
             display: flex;
             align-items: center;
+            margin-bottom: 12px;
             padding-bottom: 8px;
-            margin-bottom: 10px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .contact-avatar {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: #555;
-            margin-right: 8px;
+            margin-right: 10px;
         }
 
         .contact-name {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            color: #e9edef;
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .msg-them {
+            align-self: flex-start;
             background: #1f2c33;
-            padding: 7px 11px;
+            padding: 8px 12px;
             border-radius: 7.5px 7.5px 7.5px 0;
-            margin-bottom: 6px;
-            display: inline-block;
-            max-width: 80%;
-            font-size: 0.85rem;
+            max-width: 75%;
+            color: #e9edef;
+            font-size: 0.9rem;
         }
 
         .msg-you {
+            align-self: flex-end;
             background: #005c4b;
-            padding: 7px 11px;
+            padding: 8px 12px;
             border-radius: 7.5px 7.5px 0 7.5px;
-            margin-left: auto;
-            display: inline-block;
-            max-width: 80%;
-            font-size: 0.85rem;
+            max-width: 75%;
+            color: #e9edef;
+            font-size: 0.9rem;
         }
 
-        .typing {
-            margin-top: 6px;
-            font-size: 0.75rem;
-            color: #8696a0;
+        /* DIGITANDO */
+        .typing-indicator {
+            align-self: flex-start;
+            background: #1f2c33;
+            padding: 8px 12px;
+            border-radius: 7.5px 7.5px 7.5px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: fit-content;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #8696a0;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: .2s; }
+        .typing-dot:nth-child(3) { animation-delay: .4s; }
+
+        @keyframes typing {
+            0% { opacity: .2; }
+            20% { opacity: 1; }
+            100% { opacity: .2; }
         }
 
         p {
             font-size: 1.05rem;
-            margin: 22px 0;
-            line-height: 1.45;
+            margin: 24px 0;
+            line-height: 1.5;
         }
 
         .sublinhado {
+            text-decoration: underline;
             color: #FF3F81;
             font-weight: bold;
-            text-decoration: underline;
         }
 
         .warning {
+            color: #FF3F81;
+            font-weight: bold;
             font-size: 0.95rem;
-            margin: 18px 0;
+            margin: 20px 0;
             padding: 12px;
             border: 1px dashed #E5003C;
             border-radius: 8px;
             background: rgba(229, 0, 60, 0.1);
-            color: #FF3F81;
         }
 
         .botao-pulsante {
@@ -129,15 +158,16 @@
             color: #FAF1F4;
             border: none;
             padding: 18px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             animation: pulse 2s infinite;
-            margin-top: 10px;
+            margin: 20px 0 15px;
             width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
         }
 
         @keyframes pulse {
@@ -147,9 +177,9 @@
         }
 
         .counter {
-            font-size: 0.8rem;
-            margin-top: 14px;
+            font-size: 0.85rem;
             color: #D8B9C3;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -158,8 +188,9 @@
 
 <div class="quiz-container">
 
-    <h3>VOCÊ PAROU DE CORRER ATRÁS.  
-    MAS ELE AINDA NÃO TE ESCOLHEU.</h3>
+    <h3>VOCÊ FEZ DE TUDO.  
+    ELE SE AFASTOU.  
+    AGORA É SUA VEZ DE SER PRIORIDADE.</h3>
 
     <div class="fake-chat">
         <div class="chat-header">
@@ -167,29 +198,35 @@
             <div class="contact-name">Ele</div>
         </div>
 
-        <div class="msg-them">Oi… sumiu?</div><br>
-        <div class="msg-you">Eu só parei de insistir.</div><br>
-        <div class="msg-them">…</div>
-        <div class="typing">digitando…</div>
+        <div class="chat-messages">
+            <div class="msg-them">Oi, sumida…</div>
+            <div class="msg-you">Sumi não. Só parei de correr atrás.</div>
+            <div class="msg-them">Desculpa… estava ocupado.</div>
+
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
     </div>
 
     <p>
-        Em <span class="sublinhado">menos de 3 minutos</span>, você vai entender
-        o <strong>erro invisível</strong> que faz ele se afastar —  
-        mesmo quando existe interesse.
+        Em <span class="sublinhado">3 minutos</span>, descubra o ajuste psicológico
+        que faz ele voltar a te procurar —  
+        sem implorar, se explicar ou correr atrás.
     </p>
 
     <div class="warning">
-        Responda com sinceridade.  
-        Suas respostas mudam o que você vai descobrir.
+        Antes de continuar, preciso entender sua situação.
     </div>
 
-    <button class="botao-pulsante" onclick="location.href='quiz1.html'">
-        COMEÇAR AGORA
+    <button class="botao-pulsante" onclick="location.href='quiz2.html'">
+        Continuar
     </button>
 
     <div class="counter">
-        🔥 127 mulheres iniciaram esta análise hoje
+        🔥 <strong>120+</strong> mulheres já começaram hoje
     </div>
 
 </div>
