@@ -33,8 +33,8 @@ letter-spacing:.4px
 .container{
 max-width:650px;
 width:100%;
-background:rgba(12,12,12,.85);
-border-radius:12px;
+background:rgba(12,12,12,.88);
+border-radius:14px;
 padding:30px;
 border:1px solid var(--rosa);
 box-shadow:0 0 35px rgba(255,63,129,.45);
@@ -48,7 +48,7 @@ top:-10px;left:-10px;right:-10px;bottom:-10px;
 background:linear-gradient(45deg,var(--rosa),var(--vermelho),var(--ouro),var(--rosa));
 background-size:400% 400%;
 filter:blur(18px);
-opacity:.25;
+opacity:.22;
 z-index:-1;
 animation:glow 8s ease infinite
 }
@@ -59,18 +59,25 @@ animation:glow 8s ease infinite
 }
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:32px;
+font-size:34px;
 text-align:center;
 color:var(--ouro);
-margin-bottom:20px;
-letter-spacing:1.5px
+margin-bottom:14px;
+letter-spacing:1.6px
 }
 h1 span{
 color:var(--rosa);
 text-shadow:0 0 10px rgba(255,63,129,.7)
 }
+.subhead{
+text-align:center;
+font-size:15px;
+font-weight:700;
+color:var(--champ);
+margin-bottom:26px
+}
 .underline{
-margin:15px 0 25px;
+margin:20px 0 28px;
 text-align:center;
 color:var(--rosa);
 font-weight:800;
@@ -79,15 +86,15 @@ text-shadow:0 0 8px rgba(255,63,129,.5)
 }
 ul{
 list-style:none;
-margin:30px 0
+margin:26px 0
 }
 ul li{
-background:rgba(30,11,38,.7);
+background:rgba(30,11,38,.75);
 margin:14px 0;
 padding:16px 18px;
-border-radius:8px;
+border-radius:9px;
 border-left:4px solid var(--rosa);
-box-shadow:0 4px 10px rgba(0,0,0,.35);
+box-shadow:0 4px 12px rgba(0,0,0,.35);
 transition:.3s;
 color:var(--champ);
 font-size:15px
@@ -101,28 +108,29 @@ text-shadow:0 0 5px rgba(255,215,0,.6)
 }
 ul li:hover{
 transform:translateX(6px);
-background:rgba(255,63,129,.15);
+background:rgba(255,63,129,.18);
 box-shadow:0 6px 18px rgba(255,63,129,.45)
 }
 .button{
 width:100%;
-margin-top:30px;
-padding:20px;
+margin-top:28px;
+padding:22px;
 border:none;
-border-radius:10px;
+border-radius:50px;
 font-size:20px;
 font-weight:900;
 cursor:pointer;
 color:var(--branco);
 background:linear-gradient(45deg,var(--rosa),var(--vermelho));
-box-shadow:0 6px 22px rgba(229,0,60,.65);
+box-shadow:0 8px 26px rgba(229,0,60,.7);
 transition:.3s;
 position:relative;
-overflow:hidden
+overflow:hidden;
+text-transform:uppercase
 }
 .button:hover{
 transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(229,0,60,.85)
+box-shadow:0 14px 36px rgba(229,0,60,.9)
 }
 .button::before{
 content:"";
@@ -134,21 +142,22 @@ transition:.5s
 }
 .button:hover::before{left:100%}
 .warning{
-margin-top:20px;
+margin-top:18px;
 text-align:center;
-font-size:14px;
+font-size:13.5px;
 font-weight:800;
 color:var(--vermelho);
 text-shadow:0 0 6px rgba(229,0,60,.4);
-animation:pulse 1.5s infinite
+animation:pulse 1.6s infinite
 }
 @keyframes pulse{
-0%{opacity:.6}
+0%{opacity:.65}
 50%{opacity:1}
-100%{opacity:.6}
+100%{opacity:.65}
 }
 @media(max-width:480px){
-h1{font-size:24px}
+h1{font-size:26px}
+.subhead{font-size:14px}
 .button{font-size:17px;padding:18px}
 ul li{font-size:14px}
 }
@@ -158,27 +167,31 @@ ul li{font-size:14px}
 <body>
 <div class="container">
 
-<h1>ESTA É A ÚLTIMA ETAPA<span> ANTES DO ACESSO</span></h1>
+<h1>VOCÊ CHEGOU AO <span>PONTO DE VIRADA</span></h1>
+
+<p class="subhead">
+A maioria das mulheres para exatamente aqui.<br>
+As que continuam, nunca mais vivem o mesmo tipo de relação.
+</p>
 
 <p class="underline">
-SE VOCÊ CONTINUAR FAZENDO O QUE SEMPRE FEZ, VAI CONTINUAR TENDO OS MESMOS RESULTADOS.
+SE VOCÊ NÃO MUDAR A DINÂMICA, O PADRÃO CONTINUA.
 </p>
 
 <ul>
-<li>Ser lembrada mesmo quando você não está presente</li>
-<li>Fazer ele investir emocionalmente sem você pedir nada</li>
-<li>Parar de ser a mulher “opcional”</li>
-<li>Despertar interesse, curiosidade e medo de te perder</li>
-<li>Eliminar a ansiedade de esperar mensagens</li>
-<li>Entender exatamente como a mente masculina funciona</li>
-<li>Virar prioridade sem cobranças</li>
-<li>Assumir controle emocional da relação</li>
-<li>Parar de repetir padrões que te machucam</li>
-<li>Sentir segurança e poder — independentemente dele</li>
+<li>Ser lembrada e desejada mesmo quando você não está presente</li>
+<li>Fazer ele investir emocionalmente sem cobranças ou jogos</li>
+<li>Deixar de ser “opção” e se tornar prioridade</li>
+<li>Despertar interesse, curiosidade e medo real de te perder</li>
+<li>Eliminar a ansiedade por mensagens e atitudes</li>
+<li>Entender com clareza como a mente masculina reage</li>
+<li>Assumir controle emocional — independentemente da resposta dele</li>
+<li>Parar de repetir ciclos que te desgastam</li>
+<li>Sentir segurança, poder e tranquilidade emocional</li>
 </ul>
 
 <p class="underline">
-ESSA É A DECISÃO QUE MUDA O JOGO.
+ESSA DECISÃO DEFINE O QUE ACONTECE DAQUI PRA FRENTE.
 </p>
 
 <button class="button" onclick="window.location.href='mulherhipnotica.html'">
@@ -186,7 +199,7 @@ QUERO ACESSAR O MÉTODO AGORA 🔥
 </button>
 
 <p class="warning">
-⚠️ AO SAIR DESTA PÁGINA, O ACESSO NÃO SERÁ OFERECIDO NOVAMENTE.
+⚠️ AO SAIR DESTA PÁGINA, ESTA CONDIÇÃO NÃO É GARANTIDA NOVAMENTE.
 </p>
 
 </div>
