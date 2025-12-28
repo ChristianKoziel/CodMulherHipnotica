@@ -1,226 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÚLTIMO AVISO: CONTROLE TOTAL</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            text-transform: uppercase;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-            color: #FAF1F4;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            letter-spacing: 0.5px;
-        }
-        .container {
-            background: rgba(12, 12, 12, 0.85);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255, 63, 129, 0.5);
-            max-width: 650px;
-            width: 100%;
-            border: 1px solid #FF3F81;
-            position: relative;
-            overflow: hidden;
-        }
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, #FF3F81, #E5003C, #FFD700, #FF3F81);
-            background-size: 400% 400%;
-            z-index: -1;
-            filter: blur(20px);
-            opacity: 0.3;
-            animation: gradientGlow 8s ease infinite;
-        }
-        @keyframes gradientGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 32px;
-            color: #FFD700;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(229, 0, 60, 0.7);
-            line-height: 1.3;
-            letter-spacing: 1.5px;
-        }
-        h1 span {
-            color: #FF3F81;
-            text-shadow: 0 0 10px rgba(255, 63, 129, 0.7);
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-        ul li {
-            background: rgba(30, 11, 38, 0.7);
-            margin: 15px 0;
-            padding: 18px;
-            border-radius: 6px;
-            border-left: 4px solid #FF3F81;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-transform: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        ul li::before {
-            content: "✓";
-            color: #FFD700;
-            font-weight: bold;
-            margin-right: 10px;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-        }
-        ul li:hover {
-            background: rgba(255, 63, 129, 0.15);
-            transform: translateX(8px);
-            box-shadow: 0 6px 15px rgba(255, 63, 129, 0.4);
-        }
-        .button {
-            display: block;
-            width: 100%;
-            padding: 22px;
-            background: linear-gradient(45deg, #FF3F81 0%, #E5003C 100%);
-            color: #FAF1F4;
-            text-align: center;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 35px;
-            box-shadow: 0 4px 20px rgba(255, 63, 129, 0.6);
-            transition: all 0.3s ease;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255, 255, 0) 60%
-            );
-            transform: rotate(30deg);
-            z-index: -1;
-            transition: all 0.5s ease;
-        }
-        .button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 25px rgba(229, 0, 60, 0.8);
-        }
-        .button:hover::before {
-            left: 100%;
-        }
-        .warning {
-            font-size: 14px;
-            text-align: center;
-            margin-top: 20px;
-            color: #E5003C;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-            animation: pulse 1.5s infinite;
-            font-weight: bold;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.02); }
-            100% { opacity: 0.6; transform: scale(1); }
-        }
-        .highlight {
-            color: #FFD700;
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
-        }
-        .underline {
-            text-decoration: underline;
-            text-shadow: 0 0 8px rgba(255, 63, 129, 0.5);
-            color: #FF3F81;
-            display: inline-block;
-            margin: 15px 0;
-        }
-        p {
-            color: #D8B9C3;
-            text-align: center;
-            margin: 15px 0;
-            text-transform: none;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            .button {
-                padding: 18px;
-                font-size: 18px;
-            }
-            
-            ul li {
-                padding: 15px;
-                font-size: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>O <span>PRÓXIMO PASSO</span> É APENAS PARA QUEM QUER CONTROLE TOTAL:</h1>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <p class="underline">ESTA É A ESCOLHA FINAL ANTES DE CONTINUAR SENDO IGNORADA POR UM HOMEM QUE NEM TE AMA...</p>
-        
-        <ul>
-            <li>Faça com que ele pense em você mesmo quando estiver com outra pessoa</li>
-            <li>Torne-se a mulher que ele persegue sem entender o porquê</li>
-            <li>Faça com que ele sinta sua falta mesmo no silêncio</li>
-            <li>Controle a mente dele como uma marionete emocional</li>
-            <li>Deixe de ser uma “opção” e torne-se a obsessão</li>
-            <li>Acabe com a ansiedade de “ser esquecida”</li>
-            <li>Saiba exatamente como fazê-lo investir em você sem pedir</li>
-            <li>Tenha-o aos seus pés, provando seu amor todos os dias</li>
-            <li>Leia o comportamento dele como se fosse legenda de filme</li>
-            <li>Desencadeie dependência emocional e faça-o implorar</li>
-        </ul>
-        
-        <p class="underline">VOCÊ ESTÁ PRONTA PARA VIRAR O JOGO OU VAI CONTINUAR ESPERANDO POR UMA MENSAGEM QUE NUNCA CHEGA?</p>
-        
-        <button class="button" onclick="window.location.href='mulherhipnotica.html'">SIM, EU QUERO ENTRAR NA MENTE DELE 👁️🔥</button>
-        
-        <p class="warning">⚠️ ESTE É O ÚLTIMO PASSO ANTES DO ACESSO. FECHAR AQUI, E VOCÊ PERDE.</p>
-    </div>
+<title>ÚLTIMO PASSO – ACESSO LIBERADO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--rosa:#FF3F81;
+--vermelho:#E5003C;
+--ouro:#FFD700;
+--preto:#0C0C0C;
+--roxo:#1E0B26;
+--branco:#FAF1F4;
+--champ:#D8B9C3;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,var(--roxo),var(--preto));
+color:var(--branco);
+padding:20px;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+letter-spacing:.4px
+}
+.container{
+max-width:650px;
+width:100%;
+background:rgba(12,12,12,.85);
+border-radius:12px;
+padding:30px;
+border:1px solid var(--rosa);
+box-shadow:0 0 35px rgba(255,63,129,.45);
+position:relative;
+overflow:hidden
+}
+.container::before{
+content:"";
+position:absolute;
+top:-10px;left:-10px;right:-10px;bottom:-10px;
+background:linear-gradient(45deg,var(--rosa),var(--vermelho),var(--ouro),var(--rosa));
+background-size:400% 400%;
+filter:blur(18px);
+opacity:.25;
+z-index:-1;
+animation:glow 8s ease infinite
+}
+@keyframes glow{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+h1{
+font-family:'Bebas Neue',sans-serif;
+font-size:32px;
+text-align:center;
+color:var(--ouro);
+margin-bottom:20px;
+letter-spacing:1.5px
+}
+h1 span{
+color:var(--rosa);
+text-shadow:0 0 10px rgba(255,63,129,.7)
+}
+.underline{
+margin:15px 0 25px;
+text-align:center;
+color:var(--rosa);
+font-weight:800;
+text-decoration:underline;
+text-shadow:0 0 8px rgba(255,63,129,.5)
+}
+ul{
+list-style:none;
+margin:30px 0
+}
+ul li{
+background:rgba(30,11,38,.7);
+margin:14px 0;
+padding:16px 18px;
+border-radius:8px;
+border-left:4px solid var(--rosa);
+box-shadow:0 4px 10px rgba(0,0,0,.35);
+transition:.3s;
+color:var(--champ);
+font-size:15px
+}
+ul li::before{
+content:"✓";
+color:var(--ouro);
+font-weight:900;
+margin-right:10px;
+text-shadow:0 0 5px rgba(255,215,0,.6)
+}
+ul li:hover{
+transform:translateX(6px);
+background:rgba(255,63,129,.15);
+box-shadow:0 6px 18px rgba(255,63,129,.45)
+}
+.button{
+width:100%;
+margin-top:30px;
+padding:20px;
+border:none;
+border-radius:10px;
+font-size:20px;
+font-weight:900;
+cursor:pointer;
+color:var(--branco);
+background:linear-gradient(45deg,var(--rosa),var(--vermelho));
+box-shadow:0 6px 22px rgba(229,0,60,.65);
+transition:.3s;
+position:relative;
+overflow:hidden
+}
+.button:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(229,0,60,.85)
+}
+.button::before{
+content:"";
+position:absolute;
+top:0;left:-100%;
+width:100%;height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+transition:.5s
+}
+.button:hover::before{left:100%}
+.warning{
+margin-top:20px;
+text-align:center;
+font-size:14px;
+font-weight:800;
+color:var(--vermelho);
+text-shadow:0 0 6px rgba(229,0,60,.4);
+animation:pulse 1.5s infinite
+}
+@keyframes pulse{
+0%{opacity:.6}
+50%{opacity:1}
+100%{opacity:.6}
+}
+@media(max-width:480px){
+h1{font-size:24px}
+.button{font-size:17px;padding:18px}
+ul li{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>ESTE É O <span>ÚLTIMO PASSO</span> ANTES DO ACESSO</h1>
+
+<p class="underline">
+SE VOCÊ CONTINUAR FAZENDO O QUE SEMPRE FEZ, VAI CONTINUAR TENDO OS MESMOS RESULTADOS.
+</p>
+
+<ul>
+<li>Ser lembrada mesmo quando você não está presente</li>
+<li>Fazer ele investir emocionalmente sem você pedir nada</li>
+<li>Parar de ser a mulher “opcional”</li>
+<li>Despertar interesse, curiosidade e medo de te perder</li>
+<li>Eliminar a ansiedade de esperar mensagens</li>
+<li>Entender exatamente como a mente masculina funciona</li>
+<li>Virar prioridade sem cobranças</li>
+<li>Assumir controle emocional da relação</li>
+<li>Parar de repetir padrões que te machucam</li>
+<li>Sentir segurança e poder — independentemente dele</li>
+</ul>
+
+<p class="underline">
+ESSA É A DECISÃO QUE MUDA O JOGO.
+</p>
+
+<button class="button" onclick="window.location.href='mulherhipnotica.html'">
+QUERO ACESSAR O MÉTODO AGORA 🔥
+</button>
+
+<p class="warning">
+⚠️ AO SAIR DESTA PÁGINA, O ACESSO NÃO SERÁ OFERECIDO NOVAMENTE.
+</p>
+
+</div>
 </body>
 </html>

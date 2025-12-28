@@ -3,234 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÚLTIMA CHANCE — Código da Mulher Hipnótica</title>
+<title>Última Etapa — Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#120617,#0A0A0A);
-    color:#FAF1F4;
-    padding:20px;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#120617,#0A0A0A);
+color:#FAF1F4;
+padding:20px;
 }
 .container{
-    max-width:740px;
-    margin:0 auto;
-    background:rgba(8,8,8,.96);
-    border-radius:16px;
-    padding:36px 26px;
-    border:1px solid rgba(255,63,129,.6);
-    box-shadow:0 0 70px rgba(255,63,129,.35);
-    position:relative;
-    overflow:hidden;
+max-width:740px;
+margin:0 auto;
+background:rgba(8,8,8,.97);
+border-radius:18px;
+padding:38px 26px;
+border:1px solid rgba(255,63,129,.55);
+box-shadow:0 0 70px rgba(255,63,129,.35);
+position:relative;
+overflow:hidden;
 }
 .container::before{
-    content:"";
-    position:absolute;
-    inset:-25px;
-    background:linear-gradient(45deg,#FF3F81,#E5003C,#FFD700,#FF3F81);
-    background-size:400% 400%;
-    filter:blur(35px);
-    opacity:.15;
-    z-index:-1;
-    animation:glow 10s infinite;
+content:"";
+position:absolute;
+inset:-30px;
+background:linear-gradient(45deg,#FF3F81,#E5003C,#FFD700,#FF3F81);
+background-size:400% 400%;
+filter:blur(40px);
+opacity:.14;
+z-index:-1;
+animation:glow 10s infinite;
 }
 @keyframes glow{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 h1{
-    font-family:'Bebas Neue',sans-serif;
-    font-size:40px;
-    text-align:center;
-    color:#FFD700;
-    text-shadow:0 0 18px rgba(229,0,60,.7);
+font-family:'Bebas Neue',sans-serif;
+font-size:42px;
+text-align:center;
+color:#FFD700;
+text-shadow:0 0 18px rgba(229,0,60,.7);
+line-height:1.1;
 }
 h1 span{color:#FF3F81}
 
 .sub{
-    text-align:center;
-    font-size:15px;
-    color:#E8C9D4;
-    margin-top:8px;
+text-align:center;
+font-size:15px;
+color:#E8C9D4;
+margin-top:10px;
 }
 
 .timer-box{
-    margin:26px 0;
-    padding:18px;
-    border:2px dashed #FF3F81;
-    border-radius:12px;
-    text-align:center;
+margin:30px 0;
+padding:18px;
+border:2px dashed #FF3F81;
+border-radius:14px;
+text-align:center;
 }
 .timer-label{
-    font-size:13px;
-    color:#FFD700;
+font-size:13px;
+color:#FFD700;
 }
 .timer{
-    font-size:36px;
-    font-weight:700;
-    color:#FF3F81;
-    letter-spacing:3px;
+font-size:38px;
+font-weight:700;
+color:#FF3F81;
+letter-spacing:3px;
 }
 
 p{
-    margin:18px 0;
-    text-align:center;
-    font-size:15px;
-    line-height:1.7;
-    color:#D9B6C2;
+margin:20px 0;
+text-align:center;
+font-size:15px;
+line-height:1.7;
+color:#D9B6C2;
 }
 
-.choices{margin:30px 0}
+.choices{margin:32px 0}
 .choice{
-    background:rgba(30,11,38,.85);
-    border-left:4px solid #FF3F81;
-    padding:18px;
-    margin:14px 0;
-    border-radius:10px;
-    font-size:14px;
+background:rgba(30,11,38,.88);
+border-left:4px solid #FF3F81;
+padding:18px;
+margin:14px 0;
+border-radius:12px;
+font-size:14px;
 }
 .choice::before{
-    content:"→ ";
-    color:#FFD700;
-    font-weight:bold;
+content:"→ ";
+color:#FFD700;
+font-weight:bold;
 }
 
 .section-title{
-    font-family:'Bebas Neue',sans-serif;
-    text-align:center;
-    font-size:30px;
-    color:#FFD700;
-    margin:42px 0 22px;
+font-family:'Bebas Neue',sans-serif;
+text-align:center;
+font-size:32px;
+color:#FFD700;
+margin:46px 0 22px;
 }
 
 ul{list-style:none}
 ul li{
-    margin:12px 0;
-    padding:16px;
-    border-radius:10px;
-    background:rgba(255,63,129,.08);
-    border-left:4px solid #FFD700;
-    font-size:14px;
+margin:14px 0;
+padding:16px;
+border-radius:12px;
+background:rgba(255,63,129,.08);
+border-left:4px solid #FFD700;
+font-size:14px;
 }
 ul li::before{
-    content:"✓ ";
-    color:#FFD700;
-    font-weight:bold;
+content:"✓ ";
+color:#FFD700;
+font-weight:bold;
 }
 
 .price-box{
-    margin:38px 0 26px;
-    padding:26px;
-    background:rgba(0,0,0,.65);
-    border-radius:14px;
-    border:1px solid #FF3F81;
-    text-align:center;
+margin:42px 0 28px;
+padding:28px;
+background:rgba(0,0,0,.7);
+border-radius:16px;
+border:1px solid #FF3F81;
+text-align:center;
 }
 .old{
-    font-size:15px;
-    color:#999;
-    text-decoration:line-through;
+font-size:15px;
+color:#999;
+text-decoration:line-through;
 }
 .new{
-    font-size:44px;
-    font-weight:700;
-    color:#FFD700;
+font-size:46px;
+font-weight:700;
+color:#FFD700;
 }
 .discount{
-    color:#FF3F81;
-    font-size:15px;
-    margin-top:6px;
+color:#FF3F81;
+font-size:15px;
+margin-top:6px;
 }
-
 .compare{
-    margin-top:12px;
-    font-size:13px;
-    color:#E8C9D4;
+margin-top:10px;
+font-size:13px;
+color:#E8C9D4;
 }
 
 .button{
-    width:100%;
-    padding:24px;
-    font-size:22px;
-    font-weight:700;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(45deg,#FF3F81,#E5003C);
-    color:#FFF;
-    cursor:pointer;
-    box-shadow:0 10px 40px rgba(255,63,129,.85);
-    transition:.3s;
+width:100%;
+padding:26px;
+font-size:22px;
+font-weight:700;
+border:none;
+border-radius:14px;
+background:linear-gradient(45deg,#FF3F81,#E5003C);
+color:#FFF;
+cursor:pointer;
+box-shadow:0 10px 40px rgba(255,63,129,.85);
+transition:.3s;
 }
-.button:hover{
-    transform:translateY(-3px);
-}
+.button:hover{transform:translateY(-3px)}
 
 .spots{
-    margin-top:14px;
-    text-align:center;
-    font-size:13px;
-    color:#FFD700;
-    background:rgba(255,63,129,.12);
-    padding:10px;
-    border-radius:8px;
-    border:1px solid rgba(255,63,129,.4);
-    animation:blink 1.8s infinite;
+margin-top:16px;
+text-align:center;
+font-size:13px;
+color:#FFD700;
+background:rgba(255,63,129,.12);
+padding:12px;
+border-radius:10px;
+border:1px solid rgba(255,63,129,.4);
+animation:blink 1.8s infinite;
 }
 @keyframes blink{
-    0%{opacity:.6}
-    50%{opacity:1}
-    100%{opacity:.6}
+0%{opacity:.6}
+50%{opacity:1}
+100%{opacity:.6}
 }
 
 .decision{
-    margin-top:22px;
-    text-align:center;
-    font-size:14px;
-    color:#F2DFA8;
-    font-style:italic;
+margin-top:24px;
+text-align:center;
+font-size:14px;
+color:#F2DFA8;
+font-style:italic;
 }
 
 .micro{
-    text-align:center;
-    font-size:12px;
-    margin-top:10px;
-    color:#C9AAB5;
+text-align:center;
+font-size:12px;
+margin-top:12px;
+color:#C9AAB5;
 }
 
 .garantia{
-    margin-top:34px;
-    padding:20px;
-    border-radius:12px;
-    background:rgba(255,215,0,.09);
-    border:1px solid rgba(255,215,0,.5);
-    font-size:14px;
-    color:#F2DFA8;
-    text-align:center;
+margin-top:36px;
+padding:22px;
+border-radius:14px;
+background:rgba(255,215,0,.1);
+border:1px solid rgba(255,215,0,.5);
+font-size:14px;
+color:#F2DFA8;
+text-align:center;
 }
 .garantia strong{color:#FFD700}
 
 .warning{
-    margin-top:26px;
-    text-align:center;
-    font-size:13px;
-    color:#E5003C;
-    animation:pulse 1.5s infinite;
+margin-top:26px;
+text-align:center;
+font-size:13px;
+color:#E5003C;
+animation:pulse 1.5s infinite;
 }
 @keyframes pulse{
-    0%{opacity:.5}
-    50%{opacity:1}
-    100%{opacity:.5}
+0%{opacity:.5}
+50%{opacity:1}
+100%{opacity:.5}
 }
 
 @media(max-width:480px){
-    h1{font-size:32px}
-    .new{font-size:36px}
-    .button{font-size:18px}
+h1{font-size:34px}
+.new{font-size:38px}
+.button{font-size:18px}
 }
 </style>
 </head>
@@ -239,57 +237,59 @@ ul li::before{
 
 <div class="container">
 
-<h1>ÚLTIMA CHANCE<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
-<div class="sub">O método que muda como eles reagem a você — sem esforço, sem cobrança</div>
+<h1>ÚLTIMA ETAPA<br><span>ANTES DO ACESSO</span></h1>
+<div class="sub">Você chegou até aqui porque sabe que continuar do mesmo jeito não é opção</div>
 
 <div class="timer-box">
-    <div class="timer-label">ESTA CONDIÇÃO EXPIRA EM:</div>
-    <div class="timer" id="timer">07:41</div>
+<div class="timer-label">ESTA CONDIÇÃO ESPECIAL EXPIRA EM:</div>
+<div class="timer" id="timer">07:41</div>
 </div>
 
 <p>
-Você não está aqui por curiosidade.  
-Está aqui porque <strong>cansou de se doar demais e receber de menos</strong>.
+Você não precisa mudar quem você é.  
+Precisa mudar <strong>a forma como eles reagem a você</strong>.
 </p>
 
 <div class="choices">
-    <div class="choice">Continuar tentando entender ele</div>
-    <div class="choice">Aceitar migalhas emocionais</div>
-    <div class="choice">Ou assumir o controle da dinâmica emocional</div>
+<div class="choice">Continuar tentando agradar e sendo ignorada</div>
+<div class="choice">Aceitar relações confusas e instáveis</div>
+<div class="choice"><strong>Ou assumir o controle emocional da dinâmica</strong></div>
 </div>
 
-<div class="section-title">VOCÊ RECEBE AGORA</div>
+<div class="section-title">VOCÊ RECEBE HOJE</div>
 
 <ul>
-<li>Código completo da Mulher Hipnótica</li>
-<li>Protocolos emocionais de ativação imediata</li>
-<li>Leitura psicológica do comportamento masculino</li>
-<li>Posicionamento feminino de alto valor</li>
-<li>Bloqueio definitivo de padrões de rejeição</li>
-<li>Manutenção do interesse sem cobrança</li>
-<li>Acesso vitalício + atualizações</li>
+<li>Método Código da Mulher Hipnótica (acesso imediato)</li>
+<li>Protocolos emocionais práticos e silenciosos</li>
+<li>Leitura clara do comportamento masculino</li>
+<li>Reposicionamento feminino de alto valor</li>
+<li>Bloqueio de padrões de rejeição e dependência</li>
+<li>Como manter interesse sem cobrança</li>
+<li>Acesso vitalício + atualizações futuras</li>
 </ul>
 
 <div class="price-box">
-    <div class="old">De R$197,00</div>
-    <div class="new">R$27,90</div>
-    <div class="discount">Menos que uma pizza — pode mudar sua vida emocional</div>
-    <div class="compare">Menos de R$1 por dia para parar de sofrer</div>
+<div class="old">De R$197,00</div>
+<div class="new">R$27,90</div>
+<div class="discount">Menos que uma pizza — pode mudar sua vida emocional</div>
+<div class="compare">Menos de R$1 por dia para parar de sofrer</div>
 </div>
 
 <button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, QUERO VIRAR O JOGO AGORA 🔥
+QUERO ACESSAR O MÉTODO AGORA 🔥
 </button>
 
 <div class="spots">
-⚠️ Restam apenas <strong>12 vagas</strong> com este valor promocional
+⚠️ Restam apenas <strong>12 acessos</strong> com este valor promocional
 </div>
 
 <div class="decision">
-Se você está em dúvida, é exatamente por isso que esse método funciona.
+Se você sentiu algo lendo isso, é porque já sabe a resposta.
 </div>
 
-<div class="micro">Acesso imediato • Compra segura • Total discrição</div>
+<div class="micro">
+Acesso imediato • Compra segura • Total discrição
+</div>
 
 <div class="garantia">
 <strong>GARANTIA INCONDICIONAL DE 30 DIAS</strong><br><br>
@@ -300,7 +300,7 @@ Sem perguntas. O risco é nosso.
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, o desconto é encerrado automaticamente.
+⚠️ Ao sair desta página, esta condição especial é encerrada.
 </div>
 
 </div>
@@ -309,11 +309,11 @@ Sem perguntas. O risco é nosso.
 let totalSeconds = 7*60 + 41;
 const timerEl = document.getElementById("timer");
 setInterval(()=>{
-    if(totalSeconds<=0) return;
-    totalSeconds--;
-    let m=Math.floor(totalSeconds/60);
-    let s=totalSeconds%60;
-    timerEl.textContent=String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+if(totalSeconds<=0) return;
+totalSeconds--;
+let m=Math.floor(totalSeconds/60);
+let s=totalSeconds%60;
+timerEl.textContent=String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 },1000);
 </script>
 
