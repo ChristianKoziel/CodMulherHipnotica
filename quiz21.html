@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ÚLTIMO PASSO – ACESSO LIBERADO</title>
+<title>Preparação Final — Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -28,29 +28,29 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-letter-spacing:.4px
+letter-spacing:.3px
 }
 .container{
-max-width:650px;
+max-width:680px;
 width:100%;
-background:rgba(12,12,12,.85);
-border-radius:12px;
-padding:30px;
-border:1px solid var(--rosa);
-box-shadow:0 0 35px rgba(255,63,129,.45);
+background:rgba(12,12,12,.88);
+border-radius:14px;
+padding:34px;
+border:1px solid rgba(255,63,129,.6);
+box-shadow:0 0 40px rgba(255,63,129,.35);
 position:relative;
 overflow:hidden
 }
 .container::before{
 content:"";
 position:absolute;
-top:-10px;left:-10px;right:-10px;bottom:-10px;
+inset:-12px;
 background:linear-gradient(45deg,var(--rosa),var(--vermelho),var(--ouro),var(--rosa));
 background-size:400% 400%;
-filter:blur(18px);
-opacity:.25;
+filter:blur(20px);
+opacity:.22;
 z-index:-1;
-animation:glow 8s ease infinite
+animation:glow 10s ease infinite
 }
 @keyframes glow{
 0%{background-position:0% 50%}
@@ -59,70 +59,85 @@ animation:glow 8s ease infinite
 }
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:32px;
+font-size:34px;
 text-align:center;
 color:var(--ouro);
-margin-bottom:20px;
-letter-spacing:1.5px
+margin-bottom:18px;
+letter-spacing:1.4px
 }
 h1 span{
 color:var(--rosa);
-text-shadow:0 0 10px rgba(255,63,129,.7)
+text-shadow:0 0 10px rgba(255,63,129,.6)
 }
-.underline{
-margin:15px 0 25px;
+.intro{
 text-align:center;
+font-size:16px;
+color:var(--champ);
+margin-bottom:26px;
+line-height:1.7
+}
+.divider{
+text-align:center;
+margin:22px 0;
 color:var(--rosa);
-font-weight:800;
-text-decoration:underline;
-text-shadow:0 0 8px rgba(255,63,129,.5)
+font-weight:700;
+letter-spacing:.5px
 }
 ul{
 list-style:none;
-margin:30px 0
+margin:26px 0
 }
 ul li{
 background:rgba(30,11,38,.7);
 margin:14px 0;
 padding:16px 18px;
-border-radius:8px;
+border-radius:10px;
 border-left:4px solid var(--rosa);
-box-shadow:0 4px 10px rgba(0,0,0,.35);
-transition:.3s;
+box-shadow:0 4px 12px rgba(0,0,0,.35);
+transition:.25s;
 color:var(--champ);
-font-size:15px
+font-size:15px;
+line-height:1.5
 }
 ul li::before{
 content:"✓";
 color:var(--ouro);
 font-weight:900;
 margin-right:10px;
-text-shadow:0 0 5px rgba(255,215,0,.6)
+text-shadow:0 0 6px rgba(255,215,0,.6)
 }
 ul li:hover{
 transform:translateX(6px);
-background:rgba(255,63,129,.15);
-box-shadow:0 6px 18px rgba(255,63,129,.45)
+background:rgba(255,63,129,.12);
+box-shadow:0 6px 20px rgba(255,63,129,.35)
+}
+.note{
+margin-top:10px;
+text-align:center;
+font-size:15px;
+color:#e9d4dc;
+opacity:.9;
+line-height:1.6
 }
 .button{
 width:100%;
-margin-top:30px;
+margin-top:34px;
 padding:20px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 font-size:20px;
-font-weight:900;
+font-weight:800;
 cursor:pointer;
 color:var(--branco);
 background:linear-gradient(45deg,var(--rosa),var(--vermelho));
-box-shadow:0 6px 22px rgba(229,0,60,.65);
+box-shadow:0 8px 26px rgba(229,0,60,.55);
 transition:.3s;
 position:relative;
 overflow:hidden
 }
 .button:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(229,0,60,.85)
+transform:translateY(-3px);
+box-shadow:0 12px 36px rgba(229,0,60,.75)
 }
 .button::before{
 content:"";
@@ -134,21 +149,15 @@ transition:.5s
 }
 .button:hover::before{left:100%}
 .warning{
-margin-top:20px;
+margin-top:18px;
 text-align:center;
-font-size:14px;
-font-weight:800;
-color:var(--vermelho);
-text-shadow:0 0 6px rgba(229,0,60,.4);
-animation:pulse 1.5s infinite
-}
-@keyframes pulse{
-0%{opacity:.6}
-50%{opacity:1}
-100%{opacity:.6}
+font-size:13px;
+font-weight:600;
+color:#f0b7c8;
+opacity:.75
 }
 @media(max-width:480px){
-h1{font-size:24px}
+h1{font-size:26px}
 .button{font-size:17px;padding:18px}
 ul li{font-size:14px}
 }
@@ -158,35 +167,39 @@ ul li{font-size:14px}
 <body>
 <div class="container">
 
-<h1>ESTE É O <span>ÚLTIMO PASSO</span> ANTES DO ACESSO</h1>
+<h1>VOCÊ ESTÁ <span>NO CAMINHO CERTO</span></h1>
 
-<p class="underline">
-SE VOCÊ CONTINUAR FAZENDO O QUE SEMPRE FEZ, VAI CONTINUAR TENDO OS MESMOS RESULTADOS.
+<p class="intro">
+Suas respostas mostram que você não quer mais repetir padrões.<br>
+Antes de liberar o próximo passo, é importante alinhar algumas coisas.
 </p>
+
+<div class="divider">
+O QUE MUDA QUANDO VOCÊ SE POSICIONA
+</div>
 
 <ul>
-<li>Ser lembrada mesmo quando você não está presente</li>
-<li>Fazer ele investir emocionalmente sem você pedir nada</li>
-<li>Parar de ser a mulher “opcional”</li>
-<li>Despertar interesse, curiosidade e medo de te perder</li>
-<li>Eliminar a ansiedade de esperar mensagens</li>
-<li>Entender exatamente como a mente masculina funciona</li>
-<li>Virar prioridade sem cobranças</li>
-<li>Assumir controle emocional da relação</li>
-<li>Parar de repetir padrões que te machucam</li>
-<li>Sentir segurança e poder — independentemente dele</li>
+<li>Você deixa de ser lembrada só quando é conveniente</li>
+<li>Ele começa a sentir sua ausência sem você sumir</li>
+<li>As conversas ficam mais consistentes e naturais</li>
+<li>Você para de esperar migalhas emocionais</li>
+<li>O interesse passa a vir sem cobranças</li>
+<li>Você entende quando avançar e quando parar</li>
+<li>Relacionamentos deixam de ser confusos</li>
+<li>Você se sente segura — com ou sem resposta dele</li>
 </ul>
 
-<p class="underline">
-ESSA É A DECISÃO QUE MUDA O JOGO.
+<p class="note">
+O próximo passo não é uma venda.<br>
+É apenas uma confirmação final para liberar o acesso correto pra você.
 </p>
 
-<button class="button" onclick="window.location.href='mulherhipnotica.html'">
-QUERO ACESSAR O MÉTODO AGORA 🔥
+<button class="button" onclick="window.location.href='proximo-quiz.html'">
+CONTINUAR PARA O PRÓXIMO PASSO →
 </button>
 
 <p class="warning">
-⚠️ AO SAIR DESTA PÁGINA, O ACESSO NÃO SERÁ OFERECIDO NOVAMENTE.
+⏳ Leva menos de 1 minuto • Não feche esta página
 </p>
 
 </div>
