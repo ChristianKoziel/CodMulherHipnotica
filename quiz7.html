@@ -1,240 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MÉTODO OBSESSÃO - DIAGNÓSTICO FINAL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --roxo-venenoso: #1E0B26;
-      --preto-macabro: #0C0C0C;
-      --rosa-trauma: #FF3F81;
-      --vermelho-obsessivo: #E5003C;
-      --branco-sujo: #FAF1F4;
-      --champagne: #D8B9C3;
-      --ouro-maldito: #FFD700;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO OBSESSÃO — DIAGNÓSTICO FINAL</title>
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', 'Bebas Neue', sans-serif;
-      background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
-      color: var(--branco-sujo);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-    .quiz-container {
-      text-align: center;
-      width: 90%;
-      max-width: 500px;
-      padding: 30px;
-      background-color: rgba(12, 12, 12, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                  0 0 0 1px rgba(255, 63, 129, 0.3);
-      border: 1px solid var(--rosa-trauma);
-      position: relative;
-      overflow: hidden;
-    }
+<style>
+:root {
+  --roxo:#1E0B26;
+  --preto:#0C0C0C;
+  --rosa:#FF3F81;
+  --vermelho:#E5003C;
+  --branco:#FAF1F4;
+  --champagne:#D8B9C3;
+  --ouro:#FFD700;
+}
 
-    .quiz-container::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
-      z-index: -1;
-      filter: blur(5px);
-      opacity: 0.5;
-    }
+body {
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(to bottom,var(--roxo),var(--preto));
+  font-family:'Poppins','Bebas Neue',sans-serif;
+  color:var(--branco);
+  text-shadow:0 0 5px rgba(229,0,60,.3);
+}
 
-    .progress {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      color: var(--ouro-maldito);
-      position: relative;
-      padding-bottom: 15px;
-      line-height: 1.5;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+.quiz-container{
+  width:90%;
+  max-width:440px;
+  padding:30px;
+  background:rgba(12,12,12,.85);
+  border-radius:20px;
+  border:1px solid var(--rosa);
+  box-shadow:0 10px 30px rgba(255,63,129,.25);
+  text-align:center;
+  position:relative;
+}
 
-    .progress::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 25%;
-      right: 25%;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--ouro-maldito), transparent);
-    }
+.progress{
+  color:var(--ouro);
+  font-size:1.1rem;
+  font-weight:bold;
+  margin-bottom:22px;
+  padding-bottom:14px;
+  position:relative;
+  text-transform:uppercase;
+}
 
-    .question {
-      font-size: 1.7rem;
-      font-weight: bold;
-      margin-bottom: 25px;
-      line-height: 1.4;
-      color: var(--rosa-trauma);
-      text-transform: uppercase;
-    }
+.progress::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:25%;
+  right:25%;
+  height:2px;
+  background:linear-gradient(to right,transparent,var(--ouro),transparent);
+}
 
-    .question span {
-      color: var(--vermelho-obsessivo);
-      text-decoration: underline;
-      display: inline;
-    }
+.question{
+  font-size:1.55rem;
+  color:var(--rosa);
+  font-weight:bold;
+  margin-bottom:18px;
+  line-height:1.4;
+  text-transform:uppercase;
+}
 
-    .teaser {
-      font-size: 1.1rem;
-      color: var(--champagne);
-      margin-bottom: 30px;
-      line-height: 1.5;
-      font-style: italic;
-      padding: 0 10px;
-    }
+.question span{
+  color:var(--vermelho);
+  text-decoration:underline;
+}
 
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
+.teaser{
+  font-size:.95rem;
+  color:var(--champagne);
+  font-style:italic;
+  margin-bottom:28px;
+  line-height:1.5;
+}
 
-    .option-button {
-      background: rgba(30, 11, 38, 0.8);
-      color: var(--branco-sujo);
-      border: 2px solid var(--rosa-trauma);
-      border-radius: 50px;
-      padding: 18px 25px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
-    }
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
 
-    .option-button:hover {
-      background: linear-gradient(to right, rgba(229, 0, 60, 0.3), rgba(255, 63, 129, 0.3));
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(229, 0, 60, 0.3);
-    }
+.option-button{
+  background:rgba(30,11,38,.85);
+  border:2px solid var(--rosa);
+  border-radius:50px;
+  padding:18px 22px;
+  font-size:1rem;
+  color:var(--branco);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:.3s;
+  box-shadow:0 4px 10px rgba(255,63,129,.2);
+  text-align:left;
+}
 
-    .option-button:active {
-      transform: scale(0.98);
-    }
+.option-button:hover{
+  background:linear-gradient(to right,rgba(229,0,60,.45),rgba(255,63,129,.45));
+  transform:translateY(-4px);
+  border-color:var(--vermelho);
+}
 
-    .emoji {
-      font-size: 1.8rem;
-      margin-right: 15px;
-      min-width: 40px;
-      text-align: center;
-      filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
-    }
+.emoji{
+  font-size:1.6rem;
+  min-width:36px;
+  text-align:center;
+}
 
-    .continue-button {
-      background: linear-gradient(to right, var(--rosa-trauma), var(--vermelho-obsessivo));
-      color: var(--branco-sujo);
-      border: none;
-      border-radius: 50px;
-      padding: 18px 25px;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      margin-top: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 5px 20px rgba(229, 0, 60, 0.4);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .continue-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(229, 0, 60, 0.6);
-      background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
-    }
-
-    .continue-button:active {
-      transform: scale(0.98);
-    }
-
-    .continue-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-      z-index: -1;
-    }
-
-    .continue-button:hover::before {
-      left: 100%;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 0.95rem;
-      color: var(--champagne);
-      padding: 12px;
-      border-radius: 8px;
-      background: rgba(216, 185, 195, 0.1);
-      border-left: 3px solid var(--rosa-trauma);
-    }
-
-    .option-button.selected {
-      background: linear-gradient(to right, var(--vermelho-obsessivo), var(--rosa-trauma));
-      border-color: var(--ouro-maldito);
-      box-shadow: 0 0 15px var(--rosa-trauma);
-    }
-  </style>
+.footer{
+  margin-top:26px;
+  font-size:.9rem;
+  color:var(--champagne);
+  padding:12px;
+  border-radius:8px;
+  background:rgba(216,185,195,.1);
+  border-left:3px solid var(--rosa);
+}
+</style>
 </head>
-<body>
-  <div class="quiz-container">
-    <div class="progress">🔮 DESBLOQUEANDO SEU PERFIL EMOCIONAL COMPLETO</div>
-    <div class="question">QUAL DESSAS <span>FERIDAS</span> AINDA LATEJA QUANDO VOCÊ DEITA A CABEÇA NO TRAVESSEIRO?</div>
-    <div class="teaser">ELE SABE EXATAMENTE ONDE TE ATINGIR... <br>E MESMO ASSIM, VOCÊ DEIXA.</div>
-    <div class="options">
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">😤</span> Ele some e volta quando quer — e eu ainda aceito.</button>
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">😭</span> Me traiu e disse que “foi um erro”.</button>
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">👻</span> Me sinto invisível mesmo estando do lado dele.</button>
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">🤥</span> Me ignora, mas jura que me ama.</button>
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">🔥</span> Só me procura quando tá carente… ou com desejo.</button>
-      <button class="option-button" onclick="selectOption(this)"><span class="emoji">💔</span> Me faz sentir culpada pelos erros dele.</button>
-    </div>
-    <button class="continue-button" onclick="goToNext()">CONTINUAR DESBLOQUEANDO</button>
-    <div class="footer">SEU MAPA EMOCIONAL ESTÁ 92% CONCLUÍDO... O RESTANTE, VOCÊ AINDA NÃO ESTÁ PRONTA PRA VER.</div>
-  </div>
-  <script>
-    function selectOption(button) {
-      button.classList.toggle('selected');
-    }
 
-    function goToNext() {
-      const selected = document.querySelectorAll('.option-button.selected');
-      if (selected.length === 0) {
-        alert('Por favor, selecione pelo menos uma opção antes de continuar');
-        return;
-      }
-      window.location.href = 'quiz8.html';
-    }
-  </script>
+<body>
+
+<div class="quiz-container">
+
+  <div class="progress">🔮 PERFIL EMOCIONAL QUASE COMPLETO</div>
+
+  <div class="question">
+    Qual dessas situações
+    <span>mais se repete na sua vida amorosa?</span>
+  </div>
+
+  <div class="teaser">
+    Isso não define quem você é —  
+    revela apenas o padrão que você aprendeu a aceitar.
+  </div>
+
+  <div class="options">
+    <button class="option-button" onclick="next()">
+      <span class="emoji">😤</span>
+      Ele some e volta quando quer — e eu continuo ali
+    </button>
+
+    <button class="option-button" onclick="next()">
+      <span class="emoji">😭</span>
+      Ele me machucou e pediu desculpas… mas fez de novo
+    </button>
+
+    <button class="option-button" onclick="next()">
+      <span class="emoji">👻</span>
+      Me sinto invisível mesmo estando com ele
+    </button>
+
+    <button class="option-button" onclick="next()">
+      <span class="emoji">🔥</span>
+      Só me procura quando quer algo
+    </button>
+
+    <button class="option-button" onclick="next()">
+      <span class="emoji">💔</span>
+      Sempre acabo me culpando pelos erros dele
+    </button>
+  </div>
+
+  <div class="footer">
+    O próximo passo mostra como quebrar esse padrão.
+  </div>
+
+</div>
+
+<script>
+function next(){
+  window.location.href='quiz8.html';
+}
+</script>
+
 </body>
 </html>

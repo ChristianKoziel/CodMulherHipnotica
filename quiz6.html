@@ -3,199 +3,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MÉTODO OBSESSÃO - QUIZ</title>
+  <title>MÉTODO OBSESSÃO — QUIZ</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --roxo-venenoso: #1E0B26;
-      --preto-macabro: #0C0C0C;
-      --rosa-trauma: #FF3F81;
-      --vermelho-obsessivo: #E5003C;
-      --branco-sujo: #FAF1F4;
+      --roxo: #1E0B26;
+      --preto: #0C0C0C;
+      --rosa: #FF3F81;
+      --vermelho: #E5003C;
+      --branco: #FAF1F4;
       --champagne: #D8B9C3;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', 'Bebas Neue', sans-serif;
-      background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
-      color: var(--branco-sujo);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      font-family: 'Poppins', 'Bebas Neue', sans-serif;
+      background: linear-gradient(to bottom, var(--roxo), var(--preto));
+      color: var(--branco);
       text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
     }
 
     .quiz-container {
-      text-align: center;
       width: 90%;
-      max-width: 500px;
+      max-width: 420px;
       padding: 30px;
-      background-color: rgba(12, 12, 12, 0.85);
+      background: rgba(12, 12, 12, 0.85);
       border-radius: 20px;
+      border: 1px solid var(--rosa);
       box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
                   0 0 0 1px rgba(255, 63, 129, 0.3);
-      border: 1px solid var(--rosa-trauma);
+      text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-
-    .quiz-container::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
-      z-index: -1;
-      filter: blur(5px);
-      opacity: 0.5;
     }
 
     .progress {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: var(--rosa-trauma);
+      margin-bottom: 22px;
+      padding-bottom: 14px;
       position: relative;
-      padding-bottom: 15px;
-      line-height: 1.5;
+    }
+
+    .progress-title {
+      font-size: 1.05rem;
+      color: var(--rosa);
       font-weight: bold;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
-    .progress span {
-      font-size: 0.9rem;
-      color: var(--champagne);
+    .progress-sub {
+      font-size: 0.85rem;
       font-style: italic;
-      display: block;
-      margin-top: 8px;
-      text-transform: none;
+      color: var(--champagne);
     }
 
     .progress::after {
       content: "";
       position: absolute;
       bottom: 0;
-      left: 25%;
-      right: 25%;
+      left: 22%;
+      right: 22%;
       height: 2px;
-      background: linear-gradient(to right, transparent, var(--rosa-trauma), transparent);
+      background: linear-gradient(to right, transparent, var(--rosa), transparent);
     }
 
     .question {
-      font-size: 1.7rem;
+      font-size: 1.55rem;
       font-weight: bold;
-      margin-bottom: 25px;
       line-height: 1.4;
-      color: var(--rosa-trauma);
+      margin-bottom: 18px;
+      color: var(--rosa);
       text-transform: uppercase;
     }
 
     .question span {
-      color: var(--vermelho-obsessivo);
-      text-decoration: underline;
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
+      color: var(--vermelho);
+      text-decoration: underline;
+      text-transform: none;
     }
 
     .teaser {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--champagne);
-      margin-bottom: 30px;
-      line-height: 1.5;
       font-style: italic;
+      margin-bottom: 28px;
+      line-height: 1.5;
       padding: 0 10px;
     }
 
     .options {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      margin-bottom: 25px;
+      gap: 18px;
     }
 
     .option-button {
-      background: rgba(30, 11, 38, 0.8);
-      color: var(--branco-sujo);
-      border: 2px solid var(--rosa-trauma);
+      background: rgba(30, 11, 38, 0.85);
+      border: 2px solid var(--rosa);
       border-radius: 50px;
-      padding: 18px 25px;
-      font-size: 1.1rem;
+      padding: 18px 22px;
+      font-size: 1rem;
+      color: var(--branco);
       cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
       display: flex;
       align-items: center;
+      gap: 14px;
+      transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
+      font-family: 'Poppins', sans-serif;
+      text-align: left;
     }
 
     .option-button:hover {
-      background: linear-gradient(to right, rgba(229, 0, 60, 0.5), rgba(255, 63, 129, 0.5));
-      transform: translateY(-5px);
+      background: linear-gradient(to right, rgba(229, 0, 60, 0.45), rgba(255, 63, 129, 0.45));
+      transform: translateY(-4px);
+      border-color: var(--vermelho);
       box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
-      border-color: var(--vermelho-obsessivo);
     }
 
     .option-button:active {
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     .emoji {
-      font-size: 1.8rem;
-      margin-right: 15px;
-      min-width: 40px;
+      font-size: 1.6rem;
+      min-width: 36px;
       text-align: center;
       filter: drop-shadow(0 0 3px rgba(255, 63, 129, 0.5));
     }
 
     .footer {
-      margin-top: 30px;
-      font-size: 0.95rem;
+      margin-top: 26px;
+      font-size: 0.9rem;
       color: var(--champagne);
       padding: 12px;
       border-radius: 8px;
       background: rgba(216, 185, 195, 0.1);
-      border-left: 3px solid var(--rosa-trauma);
+      border-left: 3px solid var(--rosa);
     }
   </style>
 </head>
+
 <body>
-  <div class="quiz-container">
-    <div class="progress">
-      💔 ESSA VAI DOER… MAS É ELA QUE REVELA POR QUE ELE SOME DEPOIS DE TE USAR.
-      <span>(NÃO É A ÚLTIMA ETAPA — MAS É UMA DAS MAIS DOLORIDAS.)</span>
-    </div>
 
-    <div class="question">
-      POR QUE VOCÊ SEMPRE DÁ TUDO DE SI… <br><span>E É QUEM MAIS SAI FERIDA?</span>
-    </div>
-    
-    <div class="teaser">A VERDADE É: ELE NUNCA QUIS TE AMAR… <br>SÓ QUIS TE TER. A PRÓXIMA PERGUNTA VAI ESCANCARAR ISSO.</div>
-    
-    <div class="options">
-      <button class="option-button" onclick="goToNext()">
-        <span class="emoji">😩</span> Sempre. Eu me entrego toda e o retorno é o silêncio.
-      </button>
-      <button class="option-button" onclick="goToNext()">
-        <span class="emoji">😬</span> Às vezes… mas finjo que “tá tudo bem”.
-      </button>
-      <button class="option-button" onclick="goToNext()">
-        <span class="emoji">🧘‍♀️</span> Raramente. Fechei meu coração pra não sentir mais dor.
-      </button>
-    </div>
+<div class="quiz-container">
 
-    <div class="footer">Você tá prestes a descobrir o que nenhuma amiga teve coragem de te dizer.</div>
+  <div class="progress">
+    <div class="progress-title">
+      💔 essa resposta revela o erro que mais machuca
+    </div>
+    <div class="progress-sub">
+      (e que quase ninguém percebe enquanto repete)
+    </div>
   </div>
 
-  <script>
-    function goToNext() {
-      window.location.href = 'quiz7.html';
-    }
-  </script>
+  <div class="question">
+    Por que você costuma se entregar tanto…
+    <span>e acabar se machucando?</span>
+  </div>
+
+  <div class="teaser">
+    Não é fraqueza. É um padrão emocional que você aprendeu —  
+    e que pode ser reprogramado.
+  </div>
+
+  <div class="options">
+    <button class="option-button" onclick="goToNext()">
+      <span class="emoji">😩</span>
+      Eu me entrego demais esperando que ele retribua
+    </button>
+
+    <button class="option-button" onclick="goToNext()">
+      <span class="emoji">😬</span>
+      Eu percebo os sinais, mas ignoro para não perder
+    </button>
+
+    <button class="option-button" onclick="goToNext()">
+      <span class="emoji">🧘‍♀️</span>
+      Hoje eu evito sentir… mas continuo infeliz
+    </button>
+  </div>
+
+  <div class="footer">
+    Falta só um passo para você entender como quebrar isso.
+  </div>
+
+</div>
+
+<script>
+  function goToNext() {
+    window.location.href = 'quiz7.html';
+  }
+</script>
+
 </body>
 </html>
