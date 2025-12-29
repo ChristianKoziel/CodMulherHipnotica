@@ -20,7 +20,7 @@ padding:20px;
 .timer-bar{
 position:fixed;
 top:0;left:0;width:100%;
-background:linear-gradient(90deg,#1e0b26,#0c0c0c);
+background:linear-gradient(90deg,#1E0B26,#0C0C0C);
 border-bottom:1px solid rgba(255,63,129,.5);
 padding:12px;
 text-align:center;
@@ -193,6 +193,28 @@ color:#E5003C;
 opacity:.85;
 }
 
+/* POPUP PROVA SOCIAL */
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#1E0B26;
+color:#FFF;
+padding:14px 18px;
+border-radius:12px;
+font-size:14px;
+box-shadow:0 10px 30px rgba(0,0,0,.45);
+border-left:4px solid #FF3F81;
+opacity:0;
+transform:translateY(20px);
+transition:.4s;
+z-index:9999;
+}
+.popup.show{
+opacity:1;
+transform:translateY(0);
+}
+
 /* MOBILE */
 @media(max-width:480px){
 h1{font-size:34px}
@@ -203,15 +225,41 @@ h1{font-size:34px}
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-let timeLeft = (12 * 60) + 43;
-function updateTimer(){
-const m = Math.floor(timeLeft/60);
-const s = timeLeft % 60;
-document.getElementById('timer').innerText =
-String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
-if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
-}
-updateTimer();
+
+  /* TIMER */
+  let timeLeft = (12 * 60) + 43;
+  function updateTimer(){
+    const m = Math.floor(timeLeft/60);
+    const s = timeLeft % 60;
+    document.getElementById('timer').innerText =
+      String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
+    if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
+  }
+  updateTimer();
+
+  /* POPUP PROVA SOCIAL */
+  const names = ["Ana","Camila","Juliana","Fernanda","Larissa","Paula","Renata","Bianca"];
+  const messages = [
+    "acabou de garantir acesso ao Código da Mulher Hipnótica",
+    "entrou agora para o Código da Mulher Hipnótica",
+    "começou agora o Código da Mulher Hipnótica"
+  ];
+
+  const popup = document.getElementById("popup");
+
+  function showPopup(){
+    const name = names[Math.floor(Math.random()*names.length)];
+    const msg = messages[Math.floor(Math.random()*messages.length)];
+    popup.innerHTML = `✨ <strong>${name}</strong> ${msg}`;
+    popup.classList.add("show");
+    setTimeout(()=>popup.classList.remove("show"),5000);
+  }
+
+  setTimeout(()=>{
+    showPopup();
+    setInterval(showPopup,90000);
+  },18000); // PRIMEIRO POPUP EM 18s
+
 });
 </script>
 </head>
@@ -219,7 +267,7 @@ updateTimer();
 <body>
 
 <div class="timer-bar">
-<strong>ÚLTIMA CHANCE</strong> — Código da Mulher Hipnótica com <strong>+80% OFF</strong><br>
+<strong>SEU ACESSO ESTÁ RESERVADO</strong><br>
 <span class="timer" id="timer">12:43</span>
 </div>
 
@@ -238,8 +286,7 @@ Essa condição especial aparece apenas uma vez neste processo
 
 <p>
 O que você sente não é carência.  
-É falta de controle emocional da dinâmica.
-<br><br>
+É falta de controle emocional da dinâmica.<br><br>
 Quando isso muda, a forma como você é tratada muda junto.
 </p>
 
@@ -267,7 +314,7 @@ SIM, QUERO ACESSAR AGORA 🔥
 <p>
 “Depois que apliquei, a forma como ele se posicionou comigo mudou.
 Não precisei cobrar nada.  
-Eu me senti mais segura e no controle emocional.”
+Me senti segura e no controle emocional.”
 </p>
 <strong>Luiza, 23 anos</strong>
 </div>
@@ -284,6 +331,8 @@ Se não perceber diferença real na dinâmica emocional,
 </div>
 
 </div>
+
+<div id="popup" class="popup"></div>
 
 </body>
 </html>
