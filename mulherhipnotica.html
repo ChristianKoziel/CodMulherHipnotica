@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código da Mulher Hipnótica — Última Chance</title>
+<title>O Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -19,109 +19,126 @@ padding:14px;
 max-width:720px;
 margin:auto;
 background:#0E0E0E;
-border-radius:20px;
-padding:30px 20px;
+border-radius:22px;
+padding:34px 22px;
 border:1px solid rgba(255,63,129,.55);
-box-shadow:0 0 40px rgba(255,63,129,.35);
+box-shadow:0 0 50px rgba(255,63,129,.35);
 }
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:38px;
+font-size:42px;
 text-align:center;
 color:#FFD700;
-line-height:1.1;
+line-height:1.05;
 }
 h1 span{color:#FF3F81}
 .sub{
 text-align:center;
-font-size:15px;
+font-size:16px;
 color:#F2C9D8;
-margin-top:16px;
+margin-top:18px;
 font-weight:600;
+}
+
+/* BLOCO DE IMPACTO */
+.hero{
+margin-top:26px;
+padding:22px;
+border-radius:18px;
+background:rgba(255,63,129,.12);
+border:1px solid rgba(255,63,129,.4);
+text-align:center;
+}
+.hero p{
+font-size:16px;
+line-height:1.7;
+color:#F6D1DE;
 }
 
 /* TIMER */
 .timer-box{
-margin:22px 0;
-padding:18px;
-border-radius:16px;
+margin:28px 0;
+padding:20px;
+border-radius:18px;
 background:#120617;
 border:2px dashed #FF3F81;
 text-align:center;
 }
 .timer-box p{font-size:13px;color:#F6C1D3;margin-bottom:8px}
-.timer{font-size:28px;font-weight:800;color:#FFD700}
+.timer{font-size:30px;font-weight:800;color:#FFD700}
 
-/* TEXTO */
+/* TEXTOS */
 p{
-margin:18px 0;
+margin:20px 0;
 text-align:center;
 font-size:15px;
-line-height:1.7;
+line-height:1.75;
 color:#E6C3CF;
 }
 
-/* LISTA */
-ul{list-style:none;margin-top:10px}
+/* LISTAS */
+ul{list-style:none;margin-top:16px}
 ul li{
 margin:14px 0;
-padding:16px;
-border-radius:14px;
-background:rgba(255,63,129,.15);
+padding:18px;
+border-radius:16px;
+background:rgba(255,63,129,.14);
 border-left:4px solid #FFD700;
-font-size:14px;
+font-size:15px;
 }
 
 /* PREÇO */
 .price-box{
-margin:36px 0;
-padding:26px;
+margin:40px 0;
+padding:28px;
 background:#000;
-border-radius:20px;
+border-radius:22px;
 border:2px solid #FF3F81;
 text-align:center;
 }
 .old{font-size:14px;color:#999;text-decoration:line-through}
-.new{font-size:46px;font-weight:800;color:#FFD700}
-.discount{color:#FF3F81;font-size:14px;font-weight:700}
+.new{font-size:48px;font-weight:800;color:#FFD700}
+.discount{color:#FF3F81;font-size:14px;font-weight:700;margin-top:6px}
 
-/* BOTAO */
+/* BOTÃO */
 .button{
 width:100%;
-padding:26px;
-font-size:20px;
+padding:28px;
+font-size:22px;
 font-weight:900;
 border:none;
 border-radius:60px;
 background:linear-gradient(45deg,#FF3F81,#E5003C);
 color:#FFF;
 cursor:pointer;
-box-shadow:0 14px 45px rgba(255,63,129,.95);
+box-shadow:0 16px 50px rgba(255,63,129,.95);
 text-transform:uppercase;
 }
-.cta-sub{text-align:center;font-size:12px;color:#EFC3D3;margin-top:10px}
+.cta-sub{text-align:center;font-size:12px;color:#EFC3D3;margin-top:12px}
 
-/* FAQ */
-.faq{
-margin-top:42px;
-}
-.faq h2{
+/* SEÇÕES */
+.section-title{
+margin-top:44px;
 text-align:center;
 font-family:'Bebas Neue',sans-serif;
 color:#FFD700;
-font-size:30px;
-margin-bottom:22px;
+font-size:32px;
+}
+
+/* FAQ */
+.faq{
+margin-top:34px;
 }
 .faq details{
-margin-bottom:14px;
+margin-bottom:16px;
 background:rgba(255,255,255,.05);
-padding:16px;
-border-radius:14px;
+padding:18px;
+border-radius:16px;
 border:1px solid rgba(255,63,129,.35);
 }
 .faq summary{
 color:#FFD700;
-font-size:14px;
+font-size:15px;
 font-weight:700;
 cursor:pointer;
 }
@@ -133,9 +150,9 @@ margin-top:10px;
 
 /* GARANTIA */
 .garantia{
-margin-top:34px;
-padding:22px;
-border-radius:18px;
+margin-top:38px;
+padding:24px;
+border-radius:20px;
 background:rgba(255,215,0,.16);
 border:1px solid rgba(255,215,0,.6);
 font-size:14px;
@@ -143,7 +160,7 @@ color:#F6E4AE;
 text-align:center;
 }
 
-/* POPUP */
+/* POPUP LIMPO */
 .popup{
 position:fixed;
 bottom:20px;
@@ -151,29 +168,23 @@ left:20px;
 background:#120617;
 border:1px solid rgba(255,63,129,.7);
 border-radius:14px;
-padding:14px 16px;
+padding:14px 18px;
 display:flex;
-gap:12px;
 align-items:center;
 box-shadow:0 10px 30px rgba(0,0,0,.6);
 z-index:9999;
 animation:slideIn .5s ease;
 }
-.popup img{
-width:42px;
-height:42px;
-border-radius:50%;
-border:2px solid #FF3F81;
-}
 .popup strong{color:#FFD700;font-size:13px}
 .popup span{display:block;font-size:12px;color:#EFC3D3}
 .popup small{font-size:11px;color:#AAA}
 .popup.hide{animation:slideOut .5s forwards}
+
 @keyframes slideIn{from{transform:translateX(-120%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes slideOut{to{transform:translateX(-120%);opacity:0}}
 
 .warning{
-margin-top:24px;
+margin-top:26px;
 text-align:center;
 font-size:12px;
 color:#FF4D6D;
@@ -186,85 +197,110 @@ font-weight:700;
 
 <div class="container">
 
-<h1>ÚLTIMA DECISÃO<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
+<h1>O ERRO EMOCIONAL<br><span>QUE FAZ ELE TE TRATAR COMO OPÇÃO</span></h1>
 
-<div class="sub">Se você sair agora, volta pro mesmo padrão emocional.</div>
+<div class="sub">
+E como virar o jogo sem implorar, discutir ou se humilhar.
+</div>
+
+<div class="hero">
+<p>
+Isso não é sobre sedução barata.<br>
+É sobre <strong>postura psicológica</strong> — a mesma que faz homens mudarem o comportamento
+sem você precisar cobrar, pressionar ou correr atrás.
+</p>
+</div>
 
 <div class="timer-box">
-<p>Essa condição expira em:</p>
+<p>Essa condição especial expira em:</p>
 <div class="timer" id="timer">15:00</div>
 </div>
 
-<p><strong>Mudar a dinâmica</strong> faz ele se posicionar sem você implorar.</p>
+<p>
+A maioria das mulheres perde valor emocional porque reage no impulso:
+mensagens longas, ansiedade, medo de perder.<br><br>
+<strong>O Código da Mulher Hipnótica</strong> te ensina exatamente
+<strong>o que parar de fazer</strong> e <strong>o que mudar internamente</strong>
+pra ser respeitada de forma natural.
+</p>
+
+<h2 class="section-title">O QUE MUDA NA PRÁTICA</h2>
 
 <ul>
-<li>Parar de ser opção</li>
-<li>Eliminar ansiedade emocional</li>
-<li>Assumir controle da própria postura</li>
-<li>Ser respeitada naturalmente</li>
+<li>Como agir quando ele esfria sem parecer carente</li>
+<li>O ajuste psicológico que corta testes e joguinhos</li>
+<li>O comportamento que ativa respeito automático</li>
+<li>Como parar de se entregar mais do que recebe</li>
+<li>O erro emocional que transforma mulheres fortes em opção</li>
+</ul>
+
+<h2 class="section-title">PRA QUEM É (E PRA QUEM NÃO É)</h2>
+
+<ul>
+<li>✔️ Pra quem cansou de se sentir insegura ou em segundo plano</li>
+<li>✔️ Pra quem quer controle emocional sem manipulação</li>
+<li>✔️ Pra quem quer ser respeitada sem virar fria</li>
+<li>❌ Não é pra quem procura truque rápido ou joguinho infantil</li>
 </ul>
 
 <div class="price-box">
-<div class="old">DE R$397,00</div>
+<div class="old">De R$397,00</div>
 <div class="new">R$27,90</div>
-<div class="discount">Só enquanto o timer durar</div>
+<div class="discount">Acesso liberado enquanto o timer durar</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, QUERO GARANTIR AGORA
+QUERO VIRAR O JOGO AGORA
 </button>
 
-<div class="cta-sub">Acesso imediato • Garantia 30 dias</div>
+<div class="cta-sub">Acesso imediato • Garantia incondicional de 30 dias</div>
 
-<!-- FAQ -->
 <div class="faq">
-<h2>PERGUNTAS FREQUENTES</h2>
+<h2 class="section-title">PERGUNTAS FREQUENTES</h2>
 
 <details open>
 <summary>Isso funciona mesmo?</summary>
 <p>
-Funciona porque muda a dinâmica emocional e a forma como você se posiciona.
-Se não sentir diferença real em até 30 dias, você pode pedir reembolso.
+Funciona porque muda sua postura emocional — e postura muda comportamento.
+Se não sentir diferença real em até 30 dias, você pede reembolso.
 </p>
 </details>
 
 <details>
-<summary>É algum tipo de manipulação?</summary>
+<summary>É manipulação?</summary>
 <p>
-Não. É mudança de postura emocional e comportamento.
-Você para de agir no desespero e assume controle.
+Não. É autocontrole, clareza emocional e limites.
+Você para de agir no impulso e assume respeito.
 </p>
 </details>
 
 <details>
-<summary>E se eu sair agora?</summary>
+<summary>E se eu não aplicar?</summary>
 <p>
-Você pode até voltar depois, mas dificilmente com esse valor
-ou com essa condição ativa.
+Nada muda. Informação sem ação é só entretenimento emocional.
 </p>
 </details>
-
 </div>
 
 <div class="garantia">
-<strong>GARANTIA TOTAL DE 30 DIAS</strong><br>
-Ou isso muda sua dinâmica emocional, ou você recebe 100% do dinheiro de volta.
+<strong>GARANTIA TOTAL DE 30 DIAS</strong><br><br>
+Ou isso muda sua dinâmica emocional,<br>
+ou você recebe 100% do dinheiro de volta.
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, essa condição será encerrada automaticamente.
+⚠️ Ao sair desta página, essa condição pode não estar mais disponível.
 </div>
 
 </div>
 
 <!-- POPUP -->
 <div id="popup" class="popup" style="display:none;">
-<img src="src/img/avatar.png">
-<div>
-<strong id="nome"></strong>
-<span>acabou de garantir o acesso</span>
-<small id="cidade"></small>
-</div>
+  <div>
+    <strong>Nova aluna entrou no Código</strong>
+    <span>Acesso liberado agora mesmo</span>
+    <small>verificação automática</small>
+  </div>
 </div>
 
 <script>
@@ -277,24 +313,14 @@ timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// POPUP
-const nomes=["Camila","Renata","Juliana","Patrícia","Fernanda","Aline","Bruna","Larissa"];
-const cidades=["SP","RJ","BH","Curitiba","Porto Alegre","Campinas","Guarulhos"];
+// POPUP LIMPO
 const popup=document.getElementById("popup");
-const nomeEl=document.getElementById("nome");
-const cidadeEl=document.getElementById("cidade");
-
 function showPopup(){
-nomeEl.innerText = nomes[Math.floor(Math.random()*nomes.length)];
-cidadeEl.innerText = cidades[Math.floor(Math.random()*cidades.length)] + " • agora mesmo";
 popup.style.display="flex";
 popup.classList.remove("hide");
-setTimeout(()=>{ popup.classList.add("hide"); },4500);
+setTimeout(()=>{ popup.classList.add("hide"); },4000);
 }
-
-// intervalos 12s e 20s
-setInterval(showPopup,12000);
-setInterval(showPopup,20000);
+setInterval(showPopup, Math.floor(Math.random() * (35000 - 18000) + 18000));
 </script>
 
 </body>
