@@ -1,192 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO OBSESSÃO — QUIZ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MÉTODO OBSESSÃO — QUIZ</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', 'Bebas Neue', sans-serif;
-            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-            color: #FAF1F4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-        }
-
-        .quiz-container {
-            width: 90%;
-            max-width: 520px;
-            padding: 32px;
-            background: rgba(12, 12, 12, 0.88);
-            border-radius: 22px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.25),
-                        0 0 0 1px rgba(255, 63, 129, 0.3);
-            border: 1px solid rgba(255, 63, 129, 0.55);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quiz-container::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, #FF3F81, #E5003C, #1E0B26);
-            filter: blur(6px);
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        .progress {
-            font-size: 0.95rem;
-            color: #D8B9C3;
-            margin-bottom: 22px;
-            letter-spacing: 1px;
-        }
-
-        .question {
-            font-size: 1.85rem;
-            font-weight: 700;
-            color: #FF3F81;
-            margin-bottom: 14px;
-            line-height: 1.35;
-            text-transform: uppercase;
-        }
-
-        .question span {
-            color: #E5003C;
-            text-decoration: underline;
-            display: block;
-            margin-top: 8px;
-        }
-
-        .subtext {
-            font-size: 1rem;
-            color: #D8B9C3;
-            font-style: italic;
-            margin-bottom: 26px;
-            line-height: 1.55;
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #FF3F81, transparent);
-            margin: 18px 0 26px;
-            opacity: 0.6;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .option-button {
-            background: rgba(30, 11, 38, 0.9);
-            border: 2px solid #FF3F81;
-            border-radius: 50px;
-            padding: 18px 22px;
-            font-size: 1.1rem;
-            color: #FAF1F4;
-            cursor: pointer;
-            transition: all 0.28s ease;
-            text-align: left;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(255, 63, 129, 0.25);
-        }
-
-        .option-button:hover {
-            background: linear-gradient(to right, rgba(229, 0, 60, 0.55), rgba(255, 63, 129, 0.55));
-            transform: translateY(-4px);
-            box-shadow: 0 8px 22px rgba(229, 0, 60, 0.45);
-            border-color: #E5003C;
-        }
-
-        .option-button:active {
-            transform: scale(0.98);
-        }
-
-        .option-button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: 0.6s;
-        }
-
-        .option-button:hover::before {
-            left: 100%;
-        }
-
-        .emoji {
-            font-size: 1.45rem;
-            margin-right: 12px;
-        }
-
-        .note {
-            margin-top: 18px;
-            font-size: 0.9rem;
-            color: #C9A8B4;
-        }
-    </style>
+<style>
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
+color:#FAF1F4;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-shadow:0 0 6px rgba(229,0,60,.35);
+}
+.quiz-container{
+width:90%;
+max-width:540px;
+padding:36px 28px;
+background:rgba(12,12,12,.94);
+border-radius:24px;
+text-align:center;
+border:1px solid rgba(255,63,129,.65);
+box-shadow:0 0 48px rgba(255,63,129,.45);
+position:relative;
+overflow:hidden;
+}
+.quiz-container::before{
+content:"";
+position:absolute;
+inset:-2px;
+background:linear-gradient(45deg,#FF3F81,#E5003C,#1E0B26);
+filter:blur(10px);
+opacity:.45;
+z-index:-1;
+}
+.progress{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:22px;
+font-weight:700;
+letter-spacing:1px;
+}
+.question{
+font-family:'Bebas Neue',sans-serif;
+font-size:36px;
+line-height:1.08;
+color:#FFD700;
+margin-bottom:14px;
+}
+.question span{
+color:#FF3F81;
+display:block;
+margin-top:10px;
+}
+.subtext{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:26px;
+line-height:1.55;
+font-style:italic;
+}
+.highlight{
+color:#FFD700;
+font-weight:800;
+}
+.divider{
+height:1px;
+background:linear-gradient(to right,transparent,#FF3F81,transparent);
+margin:20px 0 28px;
+opacity:.7;
+}
+.options{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+.option-button{
+background:rgba(30,11,38,.92);
+border:2px solid #FF3F81;
+border-radius:60px;
+padding:20px 24px;
+font-size:15px;
+color:#FAF1F4;
+cursor:pointer;
+transition:.3s;
+text-align:left;
+font-weight:700;
+position:relative;
+overflow:hidden;
+box-shadow:0 6px 20px rgba(255,63,129,.4);
+}
+.option-button:hover{
+background:linear-gradient(90deg,#E5003C,#FF3F81);
+transform:translateY(-3px);
+box-shadow:0 14px 40px rgba(255,63,129,.9);
+}
+.option-button::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+transition:.6s;
+}
+.option-button:hover::before{
+left:120%;
+}
+.emoji{
+margin-right:12px;
+font-size:18px;
+}
+.note{
+margin-top:20px;
+font-size:13px;
+color:#C9A8B4;
+}
+.note strong{
+color:#FFD700;
+}
+</style>
 </head>
+
 <body>
 
 <div class="quiz-container">
 
-    <div class="progress">
-        ⚡ PERGUNTA 7 DE 7 — ÚLTIMO PASSO
-    </div>
+<div class="progress">
+⚡ PERGUNTA 7 DE 7 — RESULTADO FINAL
+</div>
 
-    <div class="question">
-        PELAS SUAS RESPOSTAS,
-        <span>VOCÊ QUER ENTENDER O QUE REALMENTE ESTÁ ACONTECENDO?</span>
-    </div>
+<div class="question">
+COM BASE NAS SUAS RESPOSTAS,
+<span>UM PADRÃO EMOCIONAL FICOU CLARO</span>
+</div>
 
-    <div class="subtext">
-        Em poucos segundos, vamos montar seu <strong>perfil emocional</strong> e mostrar
-        o padrão que vem sabotando seus relacionamentos.
-    </div>
+<div class="subtext">
+Em menos de <span class="highlight">30 segundos</span>, você vai descobrir:
+<br><br>
+• Por que você se envolve com o mesmo tipo de homem  
+• O erro invisível que faz eles perderem o interesse  
+• O ajuste exato que muda a dinâmica sem esforço
+</div>
 
-    <div class="divider"></div>
+<div class="divider"></div>
 
-    <div class="options">
-        <button class="option-button" onclick="next()">
-            <span class="emoji">🧠</span> Sim. Quero ver meu diagnóstico agora
-        </button>
+<div class="options">
+<button class="option-button" onclick="next()">
+<span class="emoji">🧠</span>
+Quero ver meu diagnóstico emocional agora
+</button>
 
-        <button class="option-button" onclick="next()">
-            <span class="emoji">🔥</span> Quero entender por que isso sempre se repete
-        </button>
+<button class="option-button" onclick="next()">
+<span class="emoji">🔥</span>
+Quero entender por que isso SEMPRE se repete
+</button>
 
-        <button class="option-button" onclick="next()">
-            <span class="emoji">💎</span> Quero clareza pra não errar de novo
-        </button>
-    </div>
+<button class="option-button" onclick="next()">
+<span class="emoji">💎</span>
+Quero saber como inverter esse padrão de vez
+</button>
+</div>
 
-    <div class="note">
-        ⏱️ Leva menos de 30 segundos.
-    </div>
+<div class="note">
+⏱️ Resultado imediato • <strong>Baseado nas suas respostas</strong>
+</div>
 
 </div>
 
 <script>
-    function next() {
-        window.location.href = "quiz17.html";
-    }
+function next(){
+window.location.href="quiz17.html";
+}
 </script>
 
 </body>
