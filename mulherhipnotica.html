@@ -3,192 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Código da Mulher Hipnótica — Acesso Final</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root{
+--pink:#FF3F81;
+--red:#E5003C;
+--gold:#FFD700;
+--bg1:#1E0B26;
+--bg2:#0C0C0C;
+--text:#FAF1F4;
+--muted:#D8B9C3;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:'Poppins',sans-serif;
-background:#080808;
-color:#FAF1F4;
-padding:14px;
+background:linear-gradient(to bottom,var(--bg1),var(--bg2));
+color:var(--text);
+padding:18px;
 }
+
 .container{
 max-width:720px;
 margin:auto;
-background:#0E0E0E;
-border-radius:22px;
-padding:34px 22px;
-border:1px solid rgba(255,63,129,.55);
-box-shadow:0 0 50px rgba(255,63,129,.35);
+background:rgba(12,12,12,.96);
+border-radius:26px;
+padding:36px 26px;
+border:1px solid rgba(255,63,129,.6);
+box-shadow:0 0 55px rgba(255,63,129,.45);
+position:relative;
+overflow:hidden;
 }
+
+.container::before{
+content:"";
+position:absolute;
+inset:-2px;
+background:linear-gradient(45deg,var(--pink),var(--red),var(--bg1));
+filter:blur(14px);
+opacity:.35;
+z-index:-1;
+}
+
+/* HEADER */
 h1{
 font-family:'Bebas Neue',sans-serif;
 font-size:42px;
-text-align:center;
-color:#FFD700;
 line-height:1.05;
-}
-h1 span{color:#FF3F81}
-.sub{
 text-align:center;
-font-size:16px;
-color:#F2C9D8;
-margin-top:18px;
-font-weight:600;
+color:var(--gold);
 }
 
-/* BLOCO DE IMPACTO */
-.hero{
-margin-top:26px;
-padding:22px;
-border-radius:18px;
-background:rgba(255,63,129,.12);
-border:1px solid rgba(255,63,129,.4);
-text-align:center;
+h1 span{
+color:var(--pink);
 }
-.hero p{
+
+.sub{
+margin-top:16px;
+text-align:center;
 font-size:16px;
-line-height:1.7;
-color:#F6D1DE;
+color:var(--muted);
+font-weight:500;
 }
 
 /* TIMER */
 .timer-box{
-margin:28px 0;
-padding:20px;
+margin:28px auto;
+padding:18px;
 border-radius:18px;
-background:#120617;
-border:2px dashed #FF3F81;
+background:rgba(30,11,38,.9);
+border:2px dashed var(--pink);
+text-align:center;
+max-width:420px;
+}
+
+.timer-box p{
+font-size:13px;
+color:var(--muted);
+margin-bottom:6px;
+}
+
+.timer{
+font-size:30px;
+font-weight:800;
+color:var(--gold);
+}
+
+/* HERO */
+.hero{
+margin-top:26px;
 text-align:center;
 }
-.timer-box p{font-size:13px;color:#F6C1D3;margin-bottom:8px}
-.timer{font-size:30px;font-weight:800;color:#FFD700}
 
-/* TEXTOS */
-p{
-margin:20px 0;
-text-align:center;
+.hero img{
+width:100%;
+max-width:360px;
+margin:0 auto 18px;
+display:block;
+}
+
+.hero p{
 font-size:15px;
-line-height:1.75;
-color:#E6C3CF;
+line-height:1.7;
+color:#F2C9D8;
 }
 
-/* LISTAS */
-ul{list-style:none;margin-top:16px}
+/* LISTA */
+ul{
+list-style:none;
+margin-top:22px;
+}
+
 ul li{
 margin:14px 0;
 padding:18px;
 border-radius:16px;
-background:rgba(255,63,129,.14);
-border-left:4px solid #FFD700;
+background:rgba(255,63,129,.12);
+border-left:4px solid var(--gold);
 font-size:15px;
+color:#F6D1DE;
 }
 
 /* PREÇO */
 .price-box{
-margin:40px 0;
-padding:28px;
+margin:36px 0;
+padding:26px;
 background:#000;
 border-radius:22px;
-border:2px solid #FF3F81;
+border:2px solid var(--pink);
 text-align:center;
 }
-.old{font-size:14px;color:#999;text-decoration:line-through}
-.new{font-size:48px;font-weight:800;color:#FFD700}
-.discount{color:#FF3F81;font-size:14px;font-weight:700;margin-top:6px}
+
+.old{
+font-size:14px;
+color:#aaa;
+text-decoration:line-through;
+}
+
+.new{
+font-size:46px;
+font-weight:900;
+color:var(--gold);
+margin:6px 0;
+}
+
+.discount{
+font-size:14px;
+color:var(--pink);
+font-weight:700;
+}
+
+/* VAGAS */
+.vagas{
+margin-top:12px;
+font-size:14px;
+color:var(--gold);
+font-weight:800;
+}
 
 /* BOTÃO */
 .button{
+margin-top:24px;
 width:100%;
 padding:28px;
 font-size:22px;
 font-weight:900;
 border:none;
 border-radius:60px;
-background:linear-gradient(45deg,#FF3F81,#E5003C);
-color:#FFF;
+background:linear-gradient(45deg,var(--pink),var(--red));
+color:#fff;
 cursor:pointer;
-box-shadow:0 16px 50px rgba(255,63,129,.95);
+box-shadow:0 16px 45px rgba(255,63,129,.9);
 text-transform:uppercase;
 }
-.cta-sub{text-align:center;font-size:12px;color:#EFC3D3;margin-top:12px}
 
-/* SEÇÕES */
-.section-title{
-margin-top:44px;
+.cta-sub{
+margin-top:12px;
 text-align:center;
-font-family:'Bebas Neue',sans-serif;
-color:#FFD700;
-font-size:32px;
+font-size:12px;
+color:#EFC3D3;
 }
 
-/* FAQ */
-.faq{
-margin-top:34px;
+/* PAGAMENTOS */
+.payments{
+margin-top:18px;
+text-align:center;
 }
-.faq details{
-margin-bottom:16px;
-background:rgba(255,255,255,.05);
-padding:18px;
-border-radius:16px;
-border:1px solid rgba(255,63,129,.35);
-}
-.faq summary{
-color:#FFD700;
-font-size:15px;
-font-weight:700;
-cursor:pointer;
-}
-.faq p{
-font-size:14px;
-text-align:left;
-margin-top:10px;
+
+.payments img{
+max-width:260px;
+width:100%;
 }
 
 /* GARANTIA */
 .garantia{
-margin-top:38px;
-padding:24px;
-border-radius:20px;
-background:rgba(255,215,0,.16);
-border:1px solid rgba(255,215,0,.6);
-font-size:14px;
-color:#F6E4AE;
+margin-top:22px;
 text-align:center;
 }
 
-/* POPUP LIMPO */
+.garantia img{
+max-width:200px;
+width:100%;
+}
+
+/* POPUP */
 .popup{
 position:fixed;
-bottom:20px;
-left:20px;
+bottom:18px;
+left:18px;
 background:#120617;
 border:1px solid rgba(255,63,129,.7);
 border-radius:14px;
 padding:14px 18px;
-display:flex;
-align-items:center;
+display:none;
 box-shadow:0 10px 30px rgba(0,0,0,.6);
 z-index:9999;
 animation:slideIn .5s ease;
 }
-.popup strong{color:#FFD700;font-size:13px}
-.popup span{display:block;font-size:12px;color:#EFC3D3}
-.popup small{font-size:11px;color:#AAA}
-.popup.hide{animation:slideOut .5s forwards}
 
-@keyframes slideIn{from{transform:translateX(-120%);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes slideOut{to{transform:translateX(-120%);opacity:0}}
+.popup strong{
+color:var(--gold);
+font-size:13px;
+}
 
-.warning{
-margin-top:26px;
-text-align:center;
+.popup span{
+display:block;
 font-size:12px;
-color:#FF4D6D;
-font-weight:700;
+color:#EFC3D3;
+}
+
+@keyframes slideIn{
+from{transform:translateX(-120%);opacity:0}
+to{transform:translateX(0);opacity:1}
+}
+
+@keyframes slideOut{
+to{transform:translateX(-120%);opacity:0}
 }
 </style>
 </head>
@@ -197,130 +252,86 @@ font-weight:700;
 
 <div class="container">
 
-<h1>O ERRO EMOCIONAL<br><span>QUE FAZ ELE TE TRATAR COMO OPÇÃO</span></h1>
+<h1>O AJUSTE EMOCIONAL<br><span>QUE FAZ ELE TE PRIORITAR</span></h1>
 
 <div class="sub">
-E como virar o jogo sem implorar, discutir ou se humilhar.
-</div>
-
-<div class="hero">
-<p>
-Isso não é sobre sedução barata.<br>
-É sobre <strong>postura psicológica</strong> — a mesma que faz homens mudarem o comportamento
-sem você precisar cobrar, pressionar ou correr atrás.
-</p>
+Sem joguinhos. Sem implorar. Sem perder sua essência.
 </div>
 
 <div class="timer-box">
-<p>Essa condição especial expira em:</p>
-<div class="timer" id="timer">15:00</div>
+<p>Essa condição especial fica disponível por:</p>
+<div class="timer" id="timer">09:47</div>
 </div>
 
+<div class="hero">
+<img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
 <p>
-A maioria das mulheres perde valor emocional porque reage no impulso:
-mensagens longas, ansiedade, medo de perder.<br><br>
-<strong>O Código da Mulher Hipnótica</strong> te ensina exatamente
-<strong>o que parar de fazer</strong> e <strong>o que mudar internamente</strong>
-pra ser respeitada de forma natural.
+Você não chegou até aqui por curiosidade.<br>
+Chegou porque reconheceu um padrão —  
+e agora tem a chance real de **encerrar esse ciclo**.
 </p>
-
-<h2 class="section-title">O QUE MUDA NA PRÁTICA</h2>
+</div>
 
 <ul>
-<li>Como agir quando ele esfria sem parecer carente</li>
-<li>O ajuste psicológico que corta testes e joguinhos</li>
+<li>Como agir quando ele esfria sem entrar em ansiedade</li>
 <li>O comportamento que ativa respeito automático</li>
+<li>O ajuste interno que muda a dinâmica sem esforço</li>
 <li>Como parar de se entregar mais do que recebe</li>
-<li>O erro emocional que transforma mulheres fortes em opção</li>
-</ul>
-
-<h2 class="section-title">PRA QUEM É (E PRA QUEM NÃO É)</h2>
-
-<ul>
-<li>✔️ Pra quem cansou de se sentir insegura ou em segundo plano</li>
-<li>✔️ Pra quem quer controle emocional sem manipulação</li>
-<li>✔️ Pra quem quer ser respeitada sem virar fria</li>
-<li>❌ Não é pra quem procura truque rápido ou joguinho infantil</li>
 </ul>
 
 <div class="price-box">
 <div class="old">De R$397,00</div>
 <div class="new">R$27,90</div>
-<div class="discount">Acesso liberado enquanto o timer durar</div>
+<div class="discount">Liberação especial para quem concluiu o teste</div>
+<div class="vagas">⚠️ Restam apenas <strong>9 vagas</strong> com esse valor</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO VIRAR O JOGO AGORA
+QUERO ENCERRAR ESSE PADRÃO AGORA
 </button>
 
-<div class="cta-sub">Acesso imediato • Garantia incondicional de 30 dias</div>
+<div class="cta-sub">
+Acesso imediato • Conteúdo 100% digital
+</div>
 
-<div class="faq">
-<h2 class="section-title">PERGUNTAS FREQUENTES</h2>
-
-<details open>
-<summary>Isso funciona mesmo?</summary>
-<p>
-Funciona porque muda sua postura emocional — e postura muda comportamento.
-Se não sentir diferença real em até 30 dias, você pede reembolso.
-</p>
-</details>
-
-<details>
-<summary>É manipulação?</summary>
-<p>
-Não. É autocontrole, clareza emocional e limites.
-Você para de agir no impulso e assume respeito.
-</p>
-</details>
-
-<details>
-<summary>E se eu não aplicar?</summary>
-<p>
-Nada muda. Informação sem ação é só entretenimento emocional.
-</p>
-</details>
+<div class="payments">
+<img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
 </div>
 
 <div class="garantia">
-<strong>GARANTIA TOTAL DE 30 DIAS</strong><br><br>
-Ou isso muda sua dinâmica emocional,<br>
-ou você recebe 100% do dinheiro de volta.
-</div>
-
-<div class="warning">
-⚠️ Ao sair desta página, essa condição pode não estar mais disponível.
+<img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia de 30 dias">
 </div>
 
 </div>
 
-<!-- POPUP -->
-<div id="popup" class="popup" style="display:none;">
-  <div>
-    <strong>Nova aluna entrou no Código</strong>
-    <span>Acesso liberado agora mesmo</span>
-    <small>verificação automática</small>
-  </div>
+<div class="popup" id="popup">
+<strong>Nova aluna confirmada</strong>
+<span>Entrou no Código agora mesmo</span>
 </div>
 
 <script>
 // TIMER
-let time = 15 * 60;
+let time = 9 * 60 + 47;
 const timerEl = document.getElementById("timer");
+
 setInterval(()=>{
-let m=Math.floor(time/60),s=time%60;
+let m=Math.floor(time/60);
+let s=time%60;
 timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// POPUP LIMPO
+// POPUPS
+const names=["Luiza","Ana","Camila","Renata","Juliana","Marina"];
 const popup=document.getElementById("popup");
+
 function showPopup(){
-popup.style.display="flex";
+popup.style.display="block";
 popup.classList.remove("hide");
 setTimeout(()=>{ popup.classList.add("hide"); },4000);
 }
-setInterval(showPopup, Math.floor(Math.random() * (35000 - 18000) + 18000));
+
+setInterval(showPopup, Math.floor(Math.random() * (22000 - 12000) + 12000));
 </script>
 
 </body>
