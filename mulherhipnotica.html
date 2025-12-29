@@ -70,11 +70,12 @@ line-height:1.75;
 color:#D9B6C2;
 }
 
-/* IMAGEM */
+/* IMAGEM PRODUTO (AJUSTADA) */
 .product-image{
 display:block;
-max-width:340px;
-margin:40px auto;
+width:100%;
+max-width:300px;
+margin:32px auto;
 }
 
 /* SEÇÕES */
@@ -144,71 +145,23 @@ text-transform:uppercase;
 }
 .button:hover{transform:translateY(-3px)}
 
-/* PROVA SOCIAL */
-.testimonial{
-margin-top:52px;
-padding:26px;
-background:rgba(255,255,255,.04);
-border-radius:16px;
-border:1px solid rgba(255,63,129,.35);
-text-align:center;
-}
-.testimonial img{
-width:90px;
-height:90px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:14px;
-border:3px solid #FFD700;
-}
-.testimonial p{
-font-size:14px;
-color:#EED6DF;
-}
-.testimonial strong{
-display:block;
-margin-top:12px;
-color:#FFD700;
-}
-
-/* GARANTIA */
-.garantia{
-margin-top:44px;
-padding:26px;
-border-radius:16px;
-background:rgba(255,215,0,.1);
-border:1px solid rgba(255,215,0,.5);
-font-size:14px;
-color:#F2DFA8;
-text-align:center;
-}
-.garantia strong{color:#FFD700}
-
-/* AVISO */
-.warning{
-margin-top:26px;
-text-align:center;
-font-size:13px;
-color:#E5003C;
-opacity:.85;
-}
-
 /* POPUP PROVA SOCIAL */
 .popup{
 position:fixed;
-bottom:20px;
-left:20px;
+bottom:18px;
+left:18px;
 background:#1E0B26;
 color:#FFF;
-padding:14px 18px;
-border-radius:12px;
-font-size:14px;
-box-shadow:0 10px 30px rgba(0,0,0,.45);
+padding:12px 16px;
+border-radius:10px;
+font-size:13px;
+box-shadow:0 8px 22px rgba(0,0,0,.45);
 border-left:4px solid #FF3F81;
 opacity:0;
 transform:translateY(20px);
-transition:.4s;
+transition:.35s;
 z-index:9999;
+max-width:90%;
 }
 .popup.show{
 opacity:1;
@@ -220,6 +173,8 @@ transform:translateY(0);
 h1{font-size:34px}
 .new{font-size:38px}
 .button{font-size:18px}
+.product-image{max-width:240px}
+.popup{font-size:12px}
 }
 </style>
 
@@ -237,28 +192,21 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   updateTimer();
 
-  /* POPUP PROVA SOCIAL */
+  /* POPUPS */
   const names = ["Ana","Camila","Juliana","Fernanda","Larissa","Paula","Renata","Bianca"];
-  const messages = [
-    "acabou de garantir acesso ao Código da Mulher Hipnótica",
-    "entrou agora para o Código da Mulher Hipnótica",
-    "começou agora o Código da Mulher Hipnótica"
-  ];
-
   const popup = document.getElementById("popup");
 
   function showPopup(){
     const name = names[Math.floor(Math.random()*names.length)];
-    const msg = messages[Math.floor(Math.random()*messages.length)];
-    popup.innerHTML = `✨ <strong>${name}</strong> ${msg}`;
+    popup.innerHTML = `✨ <strong>${name}</strong> acabou de garantir acesso`;
     popup.classList.add("show");
-    setTimeout(()=>popup.classList.remove("show"),5000);
+    setTimeout(()=>popup.classList.remove("show"),3200);
   }
 
   setTimeout(()=>{
     showPopup();
-    setInterval(showPopup,90000);
-  },18000); // PRIMEIRO POPUP EM 18s
+    setInterval(showPopup,Math.floor(Math.random()*20000)+45000);
+  },12000); // PRIMEIRO POPUP EM 12s
 
 });
 </script>
@@ -279,56 +227,34 @@ VOCÊ NÃO PRECISA MUDAR QUEM É.<br>
 </h1>
 
 <div class="sub">
-Essa condição especial aparece apenas uma vez neste processo
+Essa condição especial aparece apenas uma vez
 </div>
 
 <img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
 
 <p>
-O que você sente não é carência.  
-É falta de controle emocional da dinâmica.<br><br>
-Quando isso muda, a forma como você é tratada muda junto.
+O problema nunca foi você.<br>
+Foi a dinâmica emocional errada.
 </p>
 
-<div class="section-title">O QUE VOCÊ COMEÇA A PERCEBER</div>
+<div class="section-title">O QUE MUDA AGORA</div>
 
 <ul>
-<li>Você deixa de correr atrás e ele começa a se mover</li>
-<li>O interesse não oscila mais sem explicação</li>
-<li>Você se sente segura, valorizada e no controle</li>
-<li>O padrão antigo simplesmente para de se repetir</li>
+<li>Você para de correr atrás</li>
+<li>Ele começa a se mover</li>
+<li>O padrão antigo se quebra</li>
+<li>Você assume controle emocional</li>
 </ul>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
-<div class="new">HOJE R$27,90</div>
-<div class="discount">Valor simbólico liberado agora</div>
+<div class="new">APENAS HOJE POR R$27,90</div>
+<div class="discount">Oferta liberada agora</div>
 </div>
 
 <button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
 SIM, QUERO ACESSAR AGORA 🔥
 </button>
-
-<div class="testimonial">
-<img src="src/img/luizadp1.png" alt="Luiza">
-<p>
-“Depois que apliquei, a forma como ele se posicionou comigo mudou.
-Não precisei cobrar nada.  
-Me senti segura e no controle emocional.”
-</p>
-<strong>Luiza, 23 anos</strong>
-</div>
-
-<div class="garantia">
-<strong>GARANTIA DE 30 DIAS</strong><br><br>
-Você testa com calma.  
-Se não perceber diferença real na dinâmica emocional,  
-é só pedir o reembolso.
-</div>
-
-<div class="warning">
-⚠️ Ao sair desta página, essa condição especial não é garantida novamente.
-</div>
 
 </div>
 
