@@ -381,16 +381,15 @@ function updateProgress() {
         progressBar.style.width = progress + "%";
         progressText.innerText = progress + "%";
 
-        setTimeout(() => {
-            loadingScreen.style.opacity = "0";
-            loadingScreen.style.pointerEvents = "none";
+ loadingScreen.style.opacity = "0";
+loadingScreen.style.pointerEvents = "none";
 
-            setTimeout(() => {
-                loadingScreen.style.display = "none";
-                content.style.display = "block";
-                content.classList.add("fade-in");
-            }, 600);
-        }, 600);
+setTimeout(() => {
+    loadingScreen.style.display = "none";
+    content.style.display = "block";
+    content.classList.add("fade-in");
+}, 300);
+
 
     } else {
         progressBar.style.width = progress + "%";
