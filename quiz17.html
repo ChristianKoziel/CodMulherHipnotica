@@ -362,7 +362,7 @@ body{
 
 <script>
 /* =========================
-   CONTROLE DO LOADING (OTIMIZADO)
+   CONTROLE DO LOADING (AJUSTADO)
 ========================= */
 
 let progress = 0;
@@ -372,36 +372,38 @@ const progressText = document.getElementById("progress-percentage");
 const loadingScreen = document.getElementById("loading-screen");
 const content = document.getElementById("content");
 
-// ESTADO INICIAL CORRETO (NUNCA use display:none)
 content.style.visibility = "hidden";
 content.style.opacity = "0";
 content.style.position = "absolute";
 content.style.inset = "0";
 
 function updateProgress() {
-    progress += Math.floor(Math.random() * 8) + 4;
+    progress += Math.floor(Math.random() * 6) + 4;
 
     if (progress >= 100) {
         progress = 100;
+        progressBar.style.width = "100%";
+        progressText.textContent = "100%";
+
+        // MICRO DELAY PARA LEITURA VISUAL
+        setTimeout(() => {
+            loadingScreen.style.visibility = "hidden";
+            loadingScreen.style.opacity = "0";
+
+            content.style.visibility = "visible";
+            content.style.opacity = "1";
+            content.style.position = "relative";
+
+            startEntranceEffects();
+        }, 250); // 👈 ajuste fino aqui (200–300 é o ideal)
+
+        return;
     }
 
     progressBar.style.width = progress + "%";
     progressText.textContent = progress + "%";
 
-    if (progress === 100) {
-        // TROCA INSTANTÂNEA (MESMO FRAME)
-        loadingScreen.style.visibility = "hidden";
-        loadingScreen.style.opacity = "0";
-
-        content.style.visibility = "visible";
-        content.style.opacity = "1";
-        content.style.position = "relative";
-
-        startEntranceEffects();
-        return;
-    }
-
-    setTimeout(updateProgress, 100);
+    setTimeout(updateProgress, 110);
 }
 
 window.addEventListener("load", () => {
@@ -410,7 +412,7 @@ window.addEventListener("load", () => {
 
 
 /* =========================
-   EFEITO DE ENTRADA (SEM BLOQUEIO)
+   EFEITO DE ENTRADA
 ========================= */
 
 function startEntranceEffects() {
@@ -420,7 +422,7 @@ function startEntranceEffects() {
 
     elements.forEach((el, index) => {
         el.style.opacity = "0";
-        el.style.transform = "translateY(16px)";
+        el.style.transform = "translateY(14px)";
         el.style.transition = "opacity .45s ease, transform .45s ease";
 
         requestAnimationFrame(() => {
