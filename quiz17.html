@@ -362,66 +362,73 @@ body{
 
 <script>
 /* =========================
-   CONTROLE DO LOADING
+   CONTROLE DO LOADING (OTIMIZADO)
 ========================= */
 
 let progress = 0;
+
 const progressBar = document.querySelector(".progress");
 const progressText = document.getElementById("progress-percentage");
 const loadingScreen = document.getElementById("loading-screen");
 const content = document.getElementById("content");
 
-content.style.display = "none";
+// ESTADO INICIAL CORRETO (NUNCA use display:none)
+content.style.visibility = "hidden";
+content.style.opacity = "0";
+content.style.position = "absolute";
+content.style.inset = "0";
 
 function updateProgress() {
-    progress += Math.floor(Math.random() * 8) + 3;
+    progress += Math.floor(Math.random() * 8) + 4;
 
     if (progress >= 100) {
         progress = 100;
-        progressBar.style.width = progress + "%";
-        progressText.innerText = progress + "%";
-
-        setTimeout(() => {
-    loadingScreen.style.display = "none";
-    content.style.display = "block";
-    content.classList.add("fade-in");
-         }, 100);
-
-
-
-    } else {
-        progressBar.style.width = progress + "%";
-        progressText.innerText = progress + "%";
-        setTimeout(updateProgress, 120);
     }
+
+    progressBar.style.width = progress + "%";
+    progressText.textContent = progress + "%";
+
+    if (progress === 100) {
+        // TROCA INSTANTÂNEA (MESMO FRAME)
+        loadingScreen.style.visibility = "hidden";
+        loadingScreen.style.opacity = "0";
+
+        content.style.visibility = "visible";
+        content.style.opacity = "1";
+        content.style.position = "relative";
+
+        startEntranceEffects();
+        return;
+    }
+
+    setTimeout(updateProgress, 100);
 }
 
-window.onload = () => {
-    setTimeout(updateProgress, 100);
-};
+window.addEventListener("load", () => {
+    updateProgress();
+});
 
 
 /* =========================
-   EFEITO DE ENTRADA
+   EFEITO DE ENTRADA (SEM BLOQUEIO)
 ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+function startEntranceEffects() {
     const elements = document.querySelectorAll(
         ".title, .text, .box, .warning, .microcopy, .cta, .social"
     );
 
     elements.forEach((el, index) => {
         el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
+        el.style.transform = "translateY(16px)";
+        el.style.transition = "opacity .45s ease, transform .45s ease";
 
-        setTimeout(() => {
-            el.style.transition = "0.6s ease";
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }, index * 120 + 300);
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "translateY(0)";
+            }, index * 90);
+        });
     });
-});
+}
 </script>
-
-</body>
-</html>
