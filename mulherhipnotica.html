@@ -40,7 +40,7 @@ max-width:760px;
 margin:110px auto 0;
 background:rgba(8,8,8,.97);
 border-radius:20px;
-padding:42px 26px;
+padding:44px 26px;
 border:1px solid rgba(255,63,129,.55);
 box-shadow:0 0 70px rgba(255,63,129,.35);
 }
@@ -48,7 +48,7 @@ box-shadow:0 0 70px rgba(255,63,129,.35);
 /* TITULOS */
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:46px;
+font-size:48px;
 text-align:center;
 color:#FFD700;
 line-height:1.1;
@@ -58,42 +58,42 @@ h1 span{color:#FF3F81}
 .sub{
 text-align:center;
 font-size:15px;
-color:#E8C9D4;
-margin-top:14px;
+color:#F1CAD9;
+margin-top:16px;
 }
 
+/* TEXTO */
 p{
-margin:22px 0;
+margin:24px 0;
 text-align:center;
 font-size:15px;
-line-height:1.75;
-color:#D9B6C2;
+line-height:1.8;
+color:#E5C3CF;
 }
 
-/* IMAGEM PRODUTO (AJUSTADA) */
+/* IMAGEM */
 .product-image{
 display:block;
-width:100%;
-max-width:300px;
-margin:32px auto;
+max-width:340px;
+margin:40px auto;
 }
 
 /* SEÇÕES */
 .section-title{
 font-family:'Bebas Neue',sans-serif;
 text-align:center;
-font-size:32px;
+font-size:34px;
 color:#FFD700;
-margin:50px 0 22px;
+margin:56px 0 24px;
 }
 
 /* LISTA */
 ul{list-style:none}
 ul li{
-margin:14px 0;
-padding:16px;
-border-radius:12px;
-background:rgba(255,63,129,.08);
+margin:16px 0;
+padding:18px;
+border-radius:14px;
+background:rgba(255,63,129,.10);
 border-left:4px solid #FFD700;
 font-size:14px;
 }
@@ -105,10 +105,10 @@ font-weight:bold;
 
 /* PREÇO */
 .price-box{
-margin:46px 0 30px;
-padding:34px;
-background:rgba(0,0,0,.78);
-border-radius:20px;
+margin:50px 0 32px;
+padding:36px;
+background:rgba(0,0,0,.82);
+border-radius:22px;
 border:1px solid #FF3F81;
 text-align:center;
 }
@@ -118,20 +118,20 @@ color:#999;
 text-decoration:line-through;
 }
 .new{
-font-size:48px;
+font-size:50px;
 font-weight:700;
 color:#FFD700;
 }
 .discount{
 color:#FF3F81;
 font-size:14px;
-margin-top:6px;
+margin-top:8px;
 }
 
 /* CTA */
 .button{
 width:100%;
-padding:26px;
+padding:28px;
 font-size:22px;
 font-weight:700;
 border:none;
@@ -139,29 +139,85 @@ border-radius:50px;
 background:linear-gradient(45deg,#FF3F81,#E5003C);
 color:#FFF;
 cursor:pointer;
-box-shadow:0 10px 40px rgba(255,63,129,.85);
+box-shadow:0 10px 45px rgba(255,63,129,.9);
 transition:.3s;
 text-transform:uppercase;
 }
-.button:hover{transform:translateY(-3px)}
+.button:hover{transform:translateY(-4px)}
 
-/* POPUP PROVA SOCIAL */
+.cta-sub{
+text-align:center;
+font-size:13px;
+color:#EFC3D3;
+margin-top:10px;
+opacity:.9;
+}
+
+/* PROVA SOCIAL */
+.testimonial{
+margin-top:56px;
+padding:28px;
+background:rgba(255,255,255,.05);
+border-radius:18px;
+border:1px solid rgba(255,63,129,.4);
+text-align:center;
+}
+.testimonial img{
+width:92px;
+height:92px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:14px;
+border:3px solid #FFD700;
+}
+.testimonial p{
+font-size:14px;
+color:#F0D6DF;
+}
+.testimonial strong{
+display:block;
+margin-top:14px;
+color:#FFD700;
+}
+
+/* GARANTIA */
+.garantia{
+margin-top:48px;
+padding:28px;
+border-radius:18px;
+background:rgba(255,215,0,.12);
+border:1px solid rgba(255,215,0,.55);
+font-size:14px;
+color:#F6E4AE;
+text-align:center;
+}
+.garantia strong{color:#FFD700}
+
+/* AVISO */
+.warning{
+margin-top:28px;
+text-align:center;
+font-size:13px;
+color:#FF4D6D;
+opacity:.9;
+}
+
+/* POPUP */
 .popup{
 position:fixed;
-bottom:18px;
-left:18px;
+bottom:20px;
+left:20px;
 background:#1E0B26;
 color:#FFF;
-padding:12px 16px;
-border-radius:10px;
-font-size:13px;
-box-shadow:0 8px 22px rgba(0,0,0,.45);
+padding:14px 18px;
+border-radius:12px;
+font-size:14px;
+box-shadow:0 10px 30px rgba(0,0,0,.45);
 border-left:4px solid #FF3F81;
 opacity:0;
 transform:translateY(20px);
-transition:.35s;
+transition:.4s;
 z-index:9999;
-max-width:90%;
 }
 .popup.show{
 opacity:1;
@@ -170,95 +226,82 @@ transform:translateY(0);
 
 /* MOBILE */
 @media(max-width:480px){
-h1{font-size:34px}
-.new{font-size:38px}
+h1{font-size:36px}
+.new{font-size:40px}
 .button{font-size:18px}
-.product-image{max-width:240px}
-.popup{font-size:12px}
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-
-  /* TIMER */
-  let timeLeft = (12 * 60) + 43;
-  function updateTimer(){
-    const m = Math.floor(timeLeft/60);
-    const s = timeLeft % 60;
-    document.getElementById('timer').innerText =
-      String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
-    if(timeLeft>0){timeLeft--;setTimeout(updateTimer,1000);}
-  }
-  updateTimer();
-
-  /* POPUPS */
-  const names = ["Ana","Camila","Juliana","Fernanda","Larissa","Paula","Renata","Bianca"];
-  const popup = document.getElementById("popup");
-
-  function showPopup(){
-    const name = names[Math.floor(Math.random()*names.length)];
-    popup.innerHTML = `✨ <strong>${name}</strong> acabou de garantir acesso`;
-    popup.classList.add("show");
-    setTimeout(()=>popup.classList.remove("show"),3200);
-  }
-
-  setTimeout(()=>{
-    showPopup();
-    setInterval(showPopup,Math.floor(Math.random()*20000)+45000);
-  },12000); // PRIMEIRO POPUP EM 12s
-
-});
-</script>
 </head>
 
 <body>
 
 <div class="timer-bar">
-<strong>SEU ACESSO ESTÁ RESERVADO</strong><br>
+<strong>ESSA CONDIÇÃO ESTÁ ATIVA AGORA</strong><br>
 <span class="timer" id="timer">12:43</span>
 </div>
 
 <div class="container">
 
 <h1>
-VOCÊ NÃO PRECISA MUDAR QUEM É.<br>
-<span>SÓ A DINÂMICA MUDA TUDO</span>
+VOCÊ NÃO É DEMAIS.<br>
+<span>ESTÁ APENAS NA DINÂMICA ERRADA</span>
 </h1>
 
 <div class="sub">
-Essa condição especial aparece apenas uma vez
+Quando a dinâmica muda, o comportamento dele muda junto — sem você implorar, explicar ou se desgastar.
 </div>
 
 <img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
 
 <p>
-O problema nunca foi você.<br>
-Foi a dinâmica emocional errada.
+Não é sobre correr atrás.<br>
+Não é sobre se fazer de difícil.<br><br>
+É sobre ativar o ponto emocional que faz ele **se posicionar por conta própria**.
 </p>
 
-<div class="section-title">O QUE MUDA AGORA</div>
+<div class="section-title">DEPOIS DISSO, O PADRÃO MUDA</div>
 
 <ul>
-<li>Você para de correr atrás</li>
-<li>Ele começa a se mover</li>
-<li>O padrão antigo se quebra</li>
-<li>Você assume controle emocional</li>
+<li>Você para de se sentir insegura e começa a sentir controle emocional</li>
+<li>Ele demonstra mais interesse sem você cobrar</li>
+<li>A comunicação flui sem joguinhos cansativos</li>
+<li>Você deixa de repetir ciclos que sempre machucam</li>
 </ul>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
-<div class="new">APENAS HOJE POR R$27,90</div>
-<div class="discount">Oferta liberada agora</div>
+<div class="new">HOJE R$27,90</div>
+<div class="discount">Liberação simbólica válida apenas agora</div>
 </div>
 
 <button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, QUERO ACESSAR AGORA 🔥
+QUERO MUDAR ESSA DINÂMICA AGORA
 </button>
-
+<div class="cta-sub">
+Acesso imediato • Garantia de 30 dias • Sem risco
 </div>
 
-<div id="popup" class="popup"></div>
+<div class="testimonial">
+<img src="src/img/luizadp1.png" alt="Luiza">
+<p>
+“Foi como se a chave virasse.  
+Ele começou a se posicionar sem eu pedir nada.  
+Pela primeira vez, me senti segura emocionalmente.”
+</p>
+<strong>Luiza, 23 anos</strong>
+</div>
+
+<div class="garantia">
+<strong>GARANTIA INCONDICIONAL DE 30 DIAS</strong><br><br>
+Se você não sentir diferença real na dinâmica emocional,  
+é só pedir o reembolso. Simples assim.
+</div>
+
+<div class="warning">
+⚠️ Ao sair desta página, essa condição pode não aparecer novamente.
+</div>
+
+</div>
 
 </body>
 </html>
