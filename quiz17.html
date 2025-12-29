@@ -381,14 +381,12 @@ function updateProgress() {
         progressBar.style.width = progress + "%";
         progressText.innerText = progress + "%";
 
- loadingScreen.style.opacity = "0";
-loadingScreen.style.pointerEvents = "none";
-
-setTimeout(() => {
+        setTimeout(() => {
     loadingScreen.style.display = "none";
     content.style.display = "block";
     content.classList.add("fade-in");
-}, 300);
+         }, 100);
+
 
 
     } else {
