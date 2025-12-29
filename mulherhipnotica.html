@@ -15,7 +15,6 @@ background:#080808;
 color:#FAF1F4;
 padding:14px;
 }
-
 .container{
 max-width:720px;
 margin:auto;
@@ -25,8 +24,6 @@ padding:30px 20px;
 border:1px solid rgba(255,63,129,.55);
 box-shadow:0 0 40px rgba(255,63,129,.35);
 }
-
-/* TITULOS */
 h1{
 font-family:'Bebas Neue',sans-serif;
 font-size:38px;
@@ -35,7 +32,6 @@ color:#FFD700;
 line-height:1.1;
 }
 h1 span{color:#FF3F81}
-
 .sub{
 text-align:center;
 font-size:15px;
@@ -43,6 +39,18 @@ color:#F2C9D8;
 margin-top:16px;
 font-weight:600;
 }
+
+/* TIMER */
+.timer-box{
+margin:22px 0;
+padding:18px;
+border-radius:16px;
+background:#120617;
+border:2px dashed #FF3F81;
+text-align:center;
+}
+.timer-box p{font-size:13px;color:#F6C1D3;margin-bottom:8px}
+.timer{font-size:28px;font-weight:800;color:#FFD700}
 
 /* TEXTO */
 p{
@@ -53,7 +61,7 @@ line-height:1.7;
 color:#E6C3CF;
 }
 
-/* LISTA BENEFICIOS */
+/* LISTA */
 ul{list-style:none;margin-top:10px}
 ul li{
 margin:14px 0;
@@ -62,39 +70,6 @@ border-radius:14px;
 background:rgba(255,63,129,.15);
 border-left:4px solid #FFD700;
 font-size:14px;
-}
-
-/* DEPOIMENTO */
-.depoimento{
-margin-top:36px;
-padding:22px;
-background:#120617;
-border-radius:18px;
-border:1px solid rgba(255,63,129,.6);
-text-align:center;
-}
-.depoimento img{
-width:90px;
-height:90px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid #FF3F81;
-margin-bottom:14px;
-}
-.depoimento strong{
-display:block;
-color:#FFD700;
-margin-bottom:6px;
-}
-.depoimento span{
-font-size:13px;
-color:#D8B9C3;
-display:block;
-margin-bottom:10px;
-}
-.depoimento p{
-font-size:14px;
-color:#F0D3DD;
 }
 
 /* PREÇO */
@@ -106,22 +81,9 @@ border-radius:20px;
 border:2px solid #FF3F81;
 text-align:center;
 }
-.old{
-font-size:14px;
-color:#999;
-text-decoration:line-through;
-}
-.new{
-font-size:46px;
-font-weight:800;
-color:#FFD700;
-}
-.discount{
-color:#FF3F81;
-font-size:14px;
-margin-top:6px;
-font-weight:700;
-}
+.old{font-size:14px;color:#999;text-decoration:line-through}
+.new{font-size:46px;font-weight:800;color:#FFD700}
+.discount{color:#FF3F81;font-size:14px;font-weight:700}
 
 /* BOTAO */
 .button{
@@ -136,19 +98,8 @@ color:#FFF;
 cursor:pointer;
 box-shadow:0 14px 45px rgba(255,63,129,.95);
 text-transform:uppercase;
-letter-spacing:1px;
-transition:.3s;
 }
-.button:hover{
-transform:translateY(-3px);
-box-shadow:0 20px 60px rgba(255,63,129,1);
-}
-.cta-sub{
-text-align:center;
-font-size:12px;
-color:#EFC3D3;
-margin-top:10px;
-}
+.cta-sub{text-align:center;font-size:12px;color:#EFC3D3;margin-top:10px}
 
 /* FAQ */
 .faq{
@@ -192,24 +143,35 @@ color:#F6E4AE;
 text-align:center;
 }
 
-/* SELOS */
-.selos{
-margin-top:26px;
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-}
-.selos div{
-font-size:12px;
-padding:10px 14px;
-border-radius:12px;
+/* POPUP */
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
 background:#120617;
-border:1px solid rgba(255,63,129,.4);
-color:#F2C9D8;
+border:1px solid rgba(255,63,129,.7);
+border-radius:14px;
+padding:14px 16px;
+display:flex;
+gap:12px;
+align-items:center;
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+z-index:9999;
+animation:slideIn .5s ease;
 }
+.popup img{
+width:42px;
+height:42px;
+border-radius:50%;
+border:2px solid #FF3F81;
+}
+.popup strong{color:#FFD700;font-size:13px}
+.popup span{display:block;font-size:12px;color:#EFC3D3}
+.popup small{font-size:11px;color:#AAA}
+.popup.hide{animation:slideOut .5s forwards}
+@keyframes slideIn{from{transform:translateX(-120%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slideOut{to{transform:translateX(-120%);opacity:0}}
 
-/* AVISO */
 .warning{
 margin-top:24px;
 text-align:center;
@@ -224,75 +186,61 @@ font-weight:700;
 
 <div class="container">
 
-<h1>
-ÚLTIMA DECISÃO<br>
-<span>CÓDIGO DA MULHER HIPNÓTICA</span>
-</h1>
+<h1>ÚLTIMA DECISÃO<br><span>CÓDIGO DA MULHER HIPNÓTICA</span></h1>
 
-<div class="sub">
-Se você sair agora, volta pro mesmo padrão emocional de sempre.
+<div class="sub">Se você sair agora, volta pro mesmo padrão emocional.</div>
+
+<div class="timer-box">
+<p>Essa condição expira em:</p>
+<div class="timer" id="timer">15:00</div>
 </div>
 
-<p>
-Isso não é sobre implorar, cobrar ou correr atrás.<br>
-É sobre <strong>mudar a dinâmica</strong> para que ele se posicione sozinho.
-</p>
+<p><strong>Mudar a dinâmica</strong> faz ele se posicionar sem você implorar.</p>
 
 <ul>
-<li>Parar de ser opção e virar prioridade</li>
-<li>Eliminar ansiedade e expectativa por mensagens</li>
-<li>Fazer ele sentir medo real de te perder</li>
-<li>Ser lembrada, desejada e respeitada</li>
+<li>Parar de ser opção</li>
+<li>Eliminar ansiedade emocional</li>
+<li>Assumir controle da própria postura</li>
+<li>Ser respeitada naturalmente</li>
 </ul>
-
-<div class="depoimento">
-<img src="src/img/luizadp1.png" alt="Luiza depoimento">
-<strong>Luiza, 23 anos</strong>
-<span>“Achei que era mais um conteúdo… me surpreendi.”</span>
-<p>
-“Eu sempre me sentia insegura e perdida. Depois que apliquei o método, a postura dele mudou.
-Hoje eu me sinto calma, segura e no controle da situação.”
-</p>
-</div>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
 <div class="new">R$27,90</div>
-<div class="discount">Mais de 80% OFF • Só hoje</div>
+<div class="discount">Só enquanto o timer durar</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
 SIM, QUERO GARANTIR AGORA
 </button>
 
-<div class="cta-sub">
-Acesso imediato • Garantia incondicional de 30 dias
-</div>
+<div class="cta-sub">Acesso imediato • Garantia 30 dias</div>
 
+<!-- FAQ -->
 <div class="faq">
-<h2>PERGUNTAS QUE VOCÊ ESTÁ SE FAZENDO</h2>
+<h2>PERGUNTAS FREQUENTES</h2>
 
 <details open>
 <summary>Isso funciona mesmo?</summary>
 <p>
-Funciona porque não depende da vontade dele, e sim da dinâmica.
-Se não sentir mudança real em 30 dias, você pede reembolso.
+Funciona porque muda a dinâmica emocional e a forma como você se posiciona.
+Se não sentir diferença real em até 30 dias, você pode pedir reembolso.
 </p>
 </details>
 
 <details>
-<summary>Por que está tão barato?</summary>
+<summary>É algum tipo de manipulação?</summary>
 <p>
-O valor real é R$397.  
-Esse preço é temporário e não se mantém quando o acesso é encerrado.
+Não. É mudança de postura emocional e comportamento.
+Você para de agir no desespero e assume controle.
 </p>
 </details>
 
 <details>
 <summary>E se eu sair agora?</summary>
 <p>
-Você pode até voltar… mas provavelmente não com esse valor.
-A maioria sai e continua vivendo o mesmo padrão.
+Você pode até voltar depois, mas dificilmente com esse valor
+ou com essa condição ativa.
 </p>
 </details>
 
@@ -300,21 +248,54 @@ A maioria sai e continua vivendo o mesmo padrão.
 
 <div class="garantia">
 <strong>GARANTIA TOTAL DE 30 DIAS</strong><br>
-Ou isso muda sua dinâmica emocional, ou você recebe 100% do seu dinheiro de volta.
-</div>
-
-<div class="selos">
-<div>🔒 Dados Protegidos</div>
-<div>✅ Compra Segura</div>
-<div>💳 Pagamento Criptografado</div>
-<div>🛡️ Garantia 30 Dias</div>
+Ou isso muda sua dinâmica emocional, ou você recebe 100% do dinheiro de volta.
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, essa condição pode não estar mais disponível.
+⚠️ Ao sair desta página, essa condição será encerrada automaticamente.
 </div>
 
 </div>
+
+<!-- POPUP -->
+<div id="popup" class="popup" style="display:none;">
+<img src="src/img/avatar.png">
+<div>
+<strong id="nome"></strong>
+<span>acabou de garantir o acesso</span>
+<small id="cidade"></small>
+</div>
+</div>
+
+<script>
+// TIMER
+let time = 15 * 60;
+const timerEl = document.getElementById("timer");
+setInterval(()=>{
+let m=Math.floor(time/60),s=time%60;
+timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+if(time>0)time--;
+},1000);
+
+// POPUP
+const nomes=["Camila","Renata","Juliana","Patrícia","Fernanda","Aline","Bruna","Larissa"];
+const cidades=["SP","RJ","BH","Curitiba","Porto Alegre","Campinas","Guarulhos"];
+const popup=document.getElementById("popup");
+const nomeEl=document.getElementById("nome");
+const cidadeEl=document.getElementById("cidade");
+
+function showPopup(){
+nomeEl.innerText = nomes[Math.floor(Math.random()*nomes.length)];
+cidadeEl.innerText = cidades[Math.floor(Math.random()*cidades.length)] + " • agora mesmo";
+popup.style.display="flex";
+popup.classList.remove("hide");
+setTimeout(()=>{ popup.classList.add("hide"); },4500);
+}
+
+// intervalos 12s e 20s
+setInterval(showPopup,12000);
+setInterval(showPopup,20000);
+</script>
 
 </body>
 </html>
