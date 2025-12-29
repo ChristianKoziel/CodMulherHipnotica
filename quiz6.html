@@ -3,111 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÉTODO OBSESSÃO — QUIZ</title>
+<title>Teste Emocional — Pergunta 5</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-margin:0;
-padding:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
-color:#FAF1F4;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-text-shadow:0 0 6px rgba(229,0,60,.35);
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
+    color:#FAF1F4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
+
 .quiz-container{
-width:90%;
-max-width:520px;
-padding:34px 26px;
-background:rgba(12,12,12,.93);
-border-radius:22px;
-text-align:center;
-border:1px solid rgba(255,63,129,.6);
-box-shadow:0 0 42px rgba(255,63,129,.45);
-position:relative;
-overflow:hidden;
+    width:90%;
+    max-width:520px;
+    padding:34px 26px;
+    background:rgba(12,12,12,.95);
+    border-radius:22px;
+    text-align:center;
+    border:1px solid rgba(255,63,129,.65);
+    box-shadow:0 0 45px rgba(255,63,129,.45);
+    position:relative;
+    overflow:hidden;
 }
+
 .quiz-container::before{
-content:"";
-position:absolute;
-inset:-2px;
-background:linear-gradient(45deg,#FF3F81,#E5003C,#1E0B26);
-filter:blur(9px);
-opacity:.45;
-z-index:-1;
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:linear-gradient(45deg,#FF3F81,#E5003C,#1E0B26);
+    filter:blur(14px);
+    opacity:.35;
+    z-index:-1;
 }
+
 .progress{
-font-size:14px;
-color:#D8B9C3;
-margin-bottom:22px;
-font-weight:700;
-letter-spacing:1px;
+    font-size:14px;
+    color:#D8B9C3;
+    margin-bottom:20px;
+    font-weight:600;
+    letter-spacing:1px;
 }
+
 .question{
-font-family:'Bebas Neue',sans-serif;
-font-size:34px;
-line-height:1.1;
-color:#FFD700;
-margin-bottom:16px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:32px;
+    line-height:1.15;
+    color:#FF3F81;
+    margin-bottom:14px;
 }
+
 .question span{
-color:#FF3F81;
-display:block;
-margin-top:8px;
+    display:block;
+    color:#FFD700;
+    margin-top:6px;
 }
+
 .subtext{
-font-size:14px;
-color:#D8B9C3;
-margin-bottom:30px;
-font-style:italic;
-line-height:1.5;
+    font-size:14px;
+    color:#D8B9C3;
+    margin-bottom:30px;
+    line-height:1.5;
+    font-style:italic;
 }
+
 .options{
-display:flex;
-flex-direction:column;
-gap:16px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
+
 .option-button{
-background:rgba(30,11,38,.9);
-border:2px solid #FF3F81;
-border-radius:50px;
-padding:18px 22px;
-font-size:15px;
-color:#FAF1F4;
-cursor:pointer;
-transition:.3s;
-text-align:left;
-font-weight:700;
-position:relative;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(255,63,129,.35);
+    background:rgba(30,11,38,.97);
+    border:2px solid #FF3F81;
+    border-radius:50px;
+    padding:16px 22px;
+    font-size:15px;
+    color:#FAF1F4;
+    cursor:pointer;
+    transition:.3s;
+    text-align:left;
+    font-weight:500;
+    box-shadow:0 6px 18px rgba(255,63,129,.35);
+    position:relative;
+    overflow:hidden;
 }
+
 .option-button:hover{
-background:linear-gradient(90deg,#E5003C,#FF3F81);
-transform:translateY(-3px);
-box-shadow:0 12px 36px rgba(255,63,129,.8);
+    background:linear-gradient(90deg,#E5003C,#FF3F81);
+    transform:translateY(-2px);
 }
+
 .option-button::before{
-content:"";
-position:absolute;
-top:0;
-left:-120%;
-width:100%;
-height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
-transition:.6s;
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+    transition:.6s;
 }
+
 .option-button:hover::before{
-left:120%;
+    left:120%;
 }
+
 .emoji{
-margin-right:10px;
-font-size:18px;
+    margin-right:10px;
+    font-size:18px;
 }
 </style>
 </head>
@@ -116,46 +126,47 @@ font-size:18px;
 
 <div class="quiz-container">
 
-<div class="progress">
-⚡ PERGUNTA 5 DE 7 — ESSA É DIFÍCIL DE ADMITIR
-</div>
+    <div class="progress">
+        ⚡ PERGUNTA 5 DE 7 — ISSO QUASE NINGUÉM ADMITE
+    </div>
 
-<div class="question">
-QUANDO TUDO FICA EM SILÊNCIO,
-<span>QUAL PENSAMENTO MAIS TE MACHUCA?</span>
-</div>
+    <div class="question">
+        Quando tudo fica em silêncio…
+        <span>qual verdade você carrega sobre você mesma?</span>
+    </div>
 
-<div class="subtext">
-É o pensamento que aparece quando ninguém está vendo — e você é sincera consigo mesma.
-</div>
+    <div class="subtext">
+        Não é um pensamento bonito.<br>
+        É aquele que aparece quando você para de se enganar.
+    </div>
 
-<div class="options">
-<button class="option-button" onclick="next()">
-<span class="emoji">🥀</span>
-Sentir que nunca sou a escolha principal de ninguém
-</button>
+    <div class="options">
+        <button class="option-button" onclick="next()">
+            <span class="emoji">🥀</span>
+            Que eu nunca sou a escolha principal — só a opção conveniente quando é fácil
+        </button>
 
-<button class="option-button" onclick="next()">
-<span class="emoji">🕳️</span>
-A sensação de que posso ser substituída a qualquer momento
-</button>
+        <button class="option-button" onclick="next()">
+            <span class="emoji">🕳️</span>
+            Que se eu relaxar ou cobrar demais, posso ser deixada ou trocada
+        </button>
 
-<button class="option-button" onclick="next()">
-<span class="emoji">💔</span>
-Perceber que eu sempre me esforço mais do que recebo
-</button>
+        <button class="option-button" onclick="next()">
+            <span class="emoji">💔</span>
+            Que eu sempre me esforço mais do que recebo em troca
+        </button>
 
-<button class="option-button" onclick="next()">
-<span class="emoji">🧩</span>
-Pensar que existe algo em mim que nunca é suficiente
-</button>
-</div>
+        <button class="option-button" onclick="next()">
+            <span class="emoji">🧩</span>
+            Que existe algo em mim que nunca é suficiente para alguém ficar
+        </button>
+    </div>
 
 </div>
 
 <script>
 function next(){
-window.location.href="quiz7.html";
+    window.location.href="quiz7.html";
 }
 </script>
 

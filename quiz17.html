@@ -764,198 +764,62 @@
         
 <div class="container">
 
-    <h1 class="title">
+ <div class="title">
         COM BASE NAS SUAS RESPOSTAS,
+        <span>UM PADRÃO EMOCIONAL FICOU CLARO</span>
+    </div>
+
+    <div class="text">
+        Isso não define quem você é.  
         <br>
-        <span class="red">UM PADRÃO EMOCIONAL FOI IDENTIFICADO</span>
-    </h1>
-
-    <!-- Teaser -->
-    <div class="teaser-box">
-        <div class="teaser-text">
-            A MAIORIA DAS MULHERES NUNCA PERCEBE ESSE PADRÃO.
-            <br>
-            ATÉ ELE COMEÇAR A SE REPETIR EM TODOS OS RELACIONAMENTOS.
-        </div>
-        <div class="teaser-subtext">
-            O QUE VOCÊ VAI VER AGORA EXPLICA POR QUE A HISTÓRIA MUDA…
-            <br>
-            MAS O FINAL QUASE SEMPRE É O MESMO.
-        </div>
+        Mas explica <span class="highlight">por que a história muda…  
+        e o final quase sempre é o mesmo.</span>
     </div>
 
-    <!-- Slider -->
-    <div class="dark-box">
-        <div class="slider-container">
-            <label class="slider-label">💫 LEITURA DA DINÂMICA EMOCIONAL</label>
-
-            <div class="slider">
-                <div class="slider-position">
-                    <span class="slider-text">CONFUSO</span>
-                    <span class="slider-text">INSTÁVEL</span>
-                    <span class="slider-text">
-                        <span class="objetivo-label">🎯 EQUILÍBRIO</span>
-                        CLARO
-                    </span>
-                </div>
-            </div>
-
-            <div class="slider-marker">
-                ✨ SUA DINÂMICA ATUAL
-            </div>
-        </div>
-    </div>
-
-    <!-- Análise -->
-    <div class="section">
-        <h2 class="section-title">🔍 O QUE ISSO SIGNIFICA</h2>
-
+    <div class="box">
+        <h3>🔍 O QUE SEU PADRÃO MOSTRA</h3>
         <p>
-            Pelas suas respostas, você é uma mulher que cria conexão,
-            se envolve de verdade e entrega presença emocional.
+            Você cria conexão, se envolve de verdade e entrega presença emocional desde o início — e quase sempre é você quem sustenta o vínculo.
             <br><br>
             O problema <strong>não é intensidade</strong>.
             <br>
             O problema é que, sem perceber, você acaba
-            <span class="red">se adaptando demais</span>
-            para manter o vínculo.
-        </p>
-
-        <p>
-            Isso faz com que muitos homens se aproximem,
-            sintam conforto, desejo, atenção —
-            <br>
-            mas <strong>não sintam urgência de se comprometer</strong>.
+            <span class="highlight">se adaptando demais</span> para manter o vínculo.
         </p>
     </div>
 
-    <!-- Padrão -->
-    <div class="section">
-        <h2 class="section-title">
-            ⚠️ PADRÃO EMOCIONAL RECORRENTE
-        </h2>
-
-        <p>
-            Quando esse padrão se instala, ele cria uma dinâmica invisível:
-        </p>
-
-        <ul class="implication-list">
+    <div class="box">
+        <h3>⚠️ COMO ISSO AFETA A DINÂMICA</h3>
+        <ul class="list">
             <li>Você demonstra mais clareza emocional do que recebe</li>
-            <li>Ele sente que pode avançar e recuar sem te perder</li>
+            <li>Ele sente conforto, mas não urgência</li>
             <li>A relação fica indefinida, mesmo com envolvimento</li>
+            <li>Você começa a duvidar de si — não da dinâmica</li>
         </ul>
     </div>
 
     <div class="warning">
-        🚨 ESSE PADRÃO NÃO MUDA COM MAIS ESFORÇO,
-        <br>
-        MAIS PACIÊNCIA OU MAIS EXPLICAÇÃO.
+        🚨 Esse padrão não muda com mais esforço,  
+        mais paciência ou mais explicação.
         <br><br>
-        ELE MUDA QUANDO A DINÂMICA MUDA.
+        Ele muda quando <span class="highlight">a dinâmica muda</span>.
     </div>
 
-    <!-- Microcopy -->
     <div class="microcopy">
-        👇 O PRÓXIMO PASSO MOSTRA O QUE ACONTECE
-        <br>
-        QUANDO ESSE PADRÃO CONTINUA SENDO IGNORADO
+        👇 A próxima etapa mostra o que acontece  
+        quando esse padrão continua sendo ignorado
     </div>
 
-    <button class="cta-button" onclick="window.location.href='quiz18.html'">
-        🔥 QUERO ENTENDER ISSO AGORA
+    <button class="cta" onclick="window.location.href='quiz18.html'">
+        Quero entender isso agora
     </button>
 
-    <!-- Prova Social -->
-    <div class="social-proof">
-        <p>
-            ✨ MAIS DE <span class="number">42.000</span> MULHERES
-            JÁ IDENTIFICARAM ESSE PADRÃO
-            <br>
-            E ENTENDERAM COMO A DINÂMICA PODE MUDAR. </p>
-            
+    <div class="social">
+        ✨ Mais de <span>42.000 mulheres</span>  
+        já identificaram esse padrão emocional
     </div>
+
 </div>
 
-
-    <script>
-        // Script para atualizar a porcentagem durante o carregamento
-        function updatePercentage() {
-            const progressElement = document.querySelector('.progress');
-            const percentageElement = document.getElementById('progress-percentage');
-            let width = 0;
-            const interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                } else {
-                    width++;
-                    percentageElement.textContent = width + '%';
-                }
-            }, 30);
-        }
-
-        // Iniciar a animação de porcentagem
-        updatePercentage();
-
-        // Remover a tela de loading após 3 segundos
-        setTimeout(() => {
-            document.getElementById('loading-screen').style.display = 'none';
-        }, 3000);
-
-        // Adicionar efeito de pulse ao botão CTA
-        const ctaButton = document.querySelector('.cta-button');
-        setTimeout(() => {
-            ctaButton.style.animation = 'buttonPulse 2s infinite';
-        }, 4000);
-
-        // Efeito de hover melhorado
-        ctaButton.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.03)';
-        });
-        
-        ctaButton.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-
-        // Animação de contagem para social proof
-        function animateCounter() {
-            const numberElement = document.querySelector('.social-proof .number');
-            const target = 42000;
-            let current = 0;
-            const increment = target / 100;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                numberElement.textContent = Math.floor(current).toLocaleString('pt-BR');
-            }, 20);
-        }
-
-        // Iniciar animação de contagem após o loading
-        setTimeout(() => {
-            animateCounter();
-        }, 4000);
-
-        // Intersection Observer para animações
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos que devem ser animados
-        document.querySelectorAll('.microcopy, .section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
