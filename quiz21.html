@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ÚLTIMO PASSO – ACESSO LIBERADO</title>
+<title>ATENÇÃO — NÃO VOLTE PARA O MESMO PADRÃO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -14,43 +14,43 @@
 --vermelho:#E5003C;
 --ouro:#FFD700;
 --preto:#0C0C0C;
---roxo:#1E0B26;
+--roxo:#16091D;
 --branco:#FAF1F4;
 --champ:#D8B9C3;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,var(--roxo),var(--preto));
+background:radial-gradient(circle at top,var(--roxo),var(--preto));
 color:var(--branco);
 padding:20px;
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-letter-spacing:.4px
+letter-spacing:.3px
 }
 .container{
-max-width:650px;
+max-width:680px;
 width:100%;
-background:rgba(12,12,12,.88);
-border-radius:14px;
-padding:30px;
+background:rgba(10,10,10,.92);
+border-radius:16px;
+padding:34px;
 border:1px solid var(--rosa);
-box-shadow:0 0 35px rgba(255,63,129,.45);
+box-shadow:0 0 40px rgba(255,63,129,.45);
 position:relative;
 overflow:hidden
 }
 .container::before{
 content:"";
 position:absolute;
-top:-10px;left:-10px;right:-10px;bottom:-10px;
+inset:-12px;
 background:linear-gradient(45deg,var(--rosa),var(--vermelho),var(--ouro),var(--rosa));
 background-size:400% 400%;
-filter:blur(18px);
-opacity:.22;
+filter:blur(22px);
+opacity:.18;
 z-index:-1;
-animation:glow 8s ease infinite
+animation:glow 7s ease infinite
 }
 @keyframes glow{
 0%{background-position:0% 50%}
@@ -59,28 +59,36 @@ animation:glow 8s ease infinite
 }
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:34px;
+font-size:36px;
 text-align:center;
 color:var(--ouro);
 margin-bottom:14px;
-letter-spacing:1.6px
+letter-spacing:2px
 }
 h1 span{
 color:var(--rosa);
-text-shadow:0 0 10px rgba(255,63,129,.7)
+text-shadow:0 0 12px rgba(255,63,129,.8)
 }
 .subhead{
 text-align:center;
-font-size:15px;
+font-size:15.5px;
 font-weight:700;
 color:var(--champ);
 margin-bottom:26px
 }
-.underline{
-margin:20px 0 28px;
+.alert{
+text-align:center;
+font-size:14px;
+font-weight:800;
+color:var(--vermelho);
+margin-bottom:26px;
+text-shadow:0 0 8px rgba(229,0,60,.5)
+}
+.divider{
+margin:26px 0;
 text-align:center;
 color:var(--rosa);
-font-weight:800;
+font-weight:900;
 text-decoration:underline;
 text-shadow:0 0 8px rgba(255,63,129,.5)
 }
@@ -89,77 +97,78 @@ list-style:none;
 margin:26px 0
 }
 ul li{
-background:rgba(30,11,38,.75);
+background:rgba(30,11,38,.85);
 margin:14px 0;
-padding:16px 18px;
-border-radius:9px;
+padding:17px 20px;
+border-radius:10px;
 border-left:4px solid var(--rosa);
-box-shadow:0 4px 12px rgba(0,0,0,.35);
+box-shadow:0 5px 14px rgba(0,0,0,.4);
 transition:.3s;
 color:var(--champ);
-font-size:15px
+font-size:15.2px
 }
 ul li::before{
 content:"✓";
 color:var(--ouro);
 font-weight:900;
 margin-right:10px;
-text-shadow:0 0 5px rgba(255,215,0,.6)
+text-shadow:0 0 6px rgba(255,215,0,.6)
 }
 ul li:hover{
-transform:translateX(6px);
-background:rgba(255,63,129,.18);
-box-shadow:0 6px 18px rgba(255,63,129,.45)
+transform:translateX(8px);
+background:rgba(255,63,129,.22);
+box-shadow:0 8px 22px rgba(255,63,129,.55)
 }
 .button{
 width:100%;
-margin-top:28px;
-padding:22px;
+margin-top:30px;
+padding:24px;
 border:none;
-border-radius:50px;
-font-size:20px;
+border-radius:60px;
+font-size:21px;
 font-weight:900;
 cursor:pointer;
 color:var(--branco);
 background:linear-gradient(45deg,var(--rosa),var(--vermelho));
-box-shadow:0 8px 26px rgba(229,0,60,.7);
+box-shadow:0 10px 30px rgba(229,0,60,.75);
 transition:.3s;
 position:relative;
 overflow:hidden;
-text-transform:uppercase
+text-transform:uppercase;
+letter-spacing:1px
 }
 .button:hover{
 transform:translateY(-4px);
-box-shadow:0 14px 36px rgba(229,0,60,.9)
+box-shadow:0 16px 42px rgba(229,0,60,.95)
 }
 .button::before{
 content:"";
 position:absolute;
-top:0;left:-100%;
+top:0;left:-120%;
 width:100%;height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
-transition:.5s
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+transition:.6s
 }
-.button:hover::before{left:100%}
+.button:hover::before{left:120%}
 .warning{
-margin-top:18px;
+margin-top:20px;
 text-align:center;
 font-size:13.5px;
 font-weight:800;
 color:var(--vermelho);
-text-shadow:0 0 6px rgba(229,0,60,.4);
-animation:pulse 1.6s infinite
+text-shadow:0 0 8px rgba(229,0,60,.5);
+animation:pulse 1.5s infinite
 }
 @keyframes pulse{
-0%{opacity:.65}
+0%{opacity:.6}
 50%{opacity:1}
-100%{opacity:.65}
+100%{opacity:.6}
 }
 @media(max-width:480px){
-h1{font-size:26px}
-.subhead{font-size:14px}
-.button{font-size:17px;padding:18px}
-ul li{font-size:14px}
+h1{font-size:28px}
+.subhead{font-size:14.5px}
+.button{font-size:18px;padding:20px}
+ul li{font-size:14.3px}
 }
 </style>
 </head>
@@ -167,39 +176,43 @@ ul li{font-size:14px}
 <body>
 <div class="container">
 
-<h1>VOCÊ CHEGOU AO <span>PONTO DE VIRADA</span></h1>
+<h1>VOCÊ ESTÁ A UM PASSO DE <span>MUDAR O JOGO</span></h1>
 
 <p class="subhead">
-A maioria das mulheres para exatamente aqui.<br>
-As que continuam, nunca mais vivem o mesmo tipo de relação.
+A maioria das mulheres fecha essa página.<br>
+As que continuam, passam a ser tratadas de forma diferente — para sempre.
 </p>
 
-<p class="underline">
-SE VOCÊ NÃO MUDAR A DINÂMICA, O PADRÃO CONTINUA.
+<p class="alert">
+⚠️ Se você continuar fazendo o que sempre fez, continuará recebendo o mesmo tipo de homem.
+</p>
+
+<p class="divider">
+O PROBLEMA NÃO É VOCÊ — É A DINÂMICA.
 </p>
 
 <ul>
-<li>Ser lembrada e desejada mesmo quando você não está presente</li>
-<li>Fazer ele investir emocionalmente sem cobranças ou jogos</li>
-<li>Deixar de ser “opção” e se tornar prioridade</li>
-<li>Despertar interesse, curiosidade e medo real de te perder</li>
-<li>Eliminar a ansiedade por mensagens e atitudes</li>
-<li>Entender com clareza como a mente masculina reage</li>
-<li>Assumir controle emocional — independentemente da resposta dele</li>
-<li>Parar de repetir ciclos que te desgastam</li>
-<li>Sentir segurança, poder e tranquilidade emocional</li>
+<li>Ser lembrada, desejada e pensada mesmo em silêncio</li>
+<li>Fazer ele investir emocionalmente sem você pedir nada</li>
+<li>Parar de ser “conveniente” e virar prioridade real</li>
+<li>Despertar curiosidade, apego e medo genuíno de te perder</li>
+<li>Eliminar ansiedade, insegurança e espera por mensagens</li>
+<li>Entender exatamente como a mente masculina reage</li>
+<li>Assumir controle emocional, independentemente da atitude dele</li>
+<li>Encerrar ciclos desgastantes e repetitivos</li>
+<li>Sentir poder, tranquilidade e segurança emocional</li>
 </ul>
 
-<p class="underline">
-ESSA DECISÃO DEFINE O QUE ACONTECE DAQUI PRA FRENTE.
+<p class="divider">
+ESSA ESCOLHA DEFINE SE VOCÊ AVANÇA OU CONTINUA NO MESMO LUGAR.
 </p>
 
 <button class="button" onclick="window.location.href='mulherhipnotica.html'">
-QUERO ACESSAR O MÉTODO AGORA 🔥
+SIM, QUERO ACESSAR O MÉTODO AGORA 🔥
 </button>
 
 <p class="warning">
-⚠️ AO SAIR DESTA PÁGINA, ESTA CONDIÇÃO NÃO É GARANTIDA NOVAMENTE.
+⏳ ESTA CONDIÇÃO É LIMITADA. AO SAIR, O ACESSO NÃO É GARANTIDO.
 </p>
 
 </div>

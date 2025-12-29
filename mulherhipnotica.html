@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Última Chance — Código da Mulher Hipnótica</title>
+<title>Última Chance — Não Volte ao Mesmo Padrão</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Poppins',sans-serif;
-background:#0A0A0A;
+background:#080808;
 color:#FAF1F4;
 padding:14px;
 }
@@ -21,7 +21,7 @@ padding:14px;
 position:fixed;
 top:0;left:0;width:100%;
 background:#120617;
-border-bottom:1px solid rgba(255,63,129,.5);
+border-bottom:1px solid rgba(255,63,129,.6);
 padding:10px;
 text-align:center;
 z-index:9999;
@@ -32,27 +32,28 @@ font-size:13px;
 }
 .timer{
 font-family:'Bebas Neue',sans-serif;
-font-size:22px;
+font-size:24px;
 color:#FF3F81;
 letter-spacing:2px;
 }
 
 /* CONTAINER */
 .container{
-margin-top:70px;
+margin-top:76px;
 background:#0E0E0E;
-border-radius:18px;
-padding:26px 16px;
-border:1px solid rgba(255,63,129,.5);
+border-radius:20px;
+padding:28px 18px;
+border:1px solid rgba(255,63,129,.55);
+box-shadow:0 0 30px rgba(255,63,129,.35);
 }
 
 /* TITULO */
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:34px;
+font-size:36px;
 text-align:center;
 color:#FFD700;
-line-height:1.1;
+line-height:1.05;
 }
 h1 span{color:#FF3F81}
 
@@ -60,14 +61,16 @@ h1 span{color:#FF3F81}
 text-align:center;
 font-size:14px;
 color:#F2C9D8;
-margin-top:12px;
+margin-top:14px;
+font-weight:600;
 }
 
 /* PRODUTO */
 .product-image{
 display:block;
 max-width:260px;
-margin:26px auto;
+margin:28px auto;
+filter:drop-shadow(0 0 18px rgba(255,63,129,.6));
 }
 
 /* TEXTO */
@@ -80,22 +83,22 @@ color:#E6C3CF;
 }
 
 /* LISTA */
-ul{list-style:none}
+ul{list-style:none;margin-top:10px}
 ul li{
 margin:12px 0;
-padding:14px;
-border-radius:12px;
-background:rgba(255,63,129,.12);
+padding:15px;
+border-radius:14px;
+background:rgba(255,63,129,.14);
 border-left:4px solid #FFD700;
 font-size:13px;
 }
 
 /* PREÇO */
 .price-box{
-margin:32px 0 24px;
-padding:22px;
+margin:34px 0 26px;
+padding:24px;
 background:#000;
-border-radius:18px;
+border-radius:20px;
 border:2px solid #FF3F81;
 text-align:center;
 }
@@ -105,53 +108,60 @@ color:#999;
 text-decoration:line-through;
 }
 .new{
-font-size:42px;
-font-weight:700;
+font-size:44px;
+font-weight:800;
 color:#FFD700;
 }
 .discount{
 color:#FF3F81;
 font-size:13px;
 margin-top:6px;
+font-weight:700;
 }
 
 /* CTA */
 .button{
 width:100%;
-padding:22px;
-font-size:18px;
-font-weight:700;
+padding:24px;
+font-size:19px;
+font-weight:800;
 border:none;
-border-radius:50px;
+border-radius:60px;
 background:linear-gradient(45deg,#FF3F81,#E5003C);
 color:#FFF;
 cursor:pointer;
-box-shadow:0 10px 35px rgba(255,63,129,.9);
+box-shadow:0 12px 40px rgba(255,63,129,.95);
 text-transform:uppercase;
+letter-spacing:1px;
+transition:.3s;
+}
+.button:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 55px rgba(255,63,129,1);
 }
 .cta-sub{
 text-align:center;
 font-size:12px;
 color:#EFC3D3;
-margin-top:8px;
+margin-top:10px;
 }
 
 /* PAGAMENTOS */
 .payments{
-margin-top:16px;
+margin-top:18px;
 text-align:center;
 }
 .payments img{
-max-width:180px;
-opacity:.85;
+max-width:190px;
+opacity:.9;
 }
 
 /* GARANTIA */
 .garantia{
-margin-top:28px;
-padding:18px;
-border-radius:14px;
-background:rgba(255,215,0,.15);
+margin-top:30px;
+padding:20px;
+border-radius:16px;
+background:rgba(255,215,0,.16);
 border:1px solid rgba(255,215,0,.6);
 font-size:13px;
 color:#F6E4AE;
@@ -160,33 +170,34 @@ text-align:center;
 
 /* FAQ */
 .faq{
-margin-top:32px;
+margin-top:36px;
 }
 .faq details{
 margin-bottom:12px;
-background:rgba(255,255,255,.04);
-padding:14px;
-border-radius:12px;
+background:rgba(255,255,255,.05);
+padding:16px;
+border-radius:14px;
 border:1px solid rgba(255,63,129,.35);
 }
 .faq summary{
 color:#FFD700;
 font-size:13px;
-font-weight:600;
+font-weight:700;
 cursor:pointer;
 }
 .faq p{
 font-size:13px;
 text-align:left;
-margin-top:8px;
+margin-top:10px;
 }
 
 /* AVISO */
 .warning{
-margin-top:18px;
+margin-top:22px;
 text-align:center;
 font-size:12px;
 color:#FF4D6D;
+font-weight:700;
 }
 
 /* POPUP TIMER */
@@ -195,12 +206,12 @@ position:fixed;
 bottom:16px;
 right:16px;
 background:#0C0C0C;
-padding:10px 14px;
-border-radius:12px;
+padding:12px 16px;
+border-radius:14px;
 border:1px solid #FF3F81;
 text-align:center;
 z-index:9999;
-box-shadow:0 0 25px rgba(255,63,129,.6);
+box-shadow:0 0 28px rgba(255,63,129,.7);
 }
 .countdown-popup strong{
 font-size:11px;
@@ -209,25 +220,26 @@ display:block;
 }
 .countdown-popup span{
 font-family:'Bebas Neue',sans-serif;
-font-size:22px;
+font-size:24px;
 color:#FF3F81;
 }
 
 /* POPUP SOCIAL */
 .popup{
 position:fixed;
-bottom:80px;
+bottom:90px;
 left:14px;
 background:#1E0B26;
 color:#FFF;
-padding:10px 14px;
-border-radius:12px;
+padding:12px 16px;
+border-radius:14px;
 font-size:12px;
 border-left:4px solid #FF3F81;
 opacity:0;
 transform:translateY(20px);
 transition:.4s;
 z-index:9999;
+box-shadow:0 0 18px rgba(255,63,129,.6);
 }
 .popup.show{opacity:1;transform:translateY(0)}
 </style>
@@ -236,46 +248,46 @@ z-index:9999;
 <body>
 
 <div class="timer-bar">
-<strong>ÚLTIMA CHANCE • +80% DE DESCONTO</strong><br>
+<strong>⚠️ DESCONTO FINAL • ACESSO EM ENCERRAMENTO</strong><br>
 <span class="timer" id="topTimer">12:43</span>
 </div>
 
 <div class="container">
 
 <h1>
-ÚLTIMA CHANCE<br>
+ÚLTIMA DECISÃO<br>
 <span>CÓDIGO DA MULHER HIPNÓTICA</span>
 </h1>
 
 <div class="sub">
-Quando o tempo zerar, essa condição desaparece.
+Se você sair agora, volta pro mesmo padrão de sempre.
 </div>
 
 <img src="src/img/meterial.png" class="product-image">
 
 <p>
-Não é sobre implorar.<br>
-É sobre fazer ele **se posicionar sozinho**.
+Isso não é sobre implorar, cobrar ou correr atrás.<br>
+É sobre **fazer ele se posicionar sem você pedir nada**.
 </p>
 
 <ul>
-<li>Você para de correr atrás</li>
-<li>Ele demonstra mais interesse</li>
-<li>A insegurança desaparece</li>
-<li>O padrão muda de verdade</li>
+<li>Você para de insistir</li>
+<li>Ele começa a demonstrar interesse real</li>
+<li>A ansiedade some</li>
+<li>A dinâmica muda de verdade</li>
 </ul>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
 <div class="new">R$27,90</div>
-<div class="discount">Mais de 80% OFF — agora</div>
+<div class="discount">Mais de 80% OFF — só agora</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO GARANTIR AGORA
+SIM, QUERO GARANTIR AGORA
 </button>
 <div class="cta-sub">
-Acesso imediato • Garantia 30 dias
+Acesso imediato • Garantia incondicional de 30 dias
 </div>
 
 <div class="payments">
@@ -283,14 +295,14 @@ Acesso imediato • Garantia 30 dias
 </div>
 
 <div class="garantia">
-<strong>GARANTIA DE 30 DIAS</strong><br>
-Ou funciona pra você, ou seu dinheiro volta.
+<strong>GARANTIA TOTAL DE 30 DIAS</strong><br>
+Ou isso muda sua dinâmica emocional, ou você recebe 100% do dinheiro de volta.
 </div>
 
 <div class="faq">
 <details>
-<summary>Funciona pra mim?</summary>
-<p>Funciona para dinâmicas emocionais onde existe interesse, mas falta constância e posicionamento.</p>
+<summary>Isso funciona pra mim?</summary>
+<p>Funciona para mulheres que sentem interesse, mas vivem insegurança, instabilidade e falta de posicionamento masculino.</p>
 </details>
 
 <details>
@@ -300,12 +312,12 @@ Ou funciona pra você, ou seu dinheiro volta.
 
 <details>
 <summary>E se eu não gostar?</summary>
-<p>Você pode pedir reembolso em até 30 dias.</p>
+<p>Você pode pedir reembolso dentro de 30 dias. Sem perguntas.</p>
 </details>
 </div>
 
 <div class="warning">
-⚠️ Ao sair, essa oferta pode não voltar.
+⚠️ Ao sair desta página, essa condição pode não estar mais disponível.
 </div>
 
 </div>
@@ -313,7 +325,7 @@ Ou funciona pra você, ou seu dinheiro volta.
 <div id="popup" class="popup"></div>
 
 <div class="countdown-popup">
-<strong>DESCONTO EXPIRA EM</strong>
+<strong>OFERTA EXPIRA EM</strong>
 <span id="popupTimer">12:43</span>
 </div>
 
@@ -331,19 +343,19 @@ updateTimers();
 
 setTimeout(()=>document.querySelector(".countdown-popup").style.opacity="0",12000);
 
-const names=["Ana","Camila","Juliana","Larissa","Paula","Renata"];
+const names=["Ana","Camila","Juliana","Larissa","Paula","Renata","Bruna","Fernanda"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
 let name=names[Math.floor(Math.random()*names.length)];
-popup.innerHTML=`🔥 <strong>${name}</strong> garantiu agora`;
+popup.innerHTML=`🔥 <strong>${name}</strong> acabou de garantir o acesso`;
 popup.classList.add("show");
-setTimeout(()=>popup.classList.remove("show"),4000);
+setTimeout(()=>popup.classList.remove("show"),4200);
 }
 setTimeout(()=>{
 showPopup();
-setInterval(showPopup,90000);
-},10000);
+setInterval(showPopup,85000);
+},9000);
 </script>
 
 </body>
