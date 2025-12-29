@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Última Chance — Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,245 +11,218 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(180deg,#120617,#0A0A0A);
+background:#0A0A0A;
 color:#FAF1F4;
-padding:20px;
+padding:14px;
 }
 
 /* BARRA TOPO */
 .timer-bar{
 position:fixed;
 top:0;left:0;width:100%;
-background:linear-gradient(90deg,#1E0B26,#0C0C0C);
-border-bottom:1px solid rgba(255,63,129,.6);
-padding:14px;
+background:#120617;
+border-bottom:1px solid rgba(255,63,129,.5);
+padding:10px;
 text-align:center;
 z-index:9999;
 }
 .timer-bar strong{
 color:#FFD700;
-font-size:14px;
-letter-spacing:1px;
+font-size:13px;
 }
 .timer{
 font-family:'Bebas Neue',sans-serif;
-font-size:28px;
+font-size:22px;
 color:#FF3F81;
-letter-spacing:3px;
+letter-spacing:2px;
 }
 
 /* CONTAINER */
 .container{
-max-width:760px;
-margin:120px auto 0;
-background:rgba(8,8,8,.97);
-border-radius:22px;
-padding:46px 26px;
-border:1px solid rgba(255,63,129,.6);
-box-shadow:0 0 80px rgba(255,63,129,.4);
+margin-top:70px;
+background:#0E0E0E;
+border-radius:18px;
+padding:26px 16px;
+border:1px solid rgba(255,63,129,.5);
 }
 
-/* TITULOS */
+/* TITULO */
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:52px;
+font-size:34px;
 text-align:center;
 color:#FFD700;
-line-height:1.05;
+line-height:1.1;
 }
 h1 span{color:#FF3F81}
 
 .sub{
 text-align:center;
-font-size:16px;
+font-size:14px;
 color:#F2C9D8;
-margin-top:18px;
+margin-top:12px;
+}
+
+/* PRODUTO */
+.product-image{
+display:block;
+max-width:260px;
+margin:26px auto;
 }
 
 /* TEXTO */
 p{
-margin:26px 0;
+margin:18px 0;
 text-align:center;
-font-size:15px;
-line-height:1.85;
+font-size:14px;
+line-height:1.7;
 color:#E6C3CF;
-}
-
-/* IMAGEM PRODUTO */
-.product-image{
-display:block;
-max-width:360px;
-margin:42px auto;
-filter:drop-shadow(0 0 25px rgba(255,63,129,.6));
-}
-
-/* SEÇÕES */
-.section-title{
-font-family:'Bebas Neue',sans-serif;
-text-align:center;
-font-size:36px;
-color:#FFD700;
-margin:60px 0 26px;
 }
 
 /* LISTA */
 ul{list-style:none}
 ul li{
-margin:16px 0;
-padding:18px;
-border-radius:14px;
+margin:12px 0;
+padding:14px;
+border-radius:12px;
 background:rgba(255,63,129,.12);
-border-left:5px solid #FFD700;
-font-size:14px;
-}
-ul li::before{
-content:"✓ ";
-color:#FFD700;
-font-weight:bold;
+border-left:4px solid #FFD700;
+font-size:13px;
 }
 
 /* PREÇO */
 .price-box{
-margin:54px 0 34px;
-padding:38px;
-background:rgba(0,0,0,.85);
-border-radius:22px;
+margin:32px 0 24px;
+padding:22px;
+background:#000;
+border-radius:18px;
 border:2px solid #FF3F81;
 text-align:center;
 }
 .old{
-font-size:15px;
+font-size:13px;
 color:#999;
 text-decoration:line-through;
 }
 .new{
-font-size:52px;
+font-size:42px;
 font-weight:700;
 color:#FFD700;
 }
 .discount{
 color:#FF3F81;
-font-size:15px;
-margin-top:10px;
+font-size:13px;
+margin-top:6px;
 }
 
 /* CTA */
 .button{
 width:100%;
-padding:30px;
-font-size:22px;
+padding:22px;
+font-size:18px;
 font-weight:700;
 border:none;
-border-radius:60px;
+border-radius:50px;
 background:linear-gradient(45deg,#FF3F81,#E5003C);
 color:#FFF;
 cursor:pointer;
-box-shadow:0 12px 50px rgba(255,63,129,.95);
-transition:.3s;
+box-shadow:0 10px 35px rgba(255,63,129,.9);
 text-transform:uppercase;
 }
-.button:hover{transform:translateY(-4px)}
-
 .cta-sub{
 text-align:center;
-font-size:13px;
-color:#F0C3D3;
-margin-top:12px;
+font-size:12px;
+color:#EFC3D3;
+margin-top:8px;
 }
 
 /* PAGAMENTOS */
 .payments{
-margin-top:26px;
+margin-top:16px;
 text-align:center;
 }
 .payments img{
-max-width:320px;
-opacity:.9;
-}
-
-/* PROVA SOCIAL */
-.testimonial{
-margin-top:60px;
-padding:30px;
-background:rgba(255,255,255,.05);
-border-radius:18px;
-border:1px solid rgba(255,63,129,.45);
-text-align:center;
-}
-.testimonial img{
-width:92px;
-height:92px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:14px;
-border:3px solid #FFD700;
-}
-.testimonial p{
-font-size:14px;
-color:#F0D6DF;
-}
-.testimonial strong{
-display:block;
-margin-top:14px;
-color:#FFD700;
+max-width:180px;
+opacity:.85;
 }
 
 /* GARANTIA */
 .garantia{
-margin-top:52px;
-padding:30px;
-border-radius:18px;
+margin-top:28px;
+padding:18px;
+border-radius:14px;
 background:rgba(255,215,0,.15);
-border:2px solid rgba(255,215,0,.6);
-font-size:14px;
+border:1px solid rgba(255,215,0,.6);
+font-size:13px;
 color:#F6E4AE;
 text-align:center;
 }
-.garantia strong{color:#FFD700}
 
 /* FAQ */
 .faq{
-margin-top:60px;
+margin-top:32px;
 }
-.faq-item{
-margin-bottom:18px;
-padding:18px;
-border-radius:14px;
+.faq details{
+margin-bottom:12px;
 background:rgba(255,255,255,.04);
+padding:14px;
+border-radius:12px;
 border:1px solid rgba(255,63,129,.35);
 }
-.faq-item strong{
-display:block;
+.faq summary{
 color:#FFD700;
-margin-bottom:8px;
-font-size:14px;
+font-size:13px;
+font-weight:600;
+cursor:pointer;
 }
-.faq-item p{
-font-size:14px;
+.faq p{
+font-size:13px;
 text-align:left;
-margin:0;
+margin-top:8px;
 }
 
 /* AVISO */
 .warning{
-margin-top:30px;
+margin-top:18px;
 text-align:center;
-font-size:13px;
+font-size:12px;
 color:#FF4D6D;
-opacity:.95;
 }
 
-/* POPUPS */
+/* POPUP TIMER */
+.countdown-popup{
+position:fixed;
+bottom:16px;
+right:16px;
+background:#0C0C0C;
+padding:10px 14px;
+border-radius:12px;
+border:1px solid #FF3F81;
+text-align:center;
+z-index:9999;
+box-shadow:0 0 25px rgba(255,63,129,.6);
+}
+.countdown-popup strong{
+font-size:11px;
+color:#FFD700;
+display:block;
+}
+.countdown-popup span{
+font-family:'Bebas Neue',sans-serif;
+font-size:22px;
+color:#FF3F81;
+}
+
+/* POPUP SOCIAL */
 .popup{
 position:fixed;
-bottom:20px;
-left:20px;
+bottom:80px;
+left:14px;
 background:#1E0B26;
 color:#FFF;
-padding:14px 18px;
+padding:10px 14px;
 border-radius:12px;
-font-size:14px;
-box-shadow:0 10px 30px rgba(0,0,0,.45);
+font-size:12px;
 border-left:4px solid #FF3F81;
 opacity:0;
 transform:translateY(20px);
@@ -257,39 +230,13 @@ transition:.4s;
 z-index:9999;
 }
 .popup.show{opacity:1;transform:translateY(0)}
-
-.countdown-popup{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:#0C0C0C;
-padding:26px;
-border-radius:18px;
-border:2px solid #FF3F81;
-text-align:center;
-z-index:99999;
-box-shadow:0 0 60px rgba(255,63,129,.8);
-}
-.countdown-popup strong{
-color:#FFD700;
-font-size:18px;
-display:block;
-margin-bottom:10px;
-}
-.countdown-popup span{
-font-family:'Bebas Neue',sans-serif;
-font-size:40px;
-color:#FF3F81;
-letter-spacing:4px;
-}
 </style>
 </head>
 
 <body>
 
 <div class="timer-bar">
-<strong>ÚLTIMA CHANCE • +80% DE DESCONTO ATIVO</strong><br>
+<strong>ÚLTIMA CHANCE • +80% DE DESCONTO</strong><br>
 <span class="timer" id="topTimer">12:43</span>
 </div>
 
@@ -301,125 +248,102 @@ letter-spacing:4px;
 </h1>
 
 <div class="sub">
-Essa condição não se repete. Quando o tempo zerar, o valor volta ao normal.
+Quando o tempo zerar, essa condição desaparece.
 </div>
 
-<img src="src/img/meterial.png" class="product-image" alt="Código da Mulher Hipnótica">
+<img src="src/img/meterial.png" class="product-image">
 
 <p>
-Não é sobre mudar quem você é.<br>
-É sobre **mudar a dinâmica emocional** que define como ele te trata.
+Não é sobre implorar.<br>
+É sobre fazer ele **se posicionar sozinho**.
 </p>
 
-<div class="section-title">O QUE MUDA QUANDO VOCÊ APLICA</div>
-
 <ul>
-<li>Ele para de se afastar sem motivo</li>
-<li>Você deixa de sentir ansiedade e insegurança</li>
-<li>O interesse se mantém estável</li>
-<li>Você sente controle emocional real</li>
+<li>Você para de correr atrás</li>
+<li>Ele demonstra mais interesse</li>
+<li>A insegurança desaparece</li>
+<li>O padrão muda de verdade</li>
 </ul>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
-<div class="new">HOJE R$27,90</div>
-<div class="discount">Mais de 80% de desconto — apenas agora</div>
+<div class="new">R$27,90</div>
+<div class="discount">Mais de 80% OFF — agora</div>
 </div>
 
-<button class="button" onclick="window.location.href='https://pay.sunize.com.br/sNeLGlfr'">
-SIM, QUERO GARANTIR MEU ACESSO AGORA
+<button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
+QUERO GARANTIR AGORA
 </button>
-
 <div class="cta-sub">
-Acesso imediato • Garantia de 30 dias • Pagamento seguro
+Acesso imediato • Garantia 30 dias
 </div>
 
 <div class="payments">
-<img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
-</div>
-
-<div class="testimonial">
-<img src="src/img/luizadp1.png">
-<p>
-“Eu parei de correr atrás.  
-Foi ele que começou a se posicionar.  
-Mudou completamente.”
-</p>
-<strong>Luiza, 23 anos</strong>
+<img src="src/img/formasdepagamentocartoes.webp">
 </div>
 
 <div class="garantia">
-<strong>GARANTIA INCONDICIONAL DE 30 DIAS</strong><br><br>
-Ou você sente diferença real na dinâmica emocional,<br>
-ou recebe 100% do seu dinheiro de volta.
+<strong>GARANTIA DE 30 DIAS</strong><br>
+Ou funciona pra você, ou seu dinheiro volta.
 </div>
-
-<div class="section-title">PERGUNTAS FREQUENTES</div>
 
 <div class="faq">
-<div class="faq-item">
-<strong>Isso funciona para qualquer situação?</strong>
-<p>Funciona para dinâmicas onde existe envolvimento emocional, mas falta posicionamento, segurança ou constância.</p>
-</div>
+<details>
+<summary>Funciona pra mim?</summary>
+<p>Funciona para dinâmicas emocionais onde existe interesse, mas falta constância e posicionamento.</p>
+</details>
 
-<div class="faq-item">
-<strong>Quando recebo o acesso?</strong>
-<p>Imediatamente após a confirmação do pagamento.</p>
-</div>
+<details>
+<summary>Recebo quando?</summary>
+<p>Imediatamente após o pagamento.</p>
+</details>
 
-<div class="faq-item">
-<strong>E se eu não gostar?</strong>
-<p>Você tem 30 dias para testar. Se não fizer sentido pra você, é só pedir o reembolso.</p>
-</div>
-
-<div class="faq-item">
-<strong>Esse valor vai continuar?</strong>
-<p>Não. Esse desconto é liberado apenas nessa etapa e pode encerrar a qualquer momento.</p>
-</div>
+<details>
+<summary>E se eu não gostar?</summary>
+<p>Você pode pedir reembolso em até 30 dias.</p>
+</details>
 </div>
 
 <div class="warning">
-⚠️ Ao sair desta página, essa condição pode não estar mais disponível.
+⚠️ Ao sair, essa oferta pode não voltar.
 </div>
 
 </div>
 
-<!-- POPUPS -->
 <div id="popup" class="popup"></div>
 
-<div id="countdownPopup" class="countdown-popup">
-<strong>SEU DESCONTO EXPIRA EM</strong>
+<div class="countdown-popup">
+<strong>DESCONTO EXPIRA EM</strong>
 <span id="popupTimer">12:43</span>
 </div>
 
 <script>
-let timeLeft = (12 * 60) + 43;
+let timeLeft = (12*60)+43;
 function updateTimers(){
-let m = Math.floor(timeLeft/60);
-let s = timeLeft % 60;
-let t = String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
-document.getElementById("topTimer").innerText = t;
-document.getElementById("popupTimer").innerText = t;
-if(timeLeft > 0){timeLeft--;setTimeout(updateTimers,1000);}
+let m=Math.floor(timeLeft/60);
+let s=timeLeft%60;
+let t=String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+document.getElementById("topTimer").innerText=t;
+document.getElementById("popupTimer").innerText=t;
+if(timeLeft>0){timeLeft--;setTimeout(updateTimers,1000);}
 }
 updateTimers();
 
-setTimeout(()=>document.getElementById("countdownPopup").style.display="none",15000);
+setTimeout(()=>document.querySelector(".countdown-popup").style.opacity="0",12000);
 
-const names=["Ana","Camila","Juliana","Fernanda","Larissa","Paula","Renata","Bianca"];
+const names=["Ana","Camila","Juliana","Larissa","Paula","Renata"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
 let name=names[Math.floor(Math.random()*names.length)];
-popup.innerHTML=`🔥 <strong>${name}</strong> acabou de garantir o Código da Mulher Hipnótica`;
+popup.innerHTML=`🔥 <strong>${name}</strong> garantiu agora`;
 popup.classList.add("show");
-setTimeout(()=>popup.classList.remove("show"),5000);
+setTimeout(()=>popup.classList.remove("show"),4000);
 }
-
 setTimeout(()=>{
 showPopup();
 setInterval(showPopup,90000);
-},12000);
+},10000);
 </script>
 
 </body>
