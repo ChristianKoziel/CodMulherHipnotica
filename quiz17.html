@@ -1,29 +1,21 @@
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const progressText = document.getElementById("progress-percentage");
-    const loadingScreen = document.getElementById("loading-screen");
-
-    if (!progressText || !loadingScreen) return;
-
-    let progress = 0;
-    const duration = 3000;
-    const intervalTime = 30;
-    const increment = 100 / (duration / intervalTime);
-
-    const interval = setInterval(() => {
-        progress += increment;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            setTimeout(() => {
-                loadingScreen.style.display = "none";
-            }, 300);
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teste grátis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
-        progressText.textContent = Math.floor(progress) + "%";
-    }, intervalTime);
-});
-</script>
-
+        
         body {
             background: linear-gradient(135deg, #1E0B26 0%, #0C0C0C 100%);
             padding: 0;
@@ -823,8 +815,88 @@ mais o padrão se reforça — e menos ele sente necessidade de se posicionar
         ✨ Mais de <span>23.000 mulheres</span>  
         já identificaram esse padrão emocional
     </div>
-
 </div>
 
+
+    <script>
+        // Script para atualizar a porcentagem durante o carregamento
+        function updatePercentage() {
+            const progressElement = document.querySelector('.progress');
+            const percentageElement = document.getElementById('progress-percentage');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    percentageElement.textContent = width + '%';
+                }
+            }, 30);
+        }
+
+        // Iniciar a animação de porcentagem
+        updatePercentage();
+
+        // Remover a tela de loading após 3 segundos
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 3000);
+
+        // Adicionar efeito de pulse ao botão CTA
+        const ctaButton = document.querySelector('.cta-button');
+        setTimeout(() => {
+            ctaButton.style.animation = 'buttonPulse 2s infinite';
+        }, 4000);
+
+        // Efeito de hover melhorado
+        ctaButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.03)';
+        });
+        
+        ctaButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+
+        // Animação de contagem para social proof
+        function animateCounter() {
+            const numberElement = document.querySelector('.social-proof .number');
+            const target = 42000;
+            let current = 0;
+            const increment = target / 100;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                numberElement.textContent = Math.floor(current).toLocaleString('pt-BR');
+            }, 20);
+        }
+
+        // Iniciar animação de contagem após o loading
+        setTimeout(() => {
+            animateCounter();
+        }, 4000);
+
+        // Intersection Observer para animações
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos que devem ser animados
+        document.querySelectorAll('.microcopy, .section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
