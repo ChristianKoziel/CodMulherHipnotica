@@ -1,233 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÉTODO OBSESSÃO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seja Sincera</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', 'Bebas Neue', sans-serif;
-            background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #FAF1F4;
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-        .quiz-container {
-            background-color: rgba(12, 12, 12, 0.85);
-            border-radius: 20px;
-            padding: 30px;
-            width: 380px;
-            max-width: 92%;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                        0 0 0 1px rgba(255, 63, 129, 0.3);
-            text-align: center;
-            border: 1px solid rgba(255, 63, 129, 0.5);
-            position: relative;
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FAF1F4;
+}
 
-        h3 {
-            font-size: 1.6rem;
-            margin-bottom: 22px;
-            line-height: 1.3;
-            color: #FF3F81;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.quiz-container {
+    background: rgba(12,12,12,0.9);
+    border-radius: 20px;
+    padding: 28px;
+    width: 380px;
+    max-width: 92%;
+    box-shadow: 0 10px 30px rgba(255,63,129,0.3);
+    border: 1px solid rgba(255,63,129,0.4);
+    text-align: center;
+}
 
-        /* CHAT */
-        .fake-chat {
-            background: #0c1317;
-            border-radius: 10px;
-            padding: 12px 10px;
-            margin: 20px 0;
-            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-            text-shadow: none;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.65rem;
+    color: #FF3F81;
+    margin-bottom: 8px;
+    letter-spacing: 1.2px;
+}
 
-        .chat-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+.subtitle {
+    font-size: 0.95rem;
+    color: #E8C8D3;
+    margin-bottom: 20px;
+}
 
-        .contact-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #555;
-            margin-right: 10px;
-        }
+.fake-chat {
+    background: #0c1317;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 18px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
 
-        .contact-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #e9edef;
-        }
+.chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        .chat-messages {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+.contact-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #444;
+    margin-right: 8px;
+}
 
-        .msg-them {
-            align-self: flex-start;
-            background: #1f2c33;
-            padding: 8px 12px;
-            border-radius: 7.5px 7.5px 7.5px 0;
-            max-width: 75%;
-            color: #e9edef;
-            font-size: 0.9rem;
-        }
+.contact-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
-        .msg-you {
-            align-self: flex-end;
-            background: #005c4b;
-            padding: 8px 12px;
-            border-radius: 7.5px 7.5px 0 7.5px;
-            max-width: 75%;
-            color: #e9edef;
-            font-size: 0.9rem;
-        }
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-        /* DIGITANDO */
-        .typing-indicator {
-            align-self: flex-start;
-            background: #1f2c33;
-            padding: 8px 12px;
-            border-radius: 7.5px 7.5px 7.5px 0;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            width: fit-content;
-        }
+.msg-them {
+    background: #1f2c33;
+    padding: 8px 12px;
+    border-radius: 8px 8px 8px 0;
+    max-width: 75%;
+    font-size: 0.9rem;
+}
 
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #8696a0;
-            border-radius: 50%;
-            animation: typing 1.4s infinite ease-in-out;
-        }
+.msg-you {
+    align-self: flex-end;
+    background: #005c4b;
+    padding: 8px 12px;
+    border-radius: 8px 8px 0 8px;
+    max-width: 75%;
+    font-size: 0.9rem;
+}
 
-        .typing-dot:nth-child(2) { animation-delay: .2s; }
-        .typing-dot:nth-child(3) { animation-delay: .4s; }
+.typing {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
 
-        @keyframes typing {
-            0% { opacity: .2; }
-            20% { opacity: 1; }
-            100% { opacity: .2; }
-        }
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #8696a0;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+}
 
-        p {
-            font-size: 1.05rem;
-            margin: 24px 0;
-            line-height: 1.5;
-        }
+.dot:nth-child(2) { animation-delay: .2s; }
+.dot:nth-child(3) { animation-delay: .4s; }
 
-        .sublinhado {
-            text-decoration: underline;
-            color: #FF3F81;
-            font-weight: bold;
-        }
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}
 
-        .warning {
-            color: #FF3F81;
-            font-weight: bold;
-            font-size: 0.95rem;
-            margin: 20px 0;
-            padding: 12px;
-            border: 1px dashed #E5003C;
-            border-radius: 8px;
-            background: rgba(229, 0, 60, 0.1);
-        }
+.text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 18px 0;
+}
 
-        .botao-pulsante {
-            background: linear-gradient(to right, #FF3F81, #E5003C);
-            color: #FAF1F4;
-            border: none;
-            padding: 18px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-            margin: 20px 0 15px;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
+.text span {
+    color: #FF3F81;
+    font-weight: 600;
+}
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 63, 129, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 63, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 63, 129, 0); }
-        }
+.warning {
+    font-size: 0.9rem;
+    color: #FF9FBF;
+    background: rgba(229,0,60,0.12);
+    border: 1px dashed #E5003C;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 18px 0;
+}
 
-        .counter {
-            font-size: 0.85rem;
-            color: #D8B9C3;
-            margin-top: 15px;
-        }
-    </style>
+.button {
+    background: linear-gradient(to right, #FF3F81, #E5003C);
+    border: none;
+    border-radius: 50px;
+    padding: 16px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,63,129,0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255,63,129,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,63,129,0); }
+}
+
+.counter {
+    font-size: 0.85rem;
+    color: #D8B9C3;
+    margin-top: 14px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="quiz-container">
 
-    <h3>VOCÊ FEZ DE TUDO.  
-    ELE SE AFASTOU.  
-    AGORA É SUA VEZ DE SER PRIORIDADE.</h3>
+<h3>Seja sincera.</h3>
 
-    <div class="fake-chat">
-        <div class="chat-header">
-            <div class="contact-avatar"></div>
-            <div class="contact-name">Ele</div>
+<div class="subtitle">
+Responda sem tentar parecer forte.<br>
+Ninguém vai ver isso além de você.
+</div>
+
+<div class="fake-chat">
+    <div class="chat-header">
+        <div class="contact-avatar"></div>
+        <div class="contact-name">Ele</div>
+    </div>
+
+    <div class="chat-messages">
+        <div class="msg-them">Oi… você anda estranha.</div>
+        <div class="msg-you">Estranha não. Só cansei de insistir.</div>
+        <div class="msg-them">Não foi isso que eu quis dizer…</div>
+        <div class="typing">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-
-        <div class="chat-messages">
-            <div class="msg-them">Oi, sumida…</div>
-            <div class="msg-you">Sumi não. Só parei de correr atrás.</div>
-            <div class="msg-them">Desculpa… estava ocupado.</div>
-
-            <div class="typing-indicator">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-        </div>
     </div>
+</div>
 
-    <p>
-        Em <span class="sublinhado">3 minutos</span>, descubra o ajuste psicológico
-        que faz ele voltar a te procurar —  
-        sem implorar, se explicar ou correr atrás.
-    </p>
+<div class="text">
+Quando um homem começa a esfriar,<br>
+muitas mulheres fazem exatamente o que<br>
+<span>parece certo — mas piora tudo.</span>
+<br><br>
+Em poucos minutos, você vai entender se<br>
+algum padrão seu pode estar ativando isso<br>
+<span>sem você perceber.</span>
+</div>
 
-    <div class="warning">
-        Antes de continuar, preciso entender sua situação.
-    </div>
+<div class="warning">
+Responda com sinceridade.<br>
+O resultado costuma incomodar — e libertar.
+</div>
 
-    <button class="botao-pulsante" onclick="location.href='quiz2.html'">
-        Continuar
-    </button>
+<button class="button" onclick="location.href='quiz2.html'">
+Quero entender isso
+</button>
 
-    <div class="counter">
-        🔥 <strong>Mais de 243</strong> mulheres já começaram hoje
-    </div>
+<div class="counter">
+💬 <strong>243 mulheres</strong> já responderam hoje
+</div>
 
 </div>
 
