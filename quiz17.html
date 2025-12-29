@@ -361,76 +361,37 @@ body{
 </div>
 
 <script>
-/* =========================
-   CONTROLE DO LOADING (AJUSTADO)
-========================= */
-
 let progress = 0;
-
-const progressBar = document.querySelector(".progress");
-const progressText = document.getElementById("progress-percentage");
-const loadingScreen = document.getElementById("loading-screen");
+const bar = document.querySelector(".progress");
+const text = document.getElementById("progress-percentage");
+const loading = document.getElementById("loading-screen");
 const content = document.getElementById("content");
 
-content.style.visibility = "hidden";
-content.style.opacity = "0";
-content.style.position = "absolute";
-content.style.inset = "0";
-
-function updateProgress() {
+function runLoading(){
     progress += Math.floor(Math.random() * 6) + 4;
 
-    if (progress >= 100) {
+    if(progress >= 100){
         progress = 100;
-        progressBar.style.width = "100%";
-        progressText.textContent = "100%";
+        bar.style.width = "100%";
+        text.innerText = "100%";
 
-        // MICRO DELAY PARA LEITURA VISUAL
         setTimeout(() => {
-            loadingScreen.style.visibility = "hidden";
-            loadingScreen.style.opacity = "0";
+            loading.style.opacity = "0";
+            loading.style.pointerEvents = "none";
 
-            content.style.visibility = "visible";
-            content.style.opacity = "1";
-            content.style.position = "relative";
-
-            startEntranceEffects();
-        }, 420); // 👈 ajuste fino aqui (200–300 é o ideal)
-
-        return;
+            content.classList.add("show");
+        }, 500); // 👈 500ms certinho
+    } else {
+        bar.style.width = progress + "%";
+        text.innerText = progress + "%";
+        setTimeout(runLoading, 120);
     }
-
-    progressBar.style.width = progress + "%";
-    progressText.textContent = progress + "%";
-
-    setTimeout(updateProgress, 110);
 }
 
-window.addEventListener("load", () => {
-    updateProgress();
-});
-
-
-/* =========================
-   EFEITO DE ENTRADA
-========================= */
-
-function startEntranceEffects() {
-    const elements = document.querySelectorAll(
-        ".title, .text, .box, .warning, .microcopy, .cta, .social"
-    );
-
-    elements.forEach((el, index) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(14px)";
-        el.style.transition = "opacity .45s ease, transform .45s ease";
-
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                el.style.opacity = "1";
-                el.style.transform = "translateY(0)";
-            }, index * 90);
-        });
-    });
-}
+window.onload = () => {
+    setTimeout(runLoading, 300);
+};
 </script>
+
+</body>
+</html>
