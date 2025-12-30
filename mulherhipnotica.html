@@ -200,7 +200,7 @@ color:var(--gold);
 font-weight:800;
 }
 
-/* POPUP — ARRUMADO SEM MUDAR POSIÇÃO */
+/* POPUP */
 .popup{
 position:fixed;
 bottom:18px;
@@ -214,21 +214,10 @@ box-shadow:0 10px 30px rgba(0,0,0,.6);
 z-index:9999;
 opacity:0;
 }
-.popup strong{
-color:var(--gold);
-font-size:13px;
-}
-.popup span{
-display:block;
-font-size:12px;
-color:#EFC3D3;
-}
-.popup.show{
-animation:fadeIn .4s ease forwards;
-}
-.popup.hide{
-animation:fadeOut .4s ease forwards;
-}
+.popup strong{color:var(--gold);font-size:13px;}
+.popup span{display:block;font-size:12px;color:#EFC3D3;}
+.popup.show{animation:fadeIn .4s ease forwards;}
+.popup.hide{animation:fadeOut .4s ease forwards;}
 
 @keyframes fadeIn{
 from{opacity:0;transform:translateY(20px);}
@@ -284,7 +273,9 @@ e agora tem a chance real de <strong>encerrar esse ciclo</strong>.
 <div class="old">DE R$397,00</div>
 <div class="new">POR APENAS R$27,90</div>
 <div class="discount">Liberação especial para quem concluiu o teste</div>
-<div class="vagas">⚠️ Restam apenas <strong>9 vagas</strong> com esse valor</div>
+<div class="vagas">
+⚠️ Restam apenas <strong><span id="vagasCount">17</span> vagas</strong> com esse valor
+</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
@@ -305,16 +296,9 @@ Acesso imediato • Conteúdo 100% digital
 
 <div class="garantia-copy">
 <strong>Garantia Incondicional de 30 Dias</strong><br><br>
-
-Esse conteúdo foi criado para mulheres que estão cansadas de se sentir inseguras, confusas e sempre em desvantagem emocional.<br><br>
-
-Nos primeiros dias, muitas já relatam mais clareza, mais firmeza e uma sensação de alívio — como se finalmente estivessem se escolhendo de novo.<br><br>
-
-Mas fique tranquila: você tem <strong>30 dias completos</strong> para acessar tudo com calma, no seu tempo, sem pressão nenhuma.<br>
-Se em qualquer momento sentir que não é pra você, o reembolso é simples e imediato.<br><br>
-
-Sem constrangimento. Sem explicação. Sem estresse.<br><br>
-
+Esse método gera clareza emocional já nos primeiros dias e foi pensado para que você se sinta segura desde o início.<br><br>
+Mesmo assim, você tem <strong>30 dias completos</strong> para acessar tudo com tranquilidade absoluta.<br>
+Se por qualquer motivo decidir não continuar, o reembolso é simples e imediato.<br><br>
 <strong>Você entra segura.</strong><br>
 <strong>Eu assumo todo o risco.</strong>
 </div>
@@ -335,16 +319,26 @@ timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// POPUP PROVA SOCIAL (ARRUMADO)
+// ESCASSEZ DINÂMICA
+let vagas = 17;
+const vagasEl = document.getElementById("vagasCount");
+
+// POPUP PROVA SOCIAL
 const names=["Luiza","Ana","Larissa","Bruna","Melissa","Camila","Renata","Juliana"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
+if(vagas <= 0) return;
+
 const name = names[Math.floor(Math.random()*names.length)];
 popup.innerHTML = `<strong>${name} acabou de comprar</strong><span>Código da Mulher Hipnótica</span>`;
 popup.style.display="block";
 popup.classList.remove("hide");
 popup.classList.add("show");
+
+// DIMINUI VAGA
+vagas--;
+vagasEl.innerText = vagas;
 
 setTimeout(()=>{
 popup.classList.remove("show");
