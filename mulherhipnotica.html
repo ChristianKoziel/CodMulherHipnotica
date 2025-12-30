@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Código da Mulher Hipnótica — Acesso Final</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,9 +58,7 @@ text-align:center;
 color:var(--gold);
 }
 
-h1 span{
-color:var(--pink);
-}
+h1 span{color:var(--pink);}
 
 .sub{
 margin-top:16px;
@@ -158,7 +155,6 @@ color:var(--pink);
 font-weight:700;
 }
 
-/* VAGAS */
 .vagas{
 margin-top:12px;
 font-size:14px;
@@ -190,26 +186,13 @@ color:#EFC3D3;
 }
 
 /* PAGAMENTOS */
-.payments{
-margin-top:18px;
-text-align:center;
-}
-
-.payments img{
-max-width:260px;
-width:100%;
-}
-
-/* GARANTIA */
-.garantia{
+.payments,.garantia{
 margin-top:22px;
 text-align:center;
 }
 
-.garantia img{
-max-width:200px;
-width:100%;
-}
+.payments img{max-width:260px;width:100%;}
+.garantia img{max-width:200px;width:100%;}
 
 /* POPUP */
 .popup{
@@ -223,7 +206,7 @@ padding:14px 18px;
 display:none;
 box-shadow:0 10px 30px rgba(0,0,0,.6);
 z-index:9999;
-animation:slideIn .5s ease;
+animation:slideIn .5s ease forwards;
 }
 
 .popup strong{
@@ -237,6 +220,10 @@ font-size:12px;
 color:#EFC3D3;
 }
 
+.popup.hide{
+animation:slideOut .5s ease forwards;
+}
+
 @keyframes slideIn{
 from{transform:translateX(-120%);opacity:0}
 to{transform:translateX(0);opacity:1}
@@ -244,6 +231,16 @@ to{transform:translateX(0);opacity:1}
 
 @keyframes slideOut{
 to{transform:translateX(-120%);opacity:0}
+}
+
+@media(max-width:480px){
+.popup{
+left:50%;
+transform:translateX(-50%);
+bottom:12px;
+width:90%;
+max-width:320px;
+}
 }
 </style>
 </head>
@@ -268,7 +265,7 @@ Sem joguinhos. Sem implorar. Sem perder sua essência.
 <p>
 Você não chegou até aqui por curiosidade.<br>
 Chegou porque reconheceu um padrão —  
-e agora tem a chance real de **encerrar esse ciclo**.
+e agora tem a chance real de <strong>encerrar esse ciclo</strong>.
 </p>
 </div>
 
@@ -280,8 +277,8 @@ e agora tem a chance real de **encerrar esse ciclo**.
 </ul>
 
 <div class="price-box">
-<div class="old">De R$397,00</div>
-<div class="new">Por R$27,90</div>
+<div class="old">DE R$397,00</div>
+<div class="new">POR APENAS R$27,90</div>
 <div class="discount">Liberação especial para quem concluiu o teste</div>
 <div class="vagas">⚠️ Restam apenas <strong>9 vagas</strong> com esse valor</div>
 </div>
@@ -295,19 +292,16 @@ Acesso imediato • Conteúdo 100% digital
 </div>
 
 <div class="payments">
-<img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
+<img src="src/img/formasdepagamentocartoes.webp">
 </div>
 
 <div class="garantia">
-<img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia de 30 dias">
+<img src="src/img/30-DIAS-FINAL-1.svg">
 </div>
 
 </div>
 
-<div class="popup" id="popup">
-<strong>Nova aluna confirmada</strong>
-<span>Entrou no Código agora mesmo</span>
-</div>
+<div class="popup" id="popup"></div>
 
 <script>
 // TIMER
@@ -321,17 +315,33 @@ timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// POPUPS
-const names=["Luiza","Ana","Camila","Renata","Juliana","Marina"];
+// POPUP PROVA SOCIAL
+const names=["Luiza","Ana","Larissa","Bruna","Melissa","Camila","Renata","Juliana"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
-popup.style.display="block";
+const name = names[Math.floor(Math.random()*names.length)];
+
+popup.innerHTML = `
+<strong>${name} acabou de comprar</strong>
+<span>Código da Mulher Hipnótica</span>
+`;
+
 popup.classList.remove("hide");
-setTimeout(()=>{ popup.classList.add("hide"); },4000);
+popup.style.display="block";
+
+setTimeout(()=>{
+popup.classList.add("hide");
+},4000);
+
+popup.addEventListener("animationend",()=>{
+if(popup.classList.contains("hide")){
+popup.style.display="none";
+}
+},{once:true});
 }
 
-setInterval(showPopup, Math.floor(Math.random() * (22000 - 12000) + 12000));
+setInterval(showPopup, Math.floor(Math.random() * (24000 - 12000) + 12000));
 </script>
 
 </body>
