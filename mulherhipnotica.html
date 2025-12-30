@@ -57,7 +57,6 @@ line-height:1.05;
 text-align:center;
 color:var(--gold);
 }
-
 h1 span{color:var(--pink);}
 
 .sub{
@@ -78,13 +77,11 @@ border:2px dashed var(--pink);
 text-align:center;
 max-width:420px;
 }
-
 .timer-box p{
 font-size:13px;
 color:var(--muted);
 margin-bottom:6px;
 }
-
 .timer{
 font-size:30px;
 font-weight:800;
@@ -96,14 +93,12 @@ color:var(--gold);
 margin-top:26px;
 text-align:center;
 }
-
 .hero img{
 width:100%;
 max-width:360px;
 margin:0 auto 18px;
 display:block;
 }
-
 .hero p{
 font-size:15px;
 line-height:1.7;
@@ -115,7 +110,6 @@ ul{
 list-style:none;
 margin-top:22px;
 }
-
 ul li{
 margin:14px 0;
 padding:18px;
@@ -135,26 +129,22 @@ border-radius:22px;
 border:2px solid var(--pink);
 text-align:center;
 }
-
 .old{
 font-size:14px;
 color:#aaa;
 text-decoration:line-through;
 }
-
 .new{
 font-size:46px;
 font-weight:900;
 color:var(--gold);
 margin:6px 0;
 }
-
 .discount{
 font-size:14px;
 color:var(--pink);
 font-weight:700;
 }
-
 .vagas{
 margin-top:12px;
 font-size:14px;
@@ -185,16 +175,32 @@ font-size:12px;
 color:#EFC3D3;
 }
 
-/* PAGAMENTOS */
+/* PAGAMENTOS / GARANTIA */
 .payments,.garantia{
 margin-top:22px;
 text-align:center;
 }
-
 .payments img{max-width:260px;width:100%;}
 .garantia img{max-width:200px;width:100%;}
 
-/* POPUP */
+/* COPY GARANTIA */
+.garantia-copy{
+margin-top:16px;
+padding:18px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,63,129,.4);
+border-radius:18px;
+font-size:14px;
+line-height:1.6;
+color:#F6D1DE;
+text-align:left;
+}
+.garantia-copy strong{
+color:var(--gold);
+font-weight:800;
+}
+
+/* POPUP — ARRUMADO SEM MUDAR POSIÇÃO */
 .popup{
 position:fixed;
 bottom:18px;
@@ -206,39 +212,37 @@ padding:14px 18px;
 display:none;
 box-shadow:0 10px 30px rgba(0,0,0,.6);
 z-index:9999;
-animation:slideIn .5s ease forwards;
+opacity:0;
 }
-
 .popup strong{
 color:var(--gold);
 font-size:13px;
 }
-
 .popup span{
 display:block;
 font-size:12px;
 color:#EFC3D3;
 }
-
+.popup.show{
+animation:fadeIn .4s ease forwards;
+}
 .popup.hide{
-animation:slideOut .5s ease forwards;
+animation:fadeOut .4s ease forwards;
 }
 
-@keyframes slideIn{
-from{transform:translateX(-120%);opacity:0}
-to{transform:translateX(0);opacity:1}
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
-
-@keyframes slideOut{
-to{transform:translateX(-120%);opacity:0}
+@keyframes fadeOut{
+to{opacity:0;transform:translateY(20px);}
 }
 
 @media(max-width:480px){
 .popup{
-left:50%;
-transform:translateX(-50%);
+left:12px;
 bottom:12px;
-width:90%;
+width:calc(100% - 24px);
 max-width:320px;
 }
 }
@@ -299,6 +303,15 @@ Acesso imediato • Conteúdo 100% digital
 <img src="src/img/30-DIAS-FINAL-1.svg">
 </div>
 
+<div class="garantia-copy">
+<strong>Garantia Incondicional de 30 Dias</strong><br><br>
+Você pode acessar todo o conteúdo com total tranquilidade.  
+Se em até <strong>30 dias</strong> sentir que não é pra você, é só solicitar o reembolso.<br><br>
+Sem perguntas. Sem constrangimento. Sem letras miúdas.<br><br>
+<strong>O risco é 100% meu.</strong>  
+Você só decide com calma.
+</div>
+
 </div>
 
 <div class="popup" id="popup"></div>
@@ -315,22 +328,19 @@ timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// POPUP PROVA SOCIAL
+// POPUP PROVA SOCIAL (ARRUMADO)
 const names=["Luiza","Ana","Larissa","Bruna","Melissa","Camila","Renata","Juliana"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
 const name = names[Math.floor(Math.random()*names.length)];
-
-popup.innerHTML = `
-<strong>${name} acabou de comprar</strong>
-<span>Código da Mulher Hipnótica</span>
-`;
-
-popup.classList.remove("hide");
+popup.innerHTML = `<strong>${name} acabou de comprar</strong><span>Código da Mulher Hipnótica</span>`;
 popup.style.display="block";
+popup.classList.remove("hide");
+popup.classList.add("show");
 
 setTimeout(()=>{
+popup.classList.remove("show");
 popup.classList.add("hide");
 },4000);
 
