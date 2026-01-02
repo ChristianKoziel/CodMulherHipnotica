@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Se Você Não Mudar Agora, Nada Muda</title>
+<title>Se Você Não Mudar, Nada Muda</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -99,7 +99,7 @@ font-size:15px;
 color:#F6D1DE;
 }
 
-/* BLOCO CONFRONTO */
+/* CONFRONTO */
 .cut{
 margin:30px 0;
 padding:22px;
@@ -124,7 +124,12 @@ text-align:center;
 .old{font-size:14px;color:#aaa;text-decoration:line-through}
 .new{font-size:46px;font-weight:900;color:var(--gold)}
 .discount{font-size:14px;color:var(--pink);font-weight:700}
-.vagas{margin-top:12px;font-size:14px;color:var(--gold);font-weight:800}
+.vagas{
+margin-top:12px;
+font-size:15px;
+color:var(--gold);
+font-weight:900;
+}
 
 /* BOTÃO */
 .button{
@@ -142,7 +147,30 @@ box-shadow:0 16px 45px rgba(255,63,129,.9);
 text-transform:uppercase;
 }
 
-/* FINAL MALANDRO */
+/* GARANTIA */
+.guarantee{
+margin-top:34px;
+padding:26px;
+background:rgba(255,255,255,.04);
+border-radius:22px;
+border:1px solid rgba(255,63,129,.6);
+}
+.guarantee h2{
+font-family:'Bebas Neue',sans-serif;
+font-size:28px;
+color:var(--gold);
+text-align:center;
+margin-bottom:12px;
+}
+.guarantee p{
+font-size:15px;
+line-height:1.7;
+color:#F6D1DE;
+text-align:left;
+}
+.guarantee strong{color:var(--gold)}
+
+/* FINAL */
 .final-hit{
 margin-top:30px;
 padding:24px;
@@ -156,11 +184,30 @@ text-align:center;
 }
 .final-hit strong{color:var(--gold)}
 
-.cta-sub{
-margin-top:12px;
-text-align:center;
-font-size:12px;
-color:#EFC3D3;
+/* POPUP */
+.popup{
+position:fixed;
+bottom:18px;
+left:18px;
+background:#120617;
+border:1px solid rgba(255,63,129,.7);
+border-radius:14px;
+padding:14px 18px;
+display:none;
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+z-index:9999;
+opacity:0;
+}
+.popup strong{color:var(--gold);font-size:13px;}
+.popup span{display:block;font-size:12px;color:#EFC3D3;}
+.popup.show{animation:fadeIn .4s ease forwards;}
+.popup.hide{animation:fadeOut .4s ease forwards;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeOut{to{opacity:0;transform:translateY(20px);}}
+
+/* MOBILE */
+@media(max-width:480px){
+.popup{left:12px;bottom:12px;width:calc(100% - 24px);}
 }
 </style>
 </head>
@@ -173,37 +220,34 @@ color:#EFC3D3;
 
 <div class="sub">
 Você já tentou do seu jeito.<br>
-Agora só resta decidir se continua igual.
+Se não funcionou, não foi culpa sua — faltou o ajuste certo.
 </div>
 
 <div class="timer-box">
-<p>Essa condição expira em:</p>
+<p>Essa condição especial expira em:</p>
 <div class="timer" id="timer">09:47</div>
 </div>
 
 <div class="hero">
-<img src="src/img/meterial.png">
+<img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
 <p>
-Você não chegou aqui por acaso.<br>
-Chegou porque cansou de repetir o mesmo final.
+Você não está aqui por impulso.<br>
+Está aqui porque cansou de se doar demais e receber de menos.
 </p>
 </div>
 
 <ul>
-<li>Como parar de esperar atitude de quem nunca escolhe</li>
-<li>O ajuste que muda o jogo sem cobrança</li>
-<li>O comportamento que faz o homem se posicionar</li>
-<li>Como sair do ciclo de migalhas emocionais</li>
+<li>Como parar de correr atrás sem parecer fria</li>
+<li>O ajuste interno que gera respeito automático</li>
+<li>Como sair do ciclo de ansiedade e silêncio</li>
+<li>O ponto exato onde a dinâmica vira a seu favor</li>
 </ul>
 
 <div class="cut">
-<strong>VAMOS SER DIRETAS:</strong><br><br>
-Se você continuar reagindo do mesmo jeito,<br>
-atraindo o mesmo tipo de homem,<br>
-esperando a mesma validação…<br><br>
-<strong>O resultado vai ser o mesmo.</strong><br><br>
-Entender ajuda.<br>
-Mas <strong>só mudar o comportamento muda a história.</strong>
+<strong>VERDADE QUE NINGUÉM TE CONTA:</strong><br><br>
+Não é sobre fazer mais.<br>
+É sobre parar de repetir o mesmo comportamento esperando outro resultado.<br><br>
+<strong>Se você não mudar agora, nada muda.</strong>
 </div>
 
 <div class="price-box">
@@ -211,32 +255,50 @@ Mas <strong>só mudar o comportamento muda a história.</strong>
 <div class="new">R$27,90</div>
 <div class="discount">Liberação única após o teste</div>
 <div class="vagas">
-⚠️ Restam <strong><span id="vagasCount">17</span> acessos</strong>
+⚠️ Restam apenas <strong>9 vagas</strong> com esse valor
 </div>
 </div>
 
 <button class="button" onclick="initiateCheckout()">
-EU DECIDO MUDAR AGORA
+EU ESCOLHO MUDAR AGORA
 </button>
 
+<div class="guarantee">
+<h2>GARANTIA DE 7 DIAS</h2>
+<p>
+Você não precisa ter certeza agora.<br><br>
+
+<strong>Você só precisa sentir.</strong><br><br>
+
+Durante <strong>7 dias completos</strong>, você pode acessar todo o método com calma, no seu ritmo, sem pressão.<br><br>
+
+Se em qualquer momento você sentir que esse conteúdo não é para você —  
+ou simplesmente decidir que não quer continuar —  
+<strong>o reembolso é simples, direto e sem questionamentos.</strong><br><br>
+
+Você não corre risco algum.<br>
+<strong>Quem assume esse risco sou eu.</strong>
+</p>
+</div>
+
 <div class="final-hit">
-<strong>Presta atenção:</strong><br><br>
 Se você fechar essa página,<br>
-nada muda.<br><br>
-O próximo homem vai ativar o mesmo gatilho.<br>
-A mesma ansiedade.<br>
-O mesmo silêncio no final.<br><br>
+a vida continua igual.<br><br>
+
+O próximo homem ativa o mesmo padrão.<br>
+A mesma dúvida.<br>
+O mesmo final.<br><br>
+
 <strong>Se você não mudar agora, nada muda.</strong><br>
-E no fundo, você sabe disso.
-</div>
-
-<div class="cta-sub">
-Acesso imediato • Conteúdo digital • Decisão sem replay
+E você sabe disso.
 </div>
 
 </div>
+
+<div class="popup" id="popup"></div>
 
 <script>
+// TIMER
 let time=9*60+47;
 const timer=document.getElementById("timer");
 setInterval(()=>{
@@ -245,10 +307,31 @@ timer.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-let vagas=17;
-const vagasEl=document.getElementById("vagasCount");
-setInterval(()=>{if(vagas>1){vagas--;vagasEl.innerText=vagas}},20000);
+// POPUP
+const names=["Ana","Larissa","Bruna","Camila","Juliana","Renata","Melissa","Paula"];
+const popup=document.getElementById("popup");
 
+function showPopup(){
+const name=names[Math.floor(Math.random()*names.length)];
+popup.innerHTML=`<strong>${name} acabou de comprar</strong><span>Código da Mulher Hipnótica</span>`;
+popup.style.display="block";
+popup.classList.remove("hide");
+popup.classList.add("show");
+
+setTimeout(()=>{
+popup.classList.remove("show");
+popup.classList.add("hide");
+},4000);
+
+popup.addEventListener("animationend",()=>{
+if(popup.classList.contains("hide")){
+popup.style.display="none";
+}
+},{once:true});
+}
+setInterval(showPopup, Math.floor(Math.random()*(22000-12000)+12000));
+
+// CHECKOUT
 function initiateCheckout(){
 if(typeof fbq==='function'){
 fbq('track','InitiateCheckout',{value:27.90,currency:'BRL'});
