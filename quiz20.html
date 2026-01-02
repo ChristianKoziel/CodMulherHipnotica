@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Elas Também Estavam Presas Nesse Ciclo</title>
+<title>Você Vai Repetir Esse Padrão de Novo?</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -13,10 +12,10 @@
 --pink:#FF3F81;
 --red:#E5003C;
 --gold:#FFD700;
---bg1:#1E0B26;
---bg2:#0C0C0C;
---light:#FAF1F4;
---muted:#D8B9C3;
+--bg1:#12040A;
+--bg2:#040404;
+--light:#FFF1F6;
+--muted:#C7A0AF;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -32,13 +31,13 @@ padding:20px;
 }
 
 .container{
-max-width:620px;
+max-width:640px;
 width:100%;
-background:rgba(12,12,12,.96);
+background:rgba(4,4,4,.98);
 border-radius:22px;
-padding:34px 26px;
-border:1px solid rgba(255,63,129,.6);
-box-shadow:0 0 55px rgba(255,63,129,.45);
+padding:38px 26px;
+border:1px solid rgba(255,63,129,.8);
+box-shadow:0 0 80px rgba(229,0,60,.65);
 position:relative;
 overflow:hidden;
 }
@@ -47,19 +46,19 @@ overflow:hidden;
 content:"";
 position:absolute;
 inset:-2px;
-background:linear-gradient(45deg,var(--pink),var(--red),var(--bg1));
-filter:blur(14px);
+background:linear-gradient(45deg,var(--red),var(--pink),#000);
+filter:blur(20px);
 opacity:.35;
 z-index:-1;
 }
 
 h1{
 font-family:'Bebas Neue',sans-serif;
-font-size:34px;
-line-height:1.1;
+font-size:38px;
+line-height:1.05;
 text-align:center;
 color:var(--gold);
-margin-bottom:16px;
+margin-bottom:14px;
 }
 
 h1 span{
@@ -72,10 +71,22 @@ margin-top:6px;
 text-align:center;
 font-size:14px;
 color:var(--muted);
-margin-bottom:26px;
+margin-bottom:24px;
 line-height:1.5;
-font-style:italic;
 }
+
+.cut{
+background:rgba(229,0,60,.18);
+border-left:5px solid var(--red);
+padding:20px;
+border-radius:16px;
+font-size:14px;
+line-height:1.6;
+margin-bottom:26px;
+color:#FFD6E3;
+}
+
+.cut strong{color:var(--gold)}
 
 .section-title{
 font-family:'Bebas Neue',sans-serif;
@@ -87,67 +98,65 @@ margin-bottom:18px;
 }
 
 .proof{
-margin-bottom:22px;
+margin-bottom:18px;
 border-radius:14px;
 overflow:hidden;
-border:1px solid rgba(255,63,129,.35);
-box-shadow:0 8px 24px rgba(0,0,0,.45);
+border:1px solid rgba(255,63,129,.45);
+box-shadow:0 12px 30px rgba(0,0,0,.7);
 }
 
-.proof img{
-width:100%;
-display:block;
-}
+.proof img{width:100%;display:block}
 
 .context{
-margin:24px 0;
+margin:26px 0;
 font-size:14px;
-line-height:1.55;
+line-height:1.6;
 color:var(--muted);
-background:rgba(30,11,38,.8);
-padding:18px;
-border-radius:14px;
-border-left:3px solid var(--pink);
+background:rgba(18,4,10,.95);
+padding:22px;
+border-radius:18px;
+border-left:5px solid var(--pink);
 }
 
-.context strong{
-color:var(--gold);
-}
+.context strong{color:var(--gold)}
 
 .final{
 margin-top:26px;
-font-size:14px;
-line-height:1.55;
+font-size:15px;
+line-height:1.65;
 text-align:center;
-color:var(--muted);
+color:#FFE0EA;
 }
 
+.final strong{color:var(--gold)}
+
 .cta{
-margin-top:24px;
+margin-top:28px;
 width:100%;
-padding:20px;
+padding:24px;
 border:none;
-border-radius:50px;
-background:linear-gradient(90deg,var(--pink),var(--red));
+border-radius:70px;
+background:linear-gradient(90deg,var(--red),var(--pink));
 color:#fff;
 font-family:'Bebas Neue',sans-serif;
-font-size:20px;
-letter-spacing:1.5px;
+font-size:22px;
+letter-spacing:2px;
 cursor:pointer;
-box-shadow:0 0 40px rgba(229,0,60,.65);
-transition:.3s;
+box-shadow:0 0 65px rgba(229,0,60,.95);
+transition:.25s;
 }
 
 .cta:hover{
-transform:translateY(-3px);
-box-shadow:0 16px 50px rgba(229,0,60,.9);
+transform:translateY(-5px) scale(1.02);
+box-shadow:0 22px 80px rgba(229,0,60,1);
 }
 
 .note{
-margin-top:14px;
+margin-top:18px;
 font-size:13px;
 text-align:center;
-color:var(--muted);
+color:#E6B0C2;
+opacity:.95;
 }
 </style>
 </head>
@@ -157,62 +166,64 @@ color:var(--muted);
 <div class="container">
 
 <h1>
-ELAS TAMBÉM ESTAVAM
-<span>PRESAS NESSE PADRÃO</span>
+VOCÊ JÁ VIU ESSE FILME
+<span>E SABE COMO ELE TERMINA</span>
 </h1>
 
 <p class="sub">
-Nenhuma delas chegou aqui confiante.<br>
-Elas chegaram cansadas, confusas — e repetindo a mesma história.
+Começa com esperança.<br>
+Termina com silêncio, confusão e culpa.
 </p>
 
+<div class="cut">
+<strong>VAMOS SER HONESTAS:</strong><br><br>
+Você sempre se envolve com o mesmo tipo de homem.<br>
+Sempre acredita que “com você vai ser diferente”.<br>
+Sempre espera atitude, clareza, escolha.<br><br>
+E no final… é você que fica esperando mensagem,
+explicação e migalha emocional.<br><br>
+<strong>Isso não é azar.</strong><br>
+É um padrão que você repete — mesmo sabendo onde dá.
+</div>
+
 <div class="section-title">
-O QUE MUDOU NÃO FOI O HOMEM
+ELAS TAMBÉM SE VIAM AQUI
 </div>
 
-<div class="proof">
-<img src="src/img/provasocial.jpg" alt="Depoimento real" loading="lazy">
-</div>
-
-<div class="proof">
-<img src="src/img/ps3.png" alt="Depoimento real" loading="lazy">
-</div>
-
-<div class="proof">
-<img src="src/img/ps2.png" alt="Depoimento real" loading="lazy">
-</div>
-
-<div class="proof">
-<img src="src/img/ps4.png" alt="Depoimento real" loading="lazy">
-</div>
-
-<div class="proof">
-<img src="src/img/ps6.png" alt="Depoimento real" loading="lazy">
-</div>
+<div class="proof"><img src="src/img/provasocial.jpg" alt="Depoimento real"></div>
+<div class="proof"><img src="src/img/ps3.png" alt="Depoimento real"></div>
+<div class="proof"><img src="src/img/ps2.png" alt="Depoimento real"></div>
+<div class="proof"><img src="src/img/ps4.png" alt="Depoimento real"></div>
+<div class="proof"><img src="src/img/ps6.png" alt="Depoimento real"></div>
 
 <div class="context">
-<strong>O ponto em comum entre elas?</strong><br><br>
-Elas pararam de tentar “ativar desejo”, “segurar alguém”
-ou jogar papéis que nunca funcionaram.
-<br><br>
-Elas ajustaram a <strong>dinâmica emocional</strong> —
-e o comportamento masculino mudou como consequência.
+<strong>O que todas tinham em comum?</strong><br><br>
+Não era falta de beleza.<br>
+Não era falta de valor.<br>
+Era a <strong>dinâmica emocional errada</strong> —
+a mesma que faz o homem relaxar,
+sumir, empurrar com a barriga e nunca escolher.<br><br>
+Quando essa dinâmica muda,
+o comportamento masculino muda junto.
 </div>
 
 <p class="final">
-Você não está atrasada.<br>
-Você só nunca teve acesso ao ajuste certo.
-<br><br>
-A próxima página mostra exatamente
-como esse reposicionamento acontece.
+Agora você pode fechar essa página<br>
+e fingir que não é com você.<br><br>
+Ou pode admitir uma coisa incômoda:<br>
+<strong>se nada mudar agora, o próximo homem
+vai repetir exatamente o mesmo roteiro.</strong><br><br>
+Essa escolha é sua.<br>
+Mas ela precisa ser feita <strong>agora</strong>.
 </p>
 
 <button class="cta" onclick="window.location.href='mulherhipnotica.html'">
-QUERO ACESSAR O MÉTODO AGORA
+QUERO PARAR DE REPETIR ESSE PADRÃO
 </button>
 
 <p class="note">
-🔒 Acesso liberado apenas para quem chegou até aqui
+⚠️ Você só vê essa página uma vez.<br>
+Sair agora é escolher continuar igual.
 </p>
 
 </div>

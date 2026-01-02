@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Código da Mulher Hipnótica — Acesso Final</title>
+<title>Se Você Não Mudar Agora, Nada Muda</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,10 +17,9 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1208952827491954');
-fbq('track', 'PageView');
+fbq('init','1208952827491954');
+fbq('track','PageView');
 </script>
-<!-- End Meta Pixel Code -->
 
 <style>
 :root{
@@ -32,7 +31,6 @@ fbq('track', 'PageView');
 --text:#FAF1F4;
 --muted:#D8B9C3;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
@@ -45,7 +43,7 @@ padding:18px;
 .container{
 max-width:720px;
 margin:auto;
-background:rgba(12,12,12,.96);
+background:rgba(12,12,12,.97);
 border-radius:26px;
 padding:36px 26px;
 border:1px solid rgba(255,63,129,.6);
@@ -54,17 +52,6 @@ position:relative;
 overflow:hidden;
 }
 
-.container::before{
-content:"";
-position:absolute;
-inset:-2px;
-background:linear-gradient(45deg,var(--pink),var(--red),var(--bg1));
-filter:blur(14px);
-opacity:.35;
-z-index:-1;
-}
-
-/* HEADER */
 h1{
 font-family:'Bebas Neue',sans-serif;
 font-size:42px;
@@ -72,7 +59,7 @@ line-height:1.05;
 text-align:center;
 color:var(--gold);
 }
-h1 span{color:var(--pink);}
+h1 span{color:var(--pink)}
 
 .sub{
 margin-top:16px;
@@ -92,39 +79,16 @@ border:2px dashed var(--pink);
 text-align:center;
 max-width:420px;
 }
-.timer-box p{
-font-size:13px;
-color:var(--muted);
-margin-bottom:6px;
-}
-.timer{
-font-size:30px;
-font-weight:800;
-color:var(--gold);
-}
+.timer-box p{font-size:13px;color:var(--muted)}
+.timer{font-size:30px;font-weight:800;color:var(--gold)}
 
 /* HERO */
-.hero{
-margin-top:26px;
-text-align:center;
-}
-.hero img{
-width:100%;
-max-width:360px;
-margin:0 auto 18px;
-display:block;
-}
-.hero p{
-font-size:15px;
-line-height:1.7;
-color:#F2C9D8;
-}
+.hero{text-align:center;margin-top:26px}
+.hero img{width:100%;max-width:360px;margin-bottom:18px}
+.hero p{font-size:15px;line-height:1.7;color:#F2C9D8}
 
 /* LISTA */
-ul{
-list-style:none;
-margin-top:22px;
-}
+ul{list-style:none;margin-top:22px}
 ul li{
 margin:14px 0;
 padding:18px;
@@ -135,6 +99,19 @@ font-size:15px;
 color:#F6D1DE;
 }
 
+/* BLOCO CONFRONTO */
+.cut{
+margin:30px 0;
+padding:22px;
+background:rgba(229,0,60,.22);
+border-left:5px solid var(--red);
+border-radius:18px;
+font-size:15px;
+line-height:1.65;
+color:#FFE0EA;
+}
+.cut strong{color:var(--gold)}
+
 /* PREÇO */
 .price-box{
 margin:36px 0;
@@ -144,28 +121,10 @@ border-radius:22px;
 border:2px solid var(--pink);
 text-align:center;
 }
-.old{
-font-size:14px;
-color:#aaa;
-text-decoration:line-through;
-}
-.new{
-font-size:46px;
-font-weight:900;
-color:var(--gold);
-margin:6px 0;
-}
-.discount{
-font-size:14px;
-color:var(--pink);
-font-weight:700;
-}
-.vagas{
-margin-top:12px;
-font-size:14px;
-color:var(--gold);
-font-weight:800;
-}
+.old{font-size:14px;color:#aaa;text-decoration:line-through}
+.new{font-size:46px;font-weight:900;color:var(--gold)}
+.discount{font-size:14px;color:var(--pink);font-weight:700}
+.vagas{margin-top:12px;font-size:14px;color:var(--gold);font-weight:800}
 
 /* BOTÃO */
 .button{
@@ -183,72 +142,25 @@ box-shadow:0 16px 45px rgba(255,63,129,.9);
 text-transform:uppercase;
 }
 
+/* FINAL MALANDRO */
+.final-hit{
+margin-top:30px;
+padding:24px;
+background:rgba(0,0,0,.7);
+border-radius:20px;
+border:1px solid rgba(255,63,129,.6);
+font-size:16px;
+line-height:1.7;
+color:#FFD6E4;
+text-align:center;
+}
+.final-hit strong{color:var(--gold)}
+
 .cta-sub{
 margin-top:12px;
 text-align:center;
 font-size:12px;
 color:#EFC3D3;
-}
-
-/* PAGAMENTOS / GARANTIA */
-.payments,.garantia{
-margin-top:22px;
-text-align:center;
-}
-.payments img{max-width:260px;width:100%;}
-.garantia img{max-width:200px;width:100%;}
-
-/* COPY GARANTIA */
-.garantia-copy{
-margin-top:16px;
-padding:18px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,63,129,.4);
-border-radius:18px;
-font-size:14px;
-line-height:1.6;
-color:#F6D1DE;
-text-align:left;
-}
-.garantia-copy strong{
-color:var(--gold);
-font-weight:800;
-}
-
-/* POPUP */
-.popup{
-position:fixed;
-bottom:18px;
-left:18px;
-background:#120617;
-border:1px solid rgba(255,63,129,.7);
-border-radius:14px;
-padding:14px 18px;
-display:none;
-box-shadow:0 10px 30px rgba(0,0,0,.6);
-z-index:9999;
-opacity:0;
-}
-.popup strong{color:var(--gold);font-size:13px;}
-.popup span{display:block;font-size:12px;color:#EFC3D3;}
-.popup.show{animation:fadeIn .4s ease forwards;}
-.popup.hide{animation:fadeOut .4s ease forwards;}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-@keyframes fadeOut{
-to{opacity:0;transform:translateY(20px);}
-}
-
-@media(max-width:480px){
-.popup{
-left:12px;
-bottom:12px;
-width:calc(100% - 24px);
-max-width:320px;
-}
 }
 </style>
 </head>
@@ -257,130 +169,93 @@ max-width:320px;
 
 <div class="container">
 
-<h1>O AJUSTE EMOCIONAL<br><span>QUE FAZ ELE TE PRIORITAR</span></h1>
+<h1>O AJUSTE EMOCIONAL<br><span>QUE MUDA A DINÂMICA</span></h1>
 
 <div class="sub">
-Sem joguinhos. Sem implorar. Sem perder sua essência.
+Você já tentou do seu jeito.<br>
+Agora só resta decidir se continua igual.
 </div>
 
 <div class="timer-box">
-<p>Essa condição especial fica disponível por:</p>
+<p>Essa condição expira em:</p>
 <div class="timer" id="timer">09:47</div>
 </div>
 
 <div class="hero">
-<img src="src/img/meterial.png" alt="Código da Mulher Hipnótica">
+<img src="src/img/meterial.png">
 <p>
-Você não chegou até aqui por curiosidade.<br>
-Chegou porque reconheceu um padrão —  
-e agora tem a chance real de <strong>encerrar esse ciclo</strong>.
+Você não chegou aqui por acaso.<br>
+Chegou porque cansou de repetir o mesmo final.
 </p>
 </div>
 
 <ul>
-<li>Como agir quando ele esfria sem entrar em ansiedade</li>
-<li>O comportamento que ativa respeito automático</li>
-<li>O ajuste interno que muda a dinâmica sem esforço</li>
-<li>Como parar de se entregar mais do que recebe</li>
+<li>Como parar de esperar atitude de quem nunca escolhe</li>
+<li>O ajuste que muda o jogo sem cobrança</li>
+<li>O comportamento que faz o homem se posicionar</li>
+<li>Como sair do ciclo de migalhas emocionais</li>
 </ul>
+
+<div class="cut">
+<strong>VAMOS SER DIRETAS:</strong><br><br>
+Se você continuar reagindo do mesmo jeito,<br>
+atraindo o mesmo tipo de homem,<br>
+esperando a mesma validação…<br><br>
+<strong>O resultado vai ser o mesmo.</strong><br><br>
+Entender ajuda.<br>
+Mas <strong>só mudar o comportamento muda a história.</strong>
+</div>
 
 <div class="price-box">
 <div class="old">DE R$397,00</div>
-<div class="new">POR APENAS R$27,90</div>
-<div class="discount">Liberação especial para quem concluiu o teste</div>
+<div class="new">R$27,90</div>
+<div class="discount">Liberação única após o teste</div>
 <div class="vagas">
-⚠️ Restam apenas <strong><span id="vagasCount">17</span> vagas</strong> com esse valor
+⚠️ Restam <strong><span id="vagasCount">17</span> acessos</strong>
 </div>
 </div>
 
 <button class="button" onclick="initiateCheckout()">
-QUERO ENCERRAR ESSE PADRÃO AGORA
+EU DECIDO MUDAR AGORA
 </button>
 
+<div class="final-hit">
+<strong>Presta atenção:</strong><br><br>
+Se você fechar essa página,<br>
+nada muda.<br><br>
+O próximo homem vai ativar o mesmo gatilho.<br>
+A mesma ansiedade.<br>
+O mesmo silêncio no final.<br><br>
+<strong>Se você não mudar agora, nada muda.</strong><br>
+E no fundo, você sabe disso.
+</div>
+
 <div class="cta-sub">
-Acesso imediato • Conteúdo 100% digital
-</div>
-
-<div class="payments">
-<img src="src/img/formasdepagamentocartoes.webp">
-</div>
-
-<div class="garantia">
-<img src="src/img/30-DIAS-FINAL-1.svg">
-</div>
-
-<div class="garantia-copy">
-<strong>Garantia Incondicional de 30 Dias</strong><br><br>
-Esse método gera clareza emocional já nos primeiros dias e foi pensado para que você se sinta segura desde o início.<br><br>
-Mesmo assim, você tem <strong>30 dias completos</strong> para acessar tudo com tranquilidade absoluta.<br>
-Se por qualquer motivo decidir não continuar, o reembolso é simples e imediato.<br><br>
-<strong>Você entra segura.</strong><br>
-<strong>Eu assumo todo o risco.</strong>
+Acesso imediato • Conteúdo digital • Decisão sem replay
 </div>
 
 </div>
-
-<div class="popup" id="popup"></div>
 
 <script>
-// TIMER
-let time = 9 * 60 + 47;
-const timerEl = document.getElementById("timer");
-
+let time=9*60+47;
+const timer=document.getElementById("timer");
 setInterval(()=>{
-let m=Math.floor(time/60);
-let s=time%60;
-timerEl.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+let m=Math.floor(time/60),s=time%60;
+timer.innerHTML=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 if(time>0)time--;
 },1000);
 
-// ESCASSEZ DINÂMICA
-let vagas = 17;
-const vagasEl = document.getElementById("vagasCount");
+let vagas=17;
+const vagasEl=document.getElementById("vagasCount");
+setInterval(()=>{if(vagas>1){vagas--;vagasEl.innerText=vagas}},20000);
 
-// POPUP PROVA SOCIAL
-const names=["Luiza","Ana","Larissa","Bruna","Melissa","Camila","Renata","Juliana"];
-const popup=document.getElementById("popup");
-
-function showPopup(){
-if(vagas <= 0) return;
-
-const name = names[Math.floor(Math.random()*names.length)];
-popup.innerHTML = `<strong>${name} acabou de comprar</strong><span>Código da Mulher Hipnótica</span>`;
-popup.style.display="block";
-popup.classList.remove("hide");
-popup.classList.add("show");
-
-// DIMINUI VAGA
-vagas--;
-vagasEl.innerText = vagas;
-
-setTimeout(()=>{
-popup.classList.remove("show");
-popup.classList.add("hide");
-},4000);
-
-popup.addEventListener("animationend",()=>{
-if(popup.classList.contains("hide")){
-popup.style.display="none";
-}
-},{once:true});
-}
-
-setInterval(showPopup, Math.floor(Math.random() * (24000 - 12000) + 12000));
-
-// INITIATE CHECKOUT
 function initiateCheckout(){
-  if(typeof fbq === 'function'){
-    fbq('track','InitiateCheckout',{
-      value:27.90,
-      currency:'BRL'
-    });
-  }
-
-  setTimeout(function(){
-    window.location.href='https://pay.sunize.com.br/sNeLGlfr';
-  },300);
+if(typeof fbq==='function'){
+fbq('track','InitiateCheckout',{value:27.90,currency:'BRL'});
+}
+setTimeout(()=>{
+window.location.href='https://pay.sunize.com.br/sNeLGlfr';
+},300);
 }
 </script>
 
