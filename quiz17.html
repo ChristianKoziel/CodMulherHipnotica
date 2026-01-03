@@ -302,10 +302,9 @@ body{
 
 <!-- ================= CONTEÚDO PRINCIPAL ================= -->
 <div class="page-container">
-
   <div class="container" id="content">
 
-    <!-- ===== BLOCO ABERTURA HUMANIZADA ===== -->
+    <!-- ===== ABERTURA HUMANIZADA ===== -->
     <div class="expert-text-intro">
       <h4>Uma leitura emocional feita por quem entende o que você vive</h4>
 
@@ -316,40 +315,39 @@ body{
       </p>
 
       <p>
-        Muitas mulheres chegam até aqui
-        achando que o problema é intensidade,
+        Muitas mulheres acham que o problema é intensidade,
         sensibilidade demais
         ou entrega excessiva.
       </p>
 
-      <p>
-        Não é.
-      </p>
+      <p><strong>Não é.</strong></p>
     </div>
 
-    <!-- ===== FOTO DA EXPERT ===== -->
+    <!-- ===== FOTO DA EXPERT (VISÍVEL E CENTRAL) ===== -->
     <div class="expert-photo-wrapper">
-      <img src="src/img/Ensaio de fotos social media.jpg" alt="Eliza Maffer" class="expert-photo">
+      <img
+        src="src/img/Ensaio de fotos social media.jpg"
+        alt="Eliza Maffer"
+        class="expert-photo-rect"
+      >
       <div class="expert-name">
-        Eliza Maffer<br>
-        <span>Especialista em dinâmica emocional nos relacionamentos</span>
+        <strong>Eliza Maffer</strong><br>
+        <span>Psicóloga especializada em dinâmica emocional nos relacionamentos</span>
       </div>
     </div>
 
     <!-- ===== TEXTO DE AUTORIDADE SUAVE ===== -->
     <div class="expert-text">
       <p>
-        Meu nome é <strong>Eliza Maffer</strong>.
-        Meu trabalho é ajudar mulheres a entenderem
-        os padrões emocionais invisíveis
+        Meu trabalho é ajudar mulheres a identificarem
+        padrões emocionais invisíveis
         que se repetem nas relações —
         mesmo quando o parceiro muda.
       </p>
 
       <p>
         Ao longo dos anos,
-        acompanhei de perto histórias muito parecidas com a sua:
-        relações que começam com conexão,
+        acompanhei histórias que começam com conexão,
         mas terminam em silêncio,
         dúvida
         e espera.
@@ -362,7 +360,7 @@ body{
       </p>
 
       <p>
-        É apenas a leitura de um padrão emocional
+        É apenas a leitura de um padrão
         que pode ser interrompido
         sem jogos,
         sem cobranças
@@ -446,55 +444,53 @@ body{
 .expert-text-intro{
   margin-bottom:18px;
 }
-
 .expert-text-intro h4{
   font-family:'Bebas Neue',sans-serif;
   font-size:22px;
   color:#FFD700;
   margin-bottom:10px;
 }
-
 .expert-text-intro p{
-  font-size:14px;
-  line-height:1.6;
+  font-size:15px;
+  line-height:1.65;
   color:#E6C7D0;
   margin-bottom:10px;
 }
 
+/* FOTO CENTRAL E VISÍVEL */
 .expert-photo-wrapper{
   display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:16px;
-  margin:20px 0 24px;
+  margin:18px 0 22px;
 }
-
-.expert-photo{
-  width:88px;
-  height:88px;
-  border-radius:50%;
+.expert-photo-rect{
+  width:100%;
+  max-width:320px;
+  height:auto;
+  border-radius:16px;
   object-fit:cover;
   border:3px solid #FF3F81;
-  box-shadow:0 0 16px rgba(255,63,129,.6);
+  box-shadow:0 0 24px rgba(255,63,129,.5);
 }
-
 .expert-name{
+  text-align:center;
+  margin-top:10px;
   font-size:14px;
   color:#E6C7D0;
 }
-
 .expert-name span{
   font-size:12px;
   color:#FFD700;
 }
 
 .expert-text p{
-  font-size:14px;
-  line-height:1.6;
+  font-size:15px;
+  line-height:1.65;
   color:#E6C7D0;
   margin-bottom:10px;
 }
 </style>
-
 
 <script>
 let progress = 0;
