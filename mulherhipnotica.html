@@ -7,6 +7,25 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
+<!-- FACEBOOK PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1208952827491954');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"/>
+</noscript>
+<!-- FIM PIXEL -->
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -32,7 +51,6 @@ h1{
   line-height:1.05;
 }
 h1 span{color:#FF3F81}
-
 .sub{
   text-align:center;
   font-size:16px;
@@ -40,7 +58,6 @@ h1 span{color:#FF3F81}
   margin:18px 0 10px;
   font-weight:600;
 }
-
 .alert{
   margin-top:20px;
   padding:18px;
@@ -50,7 +67,6 @@ h1 span{color:#FF3F81}
   font-size:15px;
   line-height:1.6;
 }
-
 .block{
   margin-top:26px;
   padding:22px;
@@ -60,7 +76,6 @@ h1 span{color:#FF3F81}
   font-size:15px;
   line-height:1.7;
 }
-
 ul{list-style:none;margin-top:18px}
 ul li{
   margin:14px 0;
@@ -70,8 +85,6 @@ ul li{
   border-left:4px solid #FF3F81;
   font-size:15px;
 }
-
-/* PRODUTO */
 .product{
   margin:36px 0 26px;
   text-align:center;
@@ -84,8 +97,6 @@ ul li{
     0 0 0 2px rgba(255,63,129,.6),
     0 20px 60px rgba(255,63,129,.55);
 }
-
-/* ENTREGA */
 .entrega{
   margin-top:30px;
   padding:22px;
@@ -105,8 +116,6 @@ ul li{
   line-height:1.6;
   color:#F3CBD8;
 }
-
-/* PREÇO */
 .price-box{
   margin:34px 0 18px;
   padding:28px;
@@ -125,7 +134,6 @@ ul li{
   font-weight:900;
   color:#FFD700;
 }
-
 .urgency{
   margin-top:14px;
   padding:14px;
@@ -140,7 +148,6 @@ ul li{
   50%{transform:scale(1.04)}
   100%{transform:scale(1)}
 }
-
 .button{
   width:100%;
   padding:26px;
@@ -153,14 +160,12 @@ ul li{
   cursor:pointer;
   box-shadow:0 18px 55px rgba(255,63,129,.95);
 }
-
 .micro{
   margin-top:12px;
   text-align:center;
   font-size:12px;
   color:#E1B7C4;
 }
-
 .garantia{
   margin-top:30px;
   padding:22px;
@@ -176,7 +181,6 @@ ul li{
   margin:0 auto 10px;
   display:block;
 }
-
 .cta2{
   margin-top:30px;
   padding:22px;
@@ -195,7 +199,6 @@ ul li{
   background:linear-gradient(45deg,#FFD700,#FF3F81);
   color:#000;
 }
-
 .footer{
   margin-top:20px;
   text-align:center;
@@ -242,7 +245,6 @@ E você continua se perguntando onde errou.
 <li>Como se posicionar sem afastar</li>
 </ul>
 
-<!-- FOTO DO PRODUTO AQUI, SEU ANIMAL -->
 <div class="product">
   <img src="src/img/codigovertical.png" alt="O Código da Mulher Hipnótica">
 </div>
@@ -259,19 +261,9 @@ E você continua se perguntando onde errou.
 </div>
 
 <div class="block" style="margin-top:32px;">
-  <strong>COM QUEM VOCÊ VAI APRENDER</strong><br><br>
-
-  <strong>Eliza Maffer</strong> é especialista em relacionamentos e dinâmica emocional.<br><br>
-
-  Ao longo dos últimos anos, ajudou milhares de mulheres a saírem de relações confusas,
-  ciclos de ansiedade, silêncio e indefinição — sem precisar implorar, discutir ou se anular.<br><br>
-
-  O método ensinado aqui não vem de teoria bonita,
-  mas da observação real de como homens respondem
-  quando a postura emocional da mulher muda.<br><br>
-
-  <strong>Mais de 23.000 mulheres</strong> já passaram por essa metodologia
-  e aplicaram esses ajustes na vida real.
+<strong>COM QUEM VOCÊ VAI APRENDER</strong><br><br>
+<strong>Eliza Maffer</strong> é especialista em relacionamentos e dinâmica emocional.<br><br>
+<strong>Mais de 23.000 mulheres</strong> já aplicaram essa metodologia.
 </div>
 
 <div class="price-box">
@@ -282,7 +274,7 @@ E você continua se perguntando onde errou.
 </div>
 </div>
 
-<button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
+<button class="button" onclick="iniciarCheckout()">
 GARANTIR MEU ACESSO AGORA
 </button>
 
@@ -291,18 +283,18 @@ GARANTIR MEU ACESSO AGORA
 </div>
 
 <div class="garantia">
-  <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
-  <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-  Se em até 7 dias você não sentir mais clareza,
-  controle emocional e segurança ao se posicionar,<br>
-  você pede o reembolso — sem perguntas,
-  sem justificativa e sem dor de cabeça.
+<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
+<strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
+Se em até 7 dias você não sentir mais clareza,
+controle emocional e segurança ao se posicionar,<br>
+você pede o reembolso — sem perguntas,
+sem justificativa e sem dor de cabeça.
 </div>
 
 <div class="cta2">
 <strong>Você pode continuar errando…</strong><br>
 ou aprender o que funciona de verdade.
-<button onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
+<button onclick="iniciarCheckout()">
 SIM, QUERO PARAR DE ERRAR
 </button>
 </div>
@@ -312,6 +304,15 @@ SIM, QUERO PARAR DE ERRAR
 </div>
 
 </div>
+
+<script>
+function iniciarCheckout(){
+  if(typeof fbq === 'function'){
+    fbq('track', 'InitiateCheckout');
+  }
+  window.location.href = 'https://pay.sunize.com.br/sNeLGlfr';
+}
+</script>
 
 </body>
 </html>
