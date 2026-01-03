@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Poppins',sans-serif;
-  background:#080808;
+  background:#070707;
   color:#FAF1F4;
   padding:14px;
 }
@@ -22,66 +22,118 @@ body{
   border-radius:22px;
   padding:34px 22px;
   border:1px solid rgba(255,63,129,.55);
-  box-shadow:0 0 50px rgba(255,63,129,.35);
+  box-shadow:0 0 60px rgba(255,63,129,.35);
 }
 h1{
   font-family:'Bebas Neue',sans-serif;
-  font-size:40px;
+  font-size:42px;
   text-align:center;
   color:#FFD700;
   line-height:1.05;
 }
 h1 span{color:#FF3F81}
+
 .sub{
   text-align:center;
   font-size:16px;
   color:#F2C9D8;
-  margin-top:18px;
+  margin:18px 0 10px;
   font-weight:600;
 }
+
+.alert{
+  margin-top:20px;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,0,90,.18);
+  border-left:5px solid #FF3F81;
+  font-size:15px;
+  line-height:1.6;
+}
+
 .block{
   margin-top:26px;
   padding:22px;
   border-radius:18px;
   background:rgba(255,63,129,.14);
-  border-left:5px solid #FF3F81;
+  border-left:5px solid #FFD700;
   font-size:15px;
   line-height:1.7;
-  color:#F6D1DE;
 }
+
 .block strong{color:#FFD700}
+
 ul{list-style:none;margin-top:18px}
 ul li{
   margin:14px 0;
   padding:18px;
   border-radius:16px;
   background:rgba(255,63,129,.14);
-  border-left:4px solid #FFD700;
+  border-left:4px solid #FF3F81;
   font-size:15px;
 }
-.product{
-  margin:36px 0;
+
+/* ENTREGA */
+.entrega{
+  margin-top:30px;
+  padding:22px;
+  border-radius:20px;
+  background:#000;
+  border:2px solid #FF3F81;
+}
+.entrega h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;
+  color:#FFD700;
+  margin-bottom:14px;
   text-align:center;
 }
-.product img{
-  width:100%;
-  max-width:360px;
-  border-radius:18px;
-  box-shadow:0 18px 50px rgba(0,0,0,.8);
+.entrega p{
+  font-size:15px;
+  line-height:1.6;
+  color:#F3CBD8;
 }
+
+/* PREÇO */
 .price-box{
-  margin:30px 0;
+  margin:34px 0 18px;
   padding:28px;
   background:#000;
   border-radius:22px;
-  border:2px solid #FF3F81;
+  border:2px solid #FFD700;
   text-align:center;
 }
-.old{font-size:14px;color:#999;text-decoration:line-through}
-.new{font-size:48px;font-weight:800;color:#FFD700}
+.old{
+  font-size:14px;
+  color:#999;
+  text-decoration:line-through;
+}
+.new{
+  font-size:48px;
+  font-weight:900;
+  color:#FFD700;
+}
+
+/* URGÊNCIA */
+.urgency{
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background:rgba(255,63,129,.2);
+  border:1px dashed #FF3F81;
+  font-size:14px;
+  animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+  100%{transform:scale(1)}
+}
+
+/* BOTÃO */
 .button{
   width:100%;
-  padding:28px;
+  padding:26px;
   font-size:22px;
   font-weight:900;
   border:none;
@@ -89,8 +141,17 @@ ul li{
   background:linear-gradient(45deg,#FF3F81,#E5003C);
   color:#FFF;
   cursor:pointer;
-  box-shadow:0 16px 50px rgba(255,63,129,.95);
+  box-shadow:0 18px 55px rgba(255,63,129,.95);
 }
+
+.micro{
+  margin-top:12px;
+  text-align:center;
+  font-size:12px;
+  color:#E1B7C4;
+}
+
+/* GARANTIA */
 .garantia{
   margin-top:30px;
   padding:22px;
@@ -106,11 +167,32 @@ ul li{
   margin:0 auto 10px;
   display:block;
 }
-.payments{
-  margin-top:20px;
+
+/* SEGUNDO CTA */
+.cta2{
+  margin-top:30px;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,63,129,.18);
   text-align:center;
 }
-.payments img{max-width:260px}
+.cta2 button{
+  margin-top:14px;
+  width:100%;
+  padding:24px;
+  font-size:20px;
+  font-weight:900;
+  border:none;
+  border-radius:60px;
+  background:linear-gradient(45deg,#FFD700,#FF3F81);
+  color:#000;
+}
+.footer{
+  margin-top:20px;
+  text-align:center;
+  font-size:11px;
+  opacity:.5;
+}
 </style>
 </head>
 
@@ -120,59 +202,84 @@ ul li{
 
 <h1>
 SE VOCÊ NÃO AGUENTA MAIS<br>
-<span>SE SENTIR CONFUSA E IGNORADA</span>
+<span>SER IGNORADA E CONFUSA</span>
 </h1>
 
 <div class="sub">
-Isso não é sobre amar demais.<br>
-É sobre não saber como se posicionar.
+Não é falta de amor.<br>
+É falta de controle emocional da dinâmica.
+</div>
+
+<div class="alert">
+⚠️ Enquanto você lê isso, ele continua vivendo a vida dele.<br>
+E você continua se perguntando onde errou.
 </div>
 
 <div class="block">
-<strong>Se você se identifica com isso:</strong><br><br>
-• Ele fica online e não responde<br>
-• Você digita, apaga e não sabe o que mandar<br>
-• A conversa nunca evolui<br>
-• Ele esfria e você não sabe o que fazer<br>
-• Falar de relacionamento parece sempre arriscado<br><br>
+<strong>Se isso acontece com você:</strong><br><br>
+• Ele visualiza e some<br>
+• Você pensa demais antes de responder<br>
+• A conversa morre do nada<br>
+• Você sente que sempre gosta mais<br>
+• Tem medo de se posicionar e perder ele<br><br>
 <strong>O problema não é você.</strong><br>
-É a dinâmica emocional que se repete.
+É o jogo emocional — e ninguém te ensinou a jogar.
 </div>
-
-<div class="product">
-  <img src="src/img/codigovertical.png">
-</div>
-
-<p style="text-align:center;font-size:15px;line-height:1.7;color:#E6C3CF">
-Método desenvolvido por <strong>Eliza Maffer</strong>, psicóloga especializada
-em dinâmica emocional nos relacionamentos.<br>
-Mais de <strong>23.000 mulheres</strong> já aplicaram.
-</p>
 
 <ul>
-<li>Saber exatamente o que dizer quando ele esfria</li>
-<li>Parar de correr atrás sem virar fria</li>
-<li>Gerar conversas que mantêm interesse</li>
-<li>Se posicionar com clareza sem medo</li>
+<li>O que dizer quando ele esfria (sem parecer carente)</li>
+<li>Como inverter o jogo sem correr atrás</li>
+<li>Como gerar desejo emocional real</li>
+<li>Como se posicionar sem afastar</li>
 </ul>
+
+<div class="entrega">
+<h2>O QUE VOCÊ VAI RECEBER</h2>
+<p>
+✔ Método passo a passo<br>
+✔ Mensagens prontas para cada situação<br>
+✔ Estratégias emocionais que ativam interesse<br>
+✔ Acesso imediato e vitalício<br>
+✔ Pode aplicar no mesmo dia
+</p>
+</div>
 
 <div class="price-box">
 <div class="old">De R$397,00</div>
 <div class="new">R$27,90</div>
+
+<div class="urgency">
+🔥 Restam apenas <strong>7 acessos</strong> com esse valor promocional hoje
+</div>
 </div>
 
 <button class="button" onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
-QUERO PARAR DE ERRAR AGORA
+GARANTIR MEU ACESSO AGORA
 </button>
+
+<div class="micro">
+⚠️ Oferta pode sair do ar a qualquer momento<br>
+Acesso liberado imediatamente após o pagamento
+</div>
 
 <div class="garantia">
 <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
-Garantia incondicional de 7 dias<br>
-Ou seu dinheiro de volta.
+Teste por 7 dias.<br>
+Se não sentir diferença real, devolvemos 100% do seu dinheiro.
 </div>
 
-<div class="payments">
-<img src="src/img/formasdepagamentocartoes.webp">
+<div class="cta2">
+<strong>Ainda está em dúvida?</strong><br>
+Você pode continuar fazendo tudo igual…<br>
+ou aprender o que funciona de verdade.
+<button onclick="location.href='https://pay.sunize.com.br/sNeLGlfr'">
+SIM, QUERO PARAR DE ERRAR
+</button>
+</div>
+
+<div class="footer">
+🤍 A escolha é sua — sem risco, sem obrigação.
+Apenas a chance de fazer diferente dessa vez.
 </div>
 
 </div>
