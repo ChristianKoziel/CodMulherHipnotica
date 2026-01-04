@@ -3,28 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Código da Mulher Hipnótica</title>
+<title>Diagnóstico Final — Código da Mulher Hipnótica</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- FACEBOOK PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1208952827491954');
 fbq('track', 'PageView');
 </script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"/>
-</noscript>
-<!-- FIM PIXEL -->
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,178 +27,152 @@ body{
   font-family:'Poppins',sans-serif;
   background:#070707;
   color:#FAF1F4;
-  padding:14px;
+  padding:16px;
 }
 .container{
-  max-width:720px;
+  max-width:980px;
   margin:auto;
   background:#0E0E0E;
-  border-radius:22px;
-  padding:34px 22px;
+  border-radius:24px;
+  padding:42px 28px;
   border:1px solid rgba(255,63,129,.55);
-  box-shadow:0 0 60px rgba(255,63,129,.35);
+  box-shadow:0 0 70px rgba(255,63,129,.35);
 }
+
+/* TITULOS */
 h1{
   font-family:'Bebas Neue',sans-serif;
-  font-size:42px;
+  font-size:44px;
   text-align:center;
   color:#FFD700;
   line-height:1.05;
 }
 h1 span{color:#FF3F81}
+
 .sub{
   text-align:center;
-  font-size:16px;
+  font-size:17px;
   color:#F2C9D8;
-  margin:18px 0 10px;
+  margin:18px 0 26px;
   font-weight:600;
 }
-.alert{
-  margin-top:20px;
-  padding:18px;
-  border-radius:16px;
-  background:rgba(255,0,90,.18);
-  border-left:5px solid #FF3F81;
-  font-size:15px;
-  line-height:1.6;
-}
-.block{
-  margin-top:26px;
-  padding:22px;
+
+/* DIAGNÓSTICO */
+.diagnosis{
+  background:rgba(255,63,129,.12);
+  border-left:6px solid #FF3F81;
+  padding:26px;
   border-radius:18px;
-  background:rgba(255,63,129,.14);
-  border-left:5px solid #FFD700;
-  font-size:15px;
-  line-height:1.7;
+  font-size:16px;
+  line-height:1.75;
 }
-ul{list-style:none;margin-top:18px}
-ul li{
-  margin:14px 0;
-  padding:18px;
-  border-radius:16px;
-  background:rgba(255,63,129,.14);
-  border-left:4px solid #FF3F81;
-  font-size:15px;
+
+/* BLOCO AUTORIDADE */
+.authority{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  margin:44px 0;
+  align-items:center;
 }
+.authority img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 0 40px rgba(255,63,129,.45);
+}
+.authority .text{
+  font-size:16px;
+  line-height:1.75;
+  color:#EBCBD6;
+}
+
+/* ALERTA FUTURO */
+.future{
+  margin-top:36px;
+  padding:26px;
+  background:rgba(255,0,90,.18);
+  border-left:6px solid #FFD700;
+  border-radius:18px;
+  font-size:16px;
+}
+
+/* PRODUTO */
 .product{
-  margin:36px 0 26px;
+  margin:48px 0 32px;
   text-align:center;
 }
 .product img{
   width:100%;
-  max-width:360px;
-  border-radius:20px;
+  max-width:380px;
+  border-radius:22px;
   box-shadow:
     0 0 0 2px rgba(255,63,129,.6),
-    0 20px 60px rgba(255,63,129,.55);
+    0 25px 70px rgba(255,63,129,.6);
 }
+
+/* ENTREGA */
 .entrega{
-  margin-top:30px;
-  padding:22px;
-  border-radius:20px;
   background:#000;
   border:2px solid #FF3F81;
+  border-radius:22px;
+  padding:26px;
 }
 .entrega h2{
   font-family:'Bebas Neue',sans-serif;
-  font-size:30px;
-  color:#FFD700;
-  margin-bottom:14px;
+  font-size:32px;
   text-align:center;
-}
-.entrega p{
-  font-size:15px;
-  line-height:1.6;
-  color:#F3CBD8;
-}
-.price-box{
-  margin:34px 0 18px;
-  padding:28px;
-  background:#000;
-  border-radius:22px;
-  border:2px solid #FFD700;
-  text-align:center;
-}
-.old{
-  font-size:14px;
-  color:#999;
-  text-decoration:line-through;
-}
-.new{
-  font-size:48px;
-  font-weight:900;
   color:#FFD700;
+  margin-bottom:18px;
 }
-.urgency{
-  margin-top:14px;
-  padding:14px;
+.entrega ul{
+  list-style:none;
+}
+.entrega li{
+  margin:14px 0;
+  padding:16px;
+  background:rgba(255,63,129,.14);
+  border-left:4px solid #FFD700;
   border-radius:14px;
-  background:rgba(255,63,129,.2);
-  border:1px dashed #FF3F81;
-  font-size:14px;
-  animation:pulse 1.3s infinite;
 }
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.04)}
-  100%{transform:scale(1)}
+
+/* PREÇO */
+.price{
+  margin:44px 0 22px;
+  background:#000;
+  border:2px solid #FFD700;
+  border-radius:24px;
+  padding:32px;
+  text-align:center;
 }
+.old{color:#999;text-decoration:line-through}
+.new{font-size:52px;font-weight:900;color:#FFD700}
+
 .button{
   width:100%;
-  padding:26px;
+  margin-top:22px;
+  padding:28px;
   font-size:22px;
   font-weight:900;
   border:none;
-  border-radius:60px;
+  border-radius:70px;
   background:linear-gradient(45deg,#FF3F81,#E5003C);
   color:#FFF;
   cursor:pointer;
-  box-shadow:0 18px 55px rgba(255,63,129,.95);
+  box-shadow:0 20px 60px rgba(255,63,129,.95);
 }
-.micro{
-  margin-top:12px;
-  text-align:center;
-  font-size:12px;
-  color:#E1B7C4;
-}
+
 .garantia{
-  margin-top:30px;
-  padding:22px;
-  border-radius:20px;
-  background:rgba(255,215,0,.14);
+  margin-top:36px;
+  background:rgba(255,215,0,.16);
   border:1px solid rgba(255,215,0,.6);
+  border-radius:22px;
+  padding:26px;
   text-align:center;
-  font-size:14px;
-  color:#F6E4AE;
+  font-size:15px;
 }
-.garantia img{
-  width:120px;
-  margin:0 auto 10px;
-  display:block;
-}
-.cta2{
-  margin-top:30px;
-  padding:22px;
-  border-radius:18px;
-  background:rgba(255,63,129,.18);
-  text-align:center;
-}
-.cta2 button{
-  margin-top:14px;
-  width:100%;
-  padding:24px;
-  font-size:20px;
-  font-weight:900;
-  border:none;
-  border-radius:60px;
-  background:linear-gradient(45deg,#FFD700,#FF3F81);
-  color:#000;
-}
-.footer{
-  margin-top:20px;
-  text-align:center;
-  font-size:11px;
-  opacity:.6;
+
+@media(max-width:768px){
+  .authority{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -213,106 +182,89 @@ ul li{
 <div class="container">
 
 <h1>
-SE VOCÊ NÃO AGUENTA MAIS<br>
-<span>SER IGNORADA E CONFUSA</span>
+SEU PADRÃO NÃO É AZAR<br>
+<span>É POSICIONAMENTO EMOCIONAL</span>
 </h1>
 
 <div class="sub">
-Não é falta de amor.<br>
-É falta de controle emocional da dinâmica.
+E enquanto isso não muda, o final sempre será o mesmo.
 </div>
 
-<div class="alert">
-⚠️ Enquanto você lê isso, ele continua vivendo a vida dele.<br>
-E você continua se perguntando onde errou.
+<div class="diagnosis">
+Você cria conexão rápido.<br>
+Se envolve de verdade.<br>
+Entrega presença emocional antes do outro.<br><br>
+
+Isso faz o homem sentir conforto — não urgência.<br>
+Ele fica, mas não se posiciona.<br><br>
+
+<strong>Esse é o padrão.</strong><br>
+E ele se repete mesmo mudando de homem.
 </div>
 
-<div class="block">
-<strong>Se isso acontece com você:</strong><br><br>
-• Ele visualiza e some<br>
-• Você pensa demais antes de responder<br>
-• A conversa morre do nada<br>
-• Você sente que sempre gosta mais<br>
-• Tem medo de se posicionar e perder ele<br><br>
-<strong>O problema não é você.</strong><br>
-É o jogo emocional — e ninguém te ensinou a jogar.
+<div class="authority">
+  <img src="src/img/download (7).jpg" alt="Eliza Maffer">
+  <div class="text">
+    <strong>Eliza Maffer</strong> é psicóloga e especialista em dinâmica emocional nos relacionamentos.<br><br>
+
+    Ao longo dos últimos anos, ajudou milhares de mulheres a entenderem
+    por que sempre acabam em relações indefinidas, confusas
+    e emocionalmente desgastantes.<br><br>
+
+    Seu trabalho não é sobre sedução barata,
+    mas sobre <strong>ajuste psicológico real</strong> —
+    aquele que muda o comportamento do outro
+    sem cobrança, sem implorar e sem se anular.<br><br>
+
+    Mais de <strong>23.000 mulheres</strong> já passaram por essa metodologia.
+  </div>
 </div>
 
-<ul>
-<li>O que dizer quando ele esfria</li>
-<li>Como inverter o jogo sem correr atrás</li>
-<li>Como gerar desejo emocional real</li>
-<li>Como se posicionar sem afastar</li>
-</ul>
+<div class="future">
+Se nada for ajustado, o padrão não some.<br>
+Ele apenas muda de rosto.<br><br>
+
+O próximo homem começa diferente…<br>
+mas termina igual.
+</div>
 
 <div class="product">
-  <img src="src/img/codigovertical.png" alt="O Código da Mulher Hipnótica">
+  <img src="src/img/codigovertical.png" alt="Código da Mulher Hipnótica">
 </div>
 
 <div class="entrega">
-  <h2>O QUE VOCÊ VAI RECEBER AO ENTRAR</h2>
-  <p>
-    ✔ Um método psicológico claro e aplicável, sem joguinhos infantis<br>
-    ✔ Orientações práticas para saber o que dizer quando ele esfria, some ou volta confuso<br>
-    ✔ Ajustes emocionais que mudam a dinâmica sem você precisar insistir<br>
-    ✔ Acesso imediato à plataforma privada, com aulas objetivas e diretas<br>
-    ✔ Conteúdo pensado para gerar resultado real — não motivação vazia
-  </p>
+<h2>O QUE VOCÊ RECEBE AO ENTRAR</h2>
+<ul>
+<li>Método psicológico passo a passo</li>
+<li>O que fazer quando ele esfria ou some</li>
+<li>Como se posicionar sem afastar</li>
+<li>Ajustes internos que mudam a dinâmica</li>
+<li>Acesso imediato à plataforma privada</li>
+</ul>
 </div>
 
-<div class="block" style="margin-top:32px;">
-<strong>COM QUEM VOCÊ VAI APRENDER</strong><br><br>
-<strong>Eliza Maffer</strong> é especialista em relacionamentos e dinâmica emocional.<br><br>
-<strong>Mais de 23.000 mulheres</strong> já aplicaram essa metodologia.
-</div>
-
-<div class="price-box">
+<div class="price">
 <div class="old">De R$397,00</div>
 <div class="new">R$27,90</div>
-<div class="urgency">
-🔥 Restam apenas <strong>7 acessos</strong> com esse valor promocional hoje
-</div>
-</div>
 
-<button class="button" onclick="iniciarCheckout()">
-GARANTIR MEU ACESSO AGORA
+<button class="button"
+onclick="
+fbq('track','InitiateCheckout');
+location.href='https://pay.sunize.com.br/sNeLGlfr';
+">
+QUERO PARAR DE REPETIR ESSE PADRÃO
 </button>
-
-<div class="micro">
-💗 Compra segura • Garantia de 7 dias • Sem risco pra você
 </div>
 
 <div class="garantia">
-<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
+<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png" style="width:120px"><br><br>
 <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-Se em até 7 dias você não sentir mais clareza,
-controle emocional e segurança ao se posicionar,<br>
-você pede o reembolso — sem perguntas,
-sem justificativa e sem dor de cabeça.
-</div>
-
-<div class="cta2">
-<strong>Você pode continuar errando…</strong><br>
-ou aprender o que funciona de verdade.
-<button onclick="iniciarCheckout()">
-SIM, QUERO PARAR DE ERRAR
-</button>
-</div>
-
-<div class="footer">
-🤍 Sem risco • Sem obrigação • Apenas a chance de fazer diferente
+Ou você sente mais clareza, controle emocional
+e segurança ao se posicionar,<br>
+ou recebe 100% do seu dinheiro de volta.
 </div>
 
 </div>
-
-<script>
-function iniciarCheckout(){
-  if(typeof fbq === 'function'){
-    fbq('track', 'InitiateCheckout');
-  }
-  window.location.href = 'https://pay.sunize.com.br/sNeLGlfr';
-}
-</script>
 
 </body>
 </html>
