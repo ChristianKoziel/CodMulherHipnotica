@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diagnóstico Final — Código da Mulher Hipnótica</title>
+<title>O Código da Mulher Hipnótica</title>
 
+<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- FACEBOOK PIXEL -->
@@ -23,26 +24,28 @@ fbq('track', 'PageView');
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#070707;
   color:#FAF1F4;
-  padding:16px;
+  padding:14px;
 }
+
 .container{
-  max-width:980px;
+  max-width:720px;
   margin:auto;
   background:#0E0E0E;
-  border-radius:24px;
-  padding:42px 28px;
+  border-radius:22px;
+  padding:36px 22px;
   border:1px solid rgba(255,63,129,.55);
-  box-shadow:0 0 70px rgba(255,63,129,.35);
+  box-shadow:0 0 60px rgba(255,63,129,.35);
 }
 
 /* TITULOS */
 h1{
   font-family:'Bebas Neue',sans-serif;
-  font-size:44px;
+  font-size:42px;
   text-align:center;
   color:#FFD700;
   line-height:1.05;
@@ -51,128 +54,175 @@ h1 span{color:#FF3F81}
 
 .sub{
   text-align:center;
-  font-size:17px;
+  font-size:16px;
   color:#F2C9D8;
-  margin:18px 0 26px;
+  margin:18px 0 12px;
   font-weight:600;
 }
 
-/* DIAGNÓSTICO */
-.diagnosis{
-  background:rgba(255,63,129,.12);
-  border-left:6px solid #FF3F81;
-  padding:26px;
-  border-radius:18px;
-  font-size:16px;
-  line-height:1.75;
-}
-
-/* BLOCO AUTORIDADE */
-.authority{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  margin:44px 0;
-  align-items:center;
-}
-.authority img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 0 40px rgba(255,63,129,.45);
-}
-.authority .text{
-  font-size:16px;
-  line-height:1.75;
-  color:#EBCBD6;
-}
-
-/* ALERTA FUTURO */
-.future{
-  margin-top:36px;
-  padding:26px;
+/* ALERTA */
+.alert{
+  margin-top:20px;
+  padding:18px;
+  border-radius:16px;
   background:rgba(255,0,90,.18);
-  border-left:6px solid #FFD700;
+  border-left:5px solid #FF3F81;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* BLOCO */
+.block{
+  margin-top:28px;
+  padding:22px;
   border-radius:18px;
-  font-size:16px;
+  background:rgba(255,63,129,.14);
+  border-left:5px solid #FFD700;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* LISTA */
+ul{list-style:none;margin-top:20px}
+ul li{
+  margin:14px 0;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,63,129,.14);
+  border-left:4px solid #FF3F81;
+  font-size:15px;
 }
 
 /* PRODUTO */
 .product{
-  margin:48px 0 32px;
+  margin:36px 0 26px;
   text-align:center;
 }
 .product img{
   width:100%;
-  max-width:380px;
-  border-radius:22px;
-  box-shadow:
-    0 0 0 2px rgba(255,63,129,.6),
-    0 25px 70px rgba(255,63,129,.6);
+  max-width:360px;
+  border-radius:20px;
+  box-shadow:0 0 0 2px rgba(255,63,129,.6),
+             0 20px 60px rgba(255,63,129,.55);
 }
 
 /* ENTREGA */
 .entrega{
+  margin-top:32px;
+  padding:24px;
+  border-radius:20px;
   background:#000;
   border:2px solid #FF3F81;
-  border-radius:22px;
-  padding:26px;
 }
 .entrega h2{
   font-family:'Bebas Neue',sans-serif;
-  font-size:32px;
-  text-align:center;
+  font-size:30px;
   color:#FFD700;
-  margin-bottom:18px;
+  margin-bottom:16px;
+  text-align:center;
 }
-.entrega ul{
-  list-style:none;
+.entrega p{
+  font-size:15px;
+  line-height:1.7;
+  color:#F3CBD8;
 }
-.entrega li{
-  margin:14px 0;
-  padding:16px;
-  background:rgba(255,63,129,.14);
-  border-left:4px solid #FFD700;
-  border-radius:14px;
+
+/* AUTORIDADE */
+.autoridade{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.autoridade img{
+  width:100%;
+  max-width:220px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+.autoridade-text{
+  flex:1;
+  font-size:15px;
+  line-height:1.7;
 }
 
 /* PREÇO */
-.price{
-  margin:44px 0 22px;
+.price-box{
+  margin:40px 0 18px;
+  padding:28px;
   background:#000;
+  border-radius:22px;
   border:2px solid #FFD700;
-  border-radius:24px;
-  padding:32px;
   text-align:center;
 }
-.old{color:#999;text-decoration:line-through}
-.new{font-size:52px;font-weight:900;color:#FFD700}
+.old{
+  font-size:14px;
+  color:#999;
+  text-decoration:line-through;
+}
+.new{
+  font-size:48px;
+  font-weight:900;
+  color:#FFD700;
+}
 
+/* URGÊNCIA */
+.urgency-box{
+  margin-top:16px;
+  padding:16px;
+  border-radius:14px;
+  background:rgba(255,63,129,.22);
+  border:1px dashed #FF3F81;
+  text-align:center;
+  font-size:14px;
+  font-weight:700;
+  animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+/* BOTÃO */
 .button{
   width:100%;
   margin-top:22px;
-  padding:28px;
+  padding:26px;
   font-size:22px;
   font-weight:900;
   border:none;
-  border-radius:70px;
+  border-radius:60px;
   background:linear-gradient(45deg,#FF3F81,#E5003C);
   color:#FFF;
   cursor:pointer;
-  box-shadow:0 20px 60px rgba(255,63,129,.95);
+  box-shadow:0 18px 55px rgba(255,63,129,.95);
 }
 
+/* GARANTIA */
 .garantia{
-  margin-top:36px;
-  background:rgba(255,215,0,.16);
+  margin-top:32px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(255,215,0,.14);
   border:1px solid rgba(255,215,0,.6);
-  border-radius:22px;
-  padding:26px;
   text-align:center;
-  font-size:15px;
+  font-size:14px;
+  color:#F6E4AE;
+}
+.garantia img{
+  width:120px;
+  margin:0 auto 12px;
+  display:block;
 }
 
-@media(max-width:768px){
-  .authority{grid-template-columns:1fr}
+/* FOOTER */
+.footer{
+  margin-top:22px;
+  text-align:center;
+  font-size:11px;
+  opacity:.6;
 }
 </style>
 </head>
@@ -181,87 +231,79 @@ h1 span{color:#FF3F81}
 
 <div class="container">
 
-<h1>
-SEU PADRÃO NÃO É AZAR<br>
-<span>É POSICIONAMENTO EMOCIONAL</span>
-</h1>
+<h1>SE VOCÊ NÃO AGUENTA MAIS<br><span>SER IGNORADA E CONFUSA</span></h1>
 
 <div class="sub">
-E enquanto isso não muda, o final sempre será o mesmo.
+Não é falta de amor.<br>
+É falta de controle emocional da dinâmica.
 </div>
 
-<div class="diagnosis">
-Você cria conexão rápido.<br>
-Se envolve de verdade.<br>
-Entrega presença emocional antes do outro.<br><br>
-
-Isso faz o homem sentir conforto — não urgência.<br>
-Ele fica, mas não se posiciona.<br><br>
-
-<strong>Esse é o padrão.</strong><br>
-E ele se repete mesmo mudando de homem.
+<div class="alert">
+⚠️ Enquanto você tenta entender o que sente,<br>
+ele segue confortável do jeito que está.
 </div>
 
-<div class="authority">
-  <img src="src/img/download (7).jpg" alt="Eliza Maffer">
-  <div class="text">
-    <strong>Eliza Maffer</strong> é psicóloga e especialista em dinâmica emocional nos relacionamentos.<br><br>
-
-    Ao longo dos últimos anos, ajudou milhares de mulheres a entenderem
-    por que sempre acabam em relações indefinidas, confusas
-    e emocionalmente desgastantes.<br><br>
-
-    Seu trabalho não é sobre sedução barata,
-    mas sobre <strong>ajuste psicológico real</strong> —
-    aquele que muda o comportamento do outro
-    sem cobrança, sem implorar e sem se anular.<br><br>
-
-    Mais de <strong>23.000 mulheres</strong> já passaram por essa metodologia.
-  </div>
+<div class="block">
+Você não é fraca.<br>
+Você só foi jogada num jogo emocional sem manual.
 </div>
 
-<div class="future">
-Se nada for ajustado, o padrão não some.<br>
-Ele apenas muda de rosto.<br><br>
-
-O próximo homem começa diferente…<br>
-mas termina igual.
-</div>
+<ul>
+<li>Ele esfria e você trava</li>
+<li>Você se cala pra não perder</li>
+<li>Se entrega mais do que recebe</li>
+<li>Sempre sente que ama mais</li>
+</ul>
 
 <div class="product">
-  <img src="src/img/codigovertical.png" alt="Código da Mulher Hipnótica">
+<img src="src/img/codigovertical.png" alt="Código da Mulher Hipnótica">
 </div>
 
 <div class="entrega">
-<h2>O QUE VOCÊ RECEBE AO ENTRAR</h2>
-<ul>
-<li>Método psicológico passo a passo</li>
-<li>O que fazer quando ele esfria ou some</li>
-<li>Como se posicionar sem afastar</li>
-<li>Ajustes internos que mudam a dinâmica</li>
-<li>Acesso imediato à plataforma privada</li>
-</ul>
+<h2>O QUE VOCÊ VAI RECEBER</h2>
+<p>
+✔ Método psicológico feminino aplicado à atração<br>
+✔ Linguagem emocional que muda o jogo sem confronto<br>
+✔ Clareza total do que dizer, quando dizer e quando sumir<br>
+✔ Plataforma estilo Netflix, acesso imediato<br>
+✔ Conteúdo direto, sem enrolação
+</p>
 </div>
 
-<div class="price">
+<div class="autoridade">
+<img src="src/img/download (7).jpg" alt="Eliza Maffer">
+<div class="autoridade-text">
+<strong>Eliza Maffer</strong> é referência em dinâmica emocional feminina.<br><br>
+Seu trabalho já ajudou mais de <strong>23.000 mulheres</strong>
+a saírem de ciclos de ansiedade, rejeição e silêncio emocional.<br><br>
+O método não ensina joguinhos —
+ensina postura emocional que muda o comportamento masculino.
+</div>
+</div>
+
+<div class="price-box">
 <div class="old">De R$397,00</div>
 <div class="new">R$27,90</div>
 
-<button class="button"
-onclick="
-fbq('track','InitiateCheckout');
-location.href='https://pay.sunize.com.br/sNeLGlfr';
-">
-QUERO PARAR DE REPETIR ESSE PADRÃO
-</button>
+<div class="urgency-box">
+🔥 Restam apenas <strong>6 vagas</strong> com esse valor hoje
+</div>
 </div>
 
+<button class="button"
+onclick="fbq('track','InitiateCheckout'); location.href='https://pay.sunize.com.br/sNeLGlfr'">
+GARANTIR MEU ACESSO AGORA
+</button>
+
 <div class="garantia">
-<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png" style="width:120px"><br><br>
+<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
 <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-Ou você sente mais clareza, controle emocional
-e segurança ao se posicionar,<br>
-ou recebe 100% do seu dinheiro de volta.
+Se não sentir mais clareza, controle emocional e segurança,
+você pede o reembolso. Simples. Sem pergunta.
+</div>
+
+<div class="footer">
+Sem risco • Sem promessa vazia • Só mudança real
 </div>
 
 </div>
