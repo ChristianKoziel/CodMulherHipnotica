@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código da Mulher Hipnótica</title>
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- FACEBOOK PIXEL (SEM BUG) -->
 <script>
 !function(f,b,e,v,n,t,s){
  if(f.fbq)return;
@@ -35,103 +33,119 @@ body{
   padding:14px;
 }
 .container{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   background:#070707;
-  border-radius:22px;
-  padding:36px 22px;
-  border:1px solid rgba(255,63,129,.8);
-  box-shadow:0 0 120px rgba(255,63,129,.6);
+  border-radius:24px;
+  padding:40px 24px;
+  border:1px solid rgba(255,63,129,.85);
+  box-shadow:0 0 120px rgba(255,63,129,.55);
 }
-
-/* TITULOS */
 h1{
   font-family:'Bebas Neue',sans-serif;
-  font-size:46px;
+  font-size:48px;
   text-align:center;
   color:#FF3F81;
   line-height:1.05;
 }
 .sub{
   text-align:center;
-  margin:18px 0 26px;
-  font-size:16px;
+  margin:20px 0 28px;
+  font-size:17px;
   color:#F2C9D8;
-  font-weight:700;
+  font-weight:600;
 }
+.text{
+  font-size:15px;
+  line-height:1.85;
+  color:#EED6DF;
+  margin-bottom:26px;
+}
+.highlight{color:#FF3F81;font-weight:700}
 
-/* ALERTA */
+/* BLOCO ALERTA */
 .alert{
-  padding:22px;
+  padding:24px;
   border-radius:18px;
   background:rgba(255,0,90,.30);
   border-left:6px solid #FF3F81;
   font-size:15px;
-  line-height:1.7;
-  margin-bottom:24px;
+  line-height:1.8;
+  margin-bottom:30px;
 }
 
-/* LISTA */
+/* LISTA EMOCIONAL */
 .list div{
-  margin:12px 0;
+  margin:14px 0;
   padding:18px;
   border-radius:16px;
-  background:rgba(255,63,129,.18);
+  background:rgba(255,63,129,.20);
   border-left:4px solid #FF3F81;
   font-weight:600;
 }
 
 /* VERDADE */
 .truth{
-  margin-top:30px;
-  padding:24px;
+  margin-top:34px;
+  padding:26px;
   border-radius:20px;
   background:#000;
   border:2px solid #FF3F81;
   font-size:15px;
-  line-height:1.8;
+  line-height:1.9;
 }
 .truth strong{color:#FF3F81}
 
+/* PROVA SOCIAL */
+.proof{
+  margin-top:34px;
+}
+.proof img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.7);
+}
+
 /* ENTREGA */
 .entrega{
-  margin-top:36px;
-  padding:26px;
-  border-radius:20px;
-  background:rgba(255,215,0,.14);
+  margin-top:40px;
+  padding:28px;
+  border-radius:22px;
+  background:rgba(255,215,0,.15);
   border-left:6px solid #FFD700;
 }
 .entrega h2{
   font-family:'Bebas Neue',sans-serif;
-  font-size:34px;
+  font-size:36px;
   color:#FFD700;
-  margin-bottom:14px;
+  margin-bottom:18px;
   text-align:center;
 }
 .entrega p{
   font-size:15px;
-  line-height:1.75;
+  line-height:1.85;
 }
 
 /* AUTORIDADE */
 .expert{
-  margin-top:40px;
+  margin-top:44px;
   display:flex;
-  gap:20px;
+  gap:22px;
   align-items:center;
   background:#000;
-  padding:24px;
-  border-radius:20px;
+  padding:26px;
+  border-radius:22px;
   border:1px solid rgba(255,63,129,.6);
 }
 .expert img{
-  width:150px;
+  width:160px;
   border-radius:18px;
-  box-shadow:0 12px 36px rgba(0,0,0,.9);
+  box-shadow:0 12px 40px rgba(0,0,0,.9);
 }
 .expert-text{
   font-size:14px;
-  line-height:1.8;
+  line-height:1.9;
   color:#F2C9D8;
 }
 .expert-text strong{
@@ -141,43 +155,33 @@ h1{
 
 /* PREÇO */
 .price{
-  margin:40px 0 20px;
-  padding:30px;
+  margin:44px 0 22px;
+  padding:32px;
   background:#000;
-  border-radius:22px;
+  border-radius:24px;
   border:2px solid #FFD700;
   text-align:center;
 }
-.old{
-  font-size:14px;
-  color:#999;
-  text-decoration:line-through;
-}
-.new{
-  font-size:56px;
-  font-weight:900;
-  color:#FFD700;
-}
+.old{font-size:14px;color:#999;text-decoration:line-through}
+.new{font-size:58px;font-weight:900;color:#FFD700}
 
-/* URGÊNCIA REAL */
+/* URGÊNCIA PESADA */
 .urgency{
-  margin-top:18px;
-  padding:18px;
-  border-radius:16px;
-  background:rgba(255,63,129,.35);
+  margin-top:20px;
+  padding:20px;
+  border-radius:18px;
+  background:rgba(255,63,129,.38);
   border:1px dashed #FF3F81;
   font-size:14px;
   font-weight:900;
-  animation:pulse 1.1s infinite;
+  animation:pulse 1.05s infinite;
 }
-@keyframes pulse{
-  50%{transform:scale(1.07)}
-}
+@keyframes pulse{50%{transform:scale(1.08)}}
 
 /* CTA */
 .button{
   width:100%;
-  margin-top:26px;
+  margin-top:30px;
   padding:30px;
   font-size:22px;
   font-weight:900;
@@ -186,28 +190,28 @@ h1{
   background:linear-gradient(45deg,#FF005D,#FF3F81);
   color:#FFF;
   cursor:pointer;
-  box-shadow:0 24px 80px rgba(255,63,129,1);
+  box-shadow:0 26px 90px rgba(255,63,129,1);
 }
 
 /* GARANTIA */
 .guarantee{
-  margin-top:30px;
-  padding:24px;
-  border-radius:20px;
-  background:rgba(255,215,0,.18);
-  border:1px solid rgba(255,215,0,.8);
+  margin-top:34px;
+  padding:26px;
+  border-radius:22px;
+  background:rgba(255,215,0,.20);
+  border:1px solid rgba(255,215,0,.85);
   text-align:center;
   font-size:14px;
   color:#F6E4AE;
 }
 .guarantee img{
-  width:120px;
-  margin-bottom:12px;
+  width:130px;
+  margin-bottom:14px;
 }
 
 /* FOOTER */
 .footer{
-  margin-top:22px;
+  margin-top:24px;
   text-align:center;
   font-size:11px;
   opacity:.6;
@@ -218,55 +222,71 @@ h1{
 <body>
 <div class="container">
 
-<h1>ISSO VAI CONTINUAR<br>SE REPETINDO</h1>
+<h1>VOCÊ NÃO É CONFUSA.<br>VOCÊ ESTÁ CANSADA.</h1>
 
 <div class="sub">
-Não importa o homem.<br>
-O final sempre é o mesmo.
+Cansada de tentar entender alguém que nunca se posiciona.
 </div>
 
+<p class="text">
+Talvez você tenha se perguntado mais de uma vez se o problema era você.  
+Se estava exagerando. Se estava sentindo demais.
+</p>
+
+<p class="text">
+Mas no fundo, você sabe:  
+<span class="highlight">ninguém gosta de viver na dúvida.</span>
+</p>
+
 <div class="alert">
-Enquanto você tenta entender o que sente,<br>
-<strong>ele segue confortável sem te escolher.</strong>
+Enquanto você analisa mensagens, horários e silêncios,<br>
+<strong>ele continua confortável sem precisar decidir nada.</strong>
 </div>
 
 <div class="list">
-  <div>Você se cala pra não perder</div>
-  <div>Entrega mais do que recebe</div>
-  <div>Espera mensagens que não chegam</div>
-  <div>E chama isso de amor</div>
+  <div>Você se cala pra não parecer “demais”</div>
+  <div>Entrega mais esperando que ele perceba</div>
+  <div>Aceita migalhas emocionais</div>
+  <div>E chama isso de paciência</div>
 </div>
 
 <div class="truth">
-<strong>Verdade que dói:</strong><br><br>
-Homens não mudam com conversa.<br>
-Mudam quando a <strong>dinâmica emocional</strong> muda.<br><br>
-Se você fechar essa página agora,<br>
-<strong>amanhã tudo continua igual.</strong>
+<strong>Verdade que ninguém te explicou:</strong><br><br>
+Homens não mudam porque você explica melhor.<br>
+Eles mudam quando a <strong>dinâmica emocional</strong> muda.<br><br>
+E hoje, quem está se adaptando demais…<br>
+<strong>é você.</strong>
+</div>
+
+<!-- PROVA SOCIAL -->
+<div class="proof">
+  <img src="src/img/provasocial.jpg">
+  <img src="src/img/ps3.png">
+  <img src="src/img/depoimento111.jpeg">
 </div>
 
 <div class="entrega">
 <h2>CÓDIGO DA MULHER HIPNÓTICA</h2>
 <p>
-Não é joguinho.<br>
-Não é manipulação.<br><br>
-✔ Controle emocional aplicado à atração<br>
-✔ Clareza total do que dizer, quando dizer e quando sumir<br>
-✔ Postura feminina que muda decisões masculinas<br>
-✔ Acesso imediato • sem enrolação
+Esse método não foi criado pra te transformar em alguém fria.  
+Foi criado pra te tirar da posição de ansiedade.<br><br>
+
+✔ Saber exatamente o que dizer (e o que não dizer)<br>
+✔ Parar de correr atrás de validação<br>
+✔ Recuperar controle emocional sem confronto<br>
+✔ Fazer o homem sentir — não você implorar
 </p>
 </div>
 
-<!-- AUTORIDADE -->
 <div class="expert">
   <img src="src/img/download (7).jpg" alt="Eliza Maffer">
   <div class="expert-text">
     <strong>Eliza Maffer</strong><br>
     Psicóloga especializada em dinâmica emocional feminina.<br><br>
-    Mais de <strong>23.000 mulheres</strong> já saíram de ciclos
-    de ansiedade, rejeição e relações indefinidas.<br><br>
-    Não ensina autoestima.<br>
-    <strong>Ensina controle emocional.</strong>
+    Mais de <strong>23.000 mulheres</strong> já quebraram ciclos de
+    ansiedade, rejeição e relações indefinidas com esse método.<br><br>
+    Não é sobre joguinhos.<br>
+    É sobre postura emocional.
   </div>
 </div>
 
@@ -275,8 +295,8 @@ Não é manipulação.<br><br>
   <div class="new">R$47,90</div>
 
   <div class="urgency">
-    ⏳ Essa condição existe apenas enquanto esta página estiver aberta.<br>
-    Fechou → acabou.
+    ⏳ Essa página sai do ar hoje.<br>
+    Fechou agora → perdeu o acesso.
   </div>
 </div>
 
@@ -288,13 +308,12 @@ EU QUERO SAIR DESSE CICLO AGORA
 <div class="guarantee">
   <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
   <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-  Teste sem risco.<br>
-  Se não sentir clareza, poder e controle emocional,<br>
-  o dinheiro volta. Simples.
+  Ou você sente clareza, segurança e controle emocional,<br>
+  ou seu dinheiro volta. Simples.
 </div>
 
 <div class="footer">
-Não é pra todas. É pra quem cansou de perder.
+Não é pra todas. É pra quem cansou de se diminuir.
 </div>
 
 </div>
