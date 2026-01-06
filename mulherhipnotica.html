@@ -7,15 +7,18 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
+<!-- PIXEL FACEBOOK OK -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)}};
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src='https://connect.facebook.net/en_US/fbevents.js';
 s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s);
+}(window, document,'script');
+
 fbq('init','1208952827491954');
 fbq('track','PageView');
 </script>
@@ -31,11 +34,11 @@ body{
 .container{
   max-width:720px;
   margin:auto;
-  background:#090909;
-  border-radius:20px;
-  padding:36px 22px;
-  border:1px solid rgba(255,63,129,.75);
-  box-shadow:0 0 90px rgba(255,63,129,.55);
+  background:#0A0A0A;
+  border-radius:22px;
+  padding:38px 22px;
+  border:1px solid rgba(255,63,129,.7);
+  box-shadow:0 0 90px rgba(255,63,129,.5);
 }
 h1{
   font-family:'Bebas Neue',sans-serif;
@@ -57,7 +60,7 @@ h1{
   background:rgba(255,0,90,.28);
   border-left:6px solid #FF3F81;
   font-size:15px;
-  line-height:1.65;
+  line-height:1.6;
 }
 .list{margin-top:26px}
 .list div{
@@ -79,7 +82,6 @@ h1{
 }
 .truth strong{color:#FF3F81}
 
-/* ENTREGA */
 .entrega{
   margin-top:36px;
   padding:24px;
@@ -95,7 +97,6 @@ h1{
   text-align:center;
 }
 
-/* AUTORIDADE */
 .expert{
   margin-top:40px;
   display:flex;
@@ -109,11 +110,10 @@ h1{
 .expert img{
   width:150px;
   border-radius:16px;
-  box-shadow:0 12px 36px rgba(0,0,0,.85);
 }
 .expert-text{
   font-size:14px;
-  line-height:1.75;
+  line-height:1.7;
   color:#F2C9D8;
 }
 .expert-text strong{
@@ -121,7 +121,6 @@ h1{
   font-size:15px;
 }
 
-/* PREÇO */
 .price{
   margin:38px 0 18px;
   padding:28px;
@@ -132,12 +131,6 @@ h1{
 }
 .old{font-size:14px;color:#999;text-decoration:line-through}
 .new{font-size:54px;font-weight:900;color:#FFD700}
-.timer{
-  margin-top:14px;
-  font-size:14px;
-  font-weight:800;
-  color:#FFD6E3;
-}
 .urgency{
   margin-top:14px;
   padding:16px;
@@ -150,22 +143,20 @@ h1{
 }
 @keyframes pulse{50%{transform:scale(1.07)}}
 
-/* CTA */
-.button{
-  width:100%;
-  margin-top:26px;
+.cta{
+  display:block;
+  margin-top:28px;
   padding:28px;
   font-size:22px;
   font-weight:900;
-  border:none;
+  text-align:center;
   border-radius:70px;
   background:linear-gradient(45deg,#FF005D,#FF3F81);
   color:#FFF;
-  cursor:pointer;
+  text-decoration:none;
   box-shadow:0 22px 70px rgba(255,63,129,1);
 }
 
-/* GARANTIA */
 .guarantee{
   margin-top:28px;
   padding:22px;
@@ -181,7 +172,6 @@ h1{
   margin-bottom:10px;
 }
 
-/* RODAPÉ */
 .footer{
   margin-top:20px;
   text-align:center;
@@ -197,7 +187,7 @@ h1{
 <h1>VOCÊ VAI PERDER ELE<br>DE NOVO</h1>
 
 <div class="sub">
-Não porque você não é suficiente.<br>
+Não porque você não é insuficiente.<br>
 Mas porque continua jogando errado.
 </div>
 
@@ -223,53 +213,41 @@ Se você sair dessa página agora,<br>
 
 <div class="entrega">
 <h2>CÓDIGO DA MULHER HIPNÓTICA</h2>
-<p>
-Não é joguinho.<br>
-Não é promessa vazia.<br><br>
 ✔ Controle emocional aplicado à atração<br>
 ✔ Clareza do que dizer, quando dizer e quando sumir<br>
 ✔ Postura feminina que muda o comportamento masculino<br>
-✔ Acesso imediato • direto ao ponto
-</p>
+✔ Acesso imediato
 </div>
 
-<!-- AUTORIDADE -->
 <div class="expert">
-  <img src="src/img/download (7).jpg" alt="Eliza Maffer">
-  <div class="expert-text">
-    <strong>Eliza Maffer</strong><br>
-    Psicóloga especializada em dinâmica emocional feminina.<br><br>
-    Mais de <strong>23.000 mulheres</strong> já saíram de ciclos
-    de ansiedade, rejeição e relações indefinidas com esse método.<br><br>
-    Não ensina joguinhos.<br>
-    <strong>Ensina controle emocional.</strong>
-  </div>
+<img src="src/img/download (7).jpg" alt="Eliza Maffer">
+<div class="expert-text">
+<strong>Eliza Maffer</strong><br>
+Especialista em dinâmica emocional feminina.<br><br>
+Mais de <strong>23.000 mulheres</strong> já saíram de ciclos
+de ansiedade, rejeição e relações indefinidas com esse método.
+</div>
 </div>
 
 <div class="price">
-  <div class="old">DE R$397,00</div>
-  <div class="new">R$47,90</div>
-
-  <div class="timer">
-    ⏳ Esse teste encerra em poucas horas.
-  </div>
-
-  <div class="urgency">
-    Se você sair agora,<br>
-    <strong>esse acesso pode não voltar.</strong>
-  </div>
+<div class="old">De R$397,00</div>
+<div class="new">R$47,90</div>
+<div class="urgency">
+Essa condição pode sair do ar hoje.
+</div>
 </div>
 
-<button class="button"
-onclick="fbq('track','InitiateCheckout'); location.href='https://pay.sunize.com.br/LXHVfkNO'">
+<a href="https://pay.sunize.com.br/LXHVfkNO"
+   onclick="fbq('track','InitiateCheckout')"
+   class="cta">
 EU NÃO VOU CONTINUAR SENDO A OPÇÃO
-</button>
+</a>
 
 <div class="guarantee">
-  <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png" alt="Garantia 7 dias">
-  <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-  Se não sentir clareza, controle emocional e segurança,<br>
-  você pede reembolso. Sem perguntas.
+<img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
+<strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
+Ou você sente clareza e controle emocional,<br>
+ou recebe seu dinheiro de volta.
 </div>
 
 <div class="footer">
