@@ -10,12 +10,12 @@
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+n.callMethod.apply(n,arguments):n.queue.push(arguments)}};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+t.src='https://connect.facebook.net/en_US/fbevents.js';
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
 fbq('init','1208952827491954');
 fbq('track','PageView');
 </script>
@@ -59,9 +59,7 @@ h1{
   font-size:15px;
   line-height:1.6;
 }
-.list{
-  margin-top:26px;
-}
+.list{margin-top:26px}
 .list div{
   margin:12px 0;
   padding:16px;
@@ -79,6 +77,8 @@ h1{
   line-height:1.7;
 }
 .truth strong{color:#FF3F81}
+
+/* ENTREGA */
 .entrega{
   margin-top:34px;
   padding:22px;
@@ -93,7 +93,34 @@ h1{
   margin-bottom:12px;
   text-align:center;
 }
-.entrega p{font-size:15px;line-height:1.7}
+
+/* AUTORIDADE */
+.expert{
+  margin-top:38px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  background:#000;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid rgba(255,63,129,.5);
+}
+.expert img{
+  width:150px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.8);
+}
+.expert-text{
+  font-size:14px;
+  line-height:1.7;
+  color:#F2C9D8;
+}
+.expert-text strong{
+  color:#FFD700;
+  font-size:15px;
+}
+
+/* PREÇO */
 .price{
   margin:36px 0 18px;
   padding:26px;
@@ -115,6 +142,8 @@ h1{
   animation:pulse 1.2s infinite;
 }
 @keyframes pulse{50%{transform:scale(1.06)}}
+
+/* CTA */
 .button{
   width:100%;
   margin-top:24px;
@@ -179,19 +208,29 @@ E hoje, quem está no controle…<br>
 Não é sobre manipular.<br>
 É sobre sair da posição fraca sem confronto.<br><br>
 ✔ Controle emocional aplicado à atração<br>
-✔ Clareza total do que dizer (ou não dizer)<br>
-✔ Técnica feminina que muda o comportamento masculino<br>
-✔ Acesso imediato • direto ao ponto
+✔ Clareza total do que dizer, quando dizer e quando sumir<br>
+✔ Técnica feminina que muda o comportamento masculino
 </p>
+</div>
+
+<!-- AUTORIDADE -->
+<div class="expert">
+  <img src="src/img/download (7).jpg" alt="Eliza Maffer">
+  <div class="expert-text">
+    <strong>Eliza Maffer</strong><br>
+    Psicóloga especializada em dinâmica emocional feminina.<br><br>
+    Seu trabalho já ajudou mais de <strong>23.000 mulheres</strong>
+    a saírem de ciclos de ansiedade, rejeição e relações indefinidas.<br><br>
+    O método não ensina joguinhos.<br>
+    Ensina postura emocional que muda o comportamento masculino.
+  </div>
 </div>
 
 <div class="price">
 <div class="old">De R$397,00</div>
 <div class="new">R$47,90</div>
-
 <div class="urgency">
-⚠️ Se você sair dessa página,<br>
-<strong>esse valor pode não estar mais disponível.</strong>
+⚠️ Essa condição pode sair do ar a qualquer momento.
 </div>
 </div>
 
@@ -201,8 +240,8 @@ EU NÃO VOU CONTINUAR SENDO A OPÇÃO
 </button>
 
 <div class="risk">
-Garantia de 7 dias.<br>
-Ou você sente controle emocional,<br>
+Garantia incondicional de 7 dias.<br>
+Ou você sente clareza e controle emocional,<br>
 ou recebe seu dinheiro de volta.
 </div>
 
