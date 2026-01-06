@@ -3,146 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ou Você Quebra o Padrão, Ou Ele Continua</title>
+<title>Isso Vai Se Repetir</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
---pink:#FF3F81;
---red:#E5003C;
---gold:#FFD700;
---bg1:#12040A;
---bg2:#040404;
---light:#FFF1F6;
---muted:#C7A0AF;
-}
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,var(--bg1),var(--bg2));
-color:var(--light);
-min-height:100vh;
-padding:20px;
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#F5EDED;
+  padding:18px;
 }
 
 .container{
-max-width:620px;
-margin:0 auto;
-background:rgba(4,4,4,.98);
-border-radius:22px;
-padding:34px 24px;
-border:1px solid rgba(255,63,129,.8);
-box-shadow:0 0 80px rgba(229,0,60,.65);
+  max-width:640px;
+  margin:auto;
+  background:#0A0A0A;
+  border-radius:22px;
+  padding:36px 24px;
+  border:1px solid rgba(255,63,129,.8);
+  box-shadow:0 0 90px rgba(255,63,129,.55);
 }
 
+/* TITULO */
 h1{
-font-family:'Bebas Neue',sans-serif;
-font-size:36px;
-line-height:1.05;
-text-align:center;
-color:var(--gold);
-margin-bottom:16px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:40px;
+  line-height:1.05;
+  text-align:center;
+  color:#FF3F81;
 }
-
 h1 span{
-display:block;
-color:var(--pink);
-margin-top:6px;
+  display:block;
+  margin-top:6px;
+  color:#FFD700;
 }
 
+/* SUB */
 .sub{
-text-align:center;
-font-size:14px;
-color:var(--muted);
-margin-bottom:22px;
-line-height:1.5;
+  text-align:center;
+  font-size:14px;
+  color:#E6B7C6;
+  margin:18px 0 26px;
+  line-height:1.6;
+  font-weight:600;
 }
 
+/* BLOCO DOR */
 .cut{
-background:rgba(229,0,60,.2);
-border-left:5px solid var(--red);
-padding:20px;
-border-radius:16px;
-font-size:14px;
-line-height:1.6;
-margin-bottom:26px;
-color:#FFD6E3;
+  background:rgba(255,0,80,.22);
+  border-left:5px solid #FF3F81;
+  padding:22px;
+  border-radius:18px;
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:26px;
 }
+.cut strong{color:#FFD700}
 
-.cut strong{color:var(--gold)}
-
+/* MICRO ALERTA */
 .micro{
-text-align:center;
-font-size:13px;
-color:#E6B0C2;
-margin-bottom:30px;
+  text-align:center;
+  font-size:13px;
+  color:#F0BCCD;
+  margin-bottom:32px;
 }
 
+/* TITULO SEÇÃO */
 .section-title{
-font-family:'Bebas Neue',sans-serif;
-font-size:22px;
-letter-spacing:1px;
-color:var(--gold);
-text-align:center;
-margin:32px 0 18px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;
+  letter-spacing:1px;
+  color:#FFD700;
+  text-align:center;
+  margin:36px 0 18px;
 }
 
+/* PROVA */
 .proof{
-margin-bottom:14px;
-border-radius:14px;
-overflow:hidden;
-border:1px solid rgba(255,63,129,.45);
-box-shadow:0 10px 26px rgba(0,0,0,.7);
+  margin-bottom:16px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,63,129,.5);
+  box-shadow:0 12px 30px rgba(0,0,0,.75);
 }
-
 .proof img{
-width:100%;
-display:block;
+  width:100%;
+  display:block;
 }
 
+/* CONTEXTO */
 .context{
-margin:26px 0;
-font-size:14px;
-line-height:1.65;
-color:#E6C7D0;
-background:rgba(18,4,10,.95);
-padding:22px;
-border-radius:18px;
-border-left:5px solid var(--pink);
+  margin:28px 0;
+  font-size:15px;
+  line-height:1.7;
+  color:#E9C7D2;
+  background:#000;
+  padding:22px;
+  border-radius:18px;
+  border-left:5px solid #FF3F81;
 }
+.context strong{color:#FFD700}
 
-.context strong{color:var(--gold)}
-
+/* FINAL */
 .final{
-margin-top:28px;
-font-size:15px;
-line-height:1.65;
-text-align:center;
-color:#FFE0EA;
+  margin-top:30px;
+  font-size:16px;
+  line-height:1.7;
+  text-align:center;
+  color:#FFE1EA;
 }
+.final strong{color:#FFD700}
 
-.final strong{color:var(--gold)}
-
+/* CTA */
 .cta{
-margin-top:30px;
-width:100%;
-padding:22px;
-border:none;
-border-radius:70px;
-background:linear-gradient(90deg,var(--red),var(--pink));
-color:#fff;
-font-family:'Bebas Neue',sans-serif;
-font-size:22px;
-letter-spacing:2px;
-cursor:pointer;
-box-shadow:0 0 65px rgba(229,0,60,.95);
-transition:.25s;
+  margin-top:34px;
+  width:100%;
+  padding:24px;
+  border:none;
+  border-radius:70px;
+  background:linear-gradient(90deg,#E5003C,#FF3F81);
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;
+  letter-spacing:2px;
+  cursor:pointer;
+  box-shadow:0 0 70px rgba(255,63,129,1);
+  animation:pulse 1.2s infinite;
 }
 
-.cta:hover{
-transform:translateY(-4px) scale(1.02);
+@keyframes pulse{
+  50%{transform:scale(1.05)}
+}
+
+.footer{
+  margin-top:22px;
+  text-align:center;
+  font-size:11px;
+  opacity:.55;
 }
 </style>
 </head>
@@ -160,11 +160,11 @@ transform:translateY(-4px) scale(1.02);
   <p class="sub">
     Não importa o homem.<br>
     Não importa a história.<br>
-    O final continua sendo o mesmo.
+    <strong>O final continua sendo o mesmo.</strong>
   </p>
 
   <div class="cut">
-    <strong>VAMOS SER DIRETAS:</strong><br><br>
+    <strong>Vamos ser diretas:</strong><br><br>
 
     Você se envolve.<br>
     Se entrega.<br>
@@ -176,8 +176,8 @@ transform:translateY(-4px) scale(1.02);
     e aquela sensação humilhante de
     <strong>estar sempre esperando algo que nunca vem.</strong><br><br>
 
-    Você relê mensagens.
-    Justifica atitudes.
+    Você relê mensagens.<br>
+    Justifica atitudes.<br>
     Diminui o que sente.<br><br>
 
     <strong>E mesmo assim, nunca é escolhida por completo.</strong><br><br>
@@ -187,8 +187,8 @@ transform:translateY(-4px) scale(1.02);
   </div>
 
   <p class="micro">
-    👇 Continue apenas se você estiver pronta
-    para encarar a verdade — sem romantizar.
+    ⚠️ Continue apenas se você estiver pronta
+    para parar de se enganar.
   </p>
 
   <!-- PROVA SOCIAL -->
@@ -204,35 +204,40 @@ transform:translateY(-4px) scale(1.02);
   <!-- CONTEXTO -->
   <div class="context">
     <strong>O que todas elas descobriram?</strong><br><br>
-    Não adianta mudar de homem,
-    nem de história,
-    nem tentar se adaptar mais.<br><br>
+    Não adianta mudar de homem.<br>
+    Não adianta mudar de história.<br>
+    Não adianta se adaptar mais.<br><br>
     Enquanto a <strong>dinâmica emocional</strong> for a mesma,
-    o resultado final também será.
+    <strong>o final também será.</strong>
   </div>
 
   <div class="context">
     Essa leitura faz parte do método desenvolvido por
     <strong>Eliza Maffer</strong>,
-    focado em identificar
-    por que tantas mulheres acabam
-    em relações indefinidas
+    focado em identificar por que tantas mulheres
+    acabam em relações indefinidas
     mesmo fazendo tudo “certo”.
   </div>
 
   <!-- FINAL -->
   <p class="final">
     Agora você tem duas escolhas:<br><br>
+
     Continuar repetindo esse ciclo
-    e se decepcionando mais uma vez.<br><br>
+    e se sentindo descartável.<br><br>
+
     Ou encarar de frente
     o que precisa mudar
-    <strong>antes que esse padrão se repita de novo.</strong>
+    <strong>antes que isso aconteça de novo.</strong>
   </p>
 
   <button class="cta" onclick="window.location.href='mulherhipnotica.html'">
-    EU QUERO MUDAR ISSO AGORA
+    EU NÃO VOU REPETIR ESSE PADRÃO
   </button>
+
+  <div class="footer">
+    Essa decisão muda mais do que um relacionamento.
+  </div>
 
 </div>
 
