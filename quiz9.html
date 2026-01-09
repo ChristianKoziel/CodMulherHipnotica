@@ -3,118 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÉTODO OBSESSÃO — TESTE FINAL</title>
+<title>Teste Emocional — Etapa 9</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --roxo:#1E0B26;
-  --preto:#0C0C0C;
-  --rosa:#FF3F81;
-  --vermelho:#E5003C;
-  --branco:#FAF1F4;
-  --champagne:#D8B9C3;
-}
-
 body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(to bottom,var(--roxo),var(--preto));
-  font-family:'Poppins','Bebas Neue',sans-serif;
-  color:var(--branco);
-  text-shadow:0 0 5px rgba(229,0,60,.3);
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
+color:#FAF1F4;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
 }
-
 .quiz-container{
-  width:90%;
-  max-width:460px;
-  padding:30px;
-  background:rgba(12,12,12,.85);
-  border-radius:20px;
-  border:1px solid var(--rosa);
-  box-shadow:0 10px 30px rgba(255,63,129,.25);
-  text-align:center;
-  position:relative;
+width:90%;
+max-width:520px;
+padding:32px 26px;
+background:rgba(12,12,12,.92);
+border-radius:22px;
+text-align:center;
+border:1px solid rgba(255,63,129,.5);
+box-shadow:0 0 35px rgba(255,63,129,.35);
 }
-
-.quiz-container::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:linear-gradient(45deg,var(--rosa),var(--vermelho),var(--roxo));
-  z-index:-1;
-  filter:blur(6px);
-  opacity:.5;
+.progress{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:18px;
+font-weight:600;
+letter-spacing:1px;
 }
-
 .question{
-  font-size:1.7rem;
-  font-weight:bold;
-  margin-bottom:18px;
-  color:var(--rosa);
-  line-height:1.4;
-  text-transform:uppercase;
+font-family:'Bebas Neue',sans-serif;
+font-size:32px;
+color:#FF3F81;
+line-height:1.15;
+margin-bottom:12px;
 }
-
 .question span{
-  color:var(--vermelho);
-  text-decoration:underline;
+display:block;
+margin-top:6px;
 }
-
-.teaser{
-  color:var(--champagne);
-  font-style:italic;
-  font-size:1rem;
-  margin-bottom:26px;
-  line-height:1.5;
+.subtext{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:26px;
+line-height:1.5;
 }
-
 .options{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
+display:flex;
+flex-direction:column;
+gap:14px;
 }
-
 .option-button{
-  background:rgba(30,11,38,.85);
-  border:2px solid var(--rosa);
-  border-radius:50px;
-  padding:18px 22px;
-  font-size:1rem;
-  color:var(--branco);
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  transition:.3s;
-  box-shadow:0 4px 10px rgba(255,63,129,.2);
-  text-align:left;
+background:rgba(30,11,38,.9);
+border:2px solid #FF3F81;
+border-radius:50px;
+padding:16px 22px;
+font-size:15px;
+color:#FAF1F4;
+cursor:pointer;
+transition:.3s;
+text-align:left;
+font-weight:600;
+box-shadow:0 6px 18px rgba(255,63,129,.25);
 }
-
 .option-button:hover{
-  background:linear-gradient(to right,rgba(229,0,60,.4),rgba(255,63,129,.4));
-  transform:translateY(-4px);
-  border-color:var(--vermelho);
+background:linear-gradient(90deg,#E5003C,#FF3F81);
+transform:translateY(-2px);
 }
-
 .emoji{
-  font-size:1.6rem;
-  min-width:36px;
-  text-align:center;
-}
-
-.footer{
-  margin-top:24px;
-  font-size:.9rem;
-  color:var(--champagne);
-  padding:12px;
-  border-radius:8px;
-  background:rgba(216,185,195,.1);
-  border-left:3px solid var(--rosa);
+margin-right:10px;
+font-size:18px;
 }
 </style>
 </head>
@@ -123,47 +86,42 @@ body{
 
 <div class="quiz-container">
 
-  <div class="question">
-    O que mais te faz sentir
-    <span>descartável nessa relação?</span>
-  </div>
+<div class="progress">
+ETAPA 9 DE 12
+</div>
 
-  <div class="teaser">
-    Isso não acontece por acaso.  
-    Existe um padrão — e ele pode ser revertido.
-  </div>
+<div class="question">
+Se tudo continuar exatamente assim…
+<span>você acredita que algo muda sozinho?</span>
+</div>
 
-  <div class="options">
-    <button class="option-button" onclick="next()">
-      <span class="emoji">📱</span>
-      Ele só aparece quando está carente… depois some
-    </button>
+<div class="subtext">
+Responda sem esperança.<br>
+Pense no que sempre acontece no final.
+</div>
 
-    <button class="option-button" onclick="next()">
-      <span class="emoji">👀</span>
-      Me ignora, mas vive online falando com outras pessoas
-    </button>
+<div class="options">
+<button class="option-button" onclick="next()">
+<span class="emoji">❌</span>
+Não. Sempre termina do mesmo jeito
+</button>
 
-    <button class="option-button" onclick="next()">
-      <span class="emoji">🎭</span>
-      Diz que sou especial, mas age como se eu fosse opcional
-    </button>
+<button class="option-button" onclick="next()">
+<span class="emoji">😔</span>
+Eu queria acreditar… mas não muda
+</button>
 
-    <button class="option-button" onclick="next()">
-      <span class="emoji">🧠</span>
-      Me faz duvidar de mim, mesmo quando sei que estou certa
-    </button>
-  </div>
-
-  <div class="footer">
-    O próximo passo revela exatamente por que isso acontece.
-  </div>
+<button class="option-button" onclick="next()">
+<span class="emoji">😡</span>
+Não. E isso já está me cansando
+</button>
+</div>
 
 </div>
 
 <script>
 function next(){
-  window.location.href='quiz10.html';
+window.location.href="quiz10.html";
 }
 </script>
 

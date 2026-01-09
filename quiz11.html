@@ -3,176 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MÉTODO OBSESSÃO — QUIZ 11</title>
+<title>Teste Emocional — Etapa 11</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --roxo: #1E0B26;
-  --preto: #0C0C0C;
-  --rosa: #FF3F81;
-  --vermelho: #E5003C;
-  --branco: #FAF1F4;
-  --champagne: #D8B9C3;
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
+color:#FAF1F4;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Poppins','Bebas Neue',sans-serif;
-  background: linear-gradient(to bottom, var(--roxo), var(--preto));
-  color: var(--branco);
-  text-shadow: 0 0 5px rgba(229,0,60,.3);
+.quiz-container{
+width:90%;
+max-width:520px;
+padding:32px 26px;
+background:rgba(12,12,12,.92);
+border-radius:22px;
+text-align:center;
+border:1px solid rgba(255,63,129,.5);
+box-shadow:0 0 35px rgba(255,63,129,.35);
 }
-
-.quiz-container {
-  width: 90%;
-  max-width: 440px;
-  padding: 30px;
-  background: rgba(12,12,12,.85);
-  border-radius: 20px;
-  border: 1px solid var(--rosa);
-  box-shadow: 0 10px 30px rgba(255,63,129,.25);
-  text-align: center;
-  position: relative;
+.progress{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:18px;
+font-weight:600;
+letter-spacing:1px;
 }
-
-.progress {
-  color: var(--rosa);
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 22px;
-  padding-bottom: 14px;
-  position: relative;
-  text-transform: uppercase;
+.question{
+font-family:'Bebas Neue',sans-serif;
+font-size:32px;
+color:#FF3F81;
+line-height:1.15;
+margin-bottom:12px;
 }
-
-.progress::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 22%;
-  right: 22%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--rosa), transparent);
+.question span{
+display:block;
+margin-top:6px;
 }
-
-.question {
-  font-size: 1.55rem;
-  font-weight: bold;
-  margin-bottom: 18px;
-  line-height: 1.4;
-  color: var(--rosa);
-  text-transform: uppercase;
+.subtext{
+font-size:14px;
+color:#D8B9C3;
+margin-bottom:26px;
+line-height:1.5;
 }
-
-.question span {
-  display: block;
-  margin-top: 8px;
-  color: var(--vermelho);
-  text-decoration: underline;
+.options{
+display:flex;
+flex-direction:column;
+gap:14px;
 }
-
-.teaser {
-  font-size: 0.95rem;
-  color: var(--champagne);
-  font-style: italic;
-  margin-bottom: 28px;
-  line-height: 1.5;
-  padding: 0 10px;
+.option-button{
+background:rgba(30,11,38,.9);
+border:2px solid #FF3F81;
+border-radius:50px;
+padding:16px 22px;
+font-size:15px;
+color:#FAF1F4;
+cursor:pointer;
+transition:.3s;
+text-align:left;
+font-weight:600;
+box-shadow:0 6px 18px rgba(255,63,129,.25);
 }
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.option-button:hover{
+background:linear-gradient(90deg,#E5003C,#FF3F81);
+transform:translateY(-2px);
 }
-
-.option-button {
-  background: rgba(30,11,38,.85);
-  border: 2px solid var(--rosa);
-  border-radius: 50px;
-  padding: 18px 22px;
-  font-size: 1rem;
-  color: var(--branco);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255,63,129,.2);
-  font-family: 'Poppins', sans-serif;
-  text-align: left;
-}
-
-.option-button:hover {
-  background: linear-gradient(to right, rgba(229,0,60,.45), rgba(255,63,129,.45));
-  transform: translateY(-4px);
-  border-color: var(--vermelho);
-  box-shadow: 0 8px 20px rgba(229,0,60,.4);
-}
-
-.option-button:active {
-  transform: scale(0.97);
-}
-
-.emoji {
-  font-size: 1.6rem;
-  min-width: 36px;
-  text-align: center;
-  filter: drop-shadow(0 0 3px rgba(255,63,129,.5));
-}
-
-.footer {
-  margin-top: 26px;
-  font-size: 0.9rem;
-  color: var(--champagne);
-  padding: 12px;
-  border-radius: 8px;
-  background: rgba(216,185,195,.1);
-  border-left: 3px solid var(--rosa);
+.emoji{
+margin-right:10px;
+font-size:18px;
 }
 </style>
 </head>
 
 <body>
+
 <div class="quiz-container">
 
-  <div class="progress">⚠️ CONSEQUÊNCIA FUTURA</div>
+<div class="progress">
+ETAPA 11 DE 12
+</div>
 
-  <div class="question">
-    Se nada mudar, como você acha<br>
-    <span>que isso vai terminar?</span>
-  </div>
+<div class="question">
+Pensando em tudo isso…
+<span>continuar desse jeito dói mais do que tentar algo diferente?</span>
+</div>
 
-  <div class="options">
-    <button class="option-button" onclick="next()">
-      <span class="emoji">💔</span> Ele vai se afastar de vez
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">😰</span> Vou continuar ansiosa
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">😞</span> Vou aceitar menos do que mereço
-    </button>
-    <button class="option-button" onclick="next()">
-      <span class="emoji">😱</span> Não faço ideia, mas isso me assusta
-    </button>
-  </div>
+<div class="subtext">
+Não é sobre coragem.<br>
+É sobre não aguentar repetir a mesma história.
+</div>
 
-  <div class="footer">
-    Imagine por um momento se nada mudar… perceber isso é o primeiro passo para agir.
-  </div>
+<div class="options">
+<button class="option-button" onclick="next()">
+<span class="emoji">💔</span>
+Sim, continuar assim machuca demais
+</button>
+
+<button class="option-button" onclick="next()">
+<span class="emoji">😮‍💨</span>
+Sim… eu já cansei de repetir isso
+</button>
+
+<button class="option-button" onclick="next()">
+<span class="emoji">🔥</span>
+Sim. Eu preciso mudar isso agora
+</button>
+</div>
 
 </div>
 
 <script>
 function next(){
-  window.location.href='quiz5.html';
+window.location.href="quiz17.html";
 }
 </script>
 

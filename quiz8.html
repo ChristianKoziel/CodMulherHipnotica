@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seu Resultado Emocional</title>
+<title>Teste Emocional — Etapa 8</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -21,54 +21,37 @@ min-height:100vh;
 }
 .quiz-container{
 width:90%;
-max-width:540px;
-padding:34px 26px;
-background:rgba(12,12,12,.94);
+max-width:520px;
+padding:32px 26px;
+background:rgba(12,12,12,.92);
 border-radius:22px;
 text-align:center;
-border:1px solid rgba(255,63,129,.45);
-box-shadow:0 0 35px rgba(255,63,129,.3);
+border:1px solid rgba(255,63,129,.5);
+box-shadow:0 0 35px rgba(255,63,129,.35);
 }
 .progress{
-font-size:13px;
+font-size:14px;
 color:#D8B9C3;
-margin-bottom:16px;
+margin-bottom:18px;
 font-weight:600;
 letter-spacing:1px;
 }
-.title{
+.question{
 font-family:'Bebas Neue',sans-serif;
-font-size:34px;
+font-size:32px;
 color:#FF3F81;
-line-height:1.1;
-margin-bottom:14px;
+line-height:1.15;
+margin-bottom:12px;
 }
-.subtitle{
-font-size:15px;
-color:#FAF1F4;
-margin-bottom:26px;
-line-height:1.6;
+.question span{
+display:block;
+margin-top:6px;
 }
-.subtitle span{
-color:#FF3F81;
-font-weight:600;
-}
-.block{
-text-align:left;
+.subtext{
 font-size:14px;
 color:#D8B9C3;
-line-height:1.6;
-margin-bottom:22px;
-}
-.block strong{
-color:#FAF1F4;
-font-weight:600;
-}
-.divider{
-height:1px;
-background:linear-gradient(to right,transparent,#FF3F81,transparent);
-margin:26px 0;
-opacity:.85;
+margin-bottom:26px;
+line-height:1.5;
 }
 .options{
 display:flex;
@@ -84,7 +67,7 @@ font-size:15px;
 color:#FAF1F4;
 cursor:pointer;
 transition:.3s;
-text-align:center;
+text-align:left;
 font-weight:600;
 box-shadow:0 6px 18px rgba(255,63,129,.25);
 }
@@ -92,15 +75,9 @@ box-shadow:0 6px 18px rgba(255,63,129,.25);
 background:linear-gradient(90deg,#E5003C,#FF3F81);
 transform:translateY(-2px);
 }
-.note{
-margin-top:22px;
-font-size:13px;
-color:#D8B9C3;
-line-height:1.4;
-}
-.note span{
-color:#FF3F81;
-font-weight:600;
+.emoji{
+margin-right:10px;
+font-size:18px;
 }
 </style>
 </head>
@@ -110,78 +87,41 @@ font-weight:600;
 <div class="quiz-container">
 
 <div class="progress">
-🧠 PRÉ-RESULTADO DO SEU TESTE EMOCIONAL
+ETAPA 8 DE 12
 </div>
 
-<div class="title">
-Isso não é azar
+<div class="question">
+Olhando pra tudo isso…
+<span>você sente que esse padrão já te custou algo?</span>
 </div>
 
-<div class="subtitle">
-É um <span>padrão emocional</span> que vem se repetindo —
-mesmo quando o homem muda.
+<div class="subtext">
+Não é sobre culpa.<br>
+É sobre reconhecer o impacto real disso na sua vida emocional.
 </div>
-
-<div class="block">
-<strong>O que esse padrão mostra:</strong><br><br>
-Você cria conexão rápido, se envolve de verdade e entrega presença emocional desde o início.<br><br>
-Na maioria das vezes, é você quem sustenta o vínculo, tenta alinhar, entender e segurar a relação.
-</div>
-
-<div class="block">
-<strong>O problema não é intensidade.</strong><br>
-É que, sem perceber, você acaba se adaptando demais para não perder.
-</div>
-
-<div class="block">
-Com o tempo, isso gera:
-<ul>
-<li>Mais esforço da sua parte</li>
-<li>Menos posicionamento da parte dele</li>
-<li>Dúvida constante sobre onde você está pisando</li>
-</ul>
-</div>
-
-<div class="divider"></div>
-
-<div class="block">
-A boa notícia?<br><br>
-Esse padrão <strong>não define quem você é</strong>.<br>
-Mas explica por que o final quase sempre é o mesmo.
-</div>
-
-<div class="block">
-E padrões não se resolvem com mais conversa,
-mais paciência ou mais esforço.<br><br>
-Eles mudam quando a <strong>dinâmica muda</strong>.
-</div>
-
-<div class="divider"></div>
 
 <div class="options">
 <button class="option-button" onclick="next()">
-Ver meu diagnóstico emocional completo
+<span class="emoji">😔</span>
+Sim. Já me custou tempo, energia e muita expectativa
 </button>
 
 <button class="option-button" onclick="next()">
-Entender onde essa dinâmica trava
+<span class="emoji">🕳️</span>
+Sim. E tenho medo de continuar vivendo isso de novo
 </button>
 
 <button class="option-button" onclick="next()">
-Descobrir como reposicionar isso sem esforço
+<span class="emoji">💭</span>
+Nunca pensei assim… mas agora faz sentido
 </button>
-</div>
-
-<div class="note">
-⏱️ Leitura imediata • <span>Baseada nas suas respostas reais</span><br>
-Nenhuma promessa vazia • Nenhum joguinho
 </div>
 
 </div>
 
 <script>
 function next(){
-window.location.href="quiz17.html";
+window.location.href="quiz9.html";
 }
 </script>
 
