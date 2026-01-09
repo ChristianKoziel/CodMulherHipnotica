@@ -7,6 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+<!-- PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){
  if(f.fbq)return;
@@ -26,12 +27,41 @@ fbq('track','PageView');
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#020202;
   color:#F5EDED;
   padding:14px;
 }
+
+/* TIMER POPUP */
+.timer-popup{
+  position:fixed;
+  top:14px;
+  right:14px;
+  background:linear-gradient(90deg,#FF005D,#FF3F81);
+  color:#fff;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:800;
+  font-size:14px;
+  box-shadow:0 10px 40px rgba(255,63,129,.9);
+  z-index:9999;
+  transition:all .35s ease;
+}
+.timer-popup.hidden{
+  opacity:0;
+  transform:scale(.7) translateY(-10px);
+  pointer-events:none;
+}
+.timer-popup span{
+  display:block;
+  font-size:18px;
+  letter-spacing:1px;
+}
+
+/* CONTAINER */
 .container{
   max-width:760px;
   margin:auto;
@@ -41,6 +71,7 @@ body{
   border:1px solid rgba(255,63,129,.85);
   box-shadow:0 0 120px rgba(255,63,129,.55);
 }
+
 h1{
   font-family:'Bebas Neue',sans-serif;
   font-size:48px;
@@ -48,6 +79,7 @@ h1{
   color:#FF3F81;
   line-height:1.05;
 }
+
 .sub{
   text-align:center;
   margin:20px 0 28px;
@@ -55,15 +87,16 @@ h1{
   color:#F2C9D8;
   font-weight:600;
 }
+
 .text{
   font-size:15px;
   line-height:1.85;
   color:#EED6DF;
   margin-bottom:26px;
 }
+
 .highlight{color:#FF3F81;font-weight:700}
 
-/* BLOCO ALERTA */
 .alert{
   padding:24px;
   border-radius:18px;
@@ -74,7 +107,6 @@ h1{
   margin-bottom:30px;
 }
 
-/* LISTA EMOCIONAL */
 .list div{
   margin:14px 0;
   padding:18px;
@@ -84,7 +116,6 @@ h1{
   font-weight:600;
 }
 
-/* VERDADE */
 .truth{
   margin-top:34px;
   padding:26px;
@@ -96,7 +127,6 @@ h1{
 }
 .truth strong{color:#FF3F81}
 
-/* PROVA SOCIAL */
 .proof{
   margin-top:34px;
 }
@@ -107,7 +137,6 @@ h1{
   box-shadow:0 10px 30px rgba(0,0,0,.7);
 }
 
-/* ENTREGA */
 .entrega{
   margin-top:40px;
   padding:28px;
@@ -122,12 +151,7 @@ h1{
   margin-bottom:18px;
   text-align:center;
 }
-.entrega p{
-  font-size:15px;
-  line-height:1.85;
-}
 
-/* AUTORIDADE */
 .expert{
   margin-top:44px;
   display:flex;
@@ -141,7 +165,6 @@ h1{
 .expert img{
   width:160px;
   border-radius:18px;
-  box-shadow:0 12px 40px rgba(0,0,0,.9);
 }
 .expert-text{
   font-size:14px;
@@ -165,20 +188,6 @@ h1{
 .old{font-size:14px;color:#999;text-decoration:line-through}
 .new{font-size:58px;font-weight:900;color:#FFD700}
 
-/* URGÊNCIA PESADA */
-.urgency{
-  margin-top:20px;
-  padding:20px;
-  border-radius:18px;
-  background:rgba(255,63,129,.38);
-  border:1px dashed #FF3F81;
-  font-size:14px;
-  font-weight:900;
-  animation:pulse 1.05s infinite;
-}
-@keyframes pulse{50%{transform:scale(1.08)}}
-
-/* CTA */
 .button{
   width:100%;
   margin-top:30px;
@@ -193,7 +202,6 @@ h1{
   box-shadow:0 26px 90px rgba(255,63,129,1);
 }
 
-/* GARANTIA */
 .guarantee{
   margin-top:34px;
   padding:26px;
@@ -202,14 +210,9 @@ h1{
   border:1px solid rgba(255,215,0,.85);
   text-align:center;
   font-size:14px;
-  color:#F6E4AE;
 }
-.guarantee img{
-  width:130px;
-  margin-bottom:14px;
-}
+.guarantee img{width:130px;margin-bottom:14px}
 
-/* FOOTER */
 .footer{
   margin-top:24px;
   text-align:center;
@@ -220,6 +223,13 @@ h1{
 </head>
 
 <body>
+
+<!-- TIMER POPUP -->
+<div class="timer-popup" id="timerBox">
+  Oferta expira em
+  <span id="timer">09:43</span>
+</div>
+
 <div class="container">
 
 <h1>VOCÊ NÃO É CONFUSA.<br>VOCÊ ESTÁ CANSADA.</h1>
@@ -229,36 +239,29 @@ Cansada de tentar entender alguém que nunca se posiciona.
 </div>
 
 <p class="text">
-Talvez você tenha se perguntado mais de uma vez se o problema era você.  
-Se estava exagerando. Se estava sentindo demais.
-</p>
-
-<p class="text">
-Mas no fundo, você sabe:  
-<span class="highlight">ninguém gosta de viver na dúvida.</span>
+Você não precisa aprender a se calar melhor.
+<br>
+<span class="highlight">Você precisa sair da dinâmica errada.</span>
 </p>
 
 <div class="alert">
-Enquanto você analisa mensagens, horários e silêncios,<br>
-<strong>ele continua confortável sem precisar decidir nada.</strong>
+Se nada mudar agora,<br>
+<strong>esse padrão vai se repetir com outro nome.</strong>
 </div>
 
 <div class="list">
-  <div>Você se cala pra não parecer “demais”</div>
-  <div>Entrega mais esperando que ele perceba</div>
-  <div>Aceita migalhas emocionais</div>
-  <div>E chama isso de paciência</div>
+  <div>Você se adapta demais</div>
+  <div>Engole o que sente</div>
+  <div>Espera atitudes que nunca vêm</div>
 </div>
 
 <div class="truth">
-<strong>Verdade que ninguém te explicou:</strong><br><br>
-Homens não mudam porque você explica melhor.<br>
-Eles mudam quando a <strong>dinâmica emocional</strong> muda.<br><br>
-E hoje, quem está se adaptando demais…<br>
+<strong>A verdade:</strong><br><br>
+Homens mudam quando a dinâmica muda.<br>
+E hoje, quem está se anulando<br>
 <strong>é você.</strong>
 </div>
 
-<!-- PROVA SOCIAL -->
 <div class="proof">
   <img src="src/img/ps3.png">
   <img src="src/img/ps5.png">
@@ -267,54 +270,71 @@ E hoje, quem está se adaptando demais…<br>
 <div class="entrega">
 <h2>CÓDIGO DA MULHER HIPNÓTICA</h2>
 <p>
-Esse método não foi criado pra te transformar em alguém fria.  
-Foi criado pra te tirar da posição de ansiedade.<br><br>
-
-✔ Saber exatamente o que dizer (e o que não dizer)<br>
-✔ Parar de correr atrás de validação<br>
-✔ Recuperar controle emocional sem confronto<br>
-✔ Fazer o homem sentir — não você implorar
+Método criado por <strong>Eliza Maffer</strong>,<br>
+especialista que já ajudou <strong>milhares de mulheres</strong>
+a sair de ciclos de ansiedade emocional
+e relações indefinidas.
 </p>
 </div>
 
 <div class="expert">
-  <img src="src/img/download (7).jpg" alt="Eliza Maffer">
+  <img src="src/img/download (7).jpg">
   <div class="expert-text">
     <strong>Eliza Maffer</strong><br>
-    Psicóloga especializada em dinâmica emocional feminina.<br><br>
-    Mais de <strong>23.000 mulheres</strong> já quebraram ciclos de
-    ansiedade, rejeição e relações indefinidas com esse método.<br><br>
+    Especialista em dinâmica emocional feminina.<br><br>
     Não é sobre joguinhos.<br>
-    É sobre postura emocional.
+    É sobre postura.
   </div>
 </div>
 
 <div class="price">
   <div class="old">De R$397,00</div>
   <div class="new">R$47,90</div>
-
-  <div class="urgency">
-    ⏳ Essa página sai do ar hoje.<br>
-    Fechou agora → perdeu o acesso.
-  </div>
 </div>
 
 <button class="button"
-onclick="fbq('track','InitiateCheckout'); window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+onclick="fbq('track','InitiateCheckout');window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
 EU QUERO SAIR DESSE CICLO AGORA
 </button>
 
 <div class="guarantee">
   <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
-  <strong>GARANTIA INCONDICIONAL DE 7 DIAS</strong><br><br>
-  Ou você sente clareza, segurança e controle emocional,<br>
-  ou seu dinheiro volta. Simples.
+  Garantia incondicional de 7 dias
 </div>
 
 <div class="footer">
-Não é pra todas. É pra quem cansou de se diminuir.
+Essa oferta sai do ar quando você fechar essa página.
 </div>
 
 </div>
+
+<!-- SCRIPTS -->
+<script>
+/* TIMER */
+let seconds = 9*60 + 43;
+const timerEl = document.getElementById("timer");
+
+setInterval(()=>{
+  const m = String(Math.floor(seconds/60)).padStart(2,'0');
+  const s = String(seconds%60).padStart(2,'0');
+  timerEl.textContent = m+":"+s;
+  if(seconds>0) seconds--;
+},1000);
+
+/* APARECE / SOME AO SCROLL */
+let lastScroll = 0;
+const box = document.getElementById("timerBox");
+
+window.addEventListener("scroll",()=>{
+  const current = window.scrollY;
+  if(current > lastScroll){
+    box.classList.add("hidden");
+  }else{
+    box.classList.remove("hidden");
+  }
+  lastScroll = current;
+});
+</script>
+
 </body>
 </html>

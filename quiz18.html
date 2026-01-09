@@ -19,82 +19,49 @@ body{
     align-items:center;
     min-height:100vh;
 }
-
 .container{
     width:90%;
     max-width:560px;
-    padding:40px 28px;
+    padding:38px 26px;
     background:rgba(12,12,12,.96);
     border-radius:26px;
     text-align:center;
     border:1px solid rgba(255,63,129,.65);
     box-shadow:0 0 55px rgba(255,63,129,.5);
-    position:relative;
-    overflow:hidden;
 }
-
-.container::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    background:linear-gradient(45deg,#FF3F81,#E5003C,#1E0B26);
-    filter:blur(14px);
-    opacity:.35;
-    z-index:-1;
-}
-
 .title{
     font-family:'Bebas Neue',sans-serif;
     font-size:34px;
     line-height:1.1;
     color:#FFD700;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
-
 .title span{
     display:block;
     color:#FF3F81;
     margin-top:8px;
 }
-
 .text{
     font-size:15px;
     color:#D8B9C3;
     line-height:1.6;
-    margin-bottom:26px;
+    margin-bottom:22px;
 }
-
-.highlight{
-    color:#FFD700;
-    font-weight:600;
-}
-
 .box{
     background:rgba(30,11,38,.95);
-    border-radius:22px;
-    padding:22px;
+    border-radius:20px;
+    padding:20px;
     text-align:left;
-    margin-bottom:22px;
+    margin-bottom:18px;
     border:1px solid rgba(255,63,129,.45);
 }
-
 .box p{
     font-size:14.5px;
     line-height:1.55;
     color:#D8B9C3;
 }
-
-.list{
-    padding-left:18px;
-}
-
-.list li{
-    margin-bottom:14px;
-    line-height:1.5;
-}
-
 .warning{
-    margin:26px 0;
+    margin:22px 0;
     padding:18px;
     background:rgba(229,0,60,.15);
     border:1px solid rgba(255,63,129,.6);
@@ -103,32 +70,11 @@ body{
     font-weight:600;
     color:#FFD700;
 }
-
-.choice{
-    background:rgba(30,11,38,.92);
-    border-radius:16px;
-    padding:16px;
-    text-align:left;
-    font-size:14.5px;
-    margin-bottom:14px;
-    display:flex;
-    gap:12px;
-}
-
-.choice span{
-    font-size:18px;
-    font-weight:700;
-}
-
-.good{color:#FFD700}
-.bad{color:#E5003C}
-
 .microcopy{
-    margin:24px 0;
+    margin:22px 0;
     font-size:14px;
     color:#C9A8B4;
 }
-
 .cta{
     background:linear-gradient(90deg,#E5003C,#FF3F81);
     border:none;
@@ -139,12 +85,9 @@ body{
     color:#FAF1F4;
     cursor:pointer;
     box-shadow:0 10px 30px rgba(255,63,129,.7);
-    transition:.3s;
 }
-
 .cta:hover{
     transform:translateY(-3px);
-    box-shadow:0 16px 40px rgba(255,63,129,.9);
 }
 </style>
 </head>
@@ -154,62 +97,53 @@ body{
 <div class="container">
 
     <div class="title">
-        Ignorar esse padrão
-        <span>não faz ele desaparecer</span>
+        Isso não é azar
+        <span>e não é falta de valor</span>
     </div>
 
     <div class="text">
-        Na maioria das vezes, ele só muda de forma.
+        O que você vive não começa na outra pessoa.
         <br>
-        Muda o nome, muda o rosto —
-        <br>
-        mas o <span class="highlight">sentimento no final</span> é quase sempre o mesmo.
+        Começa em um <strong>padrão invisível</strong>
+        que se repete sem você perceber.
     </div>
 
     <div class="box">
         <p>
-            Com o tempo, isso costuma gerar:
-        </p>
-        <ul class="list">
-            <li>Histórias que começam intensas, mas nunca se firmam</li>
-            <li>Conexões onde você sente mais do que recebe</li>
-            <li>A sensação de estar sempre tentando entender onde está pisando</li>
-        </ul>
-    </div>
-
-    <div class="box">
-        <p>
-            É daí que surgem pensamentos como:
+            É por isso que as histórias mudam,
+            mas o final parece sempre o mesmo:
             <br><br>
-            “Por que isso sempre acontece comigo?”  
+            você se doa mais,
+            espera mais,
+            e termina se sentindo confusa,
+            insegura ou em segundo plano.
+        </p>
+    </div>
+
+    <div class="box">
+        <p>
+            Em algum momento você pensou:
+            <br><br>
+            “Talvez eu seja demais…”  
             <br>
-            “Eu faço tanto… e mesmo assim não é suficiente”  
+            “Talvez eu precise ter mais calma…”  
             <br>
-            “Parece que algo sempre escapa”
+            “Talvez se eu fizer diferente, funcione…”
         </p>
     </div>
 
     <div class="warning">
-        Esse ciclo não muda com mais esforço,
-        mais paciência ou mais conversa.
+        Mas esse ciclo não muda
+        tentando mais do mesmo.
         <br><br>
-        Ele muda quando a dinâmica muda.
-    </div>
-
-    <div class="choice">
-        <span class="good">✓</span>
-        Entender o que realmente ajusta essa dinâmica  
-        — e parar de reviver a mesma história.
-    </div>
-
-    <div class="choice">
-        <span class="bad">✕</span>
-        Continuar esperando que a próxima pessoa seja diferente.
+        Ele muda quando você entende
+        <strong>o jogo que está sendo jogado.</strong>
     </div>
 
     <div class="microcopy">
-        👇 O próximo passo mostra por que
-        quase todo mundo tenta mudar isso do jeito errado
+        👇 No próximo passo, você vai entender
+        por que quase todo mundo tenta mudar isso
+        do jeito errado — e se frustra.
     </div>
 
     <button class="cta" onclick="window.location.href='quiz19.html'">
