@@ -271,7 +271,17 @@ EU QUERO MUDAR ISSO AGORA
 <div class="guarantee">
   <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
   7 DIAS DE GARANTIA INCONDICIONAL
+
+  <!-- ADICIONE AQUI -->
+  <div class="guarantee-text">
+    Se dentro de <strong>7 dias</strong> você sentir que absolutamente nada mudou — o que é praticamente impossível —
+    você pode simplesmente pedir o reembolso e recuperar <strong>100% do seu dinheiro</strong>.
+    <br><br>
+    Você não sai perdendo.  
+    <strong>Você só tem a ganhar.</strong>
+  </div>
 </div>
+
 
 <div class="footer">
 Você teve a chance. Agora a escolha é sua.
@@ -282,16 +292,49 @@ Você teve a chance. Agora a escolha é sua.
 <div class="popup" id="popup"></div>
 
 <script>
-const nomes = ["Ana - SP","Mariana - RJ","Larissa - MG","Camila - PR","Bruna - RS"];
-let popup = document.getElementById("popup");
+const pessoas = [
+  "Ana • São Paulo",
+  "Mariana • Rio de Janeiro",
+  "Larissa • Belo Horizonte",
+  "Camila • Curitiba",
+  "Bruna • Porto Alegre",
+  "Fernanda • Campinas",
+  "Juliana • Salvador",
+  "Patrícia • Goiânia",
+  "Renata • Florianópolis",
+  "Isabela • Santos",
+  "Carolina • Osasco",
+  "Débora • Sorocaba"
+];
 
-setInterval(()=>{
-  const nome = nomes[Math.floor(Math.random()*nomes.length)];
-  popup.innerText = nome + " acabou de garantir o acesso";
-  popup.style.display="block";
-  setTimeout(()=>popup.style.display="none",3500);
-},8000);
+// tempos em milissegundos
+const tempos = [12000, 20000, 25000, 18000, 30000, 22000];
+
+let indexTempo = 0;
+const popup = document.getElementById("popup");
+
+function mostrarPopup(){
+  const pessoa = pessoas[Math.floor(Math.random()*pessoas.length)];
+  popup.innerText = pessoa + " acabou de garantir o acesso";
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3500);
+
+  const proximoTempo = tempos[indexTempo % tempos.length];
+  indexTempo++;
+
+  setTimeout(mostrarPopup, proximoTempo);
+}
+
+// primeiro popup depois de 12s
+setTimeout(mostrarPopup, 12000);
 </script>
 
 </body>
 </html>
+
+<div class="footer">
+TODOS OS DIREITOS RESERVADOS – ELIZA MAFFER © 2025
+</div>
