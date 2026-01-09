@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- PIXEL -->
 <script>
@@ -27,41 +27,12 @@ fbq('track','PageView');
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   font-family:'Poppins',sans-serif;
   background:#020202;
   color:#F5EDED;
   padding:14px;
 }
-
-/* TIMER POPUP */
-.timer-popup{
-  position:fixed;
-  top:14px;
-  right:14px;
-  background:linear-gradient(90deg,#FF005D,#FF3F81);
-  color:#fff;
-  padding:12px 16px;
-  border-radius:14px;
-  font-weight:800;
-  font-size:14px;
-  box-shadow:0 10px 40px rgba(255,63,129,.9);
-  z-index:9999;
-  transition:all .35s ease;
-}
-.timer-popup.hidden{
-  opacity:0;
-  transform:scale(.7) translateY(-10px);
-  pointer-events:none;
-}
-.timer-popup span{
-  display:block;
-  font-size:18px;
-  letter-spacing:1px;
-}
-
-/* CONTAINER */
 .container{
   max-width:760px;
   margin:auto;
@@ -69,9 +40,8 @@ body{
   border-radius:24px;
   padding:40px 24px;
   border:1px solid rgba(255,63,129,.85);
-  box-shadow:0 0 120px rgba(255,63,129,.55);
+  box-shadow:0 0 120px rgba(255,63,129,.6);
 }
-
 h1{
   font-family:'Bebas Neue',sans-serif;
   font-size:48px;
@@ -79,74 +49,57 @@ h1{
   color:#FF3F81;
   line-height:1.05;
 }
-
 .sub{
   text-align:center;
   margin:20px 0 28px;
   font-size:17px;
   color:#F2C9D8;
-  font-weight:600;
+  font-weight:700;
 }
-
-.text{
-  font-size:15px;
-  line-height:1.85;
-  color:#EED6DF;
-  margin-bottom:26px;
-}
-
-.highlight{color:#FF3F81;font-weight:700}
-
 .alert{
-  padding:24px;
-  border-radius:18px;
-  background:rgba(255,0,90,.30);
+  padding:26px;
+  border-radius:20px;
+  background:rgba(255,0,90,.35);
   border-left:6px solid #FF3F81;
-  font-size:15px;
-  line-height:1.8;
-  margin-bottom:30px;
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:32px;
 }
-
 .list div{
   margin:14px 0;
   padding:18px;
   border-radius:16px;
-  background:rgba(255,63,129,.20);
+  background:rgba(255,63,129,.25);
   border-left:4px solid #FF3F81;
-  font-weight:600;
+  font-weight:700;
 }
-
 .truth{
   margin-top:34px;
   padding:26px;
   border-radius:20px;
   background:#000;
   border:2px solid #FF3F81;
-  font-size:15px;
+  font-size:16px;
   line-height:1.9;
 }
 .truth strong{color:#FF3F81}
 
-.proof{
-  margin-top:34px;
-}
 .proof img{
   width:100%;
   border-radius:18px;
-  margin-bottom:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.7);
+  margin:14px 0;
 }
 
 .entrega{
   margin-top:40px;
-  padding:28px;
+  padding:30px;
   border-radius:22px;
-  background:rgba(255,215,0,.15);
+  background:rgba(255,215,0,.18);
   border-left:6px solid #FFD700;
 }
 .entrega h2{
   font-family:'Bebas Neue',sans-serif;
-  font-size:36px;
+  font-size:38px;
   color:#FFD700;
   margin-bottom:18px;
   text-align:center;
@@ -169,97 +122,114 @@ h1{
 .expert-text{
   font-size:14px;
   line-height:1.9;
-  color:#F2C9D8;
-}
-.expert-text strong{
-  color:#FFD700;
-  font-size:15px;
 }
 
-/* PREÇO */
 .price{
   margin:44px 0 22px;
   padding:32px;
   background:#000;
   border-radius:24px;
-  border:2px solid #FFD700;
+  border:3px solid #FFD700;
   text-align:center;
 }
-.old{font-size:14px;color:#999;text-decoration:line-through}
-.new{font-size:58px;font-weight:900;color:#FFD700}
+.old{font-size:15px;color:#999;text-decoration:line-through}
+.new{font-size:60px;font-weight:900;color:#FFD700}
+
+.urgency{
+  margin-top:22px;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,63,129,.45);
+  border:2px dashed #FF3F81;
+  font-size:15px;
+  font-weight:900;
+  animation:pulse 1s infinite;
+}
+@keyframes pulse{50%{transform:scale(1.08)}}
 
 .button{
   width:100%;
   margin-top:30px;
   padding:30px;
-  font-size:22px;
+  font-size:24px;
   font-weight:900;
   border:none;
-  border-radius:70px;
+  border-radius:80px;
   background:linear-gradient(45deg,#FF005D,#FF3F81);
   color:#FFF;
   cursor:pointer;
-  box-shadow:0 26px 90px rgba(255,63,129,1);
+  box-shadow:0 30px 90px rgba(255,63,129,1);
 }
 
 .guarantee{
   margin-top:34px;
   padding:26px;
   border-radius:22px;
-  background:rgba(255,215,0,.20);
-  border:1px solid rgba(255,215,0,.85);
+  background:rgba(255,215,0,.22);
+  border:1px solid rgba(255,215,0,.9);
   text-align:center;
   font-size:14px;
 }
-.guarantee img{width:130px;margin-bottom:14px}
+.guarantee img{
+  width:130px;
+  margin-bottom:14px;
+}
 
 .footer{
-  margin-top:24px;
+  margin-top:26px;
   text-align:center;
   font-size:11px;
   opacity:.6;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#000;
+  border:1px solid #FF3F81;
+  padding:14px 18px;
+  border-radius:14px;
+  font-size:13px;
+  box-shadow:0 0 30px rgba(255,63,129,.9);
+  display:none;
+  z-index:999;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TIMER POPUP -->
-<div class="timer-popup" id="timerBox">
-  Oferta expira em
-  <span id="timer">09:43</span>
-</div>
-
 <div class="container">
 
-<h1>VOCÊ NÃO É CONFUSA.<br>VOCÊ ESTÁ CANSADA.</h1>
+<h1>É AGORA OU NADA.</h1>
 
 <div class="sub">
-Cansada de tentar entender alguém que nunca se posiciona.
+Se você sair dessa página, tudo continua exatamente igual.
 </div>
 
-<p class="text">
-Você não precisa aprender a se calar melhor.
-<br>
-<span class="highlight">Você precisa sair da dinâmica errada.</span>
-</p>
-
 <div class="alert">
-Se nada mudar agora,<br>
-<strong>esse padrão vai se repetir com outro nome.</strong>
+Você já tentou ser paciente.<br>
+Já tentou entender.<br>
+Já tentou esperar.<br><br>
+
+<strong>E nada mudou.</strong><br><br>
+Porque se você não muda a dinâmica,<br>
+<strong>a história sempre termina do mesmo jeito.</strong>
 </div>
 
 <div class="list">
   <div>Você se adapta demais</div>
-  <div>Engole o que sente</div>
-  <div>Espera atitudes que nunca vêm</div>
+  <div>Você sente mais do que recebe</div>
+  <div>Você aceita menos do que merece</div>
 </div>
 
 <div class="truth">
-<strong>A verdade:</strong><br><br>
-Homens mudam quando a dinâmica muda.<br>
-E hoje, quem está se anulando<br>
-<strong>é você.</strong>
+<strong>Essa é a última chamada:</strong><br><br>
+Ou você aprende a se posicionar emocionalmente agora,<br>
+ou vai continuar revivendo essa dor com nomes diferentes.
 </div>
 
 <div class="proof">
@@ -269,71 +239,58 @@ E hoje, quem está se anulando<br>
 
 <div class="entrega">
 <h2>CÓDIGO DA MULHER HIPNÓTICA</h2>
-<p>
-Método criado por <strong>Eliza Maffer</strong>,<br>
-especialista que já ajudou <strong>milhares de mulheres</strong>
-a sair de ciclos de ansiedade emocional
-e relações indefinidas.
-</p>
+✔ Parar de correr atrás<br>
+✔ Ser desejada sem implorar<br>
+✔ Virar prioridade sem cobrança<br>
+✔ Recuperar controle emocional
 </div>
 
 <div class="expert">
   <img src="src/img/download (7).jpg">
   <div class="expert-text">
     <strong>Eliza Maffer</strong><br>
-    Especialista em dinâmica emocional feminina.<br><br>
-    Não é sobre joguinhos.<br>
-    É sobre postura.
+    Método aplicado por mais de <strong>23.000 mulheres</strong>.
   </div>
 </div>
 
 <div class="price">
   <div class="old">De R$397,00</div>
   <div class="new">R$47,90</div>
+
+  <div class="urgency">
+    ⚠️ 17 vagas restantes nesse valor.<br>
+    Essa página sai do ar ao fechar.
+  </div>
 </div>
 
 <button class="button"
-onclick="fbq('track','InitiateCheckout');window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
-EU QUERO SAIR DESSE CICLO AGORA
+onclick="fbq('track','InitiateCheckout'); window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+EU QUERO MUDAR ISSO AGORA
 </button>
 
 <div class="guarantee">
   <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
-  Garantia incondicional de 7 dias
+  7 DIAS DE GARANTIA INCONDICIONAL
 </div>
 
 <div class="footer">
-Essa oferta sai do ar quando você fechar essa página.
+Você teve a chance. Agora a escolha é sua.
 </div>
 
 </div>
 
-<!-- SCRIPTS -->
+<div class="popup" id="popup"></div>
+
 <script>
-/* TIMER */
-let seconds = 9*60 + 43;
-const timerEl = document.getElementById("timer");
+const nomes = ["Ana - SP","Mariana - RJ","Larissa - MG","Camila - PR","Bruna - RS"];
+let popup = document.getElementById("popup");
 
 setInterval(()=>{
-  const m = String(Math.floor(seconds/60)).padStart(2,'0');
-  const s = String(seconds%60).padStart(2,'0');
-  timerEl.textContent = m+":"+s;
-  if(seconds>0) seconds--;
-},1000);
-
-/* APARECE / SOME AO SCROLL */
-let lastScroll = 0;
-const box = document.getElementById("timerBox");
-
-window.addEventListener("scroll",()=>{
-  const current = window.scrollY;
-  if(current > lastScroll){
-    box.classList.add("hidden");
-  }else{
-    box.classList.remove("hidden");
-  }
-  lastScroll = current;
-});
+  const nome = nomes[Math.floor(Math.random()*nomes.length)];
+  popup.innerText = nome + " acabou de garantir o acesso";
+  popup.style.display="block";
+  setTimeout(()=>popup.style.display="none",3500);
+},8000);
 </script>
 
 </body>
