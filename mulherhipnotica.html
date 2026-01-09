@@ -258,18 +258,18 @@ ou vai continuar revivendo essa dor com nomes diferentes.
   <div class="new">R$47,90</div>
 
   <div class="urgency">
-    ⚠️ 17 vagas restantes nesse valor.<br>
-    Essa página sai do ar ao fechar.
-  </div>
+      ⚠️ <span id="vagas">17</span> vagas restantes nesse valor.<br>
+Essa página sai do ar ao fechar.
+     </div>
 </div>
 
 <button class="button"
 onclick="fbq('track','InitiateCheckout'); window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
 EU QUERO MUDAR ISSO AGORA
 </button>
-<div class="payments">
+<div class="proof">
   <img src="src/img/formasdepagamentocartoes.webp">
-  
+
 
 <div class="guarantee">
   <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
@@ -310,16 +310,24 @@ const pessoas = [
   "Débora • Sorocaba"
 ];
 
-// tempos em milissegundos
 const tempos = [12000, 20000, 25000, 18000, 30000, 22000];
 
 let indexTempo = 0;
-const popup = document.getElementById("popup");
+let vagas = 17;
 
-function mostrarPopup(){
-  const pessoa = pessoas[Math.floor(Math.random()*pessoas.length)];
+const popup = document.getElementById("popup");
+const vagasEl = document.getElementById("vagas");
+
+function mostrarPopup() {
+  if (vagas <= 1) return; // trava no mínimo 1 vaga
+
+  const pessoa = pessoas[Math.floor(Math.random() * pessoas.length)];
   popup.innerText = pessoa + " acabou de garantir o acesso";
   popup.style.display = "block";
+
+  // diminui vaga
+  vagas--;
+  vagasEl.innerText = vagas;
 
   setTimeout(() => {
     popup.style.display = "none";
