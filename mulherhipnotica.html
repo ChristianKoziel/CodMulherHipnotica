@@ -6,356 +6,168 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(255,63,129,.9);
-  }
-  50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 40px rgba(255,63,129,1);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(255,63,129,.9);
-  }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#F5EDED;
 }
 
-.button.pulse{
-  animation: pulse 1.6s infinite;
+/* ALERTA TOPO */
+.top-alert{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  background:#C4002F;
+  color:#FFF;
+  text-align:center;
+  font-weight:900;
+  font-size:14px;
+  padding:14px 10px;
+  z-index:999;
 }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#020202;
-      color:#F5EDED;
-      padding:14px;
-      padding-top:70px;
-    }
-
-    /* TOPO FIXO */
-    .top-alert{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:9999;
-      background:#C4002F;
-      color:#FFF;
-      text-align:center;
-      font-weight:900;
-      padding:14px 10px;
-      font-size:14px;
-      box-shadow:0 6px 30px rgba(196,0,47,.8);
-    }
-
-    .container{
-      max-width:760px;
-      margin:auto;
-      background:#070707;
-      border-radius:24px;
-      padding:40px 24px;
-      border:1px solid rgba(255,63,129,.85);
-      box-shadow:0 0 120px rgba(255,63,129,.6);
-    }
-
-    .logo{
-      text-align:center;
-      margin-bottom:16px;
-    }
-
-    .logo img{
-      max-width:220px;
-      margin:0 auto;
-      display:block;
-      filter:drop-shadow(0 0 40px rgba(255,63,129,.9));
-    }
-
-    h1{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:46px;
-      text-align:center;
-      color:#FF3F81;
-      line-height:1.1;
-    }
-
-    .sub{
-      text-align:center;
-      margin:22px 0 30px;
-      font-size:17px;
-      color:#F2C9D8;
-      font-weight:700;
-      line-height:1.6;
-    }
-
-    .alert{
-      padding:26px;
-      border-radius:20px;
-      background:rgba(255,0,90,.35);
-      border-left:6px solid #FF3F81;
-      font-size:16px;
-      line-height:1.9;
-      margin-bottom:32px;
-    }
-
-    .price-highlight{
-      text-align:center;
-      font-size:22px;
-      font-weight:900;
-      color:#FFD700;
-      margin:30px 0;
-      animation:pulsePrice 1.8s infinite;
-    }
-
-    @keyframes pulsePrice{
-      0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,0)}
-      50%{transform:scale(1.05); box-shadow:0 0 40px rgba(255,215,0,.9)}
-      100%{transform:scale(1)}
-    }
-
-    .arrow{
-      text-align:center;
-      font-size:36px;
-      margin-bottom:18px;
-      animation:bounceArrow 1.2s infinite;
-    }
-
-    @keyframes bounceArrow{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(14px)}
-    }
-
-    .list div{
-      margin:14px 0;
-      padding:18px;
-      border-radius:16px;
-      background:rgba(255,63,129,.25);
-      border-left:4px solid #FF3F81;
-      font-weight:700;
-    }
-
-    .section{
-      margin-top:46px;
-    }
-
-    .section-title{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:36px;
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:22px;
-    }
-
-    .bonus{
-      background:#000;
-      border-radius:22px;
-      padding:26px;
-      border:1px solid rgba(255,63,129,.6);
-      margin-bottom:22px;
-    }
-
-    .bonus strong{color:#FFD700}
-
-    .offer-box{
-      margin-top:46px;
-      padding:30px;
-      border-radius:24px;
-      background:#000;
-      border:2px solid #FF3F81;
-    }
-
-    .offer-title{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:36px;
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:26px;
-    }
-
-    .offer{
-      padding:22px;
-      border-radius:18px;
-      margin-bottom:22px;
-      background:rgba(255,63,129,.18);
-      border:1px solid rgba(255,63,129,.6);
-    }
-
-    .offer.disabled{
-      opacity:.35;
-      filter:grayscale(100%);
-      pointer-events:none;
-    }
-
-    .offer h3{
-      font-size:20px;
-      margin-bottom:12px;
-    }
-
-    .offer ul{
-      list-style:none;
-      font-size:14px;
-      line-height:1.9;
-      margin-bottom:16px;
-    }
-
-    .price-offer{
-      font-size:36px;
-      font-weight:900;
-      color:#FFD700;
-      text-align:center;
-    }
-
-    .soldout{
-      text-align:center;
-      font-size:13px;
-      font-weight:900;
-      color:#FF3F81;
-    }
-
-    .button{
-      width:100%;
-      margin-top:26px;
-      padding:30px;
-      font-size:22px;
-      font-weight:900;
-      border:none;
-      border-radius:80px;
-      background:linear-gradient(45deg,#FF005D,#FF3F81);
-      color:#FFF;
-      cursor:pointer;
-      box-shadow:0 30px 90px rgba(255,63,129,1);
-    }
-
-    .guarantee{
-      margin-top:34px;
-      padding:26px;
-      border-radius:22px;
-      background:rgba(255,215,0,.22);
-      border:1px solid rgba(255,215,0,.9);
-      text-align:center;
-      font-size:14px;
-    }
-
-    .guarantee img{
-      max-width:140px;
-      margin-bottom:12px;
-    }
-
-    .faq{
-      margin-top:46px;
-      font-size:14px;
-      line-height:1.8;
-    }
-
-    .faq h3{
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:18px;
-    }
-
-    .cta-link{
-      display:block;
-      margin-top:22px;
-      text-align:center;
-      font-weight:900;
-      color:#FFD700;
-      text-decoration:none;
-    }
-
-    .footer{
-      margin-top:26px;
-      text-align:center;
-      font-size:11px;
-      opacity:.6;
-    }
-    /* =========================
-   AJUSTES MOBILE (APENAS CELULAR)
-   ========================= */
-@media (max-width: 480px){
-
-  body{
-    padding:12px;
-    padding-top:90px;
-  }
-
-  .container{
-    padding:28px 18px;
-    border-radius:20px;
-  }
-
-  h1{
-    font-size:38px;
-    line-height:1.15;
-  }
-
-  .sub{
-    font-size:18px;
-    line-height:1.7;
-  }
-
-  .alert{
-    font-size:17px;
-    line-height:1.85;
-    padding:22px;
-  }
-
-  .price-highlight{
-    font-size:24px;
-  }
-
-  .list div{
-    font-size:16px;
-    padding:16px;
-  }
-
-  .section-title,
-  .offer-title{
-    font-size:32px;
-  }
-
-  .bonus{
-    font-size:16px;
-    line-height:1.7;
-  }
-
-  .offer h3{
-    font-size:22px;
-  }
-
-  .offer ul{
-    font-size:16px;
-    line-height:1.8;
-  }
-
-  .price-offer{
-    font-size:40px;
-  }
-
-  .button{
-    font-size:24px;
-    padding:26px;
-  }
-
-  .guarantee{
-    font-size:15px;
-    line-height:1.6;
-  }
-
-  .faq{
-    font-size:15px;
-    line-height:1.75;
-  }
-
-  .top-alert{
-    font-size:15px;
-    padding:16px 10px;
-  }
+/* CONTAINER MOBILE */
+.container{
+  padding:96px 16px 32px;
+  max-width:520px;
+  margin:auto;
 }
-  </style>
+
+/* TÍTULO */
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;
+  text-align:center;
+  color:#FF3F81;
+  line-height:1.1;
+}
+
+/* SUB */
+.sub{
+  text-align:center;
+  font-size:16px;
+  line-height:1.6;
+  margin:18px 0 26px;
+  color:#F2C9D8;
+}
+
+/* ALERT BOX */
+.alert{
+  background:rgba(255,63,129,.22);
+  border-left:4px solid #FF3F81;
+  padding:18px;
+  border-radius:14px;
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+/* LISTA */
+.list div{
+  background:rgba(255,63,129,.18);
+  border-left:4px solid #FF3F81;
+  padding:14px;
+  border-radius:14px;
+  font-size:15px;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+/* SEÇÃO */
+.section{
+  margin-top:36px;
+}
+
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;
+  color:#FF3F81;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+/* OFERTAS */
+.offer{
+  background:#000;
+  border:1px solid rgba(255,63,129,.6);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:22px;
+}
+
+.offer h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.offer ul{
+  list-style:none;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+.price-offer{
+  text-align:center;
+  font-size:34px;
+  font-weight:900;
+  color:#FFD700;
+}
+
+/* OFERTA DESATIVADA */
+.offer.disabled{
+  opacity:.4;
+  filter:grayscale(100%);
+}
+
+/* BOTÃO */
+@keyframes pulse{
+  0%{transform:scale(1); box-shadow:0 0 0 rgba(255,63,129,.8)}
+  50%{transform:scale(1.06); box-shadow:0 0 30px rgba(255,63,129,1)}
+  100%{transform:scale(1)}
+}
+
+.button{
+  width:100%;
+  margin-top:18px;
+  padding:22px 18px;
+  font-size:20px;
+  font-weight:900;
+  border:none;
+  border-radius:60px;
+  background:linear-gradient(45deg,#FF005D,#FF3F81);
+  color:#FFF;
+  animation:pulse 1.4s infinite;
+}
+
+.button small{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* GARANTIA */
+.guarantee{
+  margin-top:28px;
+  background:rgba(255,215,0,.22);
+  border:1px solid rgba(255,215,0,.8);
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:26px;
+  text-align:center;
+  font-size:11px;
+  opacity:.6;
+}
+</style>
 </head>
 
 <body>
