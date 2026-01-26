@@ -25,6 +25,15 @@ fbq('init','1208952827491954');
 fbq('track','PageView');
 </script>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código da Mulher Hipnótica</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -84,12 +93,6 @@ h1{
 }
 .truth strong{color:#FF3F81}
 
-.proof img{
-  width:100%;
-  border-radius:18px;
-  margin:14px 0;
-}
-
 .entrega{
   margin-top:40px;
   padding:30px;
@@ -124,32 +127,58 @@ h1{
   line-height:1.9;
 }
 
-.price{
-  margin:44px 0 22px;
-  padding:32px;
-  background:#000;
+/* OFERTAS */
+.offer-box{
+  margin-top:46px;
+  padding:30px;
   border-radius:24px;
-  border:3px solid #FFD700;
-  text-align:center;
+  background:#000;
+  border:2px solid #FF3F81;
 }
-.old{font-size:15px;color:#999;text-decoration:line-through}
-.new{font-size:60px;font-weight:900;color:#FFD700}
-
-.urgency{
-  margin-top:22px;
+.offer-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;
+  text-align:center;
+  color:#FF3F81;
+  margin-bottom:26px;
+}
+.offer{
   padding:22px;
   border-radius:18px;
-  background:rgba(255,63,129,.45);
-  border:2px dashed #FF3F81;
-  font-size:15px;
-  font-weight:900;
-  animation:pulse 1s infinite;
+  margin-bottom:22px;
+  background:rgba(255,63,129,.18);
+  border:1px solid rgba(255,63,129,.6);
 }
-@keyframes pulse{50%{transform:scale(1.08)}}
+.offer.disabled{
+  opacity:.35;
+  filter:grayscale(100%);
+  pointer-events:none;
+}
+.offer h3{
+  font-size:20px;
+  margin-bottom:12px;
+}
+.offer ul{
+  font-size:14px;
+  line-height:1.9;
+  margin-bottom:16px;
+}
+.price-offer{
+  font-size:36px;
+  font-weight:900;
+  color:#FFD700;
+  text-align:center;
+}
+.soldout{
+  text-align:center;
+  font-size:13px;
+  font-weight:900;
+  color:#FF3F81;
+}
 
 .button{
   width:100%;
-  margin-top:30px;
+  margin-top:26px;
   padding:30px;
   font-size:24px;
   font-weight:900;
@@ -160,17 +189,6 @@ h1{
   cursor:pointer;
   box-shadow:0 30px 90px rgba(255,63,129,1);
 }
-.payment {
-  margin-top: 22px;
-  text-align: center;
-}
-
-.payment img {
-  max-width: 280px;   /* controla o tamanho */
-  width: 100%;
-  opacity: 0.9;
-}
-
 
 .guarantee{
   margin-top:34px;
@@ -181,32 +199,11 @@ h1{
   text-align:center;
   font-size:14px;
 }
-.guarantee img{
-  width:130px;
-  margin-bottom:14px;
-}
-
 .footer{
   margin-top:26px;
   text-align:center;
   font-size:11px;
   opacity:.6;
-}
-
-/* POPUP */
-.popup{
-  position:fixed;
-  bottom:18px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#000;
-  border:1px solid #FF3F81;
-  padding:14px 18px;
-  border-radius:14px;
-  font-size:13px;
-  box-shadow:0 0 30px rgba(255,63,129,.9);
-  display:none;
-  z-index:999;
 }
 </style>
 </head>
@@ -218,17 +215,16 @@ h1{
 <h1>É AGORA OU NADA.</h1>
 
 <div class="sub">
-Se você sair dessa página, tudo continua exatamente igual.
+Se você sair desta página, tudo continuará exatamente igual.
 </div>
 
 <div class="alert">
 Você já tentou ser paciente.<br>
 Já tentou entender.<br>
 Já tentou esperar.<br><br>
-
 <strong>E nada mudou.</strong><br><br>
-Porque se você não muda a dinâmica,<br>
-<strong>a história sempre termina do mesmo jeito.</strong>
+Porque, se você não mudar a dinâmica,<br>
+<strong>a história sempre terminará do mesmo jeito.</strong>
 </div>
 
 <div class="list">
@@ -238,16 +234,9 @@ Porque se você não muda a dinâmica,<br>
 </div>
 
 <div class="truth">
-<strong>Essa é a última chamada:</strong><br><br>
+<strong>Esta é a última chamada:</strong><br><br>
 Ou você aprende a se posicionar emocionalmente agora,<br>
-ou vai continuar revivendo essa dor com nomes diferentes.
-</div>
-
-<div class="proof">
-   <img src="src/img/provasocial.jpg">
-  <img src="src/img/depoimento111.jpeg">
- <img src="src/img/ps3.png">
-  <img src="src/img/ps5.png">
+ou continuará revivendo essa dor com nomes diferentes.
 </div>
 
 <div class="entrega">
@@ -255,7 +244,7 @@ ou vai continuar revivendo essa dor com nomes diferentes.
 ✔ Parar de correr atrás<br>
 ✔ Ser desejada sem implorar<br>
 ✔ Virar prioridade sem cobrança<br>
-✔ Recuperar controle emocional
+✔ Recuperar o controle emocional
 </div>
 
 <div class="expert">
@@ -266,38 +255,61 @@ ou vai continuar revivendo essa dor com nomes diferentes.
   </div>
 </div>
 
-<div class="price">
-  <div class="old">De R$397,00</div>
-  <div class="new">R$47,90</div>
+<div class="offer-box">
 
-  <div class="urgency">
-      ⚠️ <span id="vagas">17</span> vagas restantes nesse valor.<br>
-Essa página sai do ar ao fechar.
-     </div>
+  <div class="offer-title">Escolha sua forma de acesso</div>
+
+  <!-- OFERTA PREMIUM ESGOTADA -->
+  <div class="offer disabled">
+    <h3>Código da Mulher Hipnótica — Premium</h3>
+    <ul>
+      ✔️ +5 vídeo aulas exclusivas<br>
+      ✔️ +3 conteúdos bônus avançados<br>
+      ✔️ E-book completo do método<br>
+      ✔️ Material complementar em PDF<br>
+      ✔️ 3 reuniões ao vivo com Eliza Maffer<br>
+      ✔️ Grupo VIP exclusivo no WhatsApp<br>
+      ✔️ Acesso permanente e vitalício<br>
+      ✔️ Suporte prioritário<br>
+      ✔️ Garantia de 30 dias
+    </ul>
+    <div class="price-offer">R$ 97,00</div>
+    <div class="soldout">❌ 0 vagas disponíveis</div>
+  </div>
+
+  <!-- OFERTA ATIVA -->
+  <div class="offer">
+    <h3>Oferta Especial — Liberação Imediata</h3>
+    <ul>
+      ✔️ Conteúdos bônus essenciais<br>
+      ✔️ E-book oficial do método<br>
+      ✔️ Material complementar em PDF<br>
+      ✔️ 5 vídeo aulas exclusivas<br>
+      ✔️ Grupo VIP no WhatsApp<br>
+      ✔️ Garantia de 30 dias<br>
+      ✔️ Acesso imediato
+    </ul>
+
+    <div class="price-offer">R$ 27,90</div>
+
+    <button class="button"
+    onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+    EU QUERO MUDAR ISSO AGORA
+    </button>
+  </div>
+
 </div>
-
-<button class="button"
-onclick="fbq('track','InitiateCheckout'); window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
-EU QUERO MUDAR ISSO AGORA
-</button>
-<div class="proof payment">
-  <img src="src/img/formasdepagamentocartoes.webp" alt="Formas de pagamento">
-</div>
-
 
 <div class="guarantee">
-  <img src="src/img/Selo_de_Garantia_de_7_Dias_PNG_Transparente_Sem_Fundo.png">
-  7 DIAS DE GARANTIA INCONDICIONAL
-
-  <!-- ADICIONE AQUI -->
-  <div class="guarantee-text">
-    Se dentro de <strong>7 dias</strong> você sentir que absolutamente nada mudou — o que é praticamente impossível —
-    você pode simplesmente pedir o reembolso e recuperar <strong>100% do seu dinheiro</strong>.
-    <br><br>
-    Você não sai perdendo.  
-    <strong>Você só tem a ganhar.</strong>
-  </div>
+GARANTIA INCONDICIONAL DE 30 DIAS<br><br>
+Você pode experimentar o Código da Mulher Hipnótica sem pressa, sem risco e com total tranquilidade.
 </div>
+
+</div>
+
+</body>
+</html>
+
 
 
 <div class="footer">
