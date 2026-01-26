@@ -36,6 +36,28 @@
       margin:0 auto;
       padding:90px 16px 24px;
     }
+@keyframes arrowPulse {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(14px) scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  
+}
+
+.arrow{
+  text-align:center;
+  font-size:48px; /* maior pra mobile */
+  margin:18px 0 24px;
+  animation: arrowPulse 1.2s infinite;
+}
 
     /* LOGO */
     .logo{
