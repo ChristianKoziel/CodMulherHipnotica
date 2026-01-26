@@ -49,7 +49,7 @@
     transform: translateY(0) scale(1);
     opacity: 1;
   }
-  
+
 }
 
 .arrow{
@@ -81,6 +81,34 @@
       line-height:1.1;
       margin-bottom:14px;
     }
+
+@keyframes softPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.price-highlight{
+  animation: softPulse 2.2s infinite;
+}
+
+@keyframes blinkUrgency {
+  0%,100% { opacity:1; }
+  50% { opacity:.6; }
+}
+
+.urgency{
+  text-align:center;
+  font-weight:900;
+  color:#FFD700;
+  margin-top:18px;
+  font-size:15px;
+}
+
+.urgency span{
+  color:#FF3F81;
+  animation: blinkUrgency 1.4s infinite;
+}
 
     /* SUB */
     .sub{
@@ -118,6 +146,35 @@
       font-size:32px;
       margin-bottom:14px;
     }
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.92;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.price-highlight{
+  text-align:center;
+  margin:18px 0;
+  font-size:18px;
+  font-weight:600;
+  animation: softPulse 2.8s infinite;
+}
+
+.price-highlight strong{
+  font-size:34px;        /* mobile-first */
+  font-weight:900;
+  color:#00FFB2;         /* cor de conversão */
+  display:inline-block;
+}
 
     /* LISTA */
     .list div{
@@ -161,9 +218,10 @@
     Relacionamentos não perdoam falta de posicionamento emocional
   </div>
 
-  <div class="price-highlight">
-    💥 Por apenas <strong>R$ 27,90</strong>
-  </div>
+ <div class="price-highlight">
+  💥 Por apenas <strong>R$ 27,90</strong>
+</div>
+
 
   <div class="arrow">⬇️</div>
 
@@ -393,9 +451,10 @@
 
     <div class="price-offer">R$ 27,90</div>
 
-    <p style="text-align:center;font-weight:900;color:#FFD700;margin-top:12px;font-size:15px;">
-      Restam apenas <span style="color:#FF3F81;">17 vagas</span> disponíveis
-    </p>
+   <p class="urgency">
+  Restam apenas <span>17 vagas</span> disponíveis
+</p>
+
 
     <button class="button"
       onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
