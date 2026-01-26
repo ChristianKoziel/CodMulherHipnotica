@@ -2,46 +2,24 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Código da Mulher Hipnótica</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
-
-    @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(255,63,129,.9);
-  }
-  50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 40px rgba(255,63,129,1);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(255,63,129,.9);
-  }
-}
-
-.button.pulse{
-  animation: pulse 1.6s infinite;
-}
-
     *{margin:0;padding:0;box-sizing:border-box}
 
     body{
       font-family:'Poppins',sans-serif;
       background:#020202;
       color:#F5EDED;
-      padding:14px;
-      padding-top:70px;
     }
 
     /* TOPO FIXO */
     .top-alert{
       position:fixed;
-      top:0;
-      left:0;
+      top:0; left:0;
       width:100%;
       z-index:9999;
       background:#C4002F;
@@ -50,318 +28,92 @@
       font-weight:900;
       padding:14px 10px;
       font-size:14px;
-      box-shadow:0 6px 30px rgba(196,0,47,.8);
     }
 
+    /* CONTAINER MOBILE */
     .container{
-      max-width:760px;
-      margin:auto;
-      background:#070707;
-      border-radius:24px;
-      padding:40px 24px;
-      border:1px solid rgba(255,63,129,.85);
-      box-shadow:0 0 120px rgba(255,63,129,.6);
+      max-width:480px;
+      margin:0 auto;
+      padding:90px 16px 24px;
     }
 
+    /* LOGO */
     .logo{
       text-align:center;
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
 
     .logo img{
-      max-width:220px;
-      margin:0 auto;
+      width:100%;
+      max-width:240px;
       display:block;
-      filter:drop-shadow(0 0 40px rgba(255,63,129,.9));
+      margin:0 auto;
     }
 
+    /* TÍTULO */
     h1{
       font-family:'Bebas Neue',sans-serif;
-      font-size:46px;
+      font-size:34px;
       text-align:center;
       color:#FF3F81;
       line-height:1.1;
+      margin-bottom:14px;
     }
 
+    /* SUB */
     .sub{
       text-align:center;
-      margin:22px 0 30px;
-      font-size:17px;
-      color:#F2C9D8;
-      font-weight:700;
-      line-height:1.6;
-    }
-
-    .alert{
-      padding:26px;
-      border-radius:20px;
-      background:rgba(255,0,90,.35);
-      border-left:6px solid #FF3F81;
       font-size:16px;
-      line-height:1.9;
-      margin-bottom:32px;
+      line-height:1.6;
+      font-weight:700;
+      color:#F2C9D8;
+      margin-bottom:22px;
     }
 
+    /* ALERTA TEXTO */
+    .alert{
+      background:rgba(255,0,90,.30);
+      border-left:4px solid #FF3F81;
+      border-radius:14px;
+      padding:16px;
+      font-size:15px;
+      line-height:1.7;
+      margin-bottom:22px;
+    }
+
+    /* PREÇO */
     .price-highlight{
       text-align:center;
       font-size:22px;
       font-weight:900;
       color:#FFD700;
-      margin:30px 0;
-      animation:pulsePrice 1.8s infinite;
+      margin:22px 0;
     }
 
-    @keyframes pulsePrice{
-      0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,0)}
-      50%{transform:scale(1.05); box-shadow:0 0 40px rgba(255,215,0,.9)}
-      100%{transform:scale(1)}
-    }
-
+    /* SETA */
     .arrow{
       text-align:center;
-      font-size:36px;
-      margin-bottom:18px;
-      animation:bounceArrow 1.2s infinite;
+      font-size:32px;
+      margin-bottom:14px;
     }
 
-    @keyframes bounceArrow{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(14px)}
-    }
-
+    /* LISTA */
     .list div{
-      margin:14px 0;
-      padding:18px;
-      border-radius:16px;
-      background:rgba(255,63,129,.25);
+      background:rgba(255,63,129,.22);
       border-left:4px solid #FF3F81;
+      border-radius:14px;
+      padding:14px;
+      font-size:15px;
       font-weight:700;
-    }
-
-    .section{
-      margin-top:46px;
-    }
-
-    .section-title{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:36px;
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:22px;
-    }
-
-    .bonus{
-      background:#000;
-      border-radius:22px;
-      padding:26px;
-      border:1px solid rgba(255,63,129,.6);
-      margin-bottom:22px;
-    }
-
-    .bonus strong{color:#FFD700}
-
-    .offer-box{
-      margin-top:46px;
-      padding:30px;
-      border-radius:24px;
-      background:#000;
-      border:2px solid #FF3F81;
-    }
-
-    .offer-title{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:36px;
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:26px;
-    }
-
-    .offer{
-      padding:22px;
-      border-radius:18px;
-      margin-bottom:22px;
-      background:rgba(255,63,129,.18);
-      border:1px solid rgba(255,63,129,.6);
-    }
-
-    .offer.disabled{
-      opacity:.35;
-      filter:grayscale(100%);
-      pointer-events:none;
-    }
-
-    .offer h3{
-      font-size:20px;
       margin-bottom:12px;
     }
-
-    .offer ul{
-      list-style:none;
-      font-size:14px;
-      line-height:1.9;
-      margin-bottom:16px;
-    }
-
-    .price-offer{
-      font-size:36px;
-      font-weight:900;
-      color:#FFD700;
-      text-align:center;
-    }
-
-    .soldout{
-      text-align:center;
-      font-size:13px;
-      font-weight:900;
-      color:#FF3F81;
-    }
-
-    .button{
-      width:100%;
-      margin-top:26px;
-      padding:30px;
-      font-size:22px;
-      font-weight:900;
-      border:none;
-      border-radius:80px;
-      background:linear-gradient(45deg,#FF005D,#FF3F81);
-      color:#FFF;
-      cursor:pointer;
-      box-shadow:0 30px 90px rgba(255,63,129,1);
-    }
-
-    .guarantee{
-      margin-top:34px;
-      padding:26px;
-      border-radius:22px;
-      background:rgba(255,215,0,.22);
-      border:1px solid rgba(255,215,0,.9);
-      text-align:center;
-      font-size:14px;
-    }
-
-    .guarantee img{
-      max-width:140px;
-      margin-bottom:12px;
-    }
-
-    .faq{
-      margin-top:46px;
-      font-size:14px;
-      line-height:1.8;
-    }
-
-    .faq h3{
-      text-align:center;
-      color:#FF3F81;
-      margin-bottom:18px;
-    }
-
-    .cta-link{
-      display:block;
-      margin-top:22px;
-      text-align:center;
-      font-weight:900;
-      color:#FFD700;
-      text-decoration:none;
-    }
-
-    .footer{
-      margin-top:26px;
-      text-align:center;
-      font-size:11px;
-      opacity:.6;
-    }
-    /* =========================
-   AJUSTES MOBILE (APENAS CELULAR)
-   ========================= */
-@media (max-width: 480px){
-
-  body{
-    padding:12px;
-    padding-top:90px;
-  }
-
-  .container{
-    padding:28px 18px;
-    border-radius:20px;
-  }
-
-  h1{
-    font-size:38px;
-    line-height:1.15;
-  }
-
-  .sub{
-    font-size:18px;
-    line-height:1.7;
-  }
-
-  .alert{
-    font-size:17px;
-    line-height:1.85;
-    padding:22px;
-  }
-
-  .price-highlight{
-    font-size:24px;
-  }
-
-  .list div{
-    font-size:16px;
-    padding:16px;
-  }
-
-  .section-title,
-  .offer-title{
-    font-size:32px;
-  }
-
-  .bonus{
-    font-size:16px;
-    line-height:1.7;
-  }
-
-  .offer h3{
-    font-size:22px;
-  }
-
-  .offer ul{
-    font-size:16px;
-    line-height:1.8;
-  }
-
-  .price-offer{
-    font-size:40px;
-  }
-
-  .button{
-    font-size:24px;
-    padding:26px;
-  }
-
-  .guarantee{
-    font-size:15px;
-    line-height:1.6;
-  }
-
-  .faq{
-    font-size:15px;
-    line-height:1.75;
-  }
-
-  .top-alert{
-    font-size:15px;
-    padding:16px 10px;
-  }
-}
   </style>
 </head>
 
 <body>
 
 <div class="top-alert">
-  🔥 Desconto só HOJE nesta página — <span id="todayDate"></span>
+🔥 Desconto só HOJE nesta página — <span id="todayDate"></span>
 </div>
 
 <div class="container">
@@ -401,127 +153,6 @@
     <div>💎 Manter controle emocional mesmo gostando muito</div>
   </div>
 
-<script>
-   today =  Date();
-   day = String(today.getDate()).padStart(2,'0');
-   month = String(today.getMonth()+1).padStart(2,'0');
-   year = today.getFullYear();
-  document.getElementById('todayDate').innerText = `${day}/${month}/${year}`;
-</script>
-
-</body>
-</html>
-
-  <div class="section">
-    <div class="section-title">🎁 Bônus Exclusivos</div>
-
-    <div class="bonus">
-      <strong>Bônus #1 — Guia de Mensagens Magnéticas</strong><br>
-      Valor: R$ 49,90
-    </div>
-
-    <div class="bonus">
-      <strong>Bônus #2 — Controle Emocional Feminino</strong><br>
-      Valor: R$ 59,90
-    </div>
-
-    <div class="bonus">
-      <strong>Bônus #3 — Conteúdo Surpresa</strong><br>
-      Valor: R$ 39,90
-    </div>
-
-    <p class="price-highlight">
-      🔥 VALOR TOTAL DOS BÔNUS: R$ 148,80<br>
-      💥 HOJE POR R$ 0,00
-    </p>
-  </div>
-
-  <div class="offer-box">
-    <div class="offer-title">Escolha sua forma de acesso</div>
-
-    <!-- OFERTA PREMIUM -->
-    <div class="offer disabled">
-      <h3>Código da Mulher Hipnótica — Premium</h3>
-      <ul>
-        <li>✔️ +5 vídeo aulas exclusivas</li>
-        <li>✔️ Conteúdos bônus avançados</li>
-        <li>✔️ E-book completo do método</li>
-        <li>✔️ Material complementar em PDF</li>
-        <li>✔️ 3 reuniões ao vivo</li>
-        <li>✔️ Grupo VIP exclusivo</li>
-        <li>✔️ Acesso vitalício</li>
-        <li>✔️ Suporte prioritário</li>
-        <li>✔️ Garantia de 30 dias</li>
-      </ul>
-      <div class="price-offer">R$ 97,00</div>
-      <div class="soldout">❌ 0 vagas disponíveis</div>
-    </div>
-
-    <!-- OFERTA ATIVA -->
-    <div class="offer">
-      <h3>Oferta Especial — Liberação Imediata</h3>
-      <ul>
-        <li>✔️ Conteúdos bônus essenciais</li>
-        <li>✔️ E-book oficial do método</li>
-        <li>✔️ Material complementar em PDF</li>
-        <li>✔️ 5 vídeo aulas práticas</li>
-        <li>✔️ Grupo VIP no WhatsApp</li>
-        <li>✔️ Garantia de 30 dias</li>
-        <li>✔️ Acesso imediato</li>
-      </ul>
-
-      <div class="price-offer">R$ 27,90</div>
-<p style="
-  text-align:center;
-  font-weight:900;
-  color:#FFD700;
-  margin-top:18px;
-  font-size:15px;">
-Restam apenas <span style="color:#FF3F81;">17 vagas</span> disponíveis
-</p>
-
-      <button class="button pulse"
-onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
-        QUERO VIRAR PRIORIDADE AGORA
-      </button>
-    </div>
-  </div>
-
-  <div class="guarantee">
-    <img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia 30 dias">
-    <br>
-    Garantia incondicional de 30 dias.<br>
-    Confiamos tanto em nosso método que aumentamos a garantia para 30 dias, ou você sente a diferença, ou recebe seu dinheiro de volta
-  </div>
-
-  <div class="faq">
-    <h3>Dúvidas frequentes</h3>
-
-    📌 Preciso ter experiência em relacionamentos?<br>
-    Não. O método funciona para todos os níveis de experiência afetiva<br><br>
-
-    📌 Funciona se eu for muito emotiva?<br>
-    Sim. O Código foi criado exatamente para isso.<br><br>
-
-    📌 É manipulação?<br>
-    Não. É posicionamento emocional.<br><br>
-
-    📌 Como recebo o acesso?<br>
-    Tudo é digital. O acesso é liberado no seu email imediatamente após a compra.<br><br>
-
-    📌 Serve para qualquer tipo de relacionamento?<br>
-    Sim. tanto para ficantes, namoro, relacionamentos instáveis ou relacionamentos longos.
-
-        <button class="button pulse"
-onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
-        📲 TIREI MINHAS DÚVIDAS, VAMOS LÁ!
-      </button>
-  </div>
-
-  <div class="footer">
-    © 2025 Código da Mulher Hipnótica — Todos os direitos reservados.
-  </div>
-
 </div>
 
 <script>
@@ -534,3 +165,253 @@ onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
 
 </body>
 </html>
+
+<style>
+  /* SEÇÕES */
+  .section{
+    margin-top:36px;
+  }
+
+  .section-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;
+    text-align:center;
+    color:#FF3F81;
+    margin-bottom:18px;
+  }
+
+  /* BÔNUS */
+  .bonus{
+    background:#000;
+    border:1px solid rgba(255,63,129,.6);
+    border-radius:16px;
+    padding:16px;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+
+  .bonus strong{
+    color:#FFD700;
+  }
+
+  /* CAIXA OFERTA */
+  .offer-box{
+    margin-top:36px;
+    background:#000;
+    border:2px solid #FF3F81;
+    border-radius:18px;
+    padding:18px;
+  }
+
+  .offer-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;
+    text-align:center;
+    color:#FF3F81;
+    margin-bottom:18px;
+  }
+
+  .offer{
+    background:rgba(255,63,129,.20);
+    border:1px solid rgba(255,63,129,.6);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:18px;
+  }
+
+  .offer.disabled{
+    opacity:.35;
+    filter:grayscale(100%);
+    pointer-events:none;
+  }
+
+  .offer h3{
+    font-size:18px;
+    margin-bottom:12px;
+  }
+
+  .offer ul{
+    list-style:none;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:14px;
+  }
+
+  .price-offer{
+    font-size:34px;
+    font-weight:900;
+    color:#FFD700;
+    text-align:center;
+    margin-top:10px;
+  }
+
+  .soldout{
+    text-align:center;
+    font-size:13px;
+    font-weight:900;
+    color:#FF3F81;
+    margin-top:6px;
+  }
+
+  /* BOTÃO */
+  @keyframes pulse {
+    0% {transform:scale(1); box-shadow:0 0 0 rgba(255,63,129,.8);}
+    50%{transform:scale(1.06); box-shadow:0 0 40px rgba(255,63,129,1);}
+    100%{transform:scale(1);}
+  }
+
+  .button{
+    width:100%;
+    padding:22px;
+    font-size:20px;
+    font-weight:900;
+    border:none;
+    border-radius:60px;
+    background:linear-gradient(45deg,#FF005D,#FF3F81);
+    color:#FFF;
+    margin-top:18px;
+    animation:pulse 1.6s infinite;
+  }
+
+  /* GARANTIA */
+  .guarantee{
+    margin-top:32px;
+    background:rgba(255,215,0,.22);
+    border:1px solid rgba(255,215,0,.9);
+    border-radius:16px;
+    padding:16px;
+    font-size:14px;
+    text-align:center;
+    line-height:1.6;
+  }
+
+  .guarantee img{
+    max-width:120px;
+    margin-bottom:10px;
+  }
+
+  /* FAQ */
+  .faq{
+    margin-top:36px;
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .faq h3{
+    text-align:center;
+    color:#FF3F81;
+    margin-bottom:16px;
+  }
+
+  /* FOOTER */
+  .footer{
+    margin-top:26px;
+    text-align:center;
+    font-size:11px;
+    opacity:.6;
+  }
+</style>
+
+<div class="section">
+  <div class="section-title">🎁 Bônus Exclusivos</div>
+
+  <div class="bonus">
+    <strong>Bônus #1 — Guia de Mensagens Magnéticas</strong><br>
+    Valor: R$ 49,90
+  </div>
+
+  <div class="bonus">
+    <strong>Bônus #2 — Controle Emocional Feminino</strong><br>
+    Valor: R$ 59,90
+  </div>
+
+  <div class="bonus">
+    <strong>Bônus #3 — Conteúdo Surpresa</strong><br>
+    Valor: R$ 39,90
+  </div>
+
+  <p class="price-highlight">
+    🔥 VALOR TOTAL DOS BÔNUS: R$ 148,80<br>
+    💥 HOJE POR R$ 0,00
+  </p>
+</div>
+
+<div class="offer-box">
+  <div class="offer-title">Escolha sua forma de acesso</div>
+
+  <div class="offer disabled">
+    <h3>Código da Mulher Hipnótica — Premium</h3>
+    <ul>
+      <li>✔️ +5 vídeo aulas exclusivas</li>
+      <li>✔️ Conteúdos bônus avançados</li>
+      <li>✔️ E-book completo do método</li>
+      <li>✔️ Material complementar em PDF</li>
+      <li>✔️ 3 reuniões ao vivo</li>
+      <li>✔️ Grupo VIP exclusivo</li>
+      <li>✔️ Acesso vitalício</li>
+      <li>✔️ Suporte prioritário</li>
+      <li>✔️ Garantia de 30 dias</li>
+    </ul>
+    <div class="price-offer">R$ 97,00</div>
+    <div class="soldout">❌ 0 vagas disponíveis</div>
+  </div>
+
+  <div class="offer">
+    <h3>Oferta Especial — Liberação Imediata</h3>
+    <ul>
+      <li>✔️ Conteúdos bônus essenciais</li>
+      <li>✔️ E-book oficial do método</li>
+      <li>✔️ Material complementar em PDF</li>
+      <li>✔️ 5 vídeo aulas práticas</li>
+      <li>✔️ Grupo VIP no WhatsApp</li>
+      <li>✔️ Garantia de 30 dias</li>
+      <li>✔️ Acesso imediato</li>
+    </ul>
+
+    <div class="price-offer">R$ 27,90</div>
+
+    <p style="text-align:center;font-weight:900;color:#FFD700;margin-top:12px;font-size:15px;">
+      Restam apenas <span style="color:#FF3F81;">17 vagas</span> disponíveis
+    </p>
+
+    <button class="button"
+      onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+      QUERO VIRAR PRIORIDADE AGORA
+    </button>
+  </div>
+</div>
+
+<div class="guarantee">
+  <img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia 30 dias"><br>
+  Garantia incondicional de 30 dias.<br>
+  Confiamos tanto em nosso método que aumentamos a garantia para 30 dias, ou você sente a diferença, ou recebe seu dinheiro de volta
+</div>
+
+<div class="faq">
+  <h3>Dúvidas frequentes</h3>
+
+  📌 Preciso ter experiência em relacionamentos?<br>
+  Não. O método funciona para todos os níveis de experiência afetiva<br><br>
+
+  📌 Funciona se eu for muito emotiva?<br>
+  Sim. O Código foi criado exatamente para isso.<br><br>
+
+  📌 É manipulação?<br>
+  Não. É posicionamento emocional.<br><br>
+
+  📌 Como recebo o acesso?<br>
+  Tudo é digital. O acesso é liberado no seu email imediatamente após a compra.<br><br>
+
+  📌 Serve para qualquer tipo de relacionamento?<br>
+  Sim. tanto para ficantes, namoro, relacionamentos instáveis ou relacionamentos longos.
+
+  <button class="button"
+    onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+    📲 TIREI MINHAS DÚVIDAS, VAMOS LÁ!
+  </button>
+</div>
+
+<div class="footer">
+  © 2025 Código da Mulher Hipnótica — Todos os direitos reservados.
+</div>
