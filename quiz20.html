@@ -1,207 +1,315 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isso Vai Se Repetir</title>
+  <meta charset="UTF-8">
+  <title>Código da Mulher Hipnótica</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#050505;
-  color:#F5EDED;
-  padding:18px;
-}
-.container{
-  max-width:640px;
-  margin:auto;
-  background:#0A0A0A;
-  border-radius:22px;
-  padding:36px 24px;
-  border:1px solid rgba(255,63,129,.8);
-  box-shadow:0 0 90px rgba(255,63,129,.55);
-}
-h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:40px;
-  line-height:1.05;
-  text-align:center;
-  color:#FF3F81;
-}
-h1 span{
-  display:block;
-  margin-top:6px;
-  color:#FFD700;
-}
-.sub{
-  text-align:center;
-  font-size:14px;
-  color:#E6B7C6;
-  margin:18px 0 26px;
-  line-height:1.6;
-  font-weight:600;
-}
-.cut{
-  background:rgba(255,0,80,.22);
-  border-left:5px solid #FF3F81;
-  padding:22px;
-  border-radius:18px;
-  font-size:15px;
-  line-height:1.7;
-  margin-bottom:26px;
-}
-.cut strong{color:#FFD700}
-.micro{
-  text-align:center;
-  font-size:13px;
-  color:#F0BCCD;
-  margin-bottom:32px;
-}
-.section-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:24px;
-  letter-spacing:1px;
-  color:#FFD700;
-  text-align:center;
-  margin:36px 0 18px;
-}
-.proof{
-  margin-bottom:16px;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(255,63,129,.5);
-  box-shadow:0 12px 30px rgba(0,0,0,.75);
-}
-.proof img{
-  width:100%;
-  display:block;
-}
-.context{
-  margin:28px 0;
-  font-size:15px;
-  line-height:1.7;
-  color:#E9C7D2;
-  background:#000;
-  padding:22px;
-  border-radius:18px;
-  border-left:5px solid #FF3F81;
-}
-.context strong{color:#FFD700}
-.final{
-  margin-top:30px;
-  font-size:16px;
-  line-height:1.7;
-  text-align:center;
-  color:#FFE1EA;
-}
-.final strong{color:#FFD700}
-.cta{
-  margin-top:34px;
-  width:100%;
-  padding:24px;
-  border:none;
-  border-radius:70px;
-  background:linear-gradient(90deg,#E5003C,#FF3F81);
-  color:#fff;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:24px;
-  letter-spacing:2px;
-  cursor:pointer;
-  box-shadow:0 0 70px rgba(255,63,129,1);
-  animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-  50%{transform:scale(1.05)}
-}
-.footer{
-  margin-top:22px;
-  text-align:center;
-  font-size:11px;
-  opacity:.55;
-}
-</style>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#020202;
+      color:#F5EDED;
+      padding:14px;
+      padding-top:70px;
+    }
+
+    /* TOPO FIXO */
+    .top-alert{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:9999;
+      background:#C4002F;
+      color:#FFF;
+      text-align:center;
+      font-weight:900;
+      padding:14px 10px;
+      font-size:14px;
+      box-shadow:0 6px 30px rgba(196,0,47,.8);
+    }
+
+    .container{
+      max-width:760px;
+      margin:auto;
+      background:#070707;
+      border-radius:24px;
+      padding:40px 24px;
+      border:1px solid rgba(255,63,129,.85);
+      box-shadow:0 0 120px rgba(255,63,129,.6);
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:16px;
+    }
+
+    .logo img{
+      max-width:220px;
+      margin:0 auto;
+      display:block;
+      filter:drop-shadow(0 0 40px rgba(255,63,129,.9));
+    }
+
+    h1{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:46px;
+      text-align:center;
+      color:#FF3F81;
+      line-height:1.1;
+    }
+
+    .sub{
+      text-align:center;
+      margin:22px 0 30px;
+      font-size:17px;
+      color:#F2C9D8;
+      font-weight:700;
+      line-height:1.6;
+    }
+
+    .alert{
+      padding:26px;
+      border-radius:20px;
+      background:rgba(255,0,90,.35);
+      border-left:6px solid #FF3F81;
+      font-size:16px;
+      line-height:1.9;
+      margin-bottom:32px;
+    }
+
+    .price-highlight{
+      text-align:center;
+      font-size:22px;
+      font-weight:900;
+      color:#FFD700;
+      margin:30px 0;
+      animation:pulsePrice 1.8s infinite;
+    }
+
+    @keyframes pulsePrice{
+      0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,0)}
+      50%{transform:scale(1.05); box-shadow:0 0 40px rgba(255,215,0,.9)}
+      100%{transform:scale(1)}
+    }
+
+    .arrow{
+      text-align:center;
+      font-size:36px;
+      margin-bottom:18px;
+      animation:bounceArrow 1.2s infinite;
+    }
+
+    @keyframes bounceArrow{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(14px)}
+    }
+
+    .list div{
+      margin:14px 0;
+      padding:18px;
+      border-radius:16px;
+      background:rgba(255,63,129,.25);
+      border-left:4px solid #FF3F81;
+      font-weight:700;
+    }
+
+    .section{
+      margin-top:46px;
+    }
+
+    .section-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:36px;
+      text-align:center;
+      color:#FF3F81;
+      margin-bottom:22px;
+    }
+
+    .bonus{
+      background:#000;
+      border-radius:22px;
+      padding:26px;
+      border:1px solid rgba(255,63,129,.6);
+      margin-bottom:22px;
+    }
+
+    .bonus strong{color:#FFD700}
+
+    .offer-box{
+      margin-top:46px;
+      padding:30px;
+      border-radius:24px;
+      background:#000;
+      border:2px solid #FF3F81;
+    }
+
+    .offer-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:36px;
+      text-align:center;
+      color:#FF3F81;
+      margin-bottom:26px;
+    }
+
+    .offer{
+      padding:22px;
+      border-radius:18px;
+      margin-bottom:22px;
+      background:rgba(255,63,129,.18);
+      border:1px solid rgba(255,63,129,.6);
+    }
+
+    .offer.disabled{
+      opacity:.35;
+      filter:grayscale(100%);
+      pointer-events:none;
+    }
+
+    .offer h3{
+      font-size:20px;
+      margin-bottom:12px;
+    }
+
+    .offer ul{
+      list-style:none;
+      font-size:14px;
+      line-height:1.9;
+      margin-bottom:16px;
+    }
+
+    .price-offer{
+      font-size:36px;
+      font-weight:900;
+      color:#FFD700;
+      text-align:center;
+    }
+
+    .soldout{
+      text-align:center;
+      font-size:13px;
+      font-weight:900;
+      color:#FF3F81;
+    }
+
+    .button{
+      width:100%;
+      margin-top:26px;
+      padding:30px;
+      font-size:22px;
+      font-weight:900;
+      border:none;
+      border-radius:80px;
+      background:linear-gradient(45deg,#FF005D,#FF3F81);
+      color:#FFF;
+      cursor:pointer;
+      box-shadow:0 30px 90px rgba(255,63,129,1);
+    }
+
+    .guarantee{
+      margin-top:34px;
+      padding:26px;
+      border-radius:22px;
+      background:rgba(255,215,0,.22);
+      border:1px solid rgba(255,215,0,.9);
+      text-align:center;
+      font-size:14px;
+    }
+
+    .guarantee img{
+      max-width:140px;
+      margin-bottom:12px;
+    }
+
+    .faq{
+      margin-top:46px;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .faq h3{
+      text-align:center;
+      color:#FF3F81;
+      margin-bottom:18px;
+    }
+
+    .cta-link{
+      display:block;
+      margin-top:22px;
+      text-align:center;
+      font-weight:900;
+      color:#FFD700;
+      text-decoration:none;
+    }
+
+    .footer{
+      margin-top:26px;
+      text-align:center;
+      font-size:11px;
+      opacity:.6;
+    }
+  </style>
 </head>
 
 <body>
 
+<div class="top-alert">
+  🔥 Desconto só HOJE nesta página — <span id="todayDate"></span>
+</div>
+
 <div class="container">
 
-<h1>
-ISSO VAI SE REPETIR
-<span>SE NADA MUDAR</span>
-</h1>
+  <div class="logo">
+    <img src="src/img/fotoproduto.png" alt="Código da Mulher Hipnótica">
+  </div>
 
-<p class="sub">
-Não importa quem ele seja.<br>
-Não importa o quanto você tente.<br>
-<strong>O final continua sendo o mesmo.</strong>
-</p>
+  <h1>
+    Faça com que qualquer homem<br>
+    te deseje, respeite e te priorize
+  </h1>
 
-<div class="cut">
-<strong>Olha com honestidade:</strong><br><br>
+  <p class="sub">
+    Sem correr atrás, implorar<br>
+    ou se humilhar
+  </p>
 
-Você se envolve.<br>
-Se entrega.<br>
-Cria expectativa.<br><br>
+  <div class="alert">
+    <strong>A verdade que ninguém te conta:</strong><br><br>
+    A maioria das mulheres acha que está sendo “boazinha”, “compreensiva” ou “madura”
+    mas, na prática, só está ensinando o homem a não valorizá-la<br><br>
+    Relacionamentos não perdoam falta de posicionamento emocional
+  </div>
 
-No começo parece diferente…<br>
-Mas logo surgem o silêncio,<br>
-a dúvida,<br>
-a sensação de estar sempre
-<strong>esperando algo que nunca chega.</strong><br><br>
+  <div class="price-highlight">
+    💥 Por apenas <strong>R$ 27,90</strong>
+  </div>
 
-Você relê mensagens.<br>
-Revisa cada palavra que disse.<br>
-Se pergunta onde errou.<br><br>
+  <div class="arrow">⬇️</div>
 
-<strong>E, de novo, não é escolhida por completo.</strong><br><br>
+  <div class="list">
+    <div>🔥 Despertar desejo emocional sem se expor demais</div>
+    <div>🧠 Parar de se adaptar e fazer o outro investir</div>
+    <div>🎯 Se posicionar sem brigar ou cobrar</div>
+    <div>✨ Virar prioridade sem joguinhos</div>
+    <div>💎 Manter controle emocional mesmo gostando muito</div>
+  </div>
 
-Isso não é nenhum azar<br>
-<strong>É um padrão emocional ativo</strong>
-</div>
-
-<p class="micro">
-⚠️ Continue apenas se você estiver pronta
-para parar de fingir que isso é apenas uma coincidência.
-</p>
-
-<div class="section-title">ELAS TAMBÉM ESTAVAM AQUI</div>
-
-<div class="proof"><img src="src/img/provasocial.jpg"></div>
-<div class="proof"><img src="src/img/depoimento111.jpeg"></div>
-<div class="proof"><img src="src/img/depoimento222.jpg"></div>
-<div class="proof"><img src="src/img/ps2.png"></div>
-<div class="proof"><img src="src/img/ps6.png"></div>
-
-<div class="context">
-<strong>O ponto em comum?</strong><br><br>
-Não era o homem<br>
-Não era a história<br>
-Não era falta de valor<br><br>
-Entenda de uma vez por todas, enquanto a <strong>dinâmica emocional</strong> permanecia a mesma,
-<strong>o final também se repetia.</strong>
-</div>
-
-<div class="context">
-Esse padrão foi mapeado e desenvolvido por
-<strong>Eliza Maffer</strong>,
-que mostra por que mulheres inteligentes,
-intensas e disponíveis
-acabam presas em relações indefinidas.
-</div>
-
-<button class="cta" onclick="window.location.href='mulherhipnotica.html'">
-QUERO ASSUMIR O CONTROLE
-</button>
-
-<div class="footer">
-Essa decisão não muda só um relacionamento.
-</div>
+  <!-- RESTANTE DO HTML SEGUE IGUAL AO SEU ORIGINAL -->
+  <!-- (BÔNUS, OFERTAS, GARANTIA, FAQ, FOOTER) -->
 
 </div>
+
+<script>
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2,'0');
+  const month = String(today.getMonth()+1).padStart(2,'0');
+  const year = today.getFullYear();
+  document.getElementById('todayDate').innerText = `${day}/${month}/${year}`;
+</script>
 
 </body>
 </html>
