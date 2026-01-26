@@ -7,6 +7,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
+
+    @keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255,63,129,.9);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 40px rgba(255,63,129,1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255,63,129,.9);
+  }
+}
+
+.button.pulse{
+  animation: pulse 1.6s infinite;
+}
+
     *{margin:0;padding:0;box-sizing:border-box}
 
     body{
@@ -328,8 +348,8 @@
     </div>
 
     <p class="price-highlight">
-      🔥 Valor total dos bônus: R$ 148,80<br>
-      💥 Hoje por apenas R$ 27,90
+      🔥 VALOR TOTAL DOS BÔNUS: R$ 148,80<br>
+      💥 HOJE POR APENAS R$ 27,90
     </p>
   </div>
 
@@ -368,9 +388,17 @@
       </ul>
 
       <div class="price-offer">R$ 27,90</div>
+<p style="
+  text-align:center;
+  font-weight:900;
+  color:#FFD700;
+  margin-top:18px;
+  font-size:15px;">
+⏳ Restam apenas <span style="color:#FF3F81;">17 vagas</span> disponíveis hoje
+</p>
 
-      <button class="button"
-        onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
+      <button class="button pulse"
+onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';">
         EU QUERO VIRAR PRIORIDADE AGORA
       </button>
     </div>
