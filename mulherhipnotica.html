@@ -1,192 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código da Mulher Hipnótica</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código da Mulher Hipnótica</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#020202;
-      color:#F5EDED;
-    }
-
-    /* TOPO FIXO */
-    .top-alert{
-      position:fixed;
-      top:0; left:0;
-      width:100%;
-      z-index:9999;
-      background:#C4002F;
-      color:#FFF;
-      text-align:center;
-      font-weight:900;
-      padding:14px 10px;
-      font-size:14px;
-    }
-
-    /* CONTAINER MOBILE */
-    .container{
-      max-width:480px;
-      margin:0 auto;
-      padding:90px 16px 24px;
-    }
-@keyframes arrowPulse {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(14px) scale(1.15);
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#F5EDED;
 }
 
-.arrow{
+/* TOPO */
+.top-alert{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#8A0022;
+  color:#FFF;
   text-align:center;
-  font-size:48px; /* maior pra mobile */
-  margin:18px 0 24px;
-  animation: arrowPulse 1.2s infinite;
+  font-weight:700;
+  padding:12px;
+  font-size:13px;
+  z-index:9999;
 }
 
-    /* LOGO */
-    .logo{
-      text-align:center;
-      margin-bottom:18px;
-    }
-
-    .logo img{
-      width:100%;
-      max-width:240px;
-      display:block;
-      margin:0 auto;
-    }
-
-    /* TÍTULO */
-    h1{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:34px;
-      text-align:center;
-      color:#FF3F81;
-      line-height:1.1;
-      margin-bottom:14px;
-    }
-
-@keyframes softPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
+/* CONTAINER */
+.container{
+  max-width:480px;
+  margin:0 auto;
+  padding:90px 18px 40px;
 }
 
-.price-highlight{
-  animation: softPulse 2.2s infinite;
+/* LOGO */
+.logo{text-align:center;margin-bottom:20px}
+.logo img{max-width:220px;width:100%}
+
+/* TITULO */
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  text-align:center;
+  color:#FF3F81;
+  line-height:1.1;
+  margin-bottom:16px;
 }
 
-@keyframes blinkUrgency {
-  0%,100% { opacity:1; }
-  50% { opacity:.6; }
+.sub{
+  text-align:center;
+  font-size:15px;
+  font-weight:600;
+  color:#E7B6C8;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+/* ALERTAS */
+.alert{
+  background:rgba(255,63,129,.12);
+  border-left:3px solid #FF3F81;
+  border-radius:12px;
+  padding:16px;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:24px;
+}
+
+/* SEÇÕES */
+.section{margin-top:36px}
+
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;
+  text-align:center;
+  color:#FFD700;
+  margin-bottom:18px;
+}
+
+/* LISTAS */
+.list div{
+  background:rgba(255,255,255,.04);
+  border-left:3px solid #FF3F81;
+  border-radius:10px;
+  padding:14px;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+/* BÔNUS */
+.bonus{
+  background:#0D0D0D;
+  border:1px solid rgba(255,63,129,.3);
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+.bonus strong{color:#FFD700}
+
+/* OFERTA */
+.offer-box{
+  margin-top:36px;
+  background:#0D0D0D;
+  border:1px solid #FF3F81;
+  border-radius:16px;
+  padding:20px;
+}
+
+.offer-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;
+  text-align:center;
+  color:#FF3F81;
+  margin-bottom:20px;
+}
+
+.offer{
+  background:rgba(255,255,255,.03);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:20px;
+}
+
+.offer.disabled{
+  opacity:.35;
+  filter:grayscale(100%);
+}
+
+.offer h3{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.offer ul{
+  list-style:none;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+.price-offer{
+  font-size:32px;
+  font-weight:900;
+  color:#00E6A0;
+  text-align:center;
+  margin:10px 0;
+}
+
+/* URGÊNCIA */
+@keyframes blink {
+  0%,100%{opacity:1}
+  50%{opacity:.6}
 }
 
 .urgency{
   text-align:center;
-  font-weight:900;
+  font-size:14px;
   color:#FFD700;
-  margin-top:18px;
-  font-size:15px;
+  margin-bottom:12px;
 }
 
 .urgency span{
   color:#FF3F81;
-  animation: blinkUrgency 1.4s infinite;
+  animation:blink 1.2s infinite;
 }
 
-    /* SUB */
-    .sub{
-      text-align:center;
-      font-size:16px;
-      line-height:1.6;
-      font-weight:700;
-      color:#F2C9D8;
-      margin-bottom:22px;
-    }
-
-    /* ALERTA TEXTO */
-    .alert{
-      background:rgba(255,0,90,.30);
-      border-left:4px solid #FF3F81;
-      border-radius:14px;
-      padding:16px;
-      font-size:15px;
-      line-height:1.7;
-      margin-bottom:22px;
-    }
-
-    /* PREÇO */
-    .price-highlight{
-      text-align:center;
-      font-size:22px;
-      font-weight:900;
-      color:#FFD700;
-      margin:22px 0;
-    }
-
-    /* SETA */
-    .arrow{
-      text-align:center;
-      font-size:32px;
-      margin-bottom:14px;
-    }
-@keyframes softPulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.92;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* BOTÃO */
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
 }
 
-.price-highlight{
-  text-align:center;
-  margin:18px 0;
+.button{
+  width:100%;
+  padding:20px;
   font-size:18px;
-  font-weight:600;
-  animation: softPulse 2.8s infinite;
-}
-
-.price-highlight strong{
-  font-size:34px;        /* mobile-first */
   font-weight:900;
-  color:#00FFB2;         /* cor de conversão */
-  display:inline-block;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(90deg,#FF005D,#FF3F81);
+  color:#FFF;
+  margin-top:12px;
+  animation:pulse 1.6s infinite;
 }
 
-    /* LISTA */
-    .list div{
-      background:rgba(255,63,129,.22);
-      border-left:4px solid #FF3F81;
-      border-radius:14px;
-      padding:14px;
-      font-size:15px;
-      font-weight:700;
-      margin-bottom:12px;
-    }
-  </style>
+/* GARANTIA */
+.guarantee{
+  margin-top:32px;
+  background:rgba(255,215,0,.12);
+  border:1px solid rgba(255,215,0,.6);
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.guarantee img{
+  max-width:110px;
+  margin-bottom:10px;
+}
+
+/* FAQ */
+.faq{
+  margin-top:36px;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.faq h3{
+  text-align:center;
+  color:#FF3F81;
+  margin-bottom:18px;
+}
+
+.footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:11px;
+  opacity:.6;
+}
+</style>
 </head>
 
 <body>
