@@ -21,6 +21,19 @@ body{
   overflow-x:hidden;
 }
 
+  .arrow{
+  text-align:center;
+  font-size:48px;
+  margin:30px 0 30px;
+  animation: arrowPulse 1.2s infinite;
+}
+
+@keyframes arrowPulse {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(12px) scale(1.15); opacity: 0.85; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
 /* TOPO FIXO */
 .top-alert{
   position:fixed;
@@ -188,14 +201,6 @@ mas só está ensinando o homem a não valorizá-la.
 <div id="sales-popup"></div>
 
 <script>
-/* DATA DINÂMICA */
-const today = new Date();
-const day = String(today.getDate()).padStart(2,'0');
-const month = String(today.getMonth()+1).padStart(2,'0');
-const year = today.getFullYear();
-document.getElementById('todayDate').innerText = `${day}/${month}/${year}`;
-
-/* PROVA SOCIAL */
 const names = ["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
 const cities = ["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Goiânia","Florianópolis","Porto Alegre"];
 
@@ -216,18 +221,19 @@ function showPopup(){
   }, 5000);
 }
 
-function randomInterval(){
-  const time = Math.floor(Math.random() * (20000 - 12000) + 12000);
+function startPopupCycle(){
+  const interval = Math.floor(Math.random() * (30000 - 20000) + 20000);
   setTimeout(()=>{
     showPopup();
-    randomInterval();
-  }, time);
+    startPopupCycle();
+  }, interval);
 }
 
+/* PRIMEIRO POPUP APENAS APÓS 20 SEGUNDOS */
 setTimeout(()=>{
   showPopup();
-  randomInterval();
-}, 6000);
+  startPopupCycle();
+}, 20000);
 </script>
 
 </body>
