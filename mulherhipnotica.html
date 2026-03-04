@@ -14,6 +14,37 @@ html{
   scroll-behavior:smooth;
 }
 
+.top-alert{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+  background:#C4002F;
+  color:#FFF;
+  text-align:center;
+  font-weight:900;
+  padding:14px 10px;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+  
+  <script>
+function updateTodayDate(){
+  const today = new Date();
+
+  const day = String(today.getDate()).padStart(2,'0');
+  const month = String(today.getMonth()+1).padStart(2,'0');
+  const year = today.getFullYear();
+
+  document.getElementById("todayDate").innerText = `${day}/${month}/${year}`;
+}
+
+updateTodayDate();
+</script>
+
+                                                      
+
 body{
   font-family:'Poppins',sans-serif;
   background:#020202;
@@ -33,7 +64,7 @@ body{
   50% { transform: translateY(12px) scale(1.15); opacity: 0.85; }
   100% { transform: translateY(0) scale(1); opacity: 1; }
 }
-
+  
 /* TOPO FIXO */
 .top-alert{
   position:fixed;
