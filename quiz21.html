@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Algo Precisa Ficar Claro</title>
+<title>Por Que Esse Padrão Se Repete?</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -18,7 +18,9 @@
 --light:#FAF1F4;
 --muted:#D8B9C3;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(to bottom,var(--bg1),var(--bg2));
@@ -29,6 +31,7 @@ justify-content:center;
 align-items:center;
 padding:20px;
 }
+
 .container{
 max-width:620px;
 width:100%;
@@ -40,6 +43,7 @@ box-shadow:0 0 50px rgba(255,63,129,.45);
 position:relative;
 overflow:hidden;
 }
+
 .container::before{
 content:"";
 position:absolute;
@@ -49,58 +53,38 @@ filter:blur(14px);
 opacity:.35;
 z-index:-1;
 }
+
 h1{
 font-family:'Bebas Neue',sans-serif;
 font-size:34px;
 line-height:1.1;
 text-align:center;
 color:var(--gold);
-margin-bottom:18px;
+margin-bottom:22px;
 }
-h1 span{
-color:var(--pink);
-display:block;
-margin-top:6px;
-}
-.sub{
-text-align:center;
-font-size:14px;
-color:var(--muted);
-margin-bottom:26px;
-line-height:1.5;
-font-style:italic;
-}
-.block{
-background:rgba(30,11,38,.85);
-border-left:3px solid var(--pink);
-border-radius:14px;
-padding:18px;
-margin-bottom:18px;
-font-size:14px;
-line-height:1.55;
-color:var(--muted);
-}
-.block strong{color:var(--gold)}
+
 .alert{
 background:rgba(229,0,60,.18);
 border:1px solid var(--pink);
 border-radius:14px;
 padding:18px;
-margin:24px 0;
+margin:20px 0;
 text-align:center;
 font-size:14px;
-font-weight:700;
+font-weight:600;
+line-height:1.6;
 }
-.list-title{
+
+.section-title{
 text-align:center;
 font-family:'Bebas Neue',sans-serif;
-font-size:22px;
+font-size:24px;
 letter-spacing:1px;
 color:var(--gold);
-margin:26px 0 16px;
+margin:28px 0 18px;
 }
-ul{list-style:none}
-ul li{
+
+.list div{
 margin-bottom:12px;
 padding:14px 16px;
 background:rgba(12,12,12,.6);
@@ -108,19 +92,9 @@ border-radius:10px;
 font-size:14px;
 color:var(--muted);
 }
-ul li span{
-color:var(--pink);
-font-weight:700;
-}
-.final{
-margin-top:26px;
-font-size:14px;
-text-align:center;
-line-height:1.55;
-color:var(--muted);
-}
+
 .cta{
-margin-top:26px;
+margin-top:30px;
 width:100%;
 padding:20px;
 border:none;
@@ -134,10 +108,12 @@ cursor:pointer;
 box-shadow:0 0 35px rgba(229,0,60,.6);
 transition:.3s;
 }
+
 .cta:hover{
 transform:translateY(-3px);
 box-shadow:0 14px 45px rgba(229,0,60,.85);
 }
+
 .note{
 margin-top:16px;
 font-size:13px;
@@ -156,15 +132,14 @@ POR QUE ESSE PADRÃO SE REPETE?
 </h1>
 
 <div class="alert">
-Esse ciclo não acontece por azar.
+Esse ciclo não acontece por azar.<br><br>
 
 Ao longo de anos analisando relatos de mulheres
 em relações indefinidas,
-Eliza Maffer identificou
-um padrão claro:
+foi identificado um padrão claro:<br><br>
 
-Quem investe primeiro demais,
-perde posição emocional.
+<strong>Quem investe emocionalmente antes,
+perde posição na dinâmica.</strong>
 </div>
 
 <div class="section-title">
@@ -174,18 +149,22 @@ O MÉTODO ATUA EM 3 FASES
 <div class="list">
 <div>1️⃣ Interromper o investimento automático</div>
 <div>2️⃣ Reposicionar seu valor na dinâmica</div>
-<div>3️⃣ Ativar o instinto de busca masculina</div>
+<div>3️⃣ Ativar o instinto natural de busca masculina</div>
 </div>
 
 <div class="alert">
 Quando a posição emocional muda,
-o comportamento masculino responde.
+a resposta masculina acompanha.
 </div>
 
-<button onclick="window.location.href='mulherhipnotica.html'">
+<button class="cta" onclick="window.location.href='mulherhipnotica.html'">
 QUERO APLICAR ISSO NA PRÁTICA
 </button>
-  
+
+<div class="note">
+A próxima etapa mostra como aplicar isso de forma prática e estruturada.
+</div>
+
 </div>
 
 </body>
