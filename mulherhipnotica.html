@@ -1,1 +1,184 @@
-<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Código da Mulher Hipnótica</title> <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"> <style> *{margin:0;padding:0;box-sizing:border-box} body{ font-family:'Poppins',sans-serif; background:#020202; color:#F5EDED; } /* TOPO FIXO */ .top-alert{ position:fixed; top:0; left:0; width:100%; z-index:9999; background:#C4002F; color:#FFF; text-align:center; font-weight:900; padding:14px 10px; font-size:14px; } /* CONTAINER MOBILE */ .container{ max-width:480px; margin:0 auto; padding:90px 16px 24px; } @keyframes arrowPulse { 0% { transform: translateY(0) scale(1); opacity: 1; } 50% { transform: translateY(14px) scale(1.15); opacity: 0.85; } 100% { transform: translateY(0) scale(1); opacity: 1; } } .arrow{ text-align:center; font-size:48px; /* maior pra mobile */ margin:18px 0 24px; animation: arrowPulse 1.2s infinite; } /* LOGO */ .logo{ text-align:center; margin-bottom:18px; } .logo img{ width:100%; max-width:240px; display:block; margin:0 auto; } /* TÍTULO */ h1{ font-family:'Bebas Neue',sans-serif; font-size:34px; text-align:center; color:#FF3F81; line-height:1.1; margin-bottom:14px; } @keyframes softPulse { 0% { transform: scale(1); } 50% { transform: scale(1.06); } 100% { transform: scale(1); } } .price-highlight{ animation: softPulse 2.2s infinite; } @keyframes blinkUrgency { 0%,100% { opacity:1; } 50% { opacity:.6; } } .urgency{ text-align:center; font-weight:900; color:#FFD700; margin-top:18px; font-size:15px; } .urgency span{ color:#FF3F81; animation: blinkUrgency 1.4s infinite; } /* SUB */ .sub{ text-align:center; font-size:16px; line-height:1.6; font-weight:700; color:#F2C9D8; margin-bottom:22px; } /* ALERTA TEXTO */ .alert{ background:rgba(255,0,90,.30); border-left:4px solid #FF3F81; border-radius:14px; padding:16px; font-size:15px; line-height:1.7; margin-bottom:22px; } /* PREÇO */ .price-highlight{ text-align:center; font-size:22px; font-weight:900; color:#FFD700; margin:22px 0; } /* SETA */ .arrow{ text-align:center; font-size:32px; margin-bottom:14px; } @keyframes softPulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.92; } 100% { transform: scale(1); opacity: 1; } } .price-highlight{ text-align:center; margin:18px 0; font-size:18px; font-weight:600; animation: softPulse 2.8s infinite; } .price-highlight strong{ font-size:34px; /* mobile-first */ font-weight:900; color:#00FFB2; /* cor de conversão */ display:inline-block; } /* LISTA */ .list div{ background:rgba(255,63,129,.22); border-left:4px solid #FF3F81; border-radius:14px; padding:14px; font-size:15px; font-weight:700; margin-bottom:12px; } </style> </head> <body> <div class="top-alert"> 🔥 Desconto só HOJE nesta página — <span id="todayDate"></span> </div> <div class="container"> <div class="logo"> <img src="src/img/fotoproduto.png" alt="Código da Mulher Hipnótica"> </div> <h1> Pare de ser a opção confortável.<br> Vire a única escolha possível </h1> <p class="sub"> Sem correr atrás, implorar<br> ou se humilhar - </p> <p class="sub"> Baseado no Protocolo de Inversão de Investimento Masculino™ </p> <div class="alert"> <strong>A verdade que ninguém te conta:</strong><br><br> A maioria das mulheres acha que está sendo “boazinha”, “compreensiva” ou “madura” mas, na prática, só está ensinando o homem a não valorizá-la<br><br> Relacionamentos não perdoam falta de posicionamento emocional </div> <div class="section"> <div class="section-title"> O QUE É O PROTOCOLO DE INVERSÃO DE INVESTIMENTO? </div> <div class="alert"> A maioria das mulheres tenta gerar valor demonstrando mais. <br><br> Mais carinho.<br> Mais conversa.<br> Mais compreensão.<br><br> O Protocolo de Inversão de Investimento Masculino™ funciona ao contrário. <br><br> Ele reorganiza a dinâmica emocional para que o homem sinta necessidade de investir, se posicionar e buscar validação. <br><br> Não é manipulação. É reposicionamento. </div> </div> <div class="arrow">⬇️</div> <div class="list"> <div>🔥 Despertar desejo emocional sem se expor demais</div> <div>🧠 Parar de se adaptar e fazer o outro investir</div> <div>🎯 Se posicionar sem brigar ou cobrar</div> <div>✨ Virar prioridade sem joguinhos</div> <div>💎 Manter controle emocional mesmo gostando muito</div> </div> </div> <script> const today = new Date(); const day = String(today.getDate()).padStart(2,'0'); const month = String(today.getMonth()+1).padStart(2,'0'); const year = today.getFullYear(); document.getElementById('todayDate').innerText = ${day}/${month}/${year}; </script> </body> </html> <style> /* SEÇÕES */ .section{ margin-top:36px; } .section-title{ font-family:'Bebas Neue',sans-serif; font-size:30px; text-align:center; color:#FF3F81; margin-bottom:18px; } /* BÔNUS */ .bonus{ background:#000; border:1px solid rgba(255,63,129,.6); border-radius:16px; padding:16px; font-size:15px; line-height:1.6; margin-bottom:14px; } .bonus strong{ color:#FFD700; } /* CAIXA OFERTA */ .offer-box{ margin-top:36px; background:#000; border:2px solid #FF3F81; border-radius:18px; padding:18px; } .offer-title{ font-family:'Bebas Neue',sans-serif; font-size:30px; text-align:center; color:#FF3F81; margin-bottom:18px; } .offer{ background:rgba(255,63,129,.20); border:1px solid rgba(255,63,129,.6); border-radius:16px; padding:16px; margin-bottom:18px; } .offer.disabled{ opacity:.35; filter:grayscale(100%); pointer-events:none; } .offer h3{ font-size:18px; margin-bottom:12px; } .offer ul{ list-style:none; font-size:15px; line-height:1.7; margin-bottom:14px; } .price-offer{ font-size:34px; font-weight:900; color:#FFD700; text-align:center; margin-top:10px; } .soldout{ text-align:center; font-size:13px; font-weight:900; color:#FF3F81; margin-top:6px; } /* BOTÃO */ @keyframes pulse { 0% {transform:scale(1); box-shadow:0 0 0 rgba(255,63,129,.8);} 50%{transform:scale(1.06); box-shadow:0 0 40px rgba(255,63,129,1);} 100%{transform:scale(1);} } .button{ width:100%; padding:22px; font-size:20px; font-weight:900; border:none; border-radius:60px; background:linear-gradient(45deg,#FF005D,#FF3F81); color:#FFF; margin-top:18px; animation:pulse 1.6s infinite; } /* GARANTIA */ .guarantee{ margin-top:32px; background:rgba(255,215,0,.22); border:1px solid rgba(255,215,0,.9); border-radius:16px; padding:16px; font-size:14px; text-align:center; line-height:1.6; } .guarantee img{ max-width:120px; margin-bottom:10px; } /* FAQ */ .faq{ margin-top:36px; font-size:14px; line-height:1.7; } .faq h3{ text-align:center; color:#FF3F81; margin-bottom:16px; } /* FOOTER */ .footer{ margin-top:26px; text-align:center; font-size:11px; opacity:.6; } </style> <div class="section"> <div class="section-title">🎁 Bônus Exclusivos</div> <div class="bonus"> <strong>Bônus #1 — Guia de Mensagens Magnéticas</strong><br> Valor: R$ 49,90 </div> <div class="bonus"> <strong>Bônus #2 — Controle Emocional Feminino</strong><br> Valor: R$ 59,90 </div> <div class="bonus"> <strong>Bônus #3 — Conteúdo Surpresa</strong><br> Valor: R$ 39,90 </div> <p class="price-highlight"> 🔥 VALOR TOTAL DOS BÔNUS: R$ 148,80<br> 💥 HOJE POR R$ 0,00 </p> </div> <div class="alert"> <strong>Talvez você esteja pensando:</strong><br><br> "Mas eu não quero virar fria."<br> "Não quero fazer joguinhos."<br> "Não quero fingir desinteresse."<br><br> Você não vai. <br><br> O protocolo não ensina a se afastar. Ensina a ajustar o nível de investimento antes que você entregue tudo. </div> <div class="offer-box"> <div class="offer-title">Escolha sua forma de acesso</div> <div class="alert"> Se esse padrão continuar ativo por mais 1 ano, quanto isso custa emocionalmente?<br><br> Mais tempo investido em alguém que não se posiciona.<br> Mais energia tentando consertar algo sozinha.<br> Mais um ciclo que termina igual.<br><br> Hoje você resolve isso por menos do que um jantar. </div> <div class="offer disabled"> <h3>Código da Mulher Hipnótica — Premium</h3> <ul> <li>✔️ +5 vídeo aulas exclusivas</li> <li>✔️ Conteúdos bônus avançados</li> <li>✔️ E-book completo do método</li> <li>✔️ Material complementar em PDF</li> <li>✔️ 3 reuniões ao vivo</li> <li>✔️ Grupo VIP exclusivo</li> <li>✔️ Acesso vitalício</li> <li>✔️ Suporte prioritário</li> <li>✔️ Garantia de 30 dias</li> </ul> <div class="price-offer">R$ 97,00</div> <div class="soldout">Em breve nova turma</div> </div> <div class="offer"> <h3>Oferta Especial — Liberação Imediata</h3> <ul> <li>✔️ Conteúdos bônus essenciais</li> <li>✔️ E-book oficial do método</li> <li>✔️ Material complementar em PDF</li> <li>✔️ 5 vídeo aulas práticas</li> <li>✔️ Grupo VIP no WhatsApp</li> <li>✔️ Garantia de 30 dias</li> <li>✔️ Acesso imediato</li> </ul> <div class="price-offer">R$ 47,90</div> <p class="urgency"> ⏳ A condição especial <span>termina hoje</span> às 23:59 </p> <button class="button" onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';"> QUERO VIRAR PRIORIDADE AGORA </button> </div> </div> <div class="guarantee"> <img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia 30 dias"><br> Garantia incondicional de 30 dias.<br> Se em 30 dias você não perceber mudança na sua postura emocional e na forma como os homens respondem a você, devolvemos cada centavo. </div> <div class="faq"> <h3>Dúvidas frequentes</h3> 📌 Preciso ter experiência em relacionamentos?<br> Não. O método funciona para todos os níveis de experiência afetiva<br><br> 📌 Funciona se eu for muito emotiva?<br> Sim. O Código foi criado exatamente para isso.<br><br> 📌 É manipulação?<br> Não. É posicionamento emocional.<br><br> 📌 Como recebo o acesso?<br> Tudo é digital. O acesso é liberado no seu email imediatamente após a compra.<br><br> 📌 Serve para qualquer tipo de relacionamento?<br> Sim. tanto para ficantes, namoro, relacionamentos instáveis ou relacionamentos longos. <button class="button" onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';"> 📲 TIREI MINHAS DÚVIDAS, VAMOS LÁ! </button> </div> <div class="footer"> © 2026 Código da Mulher Hipnótica — Todos os direitos reservados. </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código da Mulher Hipnótica</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#020202;
+  color:#F5EDED;
+}
+
+/* TOPO FIXO */
+.top-alert{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+  background:#C4002F;
+  color:#FFF;
+  text-align:center;
+  font-weight:900;
+  padding:14px 10px;
+  font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:480px;
+  margin:0 auto;
+  padding:90px 16px 24px;
+}
+
+/* TÍTULO */
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  text-align:center;
+  color:#FF3F81;
+  line-height:1.1;
+  margin-bottom:14px;
+}
+
+/* SUB */
+.sub{
+  text-align:center;
+  font-size:16px;
+  line-height:1.6;
+  font-weight:700;
+  color:#F2C9D8;
+  margin-bottom:22px;
+}
+
+/* ALERT */
+.alert{
+  background:rgba(255,0,90,.30);
+  border-left:4px solid #FF3F81;
+  border-radius:14px;
+  padding:16px;
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:22px;
+}
+
+/* LISTA */
+.list div{
+  background:rgba(255,63,129,.22);
+  border-left:4px solid #FF3F81;
+  border-radius:14px;
+  padding:14px;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+/* ========================= */
+/* POPUP SLIM VERDE */
+/* ========================= */
+
+#sales-popup{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#0f1f17;
+  color:#eafff3;
+  padding:10px 16px;
+  border-radius:50px;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  border:1px solid rgba(0,255,150,0.3);
+  backdrop-filter: blur(6px);
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .4s ease;
+  z-index:9999;
+  max-width:90%;
+}
+
+#sales-popup.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.popup-dot{
+  width:8px;
+  height:8px;
+  background:#00ff9d;
+  border-radius:50%;
+  animation:pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot{
+  0%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.4);opacity:.6;}
+  100%{transform:scale(1);opacity:1;}
+}
+
+#sales-popup strong{
+  color:#00ff9d;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+<!-- POPUP -->
+<div id="sales-popup"></div>
+
+<script>
+/* DATA DINÂMICA */
+const today = new Date();
+const day = String(today.getDate()).padStart(2,'0');
+const month = String(today.getMonth()+1).padStart(2,'0');
+const year = today.getFullYear();
+document.getElementById('todayDate').innerText = `${day}/${month}/${year}`;
+
+/* PROVA SOCIAL */
+const names = ["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
+
+const cities = ["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Goiânia","Florianópolis","Porto Alegre"];
+
+function showPopup(){
+  const popup = document.getElementById("sales-popup");
+  const randomName = names[Math.floor(Math.random()*names.length)];
+  const randomCity = cities[Math.floor(Math.random()*cities.length)];
+
+  popup.innerHTML = `
+    <div class="popup-dot"></div>
+    <span><strong>${randomName}</strong> de ${randomCity} acabou de comprar</span>
+  `;
+
+  popup.classList.add("show");
+
+  setTimeout(()=>{
+    popup.classList.remove("show");
+  }, 5000);
+}
+
+function randomInterval(){
+  const time = Math.floor(Math.random() * (20000 - 12000) + 12000);
+  setTimeout(()=>{
+    showPopup();
+    randomInterval();
+  }, time);
+}
+
+setTimeout(()=>{
+  showPopup();
+  randomInterval();
+}, 6000);
+</script>
+
+</body>
+</html> 🔥 Desconto só HOJE nesta página — <span id="todayDate"></span> </div> <div class="container"> <div class="logo"> <img src="src/img/fotoproduto.png" alt="Código da Mulher Hipnótica"> </div> <h1> Pare de ser a opção confortável.<br> Vire a única escolha possível </h1> <p class="sub"> Sem correr atrás, implorar<br> ou se humilhar - </p> <p class="sub"> Baseado no Protocolo de Inversão de Investimento Masculino™ </p> <div class="alert"> <strong>A verdade que ninguém te conta:</strong><br><br> A maioria das mulheres acha que está sendo “boazinha”, “compreensiva” ou “madura” mas, na prática, só está ensinando o homem a não valorizá-la<br><br> Relacionamentos não perdoam falta de posicionamento emocional </div> <div class="section"> <div class="section-title"> O QUE É O PROTOCOLO DE INVERSÃO DE INVESTIMENTO? </div> <div class="alert"> A maioria das mulheres tenta gerar valor demonstrando mais. <br><br> Mais carinho.<br> Mais conversa.<br> Mais compreensão.<br><br> O Protocolo de Inversão de Investimento Masculino™ funciona ao contrário. <br><br> Ele reorganiza a dinâmica emocional para que o homem sinta necessidade de investir, se posicionar e buscar validação. <br><br> Não é manipulação. É reposicionamento. </div> </div> <div class="arrow">⬇️</div> <div class="list"> <div>🔥 Despertar desejo emocional sem se expor demais</div> <div>🧠 Parar de se adaptar e fazer o outro investir</div> <div>🎯 Se posicionar sem brigar ou cobrar</div> <div>✨ Virar prioridade sem joguinhos</div> <div>💎 Manter controle emocional mesmo gostando muito</div> </div> </div> <script> const today = new Date(); const day = String(today.getDate()).padStart(2,'0'); const month = String(today.getMonth()+1).padStart(2,'0'); const year = today.getFullYear(); document.getElementById('todayDate').innerText = ${day}/${month}/${year}; </script> </body> </html> <style> /* SEÇÕES */ .section{ margin-top:36px; } .section-title{ font-family:'Bebas Neue',sans-serif; font-size:30px; text-align:center; color:#FF3F81; margin-bottom:18px; } /* BÔNUS */ .bonus{ background:#000; border:1px solid rgba(255,63,129,.6); border-radius:16px; padding:16px; font-size:15px; line-height:1.6; margin-bottom:14px; } .bonus strong{ color:#FFD700; } /* CAIXA OFERTA */ .offer-box{ margin-top:36px; background:#000; border:2px solid #FF3F81; border-radius:18px; padding:18px; } .offer-title{ font-family:'Bebas Neue',sans-serif; font-size:30px; text-align:center; color:#FF3F81; margin-bottom:18px; } .offer{ background:rgba(255,63,129,.20); border:1px solid rgba(255,63,129,.6); border-radius:16px; padding:16px; margin-bottom:18px; } .offer.disabled{ opacity:.35; filter:grayscale(100%); pointer-events:none; } .offer h3{ font-size:18px; margin-bottom:12px; } .offer ul{ list-style:none; font-size:15px; line-height:1.7; margin-bottom:14px; } .price-offer{ font-size:34px; font-weight:900; color:#FFD700; text-align:center; margin-top:10px; } .soldout{ text-align:center; font-size:13px; font-weight:900; color:#FF3F81; margin-top:6px; } /* BOTÃO */ @keyframes pulse { 0% {transform:scale(1); box-shadow:0 0 0 rgba(255,63,129,.8);} 50%{transform:scale(1.06); box-shadow:0 0 40px rgba(255,63,129,1);} 100%{transform:scale(1);} } .button{ width:100%; padding:22px; font-size:20px; font-weight:900; border:none; border-radius:60px; background:linear-gradient(45deg,#FF005D,#FF3F81); color:#FFF; margin-top:18px; animation:pulse 1.6s infinite; } /* GARANTIA */ .guarantee{ margin-top:32px; background:rgba(255,215,0,.22); border:1px solid rgba(255,215,0,.9); border-radius:16px; padding:16px; font-size:14px; text-align:center; line-height:1.6; } .guarantee img{ max-width:120px; margin-bottom:10px; } /* FAQ */ .faq{ margin-top:36px; font-size:14px; line-height:1.7; } .faq h3{ text-align:center; color:#FF3F81; margin-bottom:16px; } /* FOOTER */ .footer{ margin-top:26px; text-align:center; font-size:11px; opacity:.6; } </style> <div class="section"> <div class="section-title">🎁 Bônus Exclusivos</div> <div class="bonus"> <strong>Bônus #1 — Guia de Mensagens Magnéticas</strong><br> Valor: R$ 49,90 </div> <div class="bonus"> <strong>Bônus #2 — Controle Emocional Feminino</strong><br> Valor: R$ 59,90 </div> <div class="bonus"> <strong>Bônus #3 — Conteúdo Surpresa</strong><br> Valor: R$ 39,90 </div> <p class="price-highlight"> 🔥 VALOR TOTAL DOS BÔNUS: R$ 148,80<br> 💥 HOJE POR R$ 0,00 </p> </div> <div class="alert"> <strong>Talvez você esteja pensando:</strong><br><br> "Mas eu não quero virar fria."<br> "Não quero fazer joguinhos."<br> "Não quero fingir desinteresse."<br><br> Você não vai. <br><br> O protocolo não ensina a se afastar. Ensina a ajustar o nível de investimento antes que você entregue tudo. </div> <div class="offer-box"> <div class="offer-title">Escolha sua forma de acesso</div> <div class="alert"> Se esse padrão continuar ativo por mais 1 ano, quanto isso custa emocionalmente?<br><br> Mais tempo investido em alguém que não se posiciona.<br> Mais energia tentando consertar algo sozinha.<br> Mais um ciclo que termina igual.<br><br> Hoje você resolve isso por menos do que um jantar. </div> <div class="offer disabled"> <h3>Código da Mulher Hipnótica — Premium</h3> <ul> <li>✔️ +5 vídeo aulas exclusivas</li> <li>✔️ Conteúdos bônus avançados</li> <li>✔️ E-book completo do método</li> <li>✔️ Material complementar em PDF</li> <li>✔️ 3 reuniões ao vivo</li> <li>✔️ Grupo VIP exclusivo</li> <li>✔️ Acesso vitalício</li> <li>✔️ Suporte prioritário</li> <li>✔️ Garantia de 30 dias</li> </ul> <div class="price-offer">R$ 97,00</div> <div class="soldout">Em breve nova turma</div> </div> <div class="offer"> <h3>Oferta Especial — Liberação Imediata</h3> <ul> <li>✔️ Conteúdos bônus essenciais</li> <li>✔️ E-book oficial do método</li> <li>✔️ Material complementar em PDF</li> <li>✔️ 5 vídeo aulas práticas</li> <li>✔️ Grupo VIP no WhatsApp</li> <li>✔️ Garantia de 30 dias</li> <li>✔️ Acesso imediato</li> </ul> <div class="price-offer">R$ 47,90</div> <p class="urgency"> ⏳ A condição especial <span>termina hoje</span> às 23:59 </p> <button class="button" onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';"> QUERO VIRAR PRIORIDADE AGORA </button> </div> </div> <div class="guarantee"> <img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia 30 dias"><br> Garantia incondicional de 30 dias.<br> Se em 30 dias você não perceber mudança na sua postura emocional e na forma como os homens respondem a você, devolvemos cada centavo. </div> <div class="faq"> <h3>Dúvidas frequentes</h3> 📌 Preciso ter experiência em relacionamentos?<br> Não. O método funciona para todos os níveis de experiência afetiva<br><br> 📌 Funciona se eu for muito emotiva?<br> Sim. O Código foi criado exatamente para isso.<br><br> 📌 É manipulação?<br> Não. É posicionamento emocional.<br><br> 📌 Como recebo o acesso?<br> Tudo é digital. O acesso é liberado no seu email imediatamente após a compra.<br><br> 📌 Serve para qualquer tipo de relacionamento?<br> Sim. tanto para ficantes, namoro, relacionamentos instáveis ou relacionamentos longos. <button class="button" onclick="window.location.href='https://pay.sunize.com.br/LXHVfkNO';"> 📲 TIREI MINHAS DÚVIDAS, VAMOS LÁ! </button> </div> <div class="footer"> © 2026 Código da Mulher Hipnótica — Todos os direitos reservados. </div>
