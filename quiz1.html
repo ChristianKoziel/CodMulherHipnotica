@@ -1,225 +1,489 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seja Sincera</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+<title>Código da Mulher Hipnótica</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #1E0B26 0%, #0C0C0C 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FAF1F4;
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#C8003F;
+  --rose-light:#FF2D6B;
+  --rose-pale:#FFE5EE;
+  --gold:#C9972A;
+  --gold-light:#F0C14B;
+  --cream:#FDF6F0;
+  --ink:#1A0A12;
+  --ink-soft:#3D1F2E;
+  --mist:#F7EEF2;
+  --border:rgba(200,0,63,.15);
 }
-
-.quiz-container {
-    background: rgba(12,12,12,0.9);
-    border-radius: 20px;
-    padding: 28px;
-    width: 380px;
-    max-width: 92%;
-    box-shadow: 0 10px 30px rgba(255,63,129,0.3);
-    border: 1px solid rgba(255,63,129,0.4);
-    text-align: center;
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:hidden;
 }
-
-h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.65rem;
-    color: #FF3F81;
-    margin-bottom: 8px;
-    letter-spacing: 1.2px;
+.topbar{
+  position:fixed;top:0;left:0;width:100%;z-index:999;
+  background:var(--rose);
+  padding:11px 20px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
 }
-
-.subtitle {
-    font-size: 0.95rem;
-    color: #E8C8D3;
-    margin-bottom: 20px;
+.topbar-dot{width:6px;height:6px;background:var(--gold-light);border-radius:50%;animation:pulse 1.4s infinite}
+.topbar span{color:#fff;font-size:12.5px;font-weight:500;letter-spacing:.4px}
+.topbar strong{color:var(--gold-light)}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
+.hero{
+  min-height:100vh;
+  padding:100px 24px 60px;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;
+  background:linear-gradient(160deg,#1A0A12 0%,#2D0F20 50%,#1A0A12 100%);
+  overflow:hidden;
 }
-
-.fake-chat {
-    background: #0c1317;
-    border-radius: 10px;
-    padding: 12px;
-    margin: 18px 0;
-    border: 1px solid rgba(255,255,255,0.08);
-    text-align: left;
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(200,0,63,.18),transparent);
 }
-
-.chat-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.hero-ornament{
+  position:absolute;top:80px;left:50%;transform:translateX(-50%);
+  width:1px;height:180px;
+  background:linear-gradient(to bottom,transparent,rgba(200,0,63,.4),transparent);
 }
-
-.contact-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #444;
-    margin-right: 8px;
+.hero-ornament::before,.hero-ornament::after{
+  content:'';position:absolute;left:50%;transform:translateX(-50%);
+  width:6px;height:6px;border-radius:50%;background:var(--rose-light);
 }
-
-.contact-name {
-    font-size: 0.9rem;
-    font-weight: 600;
+.hero-ornament::before{top:0}
+.hero-ornament::after{bottom:0}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(200,0,63,.2);
+  border:1px solid rgba(200,0,63,.4);
+  border-radius:100px;
+  padding:7px 18px;
+  font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,200,220,.9);
+  margin-bottom:36px;
+  position:relative;z-index:1;
 }
-
-.chat-messages {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--rose-light);animation:pulse 1.4s infinite}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,7vw,58px);
+  font-weight:900;
+  color:#fff;
+  text-align:center;
+  line-height:1.08;
+  letter-spacing:-.5px;
+  position:relative;z-index:1;
+  max-width:520px;
+  margin-bottom:10px;
 }
-
-.msg-them {
-    background: #1f2c33;
-    padding: 8px 12px;
-    border-radius: 8px 8px 8px 0;
-    max-width: 75%;
-    font-size: 0.9rem;
+.hero h1 em{font-style:italic;color:var(--rose-light);}
+.hero-sub{
+  font-size:16px;font-weight:300;
+  color:rgba(255,220,230,.7);
+  text-align:center;
+  line-height:1.7;
+  max-width:380px;
+  margin:20px 0 40px;
+  position:relative;z-index:1;
 }
-
-.msg-you {
-    align-self: flex-end;
-    background: #005c4b;
-    padding: 8px 12px;
-    border-radius: 8px 8px 0 8px;
-    max-width: 75%;
-    font-size: 0.9rem;
+.hero-line{width:40px;height:1px;background:var(--rose-light);display:inline-block;vertical-align:middle;margin:0 12px;opacity:.5;}
+.scroll-hint{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  margin-top:10px;
 }
-
-.typing {
-    display: flex;
-    gap: 4px;
-    margin-top: 4px;
+.scroll-hint span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,200,220,.4);font-weight:500}
+.scroll-arrow{
+  width:20px;height:20px;border-right:1.5px solid rgba(200,0,63,.5);border-bottom:1.5px solid rgba(200,0,63,.5);
+  transform:rotate(45deg);
+  animation:scrollBounce 1.5s infinite;
 }
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background: #8696a0;
-    border-radius: 50%;
-    animation: blink 1.4s infinite both;
+@keyframes scrollBounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
+.section{padding:70px 24px;max-width:540px;margin:0 auto}
+.section-label{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--rose);font-weight:600;
+  display:flex;align-items:center;gap:10px;margin-bottom:20px;
 }
-
-.dot:nth-child(2) { animation-delay: .2s; }
-.dot:nth-child(3) { animation-delay: .4s; }
-
-@keyframes blink {
-    0% { opacity: .2; }
-    20% { opacity: 1; }
-    100% { opacity: .2; }
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.truth{background:var(--ink);padding:70px 24px;}
+.truth .inner{max-width:540px;margin:0 auto}
+.truth h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,6vw,42px);
+  color:#fff;line-height:1.15;font-weight:700;margin-bottom:28px;
 }
-
-.text {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 18px 0;
+.truth h2 em{color:var(--rose-light);font-style:italic}
+.truth p{font-size:15.5px;font-weight:300;color:rgba(255,220,230,.7);line-height:1.8;margin-bottom:20px;}
+.truth p strong{color:rgba(255,220,230,.95);font-weight:500}
+.protocol{background:var(--mist)}
+.protocol-card{
+  background:#fff;border:1px solid var(--border);border-radius:20px;
+  padding:28px 24px;margin-bottom:14px;position:relative;overflow:hidden;
 }
-
-.text span {
-    color: #FF3F81;
-    font-weight: 600;
+.protocol-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,var(--rose-light),var(--rose));
 }
-
-.warning {
-    font-size: 0.9rem;
-    color: #FF9FBF;
-    background: rgba(229,0,60,0.12);
-    border: 1px dashed #E5003C;
-    border-radius: 8px;
-    padding: 12px;
-    margin: 18px 0;
+.protocol-num{font-family:'Playfair Display',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);font-weight:400;margin-bottom:8px;}
+.protocol-card h3{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.protocol-card p{font-size:13.5px;color:#6B4055;font-weight:300;line-height:1.7}
+.results{background:var(--cream)}
+.result-item{display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);}
+.result-item:last-child{border-bottom:none}
+.result-icon{width:38px;height:38px;border-radius:12px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
+.result-item h3{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.result-item p{font-size:13px;color:#8B5A6B;font-weight:300;line-height:1.6}
+.objection{background:var(--ink);padding:70px 24px;}
+.objection .inner{max-width:540px;margin:0 auto}
+.obj-block{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;}
+.obj-q{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:rgba(255,220,230,.6);margin-bottom:12px;line-height:1.4;}
+.obj-a{font-size:14.5px;font-weight:300;color:rgba(255,220,230,.85);line-height:1.75;}
+.obj-a strong{color:var(--rose-light);font-weight:500}
+.bonus{background:var(--mist)}
+.bonus-grid{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.bonus-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px 20px 20px 24px;display:flex;align-items:center;gap:16px;}
+.bonus-no{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:rgba(200,0,63,.12);flex-shrink:0;width:32px;line-height:1;}
+.bonus-card h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.bonus-card span{font-size:12px;color:var(--gold);font-weight:500}
+.offer{background:var(--ink);padding:70px 24px 80px;}
+.offer .inner{max-width:540px;margin:0 auto}
+.offer h2{
+  font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,40px);
+  color:#fff;line-height:1.15;font-weight:700;margin-bottom:28px;text-align:center;
 }
-
-.button {
-    background: linear-gradient(to right, #FF3F81, #E5003C);
-    border: none;
-    border-radius: 50px;
-    padding: 16px;
-    width: 100%;
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    animation: pulse 2s infinite;
+.offer h2 em{color:var(--rose-light);font-style:italic}
+.offer-box{background:rgba(255,255,255,.04);border:1px solid rgba(200,0,63,.3);border-radius:24px;padding:32px 24px;margin-bottom:24px;}
+.offer-box.disabled{opacity:.3;pointer-events:none;filter:grayscale(1)}
+.offer-tag{
+  display:inline-block;background:rgba(200,0,63,.2);border:1px solid rgba(200,0,63,.35);
+  border-radius:100px;padding:4px 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,160,190,.9);font-weight:600;margin-bottom:16px;
 }
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,63,129,0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255,63,129,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,63,129,0); }
+.offer-tag.gold{background:rgba(201,151,42,.15);border-color:rgba(201,151,42,.3);color:rgba(240,193,75,.9);}
+.offer-box h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:20px;line-height:1.3}
+.offer-features{list-style:none;margin-bottom:24px}
+.offer-features li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13.5px;font-weight:300;color:rgba(255,210,225,.8);display:flex;align-items:center;gap:10px;}
+.offer-features li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--rose-light);flex-shrink:0;}
+.offer-price{text-align:center;padding-top:16px;}
+.offer-price .from{font-size:13px;color:rgba(255,200,220,.4);text-decoration:line-through;margin-bottom:4px}
+.offer-price .amount{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold-light);line-height:1;}
+.offer-price .period{font-size:13px;color:rgba(255,200,220,.5);margin-top:4px}
+.urgency-strip{background:rgba(200,0,63,.12);border:1px solid rgba(200,0,63,.2);border-radius:12px;padding:12px 16px;font-size:13px;color:rgba(255,180,200,.85);text-align:center;margin:20px 0;font-weight:400;}
+.urgency-strip strong{color:var(--rose-light)}
+.cta-btn{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--rose-light) 100%);
+  color:#fff;border:none;border-radius:100px;padding:20px 32px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.3px;
+  text-align:center;text-decoration:none;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 12px 40px rgba(200,0,63,.35);margin-top:16px;
 }
-
-.counter {
-    font-size: 0.85rem;
-    color: #D8B9C3;
-    margin-top: 14px;
+.cta-btn:active{transform:scale(.98)}
+.cta-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.1) 50%,transparent 100%);
+  transform:translateX(-100%);animation:shimmer 2.5s infinite;
 }
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.cta-caption{text-align:center;font-size:12px;color:rgba(255,200,220,.4);margin-top:12px;}
+.guarantee-strip{
+  background:rgba(201,151,42,.08);border:1px solid rgba(201,151,42,.2);
+  border-radius:20px;padding:24px;display:flex;align-items:flex-start;gap:16px;margin-top:32px;
+}
+.guarantee-icon{width:48px;height:48px;flex-shrink:0;background:rgba(201,151,42,.12);border:1px solid rgba(201,151,42,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.guarantee-strip h4{font-size:14px;font-weight:600;color:rgba(240,193,75,.95);margin-bottom:6px}
+.guarantee-strip p{font-size:12.5px;color:rgba(255,220,180,.65);font-weight:300;line-height:1.7}
+.faq{background:var(--cream);padding:70px 24px}
+.faq .inner{max-width:540px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0}
+.faq-q{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:10px}
+.faq-a{font-size:13.5px;font-weight:300;color:#7A4A5A;line-height:1.75}
+.footer{background:var(--ink);padding:30px 24px;text-align:center;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:rgba(255,200,220,.3);margin-bottom:8px;}
+.footer p{font-size:11px;color:rgba(255,200,220,.2);font-weight:300}
+#popup{
+  position:fixed;bottom:20px;left:20px;z-index:9999;
+  background:rgba(26,10,18,.95);border:1px solid rgba(200,0,63,.25);border-radius:100px;
+  padding:10px 20px 10px 14px;display:flex;align-items:center;gap:10px;
+  opacity:0;transform:translateY(16px);transition:all .4s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);max-width:300px;
+}
+#popup.show{opacity:1;transform:translateY(0)}
+.popup-live{display:flex;align-items:center;gap:5px}
+.popup-live-dot{width:6px;height:6px;border-radius:50%;background:#00E57B;animation:pulse 1.4s infinite}
+.popup-live-label{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(0,229,123,.7);font-weight:600}
+.popup-text{font-size:12.5px;color:rgba(255,220,230,.8);font-weight:300}
+.popup-text strong{color:#fff;font-weight:500}
 </style>
 </head>
-
 <body>
 
-<div class="quiz-container">
+<div class="topbar">
+  <div class="topbar-dot"></div>
+  <span>Condição especial disponível <strong>somente hoje</strong> — <span id="todayDate"></span></span>
+</div>
 
-<h3>Seja sincera agora.</h3>
+<section class="hero">
+  <div class="hero-ornament"></div>
 
-<div class="subtitle">
-Se ele estivesse realmente envolvido com você,<br>
-você não estaria aqui.<br>
+  <div class="badge">
+    <div class="badge-dot"></div>
+    Protocolo de Inversão de Investimento Masculino™
+  </div>
 
-<div class="fake-chat">
-    <div class="chat-header">
-        <div class="contact-avatar"></div>
-        <div class="contact-name">Ele</div>
+  <h1>
+    Pare de ser a opção.<br>
+    Vire a única <em>escolha</em><br>possível.
+  </h1>
+
+  <p class="hero-sub">
+    Sem implorar. Sem joguinhos. Sem se diminuir.<br>
+    <span class="hero-line"></span>só reposicionamento.
+  </p>
+
+  <div style="position:relative;z-index:1;margin:8px 0 40px;width:100%;max-width:320px">
+    <div style="position:relative">
+      <div style="position:absolute;inset:-1px;border-radius:24px;background:linear-gradient(135deg,rgba(200,0,63,.5),rgba(255,45,107,.15),rgba(200,0,63,.3));z-index:0;filter:blur(12px)"></div>
+      <img src="src/img/fotoproduto.png" alt="Código da Mulher Hipnótica"
+        style="width:100%;border-radius:20px;display:block;position:relative;z-index:1;border:1px solid rgba(200,0,63,.25)">
     </div>
+  </div>
 
-    <div class="chat-messages">
-        <div class="msg-them">Oi… você anda diferente.</div>
-        <div class="msg-you">Diferente não. Só parei de insistir.</div>
-        <div class="msg-them">Eu não quis dizer isso…</div>
-        <div class="typing">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+  <div class="scroll-hint" style="margin-top:0">
+    <span>Continua</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<section class="truth">
+  <div class="inner">
+    <div class="section-label" style="color:rgba(200,0,63,.6)">
+      A verdade que ninguém conta
+      <div style="flex:1;height:1px;background:rgba(200,0,63,.2)"></div>
+    </div>
+    <h2>A maioria das mulheres acha que está sendo <em>madura.</em><br>Mas está ensinando a não ser valorizada.</h2>
+    <p>
+      Mais carinho. Mais compreensão. Mais paciência.<br>
+      <strong>Relacionamentos não perdoam falta de posicionamento emocional.</strong>
+    </p>
+    <p>
+      O problema não é você ser boa demais. É que você entregou tudo antes de ele investir o suficiente. E isso reorganiza o nível de esforço dele — silenciosamente.
+    </p>
+  </div>
+</section>
+
+<section class="protocol">
+  <div class="section" style="padding-top:70px;padding-bottom:70px">
+    <div class="section-label">O método</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,36px);font-weight:700;line-height:1.15;margin-bottom:8px;color:var(--ink)">
+      O que é o Protocolo de Inversão de Investimento?
+    </h2>
+    <p style="font-size:14px;color:#8B5A6B;font-weight:300;line-height:1.7;margin-bottom:32px">
+      Não é sobre se afastar. É sobre ajustar o nível de investimento antes de entregar tudo.
+    </p>
+    <div class="protocol-card">
+      <div class="protocol-num">Passo 01</div>
+      <h3>Despertar desejo emocional sem se expor demais</h3>
+      <p>Aprenda a criar presença magnética sem depender de aprovação externa.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-num">Passo 02</div>
+      <h3>Parar de se adaptar e fazer o outro investir</h3>
+      <p>Reorganize a dinâmica para que ele sinta a necessidade de se posicionar.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-num">Passo 03</div>
+      <h3>Se posicionar sem brigar ou cobrar</h3>
+      <p>Comunique limites com autoridade emocional — sem conflito, sem implorar.</p>
+    </div>
+    <div class="protocol-card">
+      <div class="protocol-num">Passo 04</div>
+      <h3>Manter controle emocional mesmo gostando muito</h3>
+      <p>Cuide da sua estabilidade interna independente do comportamento dele.</p>
+    </div>
+  </div>
+</section>
+
+<section class="objection">
+  <div class="inner">
+    <div class="section-label" style="color:rgba(200,0,63,.5)">
+      Talvez você esteja pensando
+      <div style="flex:1;height:1px;background:rgba(200,0,63,.15)"></div>
+    </div>
+    <div class="obj-block">
+      <p class="obj-q">"Mas eu não quero virar fria ou distante…"</p>
+      <p class="obj-a">O protocolo não ensina a se afastar. Ensina a <strong>ajustar o nível de investimento</strong> antes de entregar tudo. Você continua sendo você — só com mais posicionamento.</p>
+    </div>
+    <div class="obj-block">
+      <p class="obj-q">"Parece manipulação…"</p>
+      <p class="obj-a">Não é. Manipulação é enganar. Isso é <strong>reposicionamento emocional</strong> — entender a dinâmica e se colocar de forma mais estratégica dentro dela.</p>
+    </div>
+    <div class="obj-block">
+      <p class="obj-q">"E se eu for muito emotiva para isso?"</p>
+      <p class="obj-a">O Código foi criado <strong>exatamente para isso.</strong> Mulheres que sentem muito, que se doam fácil, que gostam rápido. É o perfil que mais transforma com o método.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bonus">
+  <div class="section">
+    <div class="section-label">Bônus inclusos</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,34px);font-weight:700;line-height:1.2;margin-bottom:6px;color:var(--ink)">
+      Tudo que você recebe
+    </h2>
+    <p style="font-size:13.5px;color:#8B5A6B;font-weight:300;line-height:1.6;margin-bottom:28px">Valor total dos bônus: <strong style="color:var(--gold)">R$ 148,80</strong> — incluídos sem custo adicional</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-no">1</div>
+        <div>
+          <h3>Guia de Mensagens Magnéticas</h3>
+          <span>Valor: R$ 49,90</span>
         </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-no">2</div>
+        <div>
+          <h3>Controle Emocional Feminino</h3>
+          <span>Valor: R$ 59,90</span>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-no">3</div>
+        <div>
+          <h3>Conteúdo Surpresa</h3>
+          <span>Valor: R$ 39,90</span>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="inner">
+    <div class="section-label" style="color:rgba(200,0,63,.5);justify-content:center;margin-bottom:12px">
+      Acesso imediato
+    </div>
+    <h2>Escolha sua<br>forma de acesso</h2>
+
+    <div class="offer-box disabled">
+      <div class="offer-tag gold">Em breve</div>
+      <h3>Código da Mulher Hipnótica — Premium</h3>
+      <ul class="offer-features">
+        <li>+5 vídeo aulas exclusivas</li>
+        <li>E-book completo do método</li>
+        <li>3 reuniões ao vivo</li>
+        <li>Grupo VIP exclusivo</li>
+        <li>Acesso vitalício</li>
+        <li>Garantia de 30 dias</li>
+      </ul>
+      <div class="offer-price">
+        <div class="amount">R$ 97</div>
+        <div class="period">Nova turma em breve</div>
+      </div>
+    </div>
+
+    <div class="offer-box">
+      <div class="offer-tag">Liberação imediata</div>
+      <h3>Oferta Especial — Acesso Completo</h3>
+      <ul class="offer-features">
+        <li>Conteúdos bônus essenciais</li>
+        <li>E-book oficial do método</li>
+        <li>Material complementar em PDF</li>
+        <li>5 vídeo aulas práticas</li>
+        <li>Grupo VIP no WhatsApp</li>
+        <li>Garantia de 30 dias</li>
+        <li>Acesso imediato</li>
+      </ul>
+      <div class="offer-price">
+        <div class="from">De R$ 97,00</div>
+        <div class="amount">R$ 27,90</div>
+        <div class="period">pagamento único</div>
+      </div>
+      <div class="urgency-strip" style="margin-top:20px">
+        Condição especial expira hoje às <strong>23:59</strong>
+      </div>
+      <a href="https://pay.sunize.com.br/LXHVfkNO" class="cta-btn">
+        Quero virar prioridade agora →
+      </a>
+      <p class="cta-caption">Pagamento 100% seguro · Acesso imediato por email</p>
+    </div>
+
+    <div class="guarantee-strip">
+      <div class="guarantee-icon">🛡</div>
+      <div>
+        <h4>Garantia incondicional de 30 dias</h4>
+        <p>Se em 30 dias você não perceber mudança na sua postura emocional e na forma como os homens respondem a você, devolvemos cada centavo. Sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="inner">
+    <div class="section-label">Dúvidas</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,34px);font-weight:700;line-height:1.2;margin-bottom:32px;color:var(--ink)">
+      Perguntas frequentes
+    </h2>
+    <div class="faq-item">
+      <p class="faq-q">Preciso ter experiência em relacionamentos?</p>
+      <p class="faq-a">Não. O método funciona para todos os níveis de experiência afetiva — ficantes, namoro, relacionamentos instáveis ou longos.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Como recebo o acesso?</p>
+      <p class="faq-a">Tudo é digital. O acesso é liberado no seu e-mail imediatamente após a compra.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Funciona se eu for muito emotiva?</p>
+      <p class="faq-a">Sim. O Código foi criado exatamente para isso. Quanto mais você sente, mais o método transforma.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Isso é manipulação?</p>
+      <p class="faq-a">Não. É posicionamento emocional. A diferença é que aqui você está alinhada com o que realmente quer, não fingindo algo que não é.</p>
+    </div>
+    <a href="https://pay.sunize.com.br/LXHVfkNO" class="cta-btn" style="margin-top:40px">
+      Tirei minhas dúvidas — quero acesso →
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">Código da Mulher Hipnótica</div>
+  <p>© 2026 — Todos os direitos reservados.</p>
+</footer>
+
+<div id="popup">
+  <div class="popup-live">
+    <div class="popup-live-dot"></div>
+    <span class="popup-live-label">ao vivo</span>
+  </div>
+  <span class="popup-text" id="popupText"></span>
 </div>
 
-<div class="text">
-Quando um homem começa a esfriar,<br>
-quase sempre a reação parece certa.<br><br>
-Mas é exatamente aí que a dinâmica começa a virar contra você.<br><br>
-Em menos de 2 minutos, você vai descobrir<br>
-<span>se existe um padrão emocional ativando isso — sem você perceber.</span>
-</div>
-
-<div class="warning">
-Responda com honestidade.<br>
-    <br>
-Ninguém vai ver suas respostas.<br>
-Mas você já sabe que precisa encarar isso.
-</div>
-O que você descobrir pode mudar a forma como ele te vê.
-</div>
-
-<button class="button" onclick="location.href='quiz2.html'">
-Começar teste
-</button>
-
-<div class="counter">
-💬 <strong>104 mulheres</strong> fizeram esse teste hoje
-</div>
-
+<script>
+const names=["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
+const cities=["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
+function showPopup(){
+  const p=document.getElementById('popup');
+  const n=names[Math.floor(Math.random()*names.length)];
+  const c=cities[Math.floor(Math.random()*cities.length)];
+  document.getElementById('popupText').innerHTML=`<strong>${n}</strong> de ${c} acabou de comprar`;
+  p.classList.add('show');
+  setTimeout(()=>p.classList.remove('show'),4800);
+  setTimeout(showPopup,Math.floor(Math.random()*15000)+18000);
+}
+setTimeout(showPopup,18000);
+const d=new Date();
+document.getElementById('todayDate').textContent=`${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+</script>
 </body>
 </html>
