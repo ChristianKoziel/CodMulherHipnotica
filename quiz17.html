@@ -25,7 +25,7 @@ body{
   color:var(--text);
   display:flex;
   justify-content:center;
-  padding:20px 16px 40px;
+  padding:24px 16px 40px;
 }
 
 /* CONTAINER */
@@ -34,60 +34,16 @@ body{
   max-width:420px;
   display:flex;
   flex-direction:column;
-  gap:18px;
+  gap:22px;
 }
 
-/* ANIMAÇÃO */
-.reveal{
-  opacity:0;
-  transform:translateY(18px);
-  animation:fadeUp .6s ease forwards;
-}
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* LOADING */
-#loading-screen{
-  position:fixed;
-  inset:0;
-  background:var(--ink);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.loading-text{
-  font-size:14px;
-  color:var(--rose-light);
-  margin-bottom:20px;
-  letter-spacing:1px;
-}
-
-.progress-bar{
-  width:220px;
-  height:8px;
-  background:rgba(255,255,255,.1);
-  border-radius:100px;
-  overflow:hidden;
-}
-
-.progress{
-  width:0%;
-  height:100%;
-  background:linear-gradient(135deg,var(--rose),var(--rose-light));
-  transition:.2s;
-}
-
-/* TÍTULO */
+/* TITLE */
 .title{
   text-align:center;
 }
 .title h1{
   font-family:'Playfair Display',serif;
-  font-size:30px;
+  font-size:32px;
   font-weight:900;
   line-height:1.2;
 }
@@ -96,12 +52,15 @@ body{
   font-style:italic;
 }
 
-/* TEXTO */
+/* TEXT */
 .text{
-  font-size:14.5px;
+  font-size:15px;
   color:var(--text-soft);
   line-height:1.6;
   text-align:center;
+}
+.highlight{
+  color:var(--rose-light);
 }
 
 /* BOX */
@@ -147,6 +106,19 @@ body{
   border:1px solid rgba(200,0,63,.2);
   border-radius:16px;
   font-size:14.5px;
+  line-height:1.6;
+}
+
+/* EXPERT TEXT */
+.expert-text-intro h4{
+  font-size:18px;
+  margin-bottom:8px;
+}
+.expert-text-intro p{
+  font-size:14.5px;
+  color:var(--text-soft);
+  line-height:1.6;
+  margin-bottom:8px;
 }
 
 /* EXPERT */
@@ -154,6 +126,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
+  gap:10px;
 }
 .expert-photo-rect{
   width:100%;
@@ -163,14 +136,17 @@ body{
 }
 .expert-name{
   text-align:center;
-  margin-top:10px;
   font-size:13px;
   color:var(--text-soft);
+}
+.expert-name span{
+  font-size:12px;
 }
 
 /* CTA */
 .cta-wrap{
   position:relative;
+  margin-top:10px;
 }
 .cta-glow{
   position:absolute;
@@ -189,7 +165,15 @@ body{
   background:linear-gradient(135deg,var(--rose),var(--rose-light));
   color:#fff;
   font-weight:600;
+  font-size:15px;
   cursor:pointer;
+}
+
+/* MICROCOPY */
+.microcopy{
+  text-align:center;
+  font-size:13px;
+  color:var(--text-soft);
 }
 
 /* SOCIAL */
@@ -198,168 +182,87 @@ body{
   font-size:12px;
   color:var(--text-soft);
 }
+.social span{
+  color:#fff;
+  font-weight:500;
+}
 
 </style>
 </head>
 
 <body>
 
+<div class="container">
 
-
-
-  <!-- ===== DIAGNÓSTICO DIRETO ===== -->
-<div class="title">
-  COM BASE NAS SUAS RESPOSTAS,
-  <span>você está operando em um padrão chamado Investimento Emocional Desbalanceado</span>
-</div>
-
-<div class="text">
-  Isso não é um defeito.<br>
-  Mas explica <span class="highlight">
-  por que as histórias mudam…
-  e o final continua parecido.</span>
-</div>
-
-<!-- ===== BOX 1 ===== -->
-<div class="box">
-  <h3>🔍 O QUE ESSE PADRÃO REVELA</h3>
-  <p>
-    Você cria conexão com profundidade.<br>
-    Se envolve de verdade.<br>
-    Entrega presença emocional desde o início.<br><br>
-
-    Naturalmente, acaba sendo você
-    quem tenta alinhar,
-    esclarecer,
-    sustentar o vínculo.<br><br>
-
-    O ponto não é intensidade.<br>
-    É que, sem perceber,
-    você começa a <span class="highlight">
-    investir antes que o outro se posicione.</span>
-  </p>
-</div>
-
-<!-- ===== BOX 2 ===== -->
-<div class="box">
-  <h3>⚠️ COMO ISSO MUDA A DINÂMICA</h3>
-  <ul class="list">
-    <li>Você demonstra clareza emocional antes dele</li>
-    <li>Ele sente conforto, mas não sente urgência</li>
-    <li>A relação permanece indefinida por mais tempo</li>
-    <li>Com o tempo, você começa a questionar seu próprio valor</li>
-  </ul>
-</div>
-
-<!-- ===== ALERTA ===== -->
-<div class="warning">
-  🚨 Quanto mais você tenta resolver com esforço,
-  mais reforça a posição confortável dele —
-  e menos ele sente necessidade de agir.
-</div>
-
-<!-- ===== TRANSIÇÃO PARA A EXPERT ===== -->
-<div class="expert-text-intro">
-  <h4>Isso não é coincidência</h4>
-
-  <p>
-    Esse padrão aparece em mulheres diferentes,
-    com histórias diferentes,
-    mas sempre com a mesma dinâmica emocional.
-  </p>
-
-  <p>
-    Ele foi identificado em acompanhamento clínico,
-    analisando por que relações intensas
-    terminam repetidamente em silêncio e espera.
-  </p>
-</div>
-
-<!-- ===== FOTO DA EXPERT ===== -->
-<div class="expert-photo-wrapper">
-  <img
-    src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg"
-    alt="Eliza Maffer"
-    class="expert-photo-rect"
-  >
-  <div class="expert-name">
-    <strong>Eliza Maffer</strong><br>
-    <span>
-      Psicóloga especializada em padrões emocionais femininos<br>
-      e dinâmica de investimento emocional nos relacionamentos
-    </span>
+  <div class="title">
+    <h1>
+      COM BASE NAS SUAS RESPOSTAS,<br>
+      <span>você está operando em um padrão chamado Investimento Emocional Desbalanceado</span>
+    </h1>
   </div>
+
+  <div class="text">
+    Isso não é um defeito.<br>
+    Mas explica <span class="highlight">por que as histórias mudam… e o final continua parecido.</span>
+  </div>
+
+  <div class="box">
+    <h3>O QUE ESSE PADRÃO REVELA</h3>
+    <p>
+      Você cria conexão com profundidade.<br>
+      Se envolve de verdade.<br>
+      Entrega presença emocional desde o início.<br><br>
+
+      Naturalmente, acaba sendo você quem tenta alinhar, esclarecer, sustentar o vínculo.<br><br>
+
+      Sem perceber, você começa a <span class="highlight">investir antes que o outro se posicione.</span>
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>COMO ISSO MUDA A DINÂMICA</h3>
+    <ul class="list">
+      <li>Você demonstra clareza emocional antes dele</li>
+      <li>Ele sente conforto, mas não sente urgência</li>
+      <li>A relação permanece indefinida</li>
+      <li>Você começa a questionar seu valor</li>
+    </ul>
+  </div>
+
+  <div class="warning">
+    🚨 Quanto mais você tenta resolver com esforço, mais reforça a posição confortável dele — e menos ele sente necessidade de agir.
+  </div>
+
+  <div class="expert-text-intro">
+    <h4>Isso não é coincidência</h4>
+    <p>Esse padrão aparece em mulheres diferentes, mas sempre com a mesma dinâmica emocional.</p>
+    <p>Ele foi identificado analisando por que relações intensas terminam em silêncio e espera.</p>
+  </div>
+
+  <div class="expert-photo-wrapper">
+    <img src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg" class="expert-photo-rect">
+    <div class="expert-name">
+      <strong>Eliza Maffer</strong><br>
+      <span>Psicóloga especializada em padrões emocionais femininos</span>
+    </div>
+  </div>
+
+  <div class="microcopy">
+    👇 Na próxima etapa você vai entender o que acontece quando esse padrão não é interrompido.
+  </div>
+
+  <div class="cta-wrap">
+    <div class="cta-glow"></div>
+    <button class="cta" onclick="window.location.href='quiz20.html'">
+      Quero inverter essa dinâmica
+    </button>
+  </div>
+
+  <div class="social">
+    ✨ Mais de <span>23.000 mulheres</span> já reconheceram esse padrão
+  </div>
+
 </div>
-
-<!-- ===== TEXTO DA EXPERT ===== -->
-<div class="expert-text">
-  <p>
-    Ao longo dos anos,
-    esse mesmo padrão apareceu em milhares de relatos:
-    relações que começam intensas,
-    mas perdem definição
-    quando o investimento não se equilibra.
-  </p>
-
-  <p>
-    O que você viu aqui não é um rótulo.
-  </p>
-
-  <p>
-    É um padrão emocional ativo —
-    e padrões podem ser reorganizados
-    sem jogos,
-    sem manipulação
-    e sem você precisar se diminuir.
-  </p>
-</div>
-
-<!-- ===== MICROCOPY ===== -->
-<div class="microcopy">
-  👇 Na próxima etapa,
-  você vai entender o que acontece
-  quando esse padrão não é interrompido.
-</div>
-
-<!-- ===== CTA ===== -->
-<button class="cta" onclick="window.location.href='quiz20.html'">
-  Quero inverter essa dinâmica
-</button>
-
-<!-- ===== PROVA SOCIAL ===== -->
-<div class="social">
-  ✨ Mais de <span>23.000 mulheres</span>
-  já reconheceram esse padrão e começaram a mudar
-</div>
-</div>
-
-
-<!-- ================= ESTILOS ================= -->
-<script>
-let progress = 0;
-const bar = document.querySelector(".progress");
-const loading = document.getElementById("loading-screen");
-
-function runLoading(){
-    progress += Math.random() * 8;
-
-    if(progress >= 100){
-        progress = 100;
-        bar.style.width = "100%";
-
-        setTimeout(() => {
-            loading.style.display = "none";
-        }, 400);
-    } else {
-        bar.style.width = progress + "%";
-        setTimeout(runLoading, 120);
-    }
-}
-
-window.onload = () => {
-    setTimeout(runLoading, 400);
-};
-</script>
 
 </body>
 </html>
