@@ -6,120 +6,125 @@
 
 <title>Por Que Esse Padrão Se Repete?</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
---pink:#FF3F81;
---red:#E5003C;
---gold:#FFD700;
---bg1:#1E0B26;
---bg2:#0C0C0C;
---light:#FAF1F4;
---muted:#D8B9C3;
-}
-
 *{margin:0;padding:0;box-sizing:border-box}
 
+:root{
+  --rose:#C8003F;
+  --rose-light:#FF2D6B;
+  --ink:#0E0610;
+  --text:#F5E8EE;
+  --text-soft:rgba(245,232,238,.6);
+}
+
+/* BODY */
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,var(--bg1),var(--bg2));
-color:var(--light);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+  font-family:'DM Sans',sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  padding:24px 16px 40px;
 }
 
+/* CONTAINER */
 .container{
-max-width:620px;
-width:100%;
-background:rgba(12,12,12,.95);
-border-radius:22px;
-padding:36px 28px;
-border:1px solid rgba(255,63,129,.6);
-box-shadow:0 0 50px rgba(255,63,129,.45);
-position:relative;
-overflow:hidden;
+  width:100%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
 }
 
-.container::before{
-content:"";
-position:absolute;
-inset:-2px;
-background:linear-gradient(45deg,var(--pink),var(--red),var(--bg1));
-filter:blur(14px);
-opacity:.35;
-z-index:-1;
+/* TITLE */
+.title{
+  text-align:center;
+}
+.title h1{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  font-weight:900;
+  line-height:1.15;
+}
+.title span{
+  display:block;
+  margin-top:6px;
+  color:var(--rose-light);
+  font-style:italic;
 }
 
-h1{
-font-family:'Bebas Neue',sans-serif;
-font-size:34px;
-line-height:1.1;
-text-align:center;
-color:var(--gold);
-margin-bottom:22px;
-}
-
+/* ALERT */
 .alert{
-background:rgba(229,0,60,.18);
-border:1px solid var(--pink);
-border-radius:14px;
-padding:18px;
-margin:20px 0;
-text-align:center;
-font-size:14px;
-font-weight:600;
-line-height:1.6;
+  padding:20px;
+  background:rgba(200,0,63,.08);
+  border:1px solid rgba(200,0,63,.2);
+  border-radius:16px;
+  font-size:14.5px;
+  line-height:1.7;
+  text-align:left;
+}
+.alert strong{
+  color:var(--rose-light);
 }
 
+/* SECTION TITLE */
 .section-title{
-text-align:center;
-font-family:'Bebas Neue',sans-serif;
-font-size:24px;
-letter-spacing:1px;
-color:var(--gold);
-margin:28px 0 18px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-align:center;
+  color:rgba(255,45,107,.7);
 }
 
+/* LIST */
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
 .list div{
-margin-bottom:12px;
-padding:14px 16px;
-background:rgba(12,12,12,.6);
-border-radius:10px;
-font-size:14px;
-color:var(--muted);
+  padding:16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  font-size:14.5px;
 }
 
+/* CTA */
+.cta-wrap{
+  position:relative;
+  margin-top:10px;
+}
+.cta-glow{
+  position:absolute;
+  inset:-2px;
+  border-radius:100px;
+  background:linear-gradient(135deg,var(--rose),var(--rose-light));
+  filter:blur(14px);
+  opacity:.4;
+}
 .cta{
-margin-top:30px;
-width:100%;
-padding:20px;
-border:none;
-border-radius:50px;
-background:linear-gradient(90deg,var(--pink),var(--red));
-color:#fff;
-font-family:'Bebas Neue',sans-serif;
-font-size:20px;
-letter-spacing:1.5px;
-cursor:pointer;
-box-shadow:0 0 35px rgba(229,0,60,.6);
-transition:.3s;
+  position:relative;
+  width:100%;
+  padding:18px;
+  border-radius:100px;
+  border:none;
+  background:linear-gradient(135deg,var(--rose),var(--rose-light));
+  color:#fff;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.cta:hover{
-transform:translateY(-3px);
-box-shadow:0 14px 45px rgba(229,0,60,.85);
-}
-
+/* NOTE */
 .note{
-margin-top:16px;
-font-size:13px;
-text-align:center;
-color:var(--muted);
+  text-align:center;
+  font-size:13px;
+  color:var(--text-soft);
 }
+
 </style>
 </head>
 
@@ -127,43 +132,47 @@ color:var(--muted);
 
 <div class="container">
 
-<h1>
-POR QUE ESSE PADRÃO SE REPETE?
-</h1>
+  <div class="title">
+    <h1>
+      POR QUE ESSE PADRÃO
+      <span>SE REPETE?</span>
+    </h1>
+  </div>
 
-<div class="alert">
-Esse ciclo não acontece por azar.<br><br>
+  <div class="alert">
+    Esse ciclo não acontece por azar.<br><br>
 
-Ao longo de anos analisando relatos de mulheres
-em relações indefinidas,
-foi identificado um padrão claro:<br><br>
+    Ao longo de anos analisando relatos de mulheres
+    em relações indefinidas, foi identificado um padrão claro:<br><br>
 
-<strong>Quem investe emocionalmente antes,
-perde posição na dinâmica.</strong>
-</div>
+    <strong>Quem investe emocionalmente antes, perde posição na dinâmica.</strong>
+  </div>
 
-<div class="section-title">
-O MÉTODO ATUA EM 3 FASES
-</div>
+  <div class="section-title">
+    O MÉTODO ATUA EM 3 FASES
+  </div>
 
-<div class="list">
-<div>1️⃣ Interromper o investimento automático</div>
-<div>2️⃣ Reposicionar seu valor na dinâmica</div>
-<div>3️⃣ Ativar o instinto natural de busca masculina</div>
-</div>
+  <div class="list">
+    <div>1️⃣ Interromper o investimento automático</div>
+    <div>2️⃣ Reposicionar seu valor na dinâmica</div>
+    <div>3️⃣ Ativar o instinto natural de busca masculina</div>
+  </div>
 
-<div class="alert">
-Quando a posição emocional muda,
-a resposta masculina acompanha.
-</div>
+  <div class="alert">
+    Quando a posição emocional muda,
+    a resposta masculina acompanha.
+  </div>
 
-<button class="cta" onclick="window.location.href='mulherhipnotica.html'">
-QUERO APLICAR ISSO NA PRÁTICA
-</button>
+  <div class="cta-wrap">
+    <div class="cta-glow"></div>
+    <button class="cta" onclick="window.location.href='mulherhipnotica.html'">
+      Quero aplicar isso na prática
+    </button>
+  </div>
 
-<div class="note">
-A próxima etapa mostra como aplicar isso de forma prática e estruturada.
-</div>
+  <div class="note">
+    A próxima etapa mostra como aplicar isso de forma prática e estruturada.
+  </div>
 
 </div>
 
