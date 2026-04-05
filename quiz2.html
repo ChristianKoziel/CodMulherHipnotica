@@ -25,232 +25,151 @@ body{
   padding:0 0 80px;
   overflow-x:hidden;
 }
+
+/* grain overlay */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:999;opacity:.4;
+}
+
 .ambient{
   position:fixed;top:-140px;left:50%;transform:translateX(-50%);
   width:700px;height:520px;
-  background:radial-gradient(ellipse,rgba(200,0,63,.2) 0%,transparent 65%);
+  background:radial-gradient(ellipse,rgba(200,0,63,.22) 0%,transparent 65%);
   pointer-events:none;z-index:0;
 }
+.ambient2{
+  position:fixed;bottom:-80px;right:-80px;
+  width:400px;height:400px;
+  background:radial-gradient(ellipse,rgba(255,63,129,.07) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+
 .wrap{
-  width:100%;max-width:480px;
+  width:100%;max-width:460px;
   position:relative;z-index:1;
-  padding:0 18px;
+  padding:0 20px;
 }
 
 /* ── PROGRESS ── */
 .prog{
   position:sticky;top:0;z-index:10;
-  background:var(--ink);
-  padding:18px 18px 14px;
-  margin:0 -18px;
-  display:none;
+  background:linear-gradient(to bottom,var(--ink) 80%,transparent);
+  padding:20px 20px 16px;
+  margin:0 -20px;
 }
-.prog.visible{display:block}
-.prog-meta{display:flex;justify-content:space-between;margin-bottom:7px}
-.prog-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,63,129,.6);font-weight:700}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.prog-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.55);font-weight:700}
 .prog-count{font-size:11px;color:var(--text-muted);font-weight:300}
-.prog-track{height:2px;background:rgba(255,63,129,.1);border-radius:100px;overflow:hidden}
+.prog-track{height:2px;background:rgba(255,63,129,.08);border-radius:100px;overflow:hidden}
 .prog-fill{
   height:100%;
   background:linear-gradient(90deg,var(--rose),var(--hot));
   border-radius:100px;
-  transition:width .55s cubic-bezier(.4,0,.2,1);
+  transition:width .6s cubic-bezier(.4,0,.2,1);
 }
 
-/* ── INTRO ── */
-#intro{
-  display:flex;flex-direction:column;align-items:center;
-  padding:44px 0 20px;
-  min-height:100vh;
-}
-#intro > *{opacity:0;transform:translateY(16px);animation:up .5s ease forwards}
-#intro > *:nth-child(1){animation-delay:.05s}
-#intro > *:nth-child(2){animation-delay:.2s}
-#intro > *:nth-child(3){animation-delay:.38s}
-#intro > *:nth-child(4){animation-delay:.58s}
-#intro > *:nth-child(5){animation-delay:.78s}
-#intro > *:nth-child(6){animation-delay:.95s}
-#intro > *:nth-child(7){animation-delay:1.1s}
-@keyframes up{to{opacity:1;transform:translateY(0)}}
+/* ── CARD ── */
+.q-card{display:none;flex-direction:column;gap:18px;padding-top:20px;min-height:calc(100vh - 80px)}
+.q-card.on{display:flex;animation:qin .38s cubic-bezier(.4,0,.2,1)}
+.q-card.out{animation:qout .26s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes qin{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes qout{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-28px)}}
 
-.badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,63,129,.07);
-  border:1px solid rgba(255,63,129,.18);
-  border-radius:100px;padding:6px 16px;
-  font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;
-  color:rgba(255,63,129,.75);font-weight:700;margin-bottom:26px;
-}
-.ldot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--hot);box-shadow:0 0 8px rgba(255,63,129,.9);
-  animation:pulse 1.5s infinite;
-}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.35}}
-
-.intro-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(48px,12vw,70px);
-  line-height:.93;text-align:center;
-  color:#fff;letter-spacing:.5px;margin-bottom:14px;
-}
-.intro-title em{
-  font-family:'Playfair Display',serif;
-  font-style:italic;color:var(--hot);
-  font-size:.65em;display:block;margin-top:6px;letter-spacing:0;
-}
-.intro-sub{
-  font-size:14px;font-weight:300;color:var(--text-soft);
-  line-height:1.7;text-align:center;max-width:330px;margin-bottom:28px;
-}
-
-/* chat */
-.chat{
-  width:100%;background:#0d0818;
-  border:1px solid rgba(255,255,255,.06);border-radius:20px;
-  overflow:hidden;margin-bottom:26px;
-}
-.chat-bar{
-  background:#160d22;padding:11px 15px;
-  display:flex;align-items:center;gap:10px;
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-.av{
-  width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,#3D1F30,#5A2D45);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:rgba(255,180,210,.6);
-}
-.cb-info h4{font-size:13px;font-weight:500;color:#e9edef;margin-bottom:1px}
-.cb-info span{font-size:11px;color:#8696a0}
-.msgs{padding:14px 15px 16px;display:flex;flex-direction:column;gap:9px}
-.mb,.my{
-  padding:9px 13px;border-radius:8px;
-  font-size:13px;line-height:1.5;max-width:80%;
-  opacity:0;animation:msgIn .35s ease forwards;
-}
-.mb{background:#1f2c33;border-radius:0 8px 8px 8px;color:#e9edef;align-self:flex-start}
-.my{background:#2d0f1e;border:1px solid rgba(255,63,129,.18);border-radius:8px 8px 0 8px;color:#e9edef;align-self:flex-end}
-.mb.m1{animation-delay:.6s}.my.m2{animation-delay:1.5s}
-.mb.m3{animation-delay:2.4s}.my.m4{animation-delay:3.3s}
-@keyframes msgIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
-
-/* counter */
-.counter{display:flex;align-items:center;gap:10px;margin-bottom:22px}
-.cavs{display:flex}
-.cav{
-  width:24px;height:24px;border-radius:50%;
-  border:1.5px solid var(--ink);font-size:9px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(250,241,244,.45);
-}
-.cav+.cav{margin-left:-7px}
-.cav:nth-child(1){background:#5c2040}.cav:nth-child(2){background:#3d3a60}
-.cav:nth-child(3){background:#3a5040}.cav:nth-child(4){background:#503028}
-.counter p{font-size:12px;color:var(--text-soft);font-weight:300}
-.counter p strong{color:var(--text);font-weight:600}
-
-/* start */
-.start-wrap{position:relative;width:100%;margin-bottom:10px}
-.glow-ring{
-  position:absolute;inset:-3px;border-radius:100px;
-  background:linear-gradient(135deg,var(--rose),var(--hot));
-  filter:blur(16px);opacity:.45;animation:gp 2s infinite;
-}
-@keyframes gp{0%,100%{opacity:.3}50%{opacity:.6}}
-.start-btn{
-  position:relative;z-index:1;display:block;width:100%;
-  background:linear-gradient(135deg,var(--rose),var(--hot));
-  border:none;border-radius:100px;padding:20px 32px;
-  font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:700;
-  color:#fff;cursor:pointer;text-align:center;overflow:hidden;
-}
-.start-btn::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
-  transform:translateX(-100%);animation:shim 2.2s infinite;
-}
-@keyframes shim{to{transform:translateX(100%)}}
-.start-cap{text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:18px}
-.urg{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  font-size:11px;color:rgba(255,63,129,.6);
-}
-
-/* ── QUIZ ── */
-#quiz{display:none;flex-direction:column}
-#quiz.on{display:flex}
-
-.q-card{display:none;flex-direction:column;gap:16px;padding-top:22px}
-.q-card.on{display:flex;animation:qin .4s cubic-bezier(.4,0,.2,1)}
-.q-card.out{animation:qout .28s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes qin{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:translateX(0)}}
-@keyframes qout{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-32px)}}
-
+/* chip */
 .chip{
   display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,63,129,.07);border:1px solid rgba(255,63,129,.15);
-  border-radius:100px;padding:5px 13px;
-  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
-  color:rgba(255,63,129,.65);font-weight:700;width:fit-content;
+  background:rgba(255,63,129,.07);border:1px solid rgba(255,63,129,.16);
+  border-radius:100px;padding:5px 14px;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,63,129,.62);font-weight:700;width:fit-content;
 }
-.cdot{width:5px;height:5px;border-radius:50%;background:var(--hot);flex-shrink:0}
+.cdot{width:5px;height:5px;border-radius:50%;background:var(--hot);
+  box-shadow:0 0 6px rgba(255,63,129,.7);flex-shrink:0;
+  animation:cdpulse 2s infinite;
+}
+@keyframes cdpulse{0%,100%{opacity:1}50%{opacity:.3}}
 
+/* question */
 .q-title{
   font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(36px,8.5vw,48px);
-  line-height:1.02;color:#fff;letter-spacing:.5px;
+  font-size:clamp(38px,9vw,52px);
+  line-height:1;color:#fff;letter-spacing:.5px;
 }
 .q-title em{
   font-family:'Playfair Display',serif;
-  font-style:italic;color:var(--hot);letter-spacing:0;font-size:.82em;
+  font-style:italic;color:var(--hot);letter-spacing:0;font-size:.8em;
+  display:block;margin-top:4px;
 }
-.q-sub{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.65;margin-top:-4px}
+.q-sub{
+  font-size:13.5px;font-weight:300;color:var(--text-soft);
+  line-height:1.7;margin-top:-4px;
+}
+.q-sub strong{color:var(--text);font-weight:500}
 
+/* emphasis quote */
+.q-quote{
+  border-left:2px solid rgba(255,63,129,.35);
+  padding:10px 16px;
+  font-size:13px;font-weight:300;
+  color:var(--text-soft);line-height:1.65;
+  font-style:italic;
+  margin-top:-4px;
+}
+.q-quote strong{color:rgba(255,63,129,.85);font-weight:500;font-style:normal}
+
+/* options */
 .opts{display:flex;flex-direction:column;gap:10px}
 .opt{
-  background:rgba(255,255,255,.025);
-  border:1.5px solid rgba(255,63,129,.13);
-  border-radius:14px;padding:15px 17px;
+  background:rgba(255,255,255,.022);
+  border:1.5px solid rgba(255,63,129,.12);
+  border-radius:16px;padding:16px 18px;
   font-family:'DM Sans',sans-serif;
   font-size:14px;font-weight:400;color:var(--text);
   cursor:pointer;text-align:left;line-height:1.45;
-  display:flex;align-items:flex-start;gap:11px;
+  display:flex;align-items:flex-start;gap:12px;
   position:relative;overflow:hidden;
-  transition:border-color .2s,background .2s,transform .15s;
+  transition:border-color .22s,background .22s,transform .15s;
+  -webkit-tap-highlight-color:transparent;
 }
 .opt::before{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(200,0,63,.13),transparent);
-  opacity:0;transition:opacity .2s;
+  background:linear-gradient(135deg,rgba(200,0,63,.14),transparent 60%);
+  opacity:0;transition:opacity .22s;
 }
-.opt:hover{border-color:rgba(255,63,129,.42);transform:translateX(4px)}
+.opt:hover{border-color:rgba(255,63,129,.4);transform:translateX(5px)}
 .opt:hover::before{opacity:1}
-.opt:active{transform:translateX(2px) scale(.99)}
-.opt.sel{border-color:var(--hot);background:rgba(255,63,129,.09)}
+.opt:active{transform:translateX(3px) scale(.99)}
+.opt.sel{border-color:var(--hot);background:rgba(255,63,129,.08)}
 .opt.sel::before{opacity:1}
-.ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.opt-ico{font-size:18px;flex-shrink:0;margin-top:1px;line-height:1}
+.opt-text{flex:1}
 
+/* feedback */
 .fb{
   display:none;
-  background:rgba(200,0,63,.07);
-  border:1px solid rgba(200,0,63,.16);
-  border-radius:13px;padding:13px 16px;
+  border-left:2px solid rgba(255,63,129,.4);
+  padding:12px 16px;
   font-size:13px;font-weight:300;
   color:var(--text-soft);line-height:1.7;
+  animation:fadeUp .3s ease;
 }
-.fb.on{display:block;animation:up .3s ease}
+.fb.on{display:block}
 .fb strong{color:var(--text);font-weight:500}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-.nx{display:none;margin-top:4px}
-.nx.on{display:block;animation:up .3s ease}
+/* next */
+.nx{display:none;margin-top:6px}
+.nx.on{display:block;animation:fadeUp .32s ease}
 .nx-btn{
   width:100%;
   background:linear-gradient(135deg,var(--rose),var(--hot));
-  border:none;border-radius:100px;padding:18px 32px;
-  font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:700;
+  border:none;border-radius:100px;padding:19px 32px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;
   color:#fff;cursor:pointer;overflow:hidden;position:relative;
-  transition:transform .15s;
+  transition:transform .15s;letter-spacing:.2px;
 }
 .nx-btn:active{transform:scale(.98)}
 .nx-btn::after{
@@ -258,192 +177,224 @@ body{
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);
   transform:translateX(-100%);animation:shim 2s infinite;
 }
+@keyframes shim{to{transform:translateX(100%)}}
 
 /* ── LOADING ── */
 #loading{
   display:none;flex-direction:column;
   align-items:center;justify-content:center;
-  min-height:100vh;gap:22px;text-align:center;
+  min-height:100vh;gap:24px;text-align:center;
+  padding:0 4px;
 }
-#loading.on{display:flex;animation:up .4s ease}
-.load-ico{font-size:54px;animation:bounce .5s cubic-bezier(.34,1.56,.64,1)}
-@keyframes bounce{from{transform:scale(0)}to{transform:scale(1)}}
+#loading.on{display:flex;animation:fadeUp .4s ease}
+.load-ico{font-size:56px;animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
 .load-title{
   font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(32px,8vw,46px);
+  font-size:clamp(34px,8vw,48px);
   color:#fff;letter-spacing:.5px;line-height:1;
 }
 .load-title em{
   font-family:'Playfair Display',serif;
-  font-style:italic;color:var(--hot);font-size:.75em;display:block;
+  font-style:italic;color:var(--hot);font-size:.75em;display:block;margin-top:4px;
+}
+.load-sub{
+  font-size:13.5px;font-weight:300;color:var(--text-soft);line-height:1.65;
+  max-width:300px;
 }
 .an-box{
-  width:100%;background:rgba(255,63,129,.06);
+  width:100%;background:rgba(255,63,129,.055);
   border:1px solid rgba(255,63,129,.14);
-  border-radius:16px;padding:18px 20px;
-  display:flex;flex-direction:column;gap:9px;
+  border-radius:18px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:10px;
+  text-align:left;
 }
-.an-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,63,129,.55);font-weight:700}
+.an-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.5);font-weight:700}
 .an-track{height:2px;background:rgba(255,63,129,.1);border-radius:100px;overflow:hidden}
 .an-fill{
   height:100%;width:0%;
   background:linear-gradient(90deg,var(--rose),var(--hot));
-  border-radius:100px;transition:width .12s linear;
+  border-radius:100px;transition:width .15s linear;
 }
 .an-txt{font-size:13px;color:var(--text-soft);font-weight:300}
 </style>
 </head>
 <body>
 <div class="ambient"></div>
+<div class="ambient2"></div>
 <div class="wrap">
 
-
-  <!-- Q1 -->
-  <div class="q-card on" id="q1">
-    <div class="chip"><div class="cdot"></div>O gatilho</div>
-    <div class="q-title">Quando ele esfria…<br><em>isso já aconteceu antes?</em></div>
-    <p class="q-sub">Não é sobre um homem. É sobre o que costuma se repetir.</p>
-    <div class="opts">
-      <button class="opt" onclick="pick(1,'a','Você sente <strong>antes mesmo de ter certeza.</strong> Esse instinto é real — e está revelando um padrão que vai muito além dele.')">
-        <span class="ico">🔁</span>Sim, já aconteceu mais de uma vez
-      </button>
-      <button class="opt" onclick="pick(1,'b','Quando quase sempre termina parecido, <strong>o padrão não está no homem</strong> — está na dinâmica que você ativa sem perceber.')">
-        <span class="ico">📉</span>Sim, quase sempre termina parecido
-      </button>
-      <button class="opt" onclick="pick(1,'c','Um ciclo que volta é o sinal mais claro: <strong>a mudança não está no homem certo</strong> — está no padrão que você repete.')">
-        <span class="ico">🕳️</span>Sim, parece um ciclo que sempre volta
-      </button>
-      <button class="opt" onclick="pick(1,'d','Muda o homem, o final é igual. Isso é a <strong>definição exata do padrão</strong> que mantém você presa.')">
-        <span class="ico">💔</span>Sim, muda o homem… mas o final é igual
-      </button>
-    </div>
-    <div class="fb" id="fb1"></div>
-    <div class="nx" id="nx1"><button class="nx-btn" onclick="next(2)">Continuar →</button></div>
+<!-- ── PROGRESS ── -->
+<div class="prog" id="prog">
+  <div class="prog-meta">
+    <span class="prog-label">Diagnóstico emocional</span>
+    <span class="prog-count" id="pCount">Etapa 1 de 5</span>
   </div>
+  <div class="prog-track"><div class="prog-fill" id="pFill" style="width:20%"></div></div>
+</div>
 
-  <!-- Q2 -->
-  <div class="q-card" id="q2">
-    <div class="chip"><div class="cdot"></div>A reação</div>
-    <div class="q-title">Quando ele some<br>ou para de responder…<br><em>o que você faz?</em></div>
-    <p class="q-sub">A reação automática diz mais sobre o padrão do que qualquer coisa.</p>
-    <div class="opts">
-      <button class="opt" onclick="pick(2,'a','Cada mensagem extra <strong>reduz o peso da sua presença</strong> para ele — sem que você perceba.')">
-        <span class="ico">📱</span>Mando outra mensagem "só pra checar"
-      </button>
-      <button class="opt" onclick="pick(2,'b','Esperar em alerta total dói — e esse desconforto é exatamente o que <strong>precisa ser redirecionado.</strong>')">
-        <span class="ico">🕐</span>Espero, mas fico no modo alerta total
-      </button>
-      <button class="opt" onclick="pick(2,'c','Relendo mensagens, você tenta controlar o incontrolável. <strong>Isso drena energia que deveria ser sua.</strong>')">
-        <span class="ico">🔍</span>Fico relendo tudo procurando sinais
-      </button>
-      <button class="opt" onclick="pick(2,'d','Quando você busca distração, <strong>ainda está reagindo a ele</strong> — só de forma menos visível.')">
-        <span class="ico">😮‍💨</span>Me distraio, mas ele domina meus pensamentos
-      </button>
-    </div>
-    <div class="fb" id="fb2"></div>
-    <div class="nx" id="nx2"><button class="nx-btn" onclick="next(3)">Continuar →</button></div>
+<!-- ══════════ Q1 ══════════ -->
+<div class="q-card on" id="q1">
+  <div class="chip"><div class="cdot"></div>O gatilho</div>
+  <div class="q-title">Quando ele esfria…<br><em>isso já aconteceu antes?</em></div>
+  <p class="q-sub">Não é sobre esse homem. É sobre o que <strong>sempre se repete.</strong></p>
+  <div class="q-quote">
+    <strong>"Mas dessa vez era diferente…"</strong><br>
+    Você já pensou isso antes. Mais de uma vez.
   </div>
-
-  <!-- Q3 -->
-  <div class="q-card" id="q3">
-    <div class="chip"><div class="cdot"></div>O momento</div>
-    <div class="q-title">Sendo totalmente sincera… <em>você ainda vive isso?</em></div>
-    <p class="q-sub">Não importa a fase. O padrão ainda está ativo?</p>
-    <div class="opts">
-      <button class="opt" onclick="pick(3,'a','Estar no ciclo agora significa que <strong>a hora de agir é exatamente essa</strong> — não depois.')">
-        <span class="ico">🔁</span>Sim, estou exatamente nesse ciclo agora
-      </button>
-      <button class="opt" onclick="pick(3,'b','Ele some e volta — e você continua lá. Isso não é amor, <strong>é dinâmica invertida.</strong> Dá pra mudar.')">
-        <span class="ico">🕳️</span>Sim, ele some e volta… e eu continuo esperando
-      </button>
-      <button class="opt" onclick="pick(3,'c','Terminou mas ainda te prende — porque o padrão emocional <strong>não encerra com o relacionamento.</strong>')">
-        <span class="ico">💔</span>Sim, terminou… mas emocionalmente ainda me prende
-      </button>
-      <button class="opt" onclick="pick(3,'d','Atrair o mesmo tipo repetidamente é o sinal de que <strong>o padrão está em você,</strong> não nos homens.')">
-        <span class="ico">🥀</span>Sim, mesmo solteira atraio o mesmo tipo
-      </button>
-    </div>
-    <div class="fb" id="fb3"></div>
-    <div class="nx" id="nx3"><button class="nx-btn" onclick="next(4)">Continuar →</button></div>
+  <div class="opts">
+    <button class="opt" onclick="pick(1,'a','Você sente <strong>antes mesmo de ter certeza.</strong> Esse instinto não mente — ele está revelando um padrão que vem de muito antes dele.')">
+      <span class="opt-ico">🔁</span>
+      <span class="opt-text">Sim, já aconteceu mais de uma vez</span>
+    </button>
+    <button class="opt" onclick="pick(1,'b','Quando quase sempre termina parecido, <strong>o problema não está no homem</strong> — está na dinâmica invisível que você ativa sem saber.')">
+      <span class="opt-ico">📉</span>
+      <span class="opt-text">Sim, quase sempre termina parecido</span>
+    </button>
+    <button class="opt" onclick="pick(1,'c','Um ciclo que volta é a prova mais clara: <strong>a mudança não está no homem certo</strong> — está no padrão que se repete em você.')">
+      <span class="opt-ico">🕳️</span>
+      <span class="opt-text">Sim, parece um ciclo que sempre volta</span>
+    </button>
+    <button class="opt" onclick="pick(1,'d','Muda o homem, o final é igual. Isso tem um nome — <strong>e tem solução.</strong> Mas primeiro você precisa enxergar.')">
+      <span class="opt-ico">💔</span>
+      <span class="opt-text">Sim, muda o homem… mas o final é igual</span>
+    </button>
   </div>
+  <div class="fb" id="fb1"></div>
+  <div class="nx" id="nx1"><button class="nx-btn" onclick="next(2)">Continuar →</button></div>
+</div>
 
-  <!-- Q4 -->
-  <div class="q-card" id="q4">
-    <div class="chip"><div class="cdot"></div>O custo</div>
-    <div class="q-title">O que esse padrão<br>vem fazendo com<br><em>você por dentro?</em></div>
-    <p class="q-sub">Esquece ele. O que essa dinâmica já custou pra você?</p>
-    <div class="opts">
-      <button class="opt" onclick="pick(4,'a','Investir e ficar sozinha com a dor é o ciclo mais comum — e o <strong>mais silenciosamente destrutivo</strong> de todos.')">
-        <span class="ico">💔</span>Me entrego demais e fico sozinha com a dor
-      </button>
-      <button class="opt" onclick="pick(4,'b','Insegurança constante não é traço de personalidade — é <strong>resultado de uma dinâmica que pode ser revertida.</strong>')">
-        <span class="ico">🧠</span>Vivo em dúvida e insegurança constante
-      </button>
-      <button class="opt" onclick="pick(4,'c','Ansiedade de estragar tudo mostra que você <strong>está no papel errado.</strong> O dela é ser desejada, não administrar.')">
-        <span class="ico">🕳️</span>Ansiedade e medo de estragar tudo
-      </button>
-      <button class="opt" onclick="pick(4,'d','Cansaço emocional que só aumenta é o sinal de que você <strong>está carregando mais do que deveria</strong> nesse relacionamento.')">
-        <span class="ico">🥀</span>Um cansaço emocional que só aumenta
-      </button>
-    </div>
-    <div class="fb" id="fb4"></div>
-    <div class="nx" id="nx4"><button class="nx-btn" onclick="next(5)">Continuar →</button></div>
+<!-- ══════════ Q2 ══════════ -->
+<div class="q-card" id="q2">
+  <div class="chip"><div class="cdot"></div>A reação</div>
+  <div class="q-title">Quando ele some ou para de responder…<br><em>o que você faz?</em></div>
+  <p class="q-sub">A sua <strong>reação automática</strong> diz mais sobre o padrão do que qualquer coisa.</p>
+  <div class="q-quote">
+    O silêncio dele <strong>não é neutro.</strong><br>
+    E a sua resposta a esse silêncio — é onde tudo se decide.
   </div>
+  <div class="opts">
+    <button class="opt" onclick="pick(2,'a','Cada mensagem extra diz pra ele, em silêncio: <strong>pode sumir que eu continuo aqui.</strong> É isso que reduz o esforço dele.')">
+      <span class="opt-ico">📱</span>
+      <span class="opt-text">Mando outra mensagem "só pra checar"</span>
+    </button>
+    <button class="opt" onclick="pick(2,'b','Ficar em modo alerta é exaustivo — e <strong>ele sente que tem poder sobre o seu estado emocional.</strong> Isso é o que precisa mudar.')">
+      <span class="opt-ico">🕐</span>
+      <span class="opt-text">Espero, mas fico no modo alerta total</span>
+    </button>
+    <button class="opt" onclick="pick(2,'c','Relendo cada palavra, você entrega o controle pra ele. <strong>Sua mente deveria ser território seu</strong> — não dele.')">
+      <span class="opt-ico">🔍</span>
+      <span class="opt-text">Fico relendo tudo procurando sinais</span>
+    </button>
+    <button class="opt" onclick="pick(2,'d','Mesmo se distraindo, <strong>ele vive alugado na sua cabeça.</strong> Isso mostra o desequilíbrio real entre o que você sente e o que ele investe.')">
+      <span class="opt-ico">😮‍💨</span>
+      <span class="opt-text">Me distraio, mas ele domina meus pensamentos</span>
+    </button>
+  </div>
+  <div class="fb" id="fb2"></div>
+  <div class="nx" id="nx2"><button class="nx-btn" onclick="next(3)">Continuar →</button></div>
+</div>
 
-  <!-- Q5 -->
- <!-- Q5 -->
+<!-- ══════════ Q3 ══════════ -->
+<div class="q-card" id="q3">
+  <div class="chip"><div class="cdot"></div>O agora</div>
+  <div class="q-title">Sendo totalmente sincera…<br><em>você ainda está vivendo isso?</em></div>
+  <p class="q-sub">Não importa se ainda está com ele ou não.<br><strong>O padrão ainda está ativo?</strong></p>
+  <div class="q-quote">
+    Sabe o que é mais pesado do que o término?<br>
+    <strong>Continuar presa emocionalmente a algo que já foi.</strong>
+  </div>
+  <div class="opts">
+    <button class="opt" onclick="pick(3,'a','Estar no ciclo agora não é fraqueza — é o sinal de que <strong>a hora de virar essa chave é exatamente essa.</strong> Não daqui a pouco.')">
+      <span class="opt-ico">🔁</span>
+      <span class="opt-text">Sim, estou exatamente nesse ciclo agora</span>
+    </button>
+    <button class="opt" onclick="pick(3,'b','Ele some e volta. Você continua. <strong>Enquanto isso não mudar, ele nunca vai precisar escolher você de verdade.</strong>')">
+      <span class="opt-ico">🕳️</span>
+      <span class="opt-text">Sim, ele some e volta… e eu continuo esperando</span>
+    </button>
+    <button class="opt" onclick="pick(3,'c','Terminou o relacionamento — mas não terminou dentro de você. <strong>Isso não é frescura.</strong> É um padrão emocional que ainda está ativo.')">
+      <span class="opt-ico">💔</span>
+      <span class="opt-text">Sim, terminou… mas emocionalmente ainda me prende</span>
+    </button>
+    <button class="opt" onclick="pick(3,'d','Quando o tipo se repete, o denominador comum <strong>não é a sorte</strong> — é uma dinâmica que você carrega sem perceber.')">
+      <span class="opt-ico">🥀</span>
+      <span class="opt-text">Sim, mesmo solteira atraio o mesmo tipo</span>
+    </button>
+  </div>
+  <div class="fb" id="fb3"></div>
+  <div class="nx" id="nx3"><button class="nx-btn" onclick="next(4)">Continuar →</button></div>
+</div>
+
+<!-- ══════════ Q4 ══════════ -->
+<div class="q-card" id="q4">
+  <div class="chip"><div class="cdot"></div>O custo real</div>
+  <div class="q-title">O que esse padrão vem fazendo com<br><em>você por dentro?</em></div>
+  <p class="q-sub">Esquece ele por um momento.<br><strong>Quanto isso já custou pra você?</strong></p>
+  <div class="q-quote">
+    Tem um tipo de cansaço que <strong>não vem de trabalho.</strong><br>
+    Vem de amar mais do que é amada.
+  </div>
+  <div class="opts">
+    <button class="opt" onclick="pick(4,'a','Você entrega tudo — e fica sozinha com a conta emocional. <strong>Esse desequilíbrio não é coincidência.</strong> É a dinâmica funcionando contra você.')">
+      <span class="opt-ico">💔</span>
+      <span class="opt-text">Me entrego demais e fico sozinha com a dor</span>
+    </button>
+    <button class="opt" onclick="pick(4,'b','Viver em dúvida constante <strong>não é seu jeito de ser</strong> — é o resultado direto de uma relação que coloca você sempre em desvantagem emocional.')">
+      <span class="opt-ico">🧠</span>
+      <span class="opt-text">Vivo em dúvida e insegurança constante</span>
+    </button>
+    <button class="opt" onclick="pick(4,'c','Ter medo de estragar significa que você assumiu a responsabilidade pelo relacionamento inteiro. <strong>Esse não é o seu papel.</strong>')">
+      <span class="opt-ico">🕳️</span>
+      <span class="opt-text">Ansiedade e medo de estragar tudo</span>
+    </button>
+    <button class="opt" onclick="pick(4,'d','Esse cansaço que só aumenta <strong>não vai embora sozinho.</strong> Ele cresce enquanto o padrão não muda. E o padrão não muda sozinho.')">
+      <span class="opt-ico">🥀</span>
+      <span class="opt-text">Um cansaço emocional que só aumenta</span>
+    </button>
+  </div>
+  <div class="fb" id="fb4"></div>
+  <div class="nx" id="nx4"><button class="nx-btn" onclick="next(5)">Continuar →</button></div>
+</div>
+
+<!-- ══════════ Q5 ══════════ -->
 <div class="q-card" id="q5">
-  <div class="chip">
-    <div class="cdot"></div>A virada
+  <div class="chip"><div class="cdot"></div>A escolha</div>
+  <div class="q-title">Se tudo continuar exatamente assim…<br><em>você acredita que muda sozinho?</em></div>
+  <p class="q-sub">Você já viu esse filme antes.<br><strong>E você sabe como ele termina.</strong></p>
+  <div class="q-quote">
+    A definição de insanidade é <strong>fazer a mesma coisa</strong><br>
+    e esperar um resultado diferente.
   </div>
-
-  <div class="q-title">
-    Se tudo continuar assim… <em>você acredita que muda sozinho?</em>
-  </div>
-
-  <p class="q-sub">
-    Você já viu esse filme antes. A pergunta é: ele termina diferente?
-  </p>
-
   <div class="opts">
     <button class="opt" onclick="pick(5,'a',null)">
-      <span class="ico">❌</span>Não, sempre termina do mesmo jeito
+      <span class="opt-ico">❌</span>
+      <span class="opt-text">Não. Sempre termina do mesmo jeito</span>
     </button>
-
     <button class="opt" onclick="pick(5,'b',null)">
-      <span class="ico">😔</span>Eu queria que mudasse… mas não muda
+      <span class="opt-ico">😔</span>
+      <span class="opt-text">Eu queria acreditar que muda… mas no fundo sei que não</span>
     </button>
-
     <button class="opt" onclick="pick(5,'c',null)">
-      <span class="ico">😮‍💨</span>Não, e esse ciclo já está me cansando
+      <span class="opt-ico">😮‍💨</span>
+      <span class="opt-text">Não. E esse ciclo já está me destruindo por dentro</span>
     </button>
-
     <button class="opt" onclick="pick(5,'d',null)">
-      <span class="ico">🔁</span>Não, só muda o homem… o final é igual
+      <span class="opt-ico">🔁</span>
+      <span class="opt-text">Não. Só muda o homem — o final nunca muda</span>
     </button>
   </div>
-
   <div class="fb" id="fb5"></div>
-
   <div class="nx" id="nx5">
-    <button class="nx-btn" onclick="goLoading()">
-      Ver meu diagnóstico →
-    </button>
+    <button class="nx-btn" onclick="goLoading()">Ver meu diagnóstico →</button>
   </div>
 </div>
 
-<script>
-  function goLoading() {
-    window.location.href = "quiz17.html";
-  }
-</script>
-
-</div><!-- /quiz -->
-
 <!-- ── LOADING ── -->
 <div id="loading">
-  <div class="load-ico">🔍</div>
-  <div class="load-title">Analisando<br><em>seu padrão…</em></div>
+  <div class="load-ico">🔓</div>
+  <div class="load-title">Seu padrão<br><em>foi identificado.</em></div>
+  <p class="load-sub">Processando suas respostas e gerando seu diagnóstico personalizado…</p>
   <div class="an-box">
     <div class="an-lbl" id="anLbl">Processando respostas</div>
     <div class="an-track"><div class="an-fill" id="anFill"></div></div>
@@ -452,27 +403,24 @@ body{
 </div>
 
 </div><!-- /wrap -->
+
 <script>
 let cur = 1;
-
-function startQuiz(){
-  document.getElementById('intro').style.display = 'none';
-  document.getElementById('prog').classList.add('visible');
-  document.getElementById('quiz').classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
 
 function pick(q, opt, fb){
   const card = document.getElementById('q'+q);
   card.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
   event.currentTarget.classList.add('sel');
+
   if(fb){
     const el = document.getElementById('fb'+q);
     el.innerHTML = fb;
     el.classList.add('on');
   }
+
   document.getElementById('nx'+q).classList.add('on');
-  if(q === 5) setTimeout(goLoading, 900);
+
+  if(q === 5) setTimeout(goLoading, 1000);
 }
 
 function next(nq){
@@ -488,21 +436,23 @@ function next(nq){
     document.getElementById('pFill').style.width = (cur/5*100)+'%';
     document.getElementById('pCount').textContent = 'Etapa '+cur+' de 5';
     window.scrollTo({top:0,behavior:'smooth'});
-  },280);
+  },260);
 }
 
 function goLoading(){
-  document.getElementById('quiz').classList.remove('on');
-  document.getElementById('prog').classList.remove('visible');
+  document.getElementById('q5').style.display = 'none';
+  document.getElementById('prog').style.display = 'none';
+
   const ld = document.getElementById('loading');
   ld.classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
 
   const steps = [
-    {lbl:'Processando respostas',   txt:'Identificando dinâmica emocional…', w:22},
-    {lbl:'Mapeando padrão',         txt:'Analisando histórico de ciclos…',    w:50},
-    {lbl:'Cruzando dados',          txt:'Calculando nível de investimento…',  w:78},
-    {lbl:'Diagnóstico pronto',      txt:'Gerando resultado personalizado…',   w:100},
+    {lbl:'Processando respostas',  txt:'Identificando dinâmica emocional…',    w:20},
+    {lbl:'Mapeando padrão',        txt:'Analisando histórico de ciclos…',       w:45},
+    {lbl:'Cruzando dados',         txt:'Calculando nível de investimento…',     w:68},
+    {lbl:'Analisando custo real',  txt:'Mapeando impacto emocional acumulado…', w:85},
+    {lbl:'Diagnóstico pronto',     txt:'Gerando resultado personalizado…',      w:100},
   ];
 
   const fill = document.getElementById('anFill');
@@ -511,14 +461,14 @@ function goLoading(){
   let i = 0;
 
   function run(){
-    if(i >= steps.length){ setTimeout(()=>{ window.location.href='quiz17.html'; }, 350); return; }
+    if(i >= steps.length){ setTimeout(()=>{ window.location.href='quiz17.html'; }, 400); return; }
     const s = steps[i++];
     fill.style.width = s.w+'%';
     lbl.textContent  = s.lbl;
     txt.textContent  = s.txt;
-    setTimeout(run, 700);
+    setTimeout(run, 680);
   }
-  setTimeout(run, 400);
+  setTimeout(run, 500);
 }
 </script>
 </body>
