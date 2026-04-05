@@ -391,19 +391,52 @@ body{
   </div>
 
   <!-- Q5 -->
-  <div class="q-card" id="q5">
-    <div class="chip"><div class="cdot"></div>A virada</div>
-    <div class="q-title">Se tudo continuar assim… <em>você acredita que muda sozinho?</em></div>
-    <p class="q-sub">Você já viu esse filme antes. A pergunta é: ele termina diferente?</p>
-    <div class="opts">
-      <button class="opt" onclick="pick(5,'a',null)"><span class="ico">❌</span>Não, sempre termina do mesmo jeito</button>
-      <button class="opt" onclick="pick(5,'b',null)"><span class="ico">😔</span>Eu queria que mudasse… mas não muda</button>
-      <button class="opt" onclick="pick(5,'c',null)"><span class="ico">😮‍💨</span>Não, e esse ciclo já está me cansando</button>
-      <button class="opt" onclick="pick(5,'d',null)"><span class="ico">🔁</span>Não, só muda o homem… o final é igual</button>
-    </div>
-    <div class="fb" id="fb5"></div>
-    <div class="nx" id="nx5"><button class="nx-btn" onclick="goLoading()">Ver meu diagnóstico →</button></div>
+ <!-- Q5 -->
+<div class="q-card" id="q5">
+  <div class="chip">
+    <div class="cdot"></div>A virada
   </div>
+
+  <div class="q-title">
+    Se tudo continuar assim… <em>você acredita que muda sozinho?</em>
+  </div>
+
+  <p class="q-sub">
+    Você já viu esse filme antes. A pergunta é: ele termina diferente?
+  </p>
+
+  <div class="opts">
+    <button class="opt" onclick="pick(5,'a',null)">
+      <span class="ico">❌</span>Não, sempre termina do mesmo jeito
+    </button>
+
+    <button class="opt" onclick="pick(5,'b',null)">
+      <span class="ico">😔</span>Eu queria que mudasse… mas não muda
+    </button>
+
+    <button class="opt" onclick="pick(5,'c',null)">
+      <span class="ico">😮‍💨</span>Não, e esse ciclo já está me cansando
+    </button>
+
+    <button class="opt" onclick="pick(5,'d',null)">
+      <span class="ico">🔁</span>Não, só muda o homem… o final é igual
+    </button>
+  </div>
+
+  <div class="fb" id="fb5"></div>
+
+  <div class="nx" id="nx5">
+    <button class="nx-btn" onclick="goLoading()">
+      Ver meu diagnóstico →
+    </button>
+  </div>
+</div>
+
+<script>
+  function goLoading() {
+    window.location.href = "quiz17.html";
+  }
+</script>
 
 </div><!-- /quiz -->
 
