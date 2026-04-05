@@ -3,120 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teste Emocional — Etapa 2</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
+<title>Método Obsessão — Diagnóstico</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#C8003F;
+  --hot:#FF3F81;
+  --ink:#0C0612;
+  --text:#FAF1F4;
+  --text-soft:rgba(250,241,244,.58);
+  --text-muted:rgba(250,241,244,.28);
+}
+html,body{min-height:100%;width:100%}
 body{
-margin:0;
-padding:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,#1E0B26,#0C0C0C);
-color:#FAF1F4;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+  font-family:'DM Sans',sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  padding:0 0 80px;
+  overflow-x:hidden;
 }
-.quiz-container{
-width:90%;
-max-width:520px;
-padding:32px 26px;
-background:rgba(12,12,12,.92);
-border-radius:22px;
-text-align:center;
-border:1px solid rgba(255,63,129,.5);
-box-shadow:0 0 35px rgba(255,63,129,.35);
+.ambient{
+  position:fixed;top:-140px;left:50%;transform:translateX(-50%);
+  width:700px;height:520px;
+  background:radial-gradient(ellipse,rgba(200,0,63,.2) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
 }
-.progress{
-font-size:14px;
-color:#D8B9C3;
-margin-bottom:18px;
-font-weight:600;
-letter-spacing:1px;
+.wrap{
+  width:100%;max-width:480px;
+  position:relative;z-index:1;
+  padding:0 18px;
 }
-.question{
-font-family:'Bebas Neue',sans-serif;
-font-size:32px;
-color:#FF3F81;
-line-height:1.15;
-margin-bottom:12px;
+
+/* ── PROGRESS ── */
+.prog{
+  position:sticky;top:0;z-index:10;
+  background:var(--ink);
+  padding:18px 18px 14px;
+  margin:0 -18px;
+  display:none;
 }
-.subtext{
-font-size:14px;
-color:#D8B9C3;
-margin-bottom:26px;
-line-height:1.5;
+.prog.visible{display:block}
+.prog-meta{display:flex;justify-content:space-between;margin-bottom:7px}
+.prog-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,63,129,.6);font-weight:700}
+.prog-count{font-size:11px;color:var(--text-muted);font-weight:300}
+.prog-track{height:2px;background:rgba(255,63,129,.1);border-radius:100px;overflow:hidden}
+.prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--rose),var(--hot));
+  border-radius:100px;
+  transition:width .55s cubic-bezier(.4,0,.2,1);
 }
-.options{
-display:flex;
-flex-direction:column;
-gap:14px;
+
+/* ── INTRO ── */
+#intro{
+  display:flex;flex-direction:column;align-items:center;
+  padding:44px 0 20px;
+  min-height:100vh;
 }
-.option-button{
-background:rgba(30,11,38,.9);
-border:2px solid #FF3F81;
-border-radius:50px;
-padding:16px 22px;
-font-size:15px;
-color:#FAF1F4;
-cursor:pointer;
-transition:.3s;
-text-align:left;
-font-weight:600;
-box-shadow:0 6px 18px rgba(255,63,129,.25);
+#intro > *{opacity:0;transform:translateY(16px);animation:up .5s ease forwards}
+#intro > *:nth-child(1){animation-delay:.05s}
+#intro > *:nth-child(2){animation-delay:.2s}
+#intro > *:nth-child(3){animation-delay:.38s}
+#intro > *:nth-child(4){animation-delay:.58s}
+#intro > *:nth-child(5){animation-delay:.78s}
+#intro > *:nth-child(6){animation-delay:.95s}
+#intro > *:nth-child(7){animation-delay:1.1s}
+@keyframes up{to{opacity:1;transform:translateY(0)}}
+
+.badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,63,129,.07);
+  border:1px solid rgba(255,63,129,.18);
+  border-radius:100px;padding:6px 16px;
+  font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,63,129,.75);font-weight:700;margin-bottom:26px;
 }
-.option-button:hover{
-background:linear-gradient(90deg,#E5003C,#FF3F81);
-transform:translateY(-2px);
+.ldot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--hot);box-shadow:0 0 8px rgba(255,63,129,.9);
+  animation:pulse 1.5s infinite;
 }
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.35}}
+
+.intro-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,12vw,70px);
+  line-height:.93;text-align:center;
+  color:#fff;letter-spacing:.5px;margin-bottom:14px;
+}
+.intro-title em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--hot);
+  font-size:.65em;display:block;margin-top:6px;letter-spacing:0;
+}
+.intro-sub{
+  font-size:14px;font-weight:300;color:var(--text-soft);
+  line-height:1.7;text-align:center;max-width:330px;margin-bottom:28px;
+}
+
+/* chat */
+.chat{
+  width:100%;background:#0d0818;
+  border:1px solid rgba(255,255,255,.06);border-radius:20px;
+  overflow:hidden;margin-bottom:26px;
+}
+.chat-bar{
+  background:#160d22;padding:11px 15px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.av{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#3D1F30,#5A2D45);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:rgba(255,180,210,.6);
+}
+.cb-info h4{font-size:13px;font-weight:500;color:#e9edef;margin-bottom:1px}
+.cb-info span{font-size:11px;color:#8696a0}
+.msgs{padding:14px 15px 16px;display:flex;flex-direction:column;gap:9px}
+.mb,.my{
+  padding:9px 13px;border-radius:8px;
+  font-size:13px;line-height:1.5;max-width:80%;
+  opacity:0;animation:msgIn .35s ease forwards;
+}
+.mb{background:#1f2c33;border-radius:0 8px 8px 8px;color:#e9edef;align-self:flex-start}
+.my{background:#2d0f1e;border:1px solid rgba(255,63,129,.18);border-radius:8px 8px 0 8px;color:#e9edef;align-self:flex-end}
+.mb.m1{animation-delay:.6s}.my.m2{animation-delay:1.5s}
+.mb.m3{animation-delay:2.4s}.my.m4{animation-delay:3.3s}
+@keyframes msgIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* counter */
+.counter{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.cavs{display:flex}
+.cav{
+  width:24px;height:24px;border-radius:50%;
+  border:1.5px solid var(--ink);font-size:9px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(250,241,244,.45);
+}
+.cav+.cav{margin-left:-7px}
+.cav:nth-child(1){background:#5c2040}.cav:nth-child(2){background:#3d3a60}
+.cav:nth-child(3){background:#3a5040}.cav:nth-child(4){background:#503028}
+.counter p{font-size:12px;color:var(--text-soft);font-weight:300}
+.counter p strong{color:var(--text);font-weight:600}
+
+/* start */
+.start-wrap{position:relative;width:100%;margin-bottom:10px}
+.glow-ring{
+  position:absolute;inset:-3px;border-radius:100px;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  filter:blur(16px);opacity:.45;animation:gp 2s infinite;
+}
+@keyframes gp{0%,100%{opacity:.3}50%{opacity:.6}}
+.start-btn{
+  position:relative;z-index:1;display:block;width:100%;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  border:none;border-radius:100px;padding:20px 32px;
+  font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:700;
+  color:#fff;cursor:pointer;text-align:center;overflow:hidden;
+}
+.start-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  transform:translateX(-100%);animation:shim 2.2s infinite;
+}
+@keyframes shim{to{transform:translateX(100%)}}
+.start-cap{text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:18px}
+.urg{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:11px;color:rgba(255,63,129,.6);
+}
+
+/* ── QUIZ ── */
+#quiz{display:none;flex-direction:column}
+#quiz.on{display:flex}
+
+.q-card{display:none;flex-direction:column;gap:16px;padding-top:22px}
+.q-card.on{display:flex;animation:qin .4s cubic-bezier(.4,0,.2,1)}
+.q-card.out{animation:qout .28s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes qin{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:translateX(0)}}
+@keyframes qout{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-32px)}}
+
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,63,129,.07);border:1px solid rgba(255,63,129,.15);
+  border-radius:100px;padding:5px 13px;
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,63,129,.65);font-weight:700;width:fit-content;
+}
+.cdot{width:5px;height:5px;border-radius:50%;background:var(--hot);flex-shrink:0}
+
+.q-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,8.5vw,48px);
+  line-height:1.02;color:#fff;letter-spacing:.5px;
+}
+.q-title em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--hot);letter-spacing:0;font-size:.82em;
+}
+.q-sub{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.65;margin-top:-4px}
+
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{
+  background:rgba(255,255,255,.025);
+  border:1.5px solid rgba(255,63,129,.13);
+  border-radius:14px;padding:15px 17px;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:400;color:var(--text);
+  cursor:pointer;text-align:left;line-height:1.45;
+  display:flex;align-items:flex-start;gap:11px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,background .2s,transform .15s;
+}
+.opt::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(200,0,63,.13),transparent);
+  opacity:0;transition:opacity .2s;
+}
+.opt:hover{border-color:rgba(255,63,129,.42);transform:translateX(4px)}
+.opt:hover::before{opacity:1}
+.opt:active{transform:translateX(2px) scale(.99)}
+.opt.sel{border-color:var(--hot);background:rgba(255,63,129,.09)}
+.opt.sel::before{opacity:1}
+.ico{font-size:17px;flex-shrink:0;margin-top:1px}
+
+.fb{
+  display:none;
+  background:rgba(200,0,63,.07);
+  border:1px solid rgba(200,0,63,.16);
+  border-radius:13px;padding:13px 16px;
+  font-size:13px;font-weight:300;
+  color:var(--text-soft);line-height:1.7;
+}
+.fb.on{display:block;animation:up .3s ease}
+.fb strong{color:var(--text);font-weight:500}
+
+.nx{display:none;margin-top:4px}
+.nx.on{display:block;animation:up .3s ease}
+.nx-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  border:none;border-radius:100px;padding:18px 32px;
+  font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:700;
+  color:#fff;cursor:pointer;overflow:hidden;position:relative;
+  transition:transform .15s;
+}
+.nx-btn:active{transform:scale(.98)}
+.nx-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);
+  transform:translateX(-100%);animation:shim 2s infinite;
+}
+
+/* ── LOADING ── */
+#loading{
+  display:none;flex-direction:column;
+  align-items:center;justify-content:center;
+  min-height:100vh;gap:22px;text-align:center;
+}
+#loading.on{display:flex;animation:up .4s ease}
+.load-ico{font-size:54px;animation:bounce .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes bounce{from{transform:scale(0)}to{transform:scale(1)}}
+.load-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,8vw,46px);
+  color:#fff;letter-spacing:.5px;line-height:1;
+}
+.load-title em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--hot);font-size:.75em;display:block;
+}
+.an-box{
+  width:100%;background:rgba(255,63,129,.06);
+  border:1px solid rgba(255,63,129,.14);
+  border-radius:16px;padding:18px 20px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.an-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,63,129,.55);font-weight:700}
+.an-track{height:2px;background:rgba(255,63,129,.1);border-radius:100px;overflow:hidden}
+.an-fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--rose),var(--hot));
+  border-radius:100px;transition:width .12s linear;
+}
+.an-txt{font-size:13px;color:var(--text-soft);font-weight:300}
 </style>
 </head>
-
 <body>
+<div class="ambient"></div>
+<div class="wrap">
 
-<div class="quiz-container">
 
-<div class="progress">
-Etapa 1 de 5
+  <!-- Q1 -->
+  <div class="q-card on" id="q1">
+    <div class="chip"><div class="cdot"></div>O gatilho</div>
+    <div class="q-title">Quando ele esfria…<br><em>isso já aconteceu antes?</em></div>
+    <p class="q-sub">Não é sobre um homem. É sobre o que costuma se repetir.</p>
+    <div class="opts">
+      <button class="opt" onclick="pick(1,'a','Você sente <strong>antes mesmo de ter certeza.</strong> Esse instinto é real — e está revelando um padrão que vai muito além dele.')">
+        <span class="ico">🔁</span>Sim, já aconteceu mais de uma vez
+      </button>
+      <button class="opt" onclick="pick(1,'b','Quando quase sempre termina parecido, <strong>o padrão não está no homem</strong> — está na dinâmica que você ativa sem perceber.')">
+        <span class="ico">📉</span>Sim, quase sempre termina parecido
+      </button>
+      <button class="opt" onclick="pick(1,'c','Um ciclo que volta é o sinal mais claro: <strong>a mudança não está no homem certo</strong> — está no padrão que você repete.')">
+        <span class="ico">🕳️</span>Sim, parece um ciclo que sempre volta
+      </button>
+      <button class="opt" onclick="pick(1,'d','Muda o homem, o final é igual. Isso é a <strong>definição exata do padrão</strong> que mantém você presa.')">
+        <span class="ico">💔</span>Sim, muda o homem… mas o final é igual
+      </button>
+    </div>
+    <div class="fb" id="fb1"></div>
+    <div class="nx" id="nx1"><button class="nx-btn" onclick="next(2)">Continuar →</button></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="q2">
+    <div class="chip"><div class="cdot"></div>A reação</div>
+    <div class="q-title">Quando ele some<br>ou para de responder…<br><em>o que você faz?</em></div>
+    <p class="q-sub">A reação automática diz mais sobre o padrão do que qualquer coisa.</p>
+    <div class="opts">
+      <button class="opt" onclick="pick(2,'a','Cada mensagem extra <strong>reduz o peso da sua presença</strong> para ele — sem que você perceba.')">
+        <span class="ico">📱</span>Mando outra mensagem "só pra checar"
+      </button>
+      <button class="opt" onclick="pick(2,'b','Esperar em alerta total dói — e esse desconforto é exatamente o que <strong>precisa ser redirecionado.</strong>')">
+        <span class="ico">🕐</span>Espero, mas fico no modo alerta total
+      </button>
+      <button class="opt" onclick="pick(2,'c','Relendo mensagens, você tenta controlar o incontrolável. <strong>Isso drena energia que deveria ser sua.</strong>')">
+        <span class="ico">🔍</span>Fico relendo tudo procurando sinais
+      </button>
+      <button class="opt" onclick="pick(2,'d','Quando você busca distração, <strong>ainda está reagindo a ele</strong> — só de forma menos visível.')">
+        <span class="ico">😮‍💨</span>Me distraio, mas ele domina meus pensamentos
+      </button>
+    </div>
+    <div class="fb" id="fb2"></div>
+    <div class="nx" id="nx2"><button class="nx-btn" onclick="next(3)">Continuar →</button></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="q3">
+    <div class="chip"><div class="cdot"></div>O momento</div>
+    <div class="q-title">Sendo totalmente sincera… <em>você ainda vive isso?</em></div>
+    <p class="q-sub">Não importa a fase. O padrão ainda está ativo?</p>
+    <div class="opts">
+      <button class="opt" onclick="pick(3,'a','Estar no ciclo agora significa que <strong>a hora de agir é exatamente essa</strong> — não depois.')">
+        <span class="ico">🔁</span>Sim, estou exatamente nesse ciclo agora
+      </button>
+      <button class="opt" onclick="pick(3,'b','Ele some e volta — e você continua lá. Isso não é amor, <strong>é dinâmica invertida.</strong> Dá pra mudar.')">
+        <span class="ico">🕳️</span>Sim, ele some e volta… e eu continuo esperando
+      </button>
+      <button class="opt" onclick="pick(3,'c','Terminou mas ainda te prende — porque o padrão emocional <strong>não encerra com o relacionamento.</strong>')">
+        <span class="ico">💔</span>Sim, terminou… mas emocionalmente ainda me prende
+      </button>
+      <button class="opt" onclick="pick(3,'d','Atrair o mesmo tipo repetidamente é o sinal de que <strong>o padrão está em você,</strong> não nos homens.')">
+        <span class="ico">🥀</span>Sim, mesmo solteira atraio o mesmo tipo
+      </button>
+    </div>
+    <div class="fb" id="fb3"></div>
+    <div class="nx" id="nx3"><button class="nx-btn" onclick="next(4)">Continuar →</button></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="q4">
+    <div class="chip"><div class="cdot"></div>O custo</div>
+    <div class="q-title">O que esse padrão<br>vem fazendo com<br><em>você por dentro?</em></div>
+    <p class="q-sub">Esquece ele. O que essa dinâmica já custou pra você?</p>
+    <div class="opts">
+      <button class="opt" onclick="pick(4,'a','Investir e ficar sozinha com a dor é o ciclo mais comum — e o <strong>mais silenciosamente destrutivo</strong> de todos.')">
+        <span class="ico">💔</span>Me entrego demais e fico sozinha com a dor
+      </button>
+      <button class="opt" onclick="pick(4,'b','Insegurança constante não é traço de personalidade — é <strong>resultado de uma dinâmica que pode ser revertida.</strong>')">
+        <span class="ico">🧠</span>Vivo em dúvida e insegurança constante
+      </button>
+      <button class="opt" onclick="pick(4,'c','Ansiedade de estragar tudo mostra que você <strong>está no papel errado.</strong> O dela é ser desejada, não administrar.')">
+        <span class="ico">🕳️</span>Ansiedade e medo de estragar tudo
+      </button>
+      <button class="opt" onclick="pick(4,'d','Cansaço emocional que só aumenta é o sinal de que você <strong>está carregando mais do que deveria</strong> nesse relacionamento.')">
+        <span class="ico">🥀</span>Um cansaço emocional que só aumenta
+      </button>
+    </div>
+    <div class="fb" id="fb4"></div>
+    <div class="nx" id="nx4"><button class="nx-btn" onclick="next(5)">Continuar →</button></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="q5">
+    <div class="chip"><div class="cdot"></div>A virada</div>
+    <div class="q-title">Se tudo continuar assim… <em>você acredita que muda sozinho?</em></div>
+    <p class="q-sub">Você já viu esse filme antes. A pergunta é: ele termina diferente?</p>
+    <div class="opts">
+      <button class="opt" onclick="pick(5,'a',null)"><span class="ico">❌</span>Não, sempre termina do mesmo jeito</button>
+      <button class="opt" onclick="pick(5,'b',null)"><span class="ico">😔</span>Eu queria que mudasse… mas não muda</button>
+      <button class="opt" onclick="pick(5,'c',null)"><span class="ico">😮‍💨</span>Não, e esse ciclo já está me cansando</button>
+      <button class="opt" onclick="pick(5,'d',null)"><span class="ico">🔁</span>Não, só muda o homem… o final é igual</button>
+    </div>
+    <div class="fb" id="fb5"></div>
+    <div class="nx" id="nx5"><button class="nx-btn" onclick="goLoading()">Ver meu diagnóstico →</button></div>
+  </div>
+
+</div><!-- /quiz -->
+
+<!-- ── LOADING ── -->
+<div id="loading">
+  <div class="load-ico">🔍</div>
+  <div class="load-title">Analisando<br><em>seu padrão…</em></div>
+  <div class="an-box">
+    <div class="an-lbl" id="anLbl">Processando respostas</div>
+    <div class="an-track"><div class="an-fill" id="anFill"></div></div>
+    <div class="an-txt" id="anTxt">Identificando dinâmica emocional…</div>
+  </div>
 </div>
 
-<div class="question">
-Quando ele começa a esfriar…
-isso mexe com você?
-</div>
-
-<div class="subtext">
-Seja honesta.<br>
-Você sente na hora quando algo muda.
-</div>
-
-<div class="options">
-<button class="option-button" onclick="next()">
-💔 Sim, eu sinto imediatamente
-</button>
-
-<button class="option-button" onclick="next()">
-😔 Sim, eu fico insegura e tento resolver
-</button>
-
-<button class="option-button" onclick="next()">
-📱 Sim, eu acabo fazendo algo no impulso
-</button>
-
-<button class="option-button" onclick="next()">
-😮‍💨 Sim, eu travo e não sei como agir
-</button>
-</div>
-
-</div>
-
+</div><!-- /wrap -->
 <script>
-function next(){
-window.location.href="quiz3.html";
+let cur = 1;
+
+function startQuiz(){
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('prog').classList.add('visible');
+  document.getElementById('quiz').classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function pick(q, opt, fb){
+  const card = document.getElementById('q'+q);
+  card.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  if(fb){
+    const el = document.getElementById('fb'+q);
+    el.innerHTML = fb;
+    el.classList.add('on');
+  }
+  document.getElementById('nx'+q).classList.add('on');
+  if(q === 5) setTimeout(goLoading, 900);
+}
+
+function next(nq){
+  const prev = document.getElementById('q'+(nq-1));
+  prev.classList.add('out');
+  setTimeout(()=>{
+    prev.classList.remove('on','out');
+    prev.style.display = 'none';
+    const c = document.getElementById('q'+nq);
+    c.style.display = 'flex';
+    c.classList.add('on');
+    cur = nq;
+    document.getElementById('pFill').style.width = (cur/5*100)+'%';
+    document.getElementById('pCount').textContent = 'Etapa '+cur+' de 5';
+    window.scrollTo({top:0,behavior:'smooth'});
+  },280);
+}
+
+function goLoading(){
+  document.getElementById('quiz').classList.remove('on');
+  document.getElementById('prog').classList.remove('visible');
+  const ld = document.getElementById('loading');
+  ld.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  const steps = [
+    {lbl:'Processando respostas',   txt:'Identificando dinâmica emocional…', w:22},
+    {lbl:'Mapeando padrão',         txt:'Analisando histórico de ciclos…',    w:50},
+    {lbl:'Cruzando dados',          txt:'Calculando nível de investimento…',  w:78},
+    {lbl:'Diagnóstico pronto',      txt:'Gerando resultado personalizado…',   w:100},
+  ];
+
+  const fill = document.getElementById('anFill');
+  const lbl  = document.getElementById('anLbl');
+  const txt  = document.getElementById('anTxt');
+  let i = 0;
+
+  function run(){
+    if(i >= steps.length){ setTimeout(()=>{ window.location.href='quiz17.html'; }, 350); return; }
+    const s = steps[i++];
+    fill.style.width = s.w+'%';
+    lbl.textContent  = s.lbl;
+    txt.textContent  = s.txt;
+    setTimeout(run, 700);
+  }
+  setTimeout(run, 400);
 }
 </script>
-
 </body>
 </html>
