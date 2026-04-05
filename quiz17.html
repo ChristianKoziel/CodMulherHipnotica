@@ -28,7 +28,7 @@ body{
   padding:20px 16px 40px;
 }
 
-/* CARD */
+/* CONTAINER */
 .container{
   width:100%;
   max-width:420px;
@@ -47,29 +47,38 @@ body{
   to{opacity:1;transform:translateY(0)}
 }
 
-/* TOP LABEL */
-.top-label{
+/* LOADING */
+#loading-screen{
+  position:fixed;
+  inset:0;
+  background:var(--ink);
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:8px;
-  padding:20px 0;
+  z-index:9999;
 }
-.live-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:#FF2D6B;
-  box-shadow:0 0 8px rgba(255,45,107,.8);
-  animation:pulse 1.5s infinite;
+
+.loading-text{
+  font-size:14px;
+  color:var(--rose-light);
+  margin-bottom:20px;
+  letter-spacing:1px;
 }
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.5)}
+
+.progress-bar{
+  width:220px;
+  height:8px;
+  background:rgba(255,255,255,.1);
+  border-radius:100px;
+  overflow:hidden;
 }
-.top-label span{
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:rgba(255,45,107,.7);
+
+.progress{
+  width:0%;
+  height:100%;
+  background:linear-gradient(135deg,var(--rose),var(--rose-light));
+  transition:.2s;
 }
 
 /* TÍTULO */
@@ -78,19 +87,21 @@ body{
 }
 .title h1{
   font-family:'Playfair Display',serif;
-  font-size:34px;
+  font-size:30px;
   font-weight:900;
   line-height:1.2;
 }
-.title em{
+.title span{
   color:var(--rose-light);
   font-style:italic;
 }
-.subtitle{
-  margin-top:10px;
-  font-size:14px;
+
+/* TEXTO */
+.text{
+  font-size:14.5px;
   color:var(--text-soft);
   line-height:1.6;
+  text-align:center;
 }
 
 /* BOX */
@@ -119,7 +130,7 @@ body{
 .list li{
   margin-bottom:10px;
   font-size:14.5px;
-  padding-left:20px;
+  padding-left:18px;
   position:relative;
 }
 .list li::before{
@@ -138,6 +149,25 @@ body{
   font-size:14.5px;
 }
 
+/* EXPERT */
+.expert-photo-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.expert-photo-rect{
+  width:100%;
+  max-width:280px;
+  border-radius:16px;
+  border:2px solid var(--rose-light);
+}
+.expert-name{
+  text-align:center;
+  margin-top:10px;
+  font-size:13px;
+  color:var(--text-soft);
+}
+
 /* CTA */
 .cta-wrap{
   position:relative;
@@ -152,27 +182,14 @@ body{
 }
 .cta{
   position:relative;
-  display:block;
   width:100%;
-  text-align:center;
-  padding:20px;
+  padding:18px;
   border-radius:100px;
+  border:none;
   background:linear-gradient(135deg,var(--rose),var(--rose-light));
   color:#fff;
   font-weight:600;
-  text-decoration:none;
-  overflow:hidden;
-}
-.cta::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
-  transform:translateX(-100%);
-  animation:shimmer 2s infinite;
-}
-@keyframes shimmer{
-  to{transform:translateX(100%)}
+  cursor:pointer;
 }
 
 /* SOCIAL */
@@ -182,38 +199,13 @@ body{
   color:var(--text-soft);
 }
 
-/* URGENCY */
-.urgency{
-  text-align:center;
-  font-size:12px;
-  color:rgba(255,45,107,.7);
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
 
 
-<!-- ================= LOADING SCREEN ================= -->
-<div id="loading-screen">
-    <div class="loading-text">🧠 DECODIFICANDO SUA MENTE FEMININA...</div>
-
-    <div class="progress-container">
-        <div class="progress-bar">
-            <div class="progress"></div>
-        </div>
-        <div id="progress-percentage" class="progress-percentage">0%</div>
-    </div>
-
-    <div class="analyzing-text">ANALISANDO PADRÕES COMPORTAMENTAIS...</div>
-</div>
-
-<!-- ================= CONTEÚDO PRINCIPAL ================= -->
-<div class="page-container">
-  <div class="container" id="content">
 
   <!-- ===== DIAGNÓSTICO DIRETO ===== -->
 <div class="title">
@@ -343,88 +335,29 @@ body{
 
 
 <!-- ================= ESTILOS ================= -->
-<style>
-.expert-text-intro{
-  margin-bottom:18px;
-}
-.expert-text-intro h4{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:22px;
-  color:#FFD700;
-  margin-bottom:10px;
-}
-.expert-text-intro p{
-  font-size:15px;
-  line-height:1.65;
-  color:#E6C7D0;
-  margin-bottom:10px;
-}
-
-/* FOTO CENTRAL E VISÍVEL */
-.expert-photo-wrapper{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin:18px 0 22px;
-}
-.expert-photo-rect{
-  width:100%;
-  max-width:320px;
-  height:auto;
-  border-radius:16px;
-  object-fit:cover;
-  border:3px solid #FF3F81;
-  box-shadow:0 0 24px rgba(255,63,129,.5);
-}
-.expert-name{
-  text-align:center;
-  margin-top:10px;
-  font-size:14px;
-  color:#E6C7D0;
-}
-.expert-name span{
-  font-size:12px;
-  color:#FFD700;
-}
-
-.expert-text p{
-  font-size:15px;
-  line-height:1.65;
-  color:#E6C7D0;
-  margin-bottom:10px;
-}
-</style>
-
 <script>
 let progress = 0;
 const bar = document.querySelector(".progress");
-const text = document.getElementById("progress-percentage");
 const loading = document.getElementById("loading-screen");
-const content = document.getElementById("content");
 
 function runLoading(){
-    progress += Math.floor(Math.random() * 6) + 4;
+    progress += Math.random() * 8;
 
     if(progress >= 100){
         progress = 100;
         bar.style.width = "100%";
-        text.innerText = "100%";
 
         setTimeout(() => {
-            loading.style.opacity = "0";
-            loading.style.pointerEvents = "none";
-
-            content.classList.add("show");
-        }, 500); // 👈 500ms certinho
+            loading.style.display = "none";
+        }, 400);
     } else {
         bar.style.width = progress + "%";
-        text.innerText = progress + "%";
         setTimeout(runLoading, 120);
     }
 }
 
 window.onload = () => {
-    setTimeout(runLoading, 500);
+    setTimeout(runLoading, 400);
 };
 </script>
 
