@@ -3,61 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Seu Diagnóstico — Método Obsessão</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Seu Diagnóstico</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
   --rose:#B8003A;
   --hot:#FF3F81;
   --ink:#070510;
-  --ink2:#0f0a18;
   --text:#F5E8EE;
-  --text-soft:rgba(245,232,238,.55);
-  --text-muted:rgba(245,232,238,.28);
+  --soft:rgba(245,232,238,.55);
+  --muted:rgba(245,232,238,.28);
 }
-
 html,body{min-height:100%;width:100%;overflow-x:hidden}
 body{
   font-family:'DM Sans',sans-serif;
   background:var(--ink);
   color:var(--text);
-  display:flex;
-  justify-content:center;
+  display:flex;justify-content:center;
   padding:0 0 80px;
 }
-
-/* grain */
-body::after{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:900;opacity:.4;
+body::before{
+  content:'';position:fixed;top:-140px;left:50%;transform:translateX(-50%);
+  width:600px;height:420px;
+  background:radial-gradient(ellipse,rgba(184,0,58,.16) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
 }
-
-/* ambients */
-.amb{
-  position:fixed;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse,rgba(184,0,58,.18) 0%,transparent 65%);
-}
-.amb1{top:-160px;left:50%;transform:translateX(-50%);width:640px;height:480px}
-.amb2{bottom:-80px;right:-80px;width:320px;height:320px;
-  background:radial-gradient(ellipse,rgba(255,63,129,.06) 0%,transparent 65%)}
-
-/* wrap */
-.wrap{
-  width:100%;max-width:440px;
-  position:relative;z-index:1;
-  padding:0 20px;
-}
+.wrap{width:100%;max-width:420px;padding:0 20px;position:relative;z-index:1}
 
 /* ── SECTIONS ── */
-.section{
-  padding-top:52px;
-  opacity:0;transform:translateY(22px);
-  transition:opacity .65s ease,transform .65s ease;
+.s{
+  padding-top:48px;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s ease,transform .6s ease;
 }
-.section.reveal{opacity:1;transform:translateY(0)}
-.section:first-child{padding-top:44px}
+.s.on{opacity:1;transform:translateY(0)}
+.s:first-child{padding-top:40px}
 
 /* ── BADGE ── */
 .badge{
@@ -66,191 +47,113 @@ body::after{
   border:1px solid rgba(255,63,129,.16);
   border-radius:100px;padding:5px 14px;
   font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(255,63,129,.65);font-weight:700;
-  margin-bottom:18px;
+  color:rgba(255,63,129,.65);font-weight:700;margin-bottom:18px;
 }
-.bdot{
-  width:5px;height:5px;border-radius:50%;background:var(--hot);
-  box-shadow:0 0 7px rgba(255,63,129,.8);
-  animation:blink 2s infinite;
-}
+.bdot{width:5px;height:5px;border-radius:50%;background:var(--hot);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.lbl{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.45);font-weight:700;margin-bottom:10px}
 
-/* ── TITLES ── */
+/* ── TYPE ── */
 .title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(36px,9vw,50px);
-  line-height:.97;color:#fff;letter-spacing:.5px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,8vw,46px);
+  font-weight:900;line-height:1.05;color:#fff;
   margin-bottom:14px;
 }
-.title em{
-  font-family:'Playfair Display',serif;
-  font-style:italic;color:var(--hot);
-  font-size:.8em;display:block;margin-top:5px;letter-spacing:0;
-}
-.sec-label{
-  display:block;
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(255,63,129,.45);font-weight:700;
-  margin-bottom:10px;
-}
-
-/* ── LEAD TEXT ── */
-.lead{
-  font-size:15px;font-weight:300;
-  color:var(--text-soft);line-height:1.72;
-  margin-bottom:4px;
-}
-.lead strong{color:var(--text);font-weight:500}
-.lead em{color:var(--hot);font-style:normal;font-weight:500}
+.title em{font-style:italic;color:var(--hot)}
+.body{font-size:14.5px;font-weight:300;color:var(--soft);line-height:1.75}
+.body strong{color:var(--text);font-weight:500}
+.body em{color:var(--hot);font-style:normal;font-weight:500}
 
 /* ── DIAG CARD ── */
-.diag-card{
+.diag{
   background:rgba(255,63,129,.05);
-  border:1px solid rgba(255,63,129,.16);
-  border-radius:20px;
-  padding:24px 20px;
-  display:flex;flex-direction:column;gap:12px;
-  margin-top:20px;
+  border:1px solid rgba(255,63,129,.18);
+  border-radius:20px;padding:22px 20px;
+  margin-top:18px;display:flex;flex-direction:column;gap:10px;
 }
-.diag-card-label{
-  font-size:8.5px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(255,63,129,.45);font-weight:700;
+.diag-lbl{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.45);font-weight:700}
+.diag-name{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:900;color:#fff;line-height:1.1;
 }
-.diag-card-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:24px;color:#fff;letter-spacing:.5px;line-height:1.1;
-}
-.diag-card-name em{color:var(--hot);font-style:normal}
-.diag-card-body{
-  font-size:14px;font-weight:300;color:var(--text-soft);line-height:1.72;
-}
-.diag-card-body strong{color:var(--text);font-weight:500}
+.diag-name em{font-style:italic;color:var(--hot)}
+.diag-body{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.7}
+.diag-body strong{color:var(--text);font-weight:500}
 
-/* ── PULL QUOTE ── */
-.pull{
-  border-left:2px solid rgba(255,63,129,.3);
-  padding:12px 18px;
-  font-size:14.5px;font-weight:300;
-  color:var(--text-soft);line-height:1.75;
-}
-.pull+.pull{margin-top:12px}
-.pull strong{color:var(--text);font-weight:500}
-.pull em{color:var(--hot);font-style:normal;font-weight:500}
-
-/* ── ALERT ── */
-.alert{
+/* ── MIRROR ── */
+.mirror{
   background:rgba(184,0,58,.07);
-  border:1px solid rgba(184,0,58,.18);
-  border-radius:16px;
-  padding:20px 18px;
-  font-size:14px;font-weight:300;
-  color:var(--text-soft);line-height:1.75;
+  border:1px solid rgba(184,0,58,.2);
+  border-radius:16px;padding:20px 18px;
   position:relative;overflow:hidden;
 }
-.alert::before{
+.mirror::before{
   content:'';position:absolute;left:0;top:0;bottom:0;
   width:2px;background:linear-gradient(to bottom,var(--rose),var(--hot));
 }
-.alert strong{color:var(--text);font-weight:500}
-.alert em{color:var(--hot);font-style:normal;font-weight:500}
+.mirror p{font-size:14.5px;font-weight:300;color:var(--soft);line-height:1.75}
+.mirror p strong{color:var(--text);font-weight:500}
+.mirror p em{color:var(--hot);font-style:normal;font-weight:500}
+
+/* ── BULLETS ── */
+.bullets{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.bullet{
+  display:flex;align-items:flex-start;gap:12px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:13px;padding:14px 16px;
+}
+.bullet-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--hot);flex-shrink:0;margin-top:5px;
+}
+.bullet-text{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.6}
+.bullet-text strong{color:var(--text);font-weight:500}
 
 /* ── PHASES ── */
-.phases{display:flex;flex-direction:column;gap:1px;margin-top:4px}
+.phases{display:flex;flex-direction:column;gap:1px}
 .phase{
   background:rgba(255,255,255,.018);
   border:1px solid rgba(255,63,129,.1);
-  padding:18px 18px;
-  display:flex;align-items:flex-start;gap:16px;
-  transition:background .2s;
+  padding:16px 18px;
+  display:flex;align-items:flex-start;gap:14px;
 }
-.phase:first-child{border-radius:16px 16px 4px 4px}
-.phase:last-child{border-radius:4px 4px 16px 16px}
-.phase:only-child{border-radius:16px}
+.phase:first-child{border-radius:14px 14px 3px 3px}
+.phase:last-child{border-radius:3px 3px 14px 14px}
 .phase-n{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:38px;color:rgba(255,63,129,.18);
-  letter-spacing:0;line-height:1;flex-shrink:0;margin-top:-3px;
-  transition:color .2s;
+  font-family:'Playfair Display',serif;
+  font-size:34px;color:rgba(255,63,129,.16);line-height:1;flex-shrink:0;margin-top:-2px;
 }
-.phase:hover .phase-n{color:rgba(255,63,129,.4)}
-.phase:hover{background:rgba(255,63,129,.04)}
-.phase-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
-.phase-desc{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.6}
+.phase-title{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:3px}
+.phase-desc{font-size:12.5px;font-weight:300;color:var(--soft);line-height:1.55}
 
-/* ── PROOF IMAGES ── */
-.proof-intro{
-  font-size:14px;font-weight:300;color:var(--text-soft);
-  line-height:1.72;margin-bottom:20px;
+/* ── CLIMAX ── */
+.climax{
+  text-align:center;
+  padding:28px 20px;
+  background:rgba(184,0,58,.06);
+  border:1px solid rgba(184,0,58,.18);
+  border-radius:20px;
 }
-.proof-intro strong{color:var(--text);font-weight:500}
-.proof-stack{display:flex;flex-direction:column;gap:12px}
-.proof-item{}
-.proof-img{
-  width:100%;border-radius:14px;display:block;
-  border:1px solid rgba(255,63,129,.15);
-  box-shadow:0 8px 40px rgba(0,0,0,.6);
-  opacity:0;transform:translateY(14px);
-  transition:opacity .55s ease,transform .55s ease;
+.climax-emoji{font-size:36px;margin-bottom:14px}
+.climax-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,5.5vw,30px);
+  font-weight:900;color:#fff;line-height:1.15;
+  margin-bottom:12px;
 }
-.proof-img.in{opacity:1;transform:translateY(0)}
-.proof-cap{
-  font-size:10.5px;color:var(--text-muted);
-  text-align:center;margin-top:6px;letter-spacing:.5px;
-}
-
-/* ── EXPERT ── */
-.expert-img-wrap{
-  display:flex;justify-content:center;margin-bottom:16px;
-}
-.expert-img{
-  width:100%;max-width:240px;display:block;
-  border-radius:18px;
-  border:1.5px solid rgba(255,63,129,.25);
-  box-shadow:0 0 48px rgba(255,63,129,.15),0 12px 40px rgba(0,0,0,.5);
-}
-.expert-meta{text-align:center;margin-bottom:20px}
-.expert-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:20px;color:#fff;letter-spacing:.5px;
-}
-.expert-role{
-  font-size:11.5px;color:rgba(255,63,129,.6);
-  font-weight:400;margin-top:2px;
-}
-.expert-body{
-  font-size:14.5px;font-weight:300;color:var(--text-soft);line-height:1.78;
-}
-.expert-body p+p{margin-top:14px}
-.expert-body strong{color:var(--text);font-weight:500}
-.expert-body em{color:var(--hot);font-style:normal;font-weight:500}
-
-/* ── SP ROW ── */
-.sp-row{
-  display:flex;align-items:center;gap:14px;
-  padding:18px;
-  background:rgba(255,255,255,.018);
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:14px;
-}
-.sp-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:36px;color:var(--hot);letter-spacing:0;line-height:1;flex-shrink:0;
-}
-.sp-desc{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.5}
-.sp-desc strong{color:var(--text);font-weight:500}
+.climax-title em{font-style:italic;color:var(--hot)}
+.climax-body{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72}
+.climax-body strong{color:var(--text);font-weight:500}
 
 /* ── CTA ── */
-.cta-urgency{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  font-size:11.5px;color:rgba(255,63,129,.6);margin-bottom:16px;
-}
-.cta-urgency strong{color:var(--hot)}
+.cta-section{padding-top:36px!important}
 .cta-wrap{position:relative;margin-bottom:12px}
 .cta-glow{
   position:absolute;inset:-4px;border-radius:100px;
   background:linear-gradient(135deg,var(--rose),var(--hot));
-  filter:blur(18px);opacity:.45;
+  filter:blur(16px);opacity:.4;
   animation:glp 2s infinite;
 }
 @keyframes glp{0%,100%{opacity:.3}50%{opacity:.55}}
@@ -263,6 +166,7 @@ body::after{
   font-size:15px;font-weight:700;
   color:#fff;cursor:pointer;text-align:center;
   letter-spacing:.2px;overflow:hidden;line-height:1.3;
+  text-decoration:none;
 }
 .cta-btn::after{
   content:'';position:absolute;inset:0;
@@ -270,96 +174,78 @@ body::after{
   transform:translateX(-100%);animation:shim 2.2s infinite;
 }
 @keyframes shim{to{transform:translateX(100%)}}
-.cta-caption{
-  text-align:center;font-size:11px;
-  color:var(--text-muted);
-}
+.cta-caption{text-align:center;font-size:11px;color:var(--muted);margin-top:10px}
 </style>
 </head>
 <body>
-<div class="amb amb1"></div>
-<div class="amb amb2"></div>
 <div class="wrap">
 
-  <!-- ── HERO ── -->
-  <div class="section" id="s0">
+  <!-- ① IDENTIFICAÇÃO -->
+  <div class="s" id="s0">
     <div class="badge"><div class="bdot"></div>Diagnóstico completo</div>
-    <div class="title">
-      Seu padrão<br>foi
-      <em>identificado.</em>
-    </div>
-    <p class="lead">
+    <div class="title">Seu padrão foi<br><em>identificado.</em></div>
+    <p class="body">
       Com base nas suas respostas, o que está acontecendo <strong>não é azar.</strong><br>
       É uma dinâmica emocional específica — e ela tem nome.
     </p>
-    <div class="diag-card">
-      <div class="diag-card-label">Padrão detectado</div>
-      <div class="diag-card-name">Investimento Emocional<br><em>Desbalanceado</em></div>
-      <div class="diag-card-body">
+    <div class="diag">
+      <div class="diag-lbl">Padrão detectado</div>
+      <div class="diag-name">Investimento<br><em>antes do retorno</em></div>
+      <div class="diag-body">
         Você sente de verdade. Você investe antes de receber clareza.<br>
         Sem perceber, assume a posição que gera <strong>conforto para ele — mas não comprometimento.</strong>
       </div>
     </div>
   </div>
 
-  <!-- ── MECANISMO ── -->
-  <div class="section" id="s1">
-    <span class="sec-label">Por que isso se repete</span>
-    <div class="title" style="font-size:clamp(30px,7.5vw,42px)">
-      O ciclo não é <em>coincidência.</em>
+  <!-- ② TENSÃO -->
+  <div class="s" id="s1">
+    <span class="lbl">Por que isso se repete</span>
+    <div class="title" style="font-size:clamp(26px,6.5vw,36px)">
+      O ciclo não é<br><em>coincidência.</em>
     </div>
-
-    <div class="pull">
-      Você cria conexão com profundidade. Entrega presença emocional desde o início.<br>
-      Naturalmente, acaba sendo <strong>você quem sustenta o vínculo.</strong>
+    <div class="mirror">
+      <p>
+        Quando alguém tem o que quer sem precisar agir…<br>
+        <em>a urgência desaparece.</em><br><br>
+        <strong>Não é falta de sentimento da parte dele.</strong><br>
+        É falta de necessidade de se posicionar.
+      </p>
     </div>
-    <div class="pull" style="margin-top:12px">
-      O problema não é a intensidade do que você sente.<br>
-      É que você investe <em>antes que ele se posicione.</em><br>
-      E quando alguém tem o que quer sem precisar agir… <strong>a urgência desaparece.</strong>
-    </div>
-
-    <div class="alert" style="margin-top:20px">
-      🚨 <strong>Quanto mais você tenta resolver com esforço,</strong> mais reforça a posição confortável dele — e menos ele sente necessidade de escolher você de verdade.
-    </div>
-  </div>
-
-  <!-- ── COMO ISSO MUDA A DINÂMICA ── -->
-  <div class="section" id="s2">
-    <span class="sec-label">O que isso gera</span>
-    <div class="title" style="font-size:clamp(28px,7vw,40px)">
-      Como isso <em>muda a dinâmica</em>
-    </div>
-    <div class="phases">
-      <div class="phase">
-        <div class="phase-n">①</div>
-        <div>
-          <div class="phase-title">Você demonstra clareza emocional antes dele</div>
-          <div class="phase-desc">Isso sinaliza disponibilidade total — sem ele precisar conquistar.</div>
-        </div>
+    <div class="bullets" style="margin-top:18px">
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">Você cria conexão com profundidade — ele recebe sem precisar conquistar</div>
       </div>
-      <div class="phase">
-        <div class="phase-n">②</div>
-        <div>
-          <div class="phase-title">Ele sente conforto, mas não sente urgência</div>
-          <div class="phase-desc">Conforto sem urgência não gera comprometimento. Só gera indefinição.</div>
-        </div>
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">Quanto mais você tenta resolver, <strong>mais confortável ele fica sem escolher</strong></div>
       </div>
-      <div class="phase">
-        <div class="phase-n">③</div>
-        <div>
-          <div class="phase-title">A relação permanece em espera</div>
-          <div class="phase-desc">E você começa a questionar seu valor — quando o problema é só a dinâmica.</div>
-        </div>
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">O problema não é o quanto você sente — é <strong>quando você entrega</strong></div>
       </div>
     </div>
   </div>
 
-  <!-- ── SOLUÇÃO ── -->
-  <div class="section" id="s3">
-    <span class="sec-label">A solução</span>
-    <div class="title" style="font-size:clamp(28px,7vw,40px)">
-      O Método atua<br>em <em>3 fases</em>
+  <!-- ③ ESPELHO -->
+  <div class="s" id="s2">
+    <div class="climax">
+      <div class="climax-emoji">🪞</div>
+      <div class="climax-title">Se você já viveu isso<br>mais de uma vez —<br><em>não é azar.</em></div>
+      <p class="climax-body">
+        É o mesmo padrão emocional se repetindo.<br><br>
+        <strong>E padrões não mudam com entendimento.</strong><br>
+        Mudam com reposicionamento.
+      </p>
+    </div>
+  </div>
+
+  <!-- ④ REVELAÇÃO -->
+  <div class="s" id="s3">
+    <span class="lbl">O que muda tudo</span>
+    <div class="title" style="font-size:clamp(26px,6.5vw,36px)">
+      O método atua<br>em <em>3 movimentos</em>
     </div>
     <div class="phases">
       <div class="phase">
@@ -386,108 +272,36 @@ body::after{
     </div>
   </div>
 
-  <!-- ── PROVA SOCIAL ── -->
-  <div class="section" id="s4">
-    <span class="sec-label">Resultados reais</span>
-    <div class="title" style="font-size:clamp(28px,7vw,40px)">
-      Elas também estavam<br><em>nesse ciclo</em>
-    </div>
-    <p class="proof-intro">
-      O denominador comum não era o homem.<br>
-      Era o padrão emocional. <strong>Quando a dinâmica mudou, tudo mudou.</strong>
-    </p>
-    <div class="proof-stack">
-      <div class="proof-item">
-        <img src="src/img/provasocial.jpg" alt="" class="proof-img" data-reveal>
-        <div class="proof-cap">Resultado real após aplicar o método</div>
+  <!-- ⑤ DECISÃO → CTA -->
+  <div class="s cta-section" id="s4">
+    <div class="climax" style="margin-bottom:28px">
+      <div class="climax-title" style="font-size:clamp(18px,4.5vw,24px)">
+        É aqui que tudo muda —<br><em>se você fizer isso agora.</em>
       </div>
-      <div class="proof-item">
-        <img src="src/img/depoimento111.jpeg" alt="" class="proof-img" data-reveal>
-      </div>
-      <div class="proof-item">
-        <img src="src/img/depoimento222.jpg" alt="" class="proof-img" data-reveal>
-      </div>
-      <div class="proof-item">
-        <img src="src/img/ps2.png" alt="" class="proof-img" data-reveal>
-      </div>
-      <div class="proof-item">
-        <img src="src/img/ps6.png" alt="" class="proof-img" data-reveal>
-      </div>
+      <p class="climax-body" style="margin-top:10px">
+        Quem entende o padrão mas não age,<br>
+        <strong>repete o ciclo mais uma vez.</strong>
+      </p>
     </div>
-  </div>
-
-  <!-- ── EXPERT ── -->
-  <div class="section" id="s5">
-    <span class="sec-label">Quem mapeou esse padrão</span>
-    <div class="expert-img-wrap">
-      <img
-        src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg"
-        alt="Eliza Maffer"
-        class="expert-img"
-      >
-    </div>
-    <div class="expert-meta">
-      <div class="expert-name">Eliza Maffer</div>
-      <div class="expert-role">Psicóloga · Especialista em padrões emocionais femininos</div>
-    </div>
-    <div class="expert-body">
-      <p>Ao longo dos anos, esse padrão apareceu em milhares de relatos: relações que começam intensas — mas perdem definição quando o investimento não se equilibra.</p>
-      <p>O que você viu aqui <strong>não é um rótulo.</strong></p>
-      <p>É um padrão emocional ativo. E padrões podem ser reorganizados — <em>sem jogos, sem manipulação, sem você precisar se diminuir.</em></p>
-    </div>
-  </div>
-
-  <!-- ── SOCIAL ── -->
-  <div class="section" id="s6">
-    <div class="sp-row">
-      <div class="sp-num">23K</div>
-      <div class="sp-desc"><strong>mulheres</strong> já reconheceram esse padrão e começaram a mudar a dinâmica dos seus relacionamentos</div>
-    </div>
-  </div>
-
-  <!-- ── CTA ── -->
-  <div class="section" id="s7">
-    <div class="alert" style="margin-bottom:28px;text-align:center">
-      Se a posição emocional não mudar,<br>
-      <strong>a resposta masculina continua a mesma.</strong><br><br>
-      <em>Você já sabe como esse ciclo termina.</em>
-    </div>
-    <div class="cta-urgency">⏳ <strong>Acesso disponível agora</strong></div>
     <div class="cta-wrap">
       <div class="cta-glow"></div>
-      <button class="cta-btn" onclick="window.location.href='mulherhipnotica.html'">
-        Quero inverter essa dinâmica →
-      </button>
+      <a href="mulherhipnotica.html" class="cta-btn">
+        Quero sair desse ciclo agora →
+      </a>
     </div>
     <p class="cta-caption">Acesso imediato · Garantia de 30 dias</p>
   </div>
 
-</div><!-- /wrap -->
+</div>
+
 <script>
-// reveal sections on scroll
-const obs = new IntersectionObserver((entries)=>{
+const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('reveal');
-      obs.unobserve(e.target);
-    }
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
   });
 },{threshold:0.08});
-document.querySelectorAll('.section').forEach(s=>obs.observe(s));
-
-// reveal images on scroll
-const imgObs = new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('in'),i*80);
-      imgObs.unobserve(e.target);
-    }
-  });
-},{threshold:0.12});
-document.querySelectorAll('.proof-img[data-reveal]').forEach(img=>imgObs.observe(img));
-
-// first section immediate
-setTimeout(()=>document.getElementById('s0').classList.add('reveal'),80);
+document.querySelectorAll('.s').forEach(s=>obs.observe(s));
+setTimeout(()=>document.getElementById('s0').classList.add('on'),80);
 </script>
 </body>
 </html>
