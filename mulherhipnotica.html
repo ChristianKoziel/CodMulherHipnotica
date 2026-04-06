@@ -238,6 +238,53 @@ body{
 .guarantee h4{font-size:13.5px;font-weight:600;color:rgba(240,193,75,.92);margin-bottom:5px}
 .guarantee p{font-size:12px;color:rgba(255,220,180,.58);font-weight:300;line-height:1.65}
 
+/* ── EXPERT ── */
+.expert-section{background:var(--ink);padding:56px 24px}
+.expert-section .inner{max-width:480px;margin:0 auto}
+.expert-photo-wrap{
+  display:flex;justify-content:center;margin-bottom:20px;
+  position:relative;
+}
+.expert-photo-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,0,63,.22),transparent);
+  pointer-events:none;
+}
+.expert-photo{
+  width:180px;height:180px;
+  border-radius:50%;object-fit:cover;object-position:top;
+  display:block;
+  border:2px solid rgba(200,0,63,.3);
+  box-shadow:0 0 40px rgba(200,0,63,.2),0 12px 40px rgba(0,0,0,.5);
+  position:relative;z-index:1;
+}
+.expert-meta{text-align:center;margin-bottom:20px}
+.expert-name{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:900;color:#fff;letter-spacing:.3px;
+  margin-bottom:4px;
+}
+.expert-role{font-size:12px;color:rgba(255,63,129,.6);font-weight:400;letter-spacing:.3px}
+.expert-divider{
+  display:flex;align-items:center;gap:10px;margin:16px 0;
+}
+.expert-divider-line{flex:1;height:1px;background:rgba(200,0,63,.15)}
+.expert-divider-icon{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,0,63,.35);white-space:nowrap}
+.expert-body{font-size:14px;font-weight:300;color:rgba(255,220,230,.65);line-height:1.78}
+.expert-body p+p{margin-top:14px}
+.expert-body strong{color:rgba(255,220,230,.92);font-weight:500}
+.expert-body em{color:var(--hot);font-style:normal;font-weight:500}
+.expert-credential{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:14px 16px;
+  margin-top:20px;
+}
+.expert-credential-icon{font-size:18px;flex-shrink:0}
+.expert-credential-text{font-size:12.5px;color:rgba(255,220,230,.5);font-weight:300;line-height:1.5}
+.expert-credential-text strong{color:rgba(255,220,230,.8);font-weight:500}
+
 /* FAQ */
 .faq-section{background:var(--cream);padding:56px 24px}
 .faq-section .inner{max-width:480px;margin:0 auto}
@@ -327,6 +374,38 @@ body{
       <div class="p-num">Passo 04</div>
       <h3>Manter controle emocional mesmo gostando muito</h3>
       <p>Sua estabilidade interna independe do comportamento dele.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERT -->
+<section class="expert-section">
+  <div class="inner">
+    <div class="expert-photo-wrap">
+      <div class="expert-photo-glow"></div>
+      <img
+        src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg"
+        alt="Eliza Maffer"
+        class="expert-photo"
+      >
+    </div>
+    <div class="expert-meta">
+      <div class="expert-name">Eliza Maffer</div>
+      <div class="expert-role">Psicóloga · Especialista em padrões emocionais femininos</div>
+    </div>
+    <div class="expert-divider">
+      <div class="expert-divider-line"></div>
+      <div class="expert-divider-icon">quem mapeou esse padrão</div>
+      <div class="expert-divider-line"></div>
+    </div>
+    <div class="expert-body">
+      <p>Ao longo dos anos, esse padrão apareceu em milhares de relatos: relações que começam intensas — mas perdem definição quando o investimento não se equilibra.</p>
+      <p><strong>O que você viu aqui não é um rótulo.</strong> É um padrão emocional ativo. E padrões podem ser reorganizados — <em>sem jogos, sem manipulação, sem você precisar se diminuir.</em></p>
+      <p>O Protocolo de Inversão de Investimento Masculino™ foi desenvolvido a partir de centenas de casos reais, mapeando exatamente <strong>o ponto em que a dinâmica começa a se inverter.</strong></p>
+    </div>
+    <div class="expert-credential">
+      <div class="expert-credential-icon">🎓</div>
+      <div class="expert-credential-text"><strong>+23.000 mulheres</strong> já reconheceram esse padrão e reorganizaram a dinâmica dos seus relacionamentos com o método</div>
     </div>
   </div>
 </section>
