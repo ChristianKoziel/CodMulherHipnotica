@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Seu Diagnóstico</title>
+<title>Seu Diagnóstico — Resultado</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -56,8 +56,8 @@ body::before{
 /* ── TYPE ── */
 .title{
   font-family:'Playfair Display',serif;
-  font-size:clamp(32px,8vw,46px);
-  font-weight:900;line-height:1.05;color:#fff;
+  font-size:clamp(30px,7.5vw,44px);
+  font-weight:900;line-height:1.06;color:#fff;
   margin-bottom:14px;
 }
 .title em{font-style:italic;color:var(--hot)}
@@ -111,6 +111,51 @@ body::before{
 .bullet-text{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.6}
 .bullet-text strong{color:var(--text);font-weight:500}
 
+/* ── EXPERT CARD ── */
+.expert-block{
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,63,129,.14);
+  border-radius:22px;padding:26px 22px;
+  margin-top:6px;
+  display:flex;flex-direction:column;
+  align-items:center;gap:16px;
+}
+.expert-photo{
+  width:96px;height:96px;border-radius:50%;
+  object-fit:cover;object-position:top;
+  border:1.5px solid rgba(200,0,63,.3);
+  box-shadow:0 0 28px rgba(200,0,63,.2),0 8px 24px rgba(0,0,0,.5);
+  display:block;flex-shrink:0;
+}
+.expert-name{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;color:#fff;
+  text-align:center;margin-bottom:2px;
+}
+.expert-role{
+  font-size:11px;color:rgba(255,63,129,.5);
+  font-weight:400;letter-spacing:.5px;text-align:center;
+}
+.expert-speech{
+  font-size:14px;font-weight:300;color:var(--soft);
+  line-height:1.74;text-align:center;
+}
+.expert-speech strong{color:var(--text);font-weight:500}
+.expert-speech em{font-style:italic;color:var(--hot)}
+.expert-stat{
+  display:flex;align-items:center;gap:10px;width:100%;
+  background:rgba(255,63,129,.06);
+  border:1px solid rgba(255,63,129,.12);
+  border-radius:12px;padding:12px 14px;
+}
+.expert-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:900;color:var(--hot);
+  line-height:1;flex-shrink:0;
+}
+.expert-stat-desc{font-size:12px;font-weight:300;color:var(--soft);line-height:1.5}
+.expert-stat-desc strong{color:var(--text);font-weight:500}
+
 /* ── PHASES ── */
 .phases{display:flex;flex-direction:column;gap:1px}
 .phase{
@@ -130,8 +175,7 @@ body::before{
 
 /* ── CLIMAX ── */
 .climax{
-  text-align:center;
-  padding:28px 20px;
+  text-align:center;padding:28px 20px;
   background:rgba(184,0,58,.06);
   border:1px solid rgba(184,0,58,.18);
   border-radius:20px;
@@ -140,12 +184,27 @@ body::before{
 .climax-title{
   font-family:'Playfair Display',serif;
   font-size:clamp(22px,5.5vw,30px);
-  font-weight:900;color:#fff;line-height:1.15;
-  margin-bottom:12px;
+  font-weight:900;color:#fff;line-height:1.15;margin-bottom:12px;
 }
 .climax-title em{font-style:italic;color:var(--hot)}
 .climax-body{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72}
 .climax-body strong{color:var(--text);font-weight:500}
+
+/* ── OBJEÇÕES ── */
+.obj-grid{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.obj-row{
+  display:flex;align-items:flex-start;gap:11px;
+  background:rgba(255,255,255,.018);border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;padding:13px 14px;
+}
+.obj-check{
+  width:19px;height:19px;border-radius:50%;flex-shrink:0;margin-top:1px;
+  background:rgba(255,63,129,.15);border:1px solid rgba(255,63,129,.3);
+  display:flex;align-items:center;justify-content:center;
+}
+.obj-check::after{content:'✓';font-size:9px;color:var(--hot);font-weight:700}
+.obj-text{font-size:13px;font-weight:300;color:var(--soft);line-height:1.55}
+.obj-text strong{color:var(--text);font-weight:500}
 
 /* ── CTA ── */
 .cta-section{padding-top:36px!important}
@@ -153,20 +212,17 @@ body::before{
 .cta-glow{
   position:absolute;inset:-4px;border-radius:100px;
   background:linear-gradient(135deg,var(--rose),var(--hot));
-  filter:blur(16px);opacity:.4;
-  animation:glp 2s infinite;
+  filter:blur(16px);opacity:.4;animation:glp 2s infinite;
 }
 @keyframes glp{0%,100%{opacity:.3}50%{opacity:.55}}
 .cta-btn{
   position:relative;z-index:1;display:block;width:100%;
   background:linear-gradient(135deg,var(--rose),var(--hot));
-  border:none;border-radius:100px;
-  padding:21px 32px;
+  border:none;border-radius:100px;padding:21px 32px;
   font-family:'DM Sans',sans-serif;
   font-size:15px;font-weight:700;
   color:#fff;cursor:pointer;text-align:center;
-  letter-spacing:.2px;overflow:hidden;line-height:1.3;
-  text-decoration:none;
+  letter-spacing:.2px;overflow:hidden;line-height:1.3;text-decoration:none;
 }
 .cta-btn::after{
   content:'';position:absolute;inset:0;
@@ -241,8 +297,98 @@ body::before{
     </div>
   </div>
 
-  <!-- ④ REVELAÇÃO -->
+  <!-- ④ EXPERT — APRESENTAÇÃO HUMANA E AUTORIDADE -->
   <div class="s" id="s3">
+    <span class="lbl">Quem identificou esse padrão</span>
+    <div class="title" style="font-size:clamp(24px,6vw,34px)">
+      Antes de continuar,<br>preciso te <em>apresentar</em><br>alguém.
+    </div>
+
+    <div class="expert-block">
+      <img
+        src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg"
+        alt="Eliza Maffer"
+        class="expert-photo"
+      >
+      <div>
+        <div class="expert-name">Eliza Maffer</div>
+        <div class="expert-role" style="margin-top:3px">Psicóloga · Especialista em padrões emocionais femininos</div>
+      </div>
+      <div class="expert-speech">
+        "Ao longo dos anos, ouvi <strong>o mesmo relato de formas diferentes:</strong><br><br>
+        <em>'Eu amo ele. Faço tudo certo. Mas nada avança. Ele nunca escolhe de verdade.'</em><br><br>
+        Não era falta de qualidade dessas mulheres.<br>
+        Era uma dinâmica invisível — que eu mesma já vivi antes de entender."
+      </div>
+      <div class="expert-stat">
+        <div class="expert-stat-num">23K</div>
+        <div class="expert-stat-desc"><strong>mulheres</strong> já reconheceram esse padrão e reorganizaram a dinâmica dos seus relacionamentos com o método da Eliza</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ── PROVA SOCIAL ── -->
+  <div class="section" id="s4">
+    <span class="sec-label">Resultados reais</span>
+    <div class="title" style="font-size:clamp(28px,7vw,40px)">
+      Elas também estavam<br><em>nesse ciclo</em>
+    </div>
+    <p class="proof-intro">
+      O denominador comum não era o homem.<br>
+      Era o padrão emocional. <strong>Quando a dinâmica mudou, tudo mudou.</strong>
+    </p>
+    <div class="proof-stack">
+      <div class="proof-item">
+        <img src="src/img/provasocial.jpg" alt="" class="proof-img" data-reveal>
+        <div class="proof-cap">Resultado real após aplicar o método</div>
+      </div>
+      <div class="proof-item">
+        <img src="src/img/depoimento111.jpeg" alt="" class="proof-img" data-reveal>
+      </div>
+      <div class="proof-item">
+        <img src="src/img/depoimento222.jpg" alt="" class="proof-img" data-reveal>
+      </div>
+      <div class="proof-item">
+        <img src="src/img/ps2.png" alt="" class="proof-img" data-reveal>
+      </div>
+      <div class="proof-item">
+        <img src="src/img/ps6.png" alt="" class="proof-img" data-reveal>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ EXPERT CONTINUA — O QUE ELA DESCOBRIU -->
+  <div class="s" id="s4">
+    <span class="lbl">O que a Eliza descobriu</span>
+    <div class="title" style="font-size:clamp(24px,6vw,34px)">
+      Não é você sendo<br><em>boa demais.</em><br>É o timing errado.
+    </div>
+    <div class="mirror">
+      <p>
+        Quando você entrega presença e carinho <em>antes</em> de ele se posicionar —<br><br>
+        <strong>você remove a necessidade de ele conquistar.</strong><br><br>
+        Não é crueldade da parte dele. É que ele nunca precisou escolher você de verdade.
+      </p>
+    </div>
+
+    <div class="bullets" style="margin-top:18px">
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">Você sente de verdade — e entrega antes de receber clareza</div>
+      </div>
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">Ele recebe conforto e conexão <strong>sem precisar agir</strong></div>
+      </div>
+      <div class="bullet">
+        <div class="bullet-dot"></div>
+        <div class="bullet-text">A urgência de se posicionar <strong>nunca chega</strong> para ele</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ O MÉTODO — 3 MOVIMENTOS -->
+  <div class="s" id="s5">
     <span class="lbl">O que muda tudo</span>
     <div class="title" style="font-size:clamp(26px,6.5vw,36px)">
       O método atua<br>em <em>3 movimentos</em>
@@ -272,8 +418,36 @@ body::before{
     </div>
   </div>
 
-  <!-- ⑤ DECISÃO → CTA -->
-  <div class="s cta-section" id="s4">
+  <!-- ⑦ REDUÇÃO DE OBJEÇÕES -->
+  <div class="s" id="s6">
+    <span class="lbl">Antes que você pense...</span>
+    <div class="title" style="font-size:clamp(24px,6vw,34px)">
+      Não é difícil.<br>Não é joguinho.<br>É só <em>diferente.</em>
+    </div>
+    <p class="body" style="margin-bottom:4px">O método não pede que você finja ser quem não é.</p>
+
+    <div class="obj-grid">
+      <div class="obj-row">
+        <div class="obj-check"></div>
+        <div class="obj-text"><strong>Sem fingimento</strong> — você continua sendo você</div>
+      </div>
+      <div class="obj-row">
+        <div class="obj-check"></div>
+        <div class="obj-text"><strong>Sem crueldade</strong> — não é sobre se afastar ou ignorar</div>
+      </div>
+      <div class="obj-row">
+        <div class="obj-check"></div>
+        <div class="obj-text"><strong>Mesmo gostando muito</strong> — o método respeita o que você sente</div>
+      </div>
+      <div class="obj-row">
+        <div class="obj-check"></div>
+        <div class="obj-text"><strong>Sem esforço enorme</strong> — são movimentos simples, mas certeiros</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑧ DECISÃO → CTA PARA OFERTA -->
+  <div class="s cta-section" id="s7">
     <div class="climax" style="margin-bottom:28px">
       <div class="climax-title" style="font-size:clamp(18px,4.5vw,24px)">
         É aqui que tudo muda —<br><em>se você fizer isso agora.</em>
@@ -286,10 +460,10 @@ body::before{
     <div class="cta-wrap">
       <div class="cta-glow"></div>
       <a href="mulherhipnotica.html" class="cta-btn">
-        Quero sair desse ciclo agora →
+        Ver como sair desse ciclo →
       </a>
     </div>
-    <p class="cta-caption">Acesso imediato · Garantia de 30 dias</p>
+    <p class="cta-caption">Sem compromisso · Só informação</p>
   </div>
 
 </div>
