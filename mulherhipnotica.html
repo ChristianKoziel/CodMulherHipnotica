@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1208952827491954'); 
+fbq('track', 'PageView');
+</script>
+<!-- End Facebook Pixel -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código da Mulher Hipnótica</title>
@@ -406,7 +421,9 @@ body{
 
     <div class="cta-wrap">
       <div class="cta-glow"></div>
-      <a href="https://pay.cakto.com.br/3dvduc2_838232" class="cta-main">
+      <a href="https://pay.cakto.com.br/3dvduc2_838232" 
+class="cta-main"
+onclick="fbq('track', 'InitiateCheckout');">
         SIM, QUERO SAIR DESSE CICLO →
       </a>
     </div>
@@ -486,7 +503,9 @@ body{
     <div class="cta2-label">Se você chegou até aqui, você já sabe o que precisa fazer.</div>
     <div class="cta-wrap" style="width:100%">
       <div class="cta-glow"></div>
-      <a href="https://pay.cakto.com.br/3dvduc2_838232" class="cta-main">
+     <a href="https://pay.cakto.com.br/3dvduc2_838232" 
+class="cta-main"
+onclick="fbq('track', 'InitiateCheckout');">
         QUERO MUDAR ISSO AGORA →
       </a>
     </div>
