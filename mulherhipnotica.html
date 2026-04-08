@@ -421,11 +421,11 @@ body{
 
     <div class="cta-wrap">
       <div class="cta-glow"></div>
-      <a href="https://pay.cakto.com.br/3dvduc2_838232" 
+   <a href="https://pay.cakto.com.br/3dvduc2_838232" 
 class="cta-main"
-onclick="fbq('track', 'InitiateCheckout');">
-        SIM, QUERO SAIR DESSE CICLO →
-      </a>
+onclick="fbq('track', 'InitiateCheckout'); setTimeout(() => { window.location.href=this.href }, 150); return false;">
+SIM, QUERO SAIR DESSE CICLO →
+</a>
     </div>
     <p class="cta-caption">Pagamento 100% seguro · Acesso imediato por e-mail</p>
 
