@@ -1,173 +1,345 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MÉTODO OBSESSÃO - TESTE GRÁTIS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --roxo-venenoso: #1E0B26;
-            --preto-macabro: #0C0C0C;
-            --rosa-trauma: #FF3F81;
-            --vermelho-obsessivo: #E5003C;
-            --branco-sujo: #FAF1F4;
-            --champagne: #D8B9C3;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Poppins', 'Bebas Neue', sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(to bottom, var(--roxo-venenoso) 0%, var(--preto-macabro) 100%);
-            -webkit-text-size-adjust: 100%;
-            color: var(--branco-sujo);
-            text-shadow: 0 0 5px rgba(229, 0, 60, 0.3);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Obrigada — Código da Mulher Hipnótica</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1208952827491954');
+fbq('track', 'PageView');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --blush:#8B0038;
+  --rose:#C8004A;
+  --hot:#FF3D72;
+  --deep:#0E0410;
+  --text:#FAF0F4;
+  --soft:rgba(250,240,244,.57);
+  --muted:rgba(250,240,244,.26);
+}
+html,body{min-height:100%;width:100%;overflow-x:hidden}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--deep);
+  color:var(--text);
+  display:flex;justify-content:center;
+  padding:0 0 80px;
+}
+body::before{
+  content:'';position:fixed;top:-130px;left:50%;transform:translateX(-50%);
+  width:680px;height:480px;
+  background:radial-gradient(ellipse,rgba(200,0,74,.13) 0%,transparent 68%);
+  pointer-events:none;z-index:0;
+}
+.wrap{width:100%;max-width:430px;padding:0 21px;position:relative;z-index:1}
 
-        .container {
-            max-width: 100%;
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: rgba(12, 12, 12, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 63, 129, 0.2),
-                        0 0 0 1px rgba(255, 63, 129, 0.3);
-            border: 1px solid var(--rosa-trauma);
-            position: relative;
-            overflow: hidden;
-        }
+.s{padding-top:48px;opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.s.on{opacity:1;transform:translateY(0)}
+.s:first-child{padding-top:36px}
 
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--rosa-trauma), var(--vermelho-obsessivo), var(--roxo-venenoso));
-            z-index: -1;
-            filter: blur(5px);
-            opacity: 0.5;
-        }
+.lbl{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,61,114,.48);font-weight:600;display:block;margin-bottom:10px}
 
-        .question {
-            font-size: clamp(20px, 6vw, 28px);
-            margin-bottom: 30px;
-            line-height: 1.4;
-            padding: 0 10px;
-            font-weight: bold;
-            color: var(--rosa-trauma);
-            text-transform: uppercase;
-        }
+/* CONFIRMAÇÃO */
+.confirm-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.check-ring{
+  width:68px;height:68px;border-radius:50%;
+  background:rgba(200,0,74,.1);border:1.5px solid rgba(200,0,74,.28);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;position:relative;
+}
+.check-ring::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(200,0,74,.1)}
+.check-ico{font-size:26px;color:#fff;font-weight:700;font-family:'DM Sans',sans-serif}
+.confirm-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,8.5vw,48px);font-weight:700;color:#fff;line-height:1.06;margin-bottom:12px}
+.confirm-title em{font-style:italic;color:var(--hot)}
+.confirm-sub{font-size:14.5px;font-weight:300;color:var(--soft);line-height:1.72;max-width:330px}
 
-        .highlight {
-            color: var(--vermelho-obsessivo);
-            font-weight: bold;
-            display: inline-block;
-            text-decoration: underline;
-        }
+/* ACESSO */
+.access-box{
+  background:rgba(200,0,74,.07);border:1px solid rgba(200,0,74,.2);
+  border-radius:16px;padding:18px 17px;
+  display:flex;align-items:flex-start;gap:13px;
+}
+.access-ico{
+  width:38px;height:38px;flex-shrink:0;
+  background:rgba(200,0,74,.12);border:1px solid rgba(200,0,74,.2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;
+}
+.access-box h4{font-size:13px;font-weight:600;color:rgba(255,180,200,.88);margin-bottom:5px}
+.access-box p{font-size:12.5px;font-weight:300;color:var(--soft);line-height:1.65}
+.access-box p strong{color:var(--text);font-weight:500}
 
-        .button-container {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
+/* AMIGA */
+.friend-card{
+  background:rgba(255,255,255,.026);border:1px solid rgba(255,61,114,.13);
+  border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;
+}
+.friend-top{display:flex;align-items:center;gap:12px}
+.friend-av{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(139,0,56,.5),rgba(255,61,114,.28));
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;border:1.5px solid rgba(200,0,74,.22);
+}
+.friend-name{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:2px}
+.friend-role{font-size:11px;font-weight:300;color:rgba(255,200,220,.4);letter-spacing:.3px}
+.friend-msg{font-size:14px;font-weight:300;color:var(--soft);line-height:1.74}
+.friend-msg strong{color:var(--text);font-weight:500}
+.friend-msg em{font-style:italic;color:var(--hot)}
 
-        .button {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            margin: 15px 0;
-            border: 2px solid var(--rosa-trauma);
-            border-radius: 12px;
-            background-color: rgba(30, 11, 38, 0.8);
-            color: var(--branco-sujo);
-            font-size: clamp(16px, 4.5vw, 18px);
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(255, 63, 129, 0.2);
-        }
+/* MIRROR */
+.mirror{
+  background:rgba(139,0,56,.08);border:1px solid rgba(139,0,56,.22);
+  border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;
+}
+.mirror::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blush),var(--hot))}
+.mirror p{font-size:14.5px;font-weight:300;color:var(--soft);line-height:1.75}
+.mirror p strong{color:var(--text);font-weight:500}
+.mirror p em{color:var(--hot);font-style:italic}
 
-        .button:hover, .button:active {
-            background: rgba(255, 63, 129, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(229, 0, 60, 0.4);
-            border-color: var(--vermelho-obsessivo);
-        }
-        
-        .button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: 0.5s;
-        }
-        
-        .button:hover::before {
-            left: 100%;
-        }
-        
-        .teaser {
-            text-align: center;
-            margin-top: 25px;
-            font-style: italic;
-            color: var(--champagne);
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        
-        @media (max-width: 350px) {
-            .question {
-                font-size: 18px;
-                margin-bottom: 25px;
-            }
-            .button {
-                padding: 15px;
-                font-size: 15px;
-            }
-        }
-    </style>
+/* UPSELL */
+.upsell{
+  background:rgba(22,5,15,.95);
+  border:1px solid rgba(255,61,114,.2);
+  border-radius:24px;padding:26px 22px;
+  display:flex;flex-direction:column;gap:18px;
+  position:relative;overflow:hidden;
+}
+.upsell::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,61,114,.07),transparent 70%);
+}
+.upsell-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,61,114,.08);border:1px solid rgba(255,61,114,.18);
+  border-radius:100px;padding:5px 14px;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,130,168,.7);font-weight:700;width:fit-content;
+}
+.bdot{width:5px;height:5px;border-radius:50%;background:var(--hot);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.upsell-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6.5vw,36px);font-weight:700;color:#fff;line-height:1.1}
+.upsell-title em{font-style:italic;color:var(--hot)}
+.upsell-hook{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72}
+.upsell-hook strong{color:var(--text);font-weight:500}
+
+.upsell-items{display:flex;flex-direction:column;gap:9px}
+.ui{
+  display:flex;align-items:flex-start;gap:11px;
+  background:rgba(255,255,255,.02);border:1px solid rgba(255,61,114,.08);
+  border-radius:13px;padding:13px 14px;
+}
+.ui-dot{width:5px;height:5px;border-radius:50%;background:var(--hot);flex-shrink:0;margin-top:5px}
+.ui-text{font-size:13px;font-weight:300;color:var(--soft);line-height:1.55}
+.ui-text strong{color:var(--text);font-weight:500}
+
+.upsell-price{text-align:center;padding:4px 0}
+.up-context{font-size:11.5px;font-weight:300;color:rgba(255,200,220,.3);margin-bottom:5px;letter-spacing:.3px}
+.up-strike{display:inline-flex;align-items:center;gap:10px;margin-bottom:6px}
+.up-old{font-size:17px;color:rgba(255,200,220,.2);text-decoration:line-through;font-weight:300}
+.up-arr{font-size:12px;color:rgba(255,200,220,.2)}
+.up-main{
+  font-family:'Cormorant Garamond',serif;
+  font-size:68px;font-weight:700;
+  color:#fff;line-height:.9;display:block;letter-spacing:-1px;
+}
+.up-pref{font-size:26px;vertical-align:super;line-height:1;color:rgba(250,240,244,.7)}
+.up-dec{font-size:30px;vertical-align:super;line-height:1;color:rgba(250,240,244,.7)}
+.up-sub{font-size:11px;color:rgba(255,200,220,.28);margin-top:7px;display:block;letter-spacing:.3px}
+
+.up-cta-wrap{position:relative;margin-bottom:4px}
+.up-cta-glow{
+  position:absolute;inset:-4px;border-radius:100px;
+  background:linear-gradient(135deg,var(--blush),var(--hot));
+  filter:blur(16px);opacity:.45;animation:glp 2s infinite;
+}
+@keyframes glp{0%,100%{opacity:.3}50%{opacity:.55}}
+.up-cta-btn{
+  position:relative;z-index:1;display:block;width:100%;
+  background:linear-gradient(135deg,var(--blush),var(--hot));
+  border:none;border-radius:100px;padding:21px 28px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;
+  color:#fff;cursor:pointer;text-align:center;
+  letter-spacing:.2px;overflow:hidden;line-height:1.3;text-decoration:none;
+}
+.up-cta-btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);
+  transform:translateX(-100%);animation:shim 2.2s infinite;
+}
+@keyframes shim{to{transform:translateX(100%)}}
+.up-cta-caption{text-align:center;font-size:11px;color:var(--muted);margin-top:9px}
+.up-skip{
+  text-align:center;font-size:11.5px;color:var(--muted);
+  margin-top:8px;cursor:pointer;
+  text-decoration:underline;text-underline-offset:3px;
+  display:block;
+}
+
+/* FECHAMENTO */
+.close-box{
+  background:rgba(139,0,56,.06);border:1px solid rgba(139,0,56,.18);
+  border-radius:20px;padding:26px 20px;text-align:center;
+}
+.close-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,5.5vw,30px);font-weight:700;color:#fff;line-height:1.12;margin-bottom:11px}
+.close-title em{font-style:italic;color:var(--hot)}
+.close-body{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72}
+.close-body strong{color:var(--text);font-weight:500}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="question">
-            E SE EXISTISSE UM CÓDIGO SECRETO QUE FIZESSE UM HOMEM SENTIR <span class="highlight">SAUDADE, DESEJO E CULPA POR VOCÊ…</span> <span class="highlight">TUDO AO MESMO TEMPO?</span>
-        </div>
-        
-        <div class="button-container">
-            <a href="quiz17.html" class="button">
-                ME DÊ AGORA. NEM QUERO SABER COMO FUNCIONA.
-            </a>
-            
-            <a href="quiz17.html" class="button">
-                PRECISO ENTENDER COMO ISSO FUNCIONA. AGORA.
-            </a>
-        </div>
+<div class="wrap">
 
-        <div class="teaser">
-            CUIDADO… DEPOIS DE APRENDER ISTO, NENHUM HOMEM TE ESQUECERÁ NOVAMENTE.
-        </div>
+  <!-- ① CONFIRMAÇÃO -->
+  <div class="s on" id="s0">
+    <div class="confirm-wrap">
+      <div class="check-ring"><div class="check-ico">✓</div></div>
+      <div class="confirm-title">Compra confirmada.<br><em>Bem-vinda ao outro lado.</em></div>
+      <p class="confirm-sub">Seu acesso ao Código da Mulher Hipnótica foi enviado agora. Verifique sua caixa de entrada — e o spam por garantia.</p>
     </div>
+  </div>
+
+  <!-- ② ACESSO -->
+  <div class="s" id="s1">
+    <div class="access-box">
+      <div class="access-ico">📩</div>
+      <div>
+        <h4>Acesso enviado agora</h4>
+        <p>Procure por <strong>"Código da Mulher Hipnótica"</strong> na caixa de entrada. Tudo digital, direto no e-mail.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ VOZ DE AMIGA -->
+  <div class="s" id="s2">
+    <div class="friend-card">
+      <div class="friend-top">
+        <div class="friend-av">💬</div>
+        <div>
+          <div class="friend-name">Uma palavra antes de você ir</div>
+          <div class="friend-role">aqui entre nós, sem julgamento nenhum</div>
+        </div>
+      </div>
+      <div class="friend-msg">
+        Você acabou de fazer algo que a maioria das mulheres nunca faz:<br><br>
+        <strong>colocou a si mesma em primeiro lugar.</strong><br><br>
+        O método que você comprou vai te ajudar a reorganizar a dinâmica com ele. Ele vai começar a te ver diferente. Vai sentir necessidade de te escolher.<br><br>
+        Mas cá entre nós? <em>Existe uma peça que a maioria ignora — e que sela o negócio de vez.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ GANCHO DE TRANSIÇÃO -->
+  <div class="s" id="s3">
+    <span class="lbl">A peça que completa tudo</span>
+    <div class="mirror">
+      <p>
+        Você vai aprender a fazer ele te querer emocionalmente.<br>
+        A se posicionar. A criar urgência nele.<br><br>
+        <strong>Mas quando ele finalmente estiver completamente seu —</strong><br>
+        quando ele aparecer na sua porta de coração aberto —<br><br>
+        <em>o que acontece dentro do quarto é o que vai gravar você na memória dele para sempre.</em><br><br>
+        É aí que se decide se você é a mulher que ele vai querer para sempre ou só mais uma passagem.
+      </p>
+    </div>
+  </div>
+
+  <!-- ⑤ UPSELL -->
+  <div class="s" id="s4">
+    <div class="upsell">
+      <div class="upsell-badge"><div class="bdot"></div>Complemento exclusivo · só agora</div>
+
+      <div class="upsell-title">
+        Código da Mulher<br><em>Inesquecível</em>
+      </div>
+
+      <div class="upsell-hook">
+        O módulo que transforma o que você aprendeu em algo que ele <strong>não consegue tirar da cabeça.</strong><br><br>
+        Posicionamento emocional te coloca na mente dele.<br>
+        <strong>O que você vai descobrir agora te coloca no corpo — e na memória — dele.</strong>
+      </div>
+
+      <div class="upsell-items">
+        <div class="ui">
+          <div class="ui-dot"></div>
+          <div class="ui-text"><strong>Oral que cria vício.</strong> O que nenhuma outra faz — e ele sente isso na hora, mesmo que nunca diga em voz alta.</div>
+        </div>
+        <div class="ui">
+          <div class="ui-dot"></div>
+          <div class="ui-text"><strong>As posições que maximizam seu prazer</strong> e deixam ele completamente entregue ao mesmo tempo. Você no controle — sem abrir mão de nada.</div>
+        </div>
+        <div class="ui">
+          <div class="ui-dot"></div>
+          <div class="ui-text"><strong>Como alternar entre liderar e se entregar</strong> dentro do quarto — essa tensão é o que cria uma intensidade que ele nunca viveu com mais ninguém.</div>
+        </div>
+        <div class="ui">
+          <div class="ui-dot"></div>
+          <div class="ui-text"><strong>O que fazer depois do sexo</strong> que faz ele querer ficar, querer voltar e — com o tempo — querer só você.</div>
+        </div>
+        <div class="ui">
+          <div class="ui-dot"></div>
+          <div class="ui-text"><strong>Receber prazer sem culpa.</strong> Mulher que sabe o que quer no quarto carrega uma energia diferente. Ele sente antes de qualquer técnica.</div>
+        </div>
+      </div>
+
+      <div class="upsell-price">
+        <div class="up-context">acesso imediato · sem assinatura</div>
+        <div class="up-strike">
+          <span class="up-old">R$ 67,00</span>
+          <span class="up-arr">→</span>
+        </div>
+        <span class="up-main"><span class="up-pref">R$</span> 27<span class="up-dec">,00</span></span>
+        <span class="up-sub">pagamento único · direto no seu e-mail</span>
+      </div>
+
+      <div class="up-cta-wrap">
+        <div class="up-cta-glow"></div>
+        <a href="https://pay.sunize.com.br/YqtrDyqu"
+           class="up-cta-btn"
+           onclick="fbq('track', 'AddToCart');">
+          SIM, QUERO SER INESQUECÍVEL →
+        </a>
+      </div>
+      <div style="font-size:11px;opacity:.6;text-align:center;margin-top:6px;">🔥 Disponível apenas nesta página</div>
+      <p class="up-cta-caption">Compra segura · Acesso imediato · Privacidade garantida</p>
+      <span class="up-skip" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">
+        Não, só quero o que já comprei
+      </span>
+    </div>
+  </div>
+
+  <!-- ⑥ FECHAMENTO -->
+  <div class="s" id="s5">
+    <div class="close-box">
+      <div class="close-title">Vai com calma.<br><em>Você já deu o passo.</em></div>
+      <p class="close-body">
+        Leia. Processe. Aplique no seu ritmo.<br><br>
+        <strong>A mudança começa quando você decide que merece mais.</strong><br>
+        Você acabou de tomar essa decisão.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.s').forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>
