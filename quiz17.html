@@ -25,330 +25,133 @@ body{
   padding:0 0 80px;
   position:relative;
 }
-
-/* GRAIN */
 body::after{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events:none;z-index:999;opacity:.5;
 }
-
-/* AMBIENT */
 .amb1{position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(200,0,63,.14) 0%,transparent 65%);pointer-events:none;z-index:0;}
 .amb2{position:fixed;bottom:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(255,45,107,.06) 0%,transparent 65%);pointer-events:none;z-index:0;}
-
 .wrap{width:100%;max-width:440px;padding:0 20px;position:relative;z-index:1}
 
 /* REVEAL */
-.s{
-  padding-top:56px;
-  opacity:0;transform:translateY(24px);
-  transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);
-}
+.s{padding-top:56px;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
 .s.on{opacity:1;transform:translateY(0)}
 .s:first-child{padding-top:44px}
 
-/* ── HERO DIAGNÓSTICO ── */
-.hero-diag{
-  padding:44px 0 0;
-  display:flex;flex-direction:column;gap:0;
-}
-.diag-alert{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:20px;
-}
-.alert-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:var(--hot);
-  box-shadow:0 0 12px rgba(255,45,107,.9);
-  animation:alertPulse 1s infinite;
-  flex-shrink:0;
-}
+/* DIVISOR */
+.bridge{display:flex;align-items:center;gap:12px;padding:32px 0 0;opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.bridge.on{opacity:1;transform:translateY(0)}
+.bline{flex:1;height:1px;background:rgba(200,0,63,.12)}
+.btxt{font-size:11px;font-weight:300;color:rgba(255,45,107,.3);white-space:nowrap;letter-spacing:.5px}
+
+/* MICRO GANCHO */
+.micro-hook{text-align:center;padding:32px 0 0}
+.hook-line{font-size:13px;font-weight:300;color:rgba(255,180,200,.45);letter-spacing:.3px;line-height:1.7}
+.hook-line strong{color:rgba(255,180,200,.8);font-weight:500}
+
+/* HERO */
+.diag-alert{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.alert-dot{width:8px;height:8px;border-radius:50%;background:var(--hot);box-shadow:0 0 12px rgba(255,45,107,.9);animation:alertPulse 1s infinite;flex-shrink:0}
 @keyframes alertPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
 .alert-txt{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,45,107,.75);font-weight:700}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,8.5vw,52px);font-weight:900;line-height:1.02;color:#fff;margin-bottom:20px;letter-spacing:-.5px}
+.hero-title em{font-style:italic;color:var(--hot);display:block}
 
-.hero-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(36px,8.5vw,52px);
-  font-weight:900;
-  line-height:1.02;
-  color:#fff;
-  margin-bottom:20px;
-  letter-spacing:-.5px;
-}
-.hero-title em{
-  font-style:italic;
-  color:var(--hot);
-  display:block;
-}
-
-.pattern-box{
-  background:linear-gradient(135deg,rgba(200,0,63,.12),rgba(255,45,107,.06));
-  border:1px solid rgba(200,0,63,.3);
-  border-radius:20px;
-  padding:24px 22px;
-  margin-bottom:28px;
-  position:relative;
-  overflow:hidden;
-}
-.pattern-box::before{
-  content:'';
-  position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--rose),var(--hot),transparent);
-}
+.pattern-box{background:linear-gradient(135deg,rgba(200,0,63,.12),rgba(255,45,107,.06));border:1px solid rgba(200,0,63,.3);border-radius:20px;padding:24px 22px;position:relative;overflow:hidden}
+.pattern-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--hot),transparent)}
 .pb-label{font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,45,107,.5);font-weight:700;margin-bottom:12px}
-.pb-name{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(20px,5vw,26px);
-  font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;
-}
+.pb-name{font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,26px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px}
 .pb-name em{font-style:italic;color:var(--hot)}
 .pb-desc{font-size:14px;font-weight:300;color:var(--soft);line-height:1.7}
 .pb-desc strong{color:#fff;font-weight:600}
 
-/* ── VERDADE BRUTAL ── */
+/* LABELS */
 .lbl{display:block;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(200,0,63,.45);font-weight:700;margin-bottom:14px}
-
-.brutal-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(28px,7vw,40px);
-  font-weight:900;line-height:1.07;color:#fff;margin-bottom:20px;
-}
+.brutal-title{font-family:'Playfair Display',serif;font-size:clamp(28px,7vw,40px);font-weight:900;line-height:1.07;color:#fff;margin-bottom:20px}
 .brutal-title em{font-style:italic;color:var(--hot)}
-
-.stark{
-  font-size:15px;font-weight:300;color:var(--soft);line-height:1.8;margin-bottom:18px;
-}
+.stark{font-size:15px;font-weight:300;color:var(--soft);line-height:1.8;margin-bottom:18px}
 .stark strong{color:#fff;font-weight:600}
-.stark em{color:var(--hot);font-style:normal;font-weight:600}
 
-/* VERDADE CARD */
-.truth-card{
-  background:#0a0510;
-  border:1px solid rgba(200,0,63,.25);
-  border-radius:18px;padding:22px 20px;
-  position:relative;overflow:hidden;
-  margin-bottom:0;
-}
-.truth-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;
-  width:3px;
-  background:linear-gradient(to bottom,var(--rose),var(--hot));
-}
-.truth-card p{
-  font-size:15px;font-weight:400;color:rgba(255,220,230,.85);
-  line-height:1.75;
-  font-family:'Playfair Display',serif;
-  font-style:italic;
-}
-.truth-card p strong{
-  font-style:normal;
-  color:#fff;font-weight:700;
-  font-family:'DM Sans',sans-serif;
-  font-size:14.5px;
-}
+/* TRUTH CARD */
+.truth-card{background:#0a0510;border:1px solid rgba(200,0,63,.25);border-radius:18px;padding:22px 20px;position:relative;overflow:hidden}
+.truth-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--rose),var(--hot))}
+.truth-card p{font-size:15px;font-weight:400;color:rgba(255,220,230,.85);line-height:1.75;font-family:'Playfair Display',serif;font-style:italic}
+.truth-card p strong{font-style:normal;color:#fff;font-weight:700;font-family:'DM Sans',sans-serif;font-size:14.5px}
 
-/* ── CICLO ── */
+/* CICLO */
 .cycle-list{display:flex;flex-direction:column;gap:2px;margin-top:4px}
-.cycle-item{
-  display:flex;align-items:flex-start;gap:14px;
-  background:rgba(255,255,255,.02);
-  border:1px solid rgba(255,45,107,.08);
-  border-radius:14px;padding:16px 18px;
-  position:relative;overflow:hidden;
-}
-.cycle-item::before{
-  content:'';
-  position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:rgba(255,45,107,.2);
-}
-.ci-num{
-  font-family:'Playfair Display',serif;
-  font-size:28px;color:rgba(255,45,107,.12);
-  line-height:1;flex-shrink:0;margin-top:-2px;font-weight:900;
-}
+.cycle-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,45,107,.08);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}
+.cycle-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(255,45,107,.2)}
+.ci-num{font-family:'Playfair Display',serif;font-size:28px;color:rgba(255,45,107,.12);line-height:1;flex-shrink:0;margin-top:-2px;font-weight:900}
 .ci-text{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.6}
 .ci-text strong{color:#fff;font-weight:600}
 
-/* ── EXPERT ── */
-.expert-wrap{
-  background:#06030d;
-  border:1px solid rgba(255,45,107,.12);
-  border-radius:22px;padding:28px 22px;
-  display:flex;flex-direction:column;align-items:center;gap:18px;
-}
-.expert-img{
-  width:100px;height:100px;border-radius:50%;
-  object-fit:cover;object-position:top;
-  border:2px solid rgba(200,0,63,.4);
-  box-shadow:0 0 32px rgba(200,0,63,.25),0 12px 32px rgba(0,0,0,.7);
-  display:block;
-}
-.expert-name{
-  font-family:'Playfair Display',serif;
-  font-size:20px;font-weight:700;color:#fff;text-align:center;
-}
-.expert-role{font-size:11px;color:rgba(255,45,107,.5);font-weight:400;letter-spacing:.5px;text-align:center;margin-top:3px}
-.expert-fala{
-  font-size:14px;font-weight:300;color:var(--soft);
-  line-height:1.75;text-align:center;
-}
-.expert-fala em{font-style:italic;color:rgba(255,180,200,.8)}
-.expert-fala strong{color:#fff;font-weight:600}
-.expert-num{
-  display:flex;align-items:center;gap:12px;width:100%;
-  background:rgba(200,0,63,.07);border:1px solid rgba(200,0,63,.15);
-  border-radius:12px;padding:14px 16px;
-}
-.en-num{
-  font-family:'Playfair Display',serif;
-  font-size:32px;font-weight:900;color:var(--hot);line-height:1;flex-shrink:0;
-}
-.en-desc{font-size:12px;font-weight:300;color:var(--soft);line-height:1.5}
-.en-desc strong{color:#fff;font-weight:600}
-
-/* ── PROVA SOCIAL ── */
-.proof-intro{font-size:14.5px;font-weight:300;color:var(--soft);line-height:1.7;margin-bottom:20px}
-.proof-intro strong{color:#fff;font-weight:600}
+/* PROVA */
+.proof-setup{background:rgba(255,45,107,.04);border:1px solid rgba(255,45,107,.1);border-radius:14px;padding:16px 18px;margin-bottom:20px}
+.proof-setup p{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.65;font-style:italic}
+.proof-setup p strong{color:#fff;font-weight:600;font-style:normal}
 .proof-stack{display:flex;flex-direction:column;gap:12px}
 .proof-item{width:100%}
 .proof-img{width:100%;border-radius:14px;display:block;border:1px solid rgba(255,255,255,.07)}
 .proof-cap{font-size:11px;color:rgba(255,255,255,.25);margin-top:6px;text-align:center}
 
-/* ── MÉTODO ── */
-.method-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(26px,6.5vw,36px);
-  font-weight:900;line-height:1.07;color:#fff;margin-bottom:24px;
-}
-.method-title em{font-style:italic;color:var(--hot)}
+/* EXPERT */
+.expert-wrap{background:#06030d;border:1px solid rgba(255,45,107,.12);border-radius:22px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.expert-img{width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(200,0,63,.4);box-shadow:0 0 32px rgba(200,0,63,.25),0 12px 32px rgba(0,0,0,.7);display:block}
+.expert-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;text-align:center}
+.expert-role{font-size:11px;color:rgba(255,45,107,.5);font-weight:400;letter-spacing:.5px;text-align:center;margin-top:3px}
+.expert-fala{font-size:14px;font-weight:300;color:var(--soft);line-height:1.75;text-align:center}
+.expert-fala em{font-style:italic;color:rgba(255,180,200,.8)}
+.expert-fala strong{color:#fff;font-weight:600}
+.expert-num{display:flex;align-items:center;gap:12px;width:100%;background:rgba(200,0,63,.07);border:1px solid rgba(200,0,63,.15);border-radius:12px;padding:14px 16px}
+.en-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--hot);line-height:1;flex-shrink:0}
+.en-desc{font-size:12px;font-weight:300;color:var(--soft);line-height:1.5}
+.en-desc strong{color:#fff;font-weight:600}
 
+/* MÉTODO */
+.method-title{font-family:'Playfair Display',serif;font-size:clamp(26px,6.5vw,36px);font-weight:900;line-height:1.07;color:#fff;margin-bottom:24px}
+.method-title em{font-style:italic;color:var(--hot)}
 .steps{display:flex;flex-direction:column;gap:2px}
-.step{
-  background:rgba(255,255,255,.02);
-  border:1px solid rgba(200,0,63,.1);
-  padding:18px 20px;
-  display:flex;align-items:flex-start;gap:16px;
-}
+.step{background:rgba(255,255,255,.02);border:1px solid rgba(200,0,63,.1);padding:18px 20px;display:flex;align-items:flex-start;gap:16px}
 .step:first-child{border-radius:16px 16px 3px 3px}
 .step:last-child{border-radius:3px 3px 16px 16px}
-.step-n{
-  font-family:'Playfair Display',serif;
-  font-size:38px;color:rgba(200,0,63,.12);
-  line-height:1;flex-shrink:0;margin-top:-3px;font-weight:900;
-}
+.step-n{font-family:'Playfair Display',serif;font-size:38px;color:rgba(200,0,63,.12);line-height:1;flex-shrink:0;margin-top:-3px;font-weight:900}
 .step-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
 .step-desc{font-size:13px;font-weight:300;color:var(--soft);line-height:1.6}
 
-/* ── OBJEÇÕES ── */
+/* OBJEÇÕES */
 .obj-list{display:flex;flex-direction:column;gap:8px;margin-top:16px}
-.obj-row{
-  display:flex;align-items:center;gap:12px;
-  background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);
-  border-radius:12px;padding:14px 16px;
-}
-.obj-check{
-  width:20px;height:20px;border-radius:50%;flex-shrink:0;
-  background:rgba(255,45,107,.12);border:1px solid rgba(255,45,107,.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:9px;color:var(--hot);font-weight:900;
-}
+.obj-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:14px 16px}
+.obj-check{width:20px;height:20px;border-radius:50%;flex-shrink:0;background:rgba(255,45,107,.12);border:1px solid rgba(255,45,107,.3);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--hot);font-weight:900}
 .obj-text{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.5}
 .obj-text strong{color:#fff;font-weight:600}
 
-/* ── URGÊNCIA FINAL ── */
-.urgency-block{
-  background:linear-gradient(135deg,rgba(200,0,63,.15),rgba(255,45,107,.08));
-  border:1px solid rgba(200,0,63,.35);
-  border-radius:22px;padding:28px 22px;
-  text-align:center;
-  position:relative;overflow:hidden;
-}
-.urgency-block::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--rose),var(--hot),transparent);
-}
+/* URGÊNCIA */
+.urgency-block{background:linear-gradient(135deg,rgba(200,0,63,.15),rgba(255,45,107,.08));border:1px solid rgba(200,0,63,.35);border-radius:22px;padding:28px 22px;text-align:center;position:relative;overflow:hidden}
+.urgency-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--hot),transparent)}
 .urg-emoji{font-size:40px;margin-bottom:16px}
-.urg-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(22px,5.5vw,30px);
-  font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;
-}
+.urg-title{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,30px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px}
 .urg-title em{font-style:italic;color:var(--hot)}
-.urg-body{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72;margin-bottom:0}
+.urg-body{font-size:14px;font-weight:300;color:var(--soft);line-height:1.72}
 .urg-body strong{color:#fff;font-weight:600}
 
-/* ── CTA ── */
+/* CTA */
 .cta-section{padding-top:32px!important}
-.price-reveal{
-  text-align:center;margin-bottom:22px;
-}
-.pr-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,0,63,.5);font-weight:700;margin-bottom:8px}
-.pr-anchor{font-size:13px;color:rgba(255,255,255,.2);text-decoration:line-through;margin-bottom:4px}
-.pr-price{
-  font-family:'Playfair Display',serif;
-  font-size:56px;font-weight:900;color:var(--gold);
-  line-height:.9;letter-spacing:-1px;
-}
-.pr-prefix{font-size:24px;vertical-align:super;line-height:1}
-.pr-dec{font-size:28px;vertical-align:super;line-height:1}
-.pr-sub{font-size:11px;color:rgba(255,255,255,.2);margin-top:8px}
-
-.urgency-bar{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.2);
-  border-radius:10px;padding:12px 16px;margin-bottom:18px;
-  font-size:12.5px;color:rgba(255,180,200,.7);
-}
-.urgency-bar strong{color:var(--hot)}
-
+.cta-setup{text-align:center;margin-bottom:24px}
+.cta-setup-title{font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,26px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:10px}
+.cta-setup-title em{font-style:italic;color:var(--hot)}
+.cta-setup-sub{font-size:13.5px;font-weight:300;color:var(--soft);line-height:1.65}
+.cta-setup-sub strong{color:#fff;font-weight:600}
+.next-hint{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px;font-size:12px;font-weight:300;color:rgba(255,180,200,.4)}
+.next-hint::before,.next-hint::after{content:'';flex:1;height:1px;background:rgba(200,0,63,.1)}
 .cta-wrap{position:relative;margin-bottom:10px}
-.cta-glow{
-  position:absolute;inset:-6px;border-radius:100px;
-  background:linear-gradient(135deg,var(--rose),var(--hot));
-  filter:blur(20px);opacity:.5;animation:glp 1.8s infinite;
-}
+.cta-glow{position:absolute;inset:-6px;border-radius:100px;background:linear-gradient(135deg,var(--rose),var(--hot));filter:blur(20px);opacity:.5;animation:glp 1.8s infinite}
 @keyframes glp{0%,100%{opacity:.35}50%{opacity:.65}}
-.cta-btn{
-  position:relative;z-index:1;display:block;width:100%;
-  background:linear-gradient(135deg,var(--rose) 0%,var(--hot) 100%);
-  border:none;border-radius:100px;padding:22px 32px;
-  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:800;
-  color:#fff;cursor:pointer;text-align:center;
-  letter-spacing:.3px;overflow:hidden;line-height:1.3;text-decoration:none;
-  text-transform:uppercase;
-}
-.cta-btn::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
-  transform:translateX(-100%);animation:shim 2s infinite;
-}
+.cta-btn{position:relative;z-index:1;display:block;width:100%;background:linear-gradient(135deg,var(--rose) 0%,var(--hot) 100%);border:none;border-radius:100px;padding:22px 32px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:800;color:#fff;cursor:pointer;text-align:center;letter-spacing:.3px;overflow:hidden;line-height:1.3;text-decoration:none;text-transform:uppercase}
+.cta-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shim 2s infinite}
 @keyframes shim{to{transform:translateX(100%)}}
-.cta-caption{text-align:center;font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
-
-.guarantee{
-  display:flex;align-items:flex-start;gap:14px;
-  background:rgba(212,168,67,.05);border:1px solid rgba(212,168,67,.15);
-  border-radius:16px;padding:18px;margin-top:16px;
-}
-.g-icon{font-size:22px;flex-shrink:0;margin-top:1px}
-.g-title{font-size:13px;font-weight:700;color:rgba(212,168,67,.9);margin-bottom:4px}
-.g-desc{font-size:12px;font-weight:300;color:rgba(255,220,180,.45);line-height:1.6}
-
-/* POPUP */
-#popup{
-  position:fixed;bottom:20px;left:16px;z-index:9999;
-  background:rgba(6,2,12,.97);border:1px solid rgba(200,0,63,.22);
-  border-radius:100px;padding:10px 18px 10px 12px;
-  display:flex;align-items:center;gap:9px;
-  opacity:0;transform:translateY(16px);
-  transition:all .4s cubic-bezier(.34,1.56,.64,1);
-  box-shadow:0 16px 50px rgba(0,0,0,.6);max-width:300px;
-}
-#popup.show{opacity:1;transform:translateY(0)}
-.pl-dot{width:6px;height:6px;border-radius:50%;background:#00E57B;animation:alertPulse 1.4s infinite;flex-shrink:0}
-.pl-text{font-size:12px;color:rgba(255,220,230,.7);font-weight:300}
-.pl-text strong{color:#fff;font-weight:600}
+.cta-caption{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -356,29 +159,29 @@ body::after{
 <div class="amb2"></div>
 <div class="wrap">
 
-  <!-- ① DIAGNÓSTICO HERO -->
-  <div class="s on" id="s0">
-    <div class="hero-diag">
-      <div class="diag-alert">
-        <div class="alert-dot"></div>
-        <span class="alert-txt">Diagnóstico completo · padrão identificado</span>
-      </div>
-      <h1 class="hero-title">
-        Encontramos<br>
-        <em>o que trava você.</em>
-      </h1>
-      <p class="stark">Com base nas suas respostas, o que está acontecendo <strong>não é azar, não é falta de amor, não é você sendo boa demais.</strong> É um padrão emocional específico — e ele tem solução.</p>
-      <div class="pattern-box">
-        <div class="pb-label">Padrão detectado</div>
-        <div class="pb-name">Investimento<br><em>antes do retorno</em></div>
-        <div class="pb-desc">
-          Você entrega presença, carinho e esforço antes de ele se posicionar. Sem perceber, <strong>você remove a necessidade dele conquistar você de verdade.</strong> E o ciclo se repete.
-        </div>
-      </div>
+  <!-- MICRO GANCHO -->
+  <div class="micro-hook s on" id="s-hook">
+    <p class="hook-line">Suas respostas revelaram algo importante.<br><strong>Leia com atenção — isso explica tudo.</strong></p>
+  </div>
+
+  <!-- ① DIAGNÓSTICO -->
+  <div class="s" id="s0">
+    <div class="diag-alert">
+      <div class="alert-dot"></div>
+      <span class="alert-txt">Diagnóstico completo · padrão identificado</span>
+    </div>
+    <h1 class="hero-title">Encontramos<br><em>o que trava você.</em></h1>
+    <p class="stark">Com base nas suas respostas, o que está acontecendo <strong>não é azar, não é falta de amor, não é você sendo boa demais.</strong> É um padrão emocional específico — e ele tem solução.</p>
+    <div class="pattern-box">
+      <div class="pb-label">Padrão detectado</div>
+      <div class="pb-name">Investimento<br><em>antes do retorno</em></div>
+      <div class="pb-desc">Você entrega presença, carinho e esforço antes de ele se posicionar. Sem perceber, <strong>você remove a necessidade dele conquistar você de verdade.</strong> E o ciclo se repete.</div>
     </div>
   </div>
 
-  <!-- ② A VERDADE QUE NINGUÉM TE FALOU -->
+  <div class="bridge" id="b1"><div class="bline"></div><span class="btxt">por que acontece</span><div class="bline"></div></div>
+
+  <!-- ② VERDADE -->
   <div class="s" id="s1">
     <span class="lbl">A verdade que dói</span>
     <h2 class="brutal-title">Enquanto você espera,<br><em>ele não sente falta.</em></h2>
@@ -388,33 +191,43 @@ body::after{
     </div>
   </div>
 
-  <!-- ③ O CICLO -->
+  <div class="bridge" id="b2"><div class="bline"></div><span class="btxt">o ciclo invisível</span><div class="bline"></div></div>
+
+  <!-- ③ CICLO -->
   <div class="s" id="s2">
     <span class="lbl">Por que sempre se repete</span>
     <h2 class="brutal-title">Não é o homem<br><em>errado.</em> É o padrão.</h2>
     <p class="stark" style="margin-bottom:20px">Você já viveu isso antes. <strong>O rosto muda. O final não.</strong> Isso prova que o problema não está nele.</p>
     <div class="cycle-list">
-      <div class="cycle-item">
-        <div class="ci-num">1</div>
-        <div class="ci-text">Você sente — e entrega tudo antes de ter clareza sobre o que ele quer</div>
-      </div>
-      <div class="cycle-item">
-        <div class="ci-num">2</div>
-        <div class="ci-text">Ele recebe conforto e conexão <strong>sem precisar conquistar</strong></div>
-      </div>
-      <div class="cycle-item">
-        <div class="ci-num">3</div>
-        <div class="ci-text">A urgência de se posicionar <strong>nunca nasce</strong> — porque não precisa</div>
-      </div>
-      <div class="cycle-item">
-        <div class="ci-num">4</div>
-        <div class="ci-text">Você fica esperando uma escolha que <strong>ele não tem motivo para fazer</strong></div>
-      </div>
+      <div class="cycle-item"><div class="ci-num">1</div><div class="ci-text">Você sente — e entrega tudo antes de ter clareza sobre o que ele quer</div></div>
+      <div class="cycle-item"><div class="ci-num">2</div><div class="ci-text">Ele recebe conforto e conexão <strong>sem precisar conquistar</strong></div></div>
+      <div class="cycle-item"><div class="ci-num">3</div><div class="ci-text">A urgência de se posicionar <strong>nunca nasce</strong> — porque não precisa</div></div>
+      <div class="cycle-item"><div class="ci-num">4</div><div class="ci-text">Você fica esperando uma escolha que <strong>ele não tem motivo para fazer</strong></div></div>
     </div>
   </div>
 
-  <!-- ④ EXPERT -->
+  <div class="bridge" id="b3"><div class="bline"></div><span class="btxt">quem já saiu desse ciclo</span><div class="bline"></div></div>
+
+  <!-- ④ PROVA SOCIAL -->
   <div class="s" id="s3">
+    <span class="lbl">Resultados reais</span>
+    <h2 class="brutal-title">Elas também estavam<br><em>nesse ciclo.</em></h2>
+    <div class="proof-setup">
+      <p>Veja o que mudou quando elas <strong>pararam de esperar e mudaram a dinâmica.</strong> O denominador comum não era o homem — era o padrão.</p>
+    </div>
+    <div class="proof-stack">
+      <div class="proof-item"><img src="src/img/provasocial.jpg" alt="" class="proof-img"><div class="proof-cap">Resultado real após aplicar o método</div></div>
+      <div class="proof-item"><img src="src/img/depoimento111.jpeg" alt="" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/depoimento222.jpg" alt="" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/ps2.png" alt="" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/ps6.png" alt="" class="proof-img"></div>
+    </div>
+  </div>
+
+  <div class="bridge" id="b4"><div class="bline"></div><span class="btxt">quem descobriu o método</span><div class="bline"></div></div>
+
+  <!-- ⑤ EXPERT -->
+  <div class="s" id="s4">
     <span class="lbl">Quem quebrou esse código</span>
     <h2 class="brutal-title">Ela viveu isso.<br><em>Depois resolveu.</em></h2>
     <div class="expert-wrap">
@@ -434,51 +247,20 @@ body::after{
     </div>
   </div>
 
-  <!-- ⑤ PROVA SOCIAL -->
-  <div class="s" id="s4">
-    <span class="lbl">Resultados reais</span>
-    <h2 class="brutal-title">Elas também estavam<br><em>nesse ciclo.</em></h2>
-    <p class="proof-intro">O denominador comum não era o homem. Era o padrão. <strong>Quando a dinâmica mudou — tudo mudou.</strong></p>
-    <div class="proof-stack">
-      <div class="proof-item">
-        <img src="src/img/provasocial.jpg" alt="" class="proof-img">
-        <div class="proof-cap">Resultado real após aplicar o método</div>
-      </div>
-      <div class="proof-item"><img src="src/img/depoimento111.jpeg" alt="" class="proof-img"></div>
-      <div class="proof-item"><img src="src/img/depoimento222.jpg" alt="" class="proof-img"></div>
-      <div class="proof-item"><img src="src/img/ps2.png" alt="" class="proof-img"></div>
-      <div class="proof-item"><img src="src/img/ps6.png" alt="" class="proof-img"></div>
-    </div>
-  </div>
+  <div class="bridge" id="b5"><div class="bline"></div><span class="btxt">como funciona</span><div class="bline"></div></div>
 
-  <!-- ⑥ O MÉTODO -->
+  <!-- ⑥ MÉTODO -->
   <div class="s" id="s5">
     <span class="lbl">O que resolve de verdade</span>
     <h2 class="method-title">3 movimentos que<br><em>invertem tudo.</em></h2>
     <div class="steps">
-      <div class="step">
-        <div class="step-n">01</div>
-        <div>
-          <div class="step-title">Interromper o investimento automático</div>
-          <div class="step-desc">Você para de ser quem sustenta a dinâmica — e o peso emocional começa a se mover para o lado dele.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <div>
-          <div class="step-title">Reposicionar seu valor na percepção dele</div>
-          <div class="step-desc">Quando sua posição muda, a forma como ele te vê muda. Sem fingimento. Sem joguinho.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <div>
-          <div class="step-title">Ativar o instinto natural de conquista</div>
-          <div class="step-desc">Ele sente a necessidade de se posicionar. De escolher. De agir. Porque agora precisa.</div>
-        </div>
-      </div>
+      <div class="step"><div class="step-n">01</div><div><div class="step-title">Interromper o investimento automático</div><div class="step-desc">Você para de ser quem sustenta a dinâmica — e o peso emocional começa a se mover para o lado dele.</div></div></div>
+      <div class="step"><div class="step-n">02</div><div><div class="step-title">Reposicionar seu valor na percepção dele</div><div class="step-desc">Quando sua posição muda, a forma como ele te vê muda. Sem fingimento. Sem joguinho.</div></div></div>
+      <div class="step"><div class="step-n">03</div><div><div class="step-title">Ativar o instinto natural de conquista</div><div class="step-desc">Ele sente a necessidade de se posicionar. De escolher. De agir. Porque agora precisa.</div></div></div>
     </div>
   </div>
+
+  <div class="bridge" id="b6"><div class="bline"></div><span class="btxt">suas dúvidas</span><div class="bline"></div></div>
 
   <!-- ⑦ OBJEÇÕES -->
   <div class="s" id="s6">
@@ -493,48 +275,39 @@ body::after{
     </div>
   </div>
 
-  <!-- ⑧ URGÊNCIA FINAL -->
+  <div class="bridge" id="b7"><div class="bline"></div><span class="btxt">a decisão</span><div class="bline"></div></div>
+
+  <!-- ⑧ URGÊNCIA -->
   <div class="s" id="s7">
     <div class="urgency-block">
       <div class="urg-emoji">⚡</div>
       <div class="urg-title">Cada dia que passa<br>sem mudar —<br><em>ele se acomoda mais.</em></div>
-      <p class="urg-body">
-        O padrão não some sozinho. <strong>Ele só fica mais fundo.</strong><br><br>
-        Quem entende mas não age, repete o ciclo uma vez. E outra. E outra.
-      </p>
+      <p class="urg-body">O padrão não some sozinho. <strong>Ele só fica mais fundo.</strong><br><br>Quem entende mas não age, repete o ciclo uma vez. E outra. E outra.</p>
     </div>
   </div>
 
-  <!-- ⑨ CTA AQUECIMENTO → mulherhipnotica.html -->
+  <!-- ⑨ CTA -->
   <div class="s cta-section" id="s8">
-    <div class="urgency-block" style="margin-bottom:28px">
-      <div class="urg-title" style="font-size:clamp(18px,4.5vw,24px)">
-        É aqui que tudo muda —<br><em>se você fizer isso agora.</em>
-      </div>
-      <p class="urg-body" style="margin-top:12px">
-        Quem entende o padrão mas não age,<br>
-        <strong>repete o ciclo mais uma vez.</strong>
-      </p>
+    <div class="cta-setup">
+      <div class="cta-setup-title">É aqui que tudo muda —<br><em>se você fizer isso agora.</em></div>
+      <p class="cta-setup-sub">Quem entende o padrão mas não age,<br><strong>repete o ciclo mais uma vez.</strong></p>
     </div>
+    <div class="next-hint">O próximo passo leva menos de 1 minuto</div>
     <div class="cta-wrap">
       <div class="cta-glow"></div>
-      <a href="mulherhipnotica.html" class="cta-btn">
-        Quero sair desse ciclo agora →
-      </a>
+      <a href="mulherhipnotica.html" class="cta-btn">Quero sair desse ciclo agora →</a>
     </div>
-    <p class="cta-caption">Descubra como reverter esse padrão de vez</p>
+    <p class="cta-caption">Descubra como reverter esse padrão de vez<br>Sem compromisso · Só informação</p>
   </div>
 
 </div>
-
 <script>
-// Scroll reveal
 const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
   });
 },{threshold:0.07});
-document.querySelectorAll('.s:not(#s0)').forEach(s=>obs.observe(s));
+document.querySelectorAll('.s:not(#s-hook), .bridge').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
