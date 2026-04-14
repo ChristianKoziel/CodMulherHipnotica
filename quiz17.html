@@ -527,11 +527,6 @@ body::after{
 
 </div>
 
-<div id="popup">
-  <div class="pl-dot"></div>
-  <span class="pl-text" id="popupText"></span>
-</div>
-
 <script>
 // Scroll reveal
 const obs = new IntersectionObserver(entries=>{
@@ -540,20 +535,6 @@ const obs = new IntersectionObserver(entries=>{
   });
 },{threshold:0.07});
 document.querySelectorAll('.s:not(#s0)').forEach(s=>obs.observe(s));
-
-// Social proof popup
-const names=["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
-const cities=["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
-function showPopup(){
-  const p=document.getElementById('popup');
-  const n=names[Math.floor(Math.random()*names.length)];
-  const c=cities[Math.floor(Math.random()*cities.length)];
-  document.getElementById('popupText').innerHTML=`<strong>${n}</strong> de ${c} acabou de comprar`;
-  p.classList.add('show');
-  setTimeout(()=>p.classList.remove('show'),4800);
-  setTimeout(showPopup,Math.floor(Math.random()*12000)+16000);
-}
-setTimeout(showPopup,14000);
 </script>
 </body>
 </html>
