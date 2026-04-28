@@ -14,7 +14,6 @@ s.parentNode.insertBefore(t,s)
 fbq('init', '1208952827491954');
 fbq('track', 'PageView');
 </script>
-<!-- End Facebook Pixel -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código da Mulher Hipnótica</title>
@@ -39,21 +38,40 @@ body{
   overflow-x:hidden;
 }
 
-/* TOPBAR */
+/* ── TOPBAR TIMER ── */
 .topbar{
   position:fixed;top:0;left:0;width:100%;z-index:999;
   background:var(--rose);
-  padding:11px 20px;
-  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:0 16px;
+  height:48px;
+  display:flex;align-items:center;justify-content:center;gap:12px;
 }
-.topbar-dot{width:6px;height:6px;background:var(--gold-light);border-radius:50%;animation:pulse 1.4s infinite}
-.topbar span{color:#fff;font-size:12.5px;font-weight:500;letter-spacing:.4px}
-.topbar strong{color:var(--gold-light)}
+.topbar-left{display:flex;align-items:center;gap:8px}
+.topbar-dot{width:6px;height:6px;background:var(--gold-light);border-radius:50%;animation:pulse 1.4s infinite;flex-shrink:0}
+.topbar-text{color:#fff;font-size:12.5px;font-weight:500;letter-spacing:.3px}
+.topbar-text strong{color:var(--gold-light)}
+.topbar-divider{width:1px;height:20px;background:rgba(255,255,255,.2)}
+.timer-wrap{display:flex;align-items:center;gap:6px}
+.timer-icon{font-size:13px}
+.timer-label{color:rgba(255,255,255,.7);font-size:11px;font-weight:400}
+.timer-digits{
+  display:flex;align-items:center;gap:2px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;
+  color:#fff;letter-spacing:.5px;
+}
+.timer-seg{
+  background:rgba(0,0,0,.25);border-radius:5px;
+  padding:2px 6px;min-width:28px;text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+.timer-colon{color:rgba(255,255,255,.6);font-size:13px;margin:0 1px}
+.timer-urgent .timer-seg{background:rgba(255,255,255,.2);animation:timerPulse .8s infinite}
+@keyframes timerPulse{0%,100%{opacity:1}50%{opacity:.6}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
 
-/* HERO */
+/* ── HERO ── */
 .hero{
-  padding:100px 24px 56px;
+  padding:96px 24px 56px;
   display:flex;flex-direction:column;align-items:center;
   background:linear-gradient(160deg,#1A0A12 0%,#2D0F20 50%,#1A0A12 100%);
   position:relative;overflow:hidden;
@@ -101,7 +119,7 @@ body{
 }
 @keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
 
-/* SHARED */
+/* ── SHARED ── */
 .dark{background:var(--ink);padding:52px 24px}
 .light{background:var(--cream);padding:52px 24px}
 .mist{background:var(--mist);padding:52px 24px}
@@ -113,7 +131,7 @@ body{
 }
 .lbl::after{content:'';flex:1;height:1px;background:rgba(200,0,63,.15)}
 
-/* TRUTH */
+/* ── TRUTH ── */
 .truth-h{
   font-family:'Playfair Display',serif;
   font-size:clamp(26px,6vw,36px);color:#fff;line-height:1.12;font-weight:700;margin-bottom:18px;
@@ -129,14 +147,14 @@ body{
 }
 .pull strong{color:rgba(255,220,230,.85);font-style:normal;font-family:'DM Sans',sans-serif;font-size:14px}
 
-/* STEPS */
+/* ── STEPS ── */
 .step{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(200,0,63,.1)}
 .step:last-child{border-bottom:none}
 .step-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:rgba(200,0,63,.15);line-height:1;flex-shrink:0;margin-top:-2px}
 .step-title{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
 .step-desc{font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.6}
 
-/* SOCIAL PROOF */
+/* ── SOCIAL PROOF ── */
 .sp-section{background:var(--ink);padding:52px 24px}
 .sp-grid{display:flex;flex-direction:column;gap:12px;margin-top:4px}
 .sp-card{
@@ -154,13 +172,10 @@ body{
 .sp-name{font-size:12px;font-weight:500;color:rgba(255,220,230,.7)}
 .sp-city{font-size:10.5px;font-weight:300;color:rgba(255,200,220,.35);margin-top:1px}
 .sp-stars{color:var(--gold-light);font-size:11px;letter-spacing:1px;margin-bottom:6px}
-.sp-msg{
-  font-size:13px;font-weight:300;
-  color:rgba(255,220,230,.6);line-height:1.6;font-style:italic;
-}
+.sp-msg{font-size:13px;font-weight:300;color:rgba(255,220,230,.6);line-height:1.6;font-style:italic}
 .sp-msg strong{color:rgba(255,220,230,.9);font-weight:500;font-style:normal}
 
-/* BONUS */
+/* ── BONUS ── */
 .bonus-strip{display:flex;flex-direction:column;gap:1px;margin-top:4px}
 .bonus-row{
   background:#fff;border:1px solid var(--border);
@@ -173,7 +188,30 @@ body{
 .bonus-total{text-align:center;margin-top:14px;font-size:13px;font-weight:300;color:#8B5A6B}
 .bonus-total strong{color:var(--gold);font-weight:600}
 
-/* OFFER */
+/* ── MINI DEPOIMENTOS INLINE (perto do CTA) ── */
+.mini-sp{
+  display:flex;flex-direction:column;gap:8px;
+  margin-bottom:22px;
+}
+.mini-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,63,129,.1);
+  border-radius:12px;
+  padding:12px 14px;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.mini-av{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(184,0,58,.4),rgba(255,63,129,.3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;color:rgba(255,200,220,.8);
+}
+.mini-content{}
+.mini-name{font-size:11px;font-weight:500;color:rgba(255,220,230,.6);margin-bottom:2px}
+.mini-stars{color:var(--gold-light);font-size:10px;letter-spacing:1px;margin-bottom:3px}
+.mini-txt{font-size:12.5px;font-weight:300;color:rgba(255,220,230,.75);line-height:1.5;font-style:italic}
+
+/* ── OFERTA ── */
 .offer-section{background:var(--ink);padding:52px 24px 72px}
 .offer-hook{text-align:center;margin-bottom:28px}
 .offer-hook h2{
@@ -184,7 +222,7 @@ body{
 .offer-hook h2 em{font-style:italic;color:var(--hot)}
 .offer-hook p{font-size:14px;font-weight:300;color:rgba(255,220,230,.55);line-height:1.65}
 
-/* VALOR ÂNCORA */
+/* ── VALOR ÂNCORA ── */
 .value-anchor{
   background:rgba(255,255,255,.025);
   border:1px solid rgba(255,255,255,.06);
@@ -204,10 +242,7 @@ body{
 .va-total-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:4px}
 .va-total-label{font-size:13px;font-weight:500;color:rgba(255,220,230,.7)}
 .va-total-val{font-size:13px;font-weight:600;color:rgba(255,200,220,.3);text-decoration:line-through}
-.va-you{
-  text-align:center;margin-top:12px;padding-top:12px;
-  border-top:1px solid rgba(255,63,129,.12);
-}
+.va-you{text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,63,129,.12)}
 .va-you-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,63,129,.5);font-weight:600;margin-bottom:4px}
 .va-you-price{
   font-family:'Playfair Display',serif;
@@ -224,15 +259,28 @@ body{
   font-size:11px;color:rgba(255,140,170,.65);margin-top:8px;
 }
 
-.urgency-bar{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.16);
-  border-radius:10px;padding:11px 16px;margin-bottom:18px;
-  font-size:12.5px;color:rgba(255,180,200,.75);
+/* ── URGÊNCIA COM TIMER ── */
+.urgency-block{
+  background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.2);
+  border-radius:12px;padding:14px 16px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;gap:8px;
 }
-.urgency-bar strong{color:var(--hot)}
+.urg-text{font-size:13px;color:rgba(255,180,200,.8);font-weight:400}
+.urg-text strong{color:var(--hot)}
+.urg-timer{
+  display:flex;align-items:center;gap:4px;
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;
+  color:var(--gold-light);font-variant-numeric:tabular-nums;
+  letter-spacing:.5px;
+}
+.urg-timer-seg{
+  background:rgba(200,0,63,.15);border-radius:5px;
+  padding:3px 7px;min-width:30px;text-align:center;
+}
+.urg-timer-colon{color:rgba(255,200,100,.4);font-size:14px}
 
-/* CTA */
+/* ── CTA ── */
 .cta-wrap{position:relative;margin-bottom:10px}
 .cta-glow{
   position:absolute;inset:-6px;border-radius:100px;
@@ -254,7 +302,20 @@ body{
   transform:translateX(-100%);animation:shim 2s infinite;
 }
 @keyframes shim{to{transform:translateX(100%)}}
-.cta-caption{text-align:center;font-size:11px;color:rgba(255,200,220,.28);margin-top:9px}
+
+/* ── REFORÇO PRÉ-CTA ── */
+.pre-cta-reforco{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,63,129,.12);
+  border-radius:14px;padding:16px 18px;
+  margin-bottom:20px;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.reforco-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.reforco-txt{font-size:13px;font-weight:300;color:rgba(255,220,230,.65);line-height:1.6}
+.reforco-txt strong{color:#fff;font-weight:500}
+
+.cta-caption{text-align:center;font-size:11px;color:rgba(255,200,220,.28);margin-top:9px;line-height:1.7}
 
 .guarantee{
   background:rgba(201,151,42,.07);border:1px solid rgba(201,151,42,.18);
@@ -269,23 +330,51 @@ body{
 .guarantee h4{font-size:13px;font-weight:600;color:rgba(240,193,75,.9);margin-bottom:5px}
 .guarantee p{font-size:12px;color:rgba(255,220,180,.52);font-weight:300;line-height:1.65}
 
-/* FAQ */
-.faq-section{background:var(--cream);padding:52px 24px}
-.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
-.faq-q{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px}
-.faq-a{font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7}
+.bonus-row-video{background:linear-gradient(135deg,rgba(200,0,63,.04),rgba(255,45,107,.02));border-color:rgba(200,0,63,.12)!important}
+.bonus-play{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#fff;padding-left:2px;
+  box-shadow:0 4px 12px rgba(200,0,63,.3);
+}
+.bonus-video-sub{font-size:11px;color:rgba(200,0,63,.45);font-weight:400;margin-top:2px}
 
-/* 2ND CTA */
+/* ── FAQ ── */
+.faq-section{background:var(--cream);padding:52px 24px}
+.faq-item{border-bottom:1px solid var(--border);padding:0}
+.faq-btn{
+  width:100%;background:none;border:none;
+  padding:18px 0;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  cursor:pointer;text-align:left;
+}
+.faq-q{font-size:14px;font-weight:500;color:var(--ink);flex:1}
+.faq-chevron{
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.15);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:transform .25s;font-size:10px;color:var(--rose);
+}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{
+  font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7;
+  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;
+  padding-bottom:0;
+}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:16px}
+
+/* ── 2º CTA FINAL ── */
 .cta2-section{background:var(--ink);padding:40px 24px 60px}
 .cta2-section .inner{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
 .cta2-label{font-size:12px;font-weight:300;color:rgba(255,200,220,.35);text-align:center}
 
-/* FOOTER */
+/* ── FOOTER ── */
 .footer{background:var(--ink);padding:24px;text-align:center;border-top:1px solid rgba(255,255,255,.04)}
 .footer-logo{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,200,220,.2);margin-bottom:5px}
 .footer p{font-size:10.5px;color:rgba(255,200,220,.15);font-weight:300}
 
-/* POPUP */
+/* ── POPUP SOCIAL ── */
 #popup{
   position:fixed;bottom:18px;left:18px;z-index:9999;
   background:rgba(26,10,18,.96);border:1px solid rgba(200,0,63,.2);border-radius:100px;
@@ -298,16 +387,56 @@ body{
 .pl-lbl{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:rgba(0,229,123,.6);font-weight:600}
 .pl-text{font-size:12px;color:rgba(255,220,230,.75);font-weight:300}
 .pl-text strong{color:#fff;font-weight:500}
+
+/* ── EXIT INTENT BANNER ── */
+#exit-banner{
+  position:fixed;bottom:0;left:0;width:100%;z-index:9998;
+  background:linear-gradient(135deg,#1A0A12,#2D0F20);
+  border-top:1px solid rgba(200,0,63,.3);
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 -8px 32px rgba(0,0,0,.5);
+}
+#exit-banner.show{transform:translateY(0)}
+.exit-text{font-size:13px;color:rgba(255,220,230,.8);font-weight:300;line-height:1.4}
+.exit-text strong{color:#fff;font-weight:600;font-size:14px}
+.exit-cta{
+  flex-shrink:0;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  border:none;border-radius:100px;padding:11px 20px;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;
+  color:#fff;cursor:pointer;white-space:nowrap;text-decoration:none;display:block;
+}
+.exit-close{
+  position:absolute;top:8px;right:12px;
+  background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:16px;
+}
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-dot"></div>
-  <span>Condição especial <strong>somente hoje</strong> — <span id="todayDate"></span></span>
+<!-- ① TOPBAR COM TIMER REAL -->
+<div class="topbar" id="topbar">
+  <div class="topbar-left">
+    <div class="topbar-dot"></div>
+    <span class="topbar-text">Condição especial <strong>somente hoje</strong> — <span id="todayDate"></span></span>
+  </div>
+  <div class="topbar-divider"></div>
+  <div class="timer-wrap" id="timerWrap">
+    <span class="timer-icon">⏳</span>
+    <span class="timer-label">Expira em</span>
+    <div class="timer-digits">
+      <span class="timer-seg" id="th">00</span>
+      <span class="timer-colon">:</span>
+      <span class="timer-seg" id="tm">00</span>
+      <span class="timer-colon">:</span>
+      <span class="timer-seg" id="ts">00</span>
+    </div>
+  </div>
 </div>
 
-<!-- ① HERO -->
+<!-- ② HERO -->
 <section class="hero">
   <div class="hero-z">
     <div class="hero-badge">
@@ -327,7 +456,7 @@ body{
   </div>
 </section>
 
-<!-- ② VERDADE -->
+<!-- ③ VERDADE -->
 <section class="dark">
   <div class="inner">
     <div class="lbl">Por que isso se repete</div>
@@ -344,7 +473,7 @@ body{
   </div>
 </section>
 
-<!-- ③ O MÉTODO -->
+<!-- ④ O MÉTODO -->
 <section class="mist">
   <div class="inner">
     <div class="lbl" style="color:var(--rose)">O protocolo</div>
@@ -370,7 +499,7 @@ body{
   </div>
 </section>
 
-<!-- ⑤ BÔNUS -->
+<!-- ⑥ BÔNUS -->
 <section class="light">
   <div class="inner">
     <div class="lbl">Bônus inclusos</div>
@@ -387,13 +516,20 @@ body{
         <div class="bonus-row-name">Conteúdo Surpresa</div>
         <div class="bonus-row-val">R$ 39,90</div>
       </div>
+      <div class="bonus-row bonus-row-video">
+        <div>
+          <div class="bonus-row-name">🎬 3 videoaulas curtas bônus</div>
+          <div class="bonus-video-sub">Reveladas após a compra · acesso imediato</div>
+        </div>
+        <div class="bonus-row-val">R$ 201,00</div>
+      </div>
     </div>
-    <p class="bonus-total">Total dos bônus: <strong>R$ 148,80</strong> — incluídos sem custo</p>
+    <p class="bonus-total">Total dos bônus: <strong>R$ 349,80</strong> — incluídos sem custo adicional</p>
   </div>
 </section>
 
-<!-- ⑥ OFERTA -->
-<section class="offer-section">
+<!-- ⑦ OFERTA + MINI DEPOIMENTOS + CTA -->
+<section class="offer-section" id="oferta">
   <div class="inner">
 
     <div class="offer-hook">
@@ -421,10 +557,14 @@ body{
           <span class="va-item">Conteúdo Surpresa</span>
           <span class="va-price">R$ 39,90</span>
         </div>
+        <div class="va-row">
+          <span class="va-item">🎬 3 videoaulas curtas bônus</span>
+          <span class="va-price">R$ 201,00</span>
+        </div>
         <div class="va-divider"></div>
         <div class="va-total-row">
           <span class="va-total-label">Valor total</span>
-          <span class="va-total-val">R$ 246,70</span>
+          <span class="va-total-val">R$ 447,70</span>
         </div>
       </div>
       <div class="va-you">
@@ -437,63 +577,117 @@ body{
       </div>
     </div>
 
-    <div class="urgency-bar">
-      ⏳ Condição especial expira hoje às <strong>23:59</strong>
+    <!-- URGÊNCIA COM TIMER INLINE -->
+    <div class="urgency-block">
+      <span class="urg-text">⏳ Condição especial expira <strong>hoje</strong> às 23:59</span>
+      <div class="urg-timer">
+        <span class="urg-timer-seg" id="uh">00</span>
+        <span class="urg-timer-colon">:</span>
+        <span class="urg-timer-seg" id="um">00</span>
+        <span class="urg-timer-colon">:</span>
+        <span class="urg-timer-seg" id="us">00</span>
+      </div>
     </div>
 
+    <!-- MINI DEPOIMENTOS PRÉ-CTA -->
+    <div class="mini-sp">
+      <div class="mini-card">
+        <div class="mini-av">LP</div>
+        <div class="mini-content">
+          <div class="mini-name">Lana Paffer · Belo Horizonte, MG</div>
+          <div class="mini-stars">★★★★★</div>
+          <div class="mini-txt">"não recomendo!! faz 4 dias que comecei aplicar e ele literalmente virou um cachorrrinho comigo 😭"</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-av">JS</div>
+        <div class="mini-content">
+          <div class="mini-name">Julya Souza · Porto Alegre, RS</div>
+          <div class="mini-stars">★★★★★</div>
+          <div class="mini-txt">"só tenho a agradecer pois essa metodologia mudou completamente minha relação com ele <strong>sem eu precisar me humilhar</strong>"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFORÇO EMOCIONAL PRÉ-BOTÃO -->
+    <div class="pre-cta-reforco">
+      <div class="reforco-icon">⚡</div>
+      <div class="reforco-txt">
+        <strong>Em 4 dias ela virou o jogo. Em 7 dias outra mudou a relação inteira.</strong> Você ainda vai ficar esperando ele mudar sozinho — ou vai fazer algo diferente hoje?
+      </div>
+    </div>
+
+    <!-- CTA PRINCIPAL -->
     <div class="cta-wrap">
       <div class="cta-glow"></div>
       <a href="https://pay.sunize.com.br/LXHVfkNO"
         class="cta-main"
+        id="ctaMain"
         onclick="fbq('track', 'InitiateCheckout'); setTimeout(() => { window.location.href=this.href }, 150); return false;">
         SIM, QUERO SAIR DESSE CICLO →
       </a>
     </div>
-    <p class="cta-caption">Pagamento 100% seguro · Acesso imediato por e-mail</p>
+    <p class="cta-caption">Pagamento 100% seguro · Acesso imediato por e-mail · Garantia de 7 dias</p>
 
     <div class="guarantee">
       <div class="guarantee-icon">🛡</div>
       <div>
-        <h4>Garantia de 30 dias</h4>
-        <p>Se em 30 dias você não perceber mudança, devolvemos cada centavo. Sem perguntas. Sem burocracia.</p>
+        <h4>Garantia de 7 dias</h4>
+        <p>Se em 7 dias você não perceber mudança, devolvemos cada centavo. Sem perguntas. Sem burocracia.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ⑦ FAQ -->
+<!-- ⑧ FAQ INTERATIVO -->
 <section class="faq-section">
   <div class="inner">
     <div class="lbl">Dúvidas rápidas</div>
+
     <div class="faq-item">
-      <p class="faq-q">Como recebo o acesso?</p>
-      <p class="faq-a">Tudo digital. O acesso chega no seu e-mail imediatamente após a compra.</p>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Como recebo o acesso?</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Tudo digital. O acesso chega no seu e-mail imediatamente após a compra — sem espera.</div>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Funciona para qualquer relacionamento?</p>
-      <p class="faq-a">Sim — ficantes, namoro, relacionamentos instáveis ou longos. O padrão é o mesmo.</p>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Funciona para qualquer relacionamento?</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Sim — ficantes, namoro, relacionamentos instáveis ou longos. O padrão emocional é o mesmo em todos os casos.</div>
     </div>
     <div class="faq-item">
-      <p class="faq-q">E se não funcionar?</p>
-      <p class="faq-a">Garantia de 30 dias. Pediu, devolvemos — sem burocracia, sem perguntas.</p>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">E se não funcionar?</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Garantia de 7 dias. Pediu, devolvemos — sem burocracia, sem perguntas, sem precisar justificar nada.</div>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Isso é manipulação?</p>
-      <p class="faq-a">Não. É posicionamento emocional. Você alinhada com o que realmente quer — sem fingimento, sem joguinho.</p>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Isso é manipulação?</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Não. É posicionamento emocional. Você continua sendo você — só reposicionada. Sem fingimento, sem joguinho, sem crueldade.</div>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Precisa ser especialista em relacionamentos?</p>
-      <p class="faq-a">Não. O método foi criado para funcionar de forma simples e direta, mesmo que você nunca tenha estudado nada sobre isso.</p>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Precisa de conhecimento prévio?</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Não. O método foi criado para funcionar de forma simples e direta, mesmo que você nunca tenha estudado nada sobre relacionamentos.</div>
     </div>
+
   </div>
 </section>
 
-<!-- ⑧ 2º CTA FINAL -->
+<!-- ⑨ 2º CTA FINAL -->
 <section class="cta2-section">
   <div class="inner">
     <div class="cta2-label">Se você chegou até aqui, você já sabe o que precisa fazer.</div>
-
     <div class="cta-wrap" style="width:100%">
       <div class="cta-glow"></div>
       <a href="https://pay.sunize.com.br/LXHVfkNO"
@@ -502,8 +696,7 @@ body{
         QUERO MUDAR ISSO AGORA →
       </a>
     </div>
-
-    <p class="cta-caption">R$ 27,90 · acesso imediato · garantia de 30 dias</p>
+    <p class="cta-caption">R$ 27,90 · acesso imediato · garantia de 7 dias</p>
   </div>
 </section>
 
@@ -512,15 +705,65 @@ body{
   <p>© 2026 — Todos os direitos reservados.</p>
 </footer>
 
+<!-- POPUP SOCIAL PROOF -->
 <div id="popup">
   <div class="pl-dot"></div>
   <span class="pl-lbl">ao vivo</span>
   <span class="pl-text" id="popupText"></span>
 </div>
 
+<!-- EXIT INTENT BANNER (mobile: scroll up) -->
+<div id="exit-banner">
+  <button class="exit-close" onclick="document.getElementById('exit-banner').classList.remove('show')">✕</button>
+  <div class="exit-text">
+    <strong>Espera — não vai sem isso.</strong><br>
+    Condição expira hoje à meia-noite.
+  </div>
+  <a href="https://pay.sunize.com.br/LXHVfkNO"
+    class="exit-cta"
+    onclick="fbq('track','InitiateCheckout');setTimeout(()=>{window.location.href=this.href},150);return false;">
+    Garantir →
+  </a>
+</div>
+
 <script>
-const names=["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
-const cities=["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
+/* ══ TIMER REAL ══ */
+function calcTimer(){
+  const now = new Date();
+  const end = new Date(now);
+  end.setHours(23,59,59,0);
+  const diff = Math.max(0, end - now);
+  const h = Math.floor(diff/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  const pad = n => String(n).padStart(2,'0');
+
+  // Topbar timer
+  document.getElementById('th').textContent = pad(h);
+  document.getElementById('tm').textContent = pad(m);
+  document.getElementById('ts').textContent = pad(s);
+
+  // Inline urgency timer
+  document.getElementById('uh').textContent = pad(h);
+  document.getElementById('um').textContent = pad(m);
+  document.getElementById('us').textContent = pad(s);
+
+  // Urgency color when < 1 hora
+  if(h < 1){
+    document.getElementById('timerWrap').classList.add('timer-urgent');
+  }
+}
+calcTimer();
+setInterval(calcTimer, 1000);
+
+/* ══ DATA ══ */
+const d = new Date();
+document.getElementById('todayDate').textContent =
+  `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+
+/* ══ POPUP SOCIAL PROOF ══ */
+const names=['Ana','Luiza','Nicole','Mariana','Beatriz','Camila','Fernanda','Juliana','Larissa','Patrícia','Renata','Bruna','Isabela','Vitória','Amanda','Gabriela','Luana','Rafaela'];
+const cities=['São Paulo','Fortaleza','Rio de Janeiro','Belo Horizonte','Curitiba','Salvador','Recife','Brasília','Manaus','Florianópolis','Porto Alegre','Goiânia','Natal','João Pessoa'];
 function showPopup(){
   const p=document.getElementById('popup');
   const n=names[Math.floor(Math.random()*names.length)];
@@ -528,11 +771,38 @@ function showPopup(){
   document.getElementById('popupText').innerHTML=`<strong>${n}</strong> de ${c} acabou de comprar`;
   p.classList.add('show');
   setTimeout(()=>p.classList.remove('show'),4800);
-  setTimeout(showPopup,Math.floor(Math.random()*14000)+18000);
+  setTimeout(showPopup,Math.floor(Math.random()*14000)+16000);
 }
-setTimeout(showPopup,18000);
-const d=new Date();
-document.getElementById('todayDate').textContent=`${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+setTimeout(showPopup,14000);
+
+/* ══ FAQ INTERATIVO ══ */
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+/* ══ EXIT INTENT — mobile: detecta scroll up rápido ══ */
+let lastY = 0, exitShown = false;
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY;
+  if(!exitShown && lastY - y > 80 && y > 400){
+    document.getElementById('exit-banner').classList.add('show');
+    exitShown = true;
+    setTimeout(()=>document.getElementById('exit-banner').classList.remove('show'), 6000);
+  }
+  lastY = y;
+});
+
+/* ══ EXIT INTENT — desktop: mouse deixa janela ══ */
+document.addEventListener('mouseleave', e=>{
+  if(!exitShown && e.clientY < 10){
+    document.getElementById('exit-banner').classList.add('show');
+    exitShown = true;
+    setTimeout(()=>document.getElementById('exit-banner').classList.remove('show'), 6000);
+  }
+});
 </script>
 </body>
 </html>
