@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seja Sincera</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -13,7 +13,7 @@
   --ink:#0E0610;
   --ink-mid:#1C0D20;
   --text:#F5E8EE;
-  --text-soft:rgba(245,232,238,.6);
+  --text-soft:rgba(245,232,238,.62);
   --gold:#D4A843;
 }
 html,body{min-height:100%;width:100%}
@@ -27,6 +27,9 @@ body{
   padding:20px 16px 40px;
   position:relative;
   overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
 
 /* Ambient glow */
@@ -56,16 +59,13 @@ body::before{
 .d2{animation-delay:.35s}
 .d3{animation-delay:.65s}
 .d4{animation-delay:1s}
-.d5{animation-delay:1.4s}
-.d6{animation-delay:1.85s}
-.d7{animation-delay:2.3s}
-.d8{animation-delay:2.8s}
+.d5{animation-delay:1.35s}
+.d6{animation-delay:1.7s}
+.d7{animation-delay:2.05s}
 
-/* ── TOP LABEL ── */
-.top-label{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:28px 0 20px;
-}
+/* ── TOP LABEL + PROGRESS TEASER ── */
+.top-bar{padding:24px 0 18px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.top-label{display:flex;align-items:center;justify-content:center;gap:8px}
 .live-dot{
   width:7px;height:7px;border-radius:50%;
   background:#FF2D6B;
@@ -80,41 +80,44 @@ body::before{
   font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
   color:rgba(255,45,107,.8);font-weight:500;
 }
+.progress-track{width:100%;max-width:200px;height:3px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.progress-fill{width:8%;height:100%;background:linear-gradient(90deg,var(--rose),var(--rose-light));border-radius:3px}
 
 /* ── HEADLINE ── */
-.headline{
-  text-align:center;
-  padding:0 8px 28px;
-}
+.headline{text-align:center;padding:0 8px 22px}
 .headline h1{
   font-family:'Playfair Display',serif;
-  font-size:clamp(30px,7vw,42px);
+  font-size:clamp(28px,7vw,40px);
   font-weight:900;
-  line-height:1.1;
+  line-height:1.14;
   color:#fff;
   margin-bottom:12px;
 }
-.headline h1 em{
-  font-style:italic;
-  color:var(--rose-light);
+.headline h1 em{font-style:italic;color:var(--rose-light)}
+.headline p{font-size:14.5px;font-weight:300;color:var(--text-soft);line-height:1.65}
+
+/* ── AUTHORITY STRIP ── */
+.authority{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;
+  margin-bottom:22px;
 }
-.headline p{
-  font-size:14.5px;font-weight:300;
-  color:var(--text-soft);
-  line-height:1.65;
+.authority .av{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#3D1F30,#5A2D45);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);
 }
+.authority .info h4{font-size:12.5px;font-weight:500;color:#fff;margin-bottom:2px}
+.authority .info span{font-size:11px;color:var(--text-soft);font-weight:300;line-height:1.4;display:block}
 
 /* ── DIVIDER ── */
-.divider{
-  display:flex;align-items:center;gap:12px;
-  padding:0 0 24px;
-}
+.divider{display:flex;align-items:center;gap:12px;padding:0 0 20px}
 .divider-line{flex:1;height:1px;background:rgba(200,0,63,.2)}
-.divider-icon{
-  font-size:13px;letter-spacing:1px;
-  color:rgba(200,0,63,.45);font-weight:400;
-  white-space:nowrap;
-}
+.divider-icon{font-size:12px;letter-spacing:1px;color:rgba(200,0,63,.5);font-weight:400;white-space:nowrap}
 
 /* ── FAKE CHAT ── */
 .chat-wrap{
@@ -122,11 +125,10 @@ body::before{
   border-radius:16px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.06);
-  margin-bottom:24px;
+  margin-bottom:10px;
 }
 .chat-bar{
-  background:#1f2c33;
-  padding:10px 14px;
+  background:#1f2c33;padding:10px 14px;
   display:flex;align-items:center;gap:10px;
   border-bottom:1px solid rgba(255,255,255,.05);
 }
@@ -139,64 +141,24 @@ body::before{
 }
 .chat-bar-info h4{font-size:13px;font-weight:500;color:#e9edef;margin-bottom:1px}
 .chat-bar-info span{font-size:11px;color:#8696a0}
-
 .messages{padding:14px 14px 16px;display:flex;flex-direction:column;gap:10px}
-
-.msg-them,.msg-you{
-  padding:9px 13px;
-  border-radius:8px;
-  font-size:13.5px;
-  line-height:1.5;
-  max-width:78%;
-  position:relative;
-}
-.msg-them{
-  background:#1f2c33;
-  border-radius:0 8px 8px 8px;
-  color:#e9edef;
-  align-self:flex-start;
-  opacity:0;
-  animation:msgIn .35s ease forwards;
-}
-.msg-you{
-  background:#005c4b;
-  border-radius:8px 8px 0 8px;
-  color:#e9edef;
-  align-self:flex-end;
-  opacity:0;
-  animation:msgIn .35s ease forwards;
-}
+.msg-them,.msg-you{padding:9px 13px;border-radius:8px;font-size:13.5px;line-height:1.5;max-width:78%;position:relative}
+.msg-them{background:#1f2c33;border-radius:0 8px 8px 8px;color:#e9edef;align-self:flex-start;opacity:0;animation:msgIn .35s ease forwards}
+.msg-you{background:#005c4b;border-radius:8px 8px 0 8px;color:#e9edef;align-self:flex-end;opacity:0;animation:msgIn .35s ease forwards}
 @keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-
-.msg1{animation-delay:.8s}
-.msg2{animation-delay:1.6s}
-.msg3{animation-delay:2.5s}
-.msg4{animation-delay:3.4s}
-
-.typing-wrap{
-  align-self:flex-start;
-  opacity:0;
-  animation:msgIn .3s ease 3s forwards;
-}
-.typing{
-  background:#1f2c33;
-  border-radius:0 8px 8px 8px;
-  padding:10px 14px;
-  display:flex;gap:4px;align-items:center;
-}
-.dot{
-  width:6px;height:6px;border-radius:50%;
-  background:#8696a0;
-  animation:blink 1.4s infinite both;
-}
+.msg1{animation-delay:.7s}
+.msg2{animation-delay:1.4s}
+.msg3{animation-delay:2.2s}
+.msg4{animation-delay:2.9s}
+.typing-wrap{align-self:flex-start;opacity:0;animation:msgIn .3s ease 3.6s forwards}
+.typing{background:#1f2c33;border-radius:0 8px 8px 8px;padding:10px 14px;display:flex;gap:4px;align-items:center}
+.dot{width:6px;height:6px;border-radius:50%;background:#8696a0;animation:blink 1.4s infinite both}
 .dot:nth-child(2){animation-delay:.2s}
 .dot:nth-child(3){animation-delay:.4s}
 @keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}
-
-.read-receipt{
-  font-size:10px;color:#8696a0;
-  text-align:right;margin-top:2px;
-  padding-right:2px;
+.chat-caption{
+  text-align:center;font-size:11.5px;color:var(--text-soft);font-weight:300;
+  padding:0 20px 24px;line-height:1.5;
 }
 
 /* ── INSIGHT BLOCK ── */
@@ -205,23 +167,12 @@ body::before{
   background:rgba(200,0,63,.06);
   border:1px solid rgba(200,0,63,.15);
   border-radius:16px;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
-.insight-label{
-  font-size:9.5px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,45,107,.6);font-weight:600;margin-bottom:10px;
-}
-.insight p{
-  font-size:14.5px;font-weight:300;
-  color:var(--text);
-  line-height:1.75;
-}
-.insight p strong{
-  color:#fff;font-weight:500;
-}
-.insight p em{
-  color:var(--rose-light);font-style:normal;font-weight:500;
-}
+.insight-label{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,45,107,.6);font-weight:600;margin-bottom:10px}
+.insight p{font-size:14.5px;font-weight:300;color:var(--text);line-height:1.75}
+.insight p strong{color:#fff;font-weight:500}
+.insight p em{color:var(--rose-light);font-style:normal;font-weight:500}
 
 /* ── HONESTY LINE ── */
 .honesty{
@@ -230,40 +181,22 @@ body::before{
   background:rgba(255,255,255,.03);
   border:1px solid rgba(255,255,255,.07);
   border-radius:14px;
-  margin-bottom:28px;
+  margin-bottom:26px;
 }
-.honesty-icon{
-  font-size:20px;flex-shrink:0;margin-top:1px;
-}
-.honesty p{
-  font-size:13px;font-weight:300;
-  color:var(--text-soft);
-  line-height:1.65;
-}
+.honesty-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.honesty p{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.6}
 .honesty p strong{color:var(--text);font-weight:500}
 
-/* ── COUNTER ── */
-.counter{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-bottom:18px;
-}
-.counter-avatars{
-  display:flex;
-}
-.c-av{
-  width:22px;height:22px;border-radius:50%;
-  border:1.5px solid var(--ink);
-  margin-left:-6px;
-  font-size:9px;display:flex;align-items:center;justify-content:center;
-}
+/* ── SOCIAL PROOF ── */
+.counter{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:18px}
+.counter-avatars{display:flex}
+.c-av{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);margin-left:-6px;font-size:9px;display:flex;align-items:center;justify-content:center}
 .c-av:first-child{margin-left:0}
 .c-av:nth-child(1){background:#6B3050}
 .c-av:nth-child(2){background:#3D5060}
 .c-av:nth-child(3){background:#4A3060}
 .c-av:nth-child(4){background:#3A6050}
-.counter span{
-  font-size:12px;color:var(--text-soft);font-weight:300;
-}
+.counter span{font-size:12px;color:var(--text-soft);font-weight:300}
 .counter strong{color:var(--text);font-weight:500}
 
 /* ── CTA ── */
@@ -276,18 +209,13 @@ body::before{
 }
 @keyframes glowPulse{0%,100%{opacity:.35}50%{opacity:.6}}
 .cta-btn{
-  position:relative;z-index:1;
-  display:block;width:100%;
+  position:relative;z-index:1;display:block;width:100%;
   background:linear-gradient(135deg,var(--rose) 0%,var(--rose-light) 100%);
-  color:#fff;
-  border:none;border-radius:100px;
-  padding:20px 32px;
-  font-family:'DM Sans',sans-serif;
-  font-size:15px;font-weight:600;letter-spacing:.2px;
-  text-align:center;text-decoration:none;
-  cursor:pointer;
-  overflow:hidden;
+  color:#fff;border:none;border-radius:100px;padding:20px 32px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2px;
+  text-align:center;text-decoration:none;cursor:pointer;overflow:hidden;
 }
+.cta-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .cta-btn::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
@@ -295,37 +223,39 @@ body::before{
   animation:shimmer 2.2s infinite;
 }
 @keyframes shimmer{to{transform:translateX(100%)}}
-.cta-sub{
-  text-align:center;font-size:11.5px;
-  color:rgba(245,232,238,.3);
-  margin-top:10px;
-}
+.cta-sub{text-align:center;font-size:11.5px;color:rgba(245,232,238,.35);margin-top:10px}
 
-/* ── URGENCY BAR ── */
-.urgency{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  padding:10px;
-  border-top:1px solid rgba(200,0,63,.12);
-  margin-top:4px;
-}
-.urgency span{font-size:11.5px;color:rgba(255,45,107,.7);font-weight:400}
-.urgency strong{color:var(--rose-light)}
+/* ── FOOTNOTE ── */
+.footnote{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px}
+.footnote span{font-size:11.5px;color:var(--text-soft);font-weight:300}
 </style>
 </head>
 <body>
 
 <div class="card">
 
-  <!-- TOP LABEL -->
-  <div class="top-label reveal d1">
-    <div class="live-dot"></div>
-    <span>Diagnóstico emocional · 2 minutos</span>
+  <!-- TOP LABEL + PROGRESS -->
+  <div class="top-bar reveal d1">
+    <div class="top-label">
+      <div class="live-dot"></div>
+      <span>Diagnóstico gratuito · 2 minutos</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill"></div></div>
   </div>
 
   <!-- HEADLINE -->
   <div class="headline reveal d2">
     <h1>Ele esfriou.<br>Ou foi você que<br><em>ensinou</em> a esfriar?</h1>
-    <p>Existe um padrão que a maioria das mulheres ativa sem perceber — e ele silenciosamente inverte o nível de esforço do relacionamento.</p>
+    <p>Existe um padrão que a maioria das mulheres ativa sem perceber, e ele silenciosamente inverte o nível de esforço do relacionamento.</p>
+  </div>
+
+  <!-- AUTHORITY -->
+  <div class="authority reveal d3">
+    <div class="av">M</div>
+    <div class="info">
+      <h4>Dra. Elisa Koscziol</h4>
+      <span>Psicóloga · especialista em vínculos afetivos · +12 anos ajudando mulheres a entender seus relacionamentos</span>
+    </div>
   </div>
 
   <!-- DIVIDER -->
@@ -336,7 +266,7 @@ body::before{
   </div>
 
   <!-- FAKE CHAT -->
-  <div class="chat-wrap reveal d3">
+  <div class="chat-wrap reveal d4">
     <div class="chat-bar">
       <div class="avatar">E</div>
       <div class="chat-bar-info">
@@ -347,44 +277,34 @@ body::before{
     <div class="messages">
       <div class="msg-them msg1">Oi… você anda diferente.</div>
       <div class="msg-you msg2">Diferente não.<br>Só parei de insistir.</div>
-      <div class="msg-them msg3">Eu não quis dizer isso…</div>
+      <div class="msg-them msg3">Eu não quis dizer isso.</div>
+      <div class="msg-them msg4">Posso te ligar?</div>
       <div class="typing-wrap">
-        <div class="typing">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
+        <div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
       </div>
-      <div class="msg-them msg4" style="animation-delay:3.9s">Posso te ligar?</div>
     </div>
   </div>
 
   <!-- INSIGHT -->
-  <div class="insight reveal d4">
-    <div class="insight-label">O que realmente está acontecendo</div>
+  <div class="insight reveal d5">
+    <div class="insight-label">O que a psicologia mostra</div>
     <p>
       Quando você para de insistir, ele sente.<br><br>
-      Mas isso não é acidente — é <em>dinâmica emocional.</em><br><br>
+      Mas isso não é acidente. É <em>dinâmica emocional.</em><br><br>
       O problema é que <strong>a maioria das mulheres chega nesse ponto tarde demais,</strong> depois de já ter investido demais, pedido demais, cedido demais.
     </p>
   </div>
 
   <!-- HONESTY -->
-  <div class="honesty reveal d5">
+  <div class="honesty reveal d6">
     <div class="honesty-icon">🔒</div>
-    <p>
-      <strong>Suas respostas são completamente privadas.</strong><br>
-      Mas você já sabe que precisa encarar isso — porque no fundo, você já percebe o padrão.
-    </p>
+    <p><strong>Suas respostas são completamente privadas.</strong><br>Mas você já sabe que precisa encarar isso, porque no fundo, você já percebe o padrão.</p>
   </div>
 
-  <!-- COUNTER -->
+  <!-- SOCIAL PROOF -->
   <div class="counter reveal d6">
     <div class="counter-avatars">
-      <div class="c-av">A</div>
-      <div class="c-av">M</div>
-      <div class="c-av">L</div>
-      <div class="c-av">+</div>
+      <div class="c-av">A</div><div class="c-av">M</div><div class="c-av">L</div><div class="c-av">+</div>
     </div>
     <span><strong>112 mulheres</strong> fizeram esse teste hoje</span>
   </div>
@@ -392,14 +312,11 @@ body::before{
   <!-- CTA -->
   <div class="cta-wrap reveal d7">
     <div class="cta-glow"></div>
-    <a href="quiz2.html" class="cta-btn">
-      Descobrir meu padrão agora →
-    </a>
+    <a href="quiz2.html" class="cta-btn">Descobrir meu padrão agora →</a>
   </div>
-  <p class="cta-sub reveal d7">Leva menos de 2 minutos · Resultado imediato</p>
+  <p class="cta-sub reveal d7">Leva menos de 2 minutos · Resultado na hora</p>
 
-  <!-- URGENCY -->
-  <div class="urgency reveal d8">
+  <div class="footnote reveal d7">
     <span>⏳ <strong>Diagnóstico gratuito</strong> disponível somente hoje</span>
   </div>
 
