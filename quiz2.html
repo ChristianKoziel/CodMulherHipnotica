@@ -406,7 +406,7 @@ body::after{
 
 <script>
 let cur = 1;
-let answers = {}; // guarda a letra (a/b/c/d) escolhida em cada pergunta, ex: {q1:'a', q2:'c', ...}
+let answers = {}; // guarda a letra (a/b/c/d) escolhida em cada pergunta, ex: {q1:'a', q2:'b', ...}
 
 function pick(q, opt, fb){
   answers['q'+q] = opt;
@@ -442,6 +442,34 @@ function next(nq){
   },260);
 }
 
+// ══════════════════════════════════════════════════════
+// Calcula qual dos 4 diagnósticos bate mais com as respostas.
+// q3, q4 e q5 pesam mais porque são as perguntas mais reveladoras
+// (o "agora", o "custo real" e a "escolha final").
+// ══════════════════════════════════════════════════════
+function getDominantPattern(ans){
+  const weights = {q1:1, q2:1, q3:1.5, q4:2, q5:1.5};
+  const scores = {a:0, b:0, c:0, d:0};
+  Object.keys(ans).forEach(q=>{
+    const letter = ans[q];
+    if(scores.hasOwnProperty(letter)) scores[letter] += (weights[q] || 1);
+  });
+  let best = 'a', bestScore = -1;
+  ['a','b','c','d'].forEach(l=>{
+    if(scores[l] > bestScore){ bestScore = scores[l]; best = l; }
+  });
+  return best;
+}
+
+// cada padrão tem seu próprio arquivo de resultado — fixo, sem depender
+// de query string sobreviver ao redirect (isso é o que quebrava antes)
+const RESULT_PAGES = {
+  a: 'resultado-entrega.html',
+  b: 'resultado-vigilancia.html',
+  c: 'resultado-vinculo.html',
+  d: 'resultado-repeticao.html'
+};
+
 function goLoading(){
   document.getElementById('q5').style.display = 'none';
   document.getElementById('prog').style.display = 'none';
@@ -466,10 +494,9 @@ function goLoading(){
   function run(){
     if(i >= steps.length){
       setTimeout(()=>{
-        // salva as respostas em localStorage (fallback) e manda também via URL (garante que o resultado chegue mesmo em aba nova/incógnito)
         try{ localStorage.setItem('quizAnswers', JSON.stringify(answers)); }catch(e){}
-        const qs = new URLSearchParams(answers).toString();
-        window.location.href = 'quiz17.html' + (qs ? '?'+qs : '');
+        const key = getDominantPattern(answers);
+        window.location.href = RESULT_PAGES[key] || 'resultado-entrega.html';
       }, 400);
       return;
     }
