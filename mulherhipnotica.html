@@ -30,6 +30,8 @@ fbq('track', 'PageView');
   --ink:#1A0A12;
   --mist:#F7EEF2;
   --border:rgba(200,0,63,.15);
+  /* estava faltando: causava texto invisível em fundos escuros */
+  --muted-dark:rgba(255,220,230,.62);
 }
 html{scroll-behavior:smooth}
 body{
@@ -112,6 +114,9 @@ body{
   display:flex;align-items:center;gap:10px;margin-bottom:16px;
 }
 .lbl::after{content:'';flex:1;height:1px;background:rgba(200,0,63,.15)}
+/* variante usada em fundos claros (mist/cream), pra manter contraste consistente */
+.lbl.on-light{color:rgba(200,0,63,.65)}
+.lbl.on-light::after{background:rgba(200,0,63,.2)}
 
 /* TRUTH */
 .truth-h{
@@ -139,6 +144,13 @@ body{
 .pr-emoji{font-size:17px;flex-shrink:0;line-height:1}
 .pr-text{font-size:13px;font-weight:300;color:var(--muted-dark);line-height:1.45}
 .pr-text strong{color:#fff;font-weight:500}
+
+/* METHOD TITLE (seção clara/mist) */
+.method-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,6vw,36px);font-weight:700;
+  color:var(--ink);line-height:1.15;margin-bottom:24px;
+}
 
 /* STEPS */
 .step{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(200,0,63,.1)}
@@ -280,11 +292,29 @@ body{
 .guarantee h4{font-size:13px;font-weight:600;color:rgba(240,193,75,.9);margin-bottom:5px}
 .guarantee p{font-size:12px;color:rgba(255,220,180,.52);font-weight:300;line-height:1.65}
 
-/* FAQ */
+/* FAQ (agora em acordeão com <details>/<summary>) */
 .faq-section{background:var(--cream);padding:52px 24px}
-.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
-.faq-q{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px}
-.faq-a{font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7}
+.faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+.faq-item summary{
+  list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  cursor:pointer;
+  font-size:14px;font-weight:500;color:var(--ink);
+  padding:4px 0;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-icon{
+  flex-shrink:0;width:22px;height:22px;border-radius:50%;
+  border:1px solid rgba(200,0,63,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--rose);font-weight:600;
+  transition:transform .25s ease;
+}
+.faq-item[open] .faq-icon{transform:rotate(45deg)}
+.faq-a{
+  font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7;
+  padding-top:10px;
+}
 
 /* 2ND CTA */
 .cta2-section{background:var(--ink);padding:40px 24px 60px}
@@ -477,35 +507,35 @@ body{
   </div>
 </section>
 
-<!-- ⑥ FAQ -->
+<!-- ⑥ FAQ (agora em acordeão) -->
 <section class="faq-section">
   <div class="inner">
     <div class="lbl on-light">Dúvidas rápidas</div>
- 
-    <div class="faq-item">
-      <p class="faq-q">Como recebo o acesso?</p>
+
+    <details class="faq-item">
+      <summary>Como recebo o acesso?<span class="faq-icon">+</span></summary>
       <p class="faq-a">Tudo é 100% digital. Assim que a compra for aprovada, o acesso é enviado automaticamente para o seu e-mail.</p>
-    </div>
- 
-    <div class="faq-item">
-      <p class="faq-q">Funciona para qualquer relacionamento?</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Funciona para qualquer relacionamento?<span class="faq-icon">+</span></summary>
       <p class="faq-a">O método foi desenvolvido para mulheres que desejam compreender melhor a dinâmica dos relacionamentos e aplicar estratégias saudáveis em diferentes contextos, como namoro, casamento ou relacionamentos instáveis.</p>
-    </div>
- 
-    <div class="faq-item">
-      <p class="faq-q">E se meu padrão não for exatamente "entregar demais"?</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>E se meu padrão não for exatamente "entregar demais"?<span class="faq-icon">+</span></summary>
       <p class="faq-a">O protocolo cobre as quatro formas mais comuns que esse padrão assume: entregar demais cedo, ficar em alerta esperando resposta, carregar um vínculo que não fechou, ou repetir o mesmo tipo de relação. A raiz é a mesma, então o método se aplica independente de qual dessas mais se parece com você.</p>
-    </div>
- 
-    <div class="faq-item">
-      <p class="faq-q">E se eu não gostar?</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>E se eu não gostar?<span class="faq-icon">+</span></summary>
       <p class="faq-a">Você conta com 30 dias de garantia. Se entender que o método não faz sentido para você, basta solicitar o reembolso dentro do prazo.</p>
-    </div>
- 
-    <div class="faq-item">
-      <p class="faq-q">Preciso ter algum conhecimento prévio?</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Preciso ter algum conhecimento prévio?<span class="faq-icon">+</span></summary>
       <p class="faq-a">Não. O conteúdo foi estruturado para ser simples, didático e fácil de aplicar, mesmo para quem está começando.</p>
-    </div>
+    </details>
   </div>
 </section>
  
@@ -541,18 +571,40 @@ body{
 <script>
 const names=["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
 const cities=["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
-function showPopup(){
-  const p=document.getElementById('popup');
-  const n=names[Math.floor(Math.random()*names.length)];
-  const c=cities[Math.floor(Math.random()*cities.length)];
-  document.getElementById('popupText').innerHTML=`<strong>${n}</strong> de ${c} acabou de comprar`;
-  p.classList.add('show');
-  setTimeout(()=>p.classList.remove('show'),4800);
-  setTimeout(showPopup,Math.floor(Math.random()*14000)+18000);
+
+let lastName = null;
+let lastCity = null;
+
+function pickDifferent(arr, last){
+  let choice;
+  do { choice = arr[Math.floor(Math.random()*arr.length)]; }
+  while (arr.length > 1 && choice === last);
+  return choice;
 }
-setTimeout(showPopup,18000);
-const d=new Date();
-document.getElementById('todayDate').textContent=`${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+
+function showPopup(){
+  const p = document.getElementById('popup');
+  const n = pickDifferent(names, lastName);
+  const c = pickDifferent(cities, lastCity);
+  lastName = n; lastCity = c;
+
+  document.getElementById('popupText').innerHTML = `<strong>${n}</strong> de ${c} acabou de entrar para o Método da Inversão Feminina`;
+
+  p.classList.add('show');
+  // tempo visível também variável, pra não parecer cronometrado
+  const visibleTime = Math.floor(Math.random()*1500) + 4200; // 4.2s a 5.7s
+  setTimeout(()=>p.classList.remove('show'), visibleTime);
+
+  // intervalo entre popups bem mais espaçado e variável
+  const nextDelay = Math.floor(Math.random()*45000) + 45000; // 45s a 90s
+  setTimeout(showPopup, nextDelay);
+}
+
+// primeira aparição mais tardia, dando tempo da pessoa ler a página antes
+setTimeout(showPopup, Math.floor(Math.random()*20000) + 40000); // 40s a 60s
+
+const d = new Date();
+document.getElementById('todayDate').textContent = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 </script>
 </body>
 </html>
