@@ -406,8 +406,11 @@ body::after{
 
 <script>
 let cur = 1;
+let answers = {}; // guarda a letra (a/b/c/d) escolhida em cada pergunta, ex: {q1:'a', q2:'c', ...}
 
 function pick(q, opt, fb){
+  answers['q'+q] = opt;
+
   const card = document.getElementById('q'+q);
   card.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
   event.currentTarget.classList.add('sel');
@@ -461,7 +464,15 @@ function goLoading(){
   let i = 0;
 
   function run(){
-    if(i >= steps.length){ setTimeout(()=>{ window.location.href='quiz17.html'; }, 400); return; }
+    if(i >= steps.length){
+      setTimeout(()=>{
+        // salva as respostas em localStorage (fallback) e manda também via URL (garante que o resultado chegue mesmo em aba nova/incógnito)
+        try{ localStorage.setItem('quizAnswers', JSON.stringify(answers)); }catch(e){}
+        const qs = new URLSearchParams(answers).toString();
+        window.location.href = 'quiz17.html' + (qs ? '?'+qs : '');
+      }, 400);
+      return;
+    }
     const s = steps[i++];
     fill.style.width = s.w+'%';
     lbl.textContent  = s.lbl;
