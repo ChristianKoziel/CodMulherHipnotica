@@ -119,7 +119,7 @@ body{
   font-size:clamp(26px,6vw,36px);color:#fff;line-height:1.12;font-weight:700;margin-bottom:18px;
 }
 .truth-h em{color:var(--hot);font-style:italic}
-.truth-p{font-size:14.5px;font-weight:300;color:rgba(255,220,230,.6);line-height:1.78;margin-bottom:14px}
+.truth-p{font-size:14.5px;font-weight:300;color:var(--muted-dark);line-height:1.78;margin-bottom:14px}
 .truth-p strong{color:rgba(255,220,230,.9);font-weight:500}
 .pull{
   border-left:2px solid rgba(200,0,63,.3);
@@ -128,6 +128,17 @@ body{
   color:rgba(255,220,230,.5);line-height:1.6;
 }
 .pull strong{color:rgba(255,220,230,.85);font-style:normal;font-family:'DM Sans',sans-serif;font-size:14px}
+ 
+/* PATTERN RECAP (as 4 patterns, not a numbered sequence) */
+.pattern-recap{display:flex;flex-direction:column;gap:2px;margin:20px 0}
+.pr-item{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.02);border:1px solid rgba(255,45,107,.1);
+  border-radius:12px;padding:13px 16px;
+}
+.pr-emoji{font-size:17px;flex-shrink:0;line-height:1}
+.pr-text{font-size:13px;font-weight:300;color:var(--muted-dark);line-height:1.45}
+.pr-text strong{color:#fff;font-weight:500}
 
 /* STEPS */
 .step{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(200,0,63,.1)}
