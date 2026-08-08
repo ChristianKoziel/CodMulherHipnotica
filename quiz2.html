@@ -219,6 +219,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <script>
 let cur = 1;
 let answers = {};
+
 function pick(q, opt, fb){
   answers['q'+q] = opt;
   const card = document.getElementById('q'+q);
@@ -230,8 +231,8 @@ function pick(q, opt, fb){
     el.classList.add('on');
   }
   document.getElementById('nx'+q).classList.add('on');
-  if(q === 5) setTimeout(goLoading, 900);
 }
+
 function next(nq){
   const prev = document.getElementById('q'+(nq-1));
   prev.classList.add('out');
@@ -247,6 +248,7 @@ function next(nq){
     window.scrollTo({top:0,behavior:'smooth'});
   },240);
 }
+
 function goLoading(){
   document.getElementById('q5').style.display = 'none';
   document.getElementById('prog').style.display = 'none';
