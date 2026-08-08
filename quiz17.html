@@ -33,14 +33,61 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);di
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.45}
 .amb1{position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(200,0,63,.16) 0%,transparent 65%);pointer-events:none;z-index:0}
 .wrap{width:100%;max-width:440px;padding:0 20px;position:relative;z-index:1}
-.loader-screen{position:fixed;inset:0;background:var(--ink);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .5s ease,visibility .5s ease}
+
+/* LOADER DOPAMINA */
+.loader-screen{
+  position:fixed;inset:0;
+  background:radial-gradient(ellipse at center, #1a0a12 0%, #040208 70%);
+  z-index:1000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:22px;
+  transition:opacity .4s ease, visibility .4s ease;
+}
 .loader-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
-.loader-ring{width:64px;height:64px;border-radius:50%;border:3px solid rgba(255,45,107,.15);border-top-color:var(--hot);animation:spin .9s linear infinite}
+
+.loader-ring{
+  width:68px;height:68px;border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:#FF2D6B;
+  border-right-color:#C8003F;
+  animation:spin 0.85s linear infinite;
+  box-shadow:0 0 20px rgba(255,45,107,.25);
+}
 @keyframes spin{to{transform:rotate(360deg)}}
-.loader-pct{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;color:#fff}
-.loader-txt{font-size:13px;color:var(--soft);letter-spacing:.4px;text-align:center}
-.loader-bar{width:210px;height:3px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
-.loader-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--rose),var(--hot));border-radius:10px;transition:width .3s ease}
+
+.loader-pct{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:900;color:#fff;
+  text-shadow:0 0 20px rgba(255,45,107,.4);
+  transition:all .2s ease;
+}
+
+.loader-txt{
+  font-size:13.5px;color:rgba(245,232,238,.7);
+  letter-spacing:.4px;text-align:center;
+  min-height:18px;
+}
+
+.loader-bar{
+  width:220px;height:4px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;overflow:hidden;
+  position:relative;
+}
+.loader-fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg, #C8003F, #FF2D6B, #FF6B9D);
+  background-size:200% 100%;
+  border-radius:20px;
+  animation:flow 1.4s linear infinite;
+  transition:width .25s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 0 12px rgba(255,45,107,.5);
+}
+@keyframes flow{
+  0%{background-position:100% 0}
+  100%{background-position:-100% 0}
+}
+
 .s{padding-top:42px;opacity:0;transform:translateY(22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
 .s.on{opacity:1;transform:translateY(0)}
 .s:first-child{padding-top:34px}
@@ -119,12 +166,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 </style>
 </head>
 <body>
+
 <div class="loader-screen" id="loader">
   <div class="loader-ring"></div>
   <div class="loader-pct" id="pct">0%</div>
   <div class="loader-txt" id="ltxt">Lendo suas respostas...</div>
   <div class="loader-bar"><div class="loader-fill" id="lfill"></div></div>
 </div>
+
 <div class="amb1"></div>
 <div class="wrap">
 
@@ -163,7 +212,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div class="cycle-item"><div class="ci-num">3</div><div class="ci-text">A urgência de escolher <strong>nunca nasce</strong></div></div>
     </div>
 
-    <!-- AGITAÇÃO REFORÇADA -->
     <div class="agitate">
       <p>Enquanto esse padrão continuar ativo, <strong>você vai continuar se sentindo escolhida só quando ele decide.</strong></p>
       <p>Vai continuar esperando a mensagem, interpretando silêncio, se questionando… e se culpando.</p>
@@ -218,13 +266,41 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 
 </div>
+
 <script>
-const steps = [{p:18,t:"Lendo suas respostas..."},{p:42,t:"Identificando o padrão..."},{p:67,t:"Cruzando com casos similares..."},{p:89,t:"Montando seu diagnóstico..."},{p:100,t:"Pronto."}];
-let i=0;
-const pct=document.getElementById('pct'), ltxt=document.getElementById('ltxt'), lfill=document.getElementById('lfill'), loader=document.getElementById('loader');
-function tick(){if(i<steps.length){pct.textContent=steps[i].p+'%';ltxt.textContent=steps[i].t;lfill.style.width=steps[i].p+'%';i++;setTimeout(tick,390);}else{setTimeout(()=>{loader.classList.add('hide');},280);}}
+const steps = [
+  {p:15, t:"Lendo suas respostas..."},
+  {p:38, t:"Identificando o padrão..."},
+  {p:62, t:"Cruzando com casos similares..."},
+  {p:85, t:"Montando seu diagnóstico..."},
+  {p:100, t:"Pronto."}
+];
+let i = 0;
+const pct = document.getElementById('pct');
+const ltxt = document.getElementById('ltxt');
+const lfill = document.getElementById('lfill');
+const loader = document.getElementById('loader');
+
+function tick(){
+  if(i < steps.length){
+    pct.textContent = steps[i].p + '%';
+    ltxt.textContent = steps[i].t;
+    lfill.style.width = steps[i].p + '%';
+    i++;
+    setTimeout(tick, 320);
+  } else {
+    setTimeout(() => {
+      loader.classList.add('hide');
+    }, 220);
+  }
+}
 tick();
-const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});},{threshold:0.08});
+
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
 document.querySelectorAll('.s, .bridge').forEach(el=>obs.observe(el));
 </script>
 </body>
