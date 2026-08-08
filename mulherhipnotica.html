@@ -24,7 +24,7 @@ src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -155,9 +155,26 @@ body{
 .proof-img{width:100%;border-radius:14px;display:block;border:1px solid rgba(255,255,255,.08)}
 .proof-hint{text-align:center;font-size:11.5px;color:rgba(255,200,220,.35);margin-top:12px}
 
+/* DOR ANTES DO PREÇO */
+.pain-bridge{
+  background:var(--ink);
+  padding:10px 24px 40px;
+  text-align:center;
+}
+.pain-bridge p{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  font-style:italic;
+  color:rgba(255,220,230,.7);
+  line-height:1.5;
+  max-width:380px;
+  margin:0 auto 12px;
+}
+.pain-bridge p strong{color:#fff;font-style:normal;font-family:'DM Sans',sans-serif;font-weight:500}
+
 /* OFFER */
-.offer-section{background:var(--ink);padding:56px 24px 70px}
-.offer-hook{text-align:center;margin-bottom:30px}
+.offer-section{background:var(--ink);padding:20px 24px 70px}
+.offer-hook{text-align:center;margin-bottom:28px}
 .offer-hook h2{
   font-family:'Playfair Display',serif;
   font-size:clamp(30px,7vw,42px);font-weight:900;
@@ -195,28 +212,42 @@ body{
   font-size:15px;font-weight:600;color:rgba(255,200,220,.3);text-decoration:line-through;
 }
 
-/* PREMIUM PRICE */
+/* PREMIUM PRICE - CORRIGIDO */
 .va-you{
-  text-align:center;margin-top:18px;padding-top:18px;
+  text-align:center;margin-top:20px;padding-top:20px;
   border-top:1px solid rgba(255,63,129,.15);
 }
 .va-you-label{
-  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
-  color:rgba(255,63,129,.55);font-weight:600;margin-bottom:6px;
+  font-size:11px;letter-spacing:2.8px;text-transform:uppercase;
+  color:rgba(255,63,129,.55);font-weight:600;margin-bottom:8px;
 }
 .va-you-price{
   font-family:'Playfair Display',serif;
-  font-size:58px;font-weight:900;
-  color:var(--gold-light);line-height:.9;letter-spacing:-1.5px;
+  font-size:52px;
+  font-weight:700;
+  color:var(--gold-light);
+  line-height:1;
+  letter-spacing:-0.5px;
 }
-.va-you-prefix{font-size:26px;vertical-align:super;line-height:1;margin-right:2px}
-.va-you-dec{font-size:30px;vertical-align:super;line-height:1}
-.va-you-sub{font-size:12.5px;color:rgba(255,200,220,.35);margin-top:8px;letter-spacing:.3px}
+.va-you-prefix{
+  font-size:22px;
+  font-weight:600;
+  vertical-align:super;
+  margin-right:1px;
+  opacity:.9;
+}
+.va-you-dec{
+  font-size:26px;
+  font-weight:600;
+  vertical-align:super;
+  opacity:.9;
+}
+.va-you-sub{font-size:13px;color:rgba(255,200,220,.4);margin-top:10px;letter-spacing:.2px}
 .va-pill{
   display:inline-block;
   background:rgba(200,0,63,.12);border:1px solid rgba(200,0,63,.2);
   border-radius:100px;padding:5px 16px;
-  font-size:11.5px;color:rgba(255,160,190,.7);margin-top:10px;
+  font-size:11.5px;color:rgba(255,160,190,.7);margin-top:12px;
 }
 
 /* URGENCY */
@@ -255,13 +286,13 @@ body{
 
 /* GUARANTEE */
 .guarantee{
-  background:rgba(201,151,42,.07);border:1px solid rgba(201,151,42,.2);
+  background:rgba(201,151,42,.08);border:1px solid rgba(201,151,42,.22);
   border-radius:18px;padding:22px 18px;
-  display:flex;align-items:center;gap:16px;margin-top:22px;
+  display:flex;align-items:center;gap:16px;margin-top:24px;
 }
 .guarantee-img{width:72px;height:auto;flex-shrink:0}
-.guarantee h4{font-size:14px;font-weight:600;color:rgba(240,193,75,.95);margin-bottom:5px}
-.guarantee p{font-size:12.5px;color:rgba(255,220,180,.55);font-weight:300;line-height:1.55}
+.guarantee h4{font-size:14.5px;font-weight:600;color:rgba(240,193,75,.95);margin-bottom:6px}
+.guarantee p{font-size:13px;color:rgba(255,220,180,.6);font-weight:300;line-height:1.55}
 
 /* FAQ */
 .faq-section{background:var(--cream);padding:56px 24px}
@@ -285,12 +316,27 @@ body{
 /* 2ND CTA */
 .cta2-section{background:var(--ink);padding:48px 24px 70px}
 .cta2-section .inner{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
-.cta2-label{font-size:13.5px;font-weight:300;color:rgba(255,200,220,.4);text-align:center;line-height:1.5}
+.cta2-label{font-size:15px;font-weight:300;color:rgba(255,200,220,.45);text-align:center;line-height:1.55}
+.cta2-label strong{color:#fff;font-weight:500}
 
 /* FOOTER */
 .footer{background:var(--ink);padding:28px;text-align:center;border-top:1px solid rgba(255,255,255,.04)}
 .footer-logo{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:rgba(255,200,220,.22);margin-bottom:6px}
 .footer p{font-size:11px;color:rgba(255,200,220,.15);font-weight:300}
+
+/* POPUP */
+#popup{
+  position:fixed;bottom:20px;left:16px;z-index:9999;
+  background:rgba(26,10,18,.97);border:1px solid rgba(200,0,63,.25);border-radius:100px;
+  padding:10px 18px 10px 12px;display:flex;align-items:center;gap:10px;
+  opacity:0;transform:translateY(16px);transition:all .4s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 16px 50px rgba(0,0,0,.55);max-width:300px;
+}
+#popup.show{opacity:1;transform:translateY(0)}
+.pl-dot{width:7px;height:7px;border-radius:50%;background:#00E57B;animation:pulse 1.4s infinite;flex-shrink:0}
+.pl-lbl{font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:rgba(0,229,123,.65);font-weight:600}
+.pl-text{font-size:12.5px;color:rgba(255,220,230,.8);font-weight:300;line-height:1.3}
+.pl-text strong{color:#fff;font-weight:500}
 </style>
 </head>
 <body>
@@ -391,6 +437,13 @@ body{
   </div>
 </section>
 
+<!-- DOR ANTES DO PREÇO -->
+<div class="pain-bridge">
+  <p>Enquanto você continua no mesmo padrão…</p>
+  <p><strong>ele se acomoda mais a cada dia.</strong></p>
+  <p style="margin-bottom:0">A pergunta é: quanto tempo você ainda quer viver isso?</p>
+</div>
+
 <!-- OFERTA -->
 <section class="offer-section">
   <div class="inner">
@@ -470,7 +523,7 @@ body{
       <img src="src/img/30-DIAS-FINAL-1.svg" alt="Garantia de 30 dias" class="guarantee-img">
       <div>
         <h4>Garantia incondicional de 30 dias</h4>
-        <p>Se em 30 dias você não sentir diferença real, devolvemos cada centavo. Sem perguntas. Sem burocracia.</p>
+        <p>Se em 30 dias você não sentir uma diferença real na dinâmica, devolvemos 100% do seu dinheiro. Sem perguntas. Sem burocracia. O risco é todo nosso.</p>
       </div>
     </div>
   </div>
@@ -506,13 +559,17 @@ body{
 <!-- CTA FINAL -->
 <section class="cta2-section">
   <div class="inner">
-    <div class="cta2-label">Se você chegou até aqui,<br>você já sabe o que precisa fazer.</div>
+    <div class="cta2-label">
+      Você já viu o padrão.<br>
+      Você já sentiu a dor.<br>
+      <strong>Agora só falta decidir se vai continuar nele ou quebrar de uma vez.</strong>
+    </div>
     <div class="cta-wrap" style="width:100%">
       <div class="cta-glow"></div>
       <a href="https://pay.sunize.com.br/LXHVfkNO"
          class="cta-main"
          onclick="fbq('track', 'InitiateCheckout');">
-        QUERO MUDAR ISSO AGORA →
+        QUERO QUEBRAR ESSE PADRÃO AGORA →
       </a>
     </div>
     <p class="cta-caption">R$ 37,90 · acesso imediato · garantia de 30 dias</p>
@@ -524,9 +581,46 @@ body{
   <p>© 2026 · Todos os direitos reservados.</p>
 </footer>
 
+<!-- POPUP -->
+<div id="popup">
+  <div class="pl-dot"></div>
+  <div>
+    <div class="pl-lbl">ao vivo</div>
+    <div class="pl-text" id="popupText"></div>
+  </div>
+</div>
+
 <script>
 const d = new Date();
 document.getElementById('todayDate').textContent = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+
+// Popup de compra
+const names = ["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
+const cities = ["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
+let lastName = null;
+let lastCity = null;
+
+function pickDifferent(arr, last){
+  let choice;
+  do { choice = arr[Math.floor(Math.random()*arr.length)]; }
+  while (arr.length > 1 && choice === last);
+  return choice;
+}
+
+function showPopup(){
+  const p = document.getElementById('popup');
+  const n = pickDifferent(names, lastName);
+  const c = pickDifferent(cities, lastCity);
+  lastName = n; lastCity = c;
+  document.getElementById('popupText').innerHTML = `<strong>${n}</strong> de ${c} acabou de entrar`;
+  p.classList.add('show');
+  const visibleTime = Math.floor(Math.random()*1800) + 4200;
+  setTimeout(()=>p.classList.remove('show'), visibleTime);
+  const nextDelay = Math.floor(Math.random()*50000) + 55000;
+  setTimeout(showPopup, nextDelay);
+}
+
+setTimeout(showPopup, Math.floor(Math.random()*25000) + 35000);
 </script>
 </body>
 </html>
