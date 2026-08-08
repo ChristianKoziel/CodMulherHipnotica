@@ -24,7 +24,7 @@ src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -60,7 +60,7 @@ body{
 
 /* HERO */
 .hero{
-  padding:105px 24px 60px;
+  padding:105px 24px 58px;
   display:flex;flex-direction:column;align-items:center;
   background:linear-gradient(165deg,#0A040C 0%,#1C0A16 45%,#0A040C 100%);
   position:relative;overflow:hidden;
@@ -87,13 +87,12 @@ body{
 .hero h1 em{font-style:italic;color:var(--hot)}
 .hero-sub{
   font-size:15.5px;font-weight:300;color:rgba(255,220,230,.65);
-  text-align:center;line-height:1.65;max-width:360px;margin-bottom:8px;
+  text-align:center;line-height:1.65;max-width:360px;
 }
 .hero-sub strong{color:rgba(255,230,240,.95);font-weight:500}
 
 /* SHARED */
 .dark{background:var(--ink);padding:56px 24px}
-.light{background:var(--cream);padding:56px 24px}
 .mist{background:var(--mist);padding:56px 24px}
 .inner{max-width:480px;margin:0 auto}
 .lbl{
@@ -155,26 +154,26 @@ body{
 .proof-img{width:100%;border-radius:14px;display:block;border:1px solid rgba(255,255,255,.08)}
 .proof-hint{text-align:center;font-size:11.5px;color:rgba(255,200,220,.35);margin-top:12px}
 
-/* DOR ANTES DO PREÇO */
+/* PAIN + FUTURE PACING */
 .pain-bridge{
   background:var(--ink);
-  padding:10px 24px 40px;
+  padding:8px 24px 36px;
   text-align:center;
 }
 .pain-bridge p{
   font-family:'Playfair Display',serif;
-  font-size:18px;
+  font-size:17.5px;
   font-style:italic;
   color:rgba(255,220,230,.7);
   line-height:1.5;
   max-width:380px;
-  margin:0 auto 12px;
+  margin:0 auto 11px;
 }
 .pain-bridge p strong{color:#fff;font-style:normal;font-family:'DM Sans',sans-serif;font-weight:500}
 
 /* OFFER */
-.offer-section{background:var(--ink);padding:20px 24px 70px}
-.offer-hook{text-align:center;margin-bottom:28px}
+.offer-section{background:var(--ink);padding:12px 24px 70px}
+.offer-hook{text-align:center;margin-bottom:26px}
 .offer-hook h2{
   font-family:'Playfair Display',serif;
   font-size:clamp(30px,7vw,42px);font-weight:900;
@@ -183,12 +182,25 @@ body{
 .offer-hook h2 em{font-style:italic;color:var(--hot)}
 .offer-hook p{font-size:15px;font-weight:300;color:rgba(255,220,230,.55);line-height:1.6}
 
+/* PRODUCT COVER */
+.product-cover{
+  text-align:center;
+  margin-bottom:28px;
+}
+.product-cover img{
+  width:100%;
+  max-width:340px;
+  border-radius:18px;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.09);
+}
+
 /* VALUE STACK */
 .value-anchor{
   background:rgba(255,255,255,.03);
   border:1px solid rgba(255,255,255,.07);
   border-radius:18px;padding:22px 18px;
-  margin-bottom:26px;
+  margin-bottom:24px;
 }
 .va-title{
   font-size:11px;letter-spacing:2.2px;text-transform:uppercase;
@@ -212,7 +224,7 @@ body{
   font-size:15px;font-weight:600;color:rgba(255,200,220,.3);text-decoration:line-through;
 }
 
-/* PREMIUM PRICE - CORRIGIDO */
+/* PREMIUM PRICE */
 .va-you{
   text-align:center;margin-top:20px;padding-top:20px;
   border-top:1px solid rgba(255,63,129,.15);
@@ -441,7 +453,7 @@ body{
 <div class="pain-bridge">
   <p>Enquanto você continua no mesmo padrão…</p>
   <p><strong>ele se acomoda mais a cada dia.</strong></p>
-  <p style="margin:18px auto 8px; max-width:380px;">
+  <p style="margin:16px auto 8px; max-width:380px;">
     Daqui a 3 meses você pode estar exatamente no mesmo lugar…<br>
     ou finalmente na posição de quem é escolhida.
   </p>
@@ -454,6 +466,11 @@ body{
     <div class="offer-hook">
       <h2>Tudo isso por<br><em>menos do que um Uber.</em></h2>
       <p>Você gasta mais num café… e continua presa no mesmo ciclo.</p>
+    </div>
+
+    <!-- CAPA DO PRODUTO -->
+    <div class="product-cover">
+      <img src="src/img/44ef7d98-adeb-4867-b3d9-ebe6cd9cedee.png" alt="Protocolo da Inversão Feminina">
     </div>
 
     <div class="value-anchor">
@@ -560,12 +577,15 @@ body{
   </div>
 </section>
 
-<div class="cta2-label">
-  Você já viu o padrão.<br>
-  Você já sentiu a dor.<br><br>
-  Agora a pergunta é simples:<br>
-  <strong>Você vai continuar sendo a opção…<br>ou vai se tornar a escolha?</strong>
-</div>
+<!-- CTA FINAL -->
+<section class="cta2-section">
+  <div class="inner">
+    <div class="cta2-label">
+      Você já viu o padrão.<br>
+      Você já sentiu a dor.<br><br>
+      Agora a pergunta é simples:<br>
+      <strong>Você vai continuar sendo a opção…<br>ou vai se tornar a escolha?</strong>
+    </div>
     <div class="cta-wrap" style="width:100%">
       <div class="cta-glow"></div>
       <a href="https://pay.sunize.com.br/LXHVfkNO"
@@ -596,7 +616,6 @@ body{
 const d = new Date();
 document.getElementById('todayDate').textContent = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 
-// Popup de compra
 const names = ["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
 const cities = ["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
 let lastName = null;
