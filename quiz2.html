@@ -268,7 +268,7 @@ function goLoading(){
     if(i >= steps.length){
       setTimeout(()=>{
         try{ localStorage.setItem('quizAnswers', JSON.stringify(answers)); }catch(e){}
-        window.location.href = 'resultado.html';
+        window.location.href = 'quiz17.html';
       }, 400);
       return;
     }
