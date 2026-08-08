@@ -109,77 +109,78 @@ body::after{
 .ci-text{font-size:12.5px;font-weight:300;color:var(--soft);line-height:1.45}
 .ci-text strong{color:#fff;font-weight:600}
 
-/* EXPERT - FOTO RETRATO */
+/* EXPERT - FOTO ESQUERDA + TEXTO DIREITA */
 .expert-wrap{
   background:#06030d;
   border:1px solid rgba(255,45,107,.12);
   border-radius:20px;
-  padding:24px 20px;
+  padding:20px;
   display:flex;
-  flex-direction:column;
-  align-items:center;
   gap:16px;
+  align-items:flex-start;
   margin-top:8px;
 }
 .expert-img{
-  width:140px;
-  height:170px;
+  width:110px;
+  height:140px;
   object-fit:cover;
   object-position:top center;
-  border-radius:14px;
+  border-radius:12px;
   border:2px solid rgba(200,0,63,.4);
-  box-shadow:0 0 28px rgba(200,0,63,.25);
-  display:block;
+  box-shadow:0 0 24px rgba(200,0,63,.25);
+  flex-shrink:0;
 }
-.expert-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;text-align:center}
-.expert-role{font-size:11.5px;color:rgba(255,45,107,.55);font-weight:400;letter-spacing:.4px;text-align:center;margin-top:3px}
+.expert-info{flex:1;min-width:0}
+.expert-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.2}
+.expert-role{font-size:11px;color:rgba(255,45,107,.6);font-weight:400;letter-spacing:.3px;margin-top:3px;margin-bottom:10px}
 .expert-bio{
-  font-size:13px;
+  font-size:12.5px;
   font-weight:300;
   color:var(--soft);
-  line-height:1.65;
-  text-align:center;
-  margin-top:4px;
+  line-height:1.55;
 }
 .expert-bio strong{color:#fff;font-weight:500}
 .expert-num{
   display:flex;
   align-items:center;
-  gap:12px;
-  width:100%;
+  gap:10px;
   background:rgba(200,0,63,.07);
   border:1px solid rgba(200,0,63,.15);
-  border-radius:12px;
-  padding:14px 16px;
-  margin-top:4px;
+  border-radius:10px;
+  padding:10px 12px;
+  margin-top:12px;
 }
-.en-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--hot);line-height:1;flex-shrink:0}
-.en-desc{font-size:12px;font-weight:300;color:var(--soft);line-height:1.4}
+.en-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--hot);line-height:1;flex-shrink:0}
+.en-desc{font-size:11px;font-weight:300;color:var(--soft);line-height:1.35}
 .en-desc strong{color:#fff;font-weight:600}
 
-/* DEPOIMENTOS */
-.proof-setup{font-size:13px;font-weight:300;color:var(--soft);line-height:1.6;margin-bottom:16px}
+/* DEPOIMENTOS EM IMAGEM */
+.proof-setup{font-size:13px;font-weight:300;color:var(--soft);line-height:1.6;margin-bottom:14px}
 .proof-setup strong{color:#fff;font-weight:600}
 
-.depo-list{display:flex;flex-direction:column;gap:12px}
-.depo-card{
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(255,45,107,.1);
-  border-radius:16px;
-  padding:16px 16px;
+.proof-scroll{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:8px;
+  margin:0 -20px;
+  padding-left:20px;
+  padding-right:20px;
+  -webkit-overflow-scrolling:touch;
 }
-.depo-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.depo-av{
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(135deg,#6B3050,#3D5060);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:600;color:rgba(255,200,220,.85);flex-shrink:0;
+.proof-scroll::-webkit-scrollbar{display:none}
+.proof-item{
+  flex:0 0 82%;
+  scroll-snap-align:center;
 }
-.depo-name{font-size:13px;font-weight:500;color:#fff}
-.depo-city{font-size:11px;color:var(--muted);margin-top:1px}
-.depo-stars{color:#F0C14B;font-size:12px;letter-spacing:1px;margin-bottom:8px}
-.depo-text{font-size:13px;font-weight:300;color:var(--soft);line-height:1.6;font-style:italic}
-.depo-text strong{color:#fff;font-weight:500;font-style:normal}
+.proof-img{
+  width:100%;
+  border-radius:14px;
+  display:block;
+  border:1px solid rgba(255,255,255,.08);
+}
+.proof-hint{text-align:center;font-size:11px;color:var(--muted);margin-top:10px}
 
 /* URGÊNCIA + CTA */
 .urgency-block{
@@ -265,83 +266,40 @@ body::after{
 
   <div class="bridge" id="b2"><div class="bline"></div><span class="btxt">quem já saiu desse ciclo</span><div class="bline"></div></div>
 
-  <!-- ③ DEPOIMENTOS -->
+  <!-- ③ DEPOIMENTOS (IMAGENS) -->
   <div class="s" id="s2">
     <span class="lbl">Resultados reais</span>
     <h2 class="brutal-title">Elas também estavam<br><em>nesse ciclo.</em></h2>
-    <p class="proof-setup"><strong>O denominador comum não era o homem — era o padrão.</strong></p>
+    <p class="proof-setup"><strong>O denominador comum não era o homem — era o padrão.</strong> Arraste pro lado →</p>
 
-    <div class="depo-list">
-      <div class="depo-card">
-        <div class="depo-top">
-          <div class="depo-av">A</div>
-          <div>
-            <div class="depo-name">Amanda R.</div>
-            <div class="depo-city">São Paulo · 34 anos</div>
-          </div>
-        </div>
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">“Eu era a que sempre corria atrás. Depois que apliquei o protocolo, a dinâmica virou. Ele começou a me procurar de verdade. <strong>Parei de ser opção.</strong>”</p>
-      </div>
-
-      <div class="depo-card">
-        <div class="depo-top">
-          <div class="depo-av">C</div>
-          <div>
-            <div class="depo-name">Camila S.</div>
-            <div class="depo-city">Curitiba · 29 anos</div>
-          </div>
-        </div>
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">“Eu achava que o problema era ele. Quando vi o padrão, caiu a ficha. Em 11 dias a forma como ele me tratava mudou completamente.”</p>
-      </div>
-
-      <div class="depo-card">
-        <div class="depo-top">
-          <div class="depo-av">J</div>
-          <div>
-            <div class="depo-name">Juliana M.</div>
-            <div class="depo-city">Belo Horizonte · 31 anos</div>
-          </div>
-        </div>
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">“Eu estava exausta de sempre investir mais. Hoje eu sei posicionar meu valor sem jogo e sem drama. <strong>A diferença é absurda.</strong>”</p>
-      </div>
-
-      <div class="depo-card">
-        <div class="depo-top">
-          <div class="depo-av">L</div>
-          <div>
-            <div class="depo-name">Larissa F.</div>
-            <div class="depo-city">Rio de Janeiro · 27 anos</div>
-          </div>
-        </div>
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">“Eu repetia o mesmo final com homens diferentes. Depois do método, o ciclo quebrou. Pela primeira vez eu sinto que estou no controle.”</p>
-      </div>
+    <div class="proof-scroll">
+      <div class="proof-item"><img src="src/img/print2.jpeg" alt="Depoimento" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/print3.jpeg" alt="Depoimento" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/print4.jpeg" alt="Depoimento" class="proof-img"></div>
+      <div class="proof-item"><img src="src/img/print5.jpeg" alt="Depoimento" class="proof-img"></div>
     </div>
+    <div class="proof-hint">Deslize para ver mais depoimentos</div>
   </div>
 
   <div class="bridge" id="b3"><div class="bline"></div><span class="btxt">quem descobriu o método</span><div class="bline"></div></div>
 
-  <!-- ④ EXPERT -->
+  <!-- ④ EXPERT (FOTO ESQUERDA + TEXTO DIREITA) -->
   <div class="s" id="s3">
     <div class="expert-wrap">
       <img src="src/img/Fotos Empreendedora _ Ensaio Profissional Feminino… (1).jpg" alt="Elisa Koscziol" class="expert-img">
       
-      <div style="text-align:center">
+      <div class="expert-info">
         <div class="expert-name">Elisa Koscziol</div>
-        <div class="expert-role">Psicóloga · Especialista em Padrões Emocionais Femininos</div>
-      </div>
+        <div class="expert-role">Psicóloga · Padrões Emocionais Femininos</div>
+        
+        <p class="expert-bio">
+          Especialista em dinâmicas emocionais femininas. Já ajudou mais de <strong>23 mil mulheres</strong> a parar de ser a opção e inverter a posição na relação.
+        </p>
 
-      <p class="expert-bio">
-        Formada em Psicologia, com mais de 9 anos dedicados a entender por que mulheres inteligentes e carinhosas continuam caindo nos mesmos ciclos. 
-        <strong>Já ajudou mais de 23 mil mulheres</strong> a inverter a dinâmica emocional e parar de ser a opção.
-      </p>
-
-      <div class="expert-num">
-        <div class="en-num">23K+</div>
-        <div class="en-desc"><strong>mulheres</strong> já inverteram essa dinâmica com o método</div>
+        <div class="expert-num">
+          <div class="en-num">23K+</div>
+          <div class="en-desc"><strong>mulheres</strong> já inverteram essa dinâmica</div>
+        </div>
       </div>
     </div>
   </div>
