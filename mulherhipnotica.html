@@ -1,224 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<!-- Facebook Pixel -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo da Inversão Feminina</title>
+
+<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1208952827491954');
 fbq('track', 'PageView');
+fbq('track', 'ViewContent');
 </script>
-<!-- End Facebook Pixel -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protocolo da Inversão Feminina</title>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --rose:#C8003F;
-  --hot:#FF2D6B;
-  --gold:#C9972A;
-  --gold-light:#F0C14B;
-  --cream:#FDF6F0;
-  --ink:#1A0A12;
-  --mist:#F7EEF2;
-  --border:rgba(200,0,63,.15);
-  /* estava faltando: causava texto invisível em fundos escuros */
-  --muted-dark:rgba(255,220,230,.62);
-}
+:root{--rose:#C8003F;--hot:#FF2D6B;--gold:#C9972A;--gold-light:#F0C14B;--cream:#FDF6F0;--ink:#1A0A12;--mist:#F7EEF2;--border:rgba(200,0,63,.15);--muted-dark:rgba(255,220,230,.62)}
 html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  overflow-x:hidden;
-}
-
-/* TOPBAR */
-.topbar{
-  position:fixed;top:0;left:0;width:100%;z-index:999;
-  background:var(--rose);
-  padding:11px 20px;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+.topbar{position:fixed;top:0;left:0;width:100%;z-index:999;background:var(--rose);padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:10px}
 .topbar-dot{width:6px;height:6px;background:var(--gold-light);border-radius:50%;animation:pulse 1.4s infinite}
-.topbar span{color:#fff;font-size:12.5px;font-weight:500;letter-spacing:.4px}
+.topbar span{color:#fff;font-size:12.5px;font-weight:500}
 .topbar strong{color:var(--gold-light)}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
-
-/* HERO */
-.hero{
-  padding:100px 24px 56px;
-  display:flex;flex-direction:column;align-items:center;
-  background:linear-gradient(160deg,#1A0A12 0%,#2D0F20 50%,#1A0A12 100%);
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(200,0,63,.18),transparent);
-}
+.hero{padding:100px 24px 56px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(160deg,#1A0A12 0%,#2D0F20 50%,#1A0A12 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(200,0,63,.18),transparent)}
 .hero-z{position:relative;z-index:1;width:100%;max-width:480px;display:flex;flex-direction:column;align-items:center}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(200,0,63,.2);border:1px solid rgba(200,0,63,.35);
-  border-radius:100px;padding:6px 16px;
-  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,200,220,.9);margin-bottom:28px;
-}
-.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--hot);animation:pulse 1.4s infinite}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(32px,7vw,50px);font-weight:900;
-  color:#fff;text-align:center;line-height:1.08;letter-spacing:-.5px;
-  margin-bottom:12px;
-}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(200,0,63,.2);border:1px solid rgba(200,0,63,.35);border-radius:100px;padding:6px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,200,220,.9);margin-bottom:28px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,50px);font-weight:900;color:#fff;text-align:center;line-height:1.08;margin-bottom:12px}
 .hero h1 em{font-style:italic;color:var(--hot)}
-.hero-sub{
-  font-size:15px;font-weight:300;color:rgba(255,220,230,.6);
-  text-align:center;line-height:1.7;max-width:340px;margin-bottom:32px;
-}
-.hero-img-wrap{position:relative;width:100%;max-width:280px;margin-bottom:0}
-.hero-img-glow{
-  position:absolute;inset:-2px;border-radius:22px;
-  background:linear-gradient(135deg,rgba(200,0,63,.5),rgba(255,45,107,.15),rgba(200,0,63,.3));
-  filter:blur(12px);z-index:0;
-}
-.hero-img{width:100%;border-radius:20px;display:block;position:relative;z-index:1;border:1px solid rgba(200,0,63,.22)}
-.scroll-hint{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:36px;
-}
-.scroll-hint span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,200,220,.3);font-weight:500}
-.scroll-arrow{
-  width:18px;height:18px;
-  border-right:1.5px solid rgba(200,0,63,.4);border-bottom:1.5px solid rgba(200,0,63,.4);
-  transform:rotate(45deg);animation:bounce 1.5s infinite;
-}
-@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
-
-/* SHARED */
+.hero-sub{font-size:15px;font-weight:300;color:rgba(255,220,230,.6);text-align:center;line-height:1.7;max-width:340px;margin-bottom:32px}
 .dark{background:var(--ink);padding:52px 24px}
 .light{background:var(--cream);padding:52px 24px}
 .mist{background:var(--mist);padding:52px 24px}
 .inner{max-width:480px;margin:0 auto}
-.lbl{
-  font-size:9.5px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(200,0,63,.5);font-weight:700;
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;
-}
+.lbl{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,0,63,.5);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .lbl::after{content:'';flex:1;height:1px;background:rgba(200,0,63,.15)}
-/* variante usada em fundos claros (mist/cream), pra manter contraste consistente */
-.lbl.on-light{color:rgba(200,0,63,.65)}
-.lbl.on-light::after{background:rgba(200,0,63,.2)}
-
-/* TRUTH */
-.truth-h{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(26px,6vw,36px);color:#fff;line-height:1.12;font-weight:700;margin-bottom:18px;
-}
+.truth-h{font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,36px);color:#fff;line-height:1.12;font-weight:700;margin-bottom:18px}
 .truth-h em{color:var(--hot);font-style:italic}
 .truth-p{font-size:14.5px;font-weight:300;color:var(--muted-dark);line-height:1.78;margin-bottom:14px}
 .truth-p strong{color:rgba(255,220,230,.9);font-weight:500}
-.pull{
-  border-left:2px solid rgba(200,0,63,.3);
-  padding:12px 18px;margin:20px 0;
-  font-size:15px;font-style:italic;font-family:'Playfair Display',serif;
-  color:rgba(255,220,230,.5);line-height:1.6;
-}
+.pull{border-left:2px solid rgba(200,0,63,.3);padding:12px 18px;margin:20px 0;font-size:15px;font-style:italic;font-family:'Playfair Display',serif;color:rgba(255,220,230,.5);line-height:1.6}
 .pull strong{color:rgba(255,220,230,.85);font-style:normal;font-family:'DM Sans',sans-serif;font-size:14px}
- 
-/* PATTERN RECAP (as 4 patterns, not a numbered sequence) */
 .pattern-recap{display:flex;flex-direction:column;gap:2px;margin:20px 0}
-.pr-item{
-  display:flex;align-items:center;gap:12px;
-  background:rgba(255,255,255,.02);border:1px solid rgba(255,45,107,.1);
-  border-radius:12px;padding:13px 16px;
-}
-.pr-emoji{font-size:17px;flex-shrink:0;line-height:1}
+.pr-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,45,107,.1);border-radius:12px;padding:13px 16px}
+.pr-emoji{font-size:17px;flex-shrink:0}
 .pr-text{font-size:13px;font-weight:300;color:var(--muted-dark);line-height:1.45}
 .pr-text strong{color:#fff;font-weight:500}
-
-/* METHOD TITLE (seção clara/mist) */
-.method-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(26px,6vw,36px);font-weight:700;
-  color:var(--ink);line-height:1.15;margin-bottom:24px;
-}
-
-/* STEPS */
+.method-title{font-family:'Playfair Display',serif;font-size:clamp(26px,6vw,36px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:24px}
 .step{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(200,0,63,.1)}
 .step:last-child{border-bottom:none}
-.step-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:rgba(200,0,63,.15);line-height:1;flex-shrink:0;margin-top:-2px}
+.step-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:rgba(200,0,63,.15);line-height:1;flex-shrink:0}
 .step-title{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
 .step-desc{font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.6}
-
-/* SOCIAL PROOF */
-.sp-section{background:var(--ink);padding:52px 24px}
-.sp-grid{display:flex;flex-direction:column;gap:12px;margin-top:4px}
-.sp-card{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,63,129,.1);
-  border-radius:16px;padding:16px 18px;
-}
-.sp-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.sp-avatar{
-  width:36px;height:36px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,rgba(184,0,58,.4),rgba(255,63,129,.3));
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:600;color:rgba(255,200,220,.8);
-}
-.sp-name{font-size:12px;font-weight:500;color:rgba(255,220,230,.7)}
-.sp-city{font-size:10.5px;font-weight:300;color:rgba(255,200,220,.35);margin-top:1px}
-.sp-stars{color:var(--gold-light);font-size:11px;letter-spacing:1px;margin-bottom:6px}
-.sp-msg{
-  font-size:13px;font-weight:300;
-  color:rgba(255,220,230,.6);line-height:1.6;font-style:italic;
-}
-.sp-msg strong{color:rgba(255,220,230,.9);font-weight:500;font-style:normal}
-
-/* BONUS */
-.bonus-strip{display:flex;flex-direction:column;gap:1px;margin-top:4px}
-.bonus-row{
-  background:#fff;border:1px solid var(--border);
-  padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;
-}
-.bonus-row:first-child{border-radius:14px 14px 2px 2px}
-.bonus-row:last-child{border-radius:2px 2px 14px 14px}
-.bonus-row-name{font-size:13.5px;font-weight:500;color:var(--ink)}
-.bonus-row-val{font-size:12px;color:rgba(200,0,63,.5);font-weight:500;white-space:nowrap}
-.bonus-total{text-align:center;margin-top:14px;font-size:13px;font-weight:300;color:#8B5A6B}
-.bonus-total strong{color:var(--gold);font-weight:600}
-
-/* OFFER */
 .offer-section{background:var(--ink);padding:52px 24px 72px}
 .offer-hook{text-align:center;margin-bottom:28px}
-.offer-hook h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(28px,6.5vw,38px);font-weight:900;
-  color:#fff;line-height:1.1;margin-bottom:10px;
-}
+.offer-hook h2{font-family:'Playfair Display',serif;font-size:clamp(28px,6.5vw,38px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px}
 .offer-hook h2 em{font-style:italic;color:var(--hot)}
 .offer-hook p{font-size:14px;font-weight:300;color:rgba(255,220,230,.55);line-height:1.65}
-
-/* VALOR ÂNCORA */
-.value-anchor{
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:16px;padding:18px;
-  margin-bottom:24px;
-}
-.va-title{
-  font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,200,220,.3);font-weight:600;margin-bottom:12px;
-  text-align:center;
-}
+.value-anchor{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;margin-bottom:24px}
+.va-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,200,220,.3);font-weight:600;margin-bottom:12px;text-align:center}
 .va-rows{display:flex;flex-direction:column;gap:8px}
 .va-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .va-item{font-size:13px;font-weight:300;color:rgba(255,220,230,.55)}
@@ -227,153 +80,59 @@ body{
 .va-total-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:4px}
 .va-total-label{font-size:13px;font-weight:500;color:rgba(255,220,230,.7)}
 .va-total-val{font-size:13px;font-weight:600;color:rgba(255,200,220,.3);text-decoration:line-through}
-.va-you{
-  text-align:center;margin-top:12px;padding-top:12px;
-  border-top:1px solid rgba(255,63,129,.12);
-}
+.va-you{text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,63,129,.12)}
 .va-you-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,63,129,.5);font-weight:600;margin-bottom:4px}
-.va-you-price{
-  font-family:'Playfair Display',serif;
-  font-size:52px;font-weight:900;
-  color:var(--gold-light);line-height:.9;letter-spacing:-1px;
-}
-.va-you-prefix{font-size:24px;vertical-align:super;line-height:1}
-.va-you-dec{font-size:28px;vertical-align:super;line-height:1}
-.va-you-sub{font-size:11px;color:rgba(255,200,220,.3);margin-top:6px;letter-spacing:.3px}
-.va-pill{
-  display:inline-block;
-  background:rgba(200,0,63,.1);border:1px solid rgba(200,0,63,.18);
-  border-radius:100px;padding:4px 14px;
-  font-size:11px;color:rgba(255,140,170,.65);margin-top:8px;
-}
-
-.urgency-bar{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.16);
-  border-radius:10px;padding:11px 16px;margin-bottom:18px;
-  font-size:12.5px;color:rgba(255,180,200,.75);
-}
+.va-you-price{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold-light);line-height:.9}
+.va-you-prefix{font-size:24px;vertical-align:super}
+.va-you-dec{font-size:28px;vertical-align:super}
+.va-you-sub{font-size:11px;color:rgba(255,200,220,.3);margin-top:6px}
+.urgency-bar{display:flex;align-items:center;justify-content:center;gap:7px;background:rgba(200,0,63,.08);border:1px solid rgba(200,0,63,.16);border-radius:10px;padding:11px 16px;margin-bottom:18px;font-size:12.5px;color:rgba(255,180,200,.75)}
 .urgency-bar strong{color:var(--hot)}
-
-/* CTA */
 .cta-wrap{position:relative;margin-bottom:10px}
-.cta-glow{
-  position:absolute;inset:-6px;border-radius:100px;
-  background:linear-gradient(135deg,var(--rose),var(--hot));
-  filter:blur(20px);opacity:.45;animation:glp 2s infinite;
-}
+.cta-glow{position:absolute;inset:-6px;border-radius:100px;background:linear-gradient(135deg,var(--rose),var(--hot));filter:blur(20px);opacity:.45;animation:glp 2s infinite}
 @keyframes glp{0%,100%{opacity:.3}50%{opacity:.58}}
-.cta-main{
-  position:relative;z-index:1;display:block;width:100%;
-  background:linear-gradient(135deg,var(--rose),var(--hot));
-  border:none;border-radius:100px;padding:22px 32px;
-  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;
-  color:#fff;cursor:pointer;text-align:center;
-  letter-spacing:.2px;overflow:hidden;line-height:1.3;text-decoration:none;
-}
-.cta-main::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
-  transform:translateX(-100%);animation:shim 2s infinite;
-}
+.cta-main{position:relative;z-index:1;display:block;width:100%;background:linear-gradient(135deg,var(--rose),var(--hot));border:none;border-radius:100px;padding:22px 32px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#fff;cursor:pointer;text-align:center;overflow:hidden;text-decoration:none}
+.cta-main::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);animation:shim 2s infinite}
 @keyframes shim{to{transform:translateX(100%)}}
 .cta-caption{text-align:center;font-size:11px;color:rgba(255,200,220,.28);margin-top:9px}
-
-.guarantee{
-  background:rgba(201,151,42,.07);border:1px solid rgba(201,151,42,.18);
-  border-radius:18px;padding:20px 18px;
-  display:flex;align-items:flex-start;gap:14px;margin-top:18px;
-}
-.guarantee-icon{
-  width:42px;height:42px;flex-shrink:0;
-  background:rgba(201,151,42,.1);border:1px solid rgba(201,151,42,.2);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;
-}
+.guarantee{background:rgba(201,151,42,.07);border:1px solid rgba(201,151,42,.18);border-radius:18px;padding:20px 18px;display:flex;align-items:flex-start;gap:14px;margin-top:18px}
+.guarantee-icon{width:42px;height:42px;flex-shrink:0;background:rgba(201,151,42,.1);border:1px solid rgba(201,151,42,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px}
 .guarantee h4{font-size:13px;font-weight:600;color:rgba(240,193,75,.9);margin-bottom:5px}
 .guarantee p{font-size:12px;color:rgba(255,220,180,.52);font-weight:300;line-height:1.65}
-
-/* FAQ (agora em acordeão com <details>/<summary>) */
 .faq-section{background:var(--cream);padding:52px 24px}
 .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
-.faq-item summary{
-  list-style:none;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  cursor:pointer;
-  font-size:14px;font-weight:500;color:var(--ink);
-  padding:4px 0;
-}
+.faq-item summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-size:14px;font-weight:500;color:var(--ink);padding:4px 0}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-icon{
-  flex-shrink:0;width:22px;height:22px;border-radius:50%;
-  border:1px solid rgba(200,0,63,.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;color:var(--rose);font-weight:600;
-  transition:transform .25s ease;
-}
+.faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1px solid rgba(200,0,63,.3);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--rose);font-weight:600;transition:transform .25s}
 .faq-item[open] .faq-icon{transform:rotate(45deg)}
-.faq-a{
-  font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7;
-  padding-top:10px;
-}
-
-/* 2ND CTA */
+.faq-a{font-size:13px;font-weight:300;color:#7A4A5A;line-height:1.7;padding-top:10px}
 .cta2-section{background:var(--ink);padding:40px 24px 60px}
 .cta2-section .inner{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
 .cta2-label{font-size:12px;font-weight:300;color:rgba(255,200,220,.35);text-align:center}
-
-/* FOOTER */
 .footer{background:var(--ink);padding:24px;text-align:center;border-top:1px solid rgba(255,255,255,.04)}
 .footer-logo{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,200,220,.2);margin-bottom:5px}
-.footer p{font-size:10.5px;color:rgba(255,200,220,.15);font-weight:300}
-
-/* POPUP */
-#popup{
-  position:fixed;bottom:18px;left:18px;z-index:9999;
-  background:rgba(26,10,18,.96);border:1px solid rgba(200,0,63,.2);border-radius:100px;
-  padding:9px 18px 9px 12px;display:flex;align-items:center;gap:9px;
-  opacity:0;transform:translateY(14px);transition:all .4s cubic-bezier(.34,1.56,.64,1);
-  box-shadow:0 16px 50px rgba(0,0,0,.5);max-width:290px;
-}
-#popup.show{opacity:1;transform:translateY(0)}
-.pl-dot{width:6px;height:6px;border-radius:50%;background:#00E57B;animation:pulse 1.4s infinite}
-.pl-lbl{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:rgba(0,229,123,.6);font-weight:600}
-.pl-text{font-size:12px;color:rgba(255,220,230,.75);font-weight:300}
-.pl-text strong{color:#fff;font-weight:500}
+.footer p{font-size:10.5px;color:rgba(255,200,220,.15)}
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div class="topbar-dot"></div>
   <span>Condição especial <strong>somente hoje</strong> — <span id="todayDate"></span></span>
 </div>
 
-<!-- ① HERO -->
 <section class="hero">
   <div class="hero-z">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-     Protocolo da Inversão Feminina™
-    </div>
+    <div class="hero-badge">Protocolo da Inversão Feminina™</div>
     <h1>Pare de ser a opção.<br>Vire a única <em>escolha</em><br>possível.</h1>
-    <p class="hero-sub">Sem implorar. Sem joguinhos. Sem se diminuir.</p>
-    <div class="hero-img-wrap">
-      <div class="hero-img-glow"></div>
-      <img src="src/img/Protocoloinversao.png" alt="Protocolo da Inversão Feminina" class="hero-img">
-    </div>
-    <div class="scroll-hint">
-      <span>Continua</span>
-      <div class="scroll-arrow"></div>
-    </div>
+    <p class="hero-sub">Sem implorar. Sem joguinhos. Sem se diminuir.<br>Só reposicionamento real.</p>
   </div>
 </section>
 
-<!-- ② VERDADE -->
 <section class="dark">
   <div class="inner">
     <div class="lbl">Por que isso se repete</div>
     <h2 class="truth-h">Não é falta de sorte.<br><em>É um padrão que se repete.</em></h2>
-    <p class="truth-p">O rosto muda, a cidade muda, a história muda, mas o final se repete. <strong>Você provavelmente se reconhece em pelo menos um desses:</strong></p>
+    <p class="truth-p">O rosto muda, a cidade muda, a história muda… mas o final se repete. <strong>Você provavelmente se reconhece em pelo menos um desses:</strong></p>
     <div class="pattern-recap">
       <div class="pr-item"><span class="pr-emoji">💔</span><span class="pr-text">Entrega presença e carinho <strong>antes dele se posicionar</strong></span></div>
       <div class="pr-item"><span class="pr-emoji">📱</span><span class="pr-text">Fica de plantão emocional <strong>esperando ele responder</strong></span></div>
@@ -384,18 +143,16 @@ body{
       "Não é falta de amor da parte dele.<br>
       <strong>É que ele nunca precisou escolher você de verdade.</strong>"
     </div>
-    <p class="truth-p">Dinâmica emocional não muda com esforço. Muda com reposicionamento, <strong>seja qual for a forma que esse padrão assume em você.</strong></p>
   </div>
 </section>
- 
-<!-- ③ O MÉTODO -->
+
 <section class="mist">
   <div class="inner">
-    <div class="lbl on-light">O protocolo</div>
+    <div class="lbl">O protocolo</div>
     <h2 class="method-title">Como a dinâmica<br>se reorganiza</h2>
     <div class="step">
       <div class="step-n">01</div>
-      <div><div class="step-title">Interromper o padrão automático</div><div class="step-desc">Seja entrega antecipada, vigilância ou repetição, você identifica e para de alimentar o ciclo sem perceber.</div></div>
+      <div><div class="step-title">Interromper o padrão automático</div><div class="step-desc">Você identifica e para de alimentar o ciclo sem perceber.</div></div>
     </div>
     <div class="step">
       <div class="step-n">02</div>
@@ -407,69 +164,33 @@ body{
     </div>
     <div class="step">
       <div class="step-n">04</div>
-      <div><div class="step-title">Controle emocional mesmo gostando muito</div><div class="step-desc">Sua estabilidade interna independe do comportamento dele.</div></div>
+      <div><div class="step-title">Controle emocional mesmo gostando muito</div><div class="step-desc">Sua estabilidade interna deixa de depender do comportamento dele.</div></div>
     </div>
   </div>
 </section>
- 
-<!-- ④ BÔNUS -->
-<section class="light">
-  <div class="inner">
-    <div class="lbl">Bônus inclusos</div>
-    <div class="bonus-strip">
-      <div class="bonus-row">
-        <div class="bonus-row-name">Guia de Mensagens Magnéticas</div>
-        <div class="bonus-row-val">R$ 49,90</div>
-      </div>
-      <div class="bonus-row">
-        <div class="bonus-row-name">Controle Emocional Feminino</div>
-        <div class="bonus-row-val">R$ 59,90</div>
-      </div>
-      <div class="bonus-row">
-        <div class="bonus-row-name">Conteúdo Surpresa</div>
-        <div class="bonus-row-val">R$ 39,90</div>
-      </div>
-      <div class="bonus-row">
-        <div class="bonus-row-name">🎬 +3 Videoaulas Curtas Direto ao Ponto</div>
-        <div class="bonus-row-val">R$ 48,50</div>
-      </div>
-    </div>
-    <p class="bonus-total">Total dos bônus: <strong>R$ 198,20</strong>, incluídos sem custo</p>
-  </div>
-</section>
- 
-<!-- ⑤ OFERTA -->
+
 <section class="offer-section">
   <div class="inner">
- 
     <div class="offer-hook">
-      <h2>Tudo isso por<br><em>menos do que nada.</em></h2>
-      <p>Você gasta mais num Uber, num café com leite, num almoço por impulso. E continua presa no mesmo ciclo.</p>
+      <h2>Tudo isso por<br><em>menos do que um Uber.</em></h2>
+      <p>Você gasta mais num café, num almoço por impulso… e continua presa no mesmo ciclo.</p>
     </div>
- 
+
     <div class="value-anchor">
-      <div class="va-title">O que está incluso</div>
+      <div class="va-title">O que você recebe hoje (8 entregas)</div>
       <div class="va-rows">
-        <div class="va-row">
-          <span class="va-item">Protocolo da Inversão Feminina</span>
-          <span class="va-price">R$ 97,00</span>
-        </div>
-        <div class="va-row">
-          <span class="va-item">Guia de Mensagens Magnéticas</span>
-          <span class="va-price">R$ 49,90</span>
-        </div>
-        <div class="va-row">
-          <span class="va-item">Controle Emocional Feminino</span>
-          <span class="va-price">R$ 59,90</span>
-        </div>
-        <div class="va-row">
-          <span class="va-item">Conteúdo Surpresa</span>
-          <span class="va-price">R$ 39,90</span>
-        </div>
+        <div class="va-row"><span class="va-item">1. Protocolo da Inversão Feminina (método completo)</span><span class="va-price">R$ 197</span></div>
+        <div class="va-row"><span class="va-item">2. Guia de Mensagens Magnéticas</span><span class="va-price">R$ 67</span></div>
+        <div class="va-row"><span class="va-item">3. Controle Emocional Feminino</span><span class="va-price">R$ 67</span></div>
+        <div class="va-row"><span class="va-item">4. Scripts de Reposicionamento (prontos pra usar)</span><span class="va-price">R$ 47</span></div>
+        <div class="va-row"><span class="va-item">5. Diagnóstico Avançado de Padrão Emocional</span><span class="va-price">R$ 47</span></div>
+        <div class="va-row"><span class="va-item">6. Plano de 7 Dias de Inversão</span><span class="va-price">R$ 37</span></div>
+        <div class="va-row"><span class="va-item">7. Biblioteca de Respostas de Poder</span><span class="va-price">R$ 37</span></div>
+        <div class="va-row"><span class="va-item">8. Masterclass Surpresa + Acesso Vitalício</span><span class="va-price">R$ 97</span></div>
         <div class="va-divider"></div>
         <div class="va-total-row">
           <span class="va-total-label">Valor total</span>
-          <span class="va-total-val">R$ 246,70</span>
+          <span class="va-total-val">R$ 596</span>
         </div>
       </div>
       <div class="va-you">
@@ -477,8 +198,7 @@ body{
         <div class="va-you-price">
           <span class="va-you-prefix">R$</span> 37<span class="va-you-dec">,90</span>
         </div>
-        <div class="va-you-sub">Um único pagamento.</div>
-        <div class="va-pill">Um conhecimento para a vida toda.</div>
+        <div class="va-you-sub">Um único pagamento · Acesso imediato</div>
       </div>
     </div>
 
@@ -488,10 +208,10 @@ body{
 
     <div class="cta-wrap">
       <div class="cta-glow"></div>
-      <a href="https://pay.sunize.com.br/LXHVfkNO"
-        class="cta-main"
-        onclick="fbq('track', 'InitiateCheckout'); setTimeout(() => { window.location.href=this.href }, 150); return false;">
-        SIM, QUERO SAIR DESSE CICLO →
+      <a href="https://pay.sunize.com.br/LXHVfkNO" 
+         class="cta-main"
+         onclick="fbq('track', 'InitiateCheckout');">
+        SIM, QUERO PARAR DE SER A OPÇÃO →
       </a>
     </div>
     <p class="cta-caption">Pagamento 100% seguro · Acesso imediato por e-mail</p>
@@ -500,116 +220,55 @@ body{
       <div class="guarantee-icon">🛡</div>
       <div>
         <h4>Garantia de 30 dias</h4>
-        <p>Se em 30 dias você não perceber mudança, devolvemos cada centavo. Sem perguntas. Sem burocracia.</p>
+        <p>Se em 30 dias você não sentir diferença real, devolvemos cada centavo. Sem perguntas. Sem burocracia.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ⑥ FAQ (agora em acordeão) -->
 <section class="faq-section">
   <div class="inner">
-    <div class="lbl on-light">Dúvidas rápidas</div>
-
+    <div class="lbl">Dúvidas rápidas</div>
     <details class="faq-item">
       <summary>Como recebo o acesso?<span class="faq-icon">+</span></summary>
       <p class="faq-a">Tudo é 100% digital. Assim que a compra for aprovada, o acesso é enviado automaticamente para o seu e-mail.</p>
     </details>
-
     <details class="faq-item">
-      <summary>Funciona para qualquer relacionamento?<span class="faq-icon">+</span></summary>
-      <p class="faq-a">O método foi desenvolvido para mulheres que desejam compreender melhor a dinâmica dos relacionamentos e aplicar estratégias saudáveis em diferentes contextos, como namoro, casamento ou relacionamentos instáveis.</p>
+      <summary>Funciona mesmo se o relacionamento já acabou?<span class="faq-icon">+</span></summary>
+      <p class="faq-a">Sim. O protocolo trabalha o padrão, não o homem específico. Funciona tanto pra quem está em relacionamento instável quanto pra quem quer quebrar o ciclo de repetição.</p>
     </details>
-
-    <details class="faq-item">
-      <summary>E se meu padrão não for exatamente "entregar demais"?<span class="faq-icon">+</span></summary>
-      <p class="faq-a">O protocolo cobre as quatro formas mais comuns que esse padrão assume: entregar demais cedo, ficar em alerta esperando resposta, carregar um vínculo que não fechou, ou repetir o mesmo tipo de relação. A raiz é a mesma, então o método se aplica independente de qual dessas mais se parece com você.</p>
-    </details>
-
     <details class="faq-item">
       <summary>E se eu não gostar?<span class="faq-icon">+</span></summary>
-      <p class="faq-a">Você conta com 30 dias de garantia. Se entender que o método não faz sentido para você, basta solicitar o reembolso dentro do prazo.</p>
+      <p class="faq-a">Você tem 30 dias de garantia incondicional. Basta pedir o reembolso dentro do prazo.</p>
     </details>
-
     <details class="faq-item">
-      <summary>Preciso ter algum conhecimento prévio?<span class="faq-icon">+</span></summary>
-      <p class="faq-a">Não. O conteúdo foi estruturado para ser simples, didático e fácil de aplicar, mesmo para quem está começando.</p>
-    </details>
-
-        <details class="faq-item">
       <summary>Por que o valor é tão baixo?<span class="faq-icon">+</span></summary>
-      <p class="faq-a">Porque o objetivo aqui é alcance, não lucro. O material é 100% digital, sem custo de impressão ou envio, e a proposta é colocar esse conteúdo na mão do maior número possível de mulheres. A qualidade do conteúdo não muda, só o preço de entrada.</p>
+      <p class="faq-a">Porque o objetivo é alcance. O material é digital e a proposta é colocar esse conteúdo na mão do maior número possível de mulheres que estão presas nesse padrão.</p>
     </details>
   </div>
 </section>
-  </div>
-</section>
- 
-<!-- ⑦ 2º CTA FINAL -->
+
 <section class="cta2-section">
   <div class="inner">
     <div class="cta2-label">Se você chegou até aqui, você já sabe o que precisa fazer.</div>
- 
     <div class="cta-wrap" style="width:100%">
       <div class="cta-glow"></div>
-      <a href="https://pay.sunize.com.br/LXHVfkNO"
-        class="cta-main"
-        onclick="fbq('track', 'InitiateCheckout'); setTimeout(() => { window.location.href=this.href }, 150); return false;">
+      <a href="https://pay.sunize.com.br/LXHVfkNO" 
+         class="cta-main"
+         onclick="fbq('track', 'InitiateCheckout');">
         QUERO MUDAR ISSO AGORA →
       </a>
     </div>
- 
     <p class="cta-caption">R$ 37,90 · acesso imediato · garantia de 30 dias</p>
   </div>
 </section>
- 
+
 <footer class="footer">
   <div class="footer-logo">Protocolo da Inversão Feminina</div>
-  <p>© 2026, Todos os direitos reservados.</p>
+  <p>© 2026 · Todos os direitos reservados.</p>
 </footer>
 
-<div id="popup">
-  <div class="pl-dot"></div>
-  <span class="pl-lbl">ao vivo</span>
-  <span class="pl-text" id="popupText"></span>
-</div>
-
 <script>
-const names=["Ana","Luiza","Nicole","Mariana","Beatriz","Camila","Fernanda","Juliana","Larissa","Patrícia","Renata","Bruna","Isabela","Vitória","Amanda","Gabriela"];
-const cities=["São Paulo","Fortaleza","Rio de Janeiro","Belo Horizonte","Curitiba","Salvador","Recife","Brasília","Manaus","Florianópolis","Porto Alegre"];
-
-let lastName = null;
-let lastCity = null;
-
-function pickDifferent(arr, last){
-  let choice;
-  do { choice = arr[Math.floor(Math.random()*arr.length)]; }
-  while (arr.length > 1 && choice === last);
-  return choice;
-}
-
-function showPopup(){
-  const p = document.getElementById('popup');
-  const n = pickDifferent(names, lastName);
-  const c = pickDifferent(cities, lastCity);
-  lastName = n; lastCity = c;
-
-  document.getElementById('popupText').innerHTML = `<strong>${n}</strong> de ${c} acabou de entrar para o Método da Inversão Feminina`;
-
-  p.classList.add('show');
-  // tempo visível também variável, pra não parecer cronometrado
-  const visibleTime = Math.floor(Math.random()*1500) + 4200; // 4.2s a 5.7s
-  setTimeout(()=>p.classList.remove('show'), visibleTime);
-
-  // intervalo entre popups bem mais espaçado e variável
-  const nextDelay = Math.floor(Math.random()*45000) + 45000; // 45s a 90s
-  setTimeout(showPopup, nextDelay);
-}
-
-// primeira aparição mais tardia, dando tempo da pessoa ler a página antes
-setTimeout(showPopup, Math.floor(Math.random()*20000) + 40000); // 40s a 60s
-
 const d = new Date();
 document.getElementById('todayDate').textContent = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 </script>
